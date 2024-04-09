@@ -1,0 +1,59 @@
+services:
+
+  # Web Service
+  cardanomercury-web:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: cardanomercury-web
+    restart: unless-stopped
+    tty: true
+    networks: [ cardanomercury ]
+    volumes:
+      - ../application:/home/cardanomercury/application
+    depends_on:
+      - cardanomercury-mysql
+    ports:
+      - "8100:80"   # Laravel
+      - "8101:8101" # Vite
+    links:
+      - cardanomercury-mysql
+      - cardanomercury-redis
+
+  # MySQL Service
+  cardanomercury-mysql:
+    image: mysql:8.0
+    container_name: cardanomercury-mysql
+    restart: unless-stopped
+    tty: true
+    networks: [ cardanomercury ]
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: cardanomercury
+      MYSQL_USER: cardanomercury
+      MYSQL_PASSWORD: 123456
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 30
+    volumes: [ "mysql:/var/lib/mysql:cached" ]
+    ports: [ "33100:3306" ]
+
+  # Redis Service
+  cardanomercury-redis:
+    container_name: cardanomercury-redis
+    image: redis:6
+    restart: unless-stopped
+    volumes:
+      - redis:/data
+    networks: [ cardanomercury ]
+
+volumes:
+  mysql:
+    driver: local
+  redis:
+
+networks:
+  cardanomercury:
+    driver: bridge
