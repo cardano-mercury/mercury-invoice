@@ -1,8 +1,8 @@
 <?php
 
+use Inertia\Inertia;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -22,3 +22,25 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+// TEST ROUTE :: START
+Route::get('test', static function() {
+    if (app()->environment('local')) {
+
+        $customer = \App\Models\Customer::query()
+            ->where('id', 1)
+            ->with([
+                'defaultEmail',
+                'defaultPhone',
+                'defaultAddress',
+                'emails',
+                'phones',
+                'addresses',
+            ])
+            ->first();
+
+        dd($customer->toArray());
+
+    }
+});
+// TEST ROUTE :: END
