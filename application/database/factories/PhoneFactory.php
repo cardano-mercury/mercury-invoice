@@ -20,7 +20,7 @@ class PhoneFactory extends Factory
     {
         return [
             'customer_id' => 0,
-            'type' => PhoneType::HOME,
+            'type' => PhoneType::random(),
             'name' => fake()->name(),
             'number' => fake()->unique()->phoneNumber(),
             'is_default' => true,

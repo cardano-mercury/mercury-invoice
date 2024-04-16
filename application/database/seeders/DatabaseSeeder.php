@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Address;
 use App\Models\Phone;
+use App\Models\Product;
 use App\Models\User;
 use App\Models\Email;
 use App\Models\Customer;
@@ -29,19 +30,24 @@ class DatabaseSeeder extends Seeder
                 'user_id' => $user->id,
             ]);
 
-            // Seed email
-            Email::factory(2)->create([
+            // Seed emails
+            Email::factory(mt_rand(mt_rand(2, 3), mt_rand(5, 10)))->create([
                 'customer_id' => $customer->id,
             ]);
 
-            // Seed phone
-            Phone::factory(3)->create([
+            // Seed phones
+            Phone::factory(mt_rand(mt_rand(2, 3), mt_rand(5, 10)))->create([
                 'customer_id' => $customer->id,
             ]);
 
-            // Seed address
-            Address::factory()->create([
+            // Seed addresses
+            Address::factory(mt_rand(mt_rand(2, 3), mt_rand(5, 10)))->create([
                 'customer_id' => $customer->id,
+            ]);
+
+            // Seed products
+            Product::factory(mt_rand(mt_rand(2, 3), mt_rand(5, 10)))->create([
+                'user_id' => $user->id,
             ]);
         }
     }
