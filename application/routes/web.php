@@ -27,19 +27,25 @@ Route::middleware([
 Route::get('test', static function() {
     if (app()->environment('local')) {
 
-        $customer = \App\Models\Customer::query()
+        $user = \App\Models\User::query()
             ->where('id', 1)
             ->with([
-                'defaultEmail',
-                'defaultPhone',
-                'defaultAddress',
-                'emails',
-                'phones',
-                'addresses',
+                'customers.categories',
+                'customers.defaultEmail',
+                'customers.defaultPhone',
+                'customers.defaultAddress',
+                'customers.emails',
+                'customers.phones',
+                'customers.addresses',
+                'products.categories',
+                'services.categories',
+                'customerCategories',
+                'productCategories',
+                'servicesCategories',
             ])
             ->first();
 
-        dd($customer->toArray());
+        dd($user->toArray());
 
     }
 });

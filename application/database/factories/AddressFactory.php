@@ -22,7 +22,7 @@ class AddressFactory extends Factory
 
         return [
             'customer_id' => 0,
-            'type' => AddressType::BILLING,
+            'type' => AddressType::random(),
             'name' => fake()->company(),
             'line1' => $localisedFaker->streetAddress(),
             'line2' => null,

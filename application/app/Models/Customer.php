@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Customer extends Model
 {
@@ -22,6 +23,11 @@ class Customer extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function categories(): BelongsToMany
+    {
+        return $this->belongsToMany(CustomerCategory::class, 'customer_category_associations');
     }
 
     public function defaultEmail(): HasOne
@@ -55,5 +61,10 @@ class Customer extends Model
     {
         return $this->hasOne(Address::class)
             ->where('is_default', true);
+    }
+
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class);
     }
 }
