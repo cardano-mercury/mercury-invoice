@@ -26,7 +26,7 @@ class ProductFactory extends Factory
             'sku' => strtoupper(Str::random()),
             'description' => fake()->sentences(3, true),
             'unit_type' => $unitTypes[array_rand($unitTypes)],
-            'unit_price' => fake()->randomFloat(2, mt_rand(2, 5), mt_rand(50, 100)),
+            'unit_price' => fake()->randomFloat(2, random_int(2, 5), random_int(50, 100)),
             'supplier' => fake()->company(),
         ];
     }

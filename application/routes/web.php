@@ -27,19 +27,31 @@ Route::middleware([
 Route::get('test', static function() {
     if (app()->environment('local')) {
 
-        $customer = \App\Models\Customer::query()
-            ->where('id', 1)
-            ->with([
-                'defaultEmail',
-                'defaultPhone',
-                'defaultAddress',
-                'emails',
-                'phones',
-                'addresses',
-            ])
-            ->first();
+//        $customer = \App\Models\Customer::query()
+//            ->where('id', 1)
+//            ->with([
+//                'categories',
+//                'defaultEmail',
+//                'defaultPhone',
+//                'defaultAddress',
+//                'emails',
+//                'phones',
+//                'addresses',
+//            ])
+//            ->first();
+//        dd($customer->toArray());
 
-        dd($customer->toArray());
+//        $category = \App\Models\Category::query()
+//            ->where('user_id', 1)
+//            ->where('id', 1)
+//            ->with('customers')
+//            ->get();
+//        dd($category->toArray());
+
+//        $categories = \App\Models\Category::all();
+//        $allCategoryIds = $categories->pluck('id')->toArray();
+//        $randomCustomerCategoryIds = (array) array_rand($allCategoryIds, random_int(1, 3));
+//        dd($randomCustomerCategoryIds);
 
     }
 });
