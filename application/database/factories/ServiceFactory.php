@@ -2,14 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\Product;
-use Illuminate\Support\Str;
+use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Product>
+ * @extends Factory<Service>
  */
-class ProductFactory extends Factory
+class ServiceFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,14 +17,10 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
-        $unitTypes = ['kg', 'gram', 'cm', 'ounce', 'each'];
-
         return [
             'user_id' => 0,
             'name' => ucwords(implode(' ', fake()->unique()->words())),
-            'sku' => strtoupper(Str::random()),
             'description' => fake()->sentences(3, true),
-            'unit_type' => $unitTypes[array_rand($unitTypes)],
             'unit_price' => fake()->randomFloat(2, mt_rand(2, 5), mt_rand(50, 100)),
             'supplier' => fake()->company(),
         ];

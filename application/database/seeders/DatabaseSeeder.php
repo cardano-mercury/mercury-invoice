@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Address;
-use App\Models\Phone;
-use App\Models\Product;
 use App\Models\User;
+use App\Models\Phone;
 use App\Models\Email;
+use App\Models\Product;
+use App\Models\Service;
+use App\Models\Address;
 use App\Models\Customer;
 use Illuminate\Database\Seeder;
 
@@ -46,7 +47,12 @@ class DatabaseSeeder extends Seeder
             ]);
 
             // Seed products
-            Product::factory(mt_rand(mt_rand(2, 3), mt_rand(5, 10)))->create([
+            $products = Product::factory(mt_rand(mt_rand(2, 3), mt_rand(5, 10)))->create([
+                'user_id' => $user->id,
+            ]);
+
+            // Seed services
+            $services = Service::factory(mt_rand(mt_rand(2, 3), mt_rand(5, 10)))->create([
                 'user_id' => $user->id,
             ]);
         }
