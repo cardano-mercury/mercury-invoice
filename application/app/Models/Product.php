@@ -28,6 +28,6 @@ class Product extends Model
 
     public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class, 'product_categories');
+        return $this->belongsToMany(ProductCategory::class, 'product_category_associations');
     }
 }

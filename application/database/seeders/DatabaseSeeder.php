@@ -8,11 +8,13 @@ use App\Models\Email;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\Address;
-use App\Models\Category;
 use App\Models\Customer;
-use Illuminate\Database\Eloquent\Model;
 use Random\RandomException;
 use Illuminate\Database\Seeder;
+use App\Models\ProductCategory;
+use App\Models\ServiceCategory;
+use App\Models\CustomerCategory;
+use Illuminate\Support\Collection;
 
 class DatabaseSeeder extends Seeder
 {
@@ -61,24 +63,29 @@ class DatabaseSeeder extends Seeder
             ]);
 
             // Seed categories
-            $categories = Category::factory(random_int(4, random_int(5, 10)))->create([
+            $customerCategories = CustomerCategory::factory(random_int(4, random_int(5, 10)))->create([
                 'user_id' => $user->id,
             ]);
-            $allCategoryIds = $categories->pluck('id')->toArray();
+            $productCategories = ProductCategory::factory(random_int(4, random_int(5, 10)))->create([
+                'user_id' => $user->id,
+            ]);
+            $serviceCategories = ServiceCategory::factory(random_int(4, random_int(5, 10)))->create([
+                'user_id' => $user->id,
+            ]);
 
             // Associate random categories with customer
-            $this->attachRandomCategories($allCategoryIds, $customer);
+            $this->attachRandomCategoriesToEntity($customerCategories, $customer);
 
             // Associate random categories with products
             /** @var Product $product */
             foreach ($products as $product) {
-                $this->attachRandomCategories($allCategoryIds, $product);
+                $this->attachRandomCategoriesToEntity($productCategories, $product);
             }
 
             // Associate random categories with services
             /** @var Service $service */
             foreach ($services as $service) {
-                $this->attachRandomCategories($allCategoryIds, $service);
+                $this->attachRandomCategoriesToEntity($serviceCategories, $service);
             }
         }
     }
@@ -86,13 +93,15 @@ class DatabaseSeeder extends Seeder
     /**
      * @throws RandomException
      */
-    private function attachRandomCategories(array $allCategoryIds, Customer|Product|Service $entity): void
+    private function attachRandomCategoriesToEntity(Collection $entityCategories, Customer|Product|Service $entity): void
     {
-        $randomCategoryIdIndexes = (array) array_rand($allCategoryIds, random_int(1, 3));
+        $allEntityCategoryIds = $entityCategories->pluck('id')->toArray();
+
+        $randomCategoryIdIndexes = (array) array_rand($allEntityCategoryIds, random_int(1, 3));
 
         $randomCategoryIds = [];
         foreach ($randomCategoryIdIndexes as $randomCategoryIdIndex) {
-            $randomCategoryIds[] = $allCategoryIds[$randomCategoryIdIndex];
+            $randomCategoryIds[] = $allEntityCategoryIds[$randomCategoryIdIndex];
         }
 
         $entity->categories()->sync($randomCategoryIds);

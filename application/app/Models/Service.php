@@ -26,6 +26,6 @@ class Service extends Model
 
     public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class, 'service_categories');
+        return $this->belongsToMany(ServiceCategory::class, 'service_category_associations');
     }
 }

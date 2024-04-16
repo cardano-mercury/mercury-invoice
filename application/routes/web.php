@@ -39,6 +39,9 @@ Route::get('test', static function() {
                 'customers.addresses',
                 'products.categories',
                 'services.categories',
+                'customerCategories',
+                'productCategories',
+                'servicesCategories',
             ])
             ->first();
 

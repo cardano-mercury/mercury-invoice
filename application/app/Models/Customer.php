@@ -27,7 +27,7 @@ class Customer extends Model
 
     public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class, 'customer_categories');
+        return $this->belongsToMany(CustomerCategory::class, 'customer_category_associations');
     }
 
     public function defaultEmail(): HasOne
