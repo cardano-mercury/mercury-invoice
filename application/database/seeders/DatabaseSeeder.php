@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\User;
 use App\Models\Phone;
 use App\Models\Email;
@@ -53,6 +54,11 @@ class DatabaseSeeder extends Seeder
 
             // Seed services
             $services = Service::factory(mt_rand(mt_rand(2, 3), mt_rand(5, 10)))->create([
+                'user_id' => $user->id,
+            ]);
+
+            // Seed categories
+            $categories = Category::factory(mt_rand(4, mt_rand(5, 10)))->create([
                 'user_id' => $user->id,
             ]);
         }
