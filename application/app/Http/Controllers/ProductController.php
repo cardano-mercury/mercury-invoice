@@ -80,6 +80,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product): RedirectResponse
     {
+        $product->categories()->detach();
         $product->deleteOrFail();
 
         session()->flash('success', 'Product record deleted');
