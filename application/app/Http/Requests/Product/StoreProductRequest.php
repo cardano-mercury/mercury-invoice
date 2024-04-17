@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Customer;
+namespace App\Http\Requests\Product;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCustomerRequest extends FormRequest
+class StoreProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +15,7 @@ class StoreCustomerRequest extends FormRequest
             // Anyone can create new record
             'POST' => true,
             // Updating & Deleting must match record owner
-            'PUT', 'DELETE' => $this->customer->user_id === auth()->id(),
+            'PUT', 'DELETE' => $this->product->user_id === auth()->id(),
             // Unauthorized for everything else
             default => false,
         };
@@ -32,14 +32,24 @@ class StoreCustomerRequest extends FormRequest
                 'min:3',
                 'max:64',
             ],
-            'tax_number' => [
+            'sku' => [
+                'nullable',
+                'max:32',
+            ],
+            'description' => [
+                'nullable',
+            ],
+            'unit_type' => [
+                'nullable',
+                'max:16',
+            ],
+            'unit_price' => [
+                'required',
+                'min:0',
+            ],
+            'supplier' => [
                 'nullable',
                 'max:64',
-            ],
-            'tax_rate' => [
-                'nullable',
-                'min:0',
-                'max:100.00',
             ],
         ];
     }

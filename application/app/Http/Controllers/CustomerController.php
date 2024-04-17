@@ -6,7 +6,6 @@ use Throwable;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\Customer;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\Customer\StoreCustomerRequest;
 
@@ -18,7 +17,8 @@ class CustomerController extends Controller
     public function index(): Response
     {
         $customers = Customer::query()
-            ->where('user_id', Auth::id())
+            ->where('user_id', auth()->id())
+            ->orderBy('id', 'desc')
             ->get();
 
         return Inertia::render('Customer/Index', compact('customers'));
@@ -38,12 +38,12 @@ class CustomerController extends Controller
     public function store(StoreCustomerRequest $request): RedirectResponse
     {
         $validated = $request->validated();
-        $validated['user_id'] = Auth::id();
-        $Customer = Customer::create($validated);
+        $validated['user_id'] = auth()->id();
+        $customer = Customer::create($validated);
 
-        session()->flash('success', 'New customer created!');
+        session()->flash('success', 'Customer record created');
 
-        return to_route('customers.show', $Customer->id);
+        return to_route('customers.show', $customer->id);
     }
 
     /**
@@ -51,6 +51,8 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer): Response
     {
+        // TODO: Ensure resource is owned by current user
+
         return Inertia::render('Customer/Show', compact('customer'));
     }
 
@@ -59,6 +61,8 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer): Response
     {
+        // TODO: Ensure resource is owned by current user
+
         return Inertia::render('Customer/Edit', compact('customer'));
     }
 
@@ -69,7 +73,7 @@ class CustomerController extends Controller
     {
         $customer->update($request->validated());
 
-        session()->flash('info', 'Customer record updated!');
+        session()->flash('info', 'Customer record updated');
 
         return to_route('customers.show', $customer->id);
     }
