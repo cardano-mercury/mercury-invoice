@@ -6,9 +6,9 @@ use Throwable;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\Customer;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\Customer\StoreCustomerRequest;
 
 class CustomerController extends Controller
 {
@@ -35,22 +35,9 @@ class CustomerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(StoreCustomerRequest $request): RedirectResponse
     {
-        $validated = $request->validate([
-            'name'       => [
-                'required',
-                'max:64',
-            ],
-            'tax_number' => [
-                'max:64',
-            ],
-            'tax_rate'   => [
-                'min:0',
-                'max:100.00',
-            ],
-        ]);
-
+        $validated = $request->validated();
         $validated['user_id'] = Auth::id();
         $Customer = Customer::create($validated);
 
@@ -78,24 +65,9 @@ class CustomerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Customer $customer): RedirectResponse
+    public function update(StoreCustomerRequest $request, Customer $customer): RedirectResponse
     {
-        $validated = $request->validate([
-            'name' => [
-                'required',
-                'max:64',
-            ],
-            'tax_number' => [
-                'max:64',
-            ],
-            'tax_rate' => [
-                'min:0',
-                'max:100.00',
-            ],
-        ]);
-
-        $customer->fill($validated);
-        $customer->save();
+        $customer->update($request->validated());
 
         session()->flash('info', 'Customer record updated!');
 
@@ -106,7 +78,7 @@ class CustomerController extends Controller
      * Remove the specified resource from storage.
      * @throws Throwable
      */
-    public function destroy(Request $request, Customer $customer): RedirectResponse
+    public function destroy(Customer $customer): RedirectResponse
     {
         $customer->deleteOrFail();
 
