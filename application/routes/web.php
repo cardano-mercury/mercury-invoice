@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 
@@ -30,5 +31,8 @@ Route::middleware([
 
     // Product
     Route::resource('products', ProductController::class);
+
+    // Service
+    Route::resource('services', ServiceController::class);
 
 });

@@ -80,6 +80,7 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer): RedirectResponse
     {
+        $customer->categories()->detach();
         $customer->deleteOrFail();
 
         // TODO: Handle child element's of customers (e.g. Emails, Phones, Addresses)
