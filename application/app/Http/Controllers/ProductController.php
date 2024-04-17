@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Throwable;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\Product;
@@ -75,9 +76,14 @@ class ProductController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * @throws Throwable
      */
-    public function destroy(string $id)
+    public function destroy(Product $product): RedirectResponse
     {
-        //
+        $product->deleteOrFail();
+
+        session()->flash('success', 'Product record deleted');
+
+        return to_route('products.index');
     }
 }

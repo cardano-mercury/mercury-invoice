@@ -51,8 +51,6 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer): Response
     {
-        // TODO: Ensure resource is owned by current user
-
         return Inertia::render('Customer/Show', compact('customer'));
     }
 
@@ -61,8 +59,6 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer): Response
     {
-        // TODO: Ensure resource is owned by current user
-
         return Inertia::render('Customer/Edit', compact('customer'));
     }
 
