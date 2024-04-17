@@ -2,11 +2,11 @@
 
 namespace App\Enums;
 
-use App\Traits\EnumToArray;
+use App\Traits\EnumToArrayTrait;
 
 enum PhoneType: string
 {
-    use EnumToArray;
+    use EnumToArrayTrait;
 
     CASE HOME = 'Home';
     CASE OFFICE = 'Office';

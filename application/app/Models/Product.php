@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
+use App\Traits\ScopedRouteModelBindingTrait;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Product extends Model
 {
     use HasFactory;
+    use ScopedRouteModelBindingTrait;
 
     protected $fillable = [
         'user_id',
@@ -24,22 +25,6 @@ class Product extends Model
         'unit_price',
         'supplier',
     ];
-
-    /**
-     * This ensures the route model binding always loads the record owned by the logged-in user
-     *
-     * @param $value
-     * @param $field
-     * @return Model|Builder
-     */
-    public function resolveRouteBinding($value, $field = null): Model|Builder
-    {
-        return $this
-            ->query()
-            ->where('id', $value)
-            ->where('user_id', auth()->id())
-            ->firstOrFail();
-    }
 
     public function user(): BelongsTo
     {
