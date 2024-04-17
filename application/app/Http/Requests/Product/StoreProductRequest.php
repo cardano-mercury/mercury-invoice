@@ -14,8 +14,8 @@ class StoreProductRequest extends FormRequest
         return match($this->method()) {
             // Anyone can create new record
             'POST' => true,
-            // Updating & Deleting must match record owner
-            'PUT', 'DELETE' => $this->product->user_id === auth()->id(),
+            // Updating must match record owner
+            'PUT' => $this->product->user_id === auth()->id(),
             // Unauthorized for everything else
             default => false,
         };
