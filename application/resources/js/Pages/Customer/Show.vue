@@ -7,17 +7,19 @@ const props = defineProps({errors: Object, customer: Object})
 const form = useForm(props.customer);
 </script>
 <template>
-    <app-layout :title="'Customer: '+customer.name">
+    <app-layout :title="'Customer: ' + customer.name">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Customer: {{ customer.name }} </h2>
-            <p>
-                <span v-if="customer.tax_number">
+                Customer: {{ customer.name }}
+            </h2>
+            <div>
+                <span v-if="customer.tax_number" class="badge">
                     Tax Number: {{ customer.tax_number }}
-                </span> <span v-if="customer.tax_rate">
+                </span>
+                <span v-if="customer.tax_rate" class="badge">
                     Tax Rate: {{ customer.tax_rate }}
                 </span>
-            </p>
+            </div>
         </template>
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

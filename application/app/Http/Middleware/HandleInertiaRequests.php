@@ -40,7 +40,8 @@ class HandleInertiaRequests extends Middleware {
                                      ->get('info'),
                 'error'   => $request->session()
                                      ->get('error'),
-            ]
+            ],
+            'appVersion' => config('cardanomercury.app_version'),
         ];
     }
 }

@@ -3,12 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+/**
+ * @method static create(array $validated)
+ */
 class Customer extends Model
 {
     use HasFactory;
@@ -19,6 +23,22 @@ class Customer extends Model
         'tax_number',
         'tax_rate',
     ];
+
+    /**
+     * This ensures the route model binding always loads the record owned by the logged-in user
+     *
+     * @param $value
+     * @param $field
+     * @return Model|Builder
+     */
+    public function resolveRouteBinding($value, $field = null): Model|Builder
+    {
+        return $this
+            ->query()
+            ->where('id', $value)
+            ->where('user_id', auth()->id())
+            ->firstOrFail();
+    }
 
     public function user(): BelongsTo
     {

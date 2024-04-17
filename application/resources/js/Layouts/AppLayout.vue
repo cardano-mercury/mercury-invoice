@@ -51,8 +51,11 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                                <NavLink :href="route('customers.index')" :active="route().current('customers.index')">
+                                <NavLink :href="route('customers.index')" :active="route().current('customers.*')">
                                     Customers
+                                </NavLink>
+                                <NavLink :href="route('products.index')" :active="route().current('products.*')">
+                                    Products
                                 </NavLink>
                             </div>
                         </div>
@@ -308,8 +311,30 @@ const logout = () => {
                 <slot />
             </main>
             <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                Mercury: Invoice v0.0.1
+                Cardano Mercury: Invoice v{{ $page.props.appVersion }}
             </footer>
         </div>
     </div>
 </template>
+
+<style>
+table {
+    width: 100%;
+}
+
+.btn {
+    @apply font-bold py-2 px-4 rounded;
+}
+
+.btn-blue {
+    @apply bg-blue-500 text-white;
+}
+
+.btn-blue:hover {
+    @apply bg-blue-700;
+}
+
+.badge {
+    @apply bg-gray-100 text-gray-800 font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300;
+}
+</style>
