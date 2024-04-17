@@ -2,11 +2,11 @@
 
 namespace App\Enums;
 
-use App\Traits\EnumToArray;
+use App\Traits\EnumToArrayTrait;
 
 enum AddressType: string
 {
-    use EnumToArray;
+    use EnumToArrayTrait;
 
     case BILLING = 'Billing';
     case SHIPPING = 'Shipping';
