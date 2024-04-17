@@ -51,6 +51,9 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+                                <NavLink :href="route('customers.index')" :active="route().current('customers.index')">
+                                    Customers
+                                </NavLink>
                             </div>
                         </div>
 
@@ -194,6 +197,9 @@ const logout = () => {
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('customers.index')" :active="route().current('customers.index')">
+                            Customers
+                        </ResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
@@ -280,10 +286,30 @@ const logout = () => {
                 </div>
             </header>
 
+            <!-- Flash Messages -->
+            <section v-if="$page.props.flash.success" class="mb-4">
+                <div class="flex items-center bg-green-500 text-white text-sm font-bold px-4 py-3" role="alert">
+                    <p>{{$page.props.flash.success}}</p>
+                </div>
+            </section>
+            <section v-if="$page.props.flash.info" class="mb-4">
+                <div class="flex items-center bg-blue-500 text-white text-sm font-bold px-4 py-3" role="alert">
+                    <p>{{$page.props.flash.info}}</p>
+                </div>
+            </section>
+            <section v-if="$page.props.flash.error" class="mb-4">
+                <div class="flex items-center bg-red-500 text-white text-sm font-bold px-4 py-3" role="alert">
+                    <p>{{$page.props.flash.error}}</p>
+                </div>
+            </section>
+
             <!-- Page Content -->
             <main>
                 <slot />
             </main>
+            <footer class="py-16 text-center text-sm text-black dark:text-white/70">
+                Mercury: Invoice v0.0.1
+            </footer>
         </div>
     </div>
 </template>
