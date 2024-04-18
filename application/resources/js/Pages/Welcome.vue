@@ -65,7 +65,7 @@ function handleImageError() {
                 </header>
                 <main class="mt-6">
                     <div class="text-center">
-                        <h1 class="text-4xl">Welcome to Cardano Mercury: Invoice</h1>
+                        <h1 class="text-4xl">Welcome to Cardano Mercury: Invoice (BETA)</h1>
                     </div>
                 </main>
                 <footer class="py-16 text-center text-sm text-black dark:text-white/70">
