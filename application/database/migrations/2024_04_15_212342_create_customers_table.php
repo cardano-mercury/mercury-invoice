@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->string('name', 64);
             $table->string('tax_number', 64)->nullable();
-            $table->decimal('tax_rate', 5, 2)->default(0);
+            $table->decimal('tax_rate', 5, 2)->nullable();
             $table->timestamps();
             $table->unique(['user_id', 'name']);
         });

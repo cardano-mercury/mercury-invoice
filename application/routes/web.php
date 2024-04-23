@@ -25,6 +25,7 @@ Route::middleware([
 
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard/send-test-email', [DashboardController::class, 'sendTestEmail'])->name('dashboard.send-test-email');
 
     // Customer
     Route::resource('customers', CustomerController::class);

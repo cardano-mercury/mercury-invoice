@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        if (app()->environment('local'))
+        if (app()->environment('local', 'staging'))
         {
             // Seed user
             $user = User::factory()->create([
