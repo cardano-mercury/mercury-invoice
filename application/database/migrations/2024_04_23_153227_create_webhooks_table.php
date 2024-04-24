@@ -20,7 +20,6 @@ return new class extends Migration
             $table->unsignedTinyInteger('max_attempts');
             $table->unsignedTinyInteger('timeout_seconds');
             $table->unsignedTinyInteger('retry_seconds');
-            $table->boolean('enabled');
             $table->timestamps();
         });
     }

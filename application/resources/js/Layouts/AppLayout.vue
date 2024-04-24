@@ -155,6 +155,10 @@ const logout = () => {
                                             API Tokens
                                         </DropdownLink>
 
+                                        <DropdownLink :href="route('webhooks.index')">
+                                            Webhooks
+                                        </DropdownLink>
+
                                         <div class="border-t border-gray-200" />
 
                                         <!-- Authentication -->
@@ -238,6 +242,10 @@ const logout = () => {
 
                             <ResponsiveNavLink v-if="$page.props.jetstream.hasApiFeatures" :href="route('api-tokens.index')" :active="route().current('api-tokens.index')">
                                 API Tokens
+                            </ResponsiveNavLink>
+
+                            <ResponsiveNavLink :href="route('webhooks.index')" :active="route().current('webhooks.index')">
+                                Webhooks
                             </ResponsiveNavLink>
 
                             <!-- Authentication -->

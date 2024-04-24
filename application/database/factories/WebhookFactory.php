@@ -27,7 +27,6 @@ class WebhookFactory extends Factory
             'max_attempts' => 10,
             'timeout_seconds' => 30,
             'retry_seconds' => 30,
-            'enabled' => true,
         ];
     }
 }

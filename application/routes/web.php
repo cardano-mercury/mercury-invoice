@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\WebhookController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CustomerController;
@@ -27,14 +28,17 @@ Route::middleware([
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard/send-test-email', [DashboardController::class, 'sendTestEmail'])->name('dashboard.send-test-email');
 
-    // Customer
+    // Customers
     Route::resource('customers', CustomerController::class);
 
-    // Product
+    // Products
     Route::resource('products', ProductController::class);
 
-    // Service
+    // Services
     Route::resource('services', ServiceController::class);
+
+    // User Webhooks
+    Route::resource('user/webhooks', WebhookController::class)->except(['create']);
 
 });
 
