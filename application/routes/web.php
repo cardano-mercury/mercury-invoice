@@ -38,7 +38,7 @@ Route::middleware([
     Route::resource('services', ServiceController::class);
 
     // User Webhooks
-    Route::resource('user/webhooks', WebhookController::class)->except(['create']);
+    Route::resource('user/webhooks', WebhookController::class)->except(['create', 'show', 'edit']);
 
 });
 

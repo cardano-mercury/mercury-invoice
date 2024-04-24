@@ -10,6 +10,10 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import FormSection from "@/Components/FormSection.vue";
 import DialogModal from "@/Components/DialogModal.vue";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
+import SectionBorder from "@/Components/SectionBorder.vue";
+import ActionSection from "@/Components/ActionSection.vue";
+import DangerButton from "@/Components/DangerButton.vue";
+import ConfirmationModal from "@/Components/ConfirmationModal.vue";
 
 const props = defineProps({
     webhooks: Array,
@@ -34,7 +38,7 @@ const deleteWebhookForm = useForm({});
 
 const displayingSecret = ref(false);
 const managingTargetEventsFor = ref(null);
-const WebhookBeingDeleted = ref(null);
+const webhookBeingDeleted = ref(null);
 
 const createWebhook = () => {
     createWebhookForm.post(route('webhooks.store'), {
@@ -42,11 +46,29 @@ const createWebhook = () => {
         onSuccess: () => {
             displayingSecret.value = true;
             createWebhookForm.reset();
-            console.log('successfully created');
         },
         onError: (e) => {
             console.log('error creating webhook', e);
         }
+    });
+};
+
+const manageWebhookEventTargets = (webhook) => {
+    updateWebhookForm.target_events = []; // TODO
+    managingTargetEventsFor.value = webhook;
+};
+
+const updateWebhook = () => { }; // TODO
+
+const confirmWebhookDeletion = (webhook) => {
+    webhookBeingDeleted.value = webhook;
+};
+
+const deleteWebhook = () => {
+    deleteWebhookForm.delete(route('webhooks.destroy', webhookBeingDeleted.value), {
+        preserveScroll: true,
+        preserveState: true,
+        onSuccess: () => (webhookBeingDeleted.value = null),
     });
 };
 
@@ -180,6 +202,45 @@ const createWebhook = () => {
         </FormSection>
 
         <!-- Manage Webhooks -->
+        <div v-if="webhooks.length > 0">
+            <SectionBorder />
+            <div class="mt-10 sm:mt-0">
+                <ActionSection>
+                    <template #title>
+                        Manage Webhooks
+                    </template>
+
+                    <template #description>
+                        You may delete any of your existing webhooks if they are no longer needed.
+                    </template>
+
+                    <!-- Webhook List -->
+                    <template #content>
+                        <div class="space-y-6">
+                            <div v-for="webhook in webhooks" :key="webhook.id" class="flex items-center justify-between">
+                                <div class="break-all">
+                                    {{ webhook.url }}
+                                </div>
+
+                                <div class="flex items-center ms-2">
+                                    <button
+                                        v-if="eventTargetNames.length > 0"
+                                        class="cursor-pointer ms-6 text-sm text-gray-400 underline"
+                                        @click="manageWebhookEventTargets(webhook)"
+                                    >
+                                        Target Events
+                                    </button>
+
+                                    <button class="cursor-pointer ms-6 text-sm text-red-500" @click="confirmWebhookDeletion(webhook)">
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </ActionSection>
+            </div>
+        </div>
 
         <!-- Secret Value Modal -->
         <DialogModal :show="displayingSecret" @close="displayingSecret = false">
@@ -203,6 +264,35 @@ const createWebhook = () => {
                 </SecondaryButton>
             </template>
         </DialogModal>
+
+        <!-- Webhook Event Targets Modal -->
+        <!-- TODO -->
+
+        <!-- Delete Webhook Confirmation Modal -->
+        <ConfirmationModal :show="webhookBeingDeleted != null" @close="webhookBeingDeleted = null">
+            <template #title>
+                Delete Webhook
+            </template>
+
+            <template #content>
+                Are you sure you would like to delete this webhook?
+            </template>
+
+            <template #footer>
+                <SecondaryButton @click="webhookBeingDeleted = null">
+                    Cancel
+                </SecondaryButton>
+
+                <DangerButton
+                    class="ms-3"
+                    :class="{ 'opacity-25': deleteWebhookForm.processing }"
+                    :disabled="deleteWebhookForm.processing"
+                    @click="deleteWebhook"
+                >
+                    Delete
+                </DangerButton>
+            </template>
+        </ConfirmationModal>
 
     </div>
 </template>
