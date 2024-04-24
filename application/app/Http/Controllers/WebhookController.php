@@ -22,6 +22,7 @@ class WebhookController extends Controller
     {
         $webhooks = Webhook::query()
             ->where('user_id', auth()->id())
+            ->with('eventTargets')
             ->orderBy('id', 'desc')
             ->get();
 
@@ -67,9 +68,31 @@ class WebhookController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreWebhookRequest $request, Webhook $webhook): RedirectResponse
     {
-        //
+        $webhook->update($request->validated());
+
+        $webhook->eventTargets()->delete();
+
+        $validTargetEvents = array_values(array_intersect($request->input('target_events'), WebhookEventTargetName::values()));
+
+        if (count($validTargetEvents)) {
+            $webhookEventTargets = [];
+            foreach ($validTargetEvents as $validTargetEvent) {
+                $webhookEventTargets[] = [
+                    'webhook_id' => $webhook->id,
+                    'event_name' => $validTargetEvent,
+                ];
+                WebhookEventTarget::insert($webhookEventTargets);
+            }
+        }
+
+        session()->flash('success', sprintf(
+            'Webhook integration to (%s) has been updated.',
+            $webhook->url,
+        ));
+
+        return back(303);
     }
 
     /**
