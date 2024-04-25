@@ -39,6 +39,7 @@ Route::middleware([
 
     // User Webhooks
     Route::resource('user/webhooks', WebhookController::class)->except(['create', 'show', 'edit']);
+    Route::get('user/webhooks/{webhook}/logs', [WebhookController::class, 'logs'])->name('webhooks.logs');
     Route::get('user/webhooks/{webhook}/test', [WebhookController::class, 'test'])->name('webhooks.test');
 
 });

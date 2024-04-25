@@ -285,7 +285,7 @@ const deleteWebhook = () => {
                                     </template>
                                     <template #content>
                                         <DropdownLink
-                                            :href="route('profile.show')"
+                                            :href="route('webhooks.logs', webhook)"
                                         >
                                             View Logs
                                         </DropdownLink>

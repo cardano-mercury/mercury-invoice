@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Throwable;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Http;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\Webhook;
 use Illuminate\Support\Str;
 use App\Enums\HMACAlgorithm;
-use Illuminate\Http\Request;
 use App\Models\WebhookEventTarget;
+use Illuminate\Support\Facades\Http;
 use App\Enums\WebhookEventTargetName;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\Webhook\StoreWebhookRequest;
-use Throwable;
 
 class WebhookController extends Controller
 {
@@ -113,6 +112,15 @@ class WebhookController extends Controller
         ));
 
         return back(303);
+    }
+
+    public function logs(Webhook $webhook): Response
+    {
+        $webhook->load(['logs' => static function ($query) {
+            $query->orderBy('id', 'desc');
+        }]);
+
+        return Inertia::render('Webhook/Logs', compact('webhook'));
     }
 
     public function test(Webhook $webhook): RedirectResponse

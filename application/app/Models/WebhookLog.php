@@ -18,8 +18,18 @@ class WebhookLog extends Model
         'attempts',
     ];
 
+    protected $appends = ['formatted_datetime'];
+
     public function webhook(): BelongsTo
     {
         return $this->belongsTo(Webhook::class);
+    }
+
+    public function getFormattedDateTimeAttribute(): array
+    {
+        return [
+            'datetime' => $this->created_at->toDateTimeString(),
+            'diff' => $this->created_at->diffForHumans(),
+        ];
     }
 }
