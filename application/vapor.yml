@@ -25,7 +25,7 @@ environments:
           - 'php artisan migrate --force'
 
     staging:
-        # domain: 'todo'
+        domain: 'staging.cardano-mercury.io'
         storage: staging-cardanomercury-storage
         timeout: 60
         memory: 1024
