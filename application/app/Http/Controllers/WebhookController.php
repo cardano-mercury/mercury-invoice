@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Http;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\Webhook;
@@ -12,6 +14,7 @@ use App\Models\WebhookEventTarget;
 use App\Enums\WebhookEventTargetName;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\Webhook\StoreWebhookRequest;
+use Throwable;
 
 class WebhookController extends Controller
 {
@@ -108,6 +111,49 @@ class WebhookController extends Controller
             'Webhook integration to (%s) has been deleted.',
             $webhook->url,
         ));
+
+        return back(303);
+    }
+
+    public function test(Webhook $webhook): RedirectResponse
+    {
+        try {
+
+            $start = microtime(true);
+
+            $dummyPayload = [
+                'event' => 'Test Webhook',
+                'message' => 'Hello from Cardano Mercury: Invoice webhook tester!',
+                'utc_datetime' => Carbon::now()->toDateTimeString(),
+            ];
+
+            $dummyPayloadSignature = hash_hmac($webhook->hmac_algorithm, json_encode($dummyPayload), decrypt($webhook->hmac_secret));
+
+            Http::timeout($webhook->timeout_seconds)
+                ->connectTimeout($webhook->timeout_seconds)
+                ->withHeaders([
+                    'X-Webhook-HMAC-Signature' => $dummyPayloadSignature,
+                ])
+                ->post($webhook->url, $dummyPayload)
+                ->throw();
+
+            $end = microtime(true);
+
+            session()->flash('success', sprintf(
+                'Test webhook request was successful sent to (%s) in %.6f seconds.',
+                $webhook->url,
+                ($end - $start)
+            ));
+
+        } catch (Throwable $exception) {
+
+            session()->flash('error', sprintf(
+                'Test webhook request failed (%s): %s',
+                $webhook->url,
+                $exception->getMessage(),
+            ));
+
+        }
 
         return back(303);
     }

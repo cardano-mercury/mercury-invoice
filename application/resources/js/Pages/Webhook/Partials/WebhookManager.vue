@@ -248,7 +248,7 @@ const deleteWebhook = () => {
                     <!-- Webhook List -->
                     <template #content>
                         <div class="space-y-6">
-                            <div v-for="webhook in webhooks" :key="webhook.id" class="flex items-center justify-between">
+                            <div v-for="webhook in webhooks" :key="webhook.id" class="flex items-center justify-between bg-gray-50 p-3 sm:rounded-lg">
                                 <div class="break-all">
                                     <div>
                                         {{ webhook.url }}
@@ -290,7 +290,7 @@ const deleteWebhook = () => {
                                             View Logs
                                         </DropdownLink>
                                         <DropdownLink
-                                            :href="route('profile.show')"
+                                            :href="route('webhooks.test', webhook)"
                                         >
                                             Test Webhook
                                         </DropdownLink>

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Enums\HMACAlgorithm;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\ScopedRouteModelBindingTrait;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -25,10 +24,6 @@ class Webhook extends Model
         'max_attempts',
         'timeout_seconds',
         'retry_seconds',
-    ];
-
-    protected $casts = [
-        'hmac_algorithm' => HMACAlgorithm::class,
     ];
 
     public function user(): BelongsTo
