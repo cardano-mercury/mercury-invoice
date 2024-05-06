@@ -124,10 +124,9 @@ const deleteApiToken = () => {
             </template>
         </FormSection>
 
+        <!-- Manage API Tokens -->
         <div v-if="tokens.length > 0">
             <SectionBorder />
-
-            <!-- Manage API Tokens -->
             <div class="mt-10 sm:mt-0">
                 <ActionSection>
                     <template #title>

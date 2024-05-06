@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('webhooks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->string('name', 64);
-            $table->string('tax_number', 64)->nullable();
-            $table->decimal('tax_rate', 5, 2)->nullable();
+            $table->string('url', 2048);
+            $table->string('hmac_secret', 512);
+            $table->string('hmac_algorithm', 16);
+            $table->unsignedTinyInteger('max_attempts');
+            $table->unsignedTinyInteger('timeout_seconds');
+            $table->unsignedTinyInteger('retry_seconds');
             $table->timestamps();
-            $table->unique(['user_id', 'name']);
         });
     }
 
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('webhooks');
     }
 };

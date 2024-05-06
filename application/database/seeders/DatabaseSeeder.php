@@ -9,6 +9,9 @@ use App\Models\Product;
 use App\Models\Service;
 use App\Models\Address;
 use App\Models\Customer;
+use App\Models\Webhook;
+use App\Models\WebhookEventTarget;
+use App\Models\WebhookLog;
 use Random\RandomException;
 use Illuminate\Database\Seeder;
 use App\Models\ProductCategory;
@@ -24,7 +27,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        if (app()->environment('local'))
+        if (app()->environment('local', 'staging'))
         {
             // Seed user
             $user = User::factory()->create([
@@ -87,6 +90,17 @@ class DatabaseSeeder extends Seeder
             foreach ($services as $service) {
                 $this->attachRandomCategoriesToEntity($serviceCategories, $service);
             }
+
+            // Seed webhook
+            $webhook = Webhook::factory()->create([
+                'user_id' => $user->id,
+            ]);
+            WebhookEventTarget::factory()->create([
+                'webhook_id' => $webhook->id,
+            ]);
+            WebhookLog::factory(random_int(5, 12))->create([
+                'webhook_id' => $webhook->id,
+            ]);
         }
     }
 

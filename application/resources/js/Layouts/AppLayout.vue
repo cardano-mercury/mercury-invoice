@@ -155,6 +155,10 @@ const logout = () => {
                                             API Tokens
                                         </DropdownLink>
 
+                                        <DropdownLink :href="route('webhooks.index')">
+                                            Webhooks
+                                        </DropdownLink>
+
                                         <div class="border-t border-gray-200" />
 
                                         <!-- Authentication -->
@@ -238,6 +242,10 @@ const logout = () => {
 
                             <ResponsiveNavLink v-if="$page.props.jetstream.hasApiFeatures" :href="route('api-tokens.index')" :active="route().current('api-tokens.index')">
                                 API Tokens
+                            </ResponsiveNavLink>
+
+                            <ResponsiveNavLink :href="route('webhooks.index')" :active="route().current('webhooks.index')">
+                                Webhooks
                             </ResponsiveNavLink>
 
                             <!-- Authentication -->
@@ -345,5 +353,9 @@ table {
 
 .badge {
     @apply bg-gray-100 text-gray-800 font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300;
+}
+
+.sm-badge {
+    @apply bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300
 }
 </style>
