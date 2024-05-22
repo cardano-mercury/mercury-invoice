@@ -323,8 +323,16 @@ class InvoiceController extends Controller
     {
         if ($invoice->status === Status::PUBLISHED) {
             if (!$invoice->last_notified || $invoice->last_notified->diffInHours() >= 24) {
+
                 dispatch(new SendNewInvoiceNotificationMailJob($invoice, true));
+
+                InvoiceActivity::create([
+                    'invoice_id' => $invoice->id,
+                    'activity' => 'Reminder notifications were manually sent.',
+                ]);
+
                 session()->flash('success', 'Reminder notification(s) were successfully sent.');
+
             } else {
                 session()->flash('error', 'Reminder can only be sent once a day; notification(s) were last sent ' . $invoice->last_notified->diffForHumans() . '.');
             }
