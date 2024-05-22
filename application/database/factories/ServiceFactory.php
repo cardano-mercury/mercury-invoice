@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Service;
+use Random\RandomException;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -14,6 +15,7 @@ class ServiceFactory extends Factory
      * Define the model's default state.
      *
      * @return array<string, mixed>
+     * @throws RandomException
      */
     public function definition(): array
     {

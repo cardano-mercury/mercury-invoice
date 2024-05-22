@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use Vinkla\Hashids\Facades\Hashids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -16,9 +17,11 @@ trait ScopedRouteModelBindingTrait
      */
     public function resolveRouteBinding($value, $field = null): Model|Builder
     {
+        $id = is_numeric($value) ? $value : Hashids::decode($value)[0];
+
         return $this
             ->query()
-            ->where('id', $value)
+            ->where('id', $id)
             ->where('user_id', auth()->id())
             ->firstOrFail();
     }
