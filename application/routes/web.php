@@ -33,15 +33,19 @@ Route::middleware([
     Route::get('/dashboard/send-test-email', [DashboardController::class, 'sendTestEmail'])->name('dashboard.send-test-email');
 
     // Customers
+    Route::get('customers/export', [CustomerController::class, 'export'])->name('customers.export');
     Route::resource('customers', CustomerController::class);
 
     // Products
+    Route::get('products/export', [ProductController::class, 'export'])->name('products.export');
     Route::resource('products', ProductController::class);
 
     // Services
+    Route::get('services/export', [ServiceController::class, 'export'])->name('services.export');
     Route::resource('services', ServiceController::class);
 
     // Invoices
+    Route::get('invoices/export', [InvoiceController::class, 'export'])->name('invoices.export');
     Route::resource('invoices', InvoiceController::class)->except(['destroy']);
     Route::get('invoices/{invoice}/void', [InvoiceController::class, 'void'])->name('invoices.void');
     Route::get('invoices/{invoice}/restore', [InvoiceController::class, 'restore'])->name('invoices.restore');

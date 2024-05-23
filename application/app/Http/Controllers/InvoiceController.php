@@ -12,14 +12,17 @@ use App\Models\Customer;
 use App\Traits\HashIdTrait;
 use App\Models\InvoiceItem;
 use App\Models\InvoiceActivity;
+use App\Traits\JsonDownloadTrait;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
 use App\Jobs\SendNewInvoiceNotificationMailJob;
 use App\Http\Requests\Invoice\StoreInvoiceRequest;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class InvoiceController extends Controller
 {
     use HashIdTrait;
+    use JsonDownloadTrait;
 
     /**
      * Display a listing of the resource.
@@ -365,5 +368,109 @@ class InvoiceController extends Controller
         }
 
         return to_route('invoices.show', $this->encodeId($invoice->id));
+    }
+
+    /**
+     * @throws BindingResolutionException
+     */
+    public function export(): \Illuminate\Http\Response
+    {
+        $invoices = Invoice::query()
+            ->where('user_id', auth()->id())
+            ->with([
+                'customer',
+                'billingAddress',
+                'shippingAddress',
+                'recipients',
+                'payments',
+                'activities',
+            ])
+            ->get()
+            ->map(function ($invoice) {
+                return [
+                    'id' => $this->encodeId($invoice->id),
+                    'customer_reference' => $invoice->customer_reference,
+                    'issue_date' => $invoice->issue_date,
+                    'due_date' => $invoice->due_date,
+                    'last_notified' => $invoice->last_notified,
+                    'status' => $invoice->status,
+                    'customer' => [
+                        'id' => $this->encodeId($invoice->customer->id),
+                        'name' => $invoice->customer->name,
+                        'tax_number' => $invoice->customer->tax_number,
+                        'tax_rate' => $invoice->customer->tax_rate,
+                    ],
+                    'billingAddress' => $invoice->billingAddress ? [
+                        'id' => $this->encodeId($invoice->billingAddress->id),
+                        'type' => $invoice->billingAddress->type,
+                        'name' => $invoice->billingAddress->name,
+                        'line1' => $invoice->billingAddress->line1,
+                        'line2' => $invoice->billingAddress->line2,
+                        'city' => $invoice->billingAddress->city,
+                        'state' => $invoice->billingAddress->state,
+                        'postal_code' => $invoice->billingAddress->postal_code,
+                        'country' => $invoice->billingAddress->country,
+                        'is_default' => (bool) $invoice->billingAddress->is_default,
+                    ] : null,
+                    'shippingAddress' => $invoice->shippingAddress ? [
+                        'id' => $this->encodeId($invoice->shippingAddress->id),
+                        'type' => $invoice->shippingAddress->type,
+                        'name' => $invoice->shippingAddress->name,
+                        'line1' => $invoice->shippingAddress->line1,
+                        'line2' => $invoice->shippingAddress->line2,
+                        'city' => $invoice->shippingAddress->city,
+                        'state' => $invoice->shippingAddress->state,
+                        'postal_code' => $invoice->shippingAddress->postal_code,
+                        'country' => $invoice->shippingAddress->country,
+                        'is_default' => (bool) $invoice->shippingAddress->is_default,
+                    ] : null,
+                    'recipients' => $invoice->recipients->map(function ($recipient) {
+                        return [
+                            'id' => $this->encodeId($recipient->id),
+                            'name' => $recipient->name,
+                            'address' => $recipient->address,
+                            'is_default' => (bool) $recipient->is_default,
+                        ];
+                    }),
+                    'items' => $invoice->items->map(function ($item) {
+                        return [
+                            'product_id' => $this->encodeId($item->product_id),
+                            'service_id' => $this->encodeId($item->service_id),
+                            'sku' => $item->sku,
+                            'description' => $item->description,
+                            'quantity' => $item->quantity,
+                            'unit_price' => $item->unit_price,
+                            'tax_rate' => $item->tax_rate,
+                        ];
+                    }),
+                    'payments' => $invoice->payments->map(function ($payment) {
+                        return [
+                            'id' => $this->encodeId($payment->id),
+                            'payment_date' => $payment->payment_date,
+                            'payment_method' => $payment->payment_method,
+                            'payment_currency' => $payment->payment_currency,
+                            'payment_amount' => $payment->payment_amount,
+                            'payment_reference' => $payment->payment_reference,
+                            'crypto_asset_name' => $payment->crypto_asset_name,
+                            'crypto_asset_ada_price' => $payment->crypto_asset_ada_price,
+                            'crypto_asset_quantity' => $payment->crypto_asset_quantity,
+                            'status' => $payment->status,
+                        ];
+                    }),
+                    'activities' => $invoice->activities->map(function ($activity) {
+                        return [
+                            'id' => $this->encodeId($activity->id),
+                            'created_at' => $activity->created_at,
+                            'activity' => $activity->activity,
+                        ];
+                    }),
+                ];
+            })
+            ->toArray();
+
+        return $this->downloadJson(
+            $invoices,
+            'invoices-export',
+        );
     }
 }

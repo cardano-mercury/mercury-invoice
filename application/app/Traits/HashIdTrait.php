@@ -6,13 +6,21 @@ use Vinkla\Hashids\Facades\Hashids;
 
 trait HashIdTrait
 {
-    public function encodeId(int $id): string
+    public function encodeId(int|null $id = null): string|null
     {
-        return Hashids::encode($id);
+        if (!empty($id)) {
+            return Hashids::encode($id);
+        }
+
+        return null;
     }
 
-    public function decodeId(string $encodedId): int
+    public function decodeId(string|null $encodedId = null): int
     {
-        return Hashids::decode($encodedId)[0] ?? 0;
+        if (!empty($encodedId)) {
+            return Hashids::decode($encodedId)[0] ?? 0;
+        }
+
+        return 0;
     }
 }
