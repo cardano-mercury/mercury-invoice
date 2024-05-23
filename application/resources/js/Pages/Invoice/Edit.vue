@@ -14,8 +14,8 @@ const props = defineProps({
 const form = useForm({
     customer_id: props.invoice.customer_id,
     customer_email_ids: props.invoice.recipients.map(item => item.id),
-    billing_address_id: props.invoice.billing_address.id,
-    shipping_address_id: props.invoice.shipping_address.id,
+    billing_address_id: (props.invoice.billing_address ? props.invoice.billing_address.id : null),
+    shipping_address_id: (props.invoice.shipping_address ? props.invoice.shipping_address.id : null),
     customer_reference: props.invoice.customer_reference,
     issue_date: props.invoice.issue_date,
     due_date: props.invoice.due_date,
