@@ -2,15 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Models\Product;
-use Illuminate\Support\Str;
 use Random\RandomException;
+use Illuminate\Support\Str;
+use App\Models\InvoiceItem;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Product>
+ * @extends Factory<InvoiceItem>
  */
-class ProductFactory extends Factory
+class InvoiceItemFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,16 +20,15 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
-        $unitTypes = ['kg', 'gram', 'cm', 'ounce', 'each'];
-
         return [
-            'user_id' => 0,
-            'name' => ucwords(implode(' ', fake()->unique()->words())),
+            'invoice_id' => 0,
+            'product_id' => null,
+            'service_id' => null,
             'sku' => strtoupper(Str::random()),
-            'description' => fake()->sentences(3, true),
-            'unit_type' => $unitTypes[array_rand($unitTypes)],
+            'description' => fake()->sentence(),
+            'quantity' => fake()->numberBetween(2, 6),
             'unit_price' => fake()->randomFloat(2, random_int(2, 5), random_int(50, 100)),
-            'supplier' => fake()->company(),
+            'tax_rate' => 20.00,
         ];
     }
 }

@@ -6,6 +6,7 @@ const props = defineProps({errors: Object, service: Object})
 
 const form = useForm(props.service);
 </script>
+
 <template>
     <app-layout :title="'service: ' + service.name">
         <template #header>

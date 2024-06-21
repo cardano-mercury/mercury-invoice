@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - staging
-      - webhooks-management
 
 jobs:
   deploy-staging:

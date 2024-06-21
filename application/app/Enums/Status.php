@@ -12,4 +12,9 @@ enum Status: string
     case SUCCESS = 'Success';
     case ERROR = 'Error';
     case TIMED_OUT = 'Timed Out';
+
+    case DRAFT = 'Draft';
+    case PUBLISHED = 'Published';
+    case PAID = 'Paid';
+    case VOIDED = 'Voided';
 }

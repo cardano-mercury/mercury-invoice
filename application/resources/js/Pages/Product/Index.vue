@@ -26,7 +26,10 @@ function doDelete(product) {
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="p-6 lg:p-8 bg-white border-b border-gray-200">
-                        <div class="text-right">
+                        <div class="flex gap-6 justify-end mb-6">
+                            <a target="_blank" :href="route('products.export')" class="btn btn-gray">
+                                Export Products
+                            </a>
                             <Link :href="route('products.create')">
                                 <button class="btn btn-blue">
                                     Create New

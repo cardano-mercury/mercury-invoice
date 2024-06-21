@@ -6,11 +6,17 @@ use Throwable;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\Service;
+use App\Traits\HashIdTrait;
+use App\Traits\JsonDownloadTrait;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\Service\StoreServiceRequest;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class ServiceController extends Controller
 {
+    use HashIdTrait;
+    use JsonDownloadTrait;
+
     /**
      * Display a listing of the resource.
      */
@@ -86,5 +92,37 @@ class ServiceController extends Controller
         session()->flash('success', 'Service record deleted');
 
         return to_route('services.index');
+    }
+
+    /**
+     * @throws BindingResolutionException
+     */
+    public function export(): \Illuminate\Http\Response
+    {
+        $services = Service::query()
+            ->where('user_id', auth()->id())
+            ->with(['categories'])
+            ->get()
+            ->map(function ($service) {
+                return [
+                    'id' => $this->encodeId($service->id),
+                    'name' => $service->name,
+                    'description' => $service->description,
+                    'unit_price' => $service->unit_price,
+                    'supplier' => $service->supplier,
+                    'categories' => $service->categories->map(function($category) {
+                        return [
+                            'id' => $this->encodeId($category->id),
+                            'name' => $category->name,
+                        ];
+                    }),
+                ];
+            })
+            ->toArray();
+
+        return $this->downloadJson(
+            $services,
+            'services-export',
+        );
     }
 }
