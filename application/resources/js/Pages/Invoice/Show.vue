@@ -297,7 +297,10 @@ function voidInvoice(invoice) {
                                     <td class="p-1 border-b">{{ payment.payment_date }}</td>
                                     <td class="p-1 border-b">{{ payment.payment_method }}</td>
                                     <td class="p-1 border-b">{{ payment.payment_currency }}</td>
-                                    <td class="p-1 border-b">{{ payment.payment_amount }}</td>
+                                    <td class="p-1 border-b">
+                                        {{ payment.payment_method === 'Crypto' ? payment.crypto_asset_quantity : payment.payment_amount }}
+                                        <span v-if="payment.payment_method === 'Crypto'" class="text-gray-600"> <br>(1 {{ invoice.currency }} = {{ payment.crypto_asset_ada_price }} ₳DA)</span>
+                                    </td>
                                     <td class="p-1 border-b">{{ payment.payment_reference }}</td>
                                     <td class="p-1 border-b">{{ payment.status }}</td>
                                 </tr>
