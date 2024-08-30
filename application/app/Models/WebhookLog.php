@@ -13,9 +13,11 @@ class WebhookLog extends Model
     protected $fillable = [
         'webhook_id',
         'status',
+        'event_target_id',
         'event_name',
         'payload',
         'attempts',
+        'error',
     ];
 
     protected $appends = ['formatted_datetime'];

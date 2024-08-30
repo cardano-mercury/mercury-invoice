@@ -55,13 +55,25 @@ status:
 logs:
 	docker compose logs -f --tail=100
 
+.PHONY: logs-web
+logs-web:
+	docker compose logs -f --tail=100 cardanomercury-web
+
+.PHONY: logs-horizon
+logs-horizon:
+	docker compose logs -f --tail=100 cardanomercury-horizon
+
+.PHONY: logs-cron
+logs-cron:
+	docker compose logs -f --tail=100 cardanomercury-cron
+
 .PHONY: shell
 shell:
 	docker exec -it cardanomercury-web bash
 
 .PHONY: stats
 stats:
-	docker stats cardanomercury-web cardanomercury-mysql cardanomercury-redis
+	docker stats cardanomercury-web cardanomercury-mysql cardanomercury-redis cardanomercury-horizon cardanomercury-cron
 
 .PHONY: artisan
 artisan:

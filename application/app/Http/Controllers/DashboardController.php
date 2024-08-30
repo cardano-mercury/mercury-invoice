@@ -14,16 +14,4 @@ class DashboardController extends Controller
     {
         return Inertia::render('Dashboard');
     }
-
-    public function sendTestEmail(): RedirectResponse
-    {
-        $userEmail = auth()->user()->email;
-
-        Mail::to($userEmail)
-            ->send(new TestEmail());
-
-        session()->flash('success', sprintf('A test email has been sent to: %s', $userEmail));
-
-        return to_route('dashboard');
-    }
 }

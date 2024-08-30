@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Throwable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Jetstream\HasProfilePhoto;
 use Illuminate\Notifications\Notifiable;
@@ -13,10 +14,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens;
     use HasFactory;
-    use HasProfilePhoto;
     use Notifiable;
+    use HasApiTokens;
+    use HasProfilePhoto;
     use TwoFactorAuthenticatable;
 
     /**
@@ -28,6 +29,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'account_currency',
+        'business_name',
+        'business_terms',
+        'stripe_config',
     ];
 
     /**
@@ -40,6 +45,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
+        'stripe_config',
+        'crypto_config',
     ];
 
     /**
@@ -92,5 +99,32 @@ class User extends Authenticatable implements MustVerifyEmail
     public function servicesCategories(): HasMany
     {
         return $this->hasMany(ServiceCategory::class);
+    }
+
+    public function webhooks(): HasMany
+    {
+        return $this->hasMany(Webhook::class);
+    }
+
+    public function getStripeConfigAttribute(string|null $value): array|null
+    {
+        if ($value) {
+            try {
+                return json_decode($value, true, 512, JSON_THROW_ON_ERROR);
+            } catch (Throwable) { }
+        }
+
+        return null;
+    }
+
+    public function getCryptoConfigAttribute(string|null $value): array|null
+    {
+        if ($value) {
+            try {
+                return json_decode($value, true, 512, JSON_THROW_ON_ERROR);
+            } catch (Throwable) { }
+        }
+
+        return null;
     }
 }

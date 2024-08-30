@@ -20,6 +20,11 @@ return new class extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->string('account_currency', 3)->default('USD');
+            $table->string('business_name', 64);
+            $table->string('business_terms', 512)->nullable();
+            $table->json('stripe_config')->nullable();
+            $table->json('crypto_config')->nullable();
             $table->timestamps();
         });
 

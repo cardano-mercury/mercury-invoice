@@ -11,11 +11,12 @@ services:
     networks: [ cardanomercury ]
     volumes:
       - ../application:/home/cardanomercury/application
-    depends_on:
-      - cardanomercury-mysql
     ports:
       - "8100:80"   # Laravel
       - "8101:8101" # Vite
+    depends_on:
+      - cardanomercury-mysql
+      - cardanomercury-redis
     links:
       - cardanomercury-mysql
       - cardanomercury-redis
@@ -48,6 +49,44 @@ services:
     volumes:
       - redis:/data
     networks: [ cardanomercury ]
+
+  # Horizon Service
+  cardanomercury-horizon:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: cardanomercury-horizon
+    restart: unless-stopped
+    tty: true
+    networks: [ cardanomercury ]
+    volumes:
+      - ../application:/home/cardanomercury/application
+    depends_on:
+      - cardanomercury-mysql
+      - cardanomercury-redis
+    links:
+      - cardanomercury-mysql
+      - cardanomercury-redis
+    command: "php artisan horizon"
+
+  # Cron Service
+  cardanomercury-cron:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: cardanomercury-cron
+    restart: unless-stopped
+    tty: true
+    networks: [ cardanomercury ]
+    volumes:
+      - ../application:/home/cardanomercury/application
+    depends_on:
+      - cardanomercury-mysql
+      - cardanomercury-redis
+    links:
+      - cardanomercury-mysql
+      - cardanomercury-redis
+    command: "php artisan schedule:work"
 
 volumes:
   mysql:

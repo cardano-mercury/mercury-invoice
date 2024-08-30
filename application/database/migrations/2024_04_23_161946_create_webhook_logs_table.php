@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('webhook_id')->constrained('webhooks');
             $table->string('status', 16);
+            $table->unsignedBigInteger('event_target_id');
             $table->string('event_name', 32);
             $table->json('payload');
             $table->unsignedTinyInteger('attempts');
+            $table->json('error')->nullable();
             $table->timestamps();
         });
     }

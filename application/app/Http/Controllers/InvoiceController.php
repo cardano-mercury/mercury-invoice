@@ -96,6 +96,7 @@ class InvoiceController extends Controller
 
         $invoiceData = [
             'user_id' => auth()->id(),
+            'currency' => auth()->user()->account_currency,
             ...collect($request->validated())->only([
                 'customer_id',
                 'billing_address_id',
@@ -155,7 +156,9 @@ class InvoiceController extends Controller
                 $query->orderBy('id', 'desc');
             },
             'payments' => static function ($query) {
-                $query->orderBy('id', 'desc');
+                $query
+                    ->where('status', '<>', Status::DRAFT->value)
+                    ->orderBy('id', 'desc');
             },
         ]);
 

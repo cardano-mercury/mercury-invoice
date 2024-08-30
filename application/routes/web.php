@@ -3,12 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\InvoiceController;
-use App\Http\Controllers\WebhookController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SettingController;
+use App\Http\Controllers\WebhookController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\PublicInvoiceController;
+use App\Http\Controllers\Public\PublicWebhookHandler;
+use App\Http\Controllers\Public\PublicInvoiceController;
 
 /**
  * Public Routes
@@ -16,7 +18,15 @@ use App\Http\Controllers\PublicInvoiceController;
 
 Route::get('/', [IndexController::class, 'index']);
 
-Route::get('invoice/{encodedId}', [PublicInvoiceController::class, 'show'])->name('public.invoice.show');
+Route::prefix('invoice')->group(function () {
+    Route::get('{encodedId}', [PublicInvoiceController::class, 'view'])->name('public.invoice.view');
+    Route::get('{encodedId}/pay-via-stripe', [PublicInvoiceController::class, 'payViaStripe'])->name('public.invoice.pay-via-stripe');
+    Route::post('{encodedId}/pay-via-crypto', [PublicInvoiceController::class, 'payViaCrypto'])->name('public.invoice.pay-via-crypto');
+});
+
+Route::prefix('incoming-webhooks')->group(function () {
+    Route::post('stripe/{encodedUserId}', [PublicWebhookHandler::class, 'handleStripeWebhook'])->name('incoming-webhooks.stripe');
+});
 
 /**
  * Authenticated Routes
@@ -30,7 +40,6 @@ Route::middleware([
 
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/dashboard/send-test-email', [DashboardController::class, 'sendTestEmail'])->name('dashboard.send-test-email');
 
     // Customers
     Route::get('customers/export', [CustomerController::class, 'export'])->name('customers.export');
@@ -52,9 +61,18 @@ Route::middleware([
     Route::get('invoices/{invoice}/sendReminderNotifications', [InvoiceController::class, 'sendReminderNotifications'])->name('invoices.sendReminderNotifications');
     Route::get('invoices/{invoice}/manuallyMarkAsPaid', [InvoiceController::class, 'manuallyMarkAsPaid'])->name('invoices.manuallyMarkAsPaid');
 
+    // User Settings
+    Route::prefix('user/settings')->group(function () {
+        Route::get('/', [SettingController::class, 'index'])->name('user.settings');
+        Route::post('save-business-info', [SettingController::class, 'saveBusinessInfo'])->name('user.settings.save-business-info');
+        Route::post('save-stripe-config', [SettingController::class, 'saveStripeConfig'])->name('user.settings.save-stripe-config');
+        Route::post('save-crypto-config', [SettingController::class, 'saveCryptoConfig'])->name('user.settings.save-crypto-config');
+    });
+
     // User Webhooks
     Route::resource('user/webhooks', WebhookController::class)->except(['create', 'show', 'edit']);
     Route::get('user/webhooks/{webhook}/logs', [WebhookController::class, 'logs'])->name('webhooks.logs');
     Route::get('user/webhooks/{webhook}/test', [WebhookController::class, 'test'])->name('webhooks.test');
 
 });
+

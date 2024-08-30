@@ -15,6 +15,7 @@ enum Status: string
 
     case DRAFT = 'Draft';
     case PUBLISHED = 'Published';
+    case PAYMENT_PROCESSING = 'Payment Processing';
     case PAID = 'Paid';
     case VOIDED = 'Voided';
 }

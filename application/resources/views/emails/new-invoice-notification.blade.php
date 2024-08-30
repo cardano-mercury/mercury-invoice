@@ -11,7 +11,7 @@ which is due on <strong>{{ $dueDate }}</strong> ({{ $dueDateDiff }}).
 </x-mail::button>
 
 @component('mail::table')
-    | Item      | Summary         |
+    | Items      | Amounts ({{ $currency }}) |
     | :-------: | :-------------: |
     | Subtotal  | {{ $subTotal }} |
     | Total Tax | {{ $totalTax }} |

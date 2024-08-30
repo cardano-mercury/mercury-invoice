@@ -150,6 +150,10 @@ const logout = () => {
                                             Manage Account
                                         </div>
 
+                                        <DropdownLink :href="route('user.settings')">
+                                            Settings
+                                        </DropdownLink>
+
                                         <DropdownLink :href="route('profile.show')">
                                             Profile
                                         </DropdownLink>
@@ -242,6 +246,10 @@ const logout = () => {
                         </div>
 
                         <div class="mt-3 space-y-1">
+                            <ResponsiveNavLink :href="route('user.settings')" :active="route().current('user.settings')">
+                                Settings
+                            </ResponsiveNavLink>
+
                             <ResponsiveNavLink :href="route('profile.show')" :active="route().current('profile.show')">
                                 Profile
                             </ResponsiveNavLink>
@@ -394,18 +402,22 @@ table {
 }
 
 .status-Draft {
-    @apply font-normal me-2 px-2.5 py-0.5 rounded bg-blue-100 text-blue-700
+    @apply font-normal me-2 px-2 py-1 rounded bg-blue-100 text-blue-700
 }
 
 .status-Published {
-    @apply font-normal me-2 px-2.5 py-0.5 rounded bg-violet-100 text-violet-700
+    @apply font-normal me-2 px-2 py-1 rounded bg-violet-100 text-violet-700
+}
+
+.status-Payment_Processing {
+    @apply font-normal me-2 px-2 py-1 rounded bg-amber-100 text-amber-700
 }
 
 .status-Paid {
-    @apply font-normal me-2 px-2.5 py-0.5 rounded bg-green-100 text-green-700
+    @apply font-normal me-2 px-2 py-1 rounded bg-green-100 text-green-700
 }
 
 .status-Voided {
-    @apply font-normal me-2 px-2.5 py-0.5 rounded bg-red-100 text-red-700
+    @apply font-normal me-2 px-2 py-1 rounded bg-red-100 text-red-700
 }
 </style>
