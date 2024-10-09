@@ -322,7 +322,7 @@ const calculateGrandTotal = () => {
                                         <th class="text-left" style="width: 125px;">SKU</th>
                                         <th class="text-left">Description</th>
                                         <th class="text-left" style="width: 125px;">Quantity</th>
-                                        <th class="text-left" style="width: 125px;">Unit Price</th>
+                                        <th class="text-left" style="width: 125px;">Unit Price ({{ $page.props.auth.user.account_currency }})</th>
                                         <th class="text-left" style="width: 125px;">Tax Rate (%)</th>
                                         <th class="text-left" style="width: 50px;"></th>
                                     </tr>
@@ -424,9 +424,9 @@ const calculateGrandTotal = () => {
                                         </div>
                                     </td>
                                     <td class="text-right">
-                                        <p>Subtotal <strong>{{  calculateSubTotal().toFixed(2) }}</strong></p>
-                                        <p>Total Tax <strong>{{ calculateTotalTax().toFixed(2) }}</strong></p>
-                                        <p>Total Due <strong>{{ calculateGrandTotal().toFixed(2) }}</strong></p>
+                                        <p>Subtotal <strong>{{  calculateSubTotal().toFixed(2) }} {{ $page.props.auth.user.account_currency }}</strong></p>
+                                        <p>Total Tax <strong>{{ calculateTotalTax().toFixed(2) }} {{ $page.props.auth.user.account_currency }}</strong></p>
+                                        <p>Total Due <strong>{{ calculateGrandTotal().toFixed(2) }} {{ $page.props.auth.user.account_currency }}</strong></p>
                                     </td>
                                 </tr>
                             </table>

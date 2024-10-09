@@ -33,9 +33,12 @@ class UserFactory extends Factory
             'password' => static::$password ??= Hash::make('password'),
             'two_factor_secret' => null,
             'two_factor_recovery_codes' => null,
-            'remember_token' => Str::random(10),
+            'remember_token' => '0Uz1Mm00F9',
             'profile_photo_path' => null,
             'current_team_id' => null,
+            'account_currency' => 'USD',
+            'business_name' => 'My Company Name',
+            'business_terms' => fake()->sentence(),
         ];
     }
 

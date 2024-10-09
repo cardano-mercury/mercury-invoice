@@ -1,6 +1,5 @@
 <script setup>
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import {Link} from "@inertiajs/vue3";
 </script>
 
 <template>
@@ -9,16 +8,8 @@ import {Link} from "@inertiajs/vue3";
             <ApplicationLogo class="block h-12 w-auto" />
 
             <h1 class="mt-8 text-2xl font-medium text-gray-900">
-                Welcome to Mercury: Invoice!
+                Welcome to Cardano Mercury: <strong>Invoice</strong>
             </h1>
-
-            <div class="mt-3">
-                <Link :href="route('dashboard.send-test-email')">
-                    <button class="btn btn-blue">
-                        Send Test Email
-                    </button>
-                </Link>
-            </div>
         </div>
 
         <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8">

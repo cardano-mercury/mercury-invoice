@@ -26,6 +26,9 @@
 * `tinker` Starts a new php artisan tinker session
 * `status` View the status of all running containers
 * `logs` View the logs out of all running containers
+* `logs-web` View the logs out of `cardanomercury-web` container only
+* `logs-horizon` View the logs out of `cardanomercury-horizon` container only
+* `logs-cron` View the logs out of `cardanomercury-cron` container only
 * `shell` Drop into an interactive shell inside _cardanomercury-web_ container
 * `stats` View the resource usage of all running containers
 * `artisan` Execute Laravel `artisan` command inside _cardanomercury-web_ container (e.g. usage: `make artisan COMMAND="make:model MyModel -m"`)
@@ -37,4 +40,9 @@ Port: 33100
 User: cardanomercury
 Database: cardanomercury
 Password: 123456
+```
+
+### Local Queue Dashboard
+```
+Visit: http://localhost:8100/horizon
 ```

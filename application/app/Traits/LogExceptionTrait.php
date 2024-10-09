@@ -35,7 +35,7 @@ trait LogExceptionTrait
         }
     }
 
-    private function parsePreviousExceptions(Throwable|null $exception = null): array|null
+    function parsePreviousExceptions(Throwable|null $exception = null): array|null
     {
         $previous = null;
         if ($exception) {

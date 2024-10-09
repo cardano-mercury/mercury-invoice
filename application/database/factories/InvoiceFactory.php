@@ -22,6 +22,7 @@ class InvoiceFactory extends Factory
             'customer_id' => 0,
             'billing_address_id' => 0,
             'shipping_address_id' => 0,
+            'currency' => 'USD',
             'customer_reference' => 'INV-' . fake()->unique()->numberBetween(10000000, 99999999),
             'issue_date' => now()->toDateString(),
             'due_date' => now()->addDays(30)->toDateString(),

@@ -45,7 +45,7 @@ function voidInvoice(invoice) {
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight flex justify-between">
                 <span>View Invoice {{ invoice.invoice_reference }}</span>
-                <span :class="`font-medium status-${invoice.status}`">{{ invoice.status }}</span>
+                <span :class="`font-medium status-${invoice.status.replace(' ', '_')}`">{{ invoice.status }}</span>
             </h2>
         </template>
         <div class="py-12">
@@ -174,7 +174,7 @@ function voidInvoice(invoice) {
                                     <th class="text-left" style="width: 125px;">SKU</th>
                                     <th class="text-left">Description</th>
                                     <th class="text-left" style="width: 125px;">Quantity</th>
-                                    <th class="text-left" style="width: 125px;">Unit Price</th>
+                                    <th class="text-left" style="width: 125px;">Unit Price ({{ invoice.currency }})</th>
                                     <th class="text-left" style="width: 125px;">Tax Rate (%)</th>
                                 </tr>
                             </thead>
@@ -259,9 +259,9 @@ function voidInvoice(invoice) {
                                     </div>
                                 </td>
                                 <td class="text-right">
-                                    <p>Subtotal <strong>{{  calculateSubTotal().toFixed(2) }}</strong></p>
-                                    <p>Total Tax <strong>{{ calculateTotalTax().toFixed(2) }}</strong></p>
-                                    <p>Total Due <strong>{{ calculateGrandTotal().toFixed(2) }}</strong></p>
+                                    <p>Subtotal <strong>{{  calculateSubTotal().toFixed(2) }} {{ invoice.currency }}</strong></p>
+                                    <p>Total Tax <strong>{{ calculateTotalTax().toFixed(2) }} {{ invoice.currency }}</strong></p>
+                                    <p>Total Due <strong>{{ calculateGrandTotal().toFixed(2) }} {{ invoice.currency }}</strong></p>
                                 </td>
                             </tr>
                         </table>
@@ -297,7 +297,10 @@ function voidInvoice(invoice) {
                                     <td class="p-1 border-b">{{ payment.payment_date }}</td>
                                     <td class="p-1 border-b">{{ payment.payment_method }}</td>
                                     <td class="p-1 border-b">{{ payment.payment_currency }}</td>
-                                    <td class="p-1 border-b">{{ payment.payment_amount }}</td>
+                                    <td class="p-1 border-b">
+                                        {{ payment.payment_method === 'Crypto' ? payment.crypto_asset_quantity : payment.payment_amount }}
+                                        <span v-if="payment.payment_method === 'Crypto'" class="text-gray-600"> <br>(1 {{ invoice.currency }} = {{ payment.crypto_asset_ada_price }} ₳DA)</span>
+                                    </td>
                                     <td class="p-1 border-b">{{ payment.payment_reference }}</td>
                                     <td class="p-1 border-b">{{ payment.status }}</td>
                                 </tr>

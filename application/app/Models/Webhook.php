@@ -26,6 +26,10 @@ class Webhook extends Model
         'retry_seconds',
     ];
 
+    protected $hidden = [
+        'hmac_secret',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

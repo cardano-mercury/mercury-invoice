@@ -46,9 +46,9 @@ defineProps({
                                     <td>{{ invoice.customer.name }}</td>
                                     <td>{{ invoice.issue_date }}</td>
                                     <td>{{ invoice.due_date }} <span v-if="invoice.is_overdue" class="sm-badge-red">Late</span> </td>
-                                    <td>{{ parseFloat(invoice.total).toFixed(2) }}</td>
+                                    <td>{{ parseFloat(invoice.total).toFixed(2) }} {{ invoice.currency }}</td>
                                     <td>
-                                        <span :class="`status-${invoice.status}`">
+                                        <span :class="`status-${invoice.status.replace(' ', '_')}`">
                                             {{ invoice.status }}
                                         </span>
                                     </td>

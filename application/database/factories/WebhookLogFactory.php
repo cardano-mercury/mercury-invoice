@@ -23,7 +23,8 @@ class WebhookLogFactory extends Factory
     {
         return [
             'webhook_id' => 0,
-            'status' => Status::random(),
+            'status' => Status::SUCCESS,
+            'event_target_id' => 1,
             'event_name' => WebhookEventTargetName::INVOICE_PAID,
             'payload' => json_encode([
                 'invoice_uuid' => fake()->uuid(),

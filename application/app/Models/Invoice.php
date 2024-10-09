@@ -17,14 +17,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Invoice extends Model
 {
     use HasFactory;
-    use ScopedRouteModelBindingTrait;
     use HashIdTrait;
+    use ScopedRouteModelBindingTrait;
 
     protected $fillable = [
         'user_id',
         'customer_id',
         'billing_address_id',
         'shipping_address_id',
+        'currency',
         'customer_reference',
         'issue_date',
         'due_date',

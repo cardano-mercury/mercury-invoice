@@ -103,7 +103,7 @@ class DatabaseSeeder extends Seeder
             WebhookEventTarget::factory()->create([
                 'webhook_id' => $webhook->id,
             ]);
-            WebhookLog::factory(random_int(5, 12))->create([
+            WebhookLog::factory()->create([
                 'webhook_id' => $webhook->id,
             ]);
 
@@ -172,9 +172,6 @@ class DatabaseSeeder extends Seeder
                 'status' => Status::PAID,
             ]);
 
-            /**
-             * Fake Unpaid Invoice #2
-             */
         }
     }
 
