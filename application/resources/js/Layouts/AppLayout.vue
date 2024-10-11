@@ -160,17 +160,17 @@ const logout = () => {
         </v-navigation-drawer>
         <v-main>
             <v-container fluid>
-                <header v-if="$slots.header">
+                <header v-if="$slots.header" class="mb-8">
                     <slot name="header"/>
                 </header>
                 <Banner/>
-                <v-alert type="success" v-if="$page.props.flash.success">
+                <v-alert type="success" v-if="$page.props.flash.success" class="mb-4">
                     {{ $page.props.flash.success }}
                 </v-alert>
-                <v-alert type="info" v-if="$page.props.flash.info">
+                <v-alert type="info" v-if="$page.props.flash.info" class="mb-4">
                     {{ $page.props.flash.info }}
                 </v-alert>
-                <v-alert type="error" v-if="$page.props.flash.error">
+                <v-alert type="error" v-if="$page.props.flash.error" class="mb-4">
                     {{ $page.props.flash.error }}
                 </v-alert>
                 <main>
