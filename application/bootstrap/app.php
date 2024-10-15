@@ -1,8 +1,13 @@
 <?php
 
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -24,5 +29,41 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(static function (Exceptions $exceptions) {
-        //
+
+        // Handle API Not Found Http Exception
+        $exceptions->render(function (NotFoundHttpException $e, Request $request) {
+            if ($request->is('api/*')) {
+                if ($e->getPrevious() instanceof ModelNotFoundException) {
+                    $message = 'Record not found';
+                } else {
+                    $message = sprintf('Route %s Not found', $request->url());
+                }
+                return response()->json(compact('message'), 404);
+            }
+        });
+
+        // Handle API Authentication Exception
+        $exceptions->render(function (AuthenticationException $e, Request $request) {
+            if ($request->is('api/*')) {
+                return response()->json(['message' => 'Unauthorized'], 401);
+            }
+        });
+
+        // Handle API Unhandled Exception
+        $exceptions->render(function (Throwable $e, Request $request) {
+            if ($request->is('api/*')) {
+                Log::error(sprintf('Unhandled API Exception: %s %s', strtoupper($request->method()), $request->url()), [
+                    'message' => $e->getMessage(),
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'previous' => $e->getPrevious() ? [
+                        'message' => $e->getPrevious()->getMessage(),
+                        'file' => $e->getPrevious()->getFile(),
+                        'line' => $e->getPrevious()->getLine(),
+                    ] : null,
+                ]);
+                return response()->json(['message' => 'Internal server error'], 500);
+            }
+        });
+
     })->create();

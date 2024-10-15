@@ -1,0 +1,203 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost:8100"
+        }
+    ],
+    "info": {
+        "name": "Cardano Mercury: Invoice",
+        "_postman_id": "8d596618-f86d-4904-b8a1-50f9b313ef35",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Customers",
+            "description": "Customer Management API",
+            "item": [
+                {
+                    "name": "List Customers",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/customers",
+                            "query": [
+                                {
+                                    "key": "search",
+                                    "value": "John+Doe",
+                                    "description": "Search for customers by name or tax number",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "25",
+                                    "description": "Number of results per page (Min 25, Max 100)",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "1",
+                                    "description": "Page number",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/customers?search=John+Doe&per_page=25&page=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":\"QLqBOqWxPA\",\"name\":\"Lou Ernser\",\"tax_number\":\"01JA96Y6TWCXVD7K2TKF8ABVEN\",\"tax_rate\":17.5,\"created_at\":\"2024-10-15 23:06:48\",\"updated_at\":\"2024-10-15 23:06:48\"},{\"id\":\"QLqBOqWxPA\",\"name\":\"Desiree Donnelly III\",\"tax_number\":\"01JA96Y6TXAWTREVMTEVFTZ2NT\",\"tax_rate\":17.5,\"created_at\":\"2024-10-15 23:06:48\",\"updated_at\":\"2024-10-15 23:06:48\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create Customer",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/customers",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/customers"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"John Doe\",\"tax_number\":\"ABCD-1234\",\"tax_rate\":12.5}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":\"QLqBOqWxPA\",\"name\":\"Mr. Orin Prohaska MD\",\"tax_number\":\"01JA96Y6V6KTBHPKPT5269B166\",\"tax_rate\":17.5,\"created_at\":\"2024-10-15 23:06:48\",\"updated_at\":\"2024-10-15 23:06:48\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Customer",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/customers\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the customer."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":\"QLqBOqWxPA\",\"name\":\"Alexys Treutel\",\"tax_number\":\"01JA96Y6VBG5RB8EV42TQKQ2CY\",\"tax_rate\":17.5,\"created_at\":\"2024-10-15 23:06:48\",\"updated_at\":\"2024-10-15 23:06:48\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Customer",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/customers\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the customer."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"John Doe\",\"tax_number\":\"ABCD-1234\",\"tax_rate\":12.5}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":\"QLqBOqWxPA\",\"name\":\"Reggie Walsh\",\"tax_number\":\"01JA96Y6VGVMC2ZC20QS1JM25V\",\"tax_rate\":17.5,\"created_at\":\"2024-10-15 23:06:48\",\"updated_at\":\"2024-10-15 23:06:48\"}}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "key",
+                "type": "string"
+            }
+        ]
+    }
+}

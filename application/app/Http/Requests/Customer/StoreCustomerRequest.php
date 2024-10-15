@@ -29,17 +29,35 @@ class StoreCustomerRequest extends FormRequest
         return [
             'name' => [
                 'required',
+                'string',
                 'min:3',
                 'max:64',
             ],
             'tax_number' => [
                 'nullable',
+                'string',
+                'min:3',
                 'max:64',
             ],
             'tax_rate' => [
                 'nullable',
-                'min:0',
-                'max:100.00',
+                'numeric',
+                'between:0,100',
+            ],
+        ];
+    }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'example' => 'John Doe',
+            ],
+            'tax_number' => [
+                'example' => 'ABCD-1234',
+            ],
+            'tax_rate' => [
+                'example' => 12.5,
             ],
         ];
     }

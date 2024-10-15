@@ -43,6 +43,10 @@ db-migrate:
 db-refresh:
 	docker exec -it cardanomercury-web bash -c "php artisan migrate:fresh --seed"
 
+.PHONY: api-docs
+api-docs:
+	docker exec -it cardanomercury-web bash -c "php artisan scribe:generate"
+
 .PHONY: tinker
 tinker:
 	docker exec -it cardanomercury-web bash -c "php artisan tinker"

@@ -1,0 +1,350 @@
+openapi: 3.0.3
+info:
+  title: 'Cardano Mercury: Invoice'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8100'
+paths:
+  /api/v1/customers:
+    get:
+      summary: 'List Customers'
+      operationId: listCustomers
+      description: ''
+      parameters:
+        -
+          in: query
+          name: search
+          description: 'Search for customers by name or tax number'
+          example: 'John Doe'
+          required: false
+          schema:
+            type: string
+            description: 'Search for customers by name or tax number'
+            example: 'John Doe'
+        -
+          in: query
+          name: per_page
+          description: 'Number of results per page (Min 25, Max 100)'
+          example: 25
+          required: false
+          schema:
+            type: integer
+            description: 'Number of results per page (Min 25, Max 100)'
+            example: 25
+        -
+          in: query
+          name: page
+          description: 'Page number'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: QLqBOqWxPA
+                      name: 'Lou Ernser'
+                      tax_number: 01JA96Y6TWCXVD7K2TKF8ABVEN
+                      tax_rate: 17.5
+                      created_at: '2024-10-15 23:06:48'
+                      updated_at: '2024-10-15 23:06:48'
+                    -
+                      id: QLqBOqWxPA
+                      name: 'Desiree Donnelly III'
+                      tax_number: 01JA96Y6TXAWTREVMTEVFTZ2NT
+                      tax_rate: 17.5
+                      created_at: '2024-10-15 23:06:48'
+                      updated_at: '2024-10-15 23:06:48'
+                  links:
+                    first: '/?page=1'
+                    last: null
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    path: /
+                    per_page: 25
+                    to: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: QLqBOqWxPA
+                        name: 'Lou Ernser'
+                        tax_number: 01JA96Y6TWCXVD7K2TKF8ABVEN
+                        tax_rate: 17.5
+                        created_at: '2024-10-15 23:06:48'
+                        updated_at: '2024-10-15 23:06:48'
+                      -
+                        id: QLqBOqWxPA
+                        name: 'Desiree Donnelly III'
+                        tax_number: 01JA96Y6TXAWTREVMTEVFTZ2NT
+                        tax_rate: 17.5
+                        created_at: '2024-10-15 23:06:48'
+                        updated_at: '2024-10-15 23:06:48'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: QLqBOqWxPA
+                        name:
+                          type: string
+                          example: 'Lou Ernser'
+                        tax_number:
+                          type: string
+                          example: 01JA96Y6TWCXVD7K2TKF8ABVEN
+                        tax_rate:
+                          type: number
+                          example: 17.5
+                        created_at:
+                          type: string
+                          example: '2024-10-15 23:06:48'
+                        updated_at:
+                          type: string
+                          example: '2024-10-15 23:06:48'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: '/?page=1'
+                      last:
+                        type: string
+                        example: null
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      path:
+                        type: string
+                        example: /
+                      per_page:
+                        type: integer
+                        example: 25
+                      to:
+                        type: integer
+                        example: 2
+      tags:
+        - Customers
+    post:
+      summary: 'Create Customer'
+      operationId: createCustomer
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: QLqBOqWxPA
+                    name: 'Mr. Orin Prohaska MD'
+                    tax_number: 01JA96Y6V6KTBHPKPT5269B166
+                    tax_rate: 17.5
+                    created_at: '2024-10-15 23:06:48'
+                    updated_at: '2024-10-15 23:06:48'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: QLqBOqWxPA
+                      name:
+                        type: string
+                        example: 'Mr. Orin Prohaska MD'
+                      tax_number:
+                        type: string
+                        example: 01JA96Y6V6KTBHPKPT5269B166
+                      tax_rate:
+                        type: number
+                        example: 17.5
+                      created_at:
+                        type: string
+                        example: '2024-10-15 23:06:48'
+                      updated_at:
+                        type: string
+                        example: '2024-10-15 23:06:48'
+      tags:
+        - Customers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: 'John Doe'
+                tax_number:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: ABCD-1234
+                tax_rate:
+                  type: number
+                  description: 'Must be between 0 and 100.'
+                  example: 12.5
+              required:
+                - name
+  '/api/v1/customers/{id}':
+    get:
+      summary: 'Get Customer'
+      operationId: getCustomer
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: QLqBOqWxPA
+                    name: 'Alexys Treutel'
+                    tax_number: 01JA96Y6VBG5RB8EV42TQKQ2CY
+                    tax_rate: 17.5
+                    created_at: '2024-10-15 23:06:48'
+                    updated_at: '2024-10-15 23:06:48'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: QLqBOqWxPA
+                      name:
+                        type: string
+                        example: 'Alexys Treutel'
+                      tax_number:
+                        type: string
+                        example: 01JA96Y6VBG5RB8EV42TQKQ2CY
+                      tax_rate:
+                        type: number
+                        example: 17.5
+                      created_at:
+                        type: string
+                        example: '2024-10-15 23:06:48'
+                      updated_at:
+                        type: string
+                        example: '2024-10-15 23:06:48'
+      tags:
+        - Customers
+    put:
+      summary: 'Update Customer'
+      operationId: updateCustomer
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: QLqBOqWxPA
+                    name: 'Reggie Walsh'
+                    tax_number: 01JA96Y6VGVMC2ZC20QS1JM25V
+                    tax_rate: 17.5
+                    created_at: '2024-10-15 23:06:48'
+                    updated_at: '2024-10-15 23:06:48'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: QLqBOqWxPA
+                      name:
+                        type: string
+                        example: 'Reggie Walsh'
+                      tax_number:
+                        type: string
+                        example: 01JA96Y6VGVMC2ZC20QS1JM25V
+                      tax_rate:
+                        type: number
+                        example: 17.5
+                      created_at:
+                        type: string
+                        example: '2024-10-15 23:06:48'
+                      updated_at:
+                        type: string
+                        example: '2024-10-15 23:06:48'
+      tags:
+        - Customers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: 'John Doe'
+                tax_number:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: ABCD-1234
+                tax_rate:
+                  type: number
+                  description: 'Must be between 0 and 100.'
+                  example: 12.5
+              required:
+                - name
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the customer.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Customers
+    description: 'Customer Management API'
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'You can generate your token by logging in and clicking your name, and then <b>API Tokens</b>.'
+security:
+  -
+    default: []

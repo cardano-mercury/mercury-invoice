@@ -22,7 +22,9 @@ class CustomerFactory extends Factory
             'user_id' => 0,
             'name' => fake()->name(),
             'tax_number' => Str::ulid(),
-            'tax_rate' => 20.00,
+            'tax_rate' => 17.50,
+            'created_at' => now()->toDateTimeString(),
+            'updated_at' => now()->toDateTimeString(),
         ];
     }
 }
