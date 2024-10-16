@@ -50,17 +50,17 @@ class JetstreamServiceProvider extends ServiceProvider
             'Customers:Create',
             'Customers:Update',
             // Customer Emails
-            'CustomersEmails:Read',
-            'CustomersEmails:Create',
-            'CustomersEmails:Update',
+            'CustomerEmails:Read',
+            'CustomerEmails:Create',
+            'CustomerEmails:Update',
             // Customer Phones
-            'CustomersPhones:Read',
-            'CustomersPhones:Create',
-            'CustomersPhones:Update',
+            'CustomerPhones:Read',
+            'CustomerPhones:Create',
+            'CustomerPhones:Update',
             // Customer Addresses
-            'CustomersAddresses:Read',
-            'CustomersAddresses:Create',
-            'CustomersAddresses:Update',
+            'CustomerAddresses:Read',
+            'CustomerAddresses:Create',
+            'CustomerAddresses:Update',
             // Customer Categories
             'CustomerCategories:Read',
             'CustomerCategories:Create',

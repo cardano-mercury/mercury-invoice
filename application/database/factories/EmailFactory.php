@@ -22,6 +22,8 @@ class EmailFactory extends Factory
             'name' => fake()->name(),
             'address' => fake()->unique()->safeEmail(),
             'is_default' => true,
+            'created_at' => now()->toDateTimeString(),
+            'updated_at' => now()->toDateTimeString(),
         ];
     }
 }

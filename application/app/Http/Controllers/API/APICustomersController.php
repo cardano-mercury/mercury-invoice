@@ -34,7 +34,7 @@ class APICustomersController extends Controller
 
         $customers = Customer::query()
             ->where('user_id', $request->user()->id)
-            ->when($request->filled('search'),
+            ->when($request->search,
                 static fn ($query, $search) => $query
                     ->where('name', 'like', '%' . $search . '%')
                     ->orWhere('tax_number', 'like', '%' . $search . '%')

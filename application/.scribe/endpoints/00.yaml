@@ -58,7 +58,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":"QLqBOqWxPA","name":"Lou Ernser","tax_number":"01JA96Y6TWCXVD7K2TKF8ABVEN","tax_rate":17.5,"created_at":"2024-10-15 23:06:48","updated_at":"2024-10-15 23:06:48"},{"id":"QLqBOqWxPA","name":"Desiree Donnelly III","tax_number":"01JA96Y6TXAWTREVMTEVFTZ2NT","tax_rate":17.5,"created_at":"2024-10-15 23:06:48","updated_at":"2024-10-15 23:06:48"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"customer_id":1,"name":"Laurie Wyman","tax_number":"01JA9FA49KTPKV7TK2ZC8HQNN3","tax_rate":17.5,"created_at":"2024-10-16 01:33:07","updated_at":"2024-10-16 01:33:07"},{"customer_id":1,"name":"Danyka Carroll","tax_number":"01JA9FA49M0ZBPWQNW3QSDFEFD","tax_rate":17.5,"created_at":"2024-10-16 01:33:07","updated_at":"2024-10-16 01:33:07"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: ''
         custom: []
@@ -66,7 +66,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6gDaPZad85fh461eVbvck3E'
+      - 'Bearer 365gEdVak4hDPfbe18av6Zc'
     controller: null
     method: null
     route: null
@@ -128,7 +128,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"QLqBOqWxPA","name":"Mr. Orin Prohaska MD","tax_number":"01JA96Y6V6KTBHPKPT5269B166","tax_rate":17.5,"created_at":"2024-10-15 23:06:48","updated_at":"2024-10-15 23:06:48"}}'
+        content: '{"data":{"customer_id":1,"name":"Nicolas Osinski DDS","tax_number":"01JA9FA49WZVPY41X82V1PQCV1","tax_rate":17.5,"created_at":"2024-10-16 01:33:07","updated_at":"2024-10-16 01:33:07"}}'
         headers: []
         description: ''
         custom: []
@@ -136,7 +136,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer feaVPEDv1g4a865hZkd6c3b'
+      - 'Bearer bVag6d51e4P86fc3EDkhvZa'
     controller: null
     method: null
     route: null
@@ -178,7 +178,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"QLqBOqWxPA","name":"Alexys Treutel","tax_number":"01JA96Y6VBG5RB8EV42TQKQ2CY","tax_rate":17.5,"created_at":"2024-10-15 23:06:48","updated_at":"2024-10-15 23:06:48"}}'
+        content: '{"data":{"customer_id":1,"name":"Lloyd Block MD","tax_number":"01JA9FA4A1MB46J9D9MZ2YBEPZ","tax_rate":17.5,"created_at":"2024-10-16 01:33:07","updated_at":"2024-10-16 01:33:07"}}'
         headers: []
         description: ''
         custom: []
@@ -186,7 +186,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gv6a54Pbd3heVfDEka61cZ8'
+      - 'Bearer hdEfvD36568gaPak1beZ4cV'
     controller: null
     method: null
     route: null
@@ -259,7 +259,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"QLqBOqWxPA","name":"Reggie Walsh","tax_number":"01JA96Y6VGVMC2ZC20QS1JM25V","tax_rate":17.5,"created_at":"2024-10-15 23:06:48","updated_at":"2024-10-15 23:06:48"}}'
+        content: '{"data":{"customer_id":1,"name":"Brielle Jakubowski","tax_number":"01JA9FA4A68MS7T0J40PCZ49XH","tax_rate":17.5,"created_at":"2024-10-16 01:33:07","updated_at":"2024-10-16 01:33:07"}}'
         headers: []
         description: ''
         custom: []
@@ -267,7 +267,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V1ae6v8fcP5DdZk346habgE'
+      - 'Bearer 3eEcdPV51gv4fa6bkhZaD68'
     controller: null
     method: null
     route: null

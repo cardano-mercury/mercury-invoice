@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Product;
+namespace App\Http\Requests\Customer;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreProductRequest extends FormRequest
+class StoreCustomerEmailRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +15,7 @@ class StoreProductRequest extends FormRequest
             // Anyone can create new record
             'POST' => true,
             // Updating must match record owner
-            'PUT', 'PATCH' => $this->product->user_id === auth()->id(),
+            'PUT', 'PATCH' => $this->customer->user_id === auth()->id(),
             // Unauthorized for everything else
             default => false,
         };
@@ -29,27 +29,31 @@ class StoreProductRequest extends FormRequest
         return [
             'name' => [
                 'required',
+                'string',
                 'min:3',
                 'max:64',
             ],
-            'sku' => [
-                'nullable',
-                'max:32',
-            ],
-            'description' => [
-                'nullable',
-            ],
-            'unit_type' => [
-                'nullable',
-                'max:16',
-            ],
-            'unit_price' => [
+            'address' => [
                 'required',
-                'min:0',
+                'email',
+                'min:3',
+                'max:256',
             ],
-            'supplier' => [
+            'is_default' => [
                 'nullable',
-                'max:64',
+                'boolean',
+            ],
+        ];
+    }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'example' => 'John Doe',
+            ],
+            'address' => [
+                'example' => 'john.doe@example.com',
             ],
         ];
     }

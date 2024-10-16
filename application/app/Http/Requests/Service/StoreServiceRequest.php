@@ -15,7 +15,7 @@ class StoreServiceRequest extends FormRequest
             // Anyone can create new record
             'POST' => true,
             // Updating must match record owner
-            'PUT' => $this->service->user_id === auth()->id(),
+            'PUT', 'PATCH' => $this->service->user_id === auth()->id(),
             // Unauthorized for everything else
             default => false,
         };
