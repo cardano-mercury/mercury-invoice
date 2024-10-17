@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Cardano Mercury: Invoice",
-        "_postman_id": "bacac39d-8527-4316-b6a9-25b9651dbaad",
+        "_postman_id": "cb5a425d-6721-4071-ba1a-31c4ff616f38",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -65,8 +65,32 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_id\":1,\"name\":\"Devyn Gulgowski\",\"tax_number\":\"01JABYPP8YJBAYMFVVNTCG056P\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"},{\"customer_id\":1,\"name\":\"Layla Dare\",\"tax_number\":\"01JABYPP8ZW0BE4WAQVNV79X97\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"customer_id\":1,\"name\":\"Roman Streich\",\"tax_number\":\"01JAC01XKMHKR17KKTGDCQ6HNJ\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"},{\"customer_id\":1,\"name\":\"Dr. Katelynn Cormier II\",\"tax_number\":\"01JAC01XKNB2ED8NWZ7PBDDYQD\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
                         }
                     ]
                 },
@@ -100,8 +124,38 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Ms. Astrid Boyle\",\"tax_number\":\"01JABYPP97HWBKVQ3XEK963989\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"}}",
+                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Mireya Windler\",\"tax_number\":\"01JAC01XKYF12H6RZ4607C8GQ4\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
                             "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"type\": [\n            \"The selected type is invalid.\"\n        ],\n        \"name\": [\n            \"The name field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
+                            "name": "Validation Failed"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
                         }
                     ]
                 },
@@ -140,8 +194,32 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Jerald Dickinson\",\"tax_number\":\"01JABYPP9CH5TXMM1ZPZB7952J\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"}}",
+                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Rachelle Schowalter PhD\",\"tax_number\":\"01JAC01XM4F8DFPAK2D8EZQRKG\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
                             "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
                         }
                     ]
                 },
@@ -183,8 +261,38 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Jordon Murphy\",\"tax_number\":\"01JABYPP9KCW3BWDJ165W9P47F\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"}}",
+                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Dr. Michel Metz\",\"tax_number\":\"01JAC01XM90NABCXSMNJTQKW58\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
                             "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"type\": [\n            \"The selected type is invalid.\"\n        ],\n        \"name\": [\n            \"The name field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
+                            "name": "Validation Failed"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
                         }
                     ]
                 }
@@ -248,7 +356,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_email_id\":1,\"name\":\"Jeff Volkman IV\",\"address\":\"pagac.steve@example.net\",\"is_default\":true,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"},{\"customer_email_id\":1,\"name\":\"Lukas Wiza\",\"address\":\"uwitting@example.com\",\"is_default\":true,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"customer_email_id\":1,\"name\":\"Cortney D'Amore\",\"address\":\"junius79@example.com\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"},{\"customer_email_id\":1,\"name\":\"Alycia Emmerich\",\"address\":\"ansel.jenkins@example.org\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": ""
                         }
                     ]
@@ -291,7 +399,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Caroline Bode\",\"address\":\"blynch@example.org\",\"is_default\":true,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"}}",
+                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Sincere Brekke\",\"address\":\"cayla95@example.net\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
                             "name": ""
                         }
                     ]
@@ -337,7 +445,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Herman Davis\",\"address\":\"estrella.heller@example.org\",\"is_default\":true,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"}}",
+                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Wilbert Johnson\",\"address\":\"nikolaus.abbigail@example.com\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
                             "name": ""
                         }
                     ]
@@ -386,7 +494,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Lester Hane\",\"address\":\"glover.unique@example.org\",\"is_default\":true,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"}}",
+                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Prof. Wallace Ryan\",\"address\":\"ppaucek@example.org\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
                             "name": ""
                         }
                     ]
@@ -406,7 +514,7 @@
                             "query": [
                                 {
                                     "key": "type",
-                                    "value": "Office",
+                                    "value": "Mobile",
                                     "description": "",
                                     "disabled": false
                                 },
@@ -429,7 +537,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/phones?type=Office&search=0123456789&per_page=25&page=1",
+                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/phones?type=Mobile&search=0123456789&per_page=25&page=1",
                             "variable": [
                                 {
                                     "id": "customer_id",
@@ -457,7 +565,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_phone_id\":1,\"type\":\"Office\",\"name\":\"Laverna Lakin\",\"number\":\"818-847-0251\",\"is_default\":true,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"},{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Prof. Vilma Mohr\",\"number\":\"1-626-985-0681\",\"is_default\":true,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"customer_phone_id\":1,\"type\":\"Home\",\"name\":\"Electa Dickens\",\"number\":\"+16206269677\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"},{\"customer_phone_id\":1,\"type\":\"Office\",\"name\":\"Xzavier Erdman\",\"number\":\"1-267-987-9082\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": ""
                         }
                     ]
@@ -492,7 +600,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"Office\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":false}"
+                            "raw": "{\"type\":\"Home\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":false}"
                         },
                         "description": ""
                     },
@@ -500,7 +608,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Miss Christy Baumbach\",\"number\":\"(952) 852-8265\",\"is_default\":true,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"}}",
+                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Prof. Corine Cartwright MD\",\"number\":\"+1-402-338-2805\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
                             "name": ""
                         }
                     ]
@@ -546,7 +654,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Office\",\"name\":\"Mr. Deonte Stoltenberg Jr.\",\"number\":\"+18025458392\",\"is_default\":true,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"}}",
+                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Home\",\"name\":\"Miss Jazmyn Johnston DVM\",\"number\":\"+1 (765) 531-1129\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
                             "name": ""
                         }
                     ]
@@ -595,7 +703,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Home\",\"name\":\"Miss Flavie Smitham\",\"number\":\"878-332-3370\",\"is_default\":true,\"created_at\":\"2024-10-17 00:40:36\",\"updated_at\":\"2024-10-17 00:40:36\"}}",
+                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Home\",\"name\":\"Dr. Mortimer Hoeger\",\"number\":\"1-220-741-8692\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
                             "name": ""
                         }
                     ]

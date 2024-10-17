@@ -12,11 +12,16 @@ use App\Http\Controllers\Controller;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
 use App\Http\Resources\CustomerPhoneResource;
+use Knuckles\Scribe\Attributes\ResponseFromFile;
 use Knuckles\Scribe\Attributes\ResponseFromApiResource;
 use App\Http\Requests\Customer\StoreCustomerPhoneRequest;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 #[Group('Customer Phones', 'Customer Phone Management API')]
+#[ResponseFromFile(file: 'resources/api-responses/401.json', status: 401, description: 'Unauthorized')]
+#[ResponseFromFile(file: 'resources/api-responses/404.json', status: 404, description: 'Not Found')]
+#[ResponseFromFile(file: 'resources/api-responses/400.json', status: 404, description: 'Bad Request')]
+#[ResponseFromFile(file: 'resources/api-responses/500.json', status: 500, description: 'Internal Server Error')]
 class APICustomerPhonesController extends Controller
 {
     use HelperTrait;
@@ -54,6 +59,7 @@ class APICustomerPhonesController extends Controller
      * Create Customer Phone
      */
     #[ResponseFromApiResource(CustomerPhoneResource::class, Phone::class)]
+    #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
     public function store(StoreCustomerPhoneRequest $request, Customer $customer): CustomerPhoneResource|JsonResponse
     {
         if (!$request->user()->tokenCan('CustomerPhones:Create')) {
@@ -92,6 +98,7 @@ class APICustomerPhonesController extends Controller
      * Update Customer Phone
      */
     #[ResponseFromApiResource(CustomerPhoneResource::class, Phone::class)]
+    #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
     public function update(StoreCustomerPhoneRequest $request, Customer $customer, Phone $phone): CustomerPhoneResource|JsonResponse
     {
         if (!$request->user()->tokenCan('CustomerPhones:Update')) {

@@ -35,7 +35,7 @@ endpoints:
         name: type
         description: ''
         required: false
-        example: Office
+        example: Mobile
         type: string
         enumValues:
           - Home
@@ -71,7 +71,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      type: Office
+      type: Mobile
       search: '0123456789'
       per_page: 25
       page: 1
@@ -81,7 +81,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"customer_phone_id":1,"type":"Office","name":"Laverna Lakin","number":"818-847-0251","is_default":true,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"},{"customer_phone_id":1,"type":"Mobile","name":"Prof. Vilma Mohr","number":"1-626-985-0681","is_default":true,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"customer_phone_id":1,"type":"Home","name":"Electa Dickens","number":"+16206269677","is_default":true,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"},{"customer_phone_id":1,"type":"Office","name":"Xzavier Erdman","number":"1-267-987-9082","is_default":true,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: ''
         custom: []
@@ -89,7 +89,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 63Z4gaP561Dkcfb8avhedVE'
+      - 'Bearer kcba5fD6ZVad6Pg3e18hEv4'
     controller: null
     method: null
     route: null
@@ -130,7 +130,7 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: Office
+        example: Home
         type: string
         enumValues:
           - Home
@@ -166,7 +166,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      type: Office
+      type: Home
       name: 'John Doe'
       number: +1-956-745-2290
       is_default: false
@@ -174,7 +174,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_phone_id":1,"type":"Mobile","name":"Miss Christy Baumbach","number":"(952) 852-8265","is_default":true,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"}}'
+        content: '{"data":{"customer_phone_id":1,"type":"Mobile","name":"Prof. Corine Cartwright MD","number":"+1-402-338-2805","is_default":true,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"}}'
         headers: []
         description: ''
         custom: []
@@ -182,7 +182,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZEk8debvVPcD6154f3gha6a'
+      - 'Bearer 5PZgchdaV84bEaf6D3v61ek'
     controller: null
     method: null
     route: null
@@ -234,7 +234,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_phone_id":1,"type":"Office","name":"Mr. Deonte Stoltenberg Jr.","number":"+18025458392","is_default":true,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"}}'
+        content: '{"data":{"customer_phone_id":1,"type":"Home","name":"Miss Jazmyn Johnston DVM","number":"+1 (765) 531-1129","is_default":true,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"}}'
         headers: []
         description: ''
         custom: []
@@ -242,7 +242,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zk6heaP5f4adg6V31b8EvDc'
+      - 'Bearer avg654P36Dh8ekfVEba1cdZ'
     controller: null
     method: null
     route: null
@@ -338,7 +338,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_phone_id":1,"type":"Home","name":"Miss Flavie Smitham","number":"878-332-3370","is_default":true,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"}}'
+        content: '{"data":{"customer_phone_id":1,"type":"Home","name":"Dr. Mortimer Hoeger","number":"1-220-741-8692","is_default":true,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"}}'
         headers: []
         description: ''
         custom: []
@@ -346,7 +346,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4fahV36b85E6dvPa1cZgekD'
+      - 'Bearer c5aEegVP6Zdh61kD43a8bvf'
     controller: null
     method: null
     route: null

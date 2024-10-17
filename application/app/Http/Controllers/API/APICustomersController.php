@@ -10,11 +10,16 @@ use App\Http\Controllers\Controller;
 use Knuckles\Scribe\Attributes\Group;
 use App\Http\Resources\CustomerResource;
 use Knuckles\Scribe\Attributes\QueryParam;
+use Knuckles\Scribe\Attributes\ResponseFromFile;
 use App\Http\Requests\Customer\StoreCustomerRequest;
 use Knuckles\Scribe\Attributes\ResponseFromApiResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 #[Group('Customers', 'Customer Management API')]
+#[ResponseFromFile(file: 'resources/api-responses/401.json', status: 401, description: 'Unauthorized')]
+#[ResponseFromFile(file: 'resources/api-responses/404.json', status: 404, description: 'Not Found')]
+#[ResponseFromFile(file: 'resources/api-responses/400.json', status: 404, description: 'Bad Request')]
+#[ResponseFromFile(file: 'resources/api-responses/500.json', status: 500, description: 'Internal Server Error')]
 class APICustomersController extends Controller
 {
     use HelperTrait;
@@ -48,6 +53,7 @@ class APICustomersController extends Controller
      * Create Customer
      */
     #[ResponseFromApiResource(CustomerResource::class, Customer::class)]
+    #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
     public function store(StoreCustomerRequest $request): CustomerResource|JsonResponse
     {
         if (!$request->user()->tokenCan('Customers:Create')) {
@@ -79,6 +85,7 @@ class APICustomersController extends Controller
      * Update Customer
      */
     #[ResponseFromApiResource(CustomerResource::class, Customer::class)]
+    #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
     public function update(StoreCustomerRequest $request, Customer $customer): CustomerResource|JsonResponse
     {
         if (!$request->user()->tokenCan('Customers:Update')) {

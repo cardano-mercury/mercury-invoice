@@ -60,15 +60,51 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"customer_id":1,"name":"Devyn Gulgowski","tax_number":"01JABYPP8YJBAYMFVVNTCG056P","tax_rate":17.5,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"},{"customer_id":1,"name":"Layla Dare","tax_number":"01JABYPP8ZW0BE4WAQVNV79X97","tax_rate":17.5,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"customer_id":1,"name":"Roman Streich","tax_number":"01JAC01XKMHKR17KKTGDCQ6HNJ","tax_rate":17.5,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"},{"customer_id":1,"name":"Dr. Katelynn Cormier II","tax_number":"01JAC01XKNB2ED8NWZ7PBDDYQD","tax_rate":17.5,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: ''
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer vhEaPd14DZ8beag656Vck3f'
+      - 'Bearer ZbfEcP15e66gvhkaad3D48V'
     controller: null
     method: null
     route: null
@@ -130,15 +166,68 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_id":1,"name":"Ms. Astrid Boyle","tax_number":"01JABYPP97HWBKVQ3XEK963989","tax_rate":17.5,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"}}'
+        content: '{"data":{"customer_id":1,"name":"Mireya Windler","tax_number":"01JAC01XKYF12H6RZ4607C8GQ4","tax_rate":17.5,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"}}'
         headers: []
         description: ''
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 422
+        content: |
+          {
+              "message": "Validation Failed",
+              "fields": {
+                  "type": [
+                      "The selected type is invalid."
+                  ],
+                  "name": [
+                      "The name field must not be greater than 64 characters."
+                  ]
+              }
+          }
+        headers: []
+        description: 'Validation Failed'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer f683Zhcev5ka1dEV6ab4PDg'
+      - 'Bearer Vaa6ePgE3865hfb4vd1DcZk'
     controller: null
     method: null
     route: null
@@ -180,15 +269,51 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_id":1,"name":"Jerald Dickinson","tax_number":"01JABYPP9CH5TXMM1ZPZB7952J","tax_rate":17.5,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"}}'
+        content: '{"data":{"customer_id":1,"name":"Rachelle Schowalter PhD","tax_number":"01JAC01XM4F8DFPAK2D8EZQRKG","tax_rate":17.5,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"}}'
         headers: []
         description: ''
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer b6d1f45V3Peah6EvkDg8acZ'
+      - 'Bearer ZDbeVha45cvfdgPak83E616'
     controller: null
     method: null
     route: null
@@ -261,15 +386,68 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_id":1,"name":"Jordon Murphy","tax_number":"01JABYPP9KCW3BWDJ165W9P47F","tax_rate":17.5,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"}}'
+        content: '{"data":{"customer_id":1,"name":"Dr. Michel Metz","tax_number":"01JAC01XM90NABCXSMNJTQKW58","tax_rate":17.5,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"}}'
         headers: []
         description: ''
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 422
+        content: |
+          {
+              "message": "Validation Failed",
+              "fields": {
+                  "type": [
+                      "The selected type is invalid."
+                  ],
+                  "name": [
+                      "The name field must not be greater than 64 characters."
+                  ]
+              }
+          }
+        headers: []
+        description: 'Validation Failed'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer dZ8aheakDb34VcPf1Ev5g66'
+      - 'Bearer 6deZbDaaf5k14v83hVgc6EP'
     controller: null
     method: null
     route: null

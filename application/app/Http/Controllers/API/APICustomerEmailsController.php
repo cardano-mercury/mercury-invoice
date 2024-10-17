@@ -11,11 +11,16 @@ use App\Http\Controllers\Controller;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
 use App\Http\Resources\CustomerEmailResource;
+use Knuckles\Scribe\Attributes\ResponseFromFile;
 use Knuckles\Scribe\Attributes\ResponseFromApiResource;
 use App\Http\Requests\Customer\StoreCustomerEmailRequest;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 #[Group('Customer Emails', 'Customer Email Management API')]
+#[ResponseFromFile(file: 'resources/api-responses/401.json', status: 401, description: 'Unauthorized')]
+#[ResponseFromFile(file: 'resources/api-responses/404.json', status: 404, description: 'Not Found')]
+#[ResponseFromFile(file: 'resources/api-responses/400.json', status: 404, description: 'Bad Request')]
+#[ResponseFromFile(file: 'resources/api-responses/500.json', status: 500, description: 'Internal Server Error')]
 class APICustomerEmailsController extends Controller
 {
     use HelperTrait;
@@ -48,6 +53,7 @@ class APICustomerEmailsController extends Controller
      * Create Customer Email
      */
     #[ResponseFromApiResource(CustomerEmailResource::class, Email::class)]
+    #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
     public function store(StoreCustomerEmailRequest $request, Customer $customer): JsonResponse|CustomerEmailResource
     {
         if (!$request->user()->tokenCan('CustomerEmails:Create')) {
@@ -86,6 +92,7 @@ class APICustomerEmailsController extends Controller
      * Update Customer Email
      */
     #[ResponseFromApiResource(CustomerEmailResource::class, Email::class)]
+    #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
     public function update(StoreCustomerEmailRequest $request, Customer $customer, Email $email): JsonResponse|CustomerEmailResource
     {
         if (!$request->user()->tokenCan('CustomerEmails:Update')) {

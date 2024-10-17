@@ -36,9 +36,9 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->render(function (NotFoundHttpException $e, Request $request) {
             if ($request->is('api/*')) {
                 if ($e->getPrevious() instanceof ModelNotFoundException) {
-                    $message = 'Record not found';
+                    $message = 'Record Not Found';
                 } else {
-                    $message = sprintf('Route %s Not found', $request->url());
+                    $message = sprintf('Route %s Not Found', $request->url());
                 }
                 return response()->json(compact('message'), 404);
             }
@@ -47,7 +47,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // Handle API Authentication Exception
         $exceptions->render(function (AuthenticationException $e, Request $request) {
             if ($request->is('api/*')) {
-                return response()->json(['message' => 'Unauthorized'], 401);
+                return response()->json([ 'message' => 'Unauthorized' ], 401);
             }
         });
 
@@ -62,7 +62,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->render(function (ValidationException $e, Request $request) {
             if ($request->is('api/*')) {
                 return response()->json([
-                    'message' => 'Validation failed',
+                    'message' => 'Validation Failed',
                     'fields' => $e->validator->errors()->toArray(),
                 ], 422);
             }
@@ -81,7 +81,7 @@ return Application::configure(basePath: dirname(__DIR__))
                         'line' => $e->getPrevious()->getLine(),
                     ] : null,
                 ]);
-                return response()->json(['message' => 'Internal server error'], 500);
+                return response()->json([ 'message' => 'Internal Server Error' ], 500);
             }
         });
 

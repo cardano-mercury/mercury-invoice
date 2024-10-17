@@ -1069,6 +1069,10 @@ response.json()</code></pre>                                        </div>
                                                         aria-label="Response sample"
                                                         onchange="switchExampleResponse('GETapi-v1-customers', event.target.value);">
                                                                                                             <option value="0">200</option>
+                                                                                                            <option value="1">401, Unauthorized</option>
+                                                                                                            <option value="2">404, Not Found</option>
+                                                                                                            <option value="3">404, Bad Request</option>
+                                                                                                            <option value="4">500, Internal Server Error</option>
                                                                                                     </select></div>
                                         </div>
                                     </div>
@@ -1094,19 +1098,19 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: [
         {
             &quot;customer_id&quot;: 1,
-            &quot;name&quot;: &quot;Devyn Gulgowski&quot;,
-            &quot;tax_number&quot;: &quot;01JABYPP8YJBAYMFVVNTCG056P&quot;,
+            &quot;name&quot;: &quot;Roman Streich&quot;,
+            &quot;tax_number&quot;: &quot;01JAC01XKMHKR17KKTGDCQ6HNJ&quot;,
             &quot;tax_rate&quot;: 17.5,
-            &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-            &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+            &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
         },
         {
             &quot;customer_id&quot;: 1,
-            &quot;name&quot;: &quot;Layla Dare&quot;,
-            &quot;tax_number&quot;: &quot;01JABYPP8ZW0BE4WAQVNV79X97&quot;,
+            &quot;name&quot;: &quot;Dr. Katelynn Cormier II&quot;,
+            &quot;tax_number&quot;: &quot;01JAC01XKNB2ED8NWZ7PBDDYQD&quot;,
             &quot;tax_rate&quot;: 17.5,
-            &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-            &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+            &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
         }
     ],
     &quot;links&quot;: {
@@ -1122,6 +1126,46 @@ response.json()</code></pre>                                        </div>
         &quot;per_page&quot;: 25,
         &quot;to&quot;: 2
     }
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-customers example-response-GETapi-v1-customers-1"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Unauthorized&quot;
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-customers example-response-GETapi-v1-customers-2"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Route or Record Not found&quot;
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-customers example-response-GETapi-v1-customers-3"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH&quot;
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-customers example-response-GETapi-v1-customers-4"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Internal Server Error&quot;
 }</code></pre>
                                                                             </div>
                                 </div>
@@ -1634,6 +1678,11 @@ response.json()</code></pre>                                        </div>
                                                         aria-label="Response sample"
                                                         onchange="switchExampleResponse('POSTapi-v1-customers', event.target.value);">
                                                                                                             <option value="0">200</option>
+                                                                                                            <option value="1">401, Unauthorized</option>
+                                                                                                            <option value="2">404, Not Found</option>
+                                                                                                            <option value="3">404, Bad Request</option>
+                                                                                                            <option value="4">422, Validation Failed</option>
+                                                                                                            <option value="5">500, Internal Server Error</option>
                                                                                                     </select></div>
                                         </div>
                                     </div>
@@ -1658,12 +1707,70 @@ response.json()</code></pre>                                        </div>
                                                        class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
     &quot;data&quot;: {
         &quot;customer_id&quot;: 1,
-        &quot;name&quot;: &quot;Ms. Astrid Boyle&quot;,
-        &quot;tax_number&quot;: &quot;01JABYPP97HWBKVQ3XEK963989&quot;,
+        &quot;name&quot;: &quot;Mireya Windler&quot;,
+        &quot;tax_number&quot;: &quot;01JAC01XKYF12H6RZ4607C8GQ4&quot;,
         &quot;tax_rate&quot;: 17.5,
-        &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-        &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+        &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+        &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
     }
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-POSTapi-v1-customers example-response-POSTapi-v1-customers-1"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Unauthorized&quot;
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-POSTapi-v1-customers example-response-POSTapi-v1-customers-2"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Route or Record Not found&quot;
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-POSTapi-v1-customers example-response-POSTapi-v1-customers-3"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH&quot;
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-POSTapi-v1-customers example-response-POSTapi-v1-customers-4"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Validation Failed&quot;,
+    &quot;fields&quot;: {
+        &quot;type&quot;: [
+            &quot;The selected type is invalid.&quot;
+        ],
+        &quot;name&quot;: [
+            &quot;The name field must not be greater than 64 characters.&quot;
+        ]
+    }
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-POSTapi-v1-customers example-response-POSTapi-v1-customers-5"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Internal Server Error&quot;
 }</code></pre>
                                                                             </div>
                                 </div>
@@ -2104,6 +2211,10 @@ response.json()</code></pre>                                        </div>
                                                         aria-label="Response sample"
                                                         onchange="switchExampleResponse('GETapi-v1-customers--id-', event.target.value);">
                                                                                                             <option value="0">200</option>
+                                                                                                            <option value="1">401, Unauthorized</option>
+                                                                                                            <option value="2">404, Not Found</option>
+                                                                                                            <option value="3">404, Bad Request</option>
+                                                                                                            <option value="4">500, Internal Server Error</option>
                                                                                                     </select></div>
                                         </div>
                                     </div>
@@ -2128,12 +2239,52 @@ response.json()</code></pre>                                        </div>
                                                        class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
     &quot;data&quot;: {
         &quot;customer_id&quot;: 1,
-        &quot;name&quot;: &quot;Jerald Dickinson&quot;,
-        &quot;tax_number&quot;: &quot;01JABYPP9CH5TXMM1ZPZB7952J&quot;,
+        &quot;name&quot;: &quot;Rachelle Schowalter PhD&quot;,
+        &quot;tax_number&quot;: &quot;01JAC01XM4F8DFPAK2D8EZQRKG&quot;,
         &quot;tax_rate&quot;: 17.5,
-        &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-        &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+        &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+        &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
     }
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-customers--id- example-response-GETapi-v1-customers--id--1"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Unauthorized&quot;
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-customers--id- example-response-GETapi-v1-customers--id--2"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Route or Record Not found&quot;
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-customers--id- example-response-GETapi-v1-customers--id--3"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH&quot;
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-GETapi-v1-customers--id- example-response-GETapi-v1-customers--id--4"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Internal Server Error&quot;
 }</code></pre>
                                                                             </div>
                                 </div>
@@ -2714,6 +2865,11 @@ response.json()</code></pre>                                        </div>
                                                         aria-label="Response sample"
                                                         onchange="switchExampleResponse('PUTapi-v1-customers--id-', event.target.value);">
                                                                                                             <option value="0">200</option>
+                                                                                                            <option value="1">401, Unauthorized</option>
+                                                                                                            <option value="2">404, Not Found</option>
+                                                                                                            <option value="3">404, Bad Request</option>
+                                                                                                            <option value="4">422, Validation Failed</option>
+                                                                                                            <option value="5">500, Internal Server Error</option>
                                                                                                     </select></div>
                                         </div>
                                     </div>
@@ -2738,12 +2894,70 @@ response.json()</code></pre>                                        </div>
                                                        class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
     &quot;data&quot;: {
         &quot;customer_id&quot;: 1,
-        &quot;name&quot;: &quot;Jordon Murphy&quot;,
-        &quot;tax_number&quot;: &quot;01JABYPP9KCW3BWDJ165W9P47F&quot;,
+        &quot;name&quot;: &quot;Dr. Michel Metz&quot;,
+        &quot;tax_number&quot;: &quot;01JAC01XM90NABCXSMNJTQKW58&quot;,
         &quot;tax_rate&quot;: 17.5,
-        &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-        &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+        &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+        &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
     }
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-PUTapi-v1-customers--id- example-response-PUTapi-v1-customers--id--1"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Unauthorized&quot;
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-PUTapi-v1-customers--id- example-response-PUTapi-v1-customers--id--2"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Route or Record Not found&quot;
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-PUTapi-v1-customers--id- example-response-PUTapi-v1-customers--id--3"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH&quot;
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-PUTapi-v1-customers--id- example-response-PUTapi-v1-customers--id--4"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Validation Failed&quot;,
+    &quot;fields&quot;: {
+        &quot;type&quot;: [
+            &quot;The selected type is invalid.&quot;
+        ],
+        &quot;name&quot;: [
+            &quot;The name field must not be greater than 64 characters.&quot;
+        ]
+    }
+}</code></pre>
+                                                                            </div>
+                                </div>
+                                                            <div class="sl-panel__content-wrapper sl-bg-canvas-100 example-response-PUTapi-v1-customers--id- example-response-PUTapi-v1-customers--id--5"
+                                     style=" display: none;"
+                                >
+                                    <div class="sl-panel__content sl-p-0">                                                                                                                                
+                                            <pre><code style="max-height: 300px;"
+                                                       class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
+    &quot;message&quot;: &quot;Internal Server Error&quot;
 }</code></pre>
                                                                             </div>
                                 </div>
@@ -3367,19 +3581,19 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: [
         {
             &quot;customer_email_id&quot;: 1,
-            &quot;name&quot;: &quot;Jeff Volkman IV&quot;,
-            &quot;address&quot;: &quot;pagac.steve@example.net&quot;,
+            &quot;name&quot;: &quot;Cortney D&#039;Amore&quot;,
+            &quot;address&quot;: &quot;junius79@example.com&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-            &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+            &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
         },
         {
             &quot;customer_email_id&quot;: 1,
-            &quot;name&quot;: &quot;Lukas Wiza&quot;,
-            &quot;address&quot;: &quot;uwitting@example.com&quot;,
+            &quot;name&quot;: &quot;Alycia Emmerich&quot;,
+            &quot;address&quot;: &quot;ansel.jenkins@example.org&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-            &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+            &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
         }
     ],
     &quot;links&quot;: {
@@ -3985,11 +4199,11 @@ response.json()</code></pre>                                        </div>
                                                        class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
     &quot;data&quot;: {
         &quot;customer_email_id&quot;: 1,
-        &quot;name&quot;: &quot;Caroline Bode&quot;,
-        &quot;address&quot;: &quot;blynch@example.org&quot;,
+        &quot;name&quot;: &quot;Sincere Brekke&quot;,
+        &quot;address&quot;: &quot;cayla95@example.net&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-        &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+        &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+        &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -4491,11 +4705,11 @@ response.json()</code></pre>                                        </div>
                                                        class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
     &quot;data&quot;: {
         &quot;customer_email_id&quot;: 1,
-        &quot;name&quot;: &quot;Herman Davis&quot;,
-        &quot;address&quot;: &quot;estrella.heller@example.org&quot;,
+        &quot;name&quot;: &quot;Wilbert Johnson&quot;,
+        &quot;address&quot;: &quot;nikolaus.abbigail@example.com&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-        &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+        &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+        &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -5128,11 +5342,11 @@ response.json()</code></pre>                                        </div>
                                                        class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
     &quot;data&quot;: {
         &quot;customer_email_id&quot;: 1,
-        &quot;name&quot;: &quot;Lester Hane&quot;,
-        &quot;address&quot;: &quot;glover.unique@example.org&quot;,
+        &quot;name&quot;: &quot;Prof. Wallace Ryan&quot;,
+        &quot;address&quot;: &quot;ppaucek@example.org&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-        &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+        &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+        &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -5302,7 +5516,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        Office
+                        Mobile
                     </div>
                 </div>
             </div>
@@ -5533,7 +5747,7 @@ response.json()</code></pre>                                        </div>
                                                                                     <input aria-label="type" name="type"
                                                    id="queryparam-GETapi-v1-customers--customer_id--phones-type"
                                                    placeholder=""
-                                                   value="Office" data-component="query"
+                                                   value="Mobile" data-component="query"
                                                    class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                             >
                                                                             </div>
@@ -5670,7 +5884,7 @@ You can check the Dev Tools console for debugging information.</p>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8100/api/v1/customers/1/phones?type=Office&amp;search=0123456789&amp;per_page=25&amp;page=1" \
+    --get "http://localhost:8100/api/v1/customers/1/phones?type=Mobile&amp;search=0123456789&amp;per_page=25&amp;page=1" \
     --header "Authorization: Bearer {YOUR_ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>                                        </div>
@@ -5685,7 +5899,7 @@ You can check the Dev Tools console for debugging information.</p>
 );
 
 const params = {
-    "type": "Office",
+    "type": "Mobile",
     "search": "0123456789",
     "per_page": "25",
     "page": "1",
@@ -5720,7 +5934,7 @@ $response = $client-&gt;get(
             'Accept' =&gt; 'application/json',
         ],
         'query' =&gt; [
-            'type' =&gt; 'Office',
+            'type' =&gt; 'Mobile',
             'search' =&gt; '0123456789',
             'per_page' =&gt; '25',
             'page' =&gt; '1',
@@ -5740,7 +5954,7 @@ import json
 
 url = 'http://localhost:8100/api/v1/customers/1/phones'
 params = {
-  'type': 'Office',
+  'type': 'Mobile',
   'search': '0123456789',
   'per_page': '25',
   'page': '1',
@@ -5794,21 +6008,21 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: [
         {
             &quot;customer_phone_id&quot;: 1,
-            &quot;type&quot;: &quot;Office&quot;,
-            &quot;name&quot;: &quot;Laverna Lakin&quot;,
-            &quot;number&quot;: &quot;818-847-0251&quot;,
+            &quot;type&quot;: &quot;Home&quot;,
+            &quot;name&quot;: &quot;Electa Dickens&quot;,
+            &quot;number&quot;: &quot;+16206269677&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-            &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+            &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
         },
         {
             &quot;customer_phone_id&quot;: 1,
-            &quot;type&quot;: &quot;Mobile&quot;,
-            &quot;name&quot;: &quot;Prof. Vilma Mohr&quot;,
-            &quot;number&quot;: &quot;1-626-985-0681&quot;,
+            &quot;type&quot;: &quot;Office&quot;,
+            &quot;name&quot;: &quot;Xzavier Erdman&quot;,
+            &quot;number&quot;: &quot;1-267-987-9082&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-            &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+            &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
         }
     ],
     &quot;links&quot;: {
@@ -5988,7 +6202,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        Office
+                        Home
                     </div>
                 </div>
             </div>
@@ -6219,7 +6433,7 @@ response.json()</code></pre>                                        </div>
                                      id="json-body-POSTapi-v1-customers--customer_id--phones"
                                      style="font-family: var(--font-code); font-size: 12px; line-height: var(--lh-code);"
                                 >{
-    "type": "Office",
+    "type": "Home",
     "name": "John Doe",
     "number": "+1-956-745-2290",
     "is_default": false
@@ -6321,7 +6535,7 @@ You can check the Dev Tools console for debugging information.</p>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"type\": \"Office\",
+    \"type\": \"Home\",
     \"name\": \"John Doe\",
     \"number\": \"+1-956-745-2290\",
     \"is_default\": false
@@ -6344,7 +6558,7 @@ const headers = {
 };
 
 let body = {
-    "type": "Office",
+    "type": "Home",
     "name": "John Doe",
     "number": "+1-956-745-2290",
     "is_default": false
@@ -6372,7 +6586,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'type' =&gt; 'Office',
+            'type' =&gt; 'Home',
             'name' =&gt; 'John Doe',
             'number' =&gt; '+1-956-745-2290',
             'is_default' =&gt; false,
@@ -6392,7 +6606,7 @@ import json
 
 url = 'http://localhost:8100/api/v1/customers/1/phones'
 payload = {
-    "type": "Office",
+    "type": "Home",
     "name": "John Doe",
     "number": "+1-956-745-2290",
     "is_default": false
@@ -6446,11 +6660,11 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;customer_phone_id&quot;: 1,
         &quot;type&quot;: &quot;Mobile&quot;,
-        &quot;name&quot;: &quot;Miss Christy Baumbach&quot;,
-        &quot;number&quot;: &quot;(952) 852-8265&quot;,
+        &quot;name&quot;: &quot;Prof. Corine Cartwright MD&quot;,
+        &quot;number&quot;: &quot;+1-402-338-2805&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-        &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+        &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+        &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -6952,12 +7166,12 @@ response.json()</code></pre>                                        </div>
                                                        class="language-json sl-overflow-x-auto sl-overflow-y-auto">{
     &quot;data&quot;: {
         &quot;customer_phone_id&quot;: 1,
-        &quot;type&quot;: &quot;Office&quot;,
-        &quot;name&quot;: &quot;Mr. Deonte Stoltenberg Jr.&quot;,
-        &quot;number&quot;: &quot;+18025458392&quot;,
+        &quot;type&quot;: &quot;Home&quot;,
+        &quot;name&quot;: &quot;Miss Jazmyn Johnston DVM&quot;,
+        &quot;number&quot;: &quot;+1 (765) 531-1129&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-        &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+        &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+        &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -7622,11 +7836,11 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;customer_phone_id&quot;: 1,
         &quot;type&quot;: &quot;Home&quot;,
-        &quot;name&quot;: &quot;Miss Flavie Smitham&quot;,
-        &quot;number&quot;: &quot;878-332-3370&quot;,
+        &quot;name&quot;: &quot;Dr. Mortimer Hoeger&quot;,
+        &quot;number&quot;: &quot;1-220-741-8692&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-10-17 00:40:36&quot;,
-        &quot;updated_at&quot;: &quot;2024-10-17 00:40:36&quot;
+        &quot;created_at&quot;: &quot;2024-10-17 01:04:12&quot;,
+        &quot;updated_at&quot;: &quot;2024-10-17 01:04:12&quot;
     }
 }</code></pre>
                                                                             </div>

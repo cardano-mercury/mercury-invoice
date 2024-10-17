@@ -54,18 +54,18 @@ paths:
                   data:
                     -
                       customer_id: 1
-                      name: 'Devyn Gulgowski'
-                      tax_number: 01JABYPP8YJBAYMFVVNTCG056P
+                      name: 'Roman Streich'
+                      tax_number: 01JAC01XKMHKR17KKTGDCQ6HNJ
                       tax_rate: 17.5
-                      created_at: '2024-10-17 00:40:36'
-                      updated_at: '2024-10-17 00:40:36'
+                      created_at: '2024-10-17 01:04:12'
+                      updated_at: '2024-10-17 01:04:12'
                     -
                       customer_id: 1
-                      name: 'Layla Dare'
-                      tax_number: 01JABYPP8ZW0BE4WAQVNV79X97
+                      name: 'Dr. Katelynn Cormier II'
+                      tax_number: 01JAC01XKNB2ED8NWZ7PBDDYQD
                       tax_rate: 17.5
-                      created_at: '2024-10-17 00:40:36'
-                      updated_at: '2024-10-17 00:40:36'
+                      created_at: '2024-10-17 01:04:12'
+                      updated_at: '2024-10-17 01:04:12'
                   links:
                     first: '/?page=1'
                     last: null
@@ -83,18 +83,18 @@ paths:
                     example:
                       -
                         customer_id: 1
-                        name: 'Devyn Gulgowski'
-                        tax_number: 01JABYPP8YJBAYMFVVNTCG056P
+                        name: 'Roman Streich'
+                        tax_number: 01JAC01XKMHKR17KKTGDCQ6HNJ
                         tax_rate: 17.5
-                        created_at: '2024-10-17 00:40:36'
-                        updated_at: '2024-10-17 00:40:36'
+                        created_at: '2024-10-17 01:04:12'
+                        updated_at: '2024-10-17 01:04:12'
                       -
                         customer_id: 1
-                        name: 'Layla Dare'
-                        tax_number: 01JABYPP8ZW0BE4WAQVNV79X97
+                        name: 'Dr. Katelynn Cormier II'
+                        tax_number: 01JAC01XKNB2ED8NWZ7PBDDYQD
                         tax_rate: 17.5
-                        created_at: '2024-10-17 00:40:36'
-                        updated_at: '2024-10-17 00:40:36'
+                        created_at: '2024-10-17 01:04:12'
+                        updated_at: '2024-10-17 01:04:12'
                     items:
                       type: object
                       properties:
@@ -103,19 +103,19 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: 'Devyn Gulgowski'
+                          example: 'Roman Streich'
                         tax_number:
                           type: string
-                          example: 01JABYPP8YJBAYMFVVNTCG056P
+                          example: 01JAC01XKMHKR17KKTGDCQ6HNJ
                         tax_rate:
                           type: number
                           example: 17.5
                         created_at:
                           type: string
-                          example: '2024-10-17 00:40:36'
+                          example: '2024-10-17 01:04:12'
                         updated_at:
                           type: string
-                          example: '2024-10-17 00:40:36'
+                          example: '2024-10-17 01:04:12'
                   links:
                     type: object
                     properties:
@@ -149,6 +149,54 @@ paths:
                       to:
                         type: integer
                         example: 2
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
       tags:
         - Customers
     post:
@@ -166,11 +214,11 @@ paths:
                 example:
                   data:
                     customer_id: 1
-                    name: 'Ms. Astrid Boyle'
-                    tax_number: 01JABYPP97HWBKVQ3XEK963989
+                    name: 'Mireya Windler'
+                    tax_number: 01JAC01XKYF12H6RZ4607C8GQ4
                     tax_rate: 17.5
-                    created_at: '2024-10-17 00:40:36'
-                    updated_at: '2024-10-17 00:40:36'
+                    created_at: '2024-10-17 01:04:12'
+                    updated_at: '2024-10-17 01:04:12'
                 properties:
                   data:
                     type: object
@@ -180,19 +228,99 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Ms. Astrid Boyle'
+                        example: 'Mireya Windler'
                       tax_number:
                         type: string
-                        example: 01JABYPP97HWBKVQ3XEK963989
+                        example: 01JAC01XKYF12H6RZ4607C8GQ4
                       tax_rate:
                         type: number
                         example: 17.5
                       created_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
                       updated_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        422:
+          description: 'Validation Failed'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Validation Failed'
+                  fields:
+                    type:
+                      - 'The selected type is invalid.'
+                    name:
+                      - 'The name field must not be greater than 64 characters.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Validation Failed'
+                  fields:
+                    type: object
+                    properties:
+                      type:
+                        type: array
+                        example:
+                          - 'The selected type is invalid.'
+                        items:
+                          type: string
+                      name:
+                        type: array
+                        example:
+                          - 'The name field must not be greater than 64 characters.'
+                        items:
+                          type: string
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
       tags:
         - Customers
       requestBody:
@@ -232,11 +360,11 @@ paths:
                 example:
                   data:
                     customer_id: 1
-                    name: 'Jerald Dickinson'
-                    tax_number: 01JABYPP9CH5TXMM1ZPZB7952J
+                    name: 'Rachelle Schowalter PhD'
+                    tax_number: 01JAC01XM4F8DFPAK2D8EZQRKG
                     tax_rate: 17.5
-                    created_at: '2024-10-17 00:40:36'
-                    updated_at: '2024-10-17 00:40:36'
+                    created_at: '2024-10-17 01:04:12'
+                    updated_at: '2024-10-17 01:04:12'
                 properties:
                   data:
                     type: object
@@ -246,19 +374,67 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Jerald Dickinson'
+                        example: 'Rachelle Schowalter PhD'
                       tax_number:
                         type: string
-                        example: 01JABYPP9CH5TXMM1ZPZB7952J
+                        example: 01JAC01XM4F8DFPAK2D8EZQRKG
                       tax_rate:
                         type: number
                         example: 17.5
                       created_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
                       updated_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
       tags:
         - Customers
     put:
@@ -276,11 +452,11 @@ paths:
                 example:
                   data:
                     customer_id: 1
-                    name: 'Jordon Murphy'
-                    tax_number: 01JABYPP9KCW3BWDJ165W9P47F
+                    name: 'Dr. Michel Metz'
+                    tax_number: 01JAC01XM90NABCXSMNJTQKW58
                     tax_rate: 17.5
-                    created_at: '2024-10-17 00:40:36'
-                    updated_at: '2024-10-17 00:40:36'
+                    created_at: '2024-10-17 01:04:12'
+                    updated_at: '2024-10-17 01:04:12'
                 properties:
                   data:
                     type: object
@@ -290,19 +466,99 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Jordon Murphy'
+                        example: 'Dr. Michel Metz'
                       tax_number:
                         type: string
-                        example: 01JABYPP9KCW3BWDJ165W9P47F
+                        example: 01JAC01XM90NABCXSMNJTQKW58
                       tax_rate:
                         type: number
                         example: 17.5
                       created_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
                       updated_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        422:
+          description: 'Validation Failed'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Validation Failed'
+                  fields:
+                    type:
+                      - 'The selected type is invalid.'
+                    name:
+                      - 'The name field must not be greater than 64 characters.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Validation Failed'
+                  fields:
+                    type: object
+                    properties:
+                      type:
+                        type: array
+                        example:
+                          - 'The selected type is invalid.'
+                        items:
+                          type: string
+                      name:
+                        type: array
+                        example:
+                          - 'The name field must not be greater than 64 characters.'
+                        items:
+                          type: string
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
       tags:
         - Customers
       requestBody:
@@ -382,18 +638,18 @@ paths:
                   data:
                     -
                       customer_email_id: 1
-                      name: 'Jeff Volkman IV'
-                      address: pagac.steve@example.net
+                      name: "Cortney D'Amore"
+                      address: junius79@example.com
                       is_default: true
-                      created_at: '2024-10-17 00:40:36'
-                      updated_at: '2024-10-17 00:40:36'
+                      created_at: '2024-10-17 01:04:12'
+                      updated_at: '2024-10-17 01:04:12'
                     -
                       customer_email_id: 1
-                      name: 'Lukas Wiza'
-                      address: uwitting@example.com
+                      name: 'Alycia Emmerich'
+                      address: ansel.jenkins@example.org
                       is_default: true
-                      created_at: '2024-10-17 00:40:36'
-                      updated_at: '2024-10-17 00:40:36'
+                      created_at: '2024-10-17 01:04:12'
+                      updated_at: '2024-10-17 01:04:12'
                   links:
                     first: '/?page=1'
                     last: null
@@ -411,18 +667,18 @@ paths:
                     example:
                       -
                         customer_email_id: 1
-                        name: 'Jeff Volkman IV'
-                        address: pagac.steve@example.net
+                        name: "Cortney D'Amore"
+                        address: junius79@example.com
                         is_default: true
-                        created_at: '2024-10-17 00:40:36'
-                        updated_at: '2024-10-17 00:40:36'
+                        created_at: '2024-10-17 01:04:12'
+                        updated_at: '2024-10-17 01:04:12'
                       -
                         customer_email_id: 1
-                        name: 'Lukas Wiza'
-                        address: uwitting@example.com
+                        name: 'Alycia Emmerich'
+                        address: ansel.jenkins@example.org
                         is_default: true
-                        created_at: '2024-10-17 00:40:36'
-                        updated_at: '2024-10-17 00:40:36'
+                        created_at: '2024-10-17 01:04:12'
+                        updated_at: '2024-10-17 01:04:12'
                     items:
                       type: object
                       properties:
@@ -431,19 +687,19 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: 'Jeff Volkman IV'
+                          example: "Cortney D'Amore"
                         address:
                           type: string
-                          example: pagac.steve@example.net
+                          example: junius79@example.com
                         is_default:
                           type: boolean
                           example: true
                         created_at:
                           type: string
-                          example: '2024-10-17 00:40:36'
+                          example: '2024-10-17 01:04:12'
                         updated_at:
                           type: string
-                          example: '2024-10-17 00:40:36'
+                          example: '2024-10-17 01:04:12'
                   links:
                     type: object
                     properties:
@@ -494,11 +750,11 @@ paths:
                 example:
                   data:
                     customer_email_id: 1
-                    name: 'Caroline Bode'
-                    address: blynch@example.org
+                    name: 'Sincere Brekke'
+                    address: cayla95@example.net
                     is_default: true
-                    created_at: '2024-10-17 00:40:36'
-                    updated_at: '2024-10-17 00:40:36'
+                    created_at: '2024-10-17 01:04:12'
+                    updated_at: '2024-10-17 01:04:12'
                 properties:
                   data:
                     type: object
@@ -508,19 +764,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Caroline Bode'
+                        example: 'Sincere Brekke'
                       address:
                         type: string
-                        example: blynch@example.org
+                        example: cayla95@example.net
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
                       updated_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
       tags:
         - 'Customer Emails'
       requestBody:
@@ -570,11 +826,11 @@ paths:
                 example:
                   data:
                     customer_email_id: 1
-                    name: 'Herman Davis'
-                    address: estrella.heller@example.org
+                    name: 'Wilbert Johnson'
+                    address: nikolaus.abbigail@example.com
                     is_default: true
-                    created_at: '2024-10-17 00:40:36'
-                    updated_at: '2024-10-17 00:40:36'
+                    created_at: '2024-10-17 01:04:12'
+                    updated_at: '2024-10-17 01:04:12'
                 properties:
                   data:
                     type: object
@@ -584,19 +840,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Herman Davis'
+                        example: 'Wilbert Johnson'
                       address:
                         type: string
-                        example: estrella.heller@example.org
+                        example: nikolaus.abbigail@example.com
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
                       updated_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
       tags:
         - 'Customer Emails'
     put:
@@ -614,11 +870,11 @@ paths:
                 example:
                   data:
                     customer_email_id: 1
-                    name: 'Lester Hane'
-                    address: glover.unique@example.org
+                    name: 'Prof. Wallace Ryan'
+                    address: ppaucek@example.org
                     is_default: true
-                    created_at: '2024-10-17 00:40:36'
-                    updated_at: '2024-10-17 00:40:36'
+                    created_at: '2024-10-17 01:04:12'
+                    updated_at: '2024-10-17 01:04:12'
                 properties:
                   data:
                     type: object
@@ -628,19 +884,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Lester Hane'
+                        example: 'Prof. Wallace Ryan'
                       address:
                         type: string
-                        example: glover.unique@example.org
+                        example: ppaucek@example.org
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
                       updated_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
       tags:
         - 'Customer Emails'
       requestBody:
@@ -692,12 +948,12 @@ paths:
           in: query
           name: type
           description: ''
-          example: Office
+          example: Mobile
           required: false
           schema:
             type: string
             description: ''
-            example: Office
+            example: Mobile
             enum:
               - Home
               - Office
@@ -743,20 +999,20 @@ paths:
                   data:
                     -
                       customer_phone_id: 1
-                      type: Office
-                      name: 'Laverna Lakin'
-                      number: 818-847-0251
+                      type: Home
+                      name: 'Electa Dickens'
+                      number: '+16206269677'
                       is_default: true
-                      created_at: '2024-10-17 00:40:36'
-                      updated_at: '2024-10-17 00:40:36'
+                      created_at: '2024-10-17 01:04:12'
+                      updated_at: '2024-10-17 01:04:12'
                     -
                       customer_phone_id: 1
-                      type: Mobile
-                      name: 'Prof. Vilma Mohr'
-                      number: 1-626-985-0681
+                      type: Office
+                      name: 'Xzavier Erdman'
+                      number: 1-267-987-9082
                       is_default: true
-                      created_at: '2024-10-17 00:40:36'
-                      updated_at: '2024-10-17 00:40:36'
+                      created_at: '2024-10-17 01:04:12'
+                      updated_at: '2024-10-17 01:04:12'
                   links:
                     first: '/?page=1'
                     last: null
@@ -774,20 +1030,20 @@ paths:
                     example:
                       -
                         customer_phone_id: 1
-                        type: Office
-                        name: 'Laverna Lakin'
-                        number: 818-847-0251
+                        type: Home
+                        name: 'Electa Dickens'
+                        number: '+16206269677'
                         is_default: true
-                        created_at: '2024-10-17 00:40:36'
-                        updated_at: '2024-10-17 00:40:36'
+                        created_at: '2024-10-17 01:04:12'
+                        updated_at: '2024-10-17 01:04:12'
                       -
                         customer_phone_id: 1
-                        type: Mobile
-                        name: 'Prof. Vilma Mohr'
-                        number: 1-626-985-0681
+                        type: Office
+                        name: 'Xzavier Erdman'
+                        number: 1-267-987-9082
                         is_default: true
-                        created_at: '2024-10-17 00:40:36'
-                        updated_at: '2024-10-17 00:40:36'
+                        created_at: '2024-10-17 01:04:12'
+                        updated_at: '2024-10-17 01:04:12'
                     items:
                       type: object
                       properties:
@@ -796,22 +1052,22 @@ paths:
                           example: 1
                         type:
                           type: string
-                          example: Office
+                          example: Home
                         name:
                           type: string
-                          example: 'Laverna Lakin'
+                          example: 'Electa Dickens'
                         number:
                           type: string
-                          example: 818-847-0251
+                          example: '+16206269677'
                         is_default:
                           type: boolean
                           example: true
                         created_at:
                           type: string
-                          example: '2024-10-17 00:40:36'
+                          example: '2024-10-17 01:04:12'
                         updated_at:
                           type: string
-                          example: '2024-10-17 00:40:36'
+                          example: '2024-10-17 01:04:12'
                   links:
                     type: object
                     properties:
@@ -863,11 +1119,11 @@ paths:
                   data:
                     customer_phone_id: 1
                     type: Mobile
-                    name: 'Miss Christy Baumbach'
-                    number: '(952) 852-8265'
+                    name: 'Prof. Corine Cartwright MD'
+                    number: +1-402-338-2805
                     is_default: true
-                    created_at: '2024-10-17 00:40:36'
-                    updated_at: '2024-10-17 00:40:36'
+                    created_at: '2024-10-17 01:04:12'
+                    updated_at: '2024-10-17 01:04:12'
                 properties:
                   data:
                     type: object
@@ -880,19 +1136,19 @@ paths:
                         example: Mobile
                       name:
                         type: string
-                        example: 'Miss Christy Baumbach'
+                        example: 'Prof. Corine Cartwright MD'
                       number:
                         type: string
-                        example: '(952) 852-8265'
+                        example: +1-402-338-2805
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
                       updated_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
       tags:
         - 'Customer Phones'
       requestBody:
@@ -905,7 +1161,7 @@ paths:
                 type:
                   type: string
                   description: ''
-                  example: Office
+                  example: Home
                   enum:
                     - Home
                     - Office
@@ -951,12 +1207,12 @@ paths:
                 example:
                   data:
                     customer_phone_id: 1
-                    type: Office
-                    name: 'Mr. Deonte Stoltenberg Jr.'
-                    number: '+18025458392'
+                    type: Home
+                    name: 'Miss Jazmyn Johnston DVM'
+                    number: '+1 (765) 531-1129'
                     is_default: true
-                    created_at: '2024-10-17 00:40:36'
-                    updated_at: '2024-10-17 00:40:36'
+                    created_at: '2024-10-17 01:04:12'
+                    updated_at: '2024-10-17 01:04:12'
                 properties:
                   data:
                     type: object
@@ -966,22 +1222,22 @@ paths:
                         example: 1
                       type:
                         type: string
-                        example: Office
+                        example: Home
                       name:
                         type: string
-                        example: 'Mr. Deonte Stoltenberg Jr.'
+                        example: 'Miss Jazmyn Johnston DVM'
                       number:
                         type: string
-                        example: '+18025458392'
+                        example: '+1 (765) 531-1129'
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
                       updated_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
       tags:
         - 'Customer Phones'
     put:
@@ -1000,11 +1256,11 @@ paths:
                   data:
                     customer_phone_id: 1
                     type: Home
-                    name: 'Miss Flavie Smitham'
-                    number: 878-332-3370
+                    name: 'Dr. Mortimer Hoeger'
+                    number: 1-220-741-8692
                     is_default: true
-                    created_at: '2024-10-17 00:40:36'
-                    updated_at: '2024-10-17 00:40:36'
+                    created_at: '2024-10-17 01:04:12'
+                    updated_at: '2024-10-17 01:04:12'
                 properties:
                   data:
                     type: object
@@ -1017,19 +1273,19 @@ paths:
                         example: Home
                       name:
                         type: string
-                        example: 'Miss Flavie Smitham'
+                        example: 'Dr. Mortimer Hoeger'
                       number:
                         type: string
-                        example: 878-332-3370
+                        example: 1-220-741-8692
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
                       updated_at:
                         type: string
-                        example: '2024-10-17 00:40:36'
+                        example: '2024-10-17 01:04:12'
       tags:
         - 'Customer Phones'
       requestBody:
