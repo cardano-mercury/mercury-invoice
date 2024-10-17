@@ -4,4 +4,4 @@ To authenticate requests, include an **`Authorization`** header with the value *
 
 All authenticated endpoints are marked with a `requires authentication` badge in the documentation below.
 
-You can generate your token by logging in and clicking your name, and then <b>API Tokens</b>.
+You can generate your token by logging in and clicking your name, and then <a href="/user/api-tokens"><b>API Tokens</b></a>.

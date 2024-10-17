@@ -54,18 +54,18 @@ paths:
                   data:
                     -
                       customer_id: 1
-                      name: 'Laurie Wyman'
-                      tax_number: 01JA9FA49KTPKV7TK2ZC8HQNN3
+                      name: 'Devyn Gulgowski'
+                      tax_number: 01JABYPP8YJBAYMFVVNTCG056P
                       tax_rate: 17.5
-                      created_at: '2024-10-16 01:33:07'
-                      updated_at: '2024-10-16 01:33:07'
+                      created_at: '2024-10-17 00:40:36'
+                      updated_at: '2024-10-17 00:40:36'
                     -
                       customer_id: 1
-                      name: 'Danyka Carroll'
-                      tax_number: 01JA9FA49M0ZBPWQNW3QSDFEFD
+                      name: 'Layla Dare'
+                      tax_number: 01JABYPP8ZW0BE4WAQVNV79X97
                       tax_rate: 17.5
-                      created_at: '2024-10-16 01:33:07'
-                      updated_at: '2024-10-16 01:33:07'
+                      created_at: '2024-10-17 00:40:36'
+                      updated_at: '2024-10-17 00:40:36'
                   links:
                     first: '/?page=1'
                     last: null
@@ -83,18 +83,18 @@ paths:
                     example:
                       -
                         customer_id: 1
-                        name: 'Laurie Wyman'
-                        tax_number: 01JA9FA49KTPKV7TK2ZC8HQNN3
+                        name: 'Devyn Gulgowski'
+                        tax_number: 01JABYPP8YJBAYMFVVNTCG056P
                         tax_rate: 17.5
-                        created_at: '2024-10-16 01:33:07'
-                        updated_at: '2024-10-16 01:33:07'
+                        created_at: '2024-10-17 00:40:36'
+                        updated_at: '2024-10-17 00:40:36'
                       -
                         customer_id: 1
-                        name: 'Danyka Carroll'
-                        tax_number: 01JA9FA49M0ZBPWQNW3QSDFEFD
+                        name: 'Layla Dare'
+                        tax_number: 01JABYPP8ZW0BE4WAQVNV79X97
                         tax_rate: 17.5
-                        created_at: '2024-10-16 01:33:07'
-                        updated_at: '2024-10-16 01:33:07'
+                        created_at: '2024-10-17 00:40:36'
+                        updated_at: '2024-10-17 00:40:36'
                     items:
                       type: object
                       properties:
@@ -103,19 +103,19 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: 'Laurie Wyman'
+                          example: 'Devyn Gulgowski'
                         tax_number:
                           type: string
-                          example: 01JA9FA49KTPKV7TK2ZC8HQNN3
+                          example: 01JABYPP8YJBAYMFVVNTCG056P
                         tax_rate:
                           type: number
                           example: 17.5
                         created_at:
                           type: string
-                          example: '2024-10-16 01:33:07'
+                          example: '2024-10-17 00:40:36'
                         updated_at:
                           type: string
-                          example: '2024-10-16 01:33:07'
+                          example: '2024-10-17 00:40:36'
                   links:
                     type: object
                     properties:
@@ -166,11 +166,11 @@ paths:
                 example:
                   data:
                     customer_id: 1
-                    name: 'Nicolas Osinski DDS'
-                    tax_number: 01JA9FA49WZVPY41X82V1PQCV1
+                    name: 'Ms. Astrid Boyle'
+                    tax_number: 01JABYPP97HWBKVQ3XEK963989
                     tax_rate: 17.5
-                    created_at: '2024-10-16 01:33:07'
-                    updated_at: '2024-10-16 01:33:07'
+                    created_at: '2024-10-17 00:40:36'
+                    updated_at: '2024-10-17 00:40:36'
                 properties:
                   data:
                     type: object
@@ -180,19 +180,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Nicolas Osinski DDS'
+                        example: 'Ms. Astrid Boyle'
                       tax_number:
                         type: string
-                        example: 01JA9FA49WZVPY41X82V1PQCV1
+                        example: 01JABYPP97HWBKVQ3XEK963989
                       tax_rate:
                         type: number
                         example: 17.5
                       created_at:
                         type: string
-                        example: '2024-10-16 01:33:07'
+                        example: '2024-10-17 00:40:36'
                       updated_at:
                         type: string
-                        example: '2024-10-16 01:33:07'
+                        example: '2024-10-17 00:40:36'
       tags:
         - Customers
       requestBody:
@@ -232,11 +232,11 @@ paths:
                 example:
                   data:
                     customer_id: 1
-                    name: 'Lloyd Block MD'
-                    tax_number: 01JA9FA4A1MB46J9D9MZ2YBEPZ
+                    name: 'Jerald Dickinson'
+                    tax_number: 01JABYPP9CH5TXMM1ZPZB7952J
                     tax_rate: 17.5
-                    created_at: '2024-10-16 01:33:07'
-                    updated_at: '2024-10-16 01:33:07'
+                    created_at: '2024-10-17 00:40:36'
+                    updated_at: '2024-10-17 00:40:36'
                 properties:
                   data:
                     type: object
@@ -246,19 +246,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Lloyd Block MD'
+                        example: 'Jerald Dickinson'
                       tax_number:
                         type: string
-                        example: 01JA9FA4A1MB46J9D9MZ2YBEPZ
+                        example: 01JABYPP9CH5TXMM1ZPZB7952J
                       tax_rate:
                         type: number
                         example: 17.5
                       created_at:
                         type: string
-                        example: '2024-10-16 01:33:07'
+                        example: '2024-10-17 00:40:36'
                       updated_at:
                         type: string
-                        example: '2024-10-16 01:33:07'
+                        example: '2024-10-17 00:40:36'
       tags:
         - Customers
     put:
@@ -276,11 +276,11 @@ paths:
                 example:
                   data:
                     customer_id: 1
-                    name: 'Brielle Jakubowski'
-                    tax_number: 01JA9FA4A68MS7T0J40PCZ49XH
+                    name: 'Jordon Murphy'
+                    tax_number: 01JABYPP9KCW3BWDJ165W9P47F
                     tax_rate: 17.5
-                    created_at: '2024-10-16 01:33:07'
-                    updated_at: '2024-10-16 01:33:07'
+                    created_at: '2024-10-17 00:40:36'
+                    updated_at: '2024-10-17 00:40:36'
                 properties:
                   data:
                     type: object
@@ -290,19 +290,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Brielle Jakubowski'
+                        example: 'Jordon Murphy'
                       tax_number:
                         type: string
-                        example: 01JA9FA4A68MS7T0J40PCZ49XH
+                        example: 01JABYPP9KCW3BWDJ165W9P47F
                       tax_rate:
                         type: number
                         example: 17.5
                       created_at:
                         type: string
-                        example: '2024-10-16 01:33:07'
+                        example: '2024-10-17 00:40:36'
                       updated_at:
                         type: string
-                        example: '2024-10-16 01:33:07'
+                        example: '2024-10-17 00:40:36'
       tags:
         - Customers
       requestBody:
@@ -382,18 +382,18 @@ paths:
                   data:
                     -
                       customer_email_id: 1
-                      name: 'Jodie McClure'
-                      address: ortiz.bryana@example.net
+                      name: 'Jeff Volkman IV'
+                      address: pagac.steve@example.net
                       is_default: true
-                      created_at: '2024-10-16 01:33:07'
-                      updated_at: '2024-10-16 01:33:07'
+                      created_at: '2024-10-17 00:40:36'
+                      updated_at: '2024-10-17 00:40:36'
                     -
                       customer_email_id: 1
-                      name: 'Carrie Schmidt'
-                      address: fdubuque@example.net
+                      name: 'Lukas Wiza'
+                      address: uwitting@example.com
                       is_default: true
-                      created_at: '2024-10-16 01:33:07'
-                      updated_at: '2024-10-16 01:33:07'
+                      created_at: '2024-10-17 00:40:36'
+                      updated_at: '2024-10-17 00:40:36'
                   links:
                     first: '/?page=1'
                     last: null
@@ -411,18 +411,18 @@ paths:
                     example:
                       -
                         customer_email_id: 1
-                        name: 'Jodie McClure'
-                        address: ortiz.bryana@example.net
+                        name: 'Jeff Volkman IV'
+                        address: pagac.steve@example.net
                         is_default: true
-                        created_at: '2024-10-16 01:33:07'
-                        updated_at: '2024-10-16 01:33:07'
+                        created_at: '2024-10-17 00:40:36'
+                        updated_at: '2024-10-17 00:40:36'
                       -
                         customer_email_id: 1
-                        name: 'Carrie Schmidt'
-                        address: fdubuque@example.net
+                        name: 'Lukas Wiza'
+                        address: uwitting@example.com
                         is_default: true
-                        created_at: '2024-10-16 01:33:07'
-                        updated_at: '2024-10-16 01:33:07'
+                        created_at: '2024-10-17 00:40:36'
+                        updated_at: '2024-10-17 00:40:36'
                     items:
                       type: object
                       properties:
@@ -431,19 +431,19 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: 'Jodie McClure'
+                          example: 'Jeff Volkman IV'
                         address:
                           type: string
-                          example: ortiz.bryana@example.net
+                          example: pagac.steve@example.net
                         is_default:
                           type: boolean
                           example: true
                         created_at:
                           type: string
-                          example: '2024-10-16 01:33:07'
+                          example: '2024-10-17 00:40:36'
                         updated_at:
                           type: string
-                          example: '2024-10-16 01:33:07'
+                          example: '2024-10-17 00:40:36'
                   links:
                     type: object
                     properties:
@@ -484,7 +484,43 @@ paths:
       operationId: createCustomerEmail
       description: ''
       parameters: []
-      responses: {  }
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    customer_email_id: 1
+                    name: 'Caroline Bode'
+                    address: blynch@example.org
+                    is_default: true
+                    created_at: '2024-10-17 00:40:36'
+                    updated_at: '2024-10-17 00:40:36'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      customer_email_id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Caroline Bode'
+                      address:
+                        type: string
+                        example: blynch@example.org
+                      is_default:
+                        type: boolean
+                        example: true
+                      created_at:
+                        type: string
+                        example: '2024-10-17 00:40:36'
+                      updated_at:
+                        type: string
+                        example: '2024-10-17 00:40:36'
       tags:
         - 'Customer Emails'
       requestBody:
@@ -505,7 +541,7 @@ paths:
                 is_default:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
               required:
                 - name
                 - address
@@ -525,18 +561,42 @@ paths:
       description: ''
       parameters: []
       responses:
-        401:
+        200:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: Unauthorized
+                  data:
+                    customer_email_id: 1
+                    name: 'Herman Davis'
+                    address: estrella.heller@example.org
+                    is_default: true
+                    created_at: '2024-10-17 00:40:36'
+                    updated_at: '2024-10-17 00:40:36'
                 properties:
-                  message:
-                    type: string
-                    example: Unauthorized
+                  data:
+                    type: object
+                    properties:
+                      customer_email_id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Herman Davis'
+                      address:
+                        type: string
+                        example: estrella.heller@example.org
+                      is_default:
+                        type: boolean
+                        example: true
+                      created_at:
+                        type: string
+                        example: '2024-10-17 00:40:36'
+                      updated_at:
+                        type: string
+                        example: '2024-10-17 00:40:36'
       tags:
         - 'Customer Emails'
     put:
@@ -544,7 +604,43 @@ paths:
       operationId: updateCustomerEmail
       description: ''
       parameters: []
-      responses: {  }
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    customer_email_id: 1
+                    name: 'Lester Hane'
+                    address: glover.unique@example.org
+                    is_default: true
+                    created_at: '2024-10-17 00:40:36'
+                    updated_at: '2024-10-17 00:40:36'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      customer_email_id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Lester Hane'
+                      address:
+                        type: string
+                        example: glover.unique@example.org
+                      is_default:
+                        type: boolean
+                        example: true
+                      created_at:
+                        type: string
+                        example: '2024-10-17 00:40:36'
+                      updated_at:
+                        type: string
+                        example: '2024-10-17 00:40:36'
       tags:
         - 'Customer Emails'
       requestBody:
@@ -586,6 +682,404 @@ paths:
         required: true
         schema:
           type: integer
+  '/api/v1/customers/{customer_id}/phones':
+    get:
+      summary: 'List Customer Phones'
+      operationId: listCustomerPhones
+      description: ''
+      parameters:
+        -
+          in: query
+          name: type
+          description: ''
+          example: Office
+          required: false
+          schema:
+            type: string
+            description: ''
+            example: Office
+            enum:
+              - Home
+              - Office
+              - Mobile
+        -
+          in: query
+          name: search
+          description: 'Search for customer phones by name or number'
+          example: '0123456789'
+          required: false
+          schema:
+            type: string
+            description: 'Search for customer phones by name or number'
+            example: '0123456789'
+        -
+          in: query
+          name: per_page
+          description: 'Number of results per page (Min 25, Max 100)'
+          example: 25
+          required: false
+          schema:
+            type: integer
+            description: 'Number of results per page (Min 25, Max 100)'
+            example: 25
+        -
+          in: query
+          name: page
+          description: 'Page number'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      customer_phone_id: 1
+                      type: Office
+                      name: 'Laverna Lakin'
+                      number: 818-847-0251
+                      is_default: true
+                      created_at: '2024-10-17 00:40:36'
+                      updated_at: '2024-10-17 00:40:36'
+                    -
+                      customer_phone_id: 1
+                      type: Mobile
+                      name: 'Prof. Vilma Mohr'
+                      number: 1-626-985-0681
+                      is_default: true
+                      created_at: '2024-10-17 00:40:36'
+                      updated_at: '2024-10-17 00:40:36'
+                  links:
+                    first: '/?page=1'
+                    last: null
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    path: /
+                    per_page: 25
+                    to: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        customer_phone_id: 1
+                        type: Office
+                        name: 'Laverna Lakin'
+                        number: 818-847-0251
+                        is_default: true
+                        created_at: '2024-10-17 00:40:36'
+                        updated_at: '2024-10-17 00:40:36'
+                      -
+                        customer_phone_id: 1
+                        type: Mobile
+                        name: 'Prof. Vilma Mohr'
+                        number: 1-626-985-0681
+                        is_default: true
+                        created_at: '2024-10-17 00:40:36'
+                        updated_at: '2024-10-17 00:40:36'
+                    items:
+                      type: object
+                      properties:
+                        customer_phone_id:
+                          type: integer
+                          example: 1
+                        type:
+                          type: string
+                          example: Office
+                        name:
+                          type: string
+                          example: 'Laverna Lakin'
+                        number:
+                          type: string
+                          example: 818-847-0251
+                        is_default:
+                          type: boolean
+                          example: true
+                        created_at:
+                          type: string
+                          example: '2024-10-17 00:40:36'
+                        updated_at:
+                          type: string
+                          example: '2024-10-17 00:40:36'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: '/?page=1'
+                      last:
+                        type: string
+                        example: null
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      path:
+                        type: string
+                        example: /
+                      per_page:
+                        type: integer
+                        example: 25
+                      to:
+                        type: integer
+                        example: 2
+      tags:
+        - 'Customer Phones'
+    post:
+      summary: 'Create Customer Phone'
+      operationId: createCustomerPhone
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    customer_phone_id: 1
+                    type: Mobile
+                    name: 'Miss Christy Baumbach'
+                    number: '(952) 852-8265'
+                    is_default: true
+                    created_at: '2024-10-17 00:40:36'
+                    updated_at: '2024-10-17 00:40:36'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      customer_phone_id:
+                        type: integer
+                        example: 1
+                      type:
+                        type: string
+                        example: Mobile
+                      name:
+                        type: string
+                        example: 'Miss Christy Baumbach'
+                      number:
+                        type: string
+                        example: '(952) 852-8265'
+                      is_default:
+                        type: boolean
+                        example: true
+                      created_at:
+                        type: string
+                        example: '2024-10-17 00:40:36'
+                      updated_at:
+                        type: string
+                        example: '2024-10-17 00:40:36'
+      tags:
+        - 'Customer Phones'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: ''
+                  example: Office
+                  enum:
+                    - Home
+                    - Office
+                    - Mobile
+                name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: 'John Doe'
+                number:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 32 characters.'
+                  example: +1-956-745-2290
+                is_default:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - type
+                - name
+                - number
+    parameters:
+      -
+        in: path
+        name: customer_id
+        description: 'The ID of the customer.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/customers/{customer_id}/phones/{id}':
+    get:
+      summary: 'Get Customer Phone'
+      operationId: getCustomerPhone
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    customer_phone_id: 1
+                    type: Office
+                    name: 'Mr. Deonte Stoltenberg Jr.'
+                    number: '+18025458392'
+                    is_default: true
+                    created_at: '2024-10-17 00:40:36'
+                    updated_at: '2024-10-17 00:40:36'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      customer_phone_id:
+                        type: integer
+                        example: 1
+                      type:
+                        type: string
+                        example: Office
+                      name:
+                        type: string
+                        example: 'Mr. Deonte Stoltenberg Jr.'
+                      number:
+                        type: string
+                        example: '+18025458392'
+                      is_default:
+                        type: boolean
+                        example: true
+                      created_at:
+                        type: string
+                        example: '2024-10-17 00:40:36'
+                      updated_at:
+                        type: string
+                        example: '2024-10-17 00:40:36'
+      tags:
+        - 'Customer Phones'
+    put:
+      summary: 'Update Customer Phone'
+      operationId: updateCustomerPhone
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    customer_phone_id: 1
+                    type: Home
+                    name: 'Miss Flavie Smitham'
+                    number: 878-332-3370
+                    is_default: true
+                    created_at: '2024-10-17 00:40:36'
+                    updated_at: '2024-10-17 00:40:36'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      customer_phone_id:
+                        type: integer
+                        example: 1
+                      type:
+                        type: string
+                        example: Home
+                      name:
+                        type: string
+                        example: 'Miss Flavie Smitham'
+                      number:
+                        type: string
+                        example: 878-332-3370
+                      is_default:
+                        type: boolean
+                        example: true
+                      created_at:
+                        type: string
+                        example: '2024-10-17 00:40:36'
+                      updated_at:
+                        type: string
+                        example: '2024-10-17 00:40:36'
+      tags:
+        - 'Customer Phones'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: ''
+                  example: Office
+                  enum:
+                    - Home
+                    - Office
+                    - Mobile
+                name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: 'John Doe'
+                number:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 32 characters.'
+                  example: +1-956-745-2290
+                is_default:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - type
+                - name
+                - number
+    parameters:
+      -
+        in: path
+        name: customer_id
+        description: 'The ID of the customer.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: id
+        description: 'The ID of the phone.'
+        example: 1
+        required: true
+        schema:
+          type: integer
 tags:
   -
     name: Customers
@@ -593,12 +1087,15 @@ tags:
   -
     name: 'Customer Emails'
     description: 'Customer Email Management API'
+  -
+    name: 'Customer Phones'
+    description: 'Customer Phone Management API'
 components:
   securitySchemes:
     default:
       type: http
       scheme: bearer
-      description: 'You can generate your token by logging in and clicking your name, and then <b>API Tokens</b>.'
+      description: 'You can generate your token by logging in and clicking your name, and then <a href="/user/api-tokens"><b>API Tokens</b></a>.'
 security:
   -
     default: []

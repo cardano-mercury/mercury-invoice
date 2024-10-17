@@ -118,7 +118,7 @@ return [
         'placeholder' => '{YOUR_ACCESS_TOKEN}',
 
         // Any extra authentication-related info for your users. Markdown and HTML are supported.
-        'extra_info' => 'You can generate your token by logging in and clicking your name, and then <b>API Tokens</b>.',
+        'extra_info' => 'You can generate your token by logging in and clicking your name, and then <a href="/user/api-tokens"><b>API Tokens</b></a>.',
     ],
 
     // Text to place in the "Introduction" section, right after the `description`. Markdown and HTML are supported.

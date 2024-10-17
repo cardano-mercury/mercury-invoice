@@ -68,7 +68,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"customer_email_id":1,"name":"Jodie McClure","address":"ortiz.bryana@example.net","is_default":true,"created_at":"2024-10-16 01:33:07","updated_at":"2024-10-16 01:33:07"},{"customer_email_id":1,"name":"Carrie Schmidt","address":"fdubuque@example.net","is_default":true,"created_at":"2024-10-16 01:33:07","updated_at":"2024-10-16 01:33:07"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"customer_email_id":1,"name":"Jeff Volkman IV","address":"pagac.steve@example.net","is_default":true,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"},{"customer_email_id":1,"name":"Lukas Wiza","address":"uwitting@example.com","is_default":true,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: ''
         custom: []
@@ -76,7 +76,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 65Va34veDhEg8kfPZadc16b'
+      - 'Bearer 8PE3hdZ541eDb66kaagVcfv'
     controller: null
     method: null
     route: null
@@ -135,7 +135,7 @@ endpoints:
         name: is_default
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -143,14 +143,20 @@ endpoints:
     cleanBodyParameters:
       name: 'John Doe'
       address: john.doe@example.com
-      is_default: true
+      is_default: false
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"customer_email_id":1,"name":"Caroline Bode","address":"blynch@example.org","is_default":true,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer Dbg1PEf63864Zvaca5ehdVk'
+      - 'Bearer P81eaD3gf6ck5vZaE6bV4hd'
     controller: null
     method: null
     route: null
@@ -201,19 +207,16 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthorized"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
+        status: 200
+        content: '{"data":{"customer_email_id":1,"name":"Herman Davis","address":"estrella.heller@example.org","is_default":true,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"}}'
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1V5caDPdafZg8eb643k6hvE'
+      - 'Bearer 5vbf364D6khaZadg8VecEP1'
     controller: null
     method: null
     route: null
@@ -293,12 +296,18 @@ endpoints:
       address: john.doe@example.com
       is_default: false
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"customer_email_id":1,"name":"Lester Hane","address":"glover.unique@example.org","is_default":true,"created_at":"2024-10-17 00:40:36","updated_at":"2024-10-17 00:40:36"}}'
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer b6dfgD1a4kPcv5eh63VZEa8'
+      - 'Bearer 4PEDv6fVa6e3cakgd81hZ5b'
     controller: null
     method: null
     route: null

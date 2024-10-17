@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Foundation\Application;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -53,7 +54,17 @@ return Application::configure(basePath: dirname(__DIR__))
         // Handle API Method Not Allowed Http Exception
         $exceptions->render(function (MethodNotAllowedHttpException $e, Request $request) {
             if ($request->is('api/*')) {
-                return response()->json(['message' => $e->getMessage()], 400);
+                return response()->json([ 'message' => $e->getMessage() ], 400);
+            }
+        });
+
+        // Handle API Validation Exception
+        $exceptions->render(function (ValidationException $e, Request $request) {
+            if ($request->is('api/*')) {
+                return response()->json([
+                    'message' => 'Validation failed',
+                    'fields' => $e->validator->errors()->toArray(),
+                ], 422);
             }
         });
 

@@ -47,6 +47,7 @@ class APICustomerEmailsController extends Controller
     /**
      * Create Customer Email
      */
+    #[ResponseFromApiResource(CustomerEmailResource::class, Email::class)]
     public function store(StoreCustomerEmailRequest $request, Customer $customer): JsonResponse|CustomerEmailResource
     {
         if (!$request->user()->tokenCan('CustomerEmails:Create')) {
@@ -71,6 +72,7 @@ class APICustomerEmailsController extends Controller
     /**
      * Get Customer Email
      */
+    #[ResponseFromApiResource(CustomerEmailResource::class, Email::class)]
     public function show(Request $request, Customer $customer, Email $email): JsonResponse|CustomerEmailResource
     {
         if (!$request->user()->tokenCan('CustomerEmails:Read')) {
@@ -83,6 +85,7 @@ class APICustomerEmailsController extends Controller
     /**
      * Update Customer Email
      */
+    #[ResponseFromApiResource(CustomerEmailResource::class, Email::class)]
     public function update(StoreCustomerEmailRequest $request, Customer $customer, Email $email): JsonResponse|CustomerEmailResource
     {
         if (!$request->user()->tokenCan('CustomerEmails:Update')) {
