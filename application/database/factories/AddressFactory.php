@@ -31,6 +31,8 @@ class AddressFactory extends Factory
             'postal_code' => $localisedFaker->postcode(),
             'country' => 'United States',
             'is_default' => true,
+            'created_at' => now()->toDateTimeString(),
+            'updated_at' => now()->toDateTimeString(),
         ];
     }
 }

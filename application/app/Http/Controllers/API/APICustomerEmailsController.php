@@ -28,7 +28,7 @@ class APICustomerEmailsController extends Controller
     /**
      * List Customer Emails
      */
-    #[ResponseFromApiResource(CustomerEmailResource::class, Email::class, collection: true, simplePaginate: 25)]
+    #[ResponseFromApiResource(CustomerEmailResource::class, Email::class, status: 200, description: 'OK', collection: true, simplePaginate: 25)]
     #[QueryParam('search', 'string', description: 'Search for customer emails by name or address', required: false, example: 'john.doe@example.com')]
     #[QueryParam('per_page', 'integer', description: 'Number of results per page (Min 25, Max 100)', required: false, example: 25)]
     #[QueryParam('page', 'integer', description: 'Page number', required: false, example: 1)]
@@ -52,7 +52,7 @@ class APICustomerEmailsController extends Controller
     /**
      * Create Customer Email
      */
-    #[ResponseFromApiResource(CustomerEmailResource::class, Email::class)]
+    #[ResponseFromApiResource(CustomerEmailResource::class, Email::class, status: 201, description: 'Created')]
     #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
     public function store(StoreCustomerEmailRequest $request, Customer $customer): JsonResponse|CustomerEmailResource
     {
@@ -78,7 +78,7 @@ class APICustomerEmailsController extends Controller
     /**
      * Get Customer Email
      */
-    #[ResponseFromApiResource(CustomerEmailResource::class, Email::class)]
+    #[ResponseFromApiResource(CustomerEmailResource::class, Email::class, status: 200, description: 'OK')]
     public function show(Request $request, Customer $customer, Email $email): JsonResponse|CustomerEmailResource
     {
         if (!$request->user()->tokenCan('CustomerEmails:Read')) {
@@ -91,7 +91,7 @@ class APICustomerEmailsController extends Controller
     /**
      * Update Customer Email
      */
-    #[ResponseFromApiResource(CustomerEmailResource::class, Email::class)]
+    #[ResponseFromApiResource(CustomerEmailResource::class, Email::class, status: 200, description: 'OK')]
     #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
     public function update(StoreCustomerEmailRequest $request, Customer $customer, Email $email): JsonResponse|CustomerEmailResource
     {

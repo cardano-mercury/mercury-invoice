@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Cardano Mercury: Invoice",
-        "_postman_id": "0e5eace5-3dce-42c9-a6aa-52a3e9eb603d",
+        "_postman_id": "fe5729fc-010a-468f-b77e-6b1265f1d06c",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -65,8 +65,8 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_id\":1,\"name\":\"Dr. Pasquale Towne Jr.\",\"tax_number\":\"01JAC0FZQP7GTXNM9E3F6M65MG\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"},{\"customer_id\":1,\"name\":\"Kurt Weimann\",\"tax_number\":\"01JAC0FZQQM5X3NVB07C8KQNW4\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
-                            "name": ""
+                            "body": "{\"data\":[{\"customer_id\":1,\"name\":\"Dr. Gerry Wehner V\",\"tax_number\":\"01JAC5R5YTVARWZZDNJVN55BP2\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"},{\"customer_id\":1,\"name\":\"Dominic Schimmel\",\"tax_number\":\"01JAC5R5YV0RXVMW3J0ZXKYHV3\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "name": "OK"
                         },
                         {
                             "header": [],
@@ -123,9 +123,9 @@
                     "response": [
                         {
                             "header": [],
-                            "code": 200,
-                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Steve Maggio\",\"tax_number\":\"01JAC0FZQZTYDA0ZC0QZFKKGSY\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
-                            "name": ""
+                            "code": 201,
+                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Ms. Sonia O'Kon IV\",\"tax_number\":\"01JAC5R5Z4STSKGN49EYXG9SSW\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}}",
+                            "name": "Created"
                         },
                         {
                             "header": [],
@@ -194,8 +194,8 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Hilma Ruecker\",\"tax_number\":\"01JAC0FZR5FBEGV35AE7E0VW3M\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
-                            "name": ""
+                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Krista Rohan\",\"tax_number\":\"01JAC5R5Z9J1Z2QD9GQ23D50HW\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}}",
+                            "name": "OK"
                         },
                         {
                             "header": [],
@@ -261,8 +261,8 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Prof. Trevion Herzog\",\"tax_number\":\"01JAC0FZRD3ER0R240JPEC7FGX\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
-                            "name": ""
+                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Josefa Kihn\",\"tax_number\":\"01JAC5R5ZESD9E8JM73KQ9Z45D\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}}",
+                            "name": "OK"
                         },
                         {
                             "header": [],
@@ -356,8 +356,8 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_email_id\":1,\"name\":\"Charles Schroeder\",\"address\":\"skovacek@example.com\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"},{\"customer_email_id\":1,\"name\":\"Meghan O'Hara\",\"address\":\"maximus60@example.org\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
-                            "name": ""
+                            "body": "{\"data\":[{\"customer_email_id\":1,\"name\":\"Agnes Kirlin\",\"address\":\"jtowne@example.org\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"},{\"customer_email_id\":1,\"name\":\"Mikel Harber\",\"address\":\"jonathon25@example.org\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "name": "OK"
                         },
                         {
                             "header": [],
@@ -415,16 +415,16 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"John Doe\",\"address\":\"john.doe@example.com\",\"is_default\":true}"
+                            "raw": "{\"name\":\"John Doe\",\"address\":\"john.doe@example.com\",\"is_default\":false}"
                         },
                         "description": ""
                     },
                     "response": [
                         {
                             "header": [],
-                            "code": 200,
-                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Krystal Schuster\",\"address\":\"justine.ruecker@example.com\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
-                            "name": ""
+                            "code": 201,
+                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Abdiel Boehm\",\"address\":\"krystal55@example.net\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}}",
+                            "name": "Created"
                         },
                         {
                             "header": [],
@@ -499,8 +499,8 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Hilma Heidenreich\",\"address\":\"leonora.block@example.com\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
-                            "name": ""
+                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Missouri Johnson\",\"address\":\"meaghan32@example.com\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}}",
+                            "name": "OK"
                         },
                         {
                             "header": [],
@@ -564,7 +564,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"John Doe\",\"address\":\"john.doe@example.com\",\"is_default\":false}"
+                            "raw": "{\"name\":\"John Doe\",\"address\":\"john.doe@example.com\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -572,8 +572,8 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Shemar Schmidt\",\"address\":\"schaefer.kamryn@example.net\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
-                            "name": ""
+                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Miss Emmalee Turner V\",\"address\":\"carter72@example.net\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}}",
+                            "name": "OK"
                         },
                         {
                             "header": [],
@@ -622,7 +622,7 @@
                             "query": [
                                 {
                                     "key": "type",
-                                    "value": "Office",
+                                    "value": "Home",
                                     "description": "",
                                     "disabled": false
                                 },
@@ -645,7 +645,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/phones?type=Office&search=0123456789&per_page=25&page=1",
+                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/phones?type=Home&search=0123456789&per_page=25&page=1",
                             "variable": [
                                 {
                                     "id": "customer_id",
@@ -673,8 +673,8 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Mrs. April Hill II\",\"number\":\"+1-657-833-4016\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"},{\"customer_phone_id\":1,\"type\":\"Home\",\"name\":\"Mozelle Heaney\",\"number\":\"435.476.0236\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
-                            "name": ""
+                            "body": "{\"data\":[{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Ms. Kariane Koss III\",\"number\":\"1-928-420-1819\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"},{\"customer_phone_id\":1,\"type\":\"Office\",\"name\":\"Guido Toy\",\"number\":\"270.886.2722\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "name": "OK"
                         },
                         {
                             "header": [],
@@ -732,16 +732,16 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"Home\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":false}"
+                            "raw": "{\"type\":\"Home\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":true}"
                         },
                         "description": ""
                     },
                     "response": [
                         {
                             "header": [],
-                            "code": 200,
-                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Office\",\"name\":\"Kasandra Dooley\",\"number\":\"+1 (986) 954-7532\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
-                            "name": ""
+                            "code": 201,
+                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Dr. Grady Kuhn\",\"number\":\"1-564-797-8267\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}}",
+                            "name": "Created"
                         },
                         {
                             "header": [],
@@ -816,8 +816,8 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Home\",\"name\":\"Billie Hyatt\",\"number\":\"+17726011363\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
-                            "name": ""
+                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Office\",\"name\":\"Miss Lura Dooley\",\"number\":\"858.744.1185\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}}",
+                            "name": "OK"
                         },
                         {
                             "header": [],
@@ -881,7 +881,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"Mobile\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":false}"
+                            "raw": "{\"type\":\"Home\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -889,8 +889,325 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Dorothy Hand\",\"number\":\"1-817-680-4294\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
-                            "name": ""
+                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Allene Bogisich MD\",\"number\":\"+1 (914) 754-0483\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}}",
+                            "name": "OK"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"field_name\": [\n            \"The field name is required.\"\n        ],\n        \"another_field\": [\n            \"The another field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
+                            "name": "Validation Failed"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Customer Addresses",
+            "description": "Customer Address Management API",
+            "item": [
+                {
+                    "name": "List Customer Addresses",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/customers\/:customer_id\/addresses",
+                            "query": [
+                                {
+                                    "key": "type",
+                                    "value": "Shipping",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "search",
+                                    "value": "25+Brookfield+Road",
+                                    "description": "Search for customer addresses by name or any address fields",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "25",
+                                    "description": "Number of results per page (Min 25, Max 100)",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "1",
+                                    "description": "Page number",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/addresses?type=Shipping&search=25+Brookfield+Road&per_page=25&page=1",
+                            "variable": [
+                                {
+                                    "id": "customer_id",
+                                    "key": "customer_id",
+                                    "value": "1",
+                                    "description": "The ID of the customer."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"customer_address_id\":1,\"type\":\"Billing\",\"name\":\"Johnson-King\",\"line1\":\"40305 Dimitri Circles Suite 660\",\"line2\":null,\"city\":\"Treutelmouth\",\"state\":\"Arkansas\",\"postal_code\":\"57786\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"},{\"customer_address_id\":1,\"type\":\"Billing\",\"name\":\"King Group\",\"line1\":\"9161 Adalberto Pine\",\"line2\":null,\"city\":\"Abbottfort\",\"state\":\"Mississippi\",\"postal_code\":\"89740-6753\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "name": "OK"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create Customer Address",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/customers\/:customer_id\/addresses",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/addresses",
+                            "variable": [
+                                {
+                                    "id": "customer_id",
+                                    "key": "customer_id",
+                                    "value": "1",
+                                    "description": "The ID of the customer."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"type\":\"Billing\",\"name\":\"John Doe\",\"line1\":\"2592 Jada Key\",\"line2\":\"Apartment 504\",\"city\":\"South Josh\",\"state\":\"Kentucky\",\"postal_code\":\"62249-8453\",\"country\":\"United States\",\"is_default\":false}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\"data\":{\"customer_address_id\":1,\"type\":\"Shipping\",\"name\":\"Torp PLC\",\"line1\":\"20141 Purdy Route\",\"line2\":null,\"city\":\"New Ignacio\",\"state\":\"Rhode Island\",\"postal_code\":\"61913\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}}",
+                            "name": "Created"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"field_name\": [\n            \"The field name is required.\"\n        ],\n        \"another_field\": [\n            \"The another field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
+                            "name": "Validation Failed"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Customer Address",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/customers\/:customer_id\/addresses\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/addresses\/:id",
+                            "variable": [
+                                {
+                                    "id": "customer_id",
+                                    "key": "customer_id",
+                                    "value": "1",
+                                    "description": "The ID of the customer."
+                                },
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the address."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"customer_address_id\":1,\"type\":\"Billing\",\"name\":\"Fisher-Roberts\",\"line1\":\"5403 Casper Haven Suite 635\",\"line2\":null,\"city\":\"West Joshland\",\"state\":\"Colorado\",\"postal_code\":\"21625\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}}",
+                            "name": "OK"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Customer Address",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/customers\/:customer_id\/addresses\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/addresses\/:id",
+                            "variable": [
+                                {
+                                    "id": "customer_id",
+                                    "key": "customer_id",
+                                    "value": "1",
+                                    "description": "The ID of the customer."
+                                },
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the address."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"type\":\"Shipping\",\"name\":\"John Doe\",\"line1\":\"2592 Jada Key\",\"line2\":\"Apartment 504\",\"city\":\"South Josh\",\"state\":\"Kentucky\",\"postal_code\":\"62249-8453\",\"country\":\"United States\",\"is_default\":false}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"customer_address_id\":1,\"type\":\"Billing\",\"name\":\"Marvin-Klein\",\"line1\":\"6647 Kassulke Village Suite 574\",\"line2\":null,\"city\":\"West Libbie\",\"state\":\"Wisconsin\",\"postal_code\":\"69037\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-17 02:43:45\",\"updated_at\":\"2024-10-17 02:43:45\"}}",
+                            "name": "OK"
                         },
                         {
                             "header": [],

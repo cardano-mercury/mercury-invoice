@@ -37,7 +37,7 @@ endpoints:
         name: type
         description: ''
         required: false
-        example: Office
+        example: Home
         type: string
         enumValues:
           - Home
@@ -73,7 +73,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      type: Office
+      type: Home
       search: '0123456789'
       per_page: 25
       page: 1
@@ -83,9 +83,9 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"customer_phone_id":1,"type":"Mobile","name":"Mrs. April Hill II","number":"+1-657-833-4016","is_default":true,"created_at":"2024-10-17 01:11:53","updated_at":"2024-10-17 01:11:53"},{"customer_phone_id":1,"type":"Home","name":"Mozelle Heaney","number":"435.476.0236","is_default":true,"created_at":"2024-10-17 01:11:53","updated_at":"2024-10-17 01:11:53"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"customer_phone_id":1,"type":"Mobile","name":"Ms. Kariane Koss III","number":"1-928-420-1819","is_default":true,"created_at":"2024-10-17 02:43:45","updated_at":"2024-10-17 02:43:45"},{"customer_phone_id":1,"type":"Office","name":"Guido Toy","number":"270.886.2722","is_default":true,"created_at":"2024-10-17 02:43:45","updated_at":"2024-10-17 02:43:45"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
-        description: ''
+        description: OK
         custom: []
       -
         status: 401
@@ -127,7 +127,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ake6Pb81aV3546ZchvfgdED'
+      - 'Bearer aE65v6DP31adcebfgZk8Vh4'
     controller: null
     method: null
     route: null
@@ -198,7 +198,7 @@ endpoints:
         name: is_default
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -207,14 +207,14 @@ endpoints:
       type: Home
       name: 'John Doe'
       number: +1-956-745-2290
-      is_default: false
+      is_default: true
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":{"customer_phone_id":1,"type":"Office","name":"Kasandra Dooley","number":"+1 (986) 954-7532","is_default":true,"created_at":"2024-10-17 01:11:53","updated_at":"2024-10-17 01:11:53"}}'
+        status: 201
+        content: '{"data":{"customer_phone_id":1,"type":"Mobile","name":"Dr. Grady Kuhn","number":"1-564-797-8267","is_default":true,"created_at":"2024-10-17 02:43:45","updated_at":"2024-10-17 02:43:45"}}'
         headers: []
-        description: ''
+        description: Created
         custom: []
       -
         status: 401
@@ -273,7 +273,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kVDgZe6vdbca3Ef46185haP'
+      - 'Bearer E6Vk3Pa5acgDh4e8b6d1fvZ'
     controller: null
     method: null
     route: null
@@ -325,9 +325,9 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_phone_id":1,"type":"Home","name":"Billie Hyatt","number":"+17726011363","is_default":true,"created_at":"2024-10-17 01:11:53","updated_at":"2024-10-17 01:11:53"}}'
+        content: '{"data":{"customer_phone_id":1,"type":"Office","name":"Miss Lura Dooley","number":"858.744.1185","is_default":true,"created_at":"2024-10-17 02:43:45","updated_at":"2024-10-17 02:43:45"}}'
         headers: []
-        description: ''
+        description: OK
         custom: []
       -
         status: 401
@@ -369,7 +369,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer bPvghekEaZ656c4Df3dV81a'
+      - 'Bearer 4Zde15fDaPh83v6gbackVE6'
     controller: null
     method: null
     route: null
@@ -421,7 +421,7 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: Mobile
+        example: Home
         type: string
         enumValues:
           - Home
@@ -451,23 +451,23 @@ endpoints:
         name: is_default
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      type: Mobile
+      type: Home
       name: 'John Doe'
       number: +1-956-745-2290
-      is_default: false
+      is_default: true
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"customer_phone_id":1,"type":"Mobile","name":"Dorothy Hand","number":"1-817-680-4294","is_default":true,"created_at":"2024-10-17 01:11:53","updated_at":"2024-10-17 01:11:53"}}'
+        content: '{"data":{"customer_phone_id":1,"type":"Mobile","name":"Allene Bogisich MD","number":"+1 (914) 754-0483","is_default":true,"created_at":"2024-10-17 02:43:45","updated_at":"2024-10-17 02:43:45"}}'
         headers: []
-        description: ''
+        description: OK
         custom: []
       -
         status: 401
@@ -526,7 +526,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ha84cZ3kd66vebVPagD1f5E'
+      - 'Bearer 3186gPcekDVaabZvE45fh6d'
     controller: null
     method: null
     route: null

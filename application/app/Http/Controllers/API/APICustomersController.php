@@ -27,7 +27,7 @@ class APICustomersController extends Controller
     /**
      * List Customers
      */
-    #[ResponseFromApiResource(CustomerResource::class, Customer::class, collection: true, simplePaginate: 25)]
+    #[ResponseFromApiResource(CustomerResource::class, Customer::class, status: 200, description: 'OK', collection: true, simplePaginate: 25)]
     #[QueryParam('search', 'string', description: 'Search for customers by name or tax number', required: false, example: 'John Doe')]
     #[QueryParam('per_page', 'integer', description: 'Number of results per page (Min 25, Max 100)', required: false, example: 25)]
     #[QueryParam('page', 'integer', description: 'Page number', required: false, example: 1)]
@@ -52,7 +52,7 @@ class APICustomersController extends Controller
     /**
      * Create Customer
      */
-    #[ResponseFromApiResource(CustomerResource::class, Customer::class)]
+    #[ResponseFromApiResource(CustomerResource::class, Customer::class, status: 201, description: 'Created')]
     #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
     public function store(StoreCustomerRequest $request): CustomerResource|JsonResponse
     {
@@ -71,7 +71,7 @@ class APICustomersController extends Controller
     /**
      * Get Customer
      */
-    #[ResponseFromApiResource(CustomerResource::class, Customer::class)]
+    #[ResponseFromApiResource(CustomerResource::class, Customer::class, status: 200, description: 'OK')]
     public function show(Request $request, Customer $customer): CustomerResource|JsonResponse
     {
         if (!$request->user()->tokenCan('Customers:Read')) {
@@ -84,7 +84,7 @@ class APICustomersController extends Controller
     /**
      * Update Customer
      */
-    #[ResponseFromApiResource(CustomerResource::class, Customer::class)]
+    #[ResponseFromApiResource(CustomerResource::class, Customer::class, status: 200, description: 'OK')]
     #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
     public function update(StoreCustomerRequest $request, Customer $customer): CustomerResource|JsonResponse
     {

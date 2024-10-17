@@ -2,45 +2,45 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\Phone;
-use App\Enums\PhoneType;
+use App\Models\Address;
 use App\Models\Customer;
+use App\Enums\AddressType;
 use App\Traits\HelperTrait;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
-use App\Http\Resources\CustomerPhoneResource;
+use App\Http\Resources\CustomerAddressResource;
 use Knuckles\Scribe\Attributes\ResponseFromFile;
 use Knuckles\Scribe\Attributes\ResponseFromApiResource;
-use App\Http\Requests\Customer\StoreCustomerPhoneRequest;
+use App\Http\Requests\Customer\StoreCustomerAddressRequest;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
-#[Group('Customer Phones', 'Customer Phone Management API')]
+#[Group('Customer Addresses', 'Customer Address Management API')]
 #[ResponseFromFile(file: 'resources/api-responses/401.json', status: 401, description: 'Unauthorized')]
 #[ResponseFromFile(file: 'resources/api-responses/404.json', status: 404, description: 'Not Found')]
 #[ResponseFromFile(file: 'resources/api-responses/400.json', status: 404, description: 'Bad Request')]
 #[ResponseFromFile(file: 'resources/api-responses/500.json', status: 500, description: 'Internal Server Error')]
-class APICustomerPhonesController extends Controller
+class APICustomerAddressesController extends Controller
 {
     use HelperTrait;
 
     /**
-     * List Customer Phones
+     * List Customer Addresses
      */
-    #[ResponseFromApiResource(CustomerPhoneResource::class, Phone::class, status: 200, description: 'OK', collection: true, simplePaginate: 25)]
-    #[QueryParam('type', required: false, enum: PhoneType::class)]
-    #[QueryParam('search', 'string', description: 'Search for customer phones by name or number', required: false, example: '0123456789')]
+    #[ResponseFromApiResource(CustomerAddressResource::class, Address::class, status: 200, description: 'OK', collection: true, simplePaginate: 25)]
+    #[QueryParam('type', required: false, enum: AddressType::class)]
+    #[QueryParam('search', 'string', description: 'Search for customer addresses by name or any address fields', required: false, example: '25 Brookfield Road')]
     #[QueryParam('per_page', 'integer', description: 'Number of results per page (Min 25, Max 100)', required: false, example: 25)]
     #[QueryParam('page', 'integer', description: 'Page number', required: false, example: 1)]
     public function index(Request $request, Customer $customer): JsonResponse|AnonymousResourceCollection
     {
-        if (!$request->user()->tokenCan('CustomerPhones:Read')) {
+        if (!$request->user()->tokenCan('CustomerAddresses:Read')) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
 
-        $customerPhones = $customer->phones()
+        $customerAddresses = $customer->addresses()
             ->when($request->type,
                 static fn ($query, $type) => $query
                     ->where('type', '=', $type)
@@ -48,72 +48,77 @@ class APICustomerPhonesController extends Controller
             ->when($request->search,
                 static fn ($query, $search) => $query
                     ->where('name', 'like', '%' . $search . '%')
-                    ->orWhere('number', 'like', '%' . $search . '%')
+                    ->orWhere('line1', 'like', '%' . $search . '%')
+                    ->orWhere('line2', 'like', '%' . $search . '%')
+                    ->orWhere('city', 'like', '%' . $search . '%')
+                    ->orWhere('state', 'like', '%' . $search . '%')
+                    ->orWhere('postal_code', 'like', '%' . $search . '%')
+                    ->orWhere('country', 'like', '%' . $search . '%')
             )
             ->simplePaginate($this->clamp($request->input('per_page'), 25, 100));
 
-        return CustomerPhoneResource::collection($customerPhones);
+        return CustomerAddressResource::collection($customerAddresses);
     }
 
     /**
-     * Create Customer Phone
+     * Create Customer Address
      */
-    #[ResponseFromApiResource(CustomerPhoneResource::class, Phone::class, status: 201, description: 'Created')]
+    #[ResponseFromApiResource(CustomerAddressResource::class, Address::class, status: 201, description: 'Created')]
     #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
-    public function store(StoreCustomerPhoneRequest $request, Customer $customer): CustomerPhoneResource|JsonResponse
+    public function store(StoreCustomerAddressRequest $request, Customer $customer): JsonResponse|CustomerAddressResource
     {
-        if (!$request->user()->tokenCan('CustomerPhones:Create')) {
+        if (!$request->user()->tokenCan('CustomerAddresses:Create')) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
 
-        $phone = Phone::create(array_merge(
+        $address = Address::create(array_merge(
             ['customer_id' => $customer->id],
             $request->validated()
         ));
 
         if ((bool) $request->validated('is_default') === true) {
-            Phone::query()
+            Address::query()
                 ->where('customer_id', '=', $customer->id)
-                ->where('id', '!=', $phone->id)
+                ->where('id', '!=', $address->id)
                 ->update(['is_default' => false]);
         }
 
-        return new CustomerPhoneResource($phone);
+        return new CustomerAddressResource($address);
     }
 
     /**
-     * Get Customer Phone
+     * Get Customer Address
      */
-    #[ResponseFromApiResource(CustomerPhoneResource::class, Phone::class, status: 200, description: 'OK')]
-    public function show(Request $request, Customer $customer, Phone $phone): CustomerPhoneResource|JsonResponse
+    #[ResponseFromApiResource(CustomerAddressResource::class, Address::class, status: 200, description: 'OK')]
+    public function show(Request $request, Customer $customer, Address $address): JsonResponse|CustomerAddressResource
     {
-        if (!$request->user()->tokenCan('CustomerPhones:Read')) {
+        if (!$request->user()->tokenCan('CustomerAddresses:Read')) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
 
-        return new CustomerPhoneResource($phone);
+        return new CustomerAddressResource($address);
     }
 
     /**
-     * Update Customer Phone
+     * Update Customer Address
      */
-    #[ResponseFromApiResource(CustomerPhoneResource::class, Phone::class, status: 200, description: 'OK')]
+    #[ResponseFromApiResource(CustomerAddressResource::class, Address::class, status: 200, description: 'OK')]
     #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
-    public function update(StoreCustomerPhoneRequest $request, Customer $customer, Phone $phone): CustomerPhoneResource|JsonResponse
+    public function update(StoreCustomerAddressRequest $request, Customer $customer, Address $address): JsonResponse|CustomerAddressResource
     {
-        if (!$request->user()->tokenCan('CustomerPhones:Update')) {
+        if (!$request->user()->tokenCan('CustomerAddresses:Update')) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
 
-        $phone->update($request->validated());
+        $address->update($request->validated());
 
         if ((bool) $request->validated('is_default') === true) {
-            Phone::query()
+            Address::query()
                 ->where('customer_id', '=', $customer->id)
-                ->where('id', '!=', $phone->id)
+                ->where('id', '!=', $address->id)
                 ->update(['is_default' => false]);
         }
 
-        return new CustomerPhoneResource($phone);
+        return new CustomerAddressResource($address);
     }
 }
