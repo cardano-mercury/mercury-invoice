@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('address', 256);
             $table->boolean('is_default')->default(false);
             $table->timestamps();
-            $table->unique(['customer_id', 'address']);
         });
     }
 
