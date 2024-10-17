@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Cardano Mercury: Invoice",
-        "_postman_id": "cb5a425d-6721-4071-ba1a-31c4ff616f38",
+        "_postman_id": "0e5eace5-3dce-42c9-a6aa-52a3e9eb603d",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -65,7 +65,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_id\":1,\"name\":\"Roman Streich\",\"tax_number\":\"01JAC01XKMHKR17KKTGDCQ6HNJ\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"},{\"customer_id\":1,\"name\":\"Dr. Katelynn Cormier II\",\"tax_number\":\"01JAC01XKNB2ED8NWZ7PBDDYQD\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"customer_id\":1,\"name\":\"Dr. Pasquale Towne Jr.\",\"tax_number\":\"01JAC0FZQP7GTXNM9E3F6M65MG\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"},{\"customer_id\":1,\"name\":\"Kurt Weimann\",\"tax_number\":\"01JAC0FZQQM5X3NVB07C8KQNW4\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": ""
                         },
                         {
@@ -124,7 +124,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Mireya Windler\",\"tax_number\":\"01JAC01XKYF12H6RZ4607C8GQ4\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
+                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Steve Maggio\",\"tax_number\":\"01JAC0FZQZTYDA0ZC0QZFKKGSY\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
                             "name": ""
                         },
                         {
@@ -148,7 +148,7 @@
                         {
                             "header": [],
                             "code": 422,
-                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"type\": [\n            \"The selected type is invalid.\"\n        ],\n        \"name\": [\n            \"The name field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
+                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"field_name\": [\n            \"The field name is required.\"\n        ],\n        \"another_field\": [\n            \"The another field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
                             "name": "Validation Failed"
                         },
                         {
@@ -194,7 +194,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Rachelle Schowalter PhD\",\"tax_number\":\"01JAC01XM4F8DFPAK2D8EZQRKG\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
+                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Hilma Ruecker\",\"tax_number\":\"01JAC0FZR5FBEGV35AE7E0VW3M\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
                             "name": ""
                         },
                         {
@@ -261,7 +261,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Dr. Michel Metz\",\"tax_number\":\"01JAC01XM90NABCXSMNJTQKW58\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
+                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Prof. Trevion Herzog\",\"tax_number\":\"01JAC0FZRD3ER0R240JPEC7FGX\",\"tax_rate\":17.5,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
                             "name": ""
                         },
                         {
@@ -285,7 +285,7 @@
                         {
                             "header": [],
                             "code": 422,
-                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"type\": [\n            \"The selected type is invalid.\"\n        ],\n        \"name\": [\n            \"The name field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
+                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"field_name\": [\n            \"The field name is required.\"\n        ],\n        \"another_field\": [\n            \"The another field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
                             "name": "Validation Failed"
                         },
                         {
@@ -356,8 +356,32 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_email_id\":1,\"name\":\"Cortney D'Amore\",\"address\":\"junius79@example.com\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"},{\"customer_email_id\":1,\"name\":\"Alycia Emmerich\",\"address\":\"ansel.jenkins@example.org\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"customer_email_id\":1,\"name\":\"Charles Schroeder\",\"address\":\"skovacek@example.com\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"},{\"customer_email_id\":1,\"name\":\"Meghan O'Hara\",\"address\":\"maximus60@example.org\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
                         }
                     ]
                 },
@@ -391,7 +415,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"John Doe\",\"address\":\"john.doe@example.com\",\"is_default\":false}"
+                            "raw": "{\"name\":\"John Doe\",\"address\":\"john.doe@example.com\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -399,8 +423,38 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Sincere Brekke\",\"address\":\"cayla95@example.net\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
+                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Krystal Schuster\",\"address\":\"justine.ruecker@example.com\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
                             "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"field_name\": [\n            \"The field name is required.\"\n        ],\n        \"another_field\": [\n            \"The another field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
+                            "name": "Validation Failed"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
                         }
                     ]
                 },
@@ -445,8 +499,32 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Wilbert Johnson\",\"address\":\"nikolaus.abbigail@example.com\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
+                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Hilma Heidenreich\",\"address\":\"leonora.block@example.com\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
                             "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
                         }
                     ]
                 },
@@ -494,8 +572,38 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Prof. Wallace Ryan\",\"address\":\"ppaucek@example.org\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
+                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Shemar Schmidt\",\"address\":\"schaefer.kamryn@example.net\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
                             "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"field_name\": [\n            \"The field name is required.\"\n        ],\n        \"another_field\": [\n            \"The another field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
+                            "name": "Validation Failed"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
                         }
                     ]
                 }
@@ -514,7 +622,7 @@
                             "query": [
                                 {
                                     "key": "type",
-                                    "value": "Mobile",
+                                    "value": "Office",
                                     "description": "",
                                     "disabled": false
                                 },
@@ -537,7 +645,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/phones?type=Mobile&search=0123456789&per_page=25&page=1",
+                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/phones?type=Office&search=0123456789&per_page=25&page=1",
                             "variable": [
                                 {
                                     "id": "customer_id",
@@ -565,8 +673,32 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_phone_id\":1,\"type\":\"Home\",\"name\":\"Electa Dickens\",\"number\":\"+16206269677\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"},{\"customer_phone_id\":1,\"type\":\"Office\",\"name\":\"Xzavier Erdman\",\"number\":\"1-267-987-9082\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Mrs. April Hill II\",\"number\":\"+1-657-833-4016\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"},{\"customer_phone_id\":1,\"type\":\"Home\",\"name\":\"Mozelle Heaney\",\"number\":\"435.476.0236\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
                         }
                     ]
                 },
@@ -608,8 +740,38 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Prof. Corine Cartwright MD\",\"number\":\"+1-402-338-2805\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
+                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Office\",\"name\":\"Kasandra Dooley\",\"number\":\"+1 (986) 954-7532\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
                             "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"field_name\": [\n            \"The field name is required.\"\n        ],\n        \"another_field\": [\n            \"The another field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
+                            "name": "Validation Failed"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
                         }
                     ]
                 },
@@ -654,8 +816,32 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Home\",\"name\":\"Miss Jazmyn Johnston DVM\",\"number\":\"+1 (765) 531-1129\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
+                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Home\",\"name\":\"Billie Hyatt\",\"number\":\"+17726011363\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
                             "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
                         }
                     ]
                 },
@@ -695,7 +881,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"Office\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":false}"
+                            "raw": "{\"type\":\"Mobile\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":false}"
                         },
                         "description": ""
                     },
@@ -703,8 +889,38 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Home\",\"name\":\"Dr. Mortimer Hoeger\",\"number\":\"1-220-741-8692\",\"is_default\":true,\"created_at\":\"2024-10-17 01:04:12\",\"updated_at\":\"2024-10-17 01:04:12\"}}",
+                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Dorothy Hand\",\"number\":\"1-817-680-4294\",\"is_default\":true,\"created_at\":\"2024-10-17 01:11:53\",\"updated_at\":\"2024-10-17 01:11:53\"}}",
                             "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"field_name\": [\n            \"The field name is required.\"\n        ],\n        \"another_field\": [\n            \"The another field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
+                            "name": "Validation Failed"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
                         }
                     ]
                 }

@@ -37,7 +37,7 @@ endpoints:
         name: type
         description: ''
         required: false
-        example: Mobile
+        example: Office
         type: string
         enumValues:
           - Home
@@ -73,7 +73,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      type: Mobile
+      type: Office
       search: '0123456789'
       per_page: 25
       page: 1
@@ -83,15 +83,51 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"customer_phone_id":1,"type":"Home","name":"Electa Dickens","number":"+16206269677","is_default":true,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"},{"customer_phone_id":1,"type":"Office","name":"Xzavier Erdman","number":"1-267-987-9082","is_default":true,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"customer_phone_id":1,"type":"Mobile","name":"Mrs. April Hill II","number":"+1-657-833-4016","is_default":true,"created_at":"2024-10-17 01:11:53","updated_at":"2024-10-17 01:11:53"},{"customer_phone_id":1,"type":"Home","name":"Mozelle Heaney","number":"435.476.0236","is_default":true,"created_at":"2024-10-17 01:11:53","updated_at":"2024-10-17 01:11:53"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: ''
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer kcba5fD6ZVad6Pg3e18hEv4'
+      - 'Bearer ake6Pb81aV3546ZchvfgdED'
     controller: null
     method: null
     route: null
@@ -176,15 +212,68 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_phone_id":1,"type":"Mobile","name":"Prof. Corine Cartwright MD","number":"+1-402-338-2805","is_default":true,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"}}'
+        content: '{"data":{"customer_phone_id":1,"type":"Office","name":"Kasandra Dooley","number":"+1 (986) 954-7532","is_default":true,"created_at":"2024-10-17 01:11:53","updated_at":"2024-10-17 01:11:53"}}'
         headers: []
         description: ''
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 422
+        content: |
+          {
+              "message": "Validation Failed",
+              "fields": {
+                  "field_name": [
+                      "The field name is required."
+                  ],
+                  "another_field": [
+                      "The another field must not be greater than 64 characters."
+                  ]
+              }
+          }
+        headers: []
+        description: 'Validation Failed'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 5PZgchdaV84bEaf6D3v61ek'
+      - 'Bearer kVDgZe6vdbca3Ef46185haP'
     controller: null
     method: null
     route: null
@@ -236,15 +325,51 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_phone_id":1,"type":"Home","name":"Miss Jazmyn Johnston DVM","number":"+1 (765) 531-1129","is_default":true,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"}}'
+        content: '{"data":{"customer_phone_id":1,"type":"Home","name":"Billie Hyatt","number":"+17726011363","is_default":true,"created_at":"2024-10-17 01:11:53","updated_at":"2024-10-17 01:11:53"}}'
         headers: []
         description: ''
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer avg654P36Dh8ekfVEba1cdZ'
+      - 'Bearer bPvghekEaZ656c4Df3dV81a'
     controller: null
     method: null
     route: null
@@ -296,7 +421,7 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: Office
+        example: Mobile
         type: string
         enumValues:
           - Home
@@ -332,7 +457,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      type: Office
+      type: Mobile
       name: 'John Doe'
       number: +1-956-745-2290
       is_default: false
@@ -340,15 +465,68 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_phone_id":1,"type":"Home","name":"Dr. Mortimer Hoeger","number":"1-220-741-8692","is_default":true,"created_at":"2024-10-17 01:04:12","updated_at":"2024-10-17 01:04:12"}}'
+        content: '{"data":{"customer_phone_id":1,"type":"Mobile","name":"Dorothy Hand","number":"1-817-680-4294","is_default":true,"created_at":"2024-10-17 01:11:53","updated_at":"2024-10-17 01:11:53"}}'
         headers: []
         description: ''
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 422
+        content: |
+          {
+              "message": "Validation Failed",
+              "fields": {
+                  "field_name": [
+                      "The field name is required."
+                  ],
+                  "another_field": [
+                      "The another field must not be greater than 64 characters."
+                  ]
+              }
+          }
+        headers: []
+        description: 'Validation Failed'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
         custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer c5aEegVP6Zdh61kD43a8bvf'
+      - 'Bearer ha84cZ3kd66vebVPagD1f5E'
     controller: null
     method: null
     route: null
