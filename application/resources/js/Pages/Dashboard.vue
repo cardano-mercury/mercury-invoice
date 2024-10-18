@@ -1,22 +1,18 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Welcome from '@/Components/Welcome.vue';
+
+defineProps({
+    invoices: Array
+});
 </script>
 
 <template>
     <AppLayout title="Dashboard">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
-            </h2>
+            <h1>{{ $page.props.auth.user.business_name }}</h1>
+            <p class="text-body-2 text-grey">Review your stats</p>
         </template>
-
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <Welcome />
-                </div>
-            </div>
-        </div>
+        <Welcome :invoices="invoices" />
     </AppLayout>
 </template>

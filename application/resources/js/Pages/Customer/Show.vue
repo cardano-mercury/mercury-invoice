@@ -9,31 +9,32 @@ const form = useForm(props.customer);
 <template>
     <app-layout :title="'Customer: ' + customer.name">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Customer: {{ customer.name }}
-            </h2>
+            <h1>Customer: {{ customer.name }}</h1>
             <div>
-                <span v-if="customer.tax_number" class="badge">
+                <v-chip label v-if="customer.tax_number" class="me-2">
                     Tax Number: {{ customer.tax_number }}
-                </span>
-                <span v-if="customer.tax_rate" class="badge">
+                </v-chip>
+                <v-chip label v-if="customer.tax_rate" class="me-2">
                     Tax Rate: {{ customer.tax_rate }}
-                </span>
+                </v-chip>
             </div>
         </template>
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="p-6 lg:p-8 bg-white border-b border-gray-200">
-                        <Link :href="route('customers.edit', customer.id)">
-                            <button type="button" class="btn mx-4">Edit</button>
-                        </Link>
-                        <button type="button" class="btn mx-4" @click="form.delete(route('customers.destroy', customer.id))">
-                            Delete
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <v-sheet class="bg-white px-4 py-12">
+            <v-row justify="end">
+                <v-col cols="auto">
+                    <v-btn :href="route('customers.edit', customer.id)"
+                           variant="flat" prepend-icon="mdi-pencil">
+                        Edit
+                    </v-btn>
+                </v-col>
+                <v-col cols="auto">
+                    <v-btn variant="flat" color="error"
+                           prepend-icon="mdi-trash-can"
+                           @click="form.delete(route('customers.destroy', customer.id))">
+                        Delete
+                    </v-btn>
+                </v-col>
+            </v-row>
+        </v-sheet>
     </app-layout>
 </template>

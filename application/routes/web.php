@@ -16,7 +16,7 @@ use App\Http\Controllers\Public\PublicInvoiceController;
  * Public Routes
  */
 
-Route::get('/', [IndexController::class, 'index']);
+Route::get('/', [IndexController::class, 'index'])->name('home');
 
 Route::prefix('invoice')->group(function () {
     Route::get('{encodedId}', [PublicInvoiceController::class, 'view'])->name('public.invoice.view');
