@@ -46,24 +46,24 @@ class PublicInvoiceController extends Controller
 
         // Parse billing address
         $billingAddress = array_values(array_filter([
-            $invoice?->billingAddress->name,
-            $invoice?->billingAddress->line1,
-            $invoice?->billingAddress->line2,
-            $invoice?->billingAddress->city,
-            $invoice?->billingAddress->state,
-            $invoice?->billingAddress->postal_code,
-            $invoice?->billingAddress->country,
+            $invoice?->billingAddress?->name,
+            $invoice?->billingAddress?->line1,
+            $invoice?->billingAddress?->line2,
+            $invoice?->billingAddress?->city,
+            $invoice?->billingAddress?->state,
+            $invoice?->billingAddress?->postal_code,
+            $invoice?->billingAddress?->country,
         ]));
 
         // Parse shipping address
         $shippingAddress = array_values(array_filter([
-            $invoice->shippingAddress->name,
-            $invoice->shippingAddress->line1,
-            $invoice->shippingAddress->line2,
-            $invoice->shippingAddress->city,
-            $invoice->shippingAddress->state,
-            $invoice->shippingAddress->postal_code,
-            $invoice->shippingAddress->country,
+            $invoice->shippingAddress?->name,
+            $invoice->shippingAddress?->line1,
+            $invoice->shippingAddress?->line2,
+            $invoice->shippingAddress?->city,
+            $invoice->shippingAddress?->state,
+            $invoice->shippingAddress?->postal_code,
+            $invoice->shippingAddress?->country,
         ]));
 
         // Log invoice activity
@@ -73,7 +73,7 @@ class PublicInvoiceController extends Controller
         if ($invoice->status === Status::PUBLISHED) {
 
             // Load available payment methods
-            $availablePaymentMethods = $this->loadAvailablePaymentMethods();
+            $availablePaymentMethods = $this->loadAvailablePaymentMethods($invoice);
 
             // Check if stripe payment was cancelled
             $stripePaymentCancelled = $request->has('stripe_cancelled');
@@ -352,11 +352,11 @@ class PublicInvoiceController extends Controller
         ]);
     }
 
-    private function loadAvailablePaymentMethods(): array
+    private function loadAvailablePaymentMethods($invoice): array
     {
         $availablePaymentMethods = [];
 
-        $user = auth()->user();
+        $user = $invoice->user;
 
         if (!empty($user->stripe_config['secret_key']) && !empty($user->stripe_config['endpoint_secret'])) {
             $availablePaymentMethods[] = PaymentMethod::STRIPE->value;
