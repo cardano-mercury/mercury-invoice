@@ -1,6 +1,53 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import {Link} from '@inertiajs/vue3';
+import {ref} from "vue";
+
+const itemsPerPage = ref(10);
+const search = ref('');
+const headers = [
+    {
+        title: 'Reference',
+        align: 'start',
+        sortable: true,
+        key: 'invoice_reference'
+    },
+    {
+        title: 'Customer',
+        align: 'start',
+        sortable: true,
+        key: 'customer.name'
+    },
+    {
+        title: 'Issue Date',
+        align: 'start',
+        sortable: true,
+        key: 'issue_date'
+    },
+    {
+        title: 'Due Date',
+        align: 'start',
+        sortable: true,
+        key: 'due_date'
+    },
+    {
+        title: 'Total',
+        align: 'start',
+        sortable: true,
+        key: 'total'
+    },
+    {
+        title: 'Status',
+        align: 'start',
+        sortable: true,
+        key: 'status'
+    },
+    {
+        title: '',
+        align: 'end',
+        sortable: false,
+        key: 'actions'
+    }
+];
 
 defineProps({
     invoices: Array
@@ -10,61 +57,41 @@ defineProps({
 <template>
     <app-layout title="Invoices">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Invoices
-            </h2>
+            <h1>Invoices</h1>
         </template>
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="p-6 lg:p-8 bg-white border-b border-gray-200">
-                        <div class="flex gap-6 justify-end mb-6">
-                            <a target="_blank" :href="route('invoices.export')" class="btn btn-gray">
-                                Export Invoices
-                            </a>
-                            <Link :href="route('invoices.create')">
-                                <button class="btn btn-blue">
-                                    Create New
-                                </button>
-                            </Link>
-                        </div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="text-left">Reference</th>
-                                    <th class="text-left">Customer</th>
-                                    <th class="text-left">Issue Date</th>
-                                    <th class="text-left">Due Date</th>
-                                    <th class="text-left">Total</th>
-                                    <th class="text-left">Status</th>
-                                    <th class="text-right">&nbsp;</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="invoice in invoices" :key="invoice.id">
-                                    <td>{{ invoice.invoice_reference }}</td>
-                                    <td>{{ invoice.customer.name }}</td>
-                                    <td>{{ invoice.issue_date }}</td>
-                                    <td>{{ invoice.due_date }} <span v-if="invoice.is_overdue" class="sm-badge-red">Late</span> </td>
-                                    <td>{{ parseFloat(invoice.total).toFixed(2) }} {{ invoice.currency }}</td>
-                                    <td>
-                                        <span :class="`status-${invoice.status.replace(' ', '_')}`">
-                                            {{ invoice.status }}
-                                        </span>
-                                    </td>
-                                    <td class="text-right">
-                                        <Link :href="route('invoices.show', invoice.invoice_reference)">
-                                            <button class="btn">
-                                                View
-                                            </button>
-                                        </Link>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <v-sheet class="bg-white px-4 py-12">
+            <v-row class="mb-4 px-4">
+                <v-text-field
+                    v-model="search"
+                    label="Search"
+                    prepend-inner-icon="mdi-magnify"
+                    variant="outlined"
+                    hide-details
+                    single-line
+                ></v-text-field>
+                <v-spacer/>
+                <v-btn :href="route('invoices.export')" variant="flat"
+                       class="me-2">
+                    Export
+                </v-btn>
+                <v-btn :href="route('invoices.create')" variant="flat"
+                       color="primary">Create New
+                </v-btn>
+            </v-row>
+
+            <v-data-table :items="invoices" :headers="headers" :search="search"
+                          multi-sort :items-per-page="itemsPerPage">
+                <template v-slot:item.due_date="{ item }">
+                    {{ item.due_date }}
+                    <v-chip color="error" v-if="item.is_overdue" class="ms-2">LATE</v-chip>
+                </template>
+                <template v-slot:item.actions="{ item }">
+                    <v-btn :href="route('invoices.show', item.id)"
+                           class="me-2" size="small"
+                           variant="flat" icon="mdi-magnify" rounded="0">
+                    </v-btn>
+                </template>
+            </v-data-table>
+        </v-sheet>
     </app-layout>
 </template>
