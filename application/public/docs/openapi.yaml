@@ -54,18 +54,18 @@ paths:
                   data:
                     -
                       customer_id: 1
-                      name: 'Dr. Gerry Wehner V'
-                      tax_number: 01JAC5R5YTVARWZZDNJVN55BP2
+                      name: 'Maddison Gaylord'
+                      tax_number: 01JAKMSW9A6EFQN7HEMRAF35GV
                       tax_rate: 17.5
-                      created_at: '2024-10-17 02:43:45'
-                      updated_at: '2024-10-17 02:43:45'
+                      created_at: '2024-10-20 00:21:30'
+                      updated_at: '2024-10-20 00:21:30'
                     -
                       customer_id: 1
-                      name: 'Dominic Schimmel'
-                      tax_number: 01JAC5R5YV0RXVMW3J0ZXKYHV3
+                      name: 'Laila Kirlin'
+                      tax_number: 01JAKMSW9BCX2B5D7XVN4Q1C73
                       tax_rate: 17.5
-                      created_at: '2024-10-17 02:43:45'
-                      updated_at: '2024-10-17 02:43:45'
+                      created_at: '2024-10-20 00:21:30'
+                      updated_at: '2024-10-20 00:21:30'
                   links:
                     first: '/?page=1'
                     last: null
@@ -83,18 +83,18 @@ paths:
                     example:
                       -
                         customer_id: 1
-                        name: 'Dr. Gerry Wehner V'
-                        tax_number: 01JAC5R5YTVARWZZDNJVN55BP2
+                        name: 'Maddison Gaylord'
+                        tax_number: 01JAKMSW9A6EFQN7HEMRAF35GV
                         tax_rate: 17.5
-                        created_at: '2024-10-17 02:43:45'
-                        updated_at: '2024-10-17 02:43:45'
+                        created_at: '2024-10-20 00:21:30'
+                        updated_at: '2024-10-20 00:21:30'
                       -
                         customer_id: 1
-                        name: 'Dominic Schimmel'
-                        tax_number: 01JAC5R5YV0RXVMW3J0ZXKYHV3
+                        name: 'Laila Kirlin'
+                        tax_number: 01JAKMSW9BCX2B5D7XVN4Q1C73
                         tax_rate: 17.5
-                        created_at: '2024-10-17 02:43:45'
-                        updated_at: '2024-10-17 02:43:45'
+                        created_at: '2024-10-20 00:21:30'
+                        updated_at: '2024-10-20 00:21:30'
                     items:
                       type: object
                       properties:
@@ -103,19 +103,19 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: 'Dr. Gerry Wehner V'
+                          example: 'Maddison Gaylord'
                         tax_number:
                           type: string
-                          example: 01JAC5R5YTVARWZZDNJVN55BP2
+                          example: 01JAKMSW9A6EFQN7HEMRAF35GV
                         tax_rate:
                           type: number
                           example: 17.5
                         created_at:
                           type: string
-                          example: '2024-10-17 02:43:45'
+                          example: '2024-10-20 00:21:30'
                         updated_at:
                           type: string
-                          example: '2024-10-17 02:43:45'
+                          example: '2024-10-20 00:21:30'
                   links:
                     type: object
                     properties:
@@ -214,11 +214,11 @@ paths:
                 example:
                   data:
                     customer_id: 1
-                    name: "Ms. Sonia O'Kon IV"
-                    tax_number: 01JAC5R5Z4STSKGN49EYXG9SSW
+                    name: 'Emmanuelle Ruecker Jr.'
+                    tax_number: 01JAKMSW9KE3YAGA47QJV3T438
                     tax_rate: 17.5
-                    created_at: '2024-10-17 02:43:45'
-                    updated_at: '2024-10-17 02:43:45'
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
                 properties:
                   data:
                     type: object
@@ -228,19 +228,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: "Ms. Sonia O'Kon IV"
+                        example: 'Emmanuelle Ruecker Jr.'
                       tax_number:
                         type: string
-                        example: 01JAC5R5Z4STSKGN49EYXG9SSW
+                        example: 01JAKMSW9KE3YAGA47QJV3T438
                       tax_rate:
                         type: number
                         example: 17.5
                       created_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
                       updated_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
         401:
           description: Unauthorized
           content:
@@ -360,11 +360,11 @@ paths:
                 example:
                   data:
                     customer_id: 1
-                    name: 'Krista Rohan'
-                    tax_number: 01JAC5R5Z9J1Z2QD9GQ23D50HW
+                    name: 'Jacey Hamill DDS'
+                    tax_number: 01JAKMSW9RQ81Q5WWAYMNS959Y
                     tax_rate: 17.5
-                    created_at: '2024-10-17 02:43:45'
-                    updated_at: '2024-10-17 02:43:45'
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
                 properties:
                   data:
                     type: object
@@ -374,19 +374,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Krista Rohan'
+                        example: 'Jacey Hamill DDS'
                       tax_number:
                         type: string
-                        example: 01JAC5R5Z9J1Z2QD9GQ23D50HW
+                        example: 01JAKMSW9RQ81Q5WWAYMNS959Y
                       tax_rate:
                         type: number
                         example: 17.5
                       created_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
                       updated_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
         401:
           description: Unauthorized
           content:
@@ -452,11 +452,11 @@ paths:
                 example:
                   data:
                     customer_id: 1
-                    name: 'Josefa Kihn'
-                    tax_number: 01JAC5R5ZESD9E8JM73KQ9Z45D
+                    name: 'Mr. Dayton White'
+                    tax_number: 01JAKMSW9ZR7QY5CMQ9RH27SGR
                     tax_rate: 17.5
-                    created_at: '2024-10-17 02:43:45'
-                    updated_at: '2024-10-17 02:43:45'
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
                 properties:
                   data:
                     type: object
@@ -466,19 +466,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Josefa Kihn'
+                        example: 'Mr. Dayton White'
                       tax_number:
                         type: string
-                        example: 01JAC5R5ZESD9E8JM73KQ9Z45D
+                        example: 01JAKMSW9ZR7QY5CMQ9RH27SGR
                       tax_rate:
                         type: number
                         example: 17.5
                       created_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
                       updated_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
         401:
           description: Unauthorized
           content:
@@ -638,18 +638,18 @@ paths:
                   data:
                     -
                       customer_email_id: 1
-                      name: 'Agnes Kirlin'
-                      address: jtowne@example.org
+                      name: 'Angelita Doyle'
+                      address: donavon.abshire@example.org
                       is_default: true
-                      created_at: '2024-10-17 02:43:45'
-                      updated_at: '2024-10-17 02:43:45'
+                      created_at: '2024-10-20 00:21:30'
+                      updated_at: '2024-10-20 00:21:30'
                     -
                       customer_email_id: 1
-                      name: 'Mikel Harber'
-                      address: jonathon25@example.org
+                      name: 'Dr. Gene Kozey'
+                      address: kylie07@example.com
                       is_default: true
-                      created_at: '2024-10-17 02:43:45'
-                      updated_at: '2024-10-17 02:43:45'
+                      created_at: '2024-10-20 00:21:30'
+                      updated_at: '2024-10-20 00:21:30'
                   links:
                     first: '/?page=1'
                     last: null
@@ -667,18 +667,18 @@ paths:
                     example:
                       -
                         customer_email_id: 1
-                        name: 'Agnes Kirlin'
-                        address: jtowne@example.org
+                        name: 'Angelita Doyle'
+                        address: donavon.abshire@example.org
                         is_default: true
-                        created_at: '2024-10-17 02:43:45'
-                        updated_at: '2024-10-17 02:43:45'
+                        created_at: '2024-10-20 00:21:30'
+                        updated_at: '2024-10-20 00:21:30'
                       -
                         customer_email_id: 1
-                        name: 'Mikel Harber'
-                        address: jonathon25@example.org
+                        name: 'Dr. Gene Kozey'
+                        address: kylie07@example.com
                         is_default: true
-                        created_at: '2024-10-17 02:43:45'
-                        updated_at: '2024-10-17 02:43:45'
+                        created_at: '2024-10-20 00:21:30'
+                        updated_at: '2024-10-20 00:21:30'
                     items:
                       type: object
                       properties:
@@ -687,19 +687,19 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: 'Agnes Kirlin'
+                          example: 'Angelita Doyle'
                         address:
                           type: string
-                          example: jtowne@example.org
+                          example: donavon.abshire@example.org
                         is_default:
                           type: boolean
                           example: true
                         created_at:
                           type: string
-                          example: '2024-10-17 02:43:45'
+                          example: '2024-10-20 00:21:30'
                         updated_at:
                           type: string
-                          example: '2024-10-17 02:43:45'
+                          example: '2024-10-20 00:21:30'
                   links:
                     type: object
                     properties:
@@ -798,11 +798,11 @@ paths:
                 example:
                   data:
                     customer_email_id: 1
-                    name: 'Abdiel Boehm'
-                    address: krystal55@example.net
+                    name: 'Prof. Stan Spencer DVM'
+                    address: lou93@example.com
                     is_default: true
-                    created_at: '2024-10-17 02:43:45'
-                    updated_at: '2024-10-17 02:43:45'
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
                 properties:
                   data:
                     type: object
@@ -812,19 +812,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Abdiel Boehm'
+                        example: 'Prof. Stan Spencer DVM'
                       address:
                         type: string
-                        example: krystal55@example.net
+                        example: lou93@example.com
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
                       updated_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
         401:
           description: Unauthorized
           content:
@@ -925,7 +925,7 @@ paths:
                 is_default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - name
                 - address
@@ -954,11 +954,11 @@ paths:
                 example:
                   data:
                     customer_email_id: 1
-                    name: 'Missouri Johnson'
-                    address: meaghan32@example.com
+                    name: 'Mrs. Verona Cremin'
+                    address: zklocko@example.net
                     is_default: true
-                    created_at: '2024-10-17 02:43:45'
-                    updated_at: '2024-10-17 02:43:45'
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
                 properties:
                   data:
                     type: object
@@ -968,19 +968,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Missouri Johnson'
+                        example: 'Mrs. Verona Cremin'
                       address:
                         type: string
-                        example: meaghan32@example.com
+                        example: zklocko@example.net
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
                       updated_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
         401:
           description: Unauthorized
           content:
@@ -1046,11 +1046,11 @@ paths:
                 example:
                   data:
                     customer_email_id: 1
-                    name: 'Miss Emmalee Turner V'
-                    address: carter72@example.net
+                    name: 'Abigale Brakus'
+                    address: oboyle@example.net
                     is_default: true
-                    created_at: '2024-10-17 02:43:45'
-                    updated_at: '2024-10-17 02:43:45'
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
                 properties:
                   data:
                     type: object
@@ -1060,19 +1060,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Miss Emmalee Turner V'
+                        example: 'Abigale Brakus'
                       address:
                         type: string
-                        example: carter72@example.net
+                        example: oboyle@example.net
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
                       updated_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
         401:
           description: Unauthorized
           content:
@@ -1256,19 +1256,19 @@ paths:
                     -
                       customer_phone_id: 1
                       type: Mobile
-                      name: 'Ms. Kariane Koss III'
-                      number: 1-928-420-1819
+                      name: 'Dr. Rosie Hilpert V'
+                      number: '+18784221550'
                       is_default: true
-                      created_at: '2024-10-17 02:43:45'
-                      updated_at: '2024-10-17 02:43:45'
+                      created_at: '2024-10-20 00:21:30'
+                      updated_at: '2024-10-20 00:21:30'
                     -
                       customer_phone_id: 1
-                      type: Office
-                      name: 'Guido Toy'
-                      number: 270.886.2722
+                      type: Mobile
+                      name: 'Dr. Sibyl Feil'
+                      number: +1-908-926-7637
                       is_default: true
-                      created_at: '2024-10-17 02:43:45'
-                      updated_at: '2024-10-17 02:43:45'
+                      created_at: '2024-10-20 00:21:30'
+                      updated_at: '2024-10-20 00:21:30'
                   links:
                     first: '/?page=1'
                     last: null
@@ -1287,19 +1287,19 @@ paths:
                       -
                         customer_phone_id: 1
                         type: Mobile
-                        name: 'Ms. Kariane Koss III'
-                        number: 1-928-420-1819
+                        name: 'Dr. Rosie Hilpert V'
+                        number: '+18784221550'
                         is_default: true
-                        created_at: '2024-10-17 02:43:45'
-                        updated_at: '2024-10-17 02:43:45'
+                        created_at: '2024-10-20 00:21:30'
+                        updated_at: '2024-10-20 00:21:30'
                       -
                         customer_phone_id: 1
-                        type: Office
-                        name: 'Guido Toy'
-                        number: 270.886.2722
+                        type: Mobile
+                        name: 'Dr. Sibyl Feil'
+                        number: +1-908-926-7637
                         is_default: true
-                        created_at: '2024-10-17 02:43:45'
-                        updated_at: '2024-10-17 02:43:45'
+                        created_at: '2024-10-20 00:21:30'
+                        updated_at: '2024-10-20 00:21:30'
                     items:
                       type: object
                       properties:
@@ -1311,19 +1311,19 @@ paths:
                           example: Mobile
                         name:
                           type: string
-                          example: 'Ms. Kariane Koss III'
+                          example: 'Dr. Rosie Hilpert V'
                         number:
                           type: string
-                          example: 1-928-420-1819
+                          example: '+18784221550'
                         is_default:
                           type: boolean
                           example: true
                         created_at:
                           type: string
-                          example: '2024-10-17 02:43:45'
+                          example: '2024-10-20 00:21:30'
                         updated_at:
                           type: string
-                          example: '2024-10-17 02:43:45'
+                          example: '2024-10-20 00:21:30'
                   links:
                     type: object
                     properties:
@@ -1422,12 +1422,12 @@ paths:
                 example:
                   data:
                     customer_phone_id: 1
-                    type: Mobile
-                    name: 'Dr. Grady Kuhn'
-                    number: 1-564-797-8267
+                    type: Home
+                    name: 'Fermin Beahan II'
+                    number: 1-619-880-9443
                     is_default: true
-                    created_at: '2024-10-17 02:43:45'
-                    updated_at: '2024-10-17 02:43:45'
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
                 properties:
                   data:
                     type: object
@@ -1437,22 +1437,22 @@ paths:
                         example: 1
                       type:
                         type: string
-                        example: Mobile
+                        example: Home
                       name:
                         type: string
-                        example: 'Dr. Grady Kuhn'
+                        example: 'Fermin Beahan II'
                       number:
                         type: string
-                        example: 1-564-797-8267
+                        example: 1-619-880-9443
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
                       updated_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
         401:
           description: Unauthorized
           content:
@@ -1545,7 +1545,7 @@ paths:
                 type:
                   type: string
                   description: ''
-                  example: Home
+                  example: Office
                   enum:
                     - Home
                     - Office
@@ -1592,11 +1592,11 @@ paths:
                   data:
                     customer_phone_id: 1
                     type: Office
-                    name: 'Miss Lura Dooley'
-                    number: 858.744.1185
+                    name: 'Prof. Ashton Wyman II'
+                    number: +1-484-914-7488
                     is_default: true
-                    created_at: '2024-10-17 02:43:45'
-                    updated_at: '2024-10-17 02:43:45'
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
                 properties:
                   data:
                     type: object
@@ -1609,19 +1609,19 @@ paths:
                         example: Office
                       name:
                         type: string
-                        example: 'Miss Lura Dooley'
+                        example: 'Prof. Ashton Wyman II'
                       number:
                         type: string
-                        example: 858.744.1185
+                        example: +1-484-914-7488
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
                       updated_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
         401:
           description: Unauthorized
           content:
@@ -1688,11 +1688,11 @@ paths:
                   data:
                     customer_phone_id: 1
                     type: Mobile
-                    name: 'Allene Bogisich MD'
-                    number: '+1 (914) 754-0483'
+                    name: 'Berta Heathcote'
+                    number: 1-718-942-8849
                     is_default: true
-                    created_at: '2024-10-17 02:43:45'
-                    updated_at: '2024-10-17 02:43:45'
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
                 properties:
                   data:
                     type: object
@@ -1705,19 +1705,19 @@ paths:
                         example: Mobile
                       name:
                         type: string
-                        example: 'Allene Bogisich MD'
+                        example: 'Berta Heathcote'
                       number:
                         type: string
-                        example: '+1 (914) 754-0483'
+                        example: 1-718-942-8849
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
                       updated_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
         401:
           description: Unauthorized
           content:
@@ -1810,7 +1810,7 @@ paths:
                 type:
                   type: string
                   description: ''
-                  example: Home
+                  example: Mobile
                   enum:
                     - Home
                     - Office
@@ -1826,7 +1826,7 @@ paths:
                 is_default:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
               required:
                 - type
                 - name
@@ -1858,12 +1858,12 @@ paths:
           in: query
           name: type
           description: ''
-          example: Shipping
+          example: Billing
           required: false
           schema:
             type: string
             description: ''
-            example: Shipping
+            example: Billing
             enum:
               - Billing
               - Shipping
@@ -1909,29 +1909,29 @@ paths:
                     -
                       customer_address_id: 1
                       type: Billing
-                      name: Johnson-King
-                      line1: '40305 Dimitri Circles Suite 660'
+                      name: 'Rippin Group'
+                      line1: '7621 Destiny Parks Apt. 753'
                       line2: null
-                      city: Treutelmouth
-                      state: Arkansas
-                      postal_code: '57786'
+                      city: 'Port Destineefort'
+                      state: Virginia
+                      postal_code: '70854'
                       country: 'United States'
                       is_default: true
-                      created_at: '2024-10-17 02:43:45'
-                      updated_at: '2024-10-17 02:43:45'
+                      created_at: '2024-10-20 00:21:30'
+                      updated_at: '2024-10-20 00:21:30'
                     -
                       customer_address_id: 1
                       type: Billing
-                      name: 'King Group'
-                      line1: '9161 Adalberto Pine'
+                      name: 'Wuckert PLC'
+                      line1: '630 Ivory Squares'
                       line2: null
-                      city: Abbottfort
-                      state: Mississippi
-                      postal_code: 89740-6753
+                      city: 'New Jairo'
+                      state: Minnesota
+                      postal_code: '80478'
                       country: 'United States'
                       is_default: true
-                      created_at: '2024-10-17 02:43:45'
-                      updated_at: '2024-10-17 02:43:45'
+                      created_at: '2024-10-20 00:21:30'
+                      updated_at: '2024-10-20 00:21:30'
                   links:
                     first: '/?page=1'
                     last: null
@@ -1950,29 +1950,29 @@ paths:
                       -
                         customer_address_id: 1
                         type: Billing
-                        name: Johnson-King
-                        line1: '40305 Dimitri Circles Suite 660'
+                        name: 'Rippin Group'
+                        line1: '7621 Destiny Parks Apt. 753'
                         line2: null
-                        city: Treutelmouth
-                        state: Arkansas
-                        postal_code: '57786'
+                        city: 'Port Destineefort'
+                        state: Virginia
+                        postal_code: '70854'
                         country: 'United States'
                         is_default: true
-                        created_at: '2024-10-17 02:43:45'
-                        updated_at: '2024-10-17 02:43:45'
+                        created_at: '2024-10-20 00:21:30'
+                        updated_at: '2024-10-20 00:21:30'
                       -
                         customer_address_id: 1
                         type: Billing
-                        name: 'King Group'
-                        line1: '9161 Adalberto Pine'
+                        name: 'Wuckert PLC'
+                        line1: '630 Ivory Squares'
                         line2: null
-                        city: Abbottfort
-                        state: Mississippi
-                        postal_code: 89740-6753
+                        city: 'New Jairo'
+                        state: Minnesota
+                        postal_code: '80478'
                         country: 'United States'
                         is_default: true
-                        created_at: '2024-10-17 02:43:45'
-                        updated_at: '2024-10-17 02:43:45'
+                        created_at: '2024-10-20 00:21:30'
+                        updated_at: '2024-10-20 00:21:30'
                     items:
                       type: object
                       properties:
@@ -1984,22 +1984,22 @@ paths:
                           example: Billing
                         name:
                           type: string
-                          example: Johnson-King
+                          example: 'Rippin Group'
                         line1:
                           type: string
-                          example: '40305 Dimitri Circles Suite 660'
+                          example: '7621 Destiny Parks Apt. 753'
                         line2:
                           type: string
                           example: null
                         city:
                           type: string
-                          example: Treutelmouth
+                          example: 'Port Destineefort'
                         state:
                           type: string
-                          example: Arkansas
+                          example: Virginia
                         postal_code:
                           type: string
-                          example: '57786'
+                          example: '70854'
                         country:
                           type: string
                           example: 'United States'
@@ -2008,10 +2008,10 @@ paths:
                           example: true
                         created_at:
                           type: string
-                          example: '2024-10-17 02:43:45'
+                          example: '2024-10-20 00:21:30'
                         updated_at:
                           type: string
-                          example: '2024-10-17 02:43:45'
+                          example: '2024-10-20 00:21:30'
                   links:
                     type: object
                     properties:
@@ -2110,17 +2110,17 @@ paths:
                 example:
                   data:
                     customer_address_id: 1
-                    type: Shipping
-                    name: 'Torp PLC'
-                    line1: '20141 Purdy Route'
+                    type: Billing
+                    name: 'Schuppe, Rempel and Considine'
+                    line1: '92875 Concepcion Locks'
                     line2: null
-                    city: 'New Ignacio'
-                    state: 'Rhode Island'
-                    postal_code: '61913'
+                    city: 'East Wanda'
+                    state: 'North Carolina'
+                    postal_code: '83863'
                     country: 'United States'
                     is_default: true
-                    created_at: '2024-10-17 02:43:45'
-                    updated_at: '2024-10-17 02:43:45'
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
                 properties:
                   data:
                     type: object
@@ -2130,25 +2130,25 @@ paths:
                         example: 1
                       type:
                         type: string
-                        example: Shipping
+                        example: Billing
                       name:
                         type: string
-                        example: 'Torp PLC'
+                        example: 'Schuppe, Rempel and Considine'
                       line1:
                         type: string
-                        example: '20141 Purdy Route'
+                        example: '92875 Concepcion Locks'
                       line2:
                         type: string
                         example: null
                       city:
                         type: string
-                        example: 'New Ignacio'
+                        example: 'East Wanda'
                       state:
                         type: string
-                        example: 'Rhode Island'
+                        example: 'North Carolina'
                       postal_code:
                         type: string
-                        example: '61913'
+                        example: '83863'
                       country:
                         type: string
                         example: 'United States'
@@ -2157,10 +2157,10 @@ paths:
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
                       updated_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
         401:
           description: Unauthorized
           content:
@@ -2321,17 +2321,17 @@ paths:
                 example:
                   data:
                     customer_address_id: 1
-                    type: Billing
-                    name: Fisher-Roberts
-                    line1: '5403 Casper Haven Suite 635'
+                    type: Shipping
+                    name: 'Kuhn and Sons'
+                    line1: '82653 Foster Cape'
                     line2: null
-                    city: 'West Joshland'
-                    state: Colorado
-                    postal_code: '21625'
+                    city: Tyrellshire
+                    state: 'South Carolina'
+                    postal_code: '83360'
                     country: 'United States'
                     is_default: true
-                    created_at: '2024-10-17 02:43:45'
-                    updated_at: '2024-10-17 02:43:45'
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
                 properties:
                   data:
                     type: object
@@ -2341,25 +2341,25 @@ paths:
                         example: 1
                       type:
                         type: string
-                        example: Billing
+                        example: Shipping
                       name:
                         type: string
-                        example: Fisher-Roberts
+                        example: 'Kuhn and Sons'
                       line1:
                         type: string
-                        example: '5403 Casper Haven Suite 635'
+                        example: '82653 Foster Cape'
                       line2:
                         type: string
                         example: null
                       city:
                         type: string
-                        example: 'West Joshland'
+                        example: Tyrellshire
                       state:
                         type: string
-                        example: Colorado
+                        example: 'South Carolina'
                       postal_code:
                         type: string
-                        example: '21625'
+                        example: '83360'
                       country:
                         type: string
                         example: 'United States'
@@ -2368,10 +2368,10 @@ paths:
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
                       updated_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
         401:
           description: Unauthorized
           content:
@@ -2438,16 +2438,16 @@ paths:
                   data:
                     customer_address_id: 1
                     type: Billing
-                    name: Marvin-Klein
-                    line1: '6647 Kassulke Village Suite 574'
+                    name: Schulist-Walter
+                    line1: '444 Kiara Loop'
                     line2: null
-                    city: 'West Libbie'
-                    state: Wisconsin
-                    postal_code: '69037'
+                    city: 'South Lorineton'
+                    state: Nebraska
+                    postal_code: '81394'
                     country: 'United States'
                     is_default: true
-                    created_at: '2024-10-17 02:43:45'
-                    updated_at: '2024-10-17 02:43:45'
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
                 properties:
                   data:
                     type: object
@@ -2460,22 +2460,22 @@ paths:
                         example: Billing
                       name:
                         type: string
-                        example: Marvin-Klein
+                        example: Schulist-Walter
                       line1:
                         type: string
-                        example: '6647 Kassulke Village Suite 574'
+                        example: '444 Kiara Loop'
                       line2:
                         type: string
                         example: null
                       city:
                         type: string
-                        example: 'West Libbie'
+                        example: 'South Lorineton'
                       state:
                         type: string
-                        example: Wisconsin
+                        example: Nebraska
                       postal_code:
                         type: string
-                        example: '69037'
+                        example: '81394'
                       country:
                         type: string
                         example: 'United States'
@@ -2484,10 +2484,10 @@ paths:
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
                       updated_at:
                         type: string
-                        example: '2024-10-17 02:43:45'
+                        example: '2024-10-20 00:21:30'
         401:
           description: Unauthorized
           content:
@@ -2580,7 +2580,7 @@ paths:
                 type:
                   type: string
                   description: ''
-                  example: Shipping
+                  example: Billing
                   enum:
                     - Billing
                     - Shipping
@@ -2615,7 +2615,7 @@ paths:
                 is_default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - type
                 - name
@@ -2640,6 +2640,666 @@ paths:
         required: true
         schema:
           type: integer
+  /api/v1/customer-categories:
+    get:
+      summary: 'List Customer Categories'
+      operationId: listCustomerCategories
+      description: ''
+      parameters:
+        -
+          in: query
+          name: search
+          description: 'Search for customer categories by name'
+          example: Freelance
+          required: false
+          schema:
+            type: string
+            description: 'Search for customer categories by name'
+            example: Freelance
+        -
+          in: query
+          name: per_page
+          description: 'Number of results per page (Min 25, Max 100)'
+          example: 25
+          required: false
+          schema:
+            type: integer
+            description: 'Number of results per page (Min 25, Max 100)'
+            example: 25
+        -
+          in: query
+          name: page
+          description: 'Page number'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number'
+            example: 1
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      customer_category_id: 1
+                      name: Magni
+                      customers_count: 0
+                      created_at: '2024-10-20 00:21:30'
+                      updated_at: '2024-10-20 00:21:30'
+                    -
+                      customer_category_id: 1
+                      name: Nisi
+                      customers_count: 0
+                      created_at: '2024-10-20 00:21:30'
+                      updated_at: '2024-10-20 00:21:30'
+                  links:
+                    first: '/?page=1'
+                    last: null
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    path: /
+                    per_page: 25
+                    to: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        customer_category_id: 1
+                        name: Magni
+                        customers_count: 0
+                        created_at: '2024-10-20 00:21:30'
+                        updated_at: '2024-10-20 00:21:30'
+                      -
+                        customer_category_id: 1
+                        name: Nisi
+                        customers_count: 0
+                        created_at: '2024-10-20 00:21:30'
+                        updated_at: '2024-10-20 00:21:30'
+                    items:
+                      type: object
+                      properties:
+                        customer_category_id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: Magni
+                        customers_count:
+                          type: integer
+                          example: 0
+                        created_at:
+                          type: string
+                          example: '2024-10-20 00:21:30'
+                        updated_at:
+                          type: string
+                          example: '2024-10-20 00:21:30'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: '/?page=1'
+                      last:
+                        type: string
+                        example: null
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      path:
+                        type: string
+                        example: /
+                      per_page:
+                        type: integer
+                        example: 25
+                      to:
+                        type: integer
+                        example: 2
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
+      tags:
+        - 'Customer Categories'
+    post:
+      summary: 'Create Customer Category'
+      operationId: createCustomerCategory
+      description: ''
+      parameters: []
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    customer_category_id: 1
+                    name: Omnis
+                    customers_count: 0
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      customer_category_id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: Omnis
+                      customers_count:
+                        type: integer
+                        example: 0
+                      created_at:
+                        type: string
+                        example: '2024-10-20 00:21:30'
+                      updated_at:
+                        type: string
+                        example: '2024-10-20 00:21:30'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        422:
+          description: 'Validation Failed'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Validation Failed'
+                  fields:
+                    field_name:
+                      - 'The field name is required.'
+                    another_field:
+                      - 'The another field must not be greater than 64 characters.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Validation Failed'
+                  fields:
+                    type: object
+                    properties:
+                      field_name:
+                        type: array
+                        example:
+                          - 'The field name is required.'
+                        items:
+                          type: string
+                      another_field:
+                        type: array
+                        example:
+                          - 'The another field must not be greater than 64 characters.'
+                        items:
+                          type: string
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
+      tags:
+        - 'Customer Categories'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: Freelance
+              required:
+                - name
+  '/api/v1/customer-categories/{id}':
+    get:
+      summary: 'Get Customer Category'
+      operationId: getCustomerCategory
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    customer_category_id: 1
+                    name: Repellendus
+                    customers_count: 0
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      customer_category_id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: Repellendus
+                      customers_count:
+                        type: integer
+                        example: 0
+                      created_at:
+                        type: string
+                        example: '2024-10-20 00:21:30'
+                      updated_at:
+                        type: string
+                        example: '2024-10-20 00:21:30'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
+      tags:
+        - 'Customer Categories'
+    put:
+      summary: 'Update Customer Category'
+      operationId: updateCustomerCategory
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    customer_category_id: 1
+                    name: Placeat
+                    customers_count: 0
+                    created_at: '2024-10-20 00:21:30'
+                    updated_at: '2024-10-20 00:21:30'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      customer_category_id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: Placeat
+                      customers_count:
+                        type: integer
+                        example: 0
+                      created_at:
+                        type: string
+                        example: '2024-10-20 00:21:30'
+                      updated_at:
+                        type: string
+                        example: '2024-10-20 00:21:30'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        422:
+          description: 'Validation Failed'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Validation Failed'
+                  fields:
+                    field_name:
+                      - 'The field name is required.'
+                    another_field:
+                      - 'The another field must not be greater than 64 characters.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Validation Failed'
+                  fields:
+                    type: object
+                    properties:
+                      field_name:
+                        type: array
+                        example:
+                          - 'The field name is required.'
+                        items:
+                          type: string
+                      another_field:
+                        type: array
+                        example:
+                          - 'The another field must not be greater than 64 characters.'
+                        items:
+                          type: string
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
+      tags:
+        - 'Customer Categories'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: Freelance
+              required:
+                - name
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the customer category.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/customer-categories-sync:
+    put:
+      summary: 'Sync Customer Categories'
+      operationId: syncCustomerCategories
+      description: ''
+      parameters: []
+      responses:
+        204:
+          description: 'Customer Categories Synced'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        422:
+          description: 'Validation Failed'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Validation Failed'
+                  fields:
+                    field_name:
+                      - 'The field name is required.'
+                    another_field:
+                      - 'The another field must not be greater than 64 characters.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Validation Failed'
+                  fields:
+                    type: object
+                    properties:
+                      field_name:
+                        type: array
+                        example:
+                          - 'The field name is required.'
+                        items:
+                          type: string
+                      another_field:
+                        type: array
+                        example:
+                          - 'The another field must not be greater than 64 characters.'
+                        items:
+                          type: string
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
+      tags:
+        - 'Customer Categories'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customer_id:
+                  type: integer
+                  description: ''
+                  example: 1
+                category_ids:
+                  type: array
+                  description: ''
+                  example:
+                    - 7
+                  items:
+                    type: integer
+              required:
+                - customer_id
 tags:
   -
     name: Customers
@@ -2653,6 +3313,9 @@ tags:
   -
     name: 'Customer Addresses'
     description: 'Customer Address Management API'
+  -
+    name: 'Customer Categories'
+    description: 'Customer Category Management API'
 components:
   securitySchemes:
     default:

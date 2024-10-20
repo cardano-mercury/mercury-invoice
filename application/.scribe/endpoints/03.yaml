@@ -35,7 +35,7 @@ endpoints:
         name: type
         description: ''
         required: false
-        example: Shipping
+        example: Billing
         type: string
         enumValues:
           - Billing
@@ -70,7 +70,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      type: Shipping
+      type: Billing
       search: '25 Brookfield Road'
       per_page: 25
       page: 1
@@ -80,7 +80,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"customer_address_id":1,"type":"Billing","name":"Johnson-King","line1":"40305 Dimitri Circles Suite 660","line2":null,"city":"Treutelmouth","state":"Arkansas","postal_code":"57786","country":"United States","is_default":true,"created_at":"2024-10-17 02:43:45","updated_at":"2024-10-17 02:43:45"},{"customer_address_id":1,"type":"Billing","name":"King Group","line1":"9161 Adalberto Pine","line2":null,"city":"Abbottfort","state":"Mississippi","postal_code":"89740-6753","country":"United States","is_default":true,"created_at":"2024-10-17 02:43:45","updated_at":"2024-10-17 02:43:45"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"customer_address_id":1,"type":"Billing","name":"Rippin Group","line1":"7621 Destiny Parks Apt. 753","line2":null,"city":"Port Destineefort","state":"Virginia","postal_code":"70854","country":"United States","is_default":true,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"},{"customer_address_id":1,"type":"Billing","name":"Wuckert PLC","line1":"630 Ivory Squares","line2":null,"city":"New Jairo","state":"Minnesota","postal_code":"80478","country":"United States","is_default":true,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -124,7 +124,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d3ah5D4ZgVbEe6aPf1cvk86'
+      - 'Bearer Dga38ZPa1hcEbevV66d4kf5'
     controller: null
     method: null
     route: null
@@ -258,7 +258,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"customer_address_id":1,"type":"Shipping","name":"Torp PLC","line1":"20141 Purdy Route","line2":null,"city":"New Ignacio","state":"Rhode Island","postal_code":"61913","country":"United States","is_default":true,"created_at":"2024-10-17 02:43:45","updated_at":"2024-10-17 02:43:45"}}'
+        content: '{"data":{"customer_address_id":1,"type":"Billing","name":"Schuppe, Rempel and Considine","line1":"92875 Concepcion Locks","line2":null,"city":"East Wanda","state":"North Carolina","postal_code":"83863","country":"United States","is_default":true,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"}}'
         headers: []
         description: Created
         custom: []
@@ -319,7 +319,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8f64khdD5Z6cV3eEPvaabg1'
+      - 'Bearer 5f8adDPE13khbZae6v64gcV'
     controller: null
     method: null
     route: null
@@ -371,7 +371,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_address_id":1,"type":"Billing","name":"Fisher-Roberts","line1":"5403 Casper Haven Suite 635","line2":null,"city":"West Joshland","state":"Colorado","postal_code":"21625","country":"United States","is_default":true,"created_at":"2024-10-17 02:43:45","updated_at":"2024-10-17 02:43:45"}}'
+        content: '{"data":{"customer_address_id":1,"type":"Shipping","name":"Kuhn and Sons","line1":"82653 Foster Cape","line2":null,"city":"Tyrellshire","state":"South Carolina","postal_code":"83360","country":"United States","is_default":true,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"}}'
         headers: []
         description: OK
         custom: []
@@ -415,7 +415,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ec1Vgd6v83aD64hbPfa5ZEk'
+      - 'Bearer 66acagV15ED8hbPdf4ve3kZ'
     controller: null
     method: null
     route: null
@@ -467,7 +467,7 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: Shipping
+        example: Billing
         type: string
         enumValues:
           - Billing
@@ -541,13 +541,13 @@ endpoints:
         name: is_default
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      type: Shipping
+      type: Billing
       name: 'John Doe'
       line1: '2592 Jada Key'
       line2: 'Apartment 504'
@@ -555,12 +555,12 @@ endpoints:
       state: Kentucky
       postal_code: 62249-8453
       country: 'United States'
-      is_default: false
+      is_default: true
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"customer_address_id":1,"type":"Billing","name":"Marvin-Klein","line1":"6647 Kassulke Village Suite 574","line2":null,"city":"West Libbie","state":"Wisconsin","postal_code":"69037","country":"United States","is_default":true,"created_at":"2024-10-17 02:43:45","updated_at":"2024-10-17 02:43:45"}}'
+        content: '{"data":{"customer_address_id":1,"type":"Billing","name":"Schulist-Walter","line1":"444 Kiara Loop","line2":null,"city":"South Lorineton","state":"Nebraska","postal_code":"81394","country":"United States","is_default":true,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"}}'
         headers: []
         description: OK
         custom: []
@@ -621,7 +621,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer egv5abPk64aZVcfDdh386E1'
+      - 'Bearer cPEhVgva53k866bae14ZDfd'
     controller: null
     method: null
     route: null
