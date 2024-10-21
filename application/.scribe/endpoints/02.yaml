@@ -81,7 +81,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"type":"Home","name":"Zelda Lockman","number":"781-899-2375","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},{"id":1,"type":"Mobile","name":"Serenity Baumbach","number":"+1-283-532-7170","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"type":"Mobile","name":"Antwan Hirthe","number":"1-208-402-8295","is_default":true,"created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"},{"id":1,"type":"Home","name":"Ms. Izabella D''Amore DVM","number":"+1-813-409-0604","is_default":true,"created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -125,7 +125,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 536dZ48hab6cafDvV1kgPeE'
+      - 'Bearer g38eEVah1dvDk5cab4P6Zf6'
     controller: null
     method: null
     route: null
@@ -166,7 +166,7 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: Home
+        example: Office
         type: string
         enumValues:
           - Home
@@ -202,7 +202,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      type: Home
+      type: Office
       name: 'John Doe'
       number: +1-956-745-2290
       is_default: false
@@ -210,7 +210,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"type":"Mobile","name":"Prof. Camille Von","number":"240.690.1668","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
+        content: '{"data":{"id":1,"type":"Office","name":"Estevan Rowe","number":"1-848-981-7621","is_default":true,"created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
         headers: []
         description: Created
         custom: []
@@ -271,7 +271,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fkv8c54eaVD6EPbh1gZad63'
+      - 'Bearer P4gD5861e6bEchad3aZfvVk'
     controller: null
     method: null
     route: null
@@ -323,7 +323,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Home","name":"Bella Treutel","number":"+1-325-913-0688","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
+        content: '{"data":{"id":1,"type":"Home","name":"Genoveva Langworth III","number":"1-660-604-4124","is_default":true,"created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
         headers: []
         description: OK
         custom: []
@@ -367,7 +367,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aDP5cg83eb6aZfh4v6VdE1k'
+      - 'Bearer kh63fVDa4Eg1ce6adZv85Pb'
     controller: null
     method: null
     route: null
@@ -463,7 +463,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Mobile","name":"Kasey Prosacco","number":"408-386-1214","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
+        content: '{"data":{"id":1,"type":"Office","name":"Prof. Raheem Hirthe","number":"+1 (520) 639-7265","is_default":true,"created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
         headers: []
         description: OK
         custom: []
@@ -524,7 +524,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pcvb636kDE4h81gdaf5ZVae'
+      - 'Bearer 65f4daZhg1bDe8kV3P6Ecva'
     controller: null
     method: null
     route: null

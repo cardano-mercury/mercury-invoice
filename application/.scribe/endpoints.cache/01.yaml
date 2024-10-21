@@ -70,7 +70,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Deshaun Dietrich","address":"moriah52@example.org","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},{"id":1,"name":"Mr. Jovany Christiansen Jr.","address":"gutkowski.ayana@example.com","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"Mikel Labadie","address":"ziemann.tressa@example.net","is_default":true,"created_at":"2024-10-21 08:59:21","updated_at":"2024-10-21 08:59:21"},{"id":1,"name":"Zoie Dickinson","address":"dwisoky@example.net","is_default":true,"created_at":"2024-10-21 08:59:21","updated_at":"2024-10-21 08:59:21"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -114,7 +114,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PZf1ca56bvheV4a3Dgd6E8k'
+      - 'Bearer d3DgehPb8616f5aEaVv4cZk'
     controller: null
     method: null
     route: null
@@ -186,7 +186,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"name":"Dee Ruecker MD","address":"shaylee.feil@example.com","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
+        content: '{"data":{"id":1,"name":"Imani Douglas","address":"bert.rowe@example.net","is_default":true,"created_at":"2024-10-21 08:59:21","updated_at":"2024-10-21 08:59:21"}}'
         headers: []
         description: Created
         custom: []
@@ -247,7 +247,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V3ad6b6fkvc4g185DaZEehP'
+      - 'Bearer c3kd8afEP6bDae4gh5VZv61'
     controller: null
     method: null
     route: null
@@ -299,7 +299,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Turner Botsford","address":"mwisoky@example.org","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
+        content: '{"data":{"id":1,"name":"Lilian Schroeder","address":"hweber@example.org","is_default":true,"created_at":"2024-10-21 08:59:21","updated_at":"2024-10-21 08:59:21"}}'
         headers: []
         description: OK
         custom: []
@@ -343,7 +343,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aP6h3a5dkecbV4ZDg6E8vf1'
+      - 'Bearer gbvcDE3dhaVe66kafZ845P1'
     controller: null
     method: null
     route: null
@@ -413,7 +413,7 @@ endpoints:
         name: is_default
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -421,12 +421,12 @@ endpoints:
     cleanBodyParameters:
       name: 'John Doe'
       address: john.doe@example.com
-      is_default: true
+      is_default: false
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Miss Camille Bergstrom","address":"rhaley@example.com","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
+        content: '{"data":{"id":1,"name":"Mr. Valentin Powlowski","address":"weston.stiedemann@example.com","is_default":true,"created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
         headers: []
         description: OK
         custom: []
@@ -487,7 +487,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z5Ec1h6abPD3a86g4dVkefv'
+      - 'Bearer efDPV5a16k36bd8cZE4hagv'
     controller: null
     method: null
     route: null

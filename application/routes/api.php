@@ -5,6 +5,7 @@ use App\Http\Controllers\API\APIProductsController;
 use App\Http\Controllers\API\APICustomersController;
 use App\Http\Controllers\API\APICustomerEmailsController;
 use App\Http\Controllers\API\APICustomerPhonesController;
+use App\Http\Controllers\API\APIProductCategoriesController;
 use App\Http\Controllers\API\APICustomerAddressesController;
 use App\Http\Controllers\API\APICustomerCategoriesController;
 
@@ -20,5 +21,7 @@ Route::prefix('v1')->middleware('auth:sanctum')->group(static function () {
 
     // Products
     Route::resource('products', APIProductsController::class)->except(['create', 'edit', 'destroy']);
+    Route::resource('product-categories', APIProductCategoriesController::class)->except(['create', 'edit', 'destroy']);
+    Route::put('product-categories-sync', [APIProductCategoriesController::class, 'sync']);
 
 });
