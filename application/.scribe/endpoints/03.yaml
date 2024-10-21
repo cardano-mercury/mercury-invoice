@@ -35,7 +35,7 @@ endpoints:
         name: type
         description: ''
         required: false
-        example: Billing
+        example: Shipping
         type: string
         enumValues:
           - Billing
@@ -70,7 +70,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      type: Billing
+      type: Shipping
       search: '25 Brookfield Road'
       per_page: 25
       page: 1
@@ -80,7 +80,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"type":"Shipping","name":"Maggio, Pfannerstill and Gorczany","line1":"36306 Payton Ports","line2":null,"city":"Schimmelland","state":"Arizona","postal_code":"81860","country":"United States","is_default":true,"created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"},{"id":1,"type":"Shipping","name":"West-Spencer","line1":"442 Bergnaum Groves Suite 518","line2":null,"city":"New Jeraldchester","state":"Washington","postal_code":"99237","country":"United States","is_default":true,"created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"type":"Billing","name":"Balistreri-Beer","line1":"453 Gianni Heights","line2":null,"city":"East Mariannaton","state":"New Hampshire","postal_code":"84944","country":"United States","is_default":true,"created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"},{"id":1,"type":"Billing","name":"Hodkiewicz Inc","line1":"85372 Deanna Causeway Apt. 474","line2":null,"city":"New Pamelaborough","state":"Nebraska","postal_code":"28042","country":"United States","is_default":true,"created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -124,7 +124,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eZhvdkVD6cfaa1856gPbE34'
+      - 'Bearer EZabhg65dcv3k846eVaDfP1'
     controller: null
     method: null
     route: null
@@ -258,7 +258,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"type":"Shipping","name":"Terry-Gutkowski","line1":"687 Genesis Rapids Apt. 608","line2":null,"city":"Leathaland","state":"North Dakota","postal_code":"89712","country":"United States","is_default":true,"created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
+        content: '{"data":{"id":1,"type":"Shipping","name":"Cummerata, Bergstrom and Von","line1":"2187 Metz Spur","line2":null,"city":"North Armandport","state":"Arizona","postal_code":"92767-4942","country":"United States","is_default":true,"created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
         headers: []
         description: Created
         custom: []
@@ -319,7 +319,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6b6ckedg8EaP4ZV315fvahD'
+      - 'Bearer adkcbEve86h1aDPfg53Z64V'
     controller: null
     method: null
     route: null
@@ -371,7 +371,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Shipping","name":"Schinner LLC","line1":"65852 Kub Way","line2":null,"city":"Billietown","state":"Montana","postal_code":"66409","country":"United States","is_default":true,"created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
+        content: '{"data":{"id":1,"type":"Shipping","name":"Homenick, Gaylord and Kuvalis","line1":"12004 Bartoletti Valley Apt. 270","line2":null,"city":"New Alexandremouth","state":"Virginia","postal_code":"24235-0445","country":"United States","is_default":true,"created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
         headers: []
         description: OK
         custom: []
@@ -415,7 +415,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Ehec648V5Dda3f6vgPk1aZb'
+      - 'Bearer P816D4c5feZ3kEvhVgaabd6'
     controller: null
     method: null
     route: null
@@ -560,7 +560,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Billing","name":"Christiansen Inc","line1":"97155 Beier Inlet Suite 996","line2":null,"city":"Greenholtstad","state":"Alaska","postal_code":"30523","country":"United States","is_default":true,"created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
+        content: '{"data":{"id":1,"type":"Shipping","name":"Shields, Feeney and Mayer","line1":"26115 Oswald Keys Apt. 333","line2":null,"city":"West Arnetown","state":"New Jersey","postal_code":"58503-9009","country":"United States","is_default":true,"created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
         headers: []
         description: OK
         custom: []
@@ -621,7 +621,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer k5ZaDfVg1P8d46bv6e3haEc'
+      - 'Bearer VED5h14f6acvg3ZdeaP6k8b'
     controller: null
     method: null
     route: null

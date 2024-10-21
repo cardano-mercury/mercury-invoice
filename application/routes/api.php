@@ -6,6 +6,7 @@ use App\Http\Controllers\API\APIProductsController;
 use App\Http\Controllers\API\APICustomersController;
 use App\Http\Controllers\API\APICustomerEmailsController;
 use App\Http\Controllers\API\APICustomerPhonesController;
+use App\Http\Controllers\API\APIServiceCategoriesController;
 use App\Http\Controllers\API\APIProductCategoriesController;
 use App\Http\Controllers\API\APICustomerAddressesController;
 use App\Http\Controllers\API\APICustomerCategoriesController;
@@ -27,5 +28,7 @@ Route::prefix('v1')->middleware('auth:sanctum')->group(static function () {
 
     // Services
     Route::resource('services', APIServicesController::class)->except(['create', 'edit', 'destroy']);
+    Route::resource('service-categories', APIServiceCategoriesController::class)->except(['create', 'edit', 'destroy']);
+    Route::put('service-categories-sync', [APIServiceCategoriesController::class, 'sync']);
 
 });

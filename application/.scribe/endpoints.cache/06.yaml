@@ -60,7 +60,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Deleniti","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"},{"id":1,"name":"Dicta","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"Autem","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"},{"id":1,"name":"Nemo","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -104,7 +104,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DfcvaE6gdZVk8b34eP61h5a'
+      - 'Bearer Zf8cd1Ek6Deh4va6VbPa3g5'
     controller: null
     method: null
     route: null
@@ -146,7 +146,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"name":"Distinctio","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
+        content: '{"data":{"id":1,"name":"Placeat","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
         headers: []
         description: Created
         custom: []
@@ -207,7 +207,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d1bk5eZE68cf4VagPa36vDh'
+      - 'Bearer Ed534h1bPf6k8gavVDZae6c'
     controller: null
     method: null
     route: null
@@ -249,7 +249,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Et","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
+        content: '{"data":{"id":1,"name":"Quaerat","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
         headers: []
         description: OK
         custom: []
@@ -293,7 +293,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZE4Dabe6ga83fkdvVc6hP15'
+      - 'Bearer adV8Z4cgP6eD13Ev5bah6fk'
     controller: null
     method: null
     route: null
@@ -346,7 +346,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Quo","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
+        content: '{"data":{"id":1,"name":"Omnis","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
         headers: []
         description: OK
         custom: []
@@ -407,7 +407,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z686abcVakgvD1hPe3Ef45d'
+      - 'Bearer 1v6baekf5Vg3aZ4E6dP8cDh'
     controller: null
     method: null
     route: null
@@ -448,7 +448,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - 8
+          - 14
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
@@ -456,14 +456,14 @@ endpoints:
     cleanBodyParameters:
       product_id: 1
       category_ids:
-        - 8
+        - 14
     fileParameters: []
     responses:
       -
         status: 204
         content: 'null'
         headers: []
-        description: 'Customer Categories Synced'
+        description: 'Product Categories Synced'
         custom: []
       -
         status: 401
@@ -522,7 +522,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer khP5aafbd6V6v831DecZEg4'
+      - 'Bearer 3f6c5P1aVk8hvZebaDd4g6E'
     controller: null
     method: null
     route: null

@@ -58,7 +58,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Facilis Est Possimus","sku":"NPPLEGFZGTNRKUVZ","description":"In ipsa consequatur rerum officiis consequatur. Exercitationem harum deleniti suscipit aut et voluptatem. Est commodi excepturi in amet tenetur asperiores.","unit_type":"kg","unit_price":78.96,"supplier":"Dare Inc","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"},{"id":1,"name":"Enim Eum Tempora","sku":"ZBBCLFZZCM1SLR0V","description":"Officiis facere labore quis. Voluptas velit est ut reiciendis sunt earum hic. Dolores omnis quaerat est eos voluptatem quam quos voluptate.","unit_type":"kg","unit_price":43.12,"supplier":"Franecki, Cremin and Haley","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"Qui Possimus Ipsa","sku":"LJTEIQOLL3DCGPIJ","description":"Consequatur est tenetur et repellat. Quas ducimus dolorem eius expedita. Error accusantium explicabo assumenda porro.","unit_type":"kg","unit_price":47.28,"supplier":"Wiegand-Senger","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"},{"id":1,"name":"Vel Rem Vitae","sku":"I0PGOP8DAXDSPQQF","description":"Enim a accusamus rerum libero. Ducimus nostrum autem omnis omnis. Enim deleniti repudiandae ipsa sunt.","unit_type":"cm","unit_price":62.24,"supplier":"Ernser, Maggio and Mann","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -102,7 +102,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8h1aVc35fDkaEdvb64Ze6gP'
+      - 'Bearer E46ca8VZvP3fedb6gkh15Da'
     controller: null
     method: null
     route: null
@@ -194,7 +194,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"name":"Dignissimos Sint Ad","sku":"UTGFDQF80U9SX6KO","description":"Occaecati distinctio perspiciatis accusamus non tenetur inventore saepe. In provident aut sit ut et eos. In dignissimos eveniet voluptas sint.","unit_type":"cm","unit_price":27.2,"supplier":"O''Conner, Altenwerth and Lakin","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
+        content: '{"data":{"id":1,"name":"Consequuntur A Quae","sku":"8UPIIF5OGCUR8OZ3","description":"Dolor est consectetur quas tenetur voluptatum et dolores sequi. Esse id voluptates voluptatem. Quasi numquam sed iure et ut.","unit_type":"each","unit_price":72.37,"supplier":"Quigley Ltd","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
         headers: []
         description: Created
         custom: []
@@ -255,7 +255,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 645E8ZkaP61fvghdeD3acbV'
+      - 'Bearer 1haV6agc54DeZ36d8bEPkvf'
     controller: null
     method: null
     route: null
@@ -297,7 +297,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Cupiditate Quis Expedita","sku":"UN0YZ4BP3Z5TYM2F","description":"Voluptatem deleniti animi maiores velit. Sit a blanditiis consequatur blanditiis. Odit voluptas error in dolorum unde alias.","unit_type":"cm","unit_price":81.35,"supplier":"Eichmann-Goldner","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
+        content: '{"data":{"id":1,"name":"Et Nesciunt Et","sku":"BC6PJJSUFALRM262","description":"Adipisci quis ea sunt eaque est. Eveniet debitis quas quibusdam excepturi. Ipsa repudiandae a suscipit et quia ea possimus.","unit_type":"cm","unit_price":16.75,"supplier":"Tromp-Prohaska","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
         headers: []
         description: OK
         custom: []
@@ -341,7 +341,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E3fckbaDh6VZv1Pg8a45d6e'
+      - 'Bearer 16cga8d65vbPDehV3kZf4aE'
     controller: null
     method: null
     route: null
@@ -444,7 +444,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Corporis Repudiandae A","sku":"7LNSDNZKEAIMMKN9","description":"Repudiandae qui distinctio corporis praesentium. Nesciunt velit sint est. Vel ea recusandae iste provident.","unit_type":"each","unit_price":52.71,"supplier":"Kihn-Langosh","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
+        content: '{"data":{"id":1,"name":"Sed Optio Autem","sku":"1QCEJFUAWQRD5LDL","description":"Quibusdam rem voluptatem voluptatem laborum. Ad quis consequatur totam ullam ratione illo. Porro eligendi cupiditate doloremque.","unit_type":"cm","unit_price":46.19,"supplier":"Friesen, Collier and Schiller","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
         headers: []
         description: OK
         custom: []
@@ -505,7 +505,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kZ318fdcEaae5V6DvP64hbg'
+      - 'Bearer 3Zhf68b46ag5DkaV1EcPevd'
     controller: null
     method: null
     route: null

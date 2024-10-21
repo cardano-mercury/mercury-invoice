@@ -12,10 +12,10 @@ use App\Http\Controllers\Controller;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
 use Knuckles\Scribe\Attributes\ResponseFromFile;
-use Knuckles\Scribe\Attributes\ResponseFromApiResource;
 use App\Http\Resources\Product\ProductCategoryResource;
+use Knuckles\Scribe\Attributes\ResponseFromApiResource;
+use App\Http\Requests\Product\SyncProductCategoryRequest;
 use App\Http\Requests\Product\StoreProductCategoryRequest;
-use App\Http\Resources\Product\SyncProductCategoryRequest;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 #[Group('Product Categories', 'Product Category Management API')]
@@ -102,7 +102,7 @@ class APIProductCategoriesController extends Controller
     /**
      * Sync Customer Categories
      */
-    #[\Knuckles\Scribe\Attributes\Response(status: 204, description: 'Customer Categories Synced')]
+    #[\Knuckles\Scribe\Attributes\Response(status: 204, description: 'Product Categories Synced')]
     #[ResponseFromFile(file: 'resources/api-responses/422.json', status: 422, description: 'Validation Failed')]
     public function sync(SyncProductCategoryRequest $request): Response|JsonResponse
     {
