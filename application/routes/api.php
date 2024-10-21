@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\APIProductsController;
 use App\Http\Controllers\API\APICustomersController;
 use App\Http\Controllers\API\APICustomerEmailsController;
 use App\Http\Controllers\API\APICustomerPhonesController;
@@ -16,5 +17,8 @@ Route::prefix('v1')->middleware('auth:sanctum')->group(static function () {
     Route::resource('customers.addresses', APICustomerAddressesController::class)->except(['create', 'edit', 'destroy'])->scoped();
     Route::resource('customer-categories', APICustomerCategoriesController::class)->except(['create', 'edit', 'destroy']);
     Route::put('customer-categories-sync', [APICustomerCategoriesController::class, 'sync']);
+
+    // Products
+    Route::resource('products', APIProductsController::class)->except(['create', 'edit', 'destroy']);
 
 });

@@ -82,7 +82,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"type":"Shipping","name":"Windler LLC","line1":"570 Lucinda Cliff Suite 036","line2":null,"city":"North Stella","state":"Delaware","postal_code":"38859","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},{"id":1,"type":"Shipping","name":"Hackett, Donnelly and Schmidt","line1":"28937 Jadon Trail Apt. 717","line2":null,"city":"Bauchside","state":"Utah","postal_code":"67194","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"type":"Shipping","name":"O''Conner, Fay and Medhurst","line1":"684 Swift Land Apt. 092","line2":null,"city":"Bednarfort","state":"Idaho","postal_code":"55167-5346","country":"United States","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},{"id":1,"type":"Billing","name":"Hettinger-Roberts","line1":"30719 Delia Course Suite 128","line2":null,"city":"Jenningsfort","state":"Minnesota","postal_code":"32741","country":"United States","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -126,7 +126,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cD8f65Zv3e4bEPagdakVh61'
+      - 'Bearer cZVPf13veDh86dag5k4baE6'
     controller: null
     method: null
     route: null
@@ -167,7 +167,7 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: Billing
+        example: Shipping
         type: string
         enumValues:
           - Billing
@@ -247,7 +247,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      type: Billing
+      type: Shipping
       name: 'John Doe'
       line1: '2592 Jada Key'
       line2: 'Apartment 504'
@@ -260,7 +260,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"type":"Billing","name":"McKenzie Ltd","line1":"498 Vergie Tunnel","line2":null,"city":"Maximilianmouth","state":"North Dakota","postal_code":"91391","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"McClure-Dicki","line1":"193 Hazle Path Suite 183","line2":null,"city":"New Caitlyn","state":"North Carolina","postal_code":"71973","country":"United States","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
         headers: []
         description: Created
         custom: []
@@ -321,7 +321,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EvkbDgZV5f6ah638aPced14'
+      - 'Bearer 65h4fdDk68vgacV13EePbZa'
     controller: null
     method: null
     route: null
@@ -373,7 +373,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Billing","name":"Torp Inc","line1":"7565 Hauck Hollow","line2":null,"city":"New Darwin","state":"Nebraska","postal_code":"62132-7183","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"Cole, Ernser and Hagenes","line1":"7798 Ransom Inlet Apt. 404","line2":null,"city":"North Percival","state":"New Hampshire","postal_code":"44761-9149","country":"United States","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
         headers: []
         description: OK
         custom: []
@@ -417,7 +417,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hv15dafa8EkceP4gbZ66V3D'
+      - 'Bearer ZE6k4v1c635D8bePfghVdaa'
     controller: null
     method: null
     route: null
@@ -469,7 +469,7 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: Billing
+        example: Shipping
         type: string
         enumValues:
           - Billing
@@ -543,13 +543,13 @@ endpoints:
         name: is_default
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      type: Billing
+      type: Shipping
       name: 'John Doe'
       line1: '2592 Jada Key'
       line2: 'Apartment 504'
@@ -557,12 +557,12 @@ endpoints:
       state: Kentucky
       postal_code: 62249-8453
       country: 'United States'
-      is_default: false
+      is_default: true
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Billing","name":"Rutherford-Denesik","line1":"898 Darrell Village Apt. 456","line2":null,"city":"Macejkovicfort","state":"Arkansas","postal_code":"39460","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"Hansen-Williamson","line1":"79160 Stanford Overpass Suite 255","line2":null,"city":"East Talia","state":"Connecticut","postal_code":"67517","country":"United States","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
         headers: []
         description: OK
         custom: []
@@ -623,7 +623,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a4g186vd6VhaPfbe5Zc3EDk'
+      - 'Bearer 6ak1Ef5Z68hV34DbgvPdeac'
     controller: null
     method: null
     route: null

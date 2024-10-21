@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Product;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreProductRequest extends FormRequest
@@ -31,6 +32,11 @@ class StoreProductRequest extends FormRequest
                 'required',
                 'min:3',
                 'max:64',
+                Rule::unique('customers', 'name')->where(function($query) {
+                    return $query
+                        ->where('user_id', auth()->id())
+                        ->where('name', $this->name);
+                })->ignore($this?->product?->id),
             ],
             'sku' => [
                 'nullable',
@@ -45,11 +51,36 @@ class StoreProductRequest extends FormRequest
             ],
             'unit_price' => [
                 'required',
+                'numeric',
                 'min:0',
             ],
             'supplier' => [
                 'nullable',
                 'max:64',
+            ],
+        ];
+    }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'example' => 'Website Hosting',
+            ],
+            'sku' => [
+                'example' => 'WH-001',
+            ],
+            'description' => [
+                'example' => 'Standard website hosting on shared server',
+            ],
+            'unit_type' => [
+                'example' => 'Each',
+            ],
+            'unit_price' => [
+                'example' => 12.99,
+            ],
+            'supplier' => [
+                'example' => 'Drip Dropz Ltd',
             ],
         ];
     }

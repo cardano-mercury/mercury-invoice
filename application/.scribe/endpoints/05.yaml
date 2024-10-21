@@ -1,16 +1,16 @@
-name: 'Customer Emails'
-description: 'Customer Email Management API'
+name: Products
+description: 'Product Management API'
 endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/customers/{customer_id}/emails'
+    uri: api/v1/products
     metadata:
-      groupName: 'Customer Emails'
-      groupDescription: 'Customer Email Management API'
+      groupName: Products
+      groupDescription: 'Product Management API'
       subgroup: ''
       subgroupDescription: ''
-      title: 'List Customer Emails'
+      title: 'List Products'
       description: ''
       authenticated: true
       custom: []
@@ -18,24 +18,14 @@ endpoints:
       Authorization: 'Bearer {YOUR_ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      customer_id:
-        name: customer_id
-        description: 'The ID of the customer.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      customer_id: 1
+    urlParameters: []
+    cleanUrlParameters: []
     queryParameters:
       search:
         name: search
-        description: 'Search for customer emails by name or address'
+        description: 'Search for products by name or sku'
         required: false
-        example: john.doe@example.com
+        example: 'Website Hosting'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -59,7 +49,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      search: john.doe@example.com
+      search: 'Website Hosting'
       per_page: 25
       page: 1
     bodyParameters: []
@@ -68,7 +58,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Deshaun Dietrich","address":"moriah52@example.org","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},{"id":1,"name":"Mr. Jovany Christiansen Jr.","address":"gutkowski.ayana@example.com","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"Dolor Quaerat Est","sku":"MUTL2LWJYYJPR9IJ","description":"Facilis doloribus at qui. Rerum corrupti dolores illum reiciendis officia. Ducimus ut iste eligendi possimus ad dolorem.","unit_type":"gram","unit_price":20.37,"supplier":"Bauch-Heidenreich","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},{"id":1,"name":"Qui Magnam Aperiam","sku":"LOZJQEIWRQMNO8MC","description":"Et enim iure magnam delectus aut. Cumque sunt voluptate explicabo veritatis nostrum ut sit consequatur. Omnis dolorem pariatur molestiae nesciunt fugiat.","unit_type":"cm","unit_price":43.84,"supplier":"Carroll Group","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -112,7 +102,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PZf1ca56bvheV4a3Dgd6E8k'
+      - 'Bearer 8Vvkc31gab6adP54hZeEf6D'
     controller: null
     method: null
     route: null
@@ -120,13 +110,13 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: 'api/v1/customers/{customer_id}/emails'
+    uri: api/v1/products
     metadata:
-      groupName: 'Customer Emails'
-      groupDescription: 'Customer Email Management API'
+      groupName: Products
+      groupDescription: 'Product Management API'
       subgroup: ''
       subgroupDescription: ''
-      title: 'Create Customer Email'
+      title: 'Create Product'
       description: ''
       authenticated: true
       custom: []
@@ -134,18 +124,8 @@ endpoints:
       Authorization: 'Bearer {YOUR_ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      customer_id:
-        name: customer_id
-        description: 'The ID of the customer.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      customer_id: 1
+    urlParameters: []
+    cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -153,38 +133,68 @@ endpoints:
         name: name
         description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
         required: true
-        example: 'John Doe'
+        example: 'Website Hosting'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      address:
-        name: address
-        description: 'Must be a valid email address. Must be at least 3 characters. Must not be greater than 256 characters.'
-        required: true
-        example: john.doe@example.com
+      sku:
+        name: sku
+        description: 'Must not be greater than 32 characters.'
+        required: false
+        example: WH-001
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      is_default:
-        name: is_default
+      description:
+        name: description
         description: ''
         required: false
-        example: false
-        type: boolean
+        example: 'Standard website hosting on shared server'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      unit_type:
+        name: unit_type
+        description: 'Must not be greater than 16 characters.'
+        required: false
+        example: Each
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      unit_price:
+        name: unit_price
+        description: 'Must be at least 0.'
+        required: true
+        example: 12.99
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      supplier:
+        name: supplier
+        description: 'Must not be greater than 64 characters.'
+        required: false
+        example: 'Drip Dropz Ltd'
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: 'John Doe'
-      address: john.doe@example.com
-      is_default: false
+      name: 'Website Hosting'
+      sku: WH-001
+      description: 'Standard website hosting on shared server'
+      unit_type: Each
+      unit_price: 12.99
+      supplier: 'Drip Dropz Ltd'
     fileParameters: []
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"name":"Dee Ruecker MD","address":"shaylee.feil@example.com","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
+        content: '{"data":{"id":1,"name":"Corporis Necessitatibus Adipisci","sku":"VKSLDHZFCZDDKP8S","description":"Ut vitae nihil voluptas sunt aut pariatur. Porro error possimus amet. Necessitatibus ut veniam nisi voluptatem.","unit_type":"cm","unit_price":12.46,"supplier":"Jacobs, Hansen and Raynor","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
         headers: []
         description: Created
         custom: []
@@ -245,7 +255,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer V3ad6b6fkvc4g185DaZEehP'
+      - 'Bearer 86fZE5bV4Dce3akPdg1hv6a'
     controller: null
     method: null
     route: null
@@ -253,13 +263,13 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/customers/{customer_id}/emails/{id}'
+    uri: 'api/v1/products/{id}'
     metadata:
-      groupName: 'Customer Emails'
-      groupDescription: 'Customer Email Management API'
+      groupName: Products
+      groupDescription: 'Product Management API'
       subgroup: ''
       subgroupDescription: ''
-      title: 'Get Customer Email'
+      title: 'Get Product'
       description: ''
       authenticated: true
       custom: []
@@ -268,18 +278,9 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      customer_id:
-        name: customer_id
-        description: 'The ID of the customer.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
       id:
         name: id
-        description: 'The ID of the email.'
+        description: 'The ID of the product.'
         required: true
         example: 1
         type: integer
@@ -287,7 +288,6 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      customer_id: 1
       id: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -297,7 +297,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Turner Botsford","address":"mwisoky@example.org","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
+        content: '{"data":{"id":1,"name":"Vel Repellendus Eos","sku":"IWMBQY2C98W7S9CT","description":"Nesciunt rerum exercitationem consequatur delectus. Quaerat est repellat quis eos. Qui omnis quae ea recusandae molestias aut quis.","unit_type":"ounce","unit_price":35.41,"supplier":"Gorczany-Leffler","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
         headers: []
         description: OK
         custom: []
@@ -341,7 +341,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aP6h3a5dkecbV4ZDg6E8vf1'
+      - 'Bearer 56VhDaef4gaEdc8b3kP6Zv1'
     controller: null
     method: null
     route: null
@@ -350,13 +350,13 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/v1/customers/{customer_id}/emails/{id}'
+    uri: 'api/v1/products/{id}'
     metadata:
-      groupName: 'Customer Emails'
-      groupDescription: 'Customer Email Management API'
+      groupName: Products
+      groupDescription: 'Product Management API'
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update Customer Email'
+      title: 'Update Product'
       description: ''
       authenticated: true
       custom: []
@@ -365,18 +365,9 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      customer_id:
-        name: customer_id
-        description: 'The ID of the customer.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
       id:
         name: id
-        description: 'The ID of the email.'
+        description: 'The ID of the product.'
         required: true
         example: 1
         type: integer
@@ -384,7 +375,6 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      customer_id: 1
       id: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -393,38 +383,68 @@ endpoints:
         name: name
         description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
         required: true
-        example: 'John Doe'
+        example: 'Website Hosting'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      address:
-        name: address
-        description: 'Must be a valid email address. Must be at least 3 characters. Must not be greater than 256 characters.'
-        required: true
-        example: john.doe@example.com
+      sku:
+        name: sku
+        description: 'Must not be greater than 32 characters.'
+        required: false
+        example: WH-001
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      is_default:
-        name: is_default
+      description:
+        name: description
         description: ''
         required: false
-        example: true
-        type: boolean
+        example: 'Standard website hosting on shared server'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      unit_type:
+        name: unit_type
+        description: 'Must not be greater than 16 characters.'
+        required: false
+        example: Each
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      unit_price:
+        name: unit_price
+        description: 'Must be at least 0.'
+        required: true
+        example: 12.99
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      supplier:
+        name: supplier
+        description: 'Must not be greater than 64 characters.'
+        required: false
+        example: 'Drip Dropz Ltd'
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: 'John Doe'
-      address: john.doe@example.com
-      is_default: true
+      name: 'Website Hosting'
+      sku: WH-001
+      description: 'Standard website hosting on shared server'
+      unit_type: Each
+      unit_price: 12.99
+      supplier: 'Drip Dropz Ltd'
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Miss Camille Bergstrom","address":"rhaley@example.com","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
+        content: '{"data":{"id":1,"name":"Sed Veniam Quidem","sku":"IVPQYE2OYVPCOYQ4","description":"Non labore consequuntur iusto voluptatum ducimus commodi cum. Et occaecati aut soluta ut quos quis dolor. Quas et officiis tempore aspernatur incidunt dolorum cumque.","unit_type":"kg","unit_price":24.98,"supplier":"Gerhold PLC","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
         headers: []
         description: OK
         custom: []
@@ -485,7 +505,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z5Ec1h6abPD3a86g4dVkefv'
+      - 'Bearer af6gkvVEPd86D1beZ3hc54a'
     controller: null
     method: null
     route: null

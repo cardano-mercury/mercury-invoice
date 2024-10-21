@@ -177,6 +177,8 @@ INTRO
             'Customer Phones',
             'Customer Addresses',
             'Customer Categories',
+            'Products',
+            'Product Categories',
         ],
     ],
 

@@ -58,7 +58,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Thalia Walker","tax_number":"01JAQ15YAMWJ82FDN6MZARWMWA","tax_rate":17.5,"categories":[{"id":1,"name":"Et","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"defaultEmail":{"id":1,"name":"Miss Dayna Friesen","address":"kennith.pfannerstill@example.org","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultPhone":{"id":1,"type":"Office","name":"Miss Kenya Eichmann Sr.","number":"(430) 465-9791","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultAddress":{"id":1,"type":"Billing","name":"Cassin Group","line1":"5739 Taya Via Suite 194","line2":null,"city":"South Amaramouth","state":"Mississippi","postal_code":"42331-5974","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},{"id":1,"name":"Esteban Walter","tax_number":"01JAQ15YANK6PABVY4S9WH721Q","tax_rate":17.5,"categories":[{"id":1,"name":"Sit","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"defaultEmail":{"id":1,"name":"Prof. Greyson Rath","address":"foster.braun@example.net","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultPhone":{"id":1,"type":"Home","name":"Mikayla Stamm DVM","number":"(929) 484-5355","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultAddress":{"id":1,"type":"Shipping","name":"McKenzie LLC","line1":"809 Dorothea Island","line2":null,"city":"Reichertberg","state":"Iowa","postal_code":"00311-4421","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"George Collins","tax_number":"01JAQ2VSK4AXAKAYW00M9QPR49","tax_rate":17.5,"categories":[{"id":1,"name":"Nihil","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}],"defaultEmail":{"id":1,"name":"Gerry Pollich","address":"alfred.beier@example.net","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},"defaultPhone":{"id":1,"type":"Office","name":"Ellen Stracke IV","number":"(484) 680-3281","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},"defaultAddress":{"id":1,"type":"Shipping","name":"Schoen, Zemlak and Hirthe","line1":"107 Daisha Lane","line2":null,"city":"North Claudia","state":"Nebraska","postal_code":"06262","country":"United States","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},{"id":1,"name":"Dr. Loyce Mosciski","tax_number":"01JAQ2VSK5JAQ454T4P4XQDYKX","tax_rate":17.5,"categories":[{"id":1,"name":"Quae","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}],"defaultEmail":{"id":1,"name":"Miss Brooke Heaney","address":"oswald94@example.net","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},"defaultPhone":{"id":1,"type":"Mobile","name":"Dr. Royal Feest","number":"1-567-921-9902","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},"defaultAddress":{"id":1,"type":"Billing","name":"Bailey, Herman and Lindgren","line1":"30585 Hilma Meadow","line2":null,"city":"Wehnerburgh","state":"Missouri","postal_code":"94672-5874","country":"United States","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -102,7 +102,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6hk63EDe8vda1abgc45ZPVf'
+      - 'Bearer 8V4D15fZde6gvaPhcEbka63'
     controller: null
     method: null
     route: null
@@ -164,7 +164,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"name":"Dr. Lavonne Kassulke Sr.","tax_number":"01JAQ15YAXQECSVPKK3KW86Q83","tax_rate":17.5,"categories":[],"defaultEmail":null,"defaultPhone":null,"defaultAddress":null,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
+        content: '{"data":{"id":1,"name":"Ulises Kub","tax_number":"01JAQ2VSKD0ZPYWB6K1XE1QRXG","tax_rate":17.5,"categories":[],"defaultEmail":null,"defaultPhone":null,"defaultAddress":null,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
         headers: []
         description: Created
         custom: []
@@ -225,7 +225,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hk54DaaZeg663b1dEPvcV8f'
+      - 'Bearer hvk36cegdVaa614P85ZDfbE'
     controller: null
     method: null
     route: null
@@ -267,7 +267,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Prof. Kiana Reynolds","tax_number":"01JAQ15YB4HB2X7CXBCCH447DP","tax_rate":17.5,"categories":[{"id":1,"name":"Ad","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"defaultEmail":{"id":1,"name":"Helmer Emmerich","address":"savanah91@example.net","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultPhone":{"id":1,"type":"Home","name":"Mrs. Amaya D''Amore","number":"1-419-715-7899","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultAddress":{"id":1,"type":"Shipping","name":"Collins, Jacobi and Braun","line1":"64622 Jazmyne Springs Apt. 766","line2":null,"city":"New Meaganberg","state":"New Mexico","postal_code":"86618-1689","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
+        content: '{"data":{"id":1,"name":"Heather Kohler","tax_number":"01JAQ2VSKM3WCH9GK3ZZCZHX8D","tax_rate":17.5,"categories":[{"id":1,"name":"Architecto","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}],"defaultEmail":{"id":1,"name":"Tess Lindgren","address":"ephraim28@example.org","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},"defaultPhone":{"id":1,"type":"Home","name":"Sigrid Schneider","number":"681-416-0572","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},"defaultAddress":{"id":1,"type":"Billing","name":"Cummerata LLC","line1":"6301 Wiza Junction","line2":null,"city":"Christaborough","state":"Mississippi","postal_code":"96630","country":"United States","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
         headers: []
         description: OK
         custom: []
@@ -311,7 +311,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer eZv6aPhDEd8gf31c546aVkb'
+      - 'Bearer PbEDa3h6v8g45c61edVZakf'
     controller: null
     method: null
     route: null
@@ -384,7 +384,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Jacklyn Powlowski","tax_number":"01JAQ15YB6Z34SNDVCN6A4K1PB","tax_rate":17.5,"categories":[{"id":1,"name":"Possimus","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"defaultEmail":{"id":1,"name":"Rylan Schamberger","address":"lorenz11@example.com","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultPhone":{"id":1,"type":"Mobile","name":"Mrs. Patricia Braun DDS","number":"+1-934-435-9902","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultAddress":{"id":1,"type":"Shipping","name":"Gutkowski, Hills and Wintheiser","line1":"82400 Beier Harbors","line2":null,"city":"North Adelle","state":"Ohio","postal_code":"07495","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
+        content: '{"data":{"id":1,"name":"Tianna Grady","tax_number":"01JAQ2VSKPAJ80M7XDTB4WVFXP","tax_rate":17.5,"categories":[{"id":1,"name":"Aut","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}],"defaultEmail":{"id":1,"name":"Prof. Maxime Weber","address":"nveum@example.com","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},"defaultPhone":{"id":1,"type":"Mobile","name":"Prof. Donnie Reinger","number":"+1 (351) 719-4377","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},"defaultAddress":{"id":1,"type":"Shipping","name":"Howe-Bernier","line1":"28907 Maribel Summit Apt. 190","line2":null,"city":"New Flavietown","state":"Illinois","postal_code":"80710","country":"United States","is_default":true,"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},"created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
         headers: []
         description: OK
         custom: []
@@ -445,7 +445,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8EebaZh36P5ak4Ddfv6V1gc'
+      - 'Bearer kDdaE1cVf6853aPb6gehZ4v'
     controller: null
     method: null
     route: null

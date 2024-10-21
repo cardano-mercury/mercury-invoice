@@ -60,7 +60,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Temporibus","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},{"id":1,"name":"Sequi","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"Voluptas","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"},{"id":1,"name":"Commodi","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -104,7 +104,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer va5cab3gV616kZPdhD4E8fe'
+      - 'Bearer 1f4aev8ZPgk63hdbcVa56ED'
     controller: null
     method: null
     route: null
@@ -146,7 +146,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"name":"Culpa","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
+        content: '{"data":{"id":1,"name":"Sint","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
         headers: []
         description: Created
         custom: []
@@ -207,7 +207,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 536fb4eaVPg6hvZd8DE1akc'
+      - 'Bearer hv6P1DE3decZ586Vgfaa4bk'
     controller: null
     method: null
     route: null
@@ -249,7 +249,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Quibusdam","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
+        content: '{"data":{"id":1,"name":"Quaerat","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
         headers: []
         description: OK
         custom: []
@@ -293,7 +293,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 86Eegdb4c1fhaa3kZD56vPV'
+      - 'Bearer 58DghekZ4fvc6Pb6aVEad13'
     controller: null
     method: null
     route: null
@@ -346,7 +346,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Blanditiis","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
+        content: '{"data":{"id":1,"name":"Impedit","created_at":"2024-10-21 08:24:56","updated_at":"2024-10-21 08:24:56"}}'
         headers: []
         description: OK
         custom: []
@@ -407,7 +407,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer abgD3EevZ46aPd86V5fh1kc'
+      - 'Bearer 1VEbhk46P56Df3ae8gdaZcv'
     controller: null
     method: null
     route: null
@@ -448,7 +448,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - 4
+          - 15
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
@@ -456,7 +456,7 @@ endpoints:
     cleanBodyParameters:
       customer_id: 1
       category_ids:
-        - 4
+        - 15
     fileParameters: []
     responses:
       -
@@ -522,7 +522,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vg6P8aa1bk6d3heVEcZD54f'
+      - 'Bearer EDe6ac4f1vdVbaP6g5khZ38'
     controller: null
     method: null
     route: null
