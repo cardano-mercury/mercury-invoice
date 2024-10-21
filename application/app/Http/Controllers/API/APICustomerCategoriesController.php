@@ -12,8 +12,8 @@ use App\Http\Controllers\Controller;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
 use Knuckles\Scribe\Attributes\ResponseFromFile;
-use App\Http\Resources\CustomerCategoryResource;
 use Knuckles\Scribe\Attributes\ResponseFromApiResource;
+use App\Http\Resources\Customer\CustomerCategoryResource;
 use App\Http\Requests\Customer\SyncCustomerCategoryRequest;
 use App\Http\Requests\Customer\StoreCustomerCategoryRequest;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
@@ -81,8 +81,6 @@ class APICustomerCategoriesController extends Controller
             return response()->json(['message' => 'Unauthorized'], 401);
         }
 
-        $customerCategory->loadCount('customers');
-
         return new CustomerCategoryResource($customerCategory);
     }
 
@@ -98,8 +96,6 @@ class APICustomerCategoriesController extends Controller
         }
 
         $customerCategory->update($request->validated());
-
-        $customerCategory->loadCount('customers');
 
         return new CustomerCategoryResource($customerCategory);
     }

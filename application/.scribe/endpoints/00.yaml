@@ -58,7 +58,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"customer_id":1,"name":"Maddison Gaylord","tax_number":"01JAKMSW9A6EFQN7HEMRAF35GV","tax_rate":17.5,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"},{"customer_id":1,"name":"Laila Kirlin","tax_number":"01JAKMSW9BCX2B5D7XVN4Q1C73","tax_rate":17.5,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"Thalia Walker","tax_number":"01JAQ15YAMWJ82FDN6MZARWMWA","tax_rate":17.5,"categories":[{"id":1,"name":"Et","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"defaultEmail":{"id":1,"name":"Miss Dayna Friesen","address":"kennith.pfannerstill@example.org","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultPhone":{"id":1,"type":"Office","name":"Miss Kenya Eichmann Sr.","number":"(430) 465-9791","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultAddress":{"id":1,"type":"Billing","name":"Cassin Group","line1":"5739 Taya Via Suite 194","line2":null,"city":"South Amaramouth","state":"Mississippi","postal_code":"42331-5974","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},{"id":1,"name":"Esteban Walter","tax_number":"01JAQ15YANK6PABVY4S9WH721Q","tax_rate":17.5,"categories":[{"id":1,"name":"Sit","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"defaultEmail":{"id":1,"name":"Prof. Greyson Rath","address":"foster.braun@example.net","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultPhone":{"id":1,"type":"Home","name":"Mikayla Stamm DVM","number":"(929) 484-5355","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultAddress":{"id":1,"type":"Shipping","name":"McKenzie LLC","line1":"809 Dorothea Island","line2":null,"city":"Reichertberg","state":"Iowa","postal_code":"00311-4421","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -102,7 +102,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a58af3E4Dcebv6ghV1k6ZdP'
+      - 'Bearer 6hk63EDe8vda1abgc45ZPVf'
     controller: null
     method: null
     route: null
@@ -164,7 +164,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"customer_id":1,"name":"Emmanuelle Ruecker Jr.","tax_number":"01JAKMSW9KE3YAGA47QJV3T438","tax_rate":17.5,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"}}'
+        content: '{"data":{"id":1,"name":"Dr. Lavonne Kassulke Sr.","tax_number":"01JAQ15YAXQECSVPKK3KW86Q83","tax_rate":17.5,"categories":[],"defaultEmail":null,"defaultPhone":null,"defaultAddress":null,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
         headers: []
         description: Created
         custom: []
@@ -225,7 +225,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 8bhaDfe56cP1k3EVdZagv46'
+      - 'Bearer hk54DaaZeg663b1dEPvcV8f'
     controller: null
     method: null
     route: null
@@ -267,7 +267,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_id":1,"name":"Jacey Hamill DDS","tax_number":"01JAKMSW9RQ81Q5WWAYMNS959Y","tax_rate":17.5,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"}}'
+        content: '{"data":{"id":1,"name":"Prof. Kiana Reynolds","tax_number":"01JAQ15YB4HB2X7CXBCCH447DP","tax_rate":17.5,"categories":[{"id":1,"name":"Ad","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"defaultEmail":{"id":1,"name":"Helmer Emmerich","address":"savanah91@example.net","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultPhone":{"id":1,"type":"Home","name":"Mrs. Amaya D''Amore","number":"1-419-715-7899","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultAddress":{"id":1,"type":"Shipping","name":"Collins, Jacobi and Braun","line1":"64622 Jazmyne Springs Apt. 766","line2":null,"city":"New Meaganberg","state":"New Mexico","postal_code":"86618-1689","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
         headers: []
         description: OK
         custom: []
@@ -311,7 +311,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Zef43VvbDdkahg8E5ac16P'
+      - 'Bearer eZv6aPhDEd8gf31c546aVkb'
     controller: null
     method: null
     route: null
@@ -384,7 +384,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_id":1,"name":"Mr. Dayton White","tax_number":"01JAKMSW9ZR7QY5CMQ9RH27SGR","tax_rate":17.5,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"}}'
+        content: '{"data":{"id":1,"name":"Jacklyn Powlowski","tax_number":"01JAQ15YB6Z34SNDVCN6A4K1PB","tax_rate":17.5,"categories":[{"id":1,"name":"Possimus","created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"defaultEmail":{"id":1,"name":"Rylan Schamberger","address":"lorenz11@example.com","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultPhone":{"id":1,"type":"Mobile","name":"Mrs. Patricia Braun DDS","number":"+1-934-435-9902","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"defaultAddress":{"id":1,"type":"Shipping","name":"Gutkowski, Hills and Wintheiser","line1":"82400 Beier Harbors","line2":null,"city":"North Adelle","state":"Ohio","postal_code":"07495","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
         headers: []
         description: OK
         custom: []
@@ -445,7 +445,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d561V3bfcvkaD64PZEhge8a'
+      - 'Bearer 8EebaZh36P5ak4Ddfv6V1gc'
     controller: null
     method: null
     route: null

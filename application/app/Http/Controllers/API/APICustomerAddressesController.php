@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\API;
 
 use App\Models\Address;
-use App\Models\Customer;
 use App\Enums\AddressType;
+use App\Models\Customer;
 use App\Traits\HelperTrait;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\QueryParam;
-use App\Http\Resources\CustomerAddressResource;
 use Knuckles\Scribe\Attributes\ResponseFromFile;
 use Knuckles\Scribe\Attributes\ResponseFromApiResource;
+use App\Http\Resources\Customer\CustomerAddressResource;
 use App\Http\Requests\Customer\StoreCustomerAddressRequest;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 

@@ -53,19 +53,87 @@ paths:
                 example:
                   data:
                     -
-                      customer_id: 1
-                      name: 'Maddison Gaylord'
-                      tax_number: 01JAKMSW9A6EFQN7HEMRAF35GV
+                      id: 1
+                      name: 'Thalia Walker'
+                      tax_number: 01JAQ15YAMWJ82FDN6MZARWMWA
                       tax_rate: 17.5
-                      created_at: '2024-10-20 00:21:30'
-                      updated_at: '2024-10-20 00:21:30'
+                      categories:
+                        -
+                          id: 1
+                          name: Et
+                          created_at: '2024-10-21 07:55:32'
+                          updated_at: '2024-10-21 07:55:32'
+                      defaultEmail:
+                        id: 1
+                        name: 'Miss Dayna Friesen'
+                        address: kennith.pfannerstill@example.org
+                        is_default: true
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
+                      defaultPhone:
+                        id: 1
+                        type: Office
+                        name: 'Miss Kenya Eichmann Sr.'
+                        number: '(430) 465-9791'
+                        is_default: true
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
+                      defaultAddress:
+                        id: 1
+                        type: Billing
+                        name: 'Cassin Group'
+                        line1: '5739 Taya Via Suite 194'
+                        line2: null
+                        city: 'South Amaramouth'
+                        state: Mississippi
+                        postal_code: 42331-5974
+                        country: 'United States'
+                        is_default: true
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
                     -
-                      customer_id: 1
-                      name: 'Laila Kirlin'
-                      tax_number: 01JAKMSW9BCX2B5D7XVN4Q1C73
+                      id: 1
+                      name: 'Esteban Walter'
+                      tax_number: 01JAQ15YANK6PABVY4S9WH721Q
                       tax_rate: 17.5
-                      created_at: '2024-10-20 00:21:30'
-                      updated_at: '2024-10-20 00:21:30'
+                      categories:
+                        -
+                          id: 1
+                          name: Sit
+                          created_at: '2024-10-21 07:55:32'
+                          updated_at: '2024-10-21 07:55:32'
+                      defaultEmail:
+                        id: 1
+                        name: 'Prof. Greyson Rath'
+                        address: foster.braun@example.net
+                        is_default: true
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
+                      defaultPhone:
+                        id: 1
+                        type: Home
+                        name: 'Mikayla Stamm DVM'
+                        number: '(929) 484-5355'
+                        is_default: true
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
+                      defaultAddress:
+                        id: 1
+                        type: Shipping
+                        name: 'McKenzie LLC'
+                        line1: '809 Dorothea Island'
+                        line2: null
+                        city: Reichertberg
+                        state: Iowa
+                        postal_code: 00311-4421
+                        country: 'United States'
+                        is_default: true
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
                   links:
                     first: '/?page=1'
                     last: null
@@ -82,40 +150,215 @@ paths:
                     type: array
                     example:
                       -
-                        customer_id: 1
-                        name: 'Maddison Gaylord'
-                        tax_number: 01JAKMSW9A6EFQN7HEMRAF35GV
+                        id: 1
+                        name: 'Thalia Walker'
+                        tax_number: 01JAQ15YAMWJ82FDN6MZARWMWA
                         tax_rate: 17.5
-                        created_at: '2024-10-20 00:21:30'
-                        updated_at: '2024-10-20 00:21:30'
+                        categories:
+                          -
+                            id: 1
+                            name: Et
+                            created_at: '2024-10-21 07:55:32'
+                            updated_at: '2024-10-21 07:55:32'
+                        defaultEmail:
+                          id: 1
+                          name: 'Miss Dayna Friesen'
+                          address: kennith.pfannerstill@example.org
+                          is_default: true
+                          created_at: '2024-10-21 07:55:32'
+                          updated_at: '2024-10-21 07:55:32'
+                        defaultPhone:
+                          id: 1
+                          type: Office
+                          name: 'Miss Kenya Eichmann Sr.'
+                          number: '(430) 465-9791'
+                          is_default: true
+                          created_at: '2024-10-21 07:55:32'
+                          updated_at: '2024-10-21 07:55:32'
+                        defaultAddress:
+                          id: 1
+                          type: Billing
+                          name: 'Cassin Group'
+                          line1: '5739 Taya Via Suite 194'
+                          line2: null
+                          city: 'South Amaramouth'
+                          state: Mississippi
+                          postal_code: 42331-5974
+                          country: 'United States'
+                          is_default: true
+                          created_at: '2024-10-21 07:55:32'
+                          updated_at: '2024-10-21 07:55:32'
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
                       -
-                        customer_id: 1
-                        name: 'Laila Kirlin'
-                        tax_number: 01JAKMSW9BCX2B5D7XVN4Q1C73
+                        id: 1
+                        name: 'Esteban Walter'
+                        tax_number: 01JAQ15YANK6PABVY4S9WH721Q
                         tax_rate: 17.5
-                        created_at: '2024-10-20 00:21:30'
-                        updated_at: '2024-10-20 00:21:30'
+                        categories:
+                          -
+                            id: 1
+                            name: Sit
+                            created_at: '2024-10-21 07:55:32'
+                            updated_at: '2024-10-21 07:55:32'
+                        defaultEmail:
+                          id: 1
+                          name: 'Prof. Greyson Rath'
+                          address: foster.braun@example.net
+                          is_default: true
+                          created_at: '2024-10-21 07:55:32'
+                          updated_at: '2024-10-21 07:55:32'
+                        defaultPhone:
+                          id: 1
+                          type: Home
+                          name: 'Mikayla Stamm DVM'
+                          number: '(929) 484-5355'
+                          is_default: true
+                          created_at: '2024-10-21 07:55:32'
+                          updated_at: '2024-10-21 07:55:32'
+                        defaultAddress:
+                          id: 1
+                          type: Shipping
+                          name: 'McKenzie LLC'
+                          line1: '809 Dorothea Island'
+                          line2: null
+                          city: Reichertberg
+                          state: Iowa
+                          postal_code: 00311-4421
+                          country: 'United States'
+                          is_default: true
+                          created_at: '2024-10-21 07:55:32'
+                          updated_at: '2024-10-21 07:55:32'
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
                     items:
                       type: object
                       properties:
-                        customer_id:
+                        id:
                           type: integer
                           example: 1
                         name:
                           type: string
-                          example: 'Maddison Gaylord'
+                          example: 'Thalia Walker'
                         tax_number:
                           type: string
-                          example: 01JAKMSW9A6EFQN7HEMRAF35GV
+                          example: 01JAQ15YAMWJ82FDN6MZARWMWA
                         tax_rate:
                           type: number
                           example: 17.5
+                        categories:
+                          type: array
+                          example:
+                            -
+                              id: 1
+                              name: Et
+                              created_at: '2024-10-21 07:55:32'
+                              updated_at: '2024-10-21 07:55:32'
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 1
+                              name:
+                                type: string
+                                example: Et
+                              created_at:
+                                type: string
+                                example: '2024-10-21 07:55:32'
+                              updated_at:
+                                type: string
+                                example: '2024-10-21 07:55:32'
+                        defaultEmail:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: 'Miss Dayna Friesen'
+                            address:
+                              type: string
+                              example: kennith.pfannerstill@example.org
+                            is_default:
+                              type: boolean
+                              example: true
+                            created_at:
+                              type: string
+                              example: '2024-10-21 07:55:32'
+                            updated_at:
+                              type: string
+                              example: '2024-10-21 07:55:32'
+                        defaultPhone:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            type:
+                              type: string
+                              example: Office
+                            name:
+                              type: string
+                              example: 'Miss Kenya Eichmann Sr.'
+                            number:
+                              type: string
+                              example: '(430) 465-9791'
+                            is_default:
+                              type: boolean
+                              example: true
+                            created_at:
+                              type: string
+                              example: '2024-10-21 07:55:32'
+                            updated_at:
+                              type: string
+                              example: '2024-10-21 07:55:32'
+                        defaultAddress:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            type:
+                              type: string
+                              example: Billing
+                            name:
+                              type: string
+                              example: 'Cassin Group'
+                            line1:
+                              type: string
+                              example: '5739 Taya Via Suite 194'
+                            line2:
+                              type: string
+                              example: null
+                            city:
+                              type: string
+                              example: 'South Amaramouth'
+                            state:
+                              type: string
+                              example: Mississippi
+                            postal_code:
+                              type: string
+                              example: 42331-5974
+                            country:
+                              type: string
+                              example: 'United States'
+                            is_default:
+                              type: boolean
+                              example: true
+                            created_at:
+                              type: string
+                              example: '2024-10-21 07:55:32'
+                            updated_at:
+                              type: string
+                              example: '2024-10-21 07:55:32'
                         created_at:
                           type: string
-                          example: '2024-10-20 00:21:30'
+                          example: '2024-10-21 07:55:32'
                         updated_at:
                           type: string
-                          example: '2024-10-20 00:21:30'
+                          example: '2024-10-21 07:55:32'
                   links:
                     type: object
                     properties:
@@ -213,34 +456,50 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_id: 1
-                    name: 'Emmanuelle Ruecker Jr.'
-                    tax_number: 01JAKMSW9KE3YAGA47QJV3T438
+                    id: 1
+                    name: 'Dr. Lavonne Kassulke Sr.'
+                    tax_number: 01JAQ15YAXQECSVPKK3KW86Q83
                     tax_rate: 17.5
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    categories: []
+                    defaultEmail: null
+                    defaultPhone: null
+                    defaultAddress: null
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_id:
+                      id:
                         type: integer
                         example: 1
                       name:
                         type: string
-                        example: 'Emmanuelle Ruecker Jr.'
+                        example: 'Dr. Lavonne Kassulke Sr.'
                       tax_number:
                         type: string
-                        example: 01JAKMSW9KE3YAGA47QJV3T438
+                        example: 01JAQ15YAXQECSVPKK3KW86Q83
                       tax_rate:
                         type: number
                         example: 17.5
+                      categories:
+                        type: array
+                        example: []
+                      defaultEmail:
+                        type: string
+                        example: null
+                      defaultPhone:
+                        type: string
+                        example: null
+                      defaultAddress:
+                        type: string
+                        example: null
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -359,34 +618,175 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_id: 1
-                    name: 'Jacey Hamill DDS'
-                    tax_number: 01JAKMSW9RQ81Q5WWAYMNS959Y
+                    id: 1
+                    name: 'Prof. Kiana Reynolds'
+                    tax_number: 01JAQ15YB4HB2X7CXBCCH447DP
                     tax_rate: 17.5
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    categories:
+                      -
+                        id: 1
+                        name: Ad
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
+                    defaultEmail:
+                      id: 1
+                      name: 'Helmer Emmerich'
+                      address: savanah91@example.net
+                      is_default: true
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
+                    defaultPhone:
+                      id: 1
+                      type: Home
+                      name: "Mrs. Amaya D'Amore"
+                      number: 1-419-715-7899
+                      is_default: true
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
+                    defaultAddress:
+                      id: 1
+                      type: Shipping
+                      name: 'Collins, Jacobi and Braun'
+                      line1: '64622 Jazmyne Springs Apt. 766'
+                      line2: null
+                      city: 'New Meaganberg'
+                      state: 'New Mexico'
+                      postal_code: 86618-1689
+                      country: 'United States'
+                      is_default: true
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_id:
+                      id:
                         type: integer
                         example: 1
                       name:
                         type: string
-                        example: 'Jacey Hamill DDS'
+                        example: 'Prof. Kiana Reynolds'
                       tax_number:
                         type: string
-                        example: 01JAKMSW9RQ81Q5WWAYMNS959Y
+                        example: 01JAQ15YB4HB2X7CXBCCH447DP
                       tax_rate:
                         type: number
                         example: 17.5
+                      categories:
+                        type: array
+                        example:
+                          -
+                            id: 1
+                            name: Ad
+                            created_at: '2024-10-21 07:55:32'
+                            updated_at: '2024-10-21 07:55:32'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: Ad
+                            created_at:
+                              type: string
+                              example: '2024-10-21 07:55:32'
+                            updated_at:
+                              type: string
+                              example: '2024-10-21 07:55:32'
+                      defaultEmail:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          name:
+                            type: string
+                            example: 'Helmer Emmerich'
+                          address:
+                            type: string
+                            example: savanah91@example.net
+                          is_default:
+                            type: boolean
+                            example: true
+                          created_at:
+                            type: string
+                            example: '2024-10-21 07:55:32'
+                          updated_at:
+                            type: string
+                            example: '2024-10-21 07:55:32'
+                      defaultPhone:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          type:
+                            type: string
+                            example: Home
+                          name:
+                            type: string
+                            example: "Mrs. Amaya D'Amore"
+                          number:
+                            type: string
+                            example: 1-419-715-7899
+                          is_default:
+                            type: boolean
+                            example: true
+                          created_at:
+                            type: string
+                            example: '2024-10-21 07:55:32'
+                          updated_at:
+                            type: string
+                            example: '2024-10-21 07:55:32'
+                      defaultAddress:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          type:
+                            type: string
+                            example: Shipping
+                          name:
+                            type: string
+                            example: 'Collins, Jacobi and Braun'
+                          line1:
+                            type: string
+                            example: '64622 Jazmyne Springs Apt. 766'
+                          line2:
+                            type: string
+                            example: null
+                          city:
+                            type: string
+                            example: 'New Meaganberg'
+                          state:
+                            type: string
+                            example: 'New Mexico'
+                          postal_code:
+                            type: string
+                            example: 86618-1689
+                          country:
+                            type: string
+                            example: 'United States'
+                          is_default:
+                            type: boolean
+                            example: true
+                          created_at:
+                            type: string
+                            example: '2024-10-21 07:55:32'
+                          updated_at:
+                            type: string
+                            example: '2024-10-21 07:55:32'
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -451,34 +851,175 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_id: 1
-                    name: 'Mr. Dayton White'
-                    tax_number: 01JAKMSW9ZR7QY5CMQ9RH27SGR
+                    id: 1
+                    name: 'Jacklyn Powlowski'
+                    tax_number: 01JAQ15YB6Z34SNDVCN6A4K1PB
                     tax_rate: 17.5
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    categories:
+                      -
+                        id: 1
+                        name: Possimus
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
+                    defaultEmail:
+                      id: 1
+                      name: 'Rylan Schamberger'
+                      address: lorenz11@example.com
+                      is_default: true
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
+                    defaultPhone:
+                      id: 1
+                      type: Mobile
+                      name: 'Mrs. Patricia Braun DDS'
+                      number: +1-934-435-9902
+                      is_default: true
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
+                    defaultAddress:
+                      id: 1
+                      type: Shipping
+                      name: 'Gutkowski, Hills and Wintheiser'
+                      line1: '82400 Beier Harbors'
+                      line2: null
+                      city: 'North Adelle'
+                      state: Ohio
+                      postal_code: '07495'
+                      country: 'United States'
+                      is_default: true
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_id:
+                      id:
                         type: integer
                         example: 1
                       name:
                         type: string
-                        example: 'Mr. Dayton White'
+                        example: 'Jacklyn Powlowski'
                       tax_number:
                         type: string
-                        example: 01JAKMSW9ZR7QY5CMQ9RH27SGR
+                        example: 01JAQ15YB6Z34SNDVCN6A4K1PB
                       tax_rate:
                         type: number
                         example: 17.5
+                      categories:
+                        type: array
+                        example:
+                          -
+                            id: 1
+                            name: Possimus
+                            created_at: '2024-10-21 07:55:32'
+                            updated_at: '2024-10-21 07:55:32'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: Possimus
+                            created_at:
+                              type: string
+                              example: '2024-10-21 07:55:32'
+                            updated_at:
+                              type: string
+                              example: '2024-10-21 07:55:32'
+                      defaultEmail:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          name:
+                            type: string
+                            example: 'Rylan Schamberger'
+                          address:
+                            type: string
+                            example: lorenz11@example.com
+                          is_default:
+                            type: boolean
+                            example: true
+                          created_at:
+                            type: string
+                            example: '2024-10-21 07:55:32'
+                          updated_at:
+                            type: string
+                            example: '2024-10-21 07:55:32'
+                      defaultPhone:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          type:
+                            type: string
+                            example: Mobile
+                          name:
+                            type: string
+                            example: 'Mrs. Patricia Braun DDS'
+                          number:
+                            type: string
+                            example: +1-934-435-9902
+                          is_default:
+                            type: boolean
+                            example: true
+                          created_at:
+                            type: string
+                            example: '2024-10-21 07:55:32'
+                          updated_at:
+                            type: string
+                            example: '2024-10-21 07:55:32'
+                      defaultAddress:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          type:
+                            type: string
+                            example: Shipping
+                          name:
+                            type: string
+                            example: 'Gutkowski, Hills and Wintheiser'
+                          line1:
+                            type: string
+                            example: '82400 Beier Harbors'
+                          line2:
+                            type: string
+                            example: null
+                          city:
+                            type: string
+                            example: 'North Adelle'
+                          state:
+                            type: string
+                            example: Ohio
+                          postal_code:
+                            type: string
+                            example: '07495'
+                          country:
+                            type: string
+                            example: 'United States'
+                          is_default:
+                            type: boolean
+                            example: true
+                          created_at:
+                            type: string
+                            example: '2024-10-21 07:55:32'
+                          updated_at:
+                            type: string
+                            example: '2024-10-21 07:55:32'
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -637,19 +1178,19 @@ paths:
                 example:
                   data:
                     -
-                      customer_email_id: 1
-                      name: 'Angelita Doyle'
-                      address: donavon.abshire@example.org
+                      id: 1
+                      name: 'Robert Zboncak'
+                      address: wlehner@example.net
                       is_default: true
-                      created_at: '2024-10-20 00:21:30'
-                      updated_at: '2024-10-20 00:21:30'
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
                     -
-                      customer_email_id: 1
-                      name: 'Dr. Gene Kozey'
-                      address: kylie07@example.com
+                      id: 1
+                      name: 'Taylor Hammes IV'
+                      address: beier.curt@example.net
                       is_default: true
-                      created_at: '2024-10-20 00:21:30'
-                      updated_at: '2024-10-20 00:21:30'
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
                   links:
                     first: '/?page=1'
                     last: null
@@ -666,40 +1207,40 @@ paths:
                     type: array
                     example:
                       -
-                        customer_email_id: 1
-                        name: 'Angelita Doyle'
-                        address: donavon.abshire@example.org
+                        id: 1
+                        name: 'Robert Zboncak'
+                        address: wlehner@example.net
                         is_default: true
-                        created_at: '2024-10-20 00:21:30'
-                        updated_at: '2024-10-20 00:21:30'
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
                       -
-                        customer_email_id: 1
-                        name: 'Dr. Gene Kozey'
-                        address: kylie07@example.com
+                        id: 1
+                        name: 'Taylor Hammes IV'
+                        address: beier.curt@example.net
                         is_default: true
-                        created_at: '2024-10-20 00:21:30'
-                        updated_at: '2024-10-20 00:21:30'
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
                     items:
                       type: object
                       properties:
-                        customer_email_id:
+                        id:
                           type: integer
                           example: 1
                         name:
                           type: string
-                          example: 'Angelita Doyle'
+                          example: 'Robert Zboncak'
                         address:
                           type: string
-                          example: donavon.abshire@example.org
+                          example: wlehner@example.net
                         is_default:
                           type: boolean
                           example: true
                         created_at:
                           type: string
-                          example: '2024-10-20 00:21:30'
+                          example: '2024-10-21 07:55:32'
                         updated_at:
                           type: string
-                          example: '2024-10-20 00:21:30'
+                          example: '2024-10-21 07:55:32'
                   links:
                     type: object
                     properties:
@@ -797,34 +1338,34 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_email_id: 1
-                    name: 'Prof. Stan Spencer DVM'
-                    address: lou93@example.com
+                    id: 1
+                    name: 'Maud Ritchie'
+                    address: xbarton@example.net
                     is_default: true
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_email_id:
+                      id:
                         type: integer
                         example: 1
                       name:
                         type: string
-                        example: 'Prof. Stan Spencer DVM'
+                        example: 'Maud Ritchie'
                       address:
                         type: string
-                        example: lou93@example.com
+                        example: xbarton@example.net
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -925,7 +1466,7 @@ paths:
                 is_default:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
               required:
                 - name
                 - address
@@ -953,34 +1494,34 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_email_id: 1
-                    name: 'Mrs. Verona Cremin'
-                    address: zklocko@example.net
+                    id: 1
+                    name: 'Natalie Wilkinson V'
+                    address: kmurphy@example.net
                     is_default: true
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_email_id:
+                      id:
                         type: integer
                         example: 1
                       name:
                         type: string
-                        example: 'Mrs. Verona Cremin'
+                        example: 'Natalie Wilkinson V'
                       address:
                         type: string
-                        example: zklocko@example.net
+                        example: kmurphy@example.net
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -1045,34 +1586,34 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_email_id: 1
-                    name: 'Abigale Brakus'
-                    address: oboyle@example.net
+                    id: 1
+                    name: 'Nona Dare'
+                    address: lindgren.camryn@example.net
                     is_default: true
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_email_id:
+                      id:
                         type: integer
                         example: 1
                       name:
                         type: string
-                        example: 'Abigale Brakus'
+                        example: 'Nona Dare'
                       address:
                         type: string
-                        example: oboyle@example.net
+                        example: lindgren.camryn@example.net
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -1204,12 +1745,12 @@ paths:
           in: query
           name: type
           description: ''
-          example: Home
+          example: Office
           required: false
           schema:
             type: string
             description: ''
-            example: Home
+            example: Office
             enum:
               - Home
               - Office
@@ -1254,21 +1795,21 @@ paths:
                 example:
                   data:
                     -
-                      customer_phone_id: 1
+                      id: 1
                       type: Mobile
-                      name: 'Dr. Rosie Hilpert V'
-                      number: '+18784221550'
+                      name: 'Prof. Jalon Purdy DVM'
+                      number: 1-320-679-9341
                       is_default: true
-                      created_at: '2024-10-20 00:21:30'
-                      updated_at: '2024-10-20 00:21:30'
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
                     -
-                      customer_phone_id: 1
-                      type: Mobile
-                      name: 'Dr. Sibyl Feil'
-                      number: +1-908-926-7637
+                      id: 1
+                      type: Office
+                      name: 'Bernard Towne'
+                      number: +1.531.376.6082
                       is_default: true
-                      created_at: '2024-10-20 00:21:30'
-                      updated_at: '2024-10-20 00:21:30'
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
                   links:
                     first: '/?page=1'
                     last: null
@@ -1285,25 +1826,25 @@ paths:
                     type: array
                     example:
                       -
-                        customer_phone_id: 1
+                        id: 1
                         type: Mobile
-                        name: 'Dr. Rosie Hilpert V'
-                        number: '+18784221550'
+                        name: 'Prof. Jalon Purdy DVM'
+                        number: 1-320-679-9341
                         is_default: true
-                        created_at: '2024-10-20 00:21:30'
-                        updated_at: '2024-10-20 00:21:30'
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
                       -
-                        customer_phone_id: 1
-                        type: Mobile
-                        name: 'Dr. Sibyl Feil'
-                        number: +1-908-926-7637
+                        id: 1
+                        type: Office
+                        name: 'Bernard Towne'
+                        number: +1.531.376.6082
                         is_default: true
-                        created_at: '2024-10-20 00:21:30'
-                        updated_at: '2024-10-20 00:21:30'
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
                     items:
                       type: object
                       properties:
-                        customer_phone_id:
+                        id:
                           type: integer
                           example: 1
                         type:
@@ -1311,19 +1852,19 @@ paths:
                           example: Mobile
                         name:
                           type: string
-                          example: 'Dr. Rosie Hilpert V'
+                          example: 'Prof. Jalon Purdy DVM'
                         number:
                           type: string
-                          example: '+18784221550'
+                          example: 1-320-679-9341
                         is_default:
                           type: boolean
                           example: true
                         created_at:
                           type: string
-                          example: '2024-10-20 00:21:30'
+                          example: '2024-10-21 07:55:32'
                         updated_at:
                           type: string
-                          example: '2024-10-20 00:21:30'
+                          example: '2024-10-21 07:55:32'
                   links:
                     type: object
                     properties:
@@ -1421,38 +1962,38 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_phone_id: 1
-                    type: Home
-                    name: 'Fermin Beahan II'
-                    number: 1-619-880-9443
+                    id: 1
+                    type: Mobile
+                    name: 'Madaline Balistreri'
+                    number: 216.515.7960
                     is_default: true
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_phone_id:
+                      id:
                         type: integer
                         example: 1
                       type:
                         type: string
-                        example: Home
+                        example: Mobile
                       name:
                         type: string
-                        example: 'Fermin Beahan II'
+                        example: 'Madaline Balistreri'
                       number:
                         type: string
-                        example: 1-619-880-9443
+                        example: 216.515.7960
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -1561,7 +2102,7 @@ paths:
                 is_default:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
               required:
                 - type
                 - name
@@ -1590,38 +2131,38 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_phone_id: 1
-                    type: Office
-                    name: 'Prof. Ashton Wyman II'
-                    number: +1-484-914-7488
+                    id: 1
+                    type: Mobile
+                    name: 'Barry Funk'
+                    number: '(909) 314-1153'
                     is_default: true
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_phone_id:
+                      id:
                         type: integer
                         example: 1
                       type:
                         type: string
-                        example: Office
+                        example: Mobile
                       name:
                         type: string
-                        example: 'Prof. Ashton Wyman II'
+                        example: 'Barry Funk'
                       number:
                         type: string
-                        example: +1-484-914-7488
+                        example: '(909) 314-1153'
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -1686,18 +2227,18 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_phone_id: 1
+                    id: 1
                     type: Mobile
-                    name: 'Berta Heathcote'
-                    number: 1-718-942-8849
+                    name: 'Trey Renner'
+                    number: +1-505-544-6513
                     is_default: true
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_phone_id:
+                      id:
                         type: integer
                         example: 1
                       type:
@@ -1705,19 +2246,19 @@ paths:
                         example: Mobile
                       name:
                         type: string
-                        example: 'Berta Heathcote'
+                        example: 'Trey Renner'
                       number:
                         type: string
-                        example: 1-718-942-8849
+                        example: +1-505-544-6513
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -1810,7 +2351,7 @@ paths:
                 type:
                   type: string
                   description: ''
-                  example: Mobile
+                  example: Home
                   enum:
                     - Home
                     - Office
@@ -1907,31 +2448,31 @@ paths:
                 example:
                   data:
                     -
-                      customer_address_id: 1
-                      type: Billing
-                      name: 'Rippin Group'
-                      line1: '7621 Destiny Parks Apt. 753'
+                      id: 1
+                      type: Shipping
+                      name: 'Windler LLC'
+                      line1: '570 Lucinda Cliff Suite 036'
                       line2: null
-                      city: 'Port Destineefort'
-                      state: Virginia
-                      postal_code: '70854'
+                      city: 'North Stella'
+                      state: Delaware
+                      postal_code: '38859'
                       country: 'United States'
                       is_default: true
-                      created_at: '2024-10-20 00:21:30'
-                      updated_at: '2024-10-20 00:21:30'
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
                     -
-                      customer_address_id: 1
-                      type: Billing
-                      name: 'Wuckert PLC'
-                      line1: '630 Ivory Squares'
+                      id: 1
+                      type: Shipping
+                      name: 'Hackett, Donnelly and Schmidt'
+                      line1: '28937 Jadon Trail Apt. 717'
                       line2: null
-                      city: 'New Jairo'
-                      state: Minnesota
-                      postal_code: '80478'
+                      city: Bauchside
+                      state: Utah
+                      postal_code: '67194'
                       country: 'United States'
                       is_default: true
-                      created_at: '2024-10-20 00:21:30'
-                      updated_at: '2024-10-20 00:21:30'
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
                   links:
                     first: '/?page=1'
                     last: null
@@ -1948,58 +2489,58 @@ paths:
                     type: array
                     example:
                       -
-                        customer_address_id: 1
-                        type: Billing
-                        name: 'Rippin Group'
-                        line1: '7621 Destiny Parks Apt. 753'
+                        id: 1
+                        type: Shipping
+                        name: 'Windler LLC'
+                        line1: '570 Lucinda Cliff Suite 036'
                         line2: null
-                        city: 'Port Destineefort'
-                        state: Virginia
-                        postal_code: '70854'
+                        city: 'North Stella'
+                        state: Delaware
+                        postal_code: '38859'
                         country: 'United States'
                         is_default: true
-                        created_at: '2024-10-20 00:21:30'
-                        updated_at: '2024-10-20 00:21:30'
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
                       -
-                        customer_address_id: 1
-                        type: Billing
-                        name: 'Wuckert PLC'
-                        line1: '630 Ivory Squares'
+                        id: 1
+                        type: Shipping
+                        name: 'Hackett, Donnelly and Schmidt'
+                        line1: '28937 Jadon Trail Apt. 717'
                         line2: null
-                        city: 'New Jairo'
-                        state: Minnesota
-                        postal_code: '80478'
+                        city: Bauchside
+                        state: Utah
+                        postal_code: '67194'
                         country: 'United States'
                         is_default: true
-                        created_at: '2024-10-20 00:21:30'
-                        updated_at: '2024-10-20 00:21:30'
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
                     items:
                       type: object
                       properties:
-                        customer_address_id:
+                        id:
                           type: integer
                           example: 1
                         type:
                           type: string
-                          example: Billing
+                          example: Shipping
                         name:
                           type: string
-                          example: 'Rippin Group'
+                          example: 'Windler LLC'
                         line1:
                           type: string
-                          example: '7621 Destiny Parks Apt. 753'
+                          example: '570 Lucinda Cliff Suite 036'
                         line2:
                           type: string
                           example: null
                         city:
                           type: string
-                          example: 'Port Destineefort'
+                          example: 'North Stella'
                         state:
                           type: string
-                          example: Virginia
+                          example: Delaware
                         postal_code:
                           type: string
-                          example: '70854'
+                          example: '38859'
                         country:
                           type: string
                           example: 'United States'
@@ -2008,10 +2549,10 @@ paths:
                           example: true
                         created_at:
                           type: string
-                          example: '2024-10-20 00:21:30'
+                          example: '2024-10-21 07:55:32'
                         updated_at:
                           type: string
-                          example: '2024-10-20 00:21:30'
+                          example: '2024-10-21 07:55:32'
                   links:
                     type: object
                     properties:
@@ -2109,23 +2650,23 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_address_id: 1
+                    id: 1
                     type: Billing
-                    name: 'Schuppe, Rempel and Considine'
-                    line1: '92875 Concepcion Locks'
+                    name: 'McKenzie Ltd'
+                    line1: '498 Vergie Tunnel'
                     line2: null
-                    city: 'East Wanda'
-                    state: 'North Carolina'
-                    postal_code: '83863'
+                    city: Maximilianmouth
+                    state: 'North Dakota'
+                    postal_code: '91391'
                     country: 'United States'
                     is_default: true
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_address_id:
+                      id:
                         type: integer
                         example: 1
                       type:
@@ -2133,22 +2674,22 @@ paths:
                         example: Billing
                       name:
                         type: string
-                        example: 'Schuppe, Rempel and Considine'
+                        example: 'McKenzie Ltd'
                       line1:
                         type: string
-                        example: '92875 Concepcion Locks'
+                        example: '498 Vergie Tunnel'
                       line2:
                         type: string
                         example: null
                       city:
                         type: string
-                        example: 'East Wanda'
+                        example: Maximilianmouth
                       state:
                         type: string
-                        example: 'North Carolina'
+                        example: 'North Dakota'
                       postal_code:
                         type: string
-                        example: '83863'
+                        example: '91391'
                       country:
                         type: string
                         example: 'United States'
@@ -2157,337 +2698,10 @@ paths:
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
-        401:
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthorized
-                properties:
-                  message:
-                    type: string
-                    example: Unauthorized
-        404:
-          description: ''
-          content:
-            application/json:
-              schema:
-                oneOf:
-                  -
-                    description: 'Not Found'
-                    type: object
-                    example:
-                      message: 'Route or Record Not found'
-                    properties:
-                      message:
-                        type: string
-                        example: 'Route or Record Not found'
-                  -
-                    description: 'Bad Request'
-                    type: object
-                    example:
-                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
-                    properties:
-                      message:
-                        type: string
-                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
-        422:
-          description: 'Validation Failed'
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Validation Failed'
-                  fields:
-                    field_name:
-                      - 'The field name is required.'
-                    another_field:
-                      - 'The another field must not be greater than 64 characters.'
-                properties:
-                  message:
-                    type: string
-                    example: 'Validation Failed'
-                  fields:
-                    type: object
-                    properties:
-                      field_name:
-                        type: array
-                        example:
-                          - 'The field name is required.'
-                        items:
-                          type: string
-                      another_field:
-                        type: array
-                        example:
-                          - 'The another field must not be greater than 64 characters.'
-                        items:
-                          type: string
-        500:
-          description: 'Internal Server Error'
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Internal Server Error'
-                properties:
-                  message:
-                    type: string
-                    example: 'Internal Server Error'
-      tags:
-        - 'Customer Addresses'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                type:
-                  type: string
-                  description: ''
-                  example: Billing
-                  enum:
-                    - Billing
-                    - Shipping
-                name:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
-                  example: 'John Doe'
-                line1:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
-                  example: '2592 Jada Key'
-                line2:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
-                  example: 'Apartment 504'
-                city:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
-                  example: 'South Josh'
-                state:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
-                  example: Kentucky
-                postal_code:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
-                  example: 62249-8453
-                country:
-                  type: string
-                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
-                  example: 'United States'
-                is_default:
-                  type: boolean
-                  description: ''
-                  example: false
-              required:
-                - type
-                - name
-                - line1
-                - city
-                - postal_code
-                - country
-    parameters:
-      -
-        in: path
-        name: customer_id
-        description: 'The ID of the customer.'
-        example: 1
-        required: true
-        schema:
-          type: integer
-  '/api/v1/customers/{customer_id}/addresses/{id}':
-    get:
-      summary: 'Get Customer Address'
-      operationId: getCustomerAddress
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  data:
-                    customer_address_id: 1
-                    type: Shipping
-                    name: 'Kuhn and Sons'
-                    line1: '82653 Foster Cape'
-                    line2: null
-                    city: Tyrellshire
-                    state: 'South Carolina'
-                    postal_code: '83360'
-                    country: 'United States'
-                    is_default: true
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
-                properties:
-                  data:
-                    type: object
-                    properties:
-                      customer_address_id:
-                        type: integer
-                        example: 1
-                      type:
-                        type: string
-                        example: Shipping
-                      name:
-                        type: string
-                        example: 'Kuhn and Sons'
-                      line1:
-                        type: string
-                        example: '82653 Foster Cape'
-                      line2:
-                        type: string
-                        example: null
-                      city:
-                        type: string
-                        example: Tyrellshire
-                      state:
-                        type: string
-                        example: 'South Carolina'
-                      postal_code:
-                        type: string
-                        example: '83360'
-                      country:
-                        type: string
-                        example: 'United States'
-                      is_default:
-                        type: boolean
-                        example: true
-                      created_at:
-                        type: string
-                        example: '2024-10-20 00:21:30'
-                      updated_at:
-                        type: string
-                        example: '2024-10-20 00:21:30'
-        401:
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthorized
-                properties:
-                  message:
-                    type: string
-                    example: Unauthorized
-        404:
-          description: ''
-          content:
-            application/json:
-              schema:
-                oneOf:
-                  -
-                    description: 'Not Found'
-                    type: object
-                    example:
-                      message: 'Route or Record Not found'
-                    properties:
-                      message:
-                        type: string
-                        example: 'Route or Record Not found'
-                  -
-                    description: 'Bad Request'
-                    type: object
-                    example:
-                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
-                    properties:
-                      message:
-                        type: string
-                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
-        500:
-          description: 'Internal Server Error'
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Internal Server Error'
-                properties:
-                  message:
-                    type: string
-                    example: 'Internal Server Error'
-      tags:
-        - 'Customer Addresses'
-    put:
-      summary: 'Update Customer Address'
-      operationId: updateCustomerAddress
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  data:
-                    customer_address_id: 1
-                    type: Billing
-                    name: Schulist-Walter
-                    line1: '444 Kiara Loop'
-                    line2: null
-                    city: 'South Lorineton'
-                    state: Nebraska
-                    postal_code: '81394'
-                    country: 'United States'
-                    is_default: true
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
-                properties:
-                  data:
-                    type: object
-                    properties:
-                      customer_address_id:
-                        type: integer
-                        example: 1
-                      type:
-                        type: string
-                        example: Billing
-                      name:
-                        type: string
-                        example: Schulist-Walter
-                      line1:
-                        type: string
-                        example: '444 Kiara Loop'
-                      line2:
-                        type: string
-                        example: null
-                      city:
-                        type: string
-                        example: 'South Lorineton'
-                      state:
-                        type: string
-                        example: Nebraska
-                      postal_code:
-                        type: string
-                        example: '81394'
-                      country:
-                        type: string
-                        example: 'United States'
-                      is_default:
-                        type: boolean
-                        example: true
-                      created_at:
-                        type: string
-                        example: '2024-10-20 00:21:30'
-                      updated_at:
-                        type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -2632,6 +2846,333 @@ paths:
         required: true
         schema:
           type: integer
+  '/api/v1/customers/{customer_id}/addresses/{id}':
+    get:
+      summary: 'Get Customer Address'
+      operationId: getCustomerAddress
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    type: Billing
+                    name: 'Torp Inc'
+                    line1: '7565 Hauck Hollow'
+                    line2: null
+                    city: 'New Darwin'
+                    state: Nebraska
+                    postal_code: 62132-7183
+                    country: 'United States'
+                    is_default: true
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      type:
+                        type: string
+                        example: Billing
+                      name:
+                        type: string
+                        example: 'Torp Inc'
+                      line1:
+                        type: string
+                        example: '7565 Hauck Hollow'
+                      line2:
+                        type: string
+                        example: null
+                      city:
+                        type: string
+                        example: 'New Darwin'
+                      state:
+                        type: string
+                        example: Nebraska
+                      postal_code:
+                        type: string
+                        example: 62132-7183
+                      country:
+                        type: string
+                        example: 'United States'
+                      is_default:
+                        type: boolean
+                        example: true
+                      created_at:
+                        type: string
+                        example: '2024-10-21 07:55:32'
+                      updated_at:
+                        type: string
+                        example: '2024-10-21 07:55:32'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
+      tags:
+        - 'Customer Addresses'
+    put:
+      summary: 'Update Customer Address'
+      operationId: updateCustomerAddress
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    type: Billing
+                    name: Rutherford-Denesik
+                    line1: '898 Darrell Village Apt. 456'
+                    line2: null
+                    city: Macejkovicfort
+                    state: Arkansas
+                    postal_code: '39460'
+                    country: 'United States'
+                    is_default: true
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      type:
+                        type: string
+                        example: Billing
+                      name:
+                        type: string
+                        example: Rutherford-Denesik
+                      line1:
+                        type: string
+                        example: '898 Darrell Village Apt. 456'
+                      line2:
+                        type: string
+                        example: null
+                      city:
+                        type: string
+                        example: Macejkovicfort
+                      state:
+                        type: string
+                        example: Arkansas
+                      postal_code:
+                        type: string
+                        example: '39460'
+                      country:
+                        type: string
+                        example: 'United States'
+                      is_default:
+                        type: boolean
+                        example: true
+                      created_at:
+                        type: string
+                        example: '2024-10-21 07:55:32'
+                      updated_at:
+                        type: string
+                        example: '2024-10-21 07:55:32'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        422:
+          description: 'Validation Failed'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Validation Failed'
+                  fields:
+                    field_name:
+                      - 'The field name is required.'
+                    another_field:
+                      - 'The another field must not be greater than 64 characters.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Validation Failed'
+                  fields:
+                    type: object
+                    properties:
+                      field_name:
+                        type: array
+                        example:
+                          - 'The field name is required.'
+                        items:
+                          type: string
+                      another_field:
+                        type: array
+                        example:
+                          - 'The another field must not be greater than 64 characters.'
+                        items:
+                          type: string
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
+      tags:
+        - 'Customer Addresses'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: ''
+                  example: Billing
+                  enum:
+                    - Billing
+                    - Shipping
+                name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: 'John Doe'
+                line1:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: '2592 Jada Key'
+                line2:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: 'Apartment 504'
+                city:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: 'South Josh'
+                state:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: Kentucky
+                postal_code:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: 62249-8453
+                country:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: 'United States'
+                is_default:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - type
+                - name
+                - line1
+                - city
+                - postal_code
+                - country
+    parameters:
+      -
+        in: path
+        name: customer_id
+        description: 'The ID of the customer.'
+        example: 1
+        required: true
+        schema:
+          type: integer
       -
         in: path
         name: id
@@ -2686,17 +3227,15 @@ paths:
                 example:
                   data:
                     -
-                      customer_category_id: 1
-                      name: Magni
-                      customers_count: 0
-                      created_at: '2024-10-20 00:21:30'
-                      updated_at: '2024-10-20 00:21:30'
+                      id: 1
+                      name: Temporibus
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
                     -
-                      customer_category_id: 1
-                      name: Nisi
-                      customers_count: 0
-                      created_at: '2024-10-20 00:21:30'
-                      updated_at: '2024-10-20 00:21:30'
+                      id: 1
+                      name: Sequi
+                      created_at: '2024-10-21 07:55:32'
+                      updated_at: '2024-10-21 07:55:32'
                   links:
                     first: '/?page=1'
                     last: null
@@ -2713,35 +3252,30 @@ paths:
                     type: array
                     example:
                       -
-                        customer_category_id: 1
-                        name: Magni
-                        customers_count: 0
-                        created_at: '2024-10-20 00:21:30'
-                        updated_at: '2024-10-20 00:21:30'
+                        id: 1
+                        name: Temporibus
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
                       -
-                        customer_category_id: 1
-                        name: Nisi
-                        customers_count: 0
-                        created_at: '2024-10-20 00:21:30'
-                        updated_at: '2024-10-20 00:21:30'
+                        id: 1
+                        name: Sequi
+                        created_at: '2024-10-21 07:55:32'
+                        updated_at: '2024-10-21 07:55:32'
                     items:
                       type: object
                       properties:
-                        customer_category_id:
+                        id:
                           type: integer
                           example: 1
                         name:
                           type: string
-                          example: Magni
-                        customers_count:
-                          type: integer
-                          example: 0
+                          example: Temporibus
                         created_at:
                           type: string
-                          example: '2024-10-20 00:21:30'
+                          example: '2024-10-21 07:55:32'
                         updated_at:
                           type: string
-                          example: '2024-10-20 00:21:30'
+                          example: '2024-10-21 07:55:32'
                   links:
                     type: object
                     properties:
@@ -2839,30 +3373,26 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_category_id: 1
-                    name: Omnis
-                    customers_count: 0
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    id: 1
+                    name: Culpa
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_category_id:
+                      id:
                         type: integer
                         example: 1
                       name:
                         type: string
-                        example: Omnis
-                      customers_count:
-                        type: integer
-                        example: 0
+                        example: Culpa
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -2973,30 +3503,26 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_category_id: 1
-                    name: Repellendus
-                    customers_count: 0
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    id: 1
+                    name: Quibusdam
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_category_id:
+                      id:
                         type: integer
                         example: 1
                       name:
                         type: string
-                        example: Repellendus
-                      customers_count:
-                        type: integer
-                        example: 0
+                        example: Quibusdam
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -3061,30 +3587,26 @@ paths:
                 type: object
                 example:
                   data:
-                    customer_category_id: 1
-                    name: Placeat
-                    customers_count: 0
-                    created_at: '2024-10-20 00:21:30'
-                    updated_at: '2024-10-20 00:21:30'
+                    id: 1
+                    name: Blanditiis
+                    created_at: '2024-10-21 07:55:32'
+                    updated_at: '2024-10-21 07:55:32'
                 properties:
                   data:
                     type: object
                     properties:
-                      customer_category_id:
+                      id:
                         type: integer
                         example: 1
                       name:
                         type: string
-                        example: Placeat
-                      customers_count:
-                        type: integer
-                        example: 0
+                        example: Blanditiis
                       created_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
                       updated_at:
                         type: string
-                        example: '2024-10-20 00:21:30'
+                        example: '2024-10-21 07:55:32'
         401:
           description: Unauthorized
           content:
@@ -3295,7 +3817,7 @@ paths:
                   type: array
                   description: ''
                   example:
-                    - 7
+                    - 4
                   items:
                     type: integer
               required:

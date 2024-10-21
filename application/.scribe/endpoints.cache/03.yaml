@@ -82,7 +82,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"customer_address_id":1,"type":"Billing","name":"Rippin Group","line1":"7621 Destiny Parks Apt. 753","line2":null,"city":"Port Destineefort","state":"Virginia","postal_code":"70854","country":"United States","is_default":true,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"},{"customer_address_id":1,"type":"Billing","name":"Wuckert PLC","line1":"630 Ivory Squares","line2":null,"city":"New Jairo","state":"Minnesota","postal_code":"80478","country":"United States","is_default":true,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"type":"Shipping","name":"Windler LLC","line1":"570 Lucinda Cliff Suite 036","line2":null,"city":"North Stella","state":"Delaware","postal_code":"38859","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"},{"id":1,"type":"Shipping","name":"Hackett, Donnelly and Schmidt","line1":"28937 Jadon Trail Apt. 717","line2":null,"city":"Bauchside","state":"Utah","postal_code":"67194","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -126,7 +126,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Dga38ZPa1hcEbevV66d4kf5'
+      - 'Bearer cD8f65Zv3e4bEPagdakVh61'
     controller: null
     method: null
     route: null
@@ -241,7 +241,7 @@ endpoints:
         name: is_default
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -255,12 +255,12 @@ endpoints:
       state: Kentucky
       postal_code: 62249-8453
       country: 'United States'
-      is_default: false
+      is_default: true
     fileParameters: []
     responses:
       -
         status: 201
-        content: '{"data":{"customer_address_id":1,"type":"Billing","name":"Schuppe, Rempel and Considine","line1":"92875 Concepcion Locks","line2":null,"city":"East Wanda","state":"North Carolina","postal_code":"83863","country":"United States","is_default":true,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"McKenzie Ltd","line1":"498 Vergie Tunnel","line2":null,"city":"Maximilianmouth","state":"North Dakota","postal_code":"91391","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
         headers: []
         description: Created
         custom: []
@@ -321,7 +321,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5f8adDPE13khbZae6v64gcV'
+      - 'Bearer EvkbDgZV5f6ah638aPced14'
     controller: null
     method: null
     route: null
@@ -373,7 +373,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"customer_address_id":1,"type":"Shipping","name":"Kuhn and Sons","line1":"82653 Foster Cape","line2":null,"city":"Tyrellshire","state":"South Carolina","postal_code":"83360","country":"United States","is_default":true,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"Torp Inc","line1":"7565 Hauck Hollow","line2":null,"city":"New Darwin","state":"Nebraska","postal_code":"62132-7183","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
         headers: []
         description: OK
         custom: []
@@ -417,7 +417,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 66acagV15ED8hbPdf4ve3kZ'
+      - 'Bearer hv15dafa8EkceP4gbZ66V3D'
     controller: null
     method: null
     route: null
@@ -543,7 +543,7 @@ endpoints:
         name: is_default
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -557,12 +557,12 @@ endpoints:
       state: Kentucky
       postal_code: 62249-8453
       country: 'United States'
-      is_default: true
+      is_default: false
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"customer_address_id":1,"type":"Billing","name":"Schulist-Walter","line1":"444 Kiara Loop","line2":null,"city":"South Lorineton","state":"Nebraska","postal_code":"81394","country":"United States","is_default":true,"created_at":"2024-10-20 00:21:30","updated_at":"2024-10-20 00:21:30"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"Rutherford-Denesik","line1":"898 Darrell Village Apt. 456","line2":null,"city":"Macejkovicfort","state":"Arkansas","postal_code":"39460","country":"United States","is_default":true,"created_at":"2024-10-21 07:55:32","updated_at":"2024-10-21 07:55:32"}}'
         headers: []
         description: OK
         custom: []
@@ -623,7 +623,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cPEhVgva53k866bae14ZDfd'
+      - 'Bearer a4g186vd6VhaPfbe5Zc3EDk'
     controller: null
     method: null
     route: null

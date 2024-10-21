@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Customer;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreCustomerRequest extends FormRequest
@@ -32,6 +33,11 @@ class StoreCustomerRequest extends FormRequest
                 'string',
                 'min:3',
                 'max:64',
+                Rule::unique('customers', 'name')->where(function($query) {
+                    return $query
+                        ->where('user_id', auth()->id())
+                        ->where('name', $this->name);
+                })->ignore($this?->customer?->id),
             ],
             'tax_number' => [
                 'nullable',

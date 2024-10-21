@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Cardano Mercury: Invoice",
-        "_postman_id": "df4f6f0a-5a6a-4954-aad7-5a05a8788ce9",
+        "_postman_id": "91cc1b39-bf7f-4972-82b7-9ac42766df29",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -65,7 +65,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_id\":1,\"name\":\"Maddison Gaylord\",\"tax_number\":\"01JAKMSW9A6EFQN7HEMRAF35GV\",\"tax_rate\":17.5,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"},{\"customer_id\":1,\"name\":\"Laila Kirlin\",\"tax_number\":\"01JAKMSW9BCX2B5D7XVN4Q1C73\",\"tax_rate\":17.5,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Thalia Walker\",\"tax_number\":\"01JAQ15YAMWJ82FDN6MZARWMWA\",\"tax_rate\":17.5,\"categories\":[{\"id\":1,\"name\":\"Et\",\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}],\"defaultEmail\":{\"id\":1,\"name\":\"Miss Dayna Friesen\",\"address\":\"kennith.pfannerstill@example.org\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},\"defaultPhone\":{\"id\":1,\"type\":\"Office\",\"name\":\"Miss Kenya Eichmann Sr.\",\"number\":\"(430) 465-9791\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},\"defaultAddress\":{\"id\":1,\"type\":\"Billing\",\"name\":\"Cassin Group\",\"line1\":\"5739 Taya Via Suite 194\",\"line2\":null,\"city\":\"South Amaramouth\",\"state\":\"Mississippi\",\"postal_code\":\"42331-5974\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},{\"id\":1,\"name\":\"Esteban Walter\",\"tax_number\":\"01JAQ15YANK6PABVY4S9WH721Q\",\"tax_rate\":17.5,\"categories\":[{\"id\":1,\"name\":\"Sit\",\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}],\"defaultEmail\":{\"id\":1,\"name\":\"Prof. Greyson Rath\",\"address\":\"foster.braun@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},\"defaultPhone\":{\"id\":1,\"type\":\"Home\",\"name\":\"Mikayla Stamm DVM\",\"number\":\"(929) 484-5355\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},\"defaultAddress\":{\"id\":1,\"type\":\"Shipping\",\"name\":\"McKenzie LLC\",\"line1\":\"809 Dorothea Island\",\"line2\":null,\"city\":\"Reichertberg\",\"state\":\"Iowa\",\"postal_code\":\"00311-4421\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": "OK"
                         },
                         {
@@ -124,7 +124,7 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Emmanuelle Ruecker Jr.\",\"tax_number\":\"01JAKMSW9KE3YAGA47QJV3T438\",\"tax_rate\":17.5,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Dr. Lavonne Kassulke Sr.\",\"tax_number\":\"01JAQ15YAXQECSVPKK3KW86Q83\",\"tax_rate\":17.5,\"categories\":[],\"defaultEmail\":null,\"defaultPhone\":null,\"defaultAddress\":null,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "Created"
                         },
                         {
@@ -194,7 +194,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Jacey Hamill DDS\",\"tax_number\":\"01JAKMSW9RQ81Q5WWAYMNS959Y\",\"tax_rate\":17.5,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Prof. Kiana Reynolds\",\"tax_number\":\"01JAQ15YB4HB2X7CXBCCH447DP\",\"tax_rate\":17.5,\"categories\":[{\"id\":1,\"name\":\"Ad\",\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}],\"defaultEmail\":{\"id\":1,\"name\":\"Helmer Emmerich\",\"address\":\"savanah91@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},\"defaultPhone\":{\"id\":1,\"type\":\"Home\",\"name\":\"Mrs. Amaya D'Amore\",\"number\":\"1-419-715-7899\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},\"defaultAddress\":{\"id\":1,\"type\":\"Shipping\",\"name\":\"Collins, Jacobi and Braun\",\"line1\":\"64622 Jazmyne Springs Apt. 766\",\"line2\":null,\"city\":\"New Meaganberg\",\"state\":\"New Mexico\",\"postal_code\":\"86618-1689\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "OK"
                         },
                         {
@@ -261,7 +261,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_id\":1,\"name\":\"Mr. Dayton White\",\"tax_number\":\"01JAKMSW9ZR7QY5CMQ9RH27SGR\",\"tax_rate\":17.5,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Jacklyn Powlowski\",\"tax_number\":\"01JAQ15YB6Z34SNDVCN6A4K1PB\",\"tax_rate\":17.5,\"categories\":[{\"id\":1,\"name\":\"Possimus\",\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}],\"defaultEmail\":{\"id\":1,\"name\":\"Rylan Schamberger\",\"address\":\"lorenz11@example.com\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},\"defaultPhone\":{\"id\":1,\"type\":\"Mobile\",\"name\":\"Mrs. Patricia Braun DDS\",\"number\":\"+1-934-435-9902\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},\"defaultAddress\":{\"id\":1,\"type\":\"Shipping\",\"name\":\"Gutkowski, Hills and Wintheiser\",\"line1\":\"82400 Beier Harbors\",\"line2\":null,\"city\":\"North Adelle\",\"state\":\"Ohio\",\"postal_code\":\"07495\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "OK"
                         },
                         {
@@ -356,7 +356,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_email_id\":1,\"name\":\"Angelita Doyle\",\"address\":\"donavon.abshire@example.org\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"},{\"customer_email_id\":1,\"name\":\"Dr. Gene Kozey\",\"address\":\"kylie07@example.com\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Robert Zboncak\",\"address\":\"wlehner@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},{\"id\":1,\"name\":\"Taylor Hammes IV\",\"address\":\"beier.curt@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": "OK"
                         },
                         {
@@ -415,7 +415,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"John Doe\",\"address\":\"john.doe@example.com\",\"is_default\":true}"
+                            "raw": "{\"name\":\"John Doe\",\"address\":\"john.doe@example.com\",\"is_default\":false}"
                         },
                         "description": ""
                     },
@@ -423,7 +423,7 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Prof. Stan Spencer DVM\",\"address\":\"lou93@example.com\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Maud Ritchie\",\"address\":\"xbarton@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "Created"
                         },
                         {
@@ -499,7 +499,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Mrs. Verona Cremin\",\"address\":\"zklocko@example.net\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Natalie Wilkinson V\",\"address\":\"kmurphy@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "OK"
                         },
                         {
@@ -572,7 +572,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_email_id\":1,\"name\":\"Abigale Brakus\",\"address\":\"oboyle@example.net\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Nona Dare\",\"address\":\"lindgren.camryn@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "OK"
                         },
                         {
@@ -622,7 +622,7 @@
                             "query": [
                                 {
                                     "key": "type",
-                                    "value": "Home",
+                                    "value": "Office",
                                     "description": "",
                                     "disabled": false
                                 },
@@ -645,7 +645,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/phones?type=Home&search=0123456789&per_page=25&page=1",
+                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/phones?type=Office&search=0123456789&per_page=25&page=1",
                             "variable": [
                                 {
                                     "id": "customer_id",
@@ -673,7 +673,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Dr. Rosie Hilpert V\",\"number\":\"+18784221550\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"},{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Dr. Sibyl Feil\",\"number\":\"+1-908-926-7637\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"type\":\"Mobile\",\"name\":\"Prof. Jalon Purdy DVM\",\"number\":\"1-320-679-9341\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},{\"id\":1,\"type\":\"Office\",\"name\":\"Bernard Towne\",\"number\":\"+1.531.376.6082\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": "OK"
                         },
                         {
@@ -732,7 +732,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"Office\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":true}"
+                            "raw": "{\"type\":\"Office\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":false}"
                         },
                         "description": ""
                     },
@@ -740,7 +740,7 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Home\",\"name\":\"Fermin Beahan II\",\"number\":\"1-619-880-9443\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"type\":\"Mobile\",\"name\":\"Madaline Balistreri\",\"number\":\"216.515.7960\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "Created"
                         },
                         {
@@ -816,7 +816,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Office\",\"name\":\"Prof. Ashton Wyman II\",\"number\":\"+1-484-914-7488\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"type\":\"Mobile\",\"name\":\"Barry Funk\",\"number\":\"(909) 314-1153\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "OK"
                         },
                         {
@@ -881,7 +881,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"Mobile\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":false}"
+                            "raw": "{\"type\":\"Home\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":false}"
                         },
                         "description": ""
                     },
@@ -889,7 +889,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_phone_id\":1,\"type\":\"Mobile\",\"name\":\"Berta Heathcote\",\"number\":\"1-718-942-8849\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"type\":\"Mobile\",\"name\":\"Trey Renner\",\"number\":\"+1-505-544-6513\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "OK"
                         },
                         {
@@ -990,7 +990,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_address_id\":1,\"type\":\"Billing\",\"name\":\"Rippin Group\",\"line1\":\"7621 Destiny Parks Apt. 753\",\"line2\":null,\"city\":\"Port Destineefort\",\"state\":\"Virginia\",\"postal_code\":\"70854\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"},{\"customer_address_id\":1,\"type\":\"Billing\",\"name\":\"Wuckert PLC\",\"line1\":\"630 Ivory Squares\",\"line2\":null,\"city\":\"New Jairo\",\"state\":\"Minnesota\",\"postal_code\":\"80478\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"type\":\"Shipping\",\"name\":\"Windler LLC\",\"line1\":\"570 Lucinda Cliff Suite 036\",\"line2\":null,\"city\":\"North Stella\",\"state\":\"Delaware\",\"postal_code\":\"38859\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},{\"id\":1,\"type\":\"Shipping\",\"name\":\"Hackett, Donnelly and Schmidt\",\"line1\":\"28937 Jadon Trail Apt. 717\",\"line2\":null,\"city\":\"Bauchside\",\"state\":\"Utah\",\"postal_code\":\"67194\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": "OK"
                         },
                         {
@@ -1049,7 +1049,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"Billing\",\"name\":\"John Doe\",\"line1\":\"2592 Jada Key\",\"line2\":\"Apartment 504\",\"city\":\"South Josh\",\"state\":\"Kentucky\",\"postal_code\":\"62249-8453\",\"country\":\"United States\",\"is_default\":false}"
+                            "raw": "{\"type\":\"Billing\",\"name\":\"John Doe\",\"line1\":\"2592 Jada Key\",\"line2\":\"Apartment 504\",\"city\":\"South Josh\",\"state\":\"Kentucky\",\"postal_code\":\"62249-8453\",\"country\":\"United States\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -1057,7 +1057,7 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\"data\":{\"customer_address_id\":1,\"type\":\"Billing\",\"name\":\"Schuppe, Rempel and Considine\",\"line1\":\"92875 Concepcion Locks\",\"line2\":null,\"city\":\"East Wanda\",\"state\":\"North Carolina\",\"postal_code\":\"83863\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"type\":\"Billing\",\"name\":\"McKenzie Ltd\",\"line1\":\"498 Vergie Tunnel\",\"line2\":null,\"city\":\"Maximilianmouth\",\"state\":\"North Dakota\",\"postal_code\":\"91391\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "Created"
                         },
                         {
@@ -1133,7 +1133,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_address_id\":1,\"type\":\"Shipping\",\"name\":\"Kuhn and Sons\",\"line1\":\"82653 Foster Cape\",\"line2\":null,\"city\":\"Tyrellshire\",\"state\":\"South Carolina\",\"postal_code\":\"83360\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"type\":\"Billing\",\"name\":\"Torp Inc\",\"line1\":\"7565 Hauck Hollow\",\"line2\":null,\"city\":\"New Darwin\",\"state\":\"Nebraska\",\"postal_code\":\"62132-7183\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "OK"
                         },
                         {
@@ -1198,7 +1198,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"Billing\",\"name\":\"John Doe\",\"line1\":\"2592 Jada Key\",\"line2\":\"Apartment 504\",\"city\":\"South Josh\",\"state\":\"Kentucky\",\"postal_code\":\"62249-8453\",\"country\":\"United States\",\"is_default\":true}"
+                            "raw": "{\"type\":\"Billing\",\"name\":\"John Doe\",\"line1\":\"2592 Jada Key\",\"line2\":\"Apartment 504\",\"city\":\"South Josh\",\"state\":\"Kentucky\",\"postal_code\":\"62249-8453\",\"country\":\"United States\",\"is_default\":false}"
                         },
                         "description": ""
                     },
@@ -1206,7 +1206,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_address_id\":1,\"type\":\"Billing\",\"name\":\"Schulist-Walter\",\"line1\":\"444 Kiara Loop\",\"line2\":null,\"city\":\"South Lorineton\",\"state\":\"Nebraska\",\"postal_code\":\"81394\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"type\":\"Billing\",\"name\":\"Rutherford-Denesik\",\"line1\":\"898 Darrell Village Apt. 456\",\"line2\":null,\"city\":\"Macejkovicfort\",\"state\":\"Arkansas\",\"postal_code\":\"39460\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "OK"
                         },
                         {
@@ -1293,7 +1293,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"customer_category_id\":1,\"name\":\"Magni\",\"customers_count\":0,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"},{\"customer_category_id\":1,\"name\":\"Nisi\",\"customers_count\":0,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Temporibus\",\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"},{\"id\":1,\"name\":\"Sequi\",\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": "OK"
                         },
                         {
@@ -1352,7 +1352,7 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\"data\":{\"customer_category_id\":1,\"name\":\"Omnis\",\"customers_count\":0,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Culpa\",\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "Created"
                         },
                         {
@@ -1422,7 +1422,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_category_id\":1,\"name\":\"Repellendus\",\"customers_count\":0,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Quibusdam\",\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "OK"
                         },
                         {
@@ -1489,7 +1489,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"customer_category_id\":1,\"name\":\"Placeat\",\"customers_count\":0,\"created_at\":\"2024-10-20 00:21:30\",\"updated_at\":\"2024-10-20 00:21:30\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Blanditiis\",\"created_at\":\"2024-10-21 07:55:32\",\"updated_at\":\"2024-10-21 07:55:32\"}}",
                             "name": "OK"
                         },
                         {
@@ -1546,7 +1546,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"customer_id\":1,\"category_ids\":[7]}"
+                            "raw": "{\"customer_id\":1,\"category_ids\":[4]}"
                         },
                         "description": ""
                     },

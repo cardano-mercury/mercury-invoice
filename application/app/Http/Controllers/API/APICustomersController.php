@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Knuckles\Scribe\Attributes\Group;
-use App\Http\Resources\CustomerResource;
 use Knuckles\Scribe\Attributes\QueryParam;
 use Knuckles\Scribe\Attributes\ResponseFromFile;
+use App\Http\Resources\Customer\CustomerResource;
 use App\Http\Requests\Customer\StoreCustomerRequest;
 use Knuckles\Scribe\Attributes\ResponseFromApiResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
@@ -44,6 +44,12 @@ class APICustomersController extends Controller
                     ->where('name', 'like', '%' . $search . '%')
                     ->orWhere('tax_number', 'like', '%' . $search . '%')
             )
+            ->with([
+                'categories',
+                'defaultEmail',
+                'defaultPhone',
+                'defaultAddress',
+            ])
             ->simplePaginate($this->clamp($request->input('per_page'), 25, 100));
 
         return CustomerResource::collection($customers);
@@ -65,6 +71,13 @@ class APICustomersController extends Controller
             $request->validated()
         ));
 
+        $customer->load([
+            'categories',
+            'defaultEmail',
+            'defaultPhone',
+            'defaultAddress',
+        ]);
+
         return new CustomerResource($customer);
     }
 
@@ -77,6 +90,13 @@ class APICustomersController extends Controller
         if (!$request->user()->tokenCan('Customers:Read')) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
+
+        $customer->load([
+            'categories',
+            'defaultEmail',
+            'defaultPhone',
+            'defaultAddress',
+        ]);
 
         return new CustomerResource($customer);
     }
@@ -93,6 +113,13 @@ class APICustomersController extends Controller
         }
 
         $customer->update($request->validated());
+
+        $customer->load([
+            'categories',
+            'defaultEmail',
+            'defaultPhone',
+            'defaultAddress',
+        ]);
 
         return new CustomerResource($customer);
     }

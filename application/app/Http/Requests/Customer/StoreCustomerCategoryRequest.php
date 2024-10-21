@@ -37,7 +37,7 @@ class StoreCustomerCategoryRequest extends FormRequest
                     return $query
                         ->where('user_id', auth()->id())
                         ->where('name', $this->name);
-                })->ignore($this->customer_category?->id),
+                })->ignore($this?->customer_category?->id),
             ],
         ];
     }
