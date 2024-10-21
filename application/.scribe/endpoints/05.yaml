@@ -58,7 +58,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Et Rerum Fuga","sku":"MOM6UGDWJAKQYOVX","description":"Omnis qui voluptate autem. Sit modi ea voluptates id. Libero tempore dolor nesciunt.","unit_type":"cm","unit_price":72.57,"supplier":"Cole-Braun","created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"},{"id":1,"name":"A Ab Et","sku":"JMPM0MFEACATC49E","description":"Praesentium et dolores similique vel. Fugit impedit tenetur quo dignissimos. Voluptatem laudantium vero non quaerat fugiat molestiae est.","unit_type":"cm","unit_price":58.27,"supplier":"Fadel PLC","created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"Facilis Est Possimus","sku":"NPPLEGFZGTNRKUVZ","description":"In ipsa consequatur rerum officiis consequatur. Exercitationem harum deleniti suscipit aut et voluptatem. Est commodi excepturi in amet tenetur asperiores.","unit_type":"kg","unit_price":78.96,"supplier":"Dare Inc","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"},{"id":1,"name":"Enim Eum Tempora","sku":"ZBBCLFZZCM1SLR0V","description":"Officiis facere labore quis. Voluptas velit est ut reiciendis sunt earum hic. Dolores omnis quaerat est eos voluptatem quam quos voluptate.","unit_type":"kg","unit_price":43.12,"supplier":"Franecki, Cremin and Haley","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -102,7 +102,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cZdvPVkeg4h8a1a6E6b5f3D'
+      - 'Bearer 8h1aVc35fDkaEdvb64Ze6gP'
     controller: null
     method: null
     route: null
@@ -194,7 +194,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"name":"Dolorem Itaque Magnam","sku":"FVJCB9LFBZT8NWZM","description":"Ex deserunt quasi nobis placeat aliquid sapiente ducimus. Quae rerum ut nemo. Molestias assumenda rerum beatae quam ducimus repudiandae soluta.","unit_type":"kg","unit_price":16.59,"supplier":"Steuber-Hettinger","created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
+        content: '{"data":{"id":1,"name":"Dignissimos Sint Ad","sku":"UTGFDQF80U9SX6KO","description":"Occaecati distinctio perspiciatis accusamus non tenetur inventore saepe. In provident aut sit ut et eos. In dignissimos eveniet voluptas sint.","unit_type":"cm","unit_price":27.2,"supplier":"O''Conner, Altenwerth and Lakin","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
         headers: []
         description: Created
         custom: []
@@ -255,7 +255,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Pa65cVedg3hf1EkD8a4vZb6'
+      - 'Bearer 645E8ZkaP61fvghdeD3acbV'
     controller: null
     method: null
     route: null
@@ -297,7 +297,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Natus Sint Minus","sku":"3KARC45O2ZSD10CQ","description":"Esse optio saepe ut ut placeat perferendis dolores. Ut magnam molestiae ex aut quia. Libero odit nostrum consequatur dolore.","unit_type":"ounce","unit_price":51.81,"supplier":"Little, Beer and Bruen","created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
+        content: '{"data":{"id":1,"name":"Cupiditate Quis Expedita","sku":"UN0YZ4BP3Z5TYM2F","description":"Voluptatem deleniti animi maiores velit. Sit a blanditiis consequatur blanditiis. Odit voluptas error in dolorum unde alias.","unit_type":"cm","unit_price":81.35,"supplier":"Eichmann-Goldner","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
         headers: []
         description: OK
         custom: []
@@ -341,7 +341,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer vh35daEcP6ef86gVaZDk41b'
+      - 'Bearer E3fckbaDh6VZv1Pg8a45d6e'
     controller: null
     method: null
     route: null
@@ -444,7 +444,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Cum Fugiat Ut","sku":"1WAMREIOJ80S9N57","description":"Explicabo sit nemo rerum molestiae fuga. Deleniti consectetur explicabo adipisci. Enim sunt est sit ullam consequatur laudantium perspiciatis id.","unit_type":"each","unit_price":24.66,"supplier":"Kunde Ltd","created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
+        content: '{"data":{"id":1,"name":"Corporis Repudiandae A","sku":"7LNSDNZKEAIMMKN9","description":"Repudiandae qui distinctio corporis praesentium. Nesciunt velit sint est. Vel ea recusandae iste provident.","unit_type":"each","unit_price":52.71,"supplier":"Kihn-Langosh","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
         headers: []
         description: OK
         custom: []
@@ -505,7 +505,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4DadEhg6f6aZk8153eVcPvb'
+      - 'Bearer kZ318fdcEaae5V6DvP64hbg'
     controller: null
     method: null
     route: null

@@ -54,86 +54,86 @@ paths:
                   data:
                     -
                       id: 1
-                      name: 'Carissa Kilback DDS'
-                      tax_number: 01JAQ4TTFN8Y9128HJ2SFETG3T
+                      name: 'Nicklaus Mosciski'
+                      tax_number: 01JARHB903R8Z5CCNY4HTDSPXJ
                       tax_rate: 17.5
                       categories:
                         -
                           id: 1
-                          name: Magnam
-                          created_at: '2024-10-21 08:59:21'
-                          updated_at: '2024-10-21 08:59:21'
+                          name: Esse
+                          created_at: '2024-10-21 21:57:18'
+                          updated_at: '2024-10-21 21:57:18'
                       defaultEmail:
                         id: 1
-                        name: 'Mrs. Zaria Herzog MD'
-                        address: ibrahim60@example.com
+                        name: 'Yvonne Romaguera'
+                        address: carroll.cyril@example.com
                         is_default: true
-                        created_at: '2024-10-21 08:59:21'
-                        updated_at: '2024-10-21 08:59:21'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                       defaultPhone:
                         id: 1
                         type: Mobile
-                        name: 'Prof. Maxwell Kuhn'
-                        number: 1-916-829-6737
+                        name: 'Zora Rath'
+                        number: '+1 (801) 968-6693'
                         is_default: true
-                        created_at: '2024-10-21 08:59:21'
-                        updated_at: '2024-10-21 08:59:21'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                       defaultAddress:
                         id: 1
                         type: Shipping
-                        name: 'Moore Ltd'
-                        line1: '94899 Verda Oval'
+                        name: 'Dach, Parker and Stoltenberg'
+                        line1: '63851 Marlene Pine Apt. 871'
                         line2: null
-                        city: 'North Wilfrid'
-                        state: Kansas
-                        postal_code: 43403-8904
+                        city: 'West Gladycefort'
+                        state: 'New Jersey'
+                        postal_code: 63013-9193
                         country: 'United States'
                         is_default: true
-                        created_at: '2024-10-21 08:59:21'
-                        updated_at: '2024-10-21 08:59:21'
-                      created_at: '2024-10-21 08:59:21'
-                      updated_at: '2024-10-21 08:59:21'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                     -
                       id: 1
-                      name: 'Marge Connelly'
-                      tax_number: 01JAQ4TTFPR5W6JVS6QB8Q98SY
+                      name: 'Gladys Corkery'
+                      tax_number: 01JARHB904Y7PRWAG60HH5BYDP
                       tax_rate: 17.5
                       categories:
                         -
                           id: 1
-                          name: Officia
-                          created_at: '2024-10-21 08:59:21'
-                          updated_at: '2024-10-21 08:59:21'
+                          name: Fugit
+                          created_at: '2024-10-21 21:57:18'
+                          updated_at: '2024-10-21 21:57:18'
                       defaultEmail:
                         id: 1
-                        name: 'Yvette Little'
-                        address: pcummerata@example.com
+                        name: 'Carlee Beahan'
+                        address: emile.fisher@example.org
                         is_default: true
-                        created_at: '2024-10-21 08:59:21'
-                        updated_at: '2024-10-21 08:59:21'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                       defaultPhone:
                         id: 1
                         type: Mobile
-                        name: 'Erick Schaefer IV'
-                        number: 213.655.3029
+                        name: 'Brent Bosco IV'
+                        number: +1.251.516.1050
                         is_default: true
-                        created_at: '2024-10-21 08:59:21'
-                        updated_at: '2024-10-21 08:59:21'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                       defaultAddress:
                         id: 1
                         type: Shipping
-                        name: 'Heller, Luettgen and Connelly'
-                        line1: '199 Roderick Rapid'
+                        name: 'Leuschke, Carter and Kreiger'
+                        line1: '743 Moore Creek Suite 003'
                         line2: null
-                        city: Josefinahaven
-                        state: Florida
-                        postal_code: 19237-2659
+                        city: Legrosfurt
+                        state: 'North Carolina'
+                        postal_code: '11379'
                         country: 'United States'
                         is_default: true
-                        created_at: '2024-10-21 08:59:21'
-                        updated_at: '2024-10-21 08:59:21'
-                      created_at: '2024-10-21 08:59:21'
-                      updated_at: '2024-10-21 08:59:21'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                   links:
                     first: '/?page=1'
                     last: null
@@ -151,86 +151,86 @@ paths:
                     example:
                       -
                         id: 1
-                        name: 'Carissa Kilback DDS'
-                        tax_number: 01JAQ4TTFN8Y9128HJ2SFETG3T
+                        name: 'Nicklaus Mosciski'
+                        tax_number: 01JARHB903R8Z5CCNY4HTDSPXJ
                         tax_rate: 17.5
                         categories:
                           -
                             id: 1
-                            name: Magnam
-                            created_at: '2024-10-21 08:59:21'
-                            updated_at: '2024-10-21 08:59:21'
+                            name: Esse
+                            created_at: '2024-10-21 21:57:18'
+                            updated_at: '2024-10-21 21:57:18'
                         defaultEmail:
                           id: 1
-                          name: 'Mrs. Zaria Herzog MD'
-                          address: ibrahim60@example.com
+                          name: 'Yvonne Romaguera'
+                          address: carroll.cyril@example.com
                           is_default: true
-                          created_at: '2024-10-21 08:59:21'
-                          updated_at: '2024-10-21 08:59:21'
+                          created_at: '2024-10-21 21:57:18'
+                          updated_at: '2024-10-21 21:57:18'
                         defaultPhone:
                           id: 1
                           type: Mobile
-                          name: 'Prof. Maxwell Kuhn'
-                          number: 1-916-829-6737
+                          name: 'Zora Rath'
+                          number: '+1 (801) 968-6693'
                           is_default: true
-                          created_at: '2024-10-21 08:59:21'
-                          updated_at: '2024-10-21 08:59:21'
+                          created_at: '2024-10-21 21:57:18'
+                          updated_at: '2024-10-21 21:57:18'
                         defaultAddress:
                           id: 1
                           type: Shipping
-                          name: 'Moore Ltd'
-                          line1: '94899 Verda Oval'
+                          name: 'Dach, Parker and Stoltenberg'
+                          line1: '63851 Marlene Pine Apt. 871'
                           line2: null
-                          city: 'North Wilfrid'
-                          state: Kansas
-                          postal_code: 43403-8904
+                          city: 'West Gladycefort'
+                          state: 'New Jersey'
+                          postal_code: 63013-9193
                           country: 'United States'
                           is_default: true
-                          created_at: '2024-10-21 08:59:21'
-                          updated_at: '2024-10-21 08:59:21'
-                        created_at: '2024-10-21 08:59:21'
-                        updated_at: '2024-10-21 08:59:21'
+                          created_at: '2024-10-21 21:57:18'
+                          updated_at: '2024-10-21 21:57:18'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                       -
                         id: 1
-                        name: 'Marge Connelly'
-                        tax_number: 01JAQ4TTFPR5W6JVS6QB8Q98SY
+                        name: 'Gladys Corkery'
+                        tax_number: 01JARHB904Y7PRWAG60HH5BYDP
                         tax_rate: 17.5
                         categories:
                           -
                             id: 1
-                            name: Officia
-                            created_at: '2024-10-21 08:59:21'
-                            updated_at: '2024-10-21 08:59:21'
+                            name: Fugit
+                            created_at: '2024-10-21 21:57:18'
+                            updated_at: '2024-10-21 21:57:18'
                         defaultEmail:
                           id: 1
-                          name: 'Yvette Little'
-                          address: pcummerata@example.com
+                          name: 'Carlee Beahan'
+                          address: emile.fisher@example.org
                           is_default: true
-                          created_at: '2024-10-21 08:59:21'
-                          updated_at: '2024-10-21 08:59:21'
+                          created_at: '2024-10-21 21:57:18'
+                          updated_at: '2024-10-21 21:57:18'
                         defaultPhone:
                           id: 1
                           type: Mobile
-                          name: 'Erick Schaefer IV'
-                          number: 213.655.3029
+                          name: 'Brent Bosco IV'
+                          number: +1.251.516.1050
                           is_default: true
-                          created_at: '2024-10-21 08:59:21'
-                          updated_at: '2024-10-21 08:59:21'
+                          created_at: '2024-10-21 21:57:18'
+                          updated_at: '2024-10-21 21:57:18'
                         defaultAddress:
                           id: 1
                           type: Shipping
-                          name: 'Heller, Luettgen and Connelly'
-                          line1: '199 Roderick Rapid'
+                          name: 'Leuschke, Carter and Kreiger'
+                          line1: '743 Moore Creek Suite 003'
                           line2: null
-                          city: Josefinahaven
-                          state: Florida
-                          postal_code: 19237-2659
+                          city: Legrosfurt
+                          state: 'North Carolina'
+                          postal_code: '11379'
                           country: 'United States'
                           is_default: true
-                          created_at: '2024-10-21 08:59:21'
-                          updated_at: '2024-10-21 08:59:21'
-                        created_at: '2024-10-21 08:59:21'
-                        updated_at: '2024-10-21 08:59:21'
+                          created_at: '2024-10-21 21:57:18'
+                          updated_at: '2024-10-21 21:57:18'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                     items:
                       type: object
                       properties:
@@ -239,10 +239,10 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: 'Carissa Kilback DDS'
+                          example: 'Nicklaus Mosciski'
                         tax_number:
                           type: string
-                          example: 01JAQ4TTFN8Y9128HJ2SFETG3T
+                          example: 01JARHB903R8Z5CCNY4HTDSPXJ
                         tax_rate:
                           type: number
                           example: 17.5
@@ -251,9 +251,9 @@ paths:
                           example:
                             -
                               id: 1
-                              name: Magnam
-                              created_at: '2024-10-21 08:59:21'
-                              updated_at: '2024-10-21 08:59:21'
+                              name: Esse
+                              created_at: '2024-10-21 21:57:18'
+                              updated_at: '2024-10-21 21:57:18'
                           items:
                             type: object
                             properties:
@@ -262,13 +262,13 @@ paths:
                                 example: 1
                               name:
                                 type: string
-                                example: Magnam
+                                example: Esse
                               created_at:
                                 type: string
-                                example: '2024-10-21 08:59:21'
+                                example: '2024-10-21 21:57:18'
                               updated_at:
                                 type: string
-                                example: '2024-10-21 08:59:21'
+                                example: '2024-10-21 21:57:18'
                         defaultEmail:
                           type: object
                           properties:
@@ -277,19 +277,19 @@ paths:
                               example: 1
                             name:
                               type: string
-                              example: 'Mrs. Zaria Herzog MD'
+                              example: 'Yvonne Romaguera'
                             address:
                               type: string
-                              example: ibrahim60@example.com
+                              example: carroll.cyril@example.com
                             is_default:
                               type: boolean
                               example: true
                             created_at:
                               type: string
-                              example: '2024-10-21 08:59:21'
+                              example: '2024-10-21 21:57:18'
                             updated_at:
                               type: string
-                              example: '2024-10-21 08:59:21'
+                              example: '2024-10-21 21:57:18'
                         defaultPhone:
                           type: object
                           properties:
@@ -301,19 +301,19 @@ paths:
                               example: Mobile
                             name:
                               type: string
-                              example: 'Prof. Maxwell Kuhn'
+                              example: 'Zora Rath'
                             number:
                               type: string
-                              example: 1-916-829-6737
+                              example: '+1 (801) 968-6693'
                             is_default:
                               type: boolean
                               example: true
                             created_at:
                               type: string
-                              example: '2024-10-21 08:59:21'
+                              example: '2024-10-21 21:57:18'
                             updated_at:
                               type: string
-                              example: '2024-10-21 08:59:21'
+                              example: '2024-10-21 21:57:18'
                         defaultAddress:
                           type: object
                           properties:
@@ -325,22 +325,22 @@ paths:
                               example: Shipping
                             name:
                               type: string
-                              example: 'Moore Ltd'
+                              example: 'Dach, Parker and Stoltenberg'
                             line1:
                               type: string
-                              example: '94899 Verda Oval'
+                              example: '63851 Marlene Pine Apt. 871'
                             line2:
                               type: string
                               example: null
                             city:
                               type: string
-                              example: 'North Wilfrid'
+                              example: 'West Gladycefort'
                             state:
                               type: string
-                              example: Kansas
+                              example: 'New Jersey'
                             postal_code:
                               type: string
-                              example: 43403-8904
+                              example: 63013-9193
                             country:
                               type: string
                               example: 'United States'
@@ -349,16 +349,16 @@ paths:
                               example: true
                             created_at:
                               type: string
-                              example: '2024-10-21 08:59:21'
+                              example: '2024-10-21 21:57:18'
                             updated_at:
                               type: string
-                              example: '2024-10-21 08:59:21'
+                              example: '2024-10-21 21:57:18'
                         created_at:
                           type: string
-                          example: '2024-10-21 08:59:21'
+                          example: '2024-10-21 21:57:18'
                         updated_at:
                           type: string
-                          example: '2024-10-21 08:59:21'
+                          example: '2024-10-21 21:57:18'
                   links:
                     type: object
                     properties:
@@ -457,15 +457,15 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: 'Amya Price'
-                    tax_number: 01JAQ4TTFYPNNEPN0KG61Y8G44
+                    name: 'Dr. Garfield Lynch'
+                    tax_number: 01JARHB90CT3FSASZ9QSN2TR63
                     tax_rate: 17.5
                     categories: []
                     defaultEmail: null
                     defaultPhone: null
                     defaultAddress: null
-                    created_at: '2024-10-21 08:59:21'
-                    updated_at: '2024-10-21 08:59:21'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -475,10 +475,10 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Amya Price'
+                        example: 'Dr. Garfield Lynch'
                       tax_number:
                         type: string
-                        example: 01JAQ4TTFYPNNEPN0KG61Y8G44
+                        example: 01JARHB90CT3FSASZ9QSN2TR63
                       tax_rate:
                         type: number
                         example: 17.5
@@ -496,10 +496,10 @@ paths:
                         example: null
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:21'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:21'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -619,45 +619,45 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: 'Jeff Howell'
-                    tax_number: 01JAQ4TTG4HVCPEA1DS3AB6JCR
+                    name: 'Keaton Fay'
+                    tax_number: 01JARHB90KE06D7QBK6BPJZZGN
                     tax_rate: 17.5
                     categories:
                       -
                         id: 1
-                        name: Quam
-                        created_at: '2024-10-21 08:59:21'
-                        updated_at: '2024-10-21 08:59:21'
+                        name: Rerum
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                     defaultEmail:
                       id: 1
-                      name: 'Micheal Collins'
-                      address: ohoeger@example.org
+                      name: 'Shaylee Kuhlman'
+                      address: gerson.kihn@example.net
                       is_default: true
-                      created_at: '2024-10-21 08:59:21'
-                      updated_at: '2024-10-21 08:59:21'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                     defaultPhone:
                       id: 1
-                      type: Home
-                      name: 'Reed Hilpert V'
-                      number: '(623) 590-8657'
+                      type: Mobile
+                      name: 'Dr. Frederique Bayer'
+                      number: 571.976.4749
                       is_default: true
-                      created_at: '2024-10-21 08:59:21'
-                      updated_at: '2024-10-21 08:59:21'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                     defaultAddress:
                       id: 1
                       type: Billing
-                      name: 'Kohler, Becker and Bins'
-                      line1: '51066 Reynolds Bridge'
+                      name: 'Predovic and Sons'
+                      line1: '625 Heather Forest Apt. 345'
                       line2: null
-                      city: 'Lake Gussie'
-                      state: Mississippi
-                      postal_code: 59254-0281
+                      city: Shanahaven
+                      state: Nevada
+                      postal_code: '81619'
                       country: 'United States'
                       is_default: true
-                      created_at: '2024-10-21 08:59:21'
-                      updated_at: '2024-10-21 08:59:21'
-                    created_at: '2024-10-21 08:59:21'
-                    updated_at: '2024-10-21 08:59:21'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -667,10 +667,10 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Jeff Howell'
+                        example: 'Keaton Fay'
                       tax_number:
                         type: string
-                        example: 01JAQ4TTG4HVCPEA1DS3AB6JCR
+                        example: 01JARHB90KE06D7QBK6BPJZZGN
                       tax_rate:
                         type: number
                         example: 17.5
@@ -679,9 +679,9 @@ paths:
                         example:
                           -
                             id: 1
-                            name: Quam
-                            created_at: '2024-10-21 08:59:21'
-                            updated_at: '2024-10-21 08:59:21'
+                            name: Rerum
+                            created_at: '2024-10-21 21:57:18'
+                            updated_at: '2024-10-21 21:57:18'
                         items:
                           type: object
                           properties:
@@ -690,13 +690,13 @@ paths:
                               example: 1
                             name:
                               type: string
-                              example: Quam
+                              example: Rerum
                             created_at:
                               type: string
-                              example: '2024-10-21 08:59:21'
+                              example: '2024-10-21 21:57:18'
                             updated_at:
                               type: string
-                              example: '2024-10-21 08:59:21'
+                              example: '2024-10-21 21:57:18'
                       defaultEmail:
                         type: object
                         properties:
@@ -705,19 +705,19 @@ paths:
                             example: 1
                           name:
                             type: string
-                            example: 'Micheal Collins'
+                            example: 'Shaylee Kuhlman'
                           address:
                             type: string
-                            example: ohoeger@example.org
+                            example: gerson.kihn@example.net
                           is_default:
                             type: boolean
                             example: true
                           created_at:
                             type: string
-                            example: '2024-10-21 08:59:21'
+                            example: '2024-10-21 21:57:18'
                           updated_at:
                             type: string
-                            example: '2024-10-21 08:59:21'
+                            example: '2024-10-21 21:57:18'
                       defaultPhone:
                         type: object
                         properties:
@@ -726,22 +726,22 @@ paths:
                             example: 1
                           type:
                             type: string
-                            example: Home
+                            example: Mobile
                           name:
                             type: string
-                            example: 'Reed Hilpert V'
+                            example: 'Dr. Frederique Bayer'
                           number:
                             type: string
-                            example: '(623) 590-8657'
+                            example: 571.976.4749
                           is_default:
                             type: boolean
                             example: true
                           created_at:
                             type: string
-                            example: '2024-10-21 08:59:21'
+                            example: '2024-10-21 21:57:18'
                           updated_at:
                             type: string
-                            example: '2024-10-21 08:59:21'
+                            example: '2024-10-21 21:57:18'
                       defaultAddress:
                         type: object
                         properties:
@@ -753,22 +753,22 @@ paths:
                             example: Billing
                           name:
                             type: string
-                            example: 'Kohler, Becker and Bins'
+                            example: 'Predovic and Sons'
                           line1:
                             type: string
-                            example: '51066 Reynolds Bridge'
+                            example: '625 Heather Forest Apt. 345'
                           line2:
                             type: string
                             example: null
                           city:
                             type: string
-                            example: 'Lake Gussie'
+                            example: Shanahaven
                           state:
                             type: string
-                            example: Mississippi
+                            example: Nevada
                           postal_code:
                             type: string
-                            example: 59254-0281
+                            example: '81619'
                           country:
                             type: string
                             example: 'United States'
@@ -777,16 +777,16 @@ paths:
                             example: true
                           created_at:
                             type: string
-                            example: '2024-10-21 08:59:21'
+                            example: '2024-10-21 21:57:18'
                           updated_at:
                             type: string
-                            example: '2024-10-21 08:59:21'
+                            example: '2024-10-21 21:57:18'
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:21'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:21'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -852,45 +852,45 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: 'Daren Gutmann'
-                    tax_number: 01JAQ4TTG7A7C11SQ5S8XDFPZT
+                    name: 'Thad Corwin'
+                    tax_number: 01JARHB90NX6C8SGD5MC74C1RR
                     tax_rate: 17.5
                     categories:
                       -
                         id: 1
-                        name: Inventore
-                        created_at: '2024-10-21 08:59:21'
-                        updated_at: '2024-10-21 08:59:21'
+                        name: Molestiae
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                     defaultEmail:
                       id: 1
-                      name: 'Marcelina Murphy'
-                      address: etha66@example.org
+                      name: 'Keegan Windler'
+                      address: ycassin@example.net
                       is_default: true
-                      created_at: '2024-10-21 08:59:21'
-                      updated_at: '2024-10-21 08:59:21'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                     defaultPhone:
                       id: 1
-                      type: Home
-                      name: 'Edward Rogahn'
-                      number: 1-341-814-4285
+                      type: Office
+                      name: 'Dr. Kira Haag'
+                      number: +1.970.309.9978
                       is_default: true
-                      created_at: '2024-10-21 08:59:21'
-                      updated_at: '2024-10-21 08:59:21'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                     defaultAddress:
                       id: 1
-                      type: Billing
-                      name: 'Jenkins Ltd'
-                      line1: '84169 Jacynthe Causeway Apt. 825'
+                      type: Shipping
+                      name: 'Leuschke, Roob and Lemke'
+                      line1: '921 Kelvin Lights'
                       line2: null
-                      city: 'Port Tatyanachester'
-                      state: Oklahoma
-                      postal_code: '05588'
+                      city: 'North Alia'
+                      state: Virginia
+                      postal_code: '61626'
                       country: 'United States'
                       is_default: true
-                      created_at: '2024-10-21 08:59:21'
-                      updated_at: '2024-10-21 08:59:21'
-                    created_at: '2024-10-21 08:59:21'
-                    updated_at: '2024-10-21 08:59:21'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -900,10 +900,10 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Daren Gutmann'
+                        example: 'Thad Corwin'
                       tax_number:
                         type: string
-                        example: 01JAQ4TTG7A7C11SQ5S8XDFPZT
+                        example: 01JARHB90NX6C8SGD5MC74C1RR
                       tax_rate:
                         type: number
                         example: 17.5
@@ -912,9 +912,9 @@ paths:
                         example:
                           -
                             id: 1
-                            name: Inventore
-                            created_at: '2024-10-21 08:59:21'
-                            updated_at: '2024-10-21 08:59:21'
+                            name: Molestiae
+                            created_at: '2024-10-21 21:57:18'
+                            updated_at: '2024-10-21 21:57:18'
                         items:
                           type: object
                           properties:
@@ -923,13 +923,13 @@ paths:
                               example: 1
                             name:
                               type: string
-                              example: Inventore
+                              example: Molestiae
                             created_at:
                               type: string
-                              example: '2024-10-21 08:59:21'
+                              example: '2024-10-21 21:57:18'
                             updated_at:
                               type: string
-                              example: '2024-10-21 08:59:21'
+                              example: '2024-10-21 21:57:18'
                       defaultEmail:
                         type: object
                         properties:
@@ -938,19 +938,19 @@ paths:
                             example: 1
                           name:
                             type: string
-                            example: 'Marcelina Murphy'
+                            example: 'Keegan Windler'
                           address:
                             type: string
-                            example: etha66@example.org
+                            example: ycassin@example.net
                           is_default:
                             type: boolean
                             example: true
                           created_at:
                             type: string
-                            example: '2024-10-21 08:59:21'
+                            example: '2024-10-21 21:57:18'
                           updated_at:
                             type: string
-                            example: '2024-10-21 08:59:21'
+                            example: '2024-10-21 21:57:18'
                       defaultPhone:
                         type: object
                         properties:
@@ -959,22 +959,22 @@ paths:
                             example: 1
                           type:
                             type: string
-                            example: Home
+                            example: Office
                           name:
                             type: string
-                            example: 'Edward Rogahn'
+                            example: 'Dr. Kira Haag'
                           number:
                             type: string
-                            example: 1-341-814-4285
+                            example: +1.970.309.9978
                           is_default:
                             type: boolean
                             example: true
                           created_at:
                             type: string
-                            example: '2024-10-21 08:59:21'
+                            example: '2024-10-21 21:57:18'
                           updated_at:
                             type: string
-                            example: '2024-10-21 08:59:21'
+                            example: '2024-10-21 21:57:18'
                       defaultAddress:
                         type: object
                         properties:
@@ -983,25 +983,25 @@ paths:
                             example: 1
                           type:
                             type: string
-                            example: Billing
+                            example: Shipping
                           name:
                             type: string
-                            example: 'Jenkins Ltd'
+                            example: 'Leuschke, Roob and Lemke'
                           line1:
                             type: string
-                            example: '84169 Jacynthe Causeway Apt. 825'
+                            example: '921 Kelvin Lights'
                           line2:
                             type: string
                             example: null
                           city:
                             type: string
-                            example: 'Port Tatyanachester'
+                            example: 'North Alia'
                           state:
                             type: string
-                            example: Oklahoma
+                            example: Virginia
                           postal_code:
                             type: string
-                            example: '05588'
+                            example: '61626'
                           country:
                             type: string
                             example: 'United States'
@@ -1010,16 +1010,16 @@ paths:
                             example: true
                           created_at:
                             type: string
-                            example: '2024-10-21 08:59:21'
+                            example: '2024-10-21 21:57:18'
                           updated_at:
                             type: string
-                            example: '2024-10-21 08:59:21'
+                            example: '2024-10-21 21:57:18'
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:21'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:21'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -1179,18 +1179,18 @@ paths:
                   data:
                     -
                       id: 1
-                      name: 'Mikel Labadie'
-                      address: ziemann.tressa@example.net
+                      name: 'Fernando Hayes'
+                      address: qreilly@example.org
                       is_default: true
-                      created_at: '2024-10-21 08:59:21'
-                      updated_at: '2024-10-21 08:59:21'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                     -
                       id: 1
-                      name: 'Zoie Dickinson'
-                      address: dwisoky@example.net
+                      name: 'Tyson Wyman'
+                      address: millie.rippin@example.org
                       is_default: true
-                      created_at: '2024-10-21 08:59:21'
-                      updated_at: '2024-10-21 08:59:21'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                   links:
                     first: '/?page=1'
                     last: null
@@ -1208,18 +1208,18 @@ paths:
                     example:
                       -
                         id: 1
-                        name: 'Mikel Labadie'
-                        address: ziemann.tressa@example.net
+                        name: 'Fernando Hayes'
+                        address: qreilly@example.org
                         is_default: true
-                        created_at: '2024-10-21 08:59:21'
-                        updated_at: '2024-10-21 08:59:21'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                       -
                         id: 1
-                        name: 'Zoie Dickinson'
-                        address: dwisoky@example.net
+                        name: 'Tyson Wyman'
+                        address: millie.rippin@example.org
                         is_default: true
-                        created_at: '2024-10-21 08:59:21'
-                        updated_at: '2024-10-21 08:59:21'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                     items:
                       type: object
                       properties:
@@ -1228,19 +1228,19 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: 'Mikel Labadie'
+                          example: 'Fernando Hayes'
                         address:
                           type: string
-                          example: ziemann.tressa@example.net
+                          example: qreilly@example.org
                         is_default:
                           type: boolean
                           example: true
                         created_at:
                           type: string
-                          example: '2024-10-21 08:59:21'
+                          example: '2024-10-21 21:57:18'
                         updated_at:
                           type: string
-                          example: '2024-10-21 08:59:21'
+                          example: '2024-10-21 21:57:18'
                   links:
                     type: object
                     properties:
@@ -1339,11 +1339,11 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: 'Imani Douglas'
-                    address: bert.rowe@example.net
+                    name: 'Vada Hamill'
+                    address: meaghan.schuster@example.org
                     is_default: true
-                    created_at: '2024-10-21 08:59:21'
-                    updated_at: '2024-10-21 08:59:21'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -1353,19 +1353,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Imani Douglas'
+                        example: 'Vada Hamill'
                       address:
                         type: string
-                        example: bert.rowe@example.net
+                        example: meaghan.schuster@example.org
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:21'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:21'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -1466,7 +1466,7 @@ paths:
                 is_default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - name
                 - address
@@ -1495,11 +1495,11 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: 'Lilian Schroeder'
-                    address: hweber@example.org
+                    name: 'Dr. Autumn Kohler II'
+                    address: kelsie.anderson@example.net
                     is_default: true
-                    created_at: '2024-10-21 08:59:21'
-                    updated_at: '2024-10-21 08:59:21'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -1509,19 +1509,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Lilian Schroeder'
+                        example: 'Dr. Autumn Kohler II'
                       address:
                         type: string
-                        example: hweber@example.org
+                        example: kelsie.anderson@example.net
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:21'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:21'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -1587,11 +1587,11 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: 'Mr. Valentin Powlowski'
-                    address: weston.stiedemann@example.com
+                    name: 'Abbey Sanford'
+                    address: trudie80@example.net
                     is_default: true
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -1601,19 +1601,19 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Mr. Valentin Powlowski'
+                        example: 'Abbey Sanford'
                       address:
                         type: string
-                        example: weston.stiedemann@example.com
+                        example: trudie80@example.net
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -1714,7 +1714,7 @@ paths:
                 is_default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - name
                 - address
@@ -1797,19 +1797,19 @@ paths:
                     -
                       id: 1
                       type: Mobile
-                      name: 'Antwan Hirthe'
-                      number: 1-208-402-8295
+                      name: 'Aric Bashirian'
+                      number: '+1 (810) 277-2497'
                       is_default: true
-                      created_at: '2024-10-21 08:59:22'
-                      updated_at: '2024-10-21 08:59:22'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                     -
                       id: 1
-                      type: Home
-                      name: "Ms. Izabella D'Amore DVM"
-                      number: +1-813-409-0604
+                      type: Office
+                      name: 'Antonette Rogahn'
+                      number: '+16623417767'
                       is_default: true
-                      created_at: '2024-10-21 08:59:22'
-                      updated_at: '2024-10-21 08:59:22'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                   links:
                     first: '/?page=1'
                     last: null
@@ -1828,19 +1828,19 @@ paths:
                       -
                         id: 1
                         type: Mobile
-                        name: 'Antwan Hirthe'
-                        number: 1-208-402-8295
+                        name: 'Aric Bashirian'
+                        number: '+1 (810) 277-2497'
                         is_default: true
-                        created_at: '2024-10-21 08:59:22'
-                        updated_at: '2024-10-21 08:59:22'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                       -
                         id: 1
-                        type: Home
-                        name: "Ms. Izabella D'Amore DVM"
-                        number: +1-813-409-0604
+                        type: Office
+                        name: 'Antonette Rogahn'
+                        number: '+16623417767'
                         is_default: true
-                        created_at: '2024-10-21 08:59:22'
-                        updated_at: '2024-10-21 08:59:22'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                     items:
                       type: object
                       properties:
@@ -1852,19 +1852,19 @@ paths:
                           example: Mobile
                         name:
                           type: string
-                          example: 'Antwan Hirthe'
+                          example: 'Aric Bashirian'
                         number:
                           type: string
-                          example: 1-208-402-8295
+                          example: '+1 (810) 277-2497'
                         is_default:
                           type: boolean
                           example: true
                         created_at:
                           type: string
-                          example: '2024-10-21 08:59:22'
+                          example: '2024-10-21 21:57:18'
                         updated_at:
                           type: string
-                          example: '2024-10-21 08:59:22'
+                          example: '2024-10-21 21:57:18'
                   links:
                     type: object
                     properties:
@@ -1963,12 +1963,12 @@ paths:
                 example:
                   data:
                     id: 1
-                    type: Office
-                    name: 'Estevan Rowe'
-                    number: 1-848-981-7621
+                    type: Mobile
+                    name: 'Della Prohaska'
+                    number: 1-352-783-0893
                     is_default: true
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -1978,22 +1978,22 @@ paths:
                         example: 1
                       type:
                         type: string
-                        example: Office
+                        example: Mobile
                       name:
                         type: string
-                        example: 'Estevan Rowe'
+                        example: 'Della Prohaska'
                       number:
                         type: string
-                        example: 1-848-981-7621
+                        example: 1-352-783-0893
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -2133,11 +2133,11 @@ paths:
                   data:
                     id: 1
                     type: Home
-                    name: 'Genoveva Langworth III'
-                    number: 1-660-604-4124
+                    name: 'Mr. Chadrick Bergstrom'
+                    number: '+1 (515) 963-3388'
                     is_default: true
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -2150,19 +2150,19 @@ paths:
                         example: Home
                       name:
                         type: string
-                        example: 'Genoveva Langworth III'
+                        example: 'Mr. Chadrick Bergstrom'
                       number:
                         type: string
-                        example: 1-660-604-4124
+                        example: '+1 (515) 963-3388'
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -2228,12 +2228,12 @@ paths:
                 example:
                   data:
                     id: 1
-                    type: Office
-                    name: 'Prof. Raheem Hirthe'
-                    number: '+1 (520) 639-7265'
+                    type: Home
+                    name: 'Mrs. Macie Blick'
+                    number: 678-435-6592
                     is_default: true
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -2243,22 +2243,22 @@ paths:
                         example: 1
                       type:
                         type: string
-                        example: Office
+                        example: Home
                       name:
                         type: string
-                        example: 'Prof. Raheem Hirthe'
+                        example: 'Mrs. Macie Blick'
                       number:
                         type: string
-                        example: '+1 (520) 639-7265'
+                        example: 678-435-6592
                       is_default:
                         type: boolean
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -2351,7 +2351,7 @@ paths:
                 type:
                   type: string
                   description: ''
-                  example: Home
+                  example: Mobile
                   enum:
                     - Home
                     - Office
@@ -2367,7 +2367,7 @@ paths:
                 is_default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - type
                 - name
@@ -2399,12 +2399,12 @@ paths:
           in: query
           name: type
           description: ''
-          example: Shipping
+          example: Billing
           required: false
           schema:
             type: string
             description: ''
-            example: Shipping
+            example: Billing
             enum:
               - Billing
               - Shipping
@@ -2450,29 +2450,29 @@ paths:
                     -
                       id: 1
                       type: Shipping
-                      name: 'Durgan Ltd'
-                      line1: '330 Rhett Stravenue'
+                      name: 'Maggio, Pfannerstill and Gorczany'
+                      line1: '36306 Payton Ports'
                       line2: null
-                      city: 'New Ashton'
-                      state: 'North Carolina'
-                      postal_code: '42652'
+                      city: Schimmelland
+                      state: Arizona
+                      postal_code: '81860'
                       country: 'United States'
                       is_default: true
-                      created_at: '2024-10-21 08:59:22'
-                      updated_at: '2024-10-21 08:59:22'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                     -
                       id: 1
                       type: Shipping
-                      name: Lind-Wyman
-                      line1: '56773 Carissa Parks'
+                      name: West-Spencer
+                      line1: '442 Bergnaum Groves Suite 518'
                       line2: null
-                      city: Michaelaside
-                      state: 'New Hampshire'
-                      postal_code: '24803'
+                      city: 'New Jeraldchester'
+                      state: Washington
+                      postal_code: '99237'
                       country: 'United States'
                       is_default: true
-                      created_at: '2024-10-21 08:59:22'
-                      updated_at: '2024-10-21 08:59:22'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                   links:
                     first: '/?page=1'
                     last: null
@@ -2491,29 +2491,29 @@ paths:
                       -
                         id: 1
                         type: Shipping
-                        name: 'Durgan Ltd'
-                        line1: '330 Rhett Stravenue'
+                        name: 'Maggio, Pfannerstill and Gorczany'
+                        line1: '36306 Payton Ports'
                         line2: null
-                        city: 'New Ashton'
-                        state: 'North Carolina'
-                        postal_code: '42652'
+                        city: Schimmelland
+                        state: Arizona
+                        postal_code: '81860'
                         country: 'United States'
                         is_default: true
-                        created_at: '2024-10-21 08:59:22'
-                        updated_at: '2024-10-21 08:59:22'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                       -
                         id: 1
                         type: Shipping
-                        name: Lind-Wyman
-                        line1: '56773 Carissa Parks'
+                        name: West-Spencer
+                        line1: '442 Bergnaum Groves Suite 518'
                         line2: null
-                        city: Michaelaside
-                        state: 'New Hampshire'
-                        postal_code: '24803'
+                        city: 'New Jeraldchester'
+                        state: Washington
+                        postal_code: '99237'
                         country: 'United States'
                         is_default: true
-                        created_at: '2024-10-21 08:59:22'
-                        updated_at: '2024-10-21 08:59:22'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                     items:
                       type: object
                       properties:
@@ -2525,22 +2525,22 @@ paths:
                           example: Shipping
                         name:
                           type: string
-                          example: 'Durgan Ltd'
+                          example: 'Maggio, Pfannerstill and Gorczany'
                         line1:
                           type: string
-                          example: '330 Rhett Stravenue'
+                          example: '36306 Payton Ports'
                         line2:
                           type: string
                           example: null
                         city:
                           type: string
-                          example: 'New Ashton'
+                          example: Schimmelland
                         state:
                           type: string
-                          example: 'North Carolina'
+                          example: Arizona
                         postal_code:
                           type: string
-                          example: '42652'
+                          example: '81860'
                         country:
                           type: string
                           example: 'United States'
@@ -2549,10 +2549,10 @@ paths:
                           example: true
                         created_at:
                           type: string
-                          example: '2024-10-21 08:59:22'
+                          example: '2024-10-21 21:57:18'
                         updated_at:
                           type: string
-                          example: '2024-10-21 08:59:22'
+                          example: '2024-10-21 21:57:18'
                   links:
                     type: object
                     properties:
@@ -2652,16 +2652,16 @@ paths:
                   data:
                     id: 1
                     type: Shipping
-                    name: 'Dooley Inc'
-                    line1: '57030 Kian Mountain'
+                    name: Terry-Gutkowski
+                    line1: '687 Genesis Rapids Apt. 608'
                     line2: null
-                    city: Franeckiside
-                    state: Hawaii
-                    postal_code: 19909-9535
+                    city: Leathaland
+                    state: 'North Dakota'
+                    postal_code: '89712'
                     country: 'United States'
                     is_default: true
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -2674,22 +2674,22 @@ paths:
                         example: Shipping
                       name:
                         type: string
-                        example: 'Dooley Inc'
+                        example: Terry-Gutkowski
                       line1:
                         type: string
-                        example: '57030 Kian Mountain'
+                        example: '687 Genesis Rapids Apt. 608'
                       line2:
                         type: string
                         example: null
                       city:
                         type: string
-                        example: Franeckiside
+                        example: Leathaland
                       state:
                         type: string
-                        example: Hawaii
+                        example: 'North Dakota'
                       postal_code:
                         type: string
-                        example: 19909-9535
+                        example: '89712'
                       country:
                         type: string
                         example: 'United States'
@@ -2698,10 +2698,10 @@ paths:
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -2829,7 +2829,7 @@ paths:
                 is_default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - type
                 - name
@@ -2862,17 +2862,17 @@ paths:
                 example:
                   data:
                     id: 1
-                    type: Billing
-                    name: 'Jacobi, Brakus and Collier'
-                    line1: '6997 Rafael Cliffs Suite 633'
+                    type: Shipping
+                    name: 'Schinner LLC'
+                    line1: '65852 Kub Way'
                     line2: null
-                    city: 'Port Viviane'
-                    state: Alaska
-                    postal_code: 44499-3341
+                    city: Billietown
+                    state: Montana
+                    postal_code: '66409'
                     country: 'United States'
                     is_default: true
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -2882,25 +2882,25 @@ paths:
                         example: 1
                       type:
                         type: string
-                        example: Billing
+                        example: Shipping
                       name:
                         type: string
-                        example: 'Jacobi, Brakus and Collier'
+                        example: 'Schinner LLC'
                       line1:
                         type: string
-                        example: '6997 Rafael Cliffs Suite 633'
+                        example: '65852 Kub Way'
                       line2:
                         type: string
                         example: null
                       city:
                         type: string
-                        example: 'Port Viviane'
+                        example: Billietown
                       state:
                         type: string
-                        example: Alaska
+                        example: Montana
                       postal_code:
                         type: string
-                        example: 44499-3341
+                        example: '66409'
                       country:
                         type: string
                         example: 'United States'
@@ -2909,10 +2909,10 @@ paths:
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -2978,17 +2978,17 @@ paths:
                 example:
                   data:
                     id: 1
-                    type: Shipping
-                    name: 'Quitzon Group'
-                    line1: '240 Bashirian Wells'
+                    type: Billing
+                    name: 'Christiansen Inc'
+                    line1: '97155 Beier Inlet Suite 996'
                     line2: null
-                    city: 'East Milton'
-                    state: 'South Carolina'
-                    postal_code: '10666'
+                    city: Greenholtstad
+                    state: Alaska
+                    postal_code: '30523'
                     country: 'United States'
                     is_default: true
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -2998,25 +2998,25 @@ paths:
                         example: 1
                       type:
                         type: string
-                        example: Shipping
+                        example: Billing
                       name:
                         type: string
-                        example: 'Quitzon Group'
+                        example: 'Christiansen Inc'
                       line1:
                         type: string
-                        example: '240 Bashirian Wells'
+                        example: '97155 Beier Inlet Suite 996'
                       line2:
                         type: string
                         example: null
                       city:
                         type: string
-                        example: 'East Milton'
+                        example: Greenholtstad
                       state:
                         type: string
-                        example: 'South Carolina'
+                        example: Alaska
                       postal_code:
                         type: string
-                        example: '10666'
+                        example: '30523'
                       country:
                         type: string
                         example: 'United States'
@@ -3025,10 +3025,10 @@ paths:
                         example: true
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -3156,7 +3156,7 @@ paths:
                 is_default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - type
                 - name
@@ -3228,14 +3228,14 @@ paths:
                   data:
                     -
                       id: 1
-                      name: Incidunt
-                      created_at: '2024-10-21 08:59:22'
-                      updated_at: '2024-10-21 08:59:22'
+                      name: Eveniet
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                     -
                       id: 1
-                      name: Eligendi
-                      created_at: '2024-10-21 08:59:22'
-                      updated_at: '2024-10-21 08:59:22'
+                      name: Totam
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                   links:
                     first: '/?page=1'
                     last: null
@@ -3253,14 +3253,14 @@ paths:
                     example:
                       -
                         id: 1
-                        name: Incidunt
-                        created_at: '2024-10-21 08:59:22'
-                        updated_at: '2024-10-21 08:59:22'
+                        name: Eveniet
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                       -
                         id: 1
-                        name: Eligendi
-                        created_at: '2024-10-21 08:59:22'
-                        updated_at: '2024-10-21 08:59:22'
+                        name: Totam
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                     items:
                       type: object
                       properties:
@@ -3269,13 +3269,13 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: Incidunt
+                          example: Eveniet
                         created_at:
                           type: string
-                          example: '2024-10-21 08:59:22'
+                          example: '2024-10-21 21:57:18'
                         updated_at:
                           type: string
-                          example: '2024-10-21 08:59:22'
+                          example: '2024-10-21 21:57:18'
                   links:
                     type: object
                     properties:
@@ -3374,9 +3374,9 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: Repudiandae
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    name: Consequatur
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -3386,13 +3386,13 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: Repudiandae
+                        example: Consequatur
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -3504,9 +3504,9 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: Voluptas
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    name: Asperiores
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -3516,13 +3516,13 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: Voluptas
+                        example: Asperiores
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -3588,9 +3588,9 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: Ut
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    name: Sint
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -3600,13 +3600,13 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: Ut
+                        example: Sint
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -3869,24 +3869,24 @@ paths:
                   data:
                     -
                       id: 1
-                      name: 'Et Rerum Fuga'
-                      sku: MOM6UGDWJAKQYOVX
-                      description: 'Omnis qui voluptate autem. Sit modi ea voluptates id. Libero tempore dolor nesciunt.'
-                      unit_type: cm
-                      unit_price: 72.57
-                      supplier: Cole-Braun
-                      created_at: '2024-10-21 08:59:22'
-                      updated_at: '2024-10-21 08:59:22'
+                      name: 'Facilis Est Possimus'
+                      sku: NPPLEGFZGTNRKUVZ
+                      description: 'In ipsa consequatur rerum officiis consequatur. Exercitationem harum deleniti suscipit aut et voluptatem. Est commodi excepturi in amet tenetur asperiores.'
+                      unit_type: kg
+                      unit_price: 78.96
+                      supplier: 'Dare Inc'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                     -
                       id: 1
-                      name: 'A Ab Et'
-                      sku: JMPM0MFEACATC49E
-                      description: 'Praesentium et dolores similique vel. Fugit impedit tenetur quo dignissimos. Voluptatem laudantium vero non quaerat fugiat molestiae est.'
-                      unit_type: cm
-                      unit_price: 58.27
-                      supplier: 'Fadel PLC'
-                      created_at: '2024-10-21 08:59:22'
-                      updated_at: '2024-10-21 08:59:22'
+                      name: 'Enim Eum Tempora'
+                      sku: ZBBCLFZZCM1SLR0V
+                      description: 'Officiis facere labore quis. Voluptas velit est ut reiciendis sunt earum hic. Dolores omnis quaerat est eos voluptatem quam quos voluptate.'
+                      unit_type: kg
+                      unit_price: 43.12
+                      supplier: 'Franecki, Cremin and Haley'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                   links:
                     first: '/?page=1'
                     last: null
@@ -3904,24 +3904,24 @@ paths:
                     example:
                       -
                         id: 1
-                        name: 'Et Rerum Fuga'
-                        sku: MOM6UGDWJAKQYOVX
-                        description: 'Omnis qui voluptate autem. Sit modi ea voluptates id. Libero tempore dolor nesciunt.'
-                        unit_type: cm
-                        unit_price: 72.57
-                        supplier: Cole-Braun
-                        created_at: '2024-10-21 08:59:22'
-                        updated_at: '2024-10-21 08:59:22'
+                        name: 'Facilis Est Possimus'
+                        sku: NPPLEGFZGTNRKUVZ
+                        description: 'In ipsa consequatur rerum officiis consequatur. Exercitationem harum deleniti suscipit aut et voluptatem. Est commodi excepturi in amet tenetur asperiores.'
+                        unit_type: kg
+                        unit_price: 78.96
+                        supplier: 'Dare Inc'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                       -
                         id: 1
-                        name: 'A Ab Et'
-                        sku: JMPM0MFEACATC49E
-                        description: 'Praesentium et dolores similique vel. Fugit impedit tenetur quo dignissimos. Voluptatem laudantium vero non quaerat fugiat molestiae est.'
-                        unit_type: cm
-                        unit_price: 58.27
-                        supplier: 'Fadel PLC'
-                        created_at: '2024-10-21 08:59:22'
-                        updated_at: '2024-10-21 08:59:22'
+                        name: 'Enim Eum Tempora'
+                        sku: ZBBCLFZZCM1SLR0V
+                        description: 'Officiis facere labore quis. Voluptas velit est ut reiciendis sunt earum hic. Dolores omnis quaerat est eos voluptatem quam quos voluptate.'
+                        unit_type: kg
+                        unit_price: 43.12
+                        supplier: 'Franecki, Cremin and Haley'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                     items:
                       type: object
                       properties:
@@ -3930,28 +3930,28 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: 'Et Rerum Fuga'
+                          example: 'Facilis Est Possimus'
                         sku:
                           type: string
-                          example: MOM6UGDWJAKQYOVX
+                          example: NPPLEGFZGTNRKUVZ
                         description:
                           type: string
-                          example: 'Omnis qui voluptate autem. Sit modi ea voluptates id. Libero tempore dolor nesciunt.'
+                          example: 'In ipsa consequatur rerum officiis consequatur. Exercitationem harum deleniti suscipit aut et voluptatem. Est commodi excepturi in amet tenetur asperiores.'
                         unit_type:
                           type: string
-                          example: cm
+                          example: kg
                         unit_price:
                           type: number
-                          example: 72.57
+                          example: 78.96
                         supplier:
                           type: string
-                          example: Cole-Braun
+                          example: 'Dare Inc'
                         created_at:
                           type: string
-                          example: '2024-10-21 08:59:22'
+                          example: '2024-10-21 21:57:18'
                         updated_at:
                           type: string
-                          example: '2024-10-21 08:59:22'
+                          example: '2024-10-21 21:57:18'
                   links:
                     type: object
                     properties:
@@ -4050,14 +4050,14 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: 'Dolorem Itaque Magnam'
-                    sku: FVJCB9LFBZT8NWZM
-                    description: 'Ex deserunt quasi nobis placeat aliquid sapiente ducimus. Quae rerum ut nemo. Molestias assumenda rerum beatae quam ducimus repudiandae soluta.'
-                    unit_type: kg
-                    unit_price: 16.59
-                    supplier: Steuber-Hettinger
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    name: 'Dignissimos Sint Ad'
+                    sku: UTGFDQF80U9SX6KO
+                    description: 'Occaecati distinctio perspiciatis accusamus non tenetur inventore saepe. In provident aut sit ut et eos. In dignissimos eveniet voluptas sint.'
+                    unit_type: cm
+                    unit_price: 27.2
+                    supplier: "O'Conner, Altenwerth and Lakin"
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -4067,28 +4067,28 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Dolorem Itaque Magnam'
+                        example: 'Dignissimos Sint Ad'
                       sku:
                         type: string
-                        example: FVJCB9LFBZT8NWZM
+                        example: UTGFDQF80U9SX6KO
                       description:
                         type: string
-                        example: 'Ex deserunt quasi nobis placeat aliquid sapiente ducimus. Quae rerum ut nemo. Molestias assumenda rerum beatae quam ducimus repudiandae soluta.'
+                        example: 'Occaecati distinctio perspiciatis accusamus non tenetur inventore saepe. In provident aut sit ut et eos. In dignissimos eveniet voluptas sint.'
                       unit_type:
                         type: string
-                        example: kg
+                        example: cm
                       unit_price:
                         type: number
-                        example: 16.59
+                        example: 27.2
                       supplier:
                         type: string
-                        example: Steuber-Hettinger
+                        example: "O'Conner, Altenwerth and Lakin"
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -4221,14 +4221,14 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: 'Natus Sint Minus'
-                    sku: 3KARC45O2ZSD10CQ
-                    description: 'Esse optio saepe ut ut placeat perferendis dolores. Ut magnam molestiae ex aut quia. Libero odit nostrum consequatur dolore.'
-                    unit_type: ounce
-                    unit_price: 51.81
-                    supplier: 'Little, Beer and Bruen'
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    name: 'Cupiditate Quis Expedita'
+                    sku: UN0YZ4BP3Z5TYM2F
+                    description: 'Voluptatem deleniti animi maiores velit. Sit a blanditiis consequatur blanditiis. Odit voluptas error in dolorum unde alias.'
+                    unit_type: cm
+                    unit_price: 81.35
+                    supplier: Eichmann-Goldner
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -4238,28 +4238,28 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Natus Sint Minus'
+                        example: 'Cupiditate Quis Expedita'
                       sku:
                         type: string
-                        example: 3KARC45O2ZSD10CQ
+                        example: UN0YZ4BP3Z5TYM2F
                       description:
                         type: string
-                        example: 'Esse optio saepe ut ut placeat perferendis dolores. Ut magnam molestiae ex aut quia. Libero odit nostrum consequatur dolore.'
+                        example: 'Voluptatem deleniti animi maiores velit. Sit a blanditiis consequatur blanditiis. Odit voluptas error in dolorum unde alias.'
                       unit_type:
                         type: string
-                        example: ounce
+                        example: cm
                       unit_price:
                         type: number
-                        example: 51.81
+                        example: 81.35
                       supplier:
                         type: string
-                        example: 'Little, Beer and Bruen'
+                        example: Eichmann-Goldner
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -4325,14 +4325,14 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: 'Cum Fugiat Ut'
-                    sku: 1WAMREIOJ80S9N57
-                    description: 'Explicabo sit nemo rerum molestiae fuga. Deleniti consectetur explicabo adipisci. Enim sunt est sit ullam consequatur laudantium perspiciatis id.'
+                    name: 'Corporis Repudiandae A'
+                    sku: 7LNSDNZKEAIMMKN9
+                    description: 'Repudiandae qui distinctio corporis praesentium. Nesciunt velit sint est. Vel ea recusandae iste provident.'
                     unit_type: each
-                    unit_price: 24.66
-                    supplier: 'Kunde Ltd'
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    unit_price: 52.71
+                    supplier: Kihn-Langosh
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -4342,28 +4342,28 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: 'Cum Fugiat Ut'
+                        example: 'Corporis Repudiandae A'
                       sku:
                         type: string
-                        example: 1WAMREIOJ80S9N57
+                        example: 7LNSDNZKEAIMMKN9
                       description:
                         type: string
-                        example: 'Explicabo sit nemo rerum molestiae fuga. Deleniti consectetur explicabo adipisci. Enim sunt est sit ullam consequatur laudantium perspiciatis id.'
+                        example: 'Repudiandae qui distinctio corporis praesentium. Nesciunt velit sint est. Vel ea recusandae iste provident.'
                       unit_type:
                         type: string
                         example: each
                       unit_price:
                         type: number
-                        example: 24.66
+                        example: 52.71
                       supplier:
                         type: string
-                        example: 'Kunde Ltd'
+                        example: Kihn-Langosh
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -4536,14 +4536,14 @@ paths:
                   data:
                     -
                       id: 1
-                      name: Quia
-                      created_at: '2024-10-21 08:59:22'
-                      updated_at: '2024-10-21 08:59:22'
+                      name: Deleniti
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                     -
                       id: 1
-                      name: Maxime
-                      created_at: '2024-10-21 08:59:22'
-                      updated_at: '2024-10-21 08:59:22'
+                      name: Dicta
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
                   links:
                     first: '/?page=1'
                     last: null
@@ -4561,14 +4561,14 @@ paths:
                     example:
                       -
                         id: 1
-                        name: Quia
-                        created_at: '2024-10-21 08:59:22'
-                        updated_at: '2024-10-21 08:59:22'
+                        name: Deleniti
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                       -
                         id: 1
-                        name: Maxime
-                        created_at: '2024-10-21 08:59:22'
-                        updated_at: '2024-10-21 08:59:22'
+                        name: Dicta
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
                     items:
                       type: object
                       properties:
@@ -4577,13 +4577,13 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: Quia
+                          example: Deleniti
                         created_at:
                           type: string
-                          example: '2024-10-21 08:59:22'
+                          example: '2024-10-21 21:57:18'
                         updated_at:
                           type: string
-                          example: '2024-10-21 08:59:22'
+                          example: '2024-10-21 21:57:18'
                   links:
                     type: object
                     properties:
@@ -4682,9 +4682,9 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: Veniam
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    name: Distinctio
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -4694,13 +4694,13 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: Veniam
+                        example: Distinctio
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -4812,9 +4812,9 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: Sint
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    name: Et
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -4824,13 +4824,13 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: Sint
+                        example: Et
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -4896,9 +4896,9 @@ paths:
                 example:
                   data:
                     id: 1
-                    name: Neque
-                    created_at: '2024-10-21 08:59:22'
-                    updated_at: '2024-10-21 08:59:22'
+                    name: Quo
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
                 properties:
                   data:
                     type: object
@@ -4908,13 +4908,13 @@ paths:
                         example: 1
                       name:
                         type: string
-                        example: Neque
+                        example: Quo
                       created_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
                       updated_at:
                         type: string
-                        example: '2024-10-21 08:59:22'
+                        example: '2024-10-21 21:57:18'
         401:
           description: Unauthorized
           content:
@@ -5125,11 +5125,624 @@ paths:
                   type: array
                   description: ''
                   example:
-                    - 5
+                    - 8
                   items:
                     type: integer
               required:
                 - product_id
+  /api/v1/services:
+    get:
+      summary: 'List Services'
+      operationId: listServices
+      description: ''
+      parameters:
+        -
+          in: query
+          name: search
+          description: 'Search for services by name'
+          example: 'Software Development'
+          required: false
+          schema:
+            type: string
+            description: 'Search for services by name'
+            example: 'Software Development'
+        -
+          in: query
+          name: per_page
+          description: 'Number of results per page (Min 25, Max 100)'
+          example: 25
+          required: false
+          schema:
+            type: integer
+            description: 'Number of results per page (Min 25, Max 100)'
+            example: 25
+        -
+          in: query
+          name: page
+          description: 'Page number'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number'
+            example: 1
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: 'Qui Repellat Perferendis'
+                      description: 'Dignissimos deserunt minus excepturi libero. Praesentium nihil quis enim quo necessitatibus soluta. Magni suscipit et omnis autem.'
+                      unit_price: 28.05
+                      supplier: 'Langworth PLC'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
+                    -
+                      id: 1
+                      name: 'Voluptatibus Animi Molestiae'
+                      description: 'Architecto accusantium voluptate expedita eius a asperiores mollitia sunt. Similique nihil nostrum quam magnam sint velit ratione. Est necessitatibus voluptate tempora dolor.'
+                      unit_price: 57.99
+                      supplier: 'Will, Legros and Upton'
+                      created_at: '2024-10-21 21:57:18'
+                      updated_at: '2024-10-21 21:57:18'
+                  links:
+                    first: '/?page=1'
+                    last: null
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    path: /
+                    per_page: 25
+                    to: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'Qui Repellat Perferendis'
+                        description: 'Dignissimos deserunt minus excepturi libero. Praesentium nihil quis enim quo necessitatibus soluta. Magni suscipit et omnis autem.'
+                        unit_price: 28.05
+                        supplier: 'Langworth PLC'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
+                      -
+                        id: 1
+                        name: 'Voluptatibus Animi Molestiae'
+                        description: 'Architecto accusantium voluptate expedita eius a asperiores mollitia sunt. Similique nihil nostrum quam magnam sint velit ratione. Est necessitatibus voluptate tempora dolor.'
+                        unit_price: 57.99
+                        supplier: 'Will, Legros and Upton'
+                        created_at: '2024-10-21 21:57:18'
+                        updated_at: '2024-10-21 21:57:18'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 'Qui Repellat Perferendis'
+                        description:
+                          type: string
+                          example: 'Dignissimos deserunt minus excepturi libero. Praesentium nihil quis enim quo necessitatibus soluta. Magni suscipit et omnis autem.'
+                        unit_price:
+                          type: number
+                          example: 28.05
+                        supplier:
+                          type: string
+                          example: 'Langworth PLC'
+                        created_at:
+                          type: string
+                          example: '2024-10-21 21:57:18'
+                        updated_at:
+                          type: string
+                          example: '2024-10-21 21:57:18'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: '/?page=1'
+                      last:
+                        type: string
+                        example: null
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      path:
+                        type: string
+                        example: /
+                      per_page:
+                        type: integer
+                        example: 25
+                      to:
+                        type: integer
+                        example: 2
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
+      tags:
+        - Services
+    post:
+      summary: 'Create Service'
+      operationId: createService
+      description: ''
+      parameters: []
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    name: 'Alias Optio Est'
+                    description: 'Mollitia debitis vel asperiores sequi tempore. Facilis quis qui enim tempore qui. Ut non eum ipsa incidunt eveniet corrupti et.'
+                    unit_price: 61.73
+                    supplier: 'Goodwin, Heidenreich and Graham'
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Alias Optio Est'
+                      description:
+                        type: string
+                        example: 'Mollitia debitis vel asperiores sequi tempore. Facilis quis qui enim tempore qui. Ut non eum ipsa incidunt eveniet corrupti et.'
+                      unit_price:
+                        type: number
+                        example: 61.73
+                      supplier:
+                        type: string
+                        example: 'Goodwin, Heidenreich and Graham'
+                      created_at:
+                        type: string
+                        example: '2024-10-21 21:57:18'
+                      updated_at:
+                        type: string
+                        example: '2024-10-21 21:57:18'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        422:
+          description: 'Validation Failed'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Validation Failed'
+                  fields:
+                    field_name:
+                      - 'The field name is required.'
+                    another_field:
+                      - 'The another field must not be greater than 64 characters.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Validation Failed'
+                  fields:
+                    type: object
+                    properties:
+                      field_name:
+                        type: array
+                        example:
+                          - 'The field name is required.'
+                        items:
+                          type: string
+                      another_field:
+                        type: array
+                        example:
+                          - 'The another field must not be greater than 64 characters.'
+                        items:
+                          type: string
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
+      tags:
+        - Services
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: 'Software Development'
+                description:
+                  type: string
+                  description: ''
+                  example: 'Rate for software development'
+                unit_price:
+                  type: number
+                  description: 'Must be at least 0.'
+                  example: 40.5
+                supplier:
+                  type: string
+                  description: 'Must not be greater than 64 characters.'
+                  example: 'Cardano Mercury Ltd'
+              required:
+                - name
+                - unit_price
+  '/api/v1/services/{id}':
+    get:
+      summary: 'Get Service'
+      operationId: getService
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    name: 'Voluptate Soluta In'
+                    description: 'Harum sit delectus officia pariatur. Praesentium aperiam qui dolore aut perspiciatis ex. Esse numquam eum accusamus enim at corporis ad.'
+                    unit_price: 25.62
+                    supplier: Oberbrunner-Bayer
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Voluptate Soluta In'
+                      description:
+                        type: string
+                        example: 'Harum sit delectus officia pariatur. Praesentium aperiam qui dolore aut perspiciatis ex. Esse numquam eum accusamus enim at corporis ad.'
+                      unit_price:
+                        type: number
+                        example: 25.62
+                      supplier:
+                        type: string
+                        example: Oberbrunner-Bayer
+                      created_at:
+                        type: string
+                        example: '2024-10-21 21:57:18'
+                      updated_at:
+                        type: string
+                        example: '2024-10-21 21:57:18'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
+      tags:
+        - Services
+    put:
+      summary: 'Update Service'
+      operationId: updateService
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    name: 'Omnis Labore Soluta'
+                    description: 'Eum commodi autem temporibus voluptates officia. Suscipit velit eos sed numquam. Magni possimus cumque illum quia quasi ab eius.'
+                    unit_price: 29.65
+                    supplier: Boehm-Lehner
+                    created_at: '2024-10-21 21:57:18'
+                    updated_at: '2024-10-21 21:57:18'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Omnis Labore Soluta'
+                      description:
+                        type: string
+                        example: 'Eum commodi autem temporibus voluptates officia. Suscipit velit eos sed numquam. Magni possimus cumque illum quia quasi ab eius.'
+                      unit_price:
+                        type: number
+                        example: 29.65
+                      supplier:
+                        type: string
+                        example: Boehm-Lehner
+                      created_at:
+                        type: string
+                        example: '2024-10-21 21:57:18'
+                      updated_at:
+                        type: string
+                        example: '2024-10-21 21:57:18'
+        401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthorized
+                properties:
+                  message:
+                    type: string
+                    example: Unauthorized
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: 'Not Found'
+                    type: object
+                    example:
+                      message: 'Route or Record Not found'
+                    properties:
+                      message:
+                        type: string
+                        example: 'Route or Record Not found'
+                  -
+                    description: 'Bad Request'
+                    type: object
+                    example:
+                      message: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+                    properties:
+                      message:
+                        type: string
+                        example: 'The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH'
+        422:
+          description: 'Validation Failed'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Validation Failed'
+                  fields:
+                    field_name:
+                      - 'The field name is required.'
+                    another_field:
+                      - 'The another field must not be greater than 64 characters.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Validation Failed'
+                  fields:
+                    type: object
+                    properties:
+                      field_name:
+                        type: array
+                        example:
+                          - 'The field name is required.'
+                        items:
+                          type: string
+                      another_field:
+                        type: array
+                        example:
+                          - 'The another field must not be greater than 64 characters.'
+                        items:
+                          type: string
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Internal Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
+      tags:
+        - Services
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+                  example: 'Software Development'
+                description:
+                  type: string
+                  description: ''
+                  example: 'Rate for software development'
+                unit_price:
+                  type: number
+                  description: 'Must be at least 0.'
+                  example: 40.5
+                supplier:
+                  type: string
+                  description: 'Must not be greater than 64 characters.'
+                  example: 'Cardano Mercury Ltd'
+              required:
+                - name
+                - unit_price
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the service.'
+        example: 1
+        required: true
+        schema:
+          type: integer
 tags:
   -
     name: Customers
@@ -5152,6 +5765,9 @@ tags:
   -
     name: 'Product Categories'
     description: 'Product Category Management API'
+  -
+    name: Services
+    description: 'Service Management API'
 components:
   securitySchemes:
     default:

@@ -37,7 +37,7 @@ endpoints:
         name: type
         description: ''
         required: false
-        example: Shipping
+        example: Billing
         type: string
         enumValues:
           - Billing
@@ -72,7 +72,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      type: Shipping
+      type: Billing
       search: '25 Brookfield Road'
       per_page: 25
       page: 1
@@ -82,7 +82,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"type":"Shipping","name":"Durgan Ltd","line1":"330 Rhett Stravenue","line2":null,"city":"New Ashton","state":"North Carolina","postal_code":"42652","country":"United States","is_default":true,"created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"},{"id":1,"type":"Shipping","name":"Lind-Wyman","line1":"56773 Carissa Parks","line2":null,"city":"Michaelaside","state":"New Hampshire","postal_code":"24803","country":"United States","is_default":true,"created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"type":"Shipping","name":"Maggio, Pfannerstill and Gorczany","line1":"36306 Payton Ports","line2":null,"city":"Schimmelland","state":"Arizona","postal_code":"81860","country":"United States","is_default":true,"created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"},{"id":1,"type":"Shipping","name":"West-Spencer","line1":"442 Bergnaum Groves Suite 518","line2":null,"city":"New Jeraldchester","state":"Washington","postal_code":"99237","country":"United States","is_default":true,"created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -126,7 +126,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E8Dkv6156Zgfd4PVchabe3a'
+      - 'Bearer eZhvdkVD6cfaa1856gPbE34'
     controller: null
     method: null
     route: null
@@ -241,7 +241,7 @@ endpoints:
         name: is_default
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -255,12 +255,12 @@ endpoints:
       state: Kentucky
       postal_code: 62249-8453
       country: 'United States'
-      is_default: false
+      is_default: true
     fileParameters: []
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"type":"Shipping","name":"Dooley Inc","line1":"57030 Kian Mountain","line2":null,"city":"Franeckiside","state":"Hawaii","postal_code":"19909-9535","country":"United States","is_default":true,"created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
+        content: '{"data":{"id":1,"type":"Shipping","name":"Terry-Gutkowski","line1":"687 Genesis Rapids Apt. 608","line2":null,"city":"Leathaland","state":"North Dakota","postal_code":"89712","country":"United States","is_default":true,"created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
         headers: []
         description: Created
         custom: []
@@ -321,7 +321,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DaaVgde8Eh3ZP5vk6cf1b64'
+      - 'Bearer 6b6ckedg8EaP4ZV315fvahD'
     controller: null
     method: null
     route: null
@@ -373,7 +373,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Billing","name":"Jacobi, Brakus and Collier","line1":"6997 Rafael Cliffs Suite 633","line2":null,"city":"Port Viviane","state":"Alaska","postal_code":"44499-3341","country":"United States","is_default":true,"created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
+        content: '{"data":{"id":1,"type":"Shipping","name":"Schinner LLC","line1":"65852 Kub Way","line2":null,"city":"Billietown","state":"Montana","postal_code":"66409","country":"United States","is_default":true,"created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
         headers: []
         description: OK
         custom: []
@@ -417,7 +417,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 5ZkDaPa34gEb1V686vdchfe'
+      - 'Bearer Ehec648V5Dda3f6vgPk1aZb'
     controller: null
     method: null
     route: null
@@ -543,7 +543,7 @@ endpoints:
         name: is_default
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -557,12 +557,12 @@ endpoints:
       state: Kentucky
       postal_code: 62249-8453
       country: 'United States'
-      is_default: false
+      is_default: true
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Shipping","name":"Quitzon Group","line1":"240 Bashirian Wells","line2":null,"city":"East Milton","state":"South Carolina","postal_code":"10666","country":"United States","is_default":true,"created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"Christiansen Inc","line1":"97155 Beier Inlet Suite 996","line2":null,"city":"Greenholtstad","state":"Alaska","postal_code":"30523","country":"United States","is_default":true,"created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
         headers: []
         description: OK
         custom: []
@@ -623,7 +623,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer efD8kPva6a4gh1ZcE56d3Vb'
+      - 'Bearer k5ZaDfVg1P8d46bv6e3haEc'
     controller: null
     method: null
     route: null

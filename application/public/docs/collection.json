@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Cardano Mercury: Invoice",
-        "_postman_id": "1bd135f5-d4e4-4e80-b8e7-3458a42b8f67",
+        "_postman_id": "e697b628-aab0-4549-8294-cfa43e338f38",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -65,7 +65,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"Carissa Kilback DDS\",\"tax_number\":\"01JAQ4TTFN8Y9128HJ2SFETG3T\",\"tax_rate\":17.5,\"categories\":[{\"id\":1,\"name\":\"Magnam\",\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"}],\"defaultEmail\":{\"id\":1,\"name\":\"Mrs. Zaria Herzog MD\",\"address\":\"ibrahim60@example.com\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},\"defaultPhone\":{\"id\":1,\"type\":\"Mobile\",\"name\":\"Prof. Maxwell Kuhn\",\"number\":\"1-916-829-6737\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},\"defaultAddress\":{\"id\":1,\"type\":\"Shipping\",\"name\":\"Moore Ltd\",\"line1\":\"94899 Verda Oval\",\"line2\":null,\"city\":\"North Wilfrid\",\"state\":\"Kansas\",\"postal_code\":\"43403-8904\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},{\"id\":1,\"name\":\"Marge Connelly\",\"tax_number\":\"01JAQ4TTFPR5W6JVS6QB8Q98SY\",\"tax_rate\":17.5,\"categories\":[{\"id\":1,\"name\":\"Officia\",\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"}],\"defaultEmail\":{\"id\":1,\"name\":\"Yvette Little\",\"address\":\"pcummerata@example.com\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},\"defaultPhone\":{\"id\":1,\"type\":\"Mobile\",\"name\":\"Erick Schaefer IV\",\"number\":\"213.655.3029\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},\"defaultAddress\":{\"id\":1,\"type\":\"Shipping\",\"name\":\"Heller, Luettgen and Connelly\",\"line1\":\"199 Roderick Rapid\",\"line2\":null,\"city\":\"Josefinahaven\",\"state\":\"Florida\",\"postal_code\":\"19237-2659\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Nicklaus Mosciski\",\"tax_number\":\"01JARHB903R8Z5CCNY4HTDSPXJ\",\"tax_rate\":17.5,\"categories\":[{\"id\":1,\"name\":\"Esse\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}],\"defaultEmail\":{\"id\":1,\"name\":\"Yvonne Romaguera\",\"address\":\"carroll.cyril@example.com\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},\"defaultPhone\":{\"id\":1,\"type\":\"Mobile\",\"name\":\"Zora Rath\",\"number\":\"+1 (801) 968-6693\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},\"defaultAddress\":{\"id\":1,\"type\":\"Shipping\",\"name\":\"Dach, Parker and Stoltenberg\",\"line1\":\"63851 Marlene Pine Apt. 871\",\"line2\":null,\"city\":\"West Gladycefort\",\"state\":\"New Jersey\",\"postal_code\":\"63013-9193\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},{\"id\":1,\"name\":\"Gladys Corkery\",\"tax_number\":\"01JARHB904Y7PRWAG60HH5BYDP\",\"tax_rate\":17.5,\"categories\":[{\"id\":1,\"name\":\"Fugit\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}],\"defaultEmail\":{\"id\":1,\"name\":\"Carlee Beahan\",\"address\":\"emile.fisher@example.org\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},\"defaultPhone\":{\"id\":1,\"type\":\"Mobile\",\"name\":\"Brent Bosco IV\",\"number\":\"+1.251.516.1050\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},\"defaultAddress\":{\"id\":1,\"type\":\"Shipping\",\"name\":\"Leuschke, Carter and Kreiger\",\"line1\":\"743 Moore Creek Suite 003\",\"line2\":null,\"city\":\"Legrosfurt\",\"state\":\"North Carolina\",\"postal_code\":\"11379\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": "OK"
                         },
                         {
@@ -124,7 +124,7 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Amya Price\",\"tax_number\":\"01JAQ4TTFYPNNEPN0KG61Y8G44\",\"tax_rate\":17.5,\"categories\":[],\"defaultEmail\":null,\"defaultPhone\":null,\"defaultAddress\":null,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Dr. Garfield Lynch\",\"tax_number\":\"01JARHB90CT3FSASZ9QSN2TR63\",\"tax_rate\":17.5,\"categories\":[],\"defaultEmail\":null,\"defaultPhone\":null,\"defaultAddress\":null,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "Created"
                         },
                         {
@@ -194,7 +194,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Jeff Howell\",\"tax_number\":\"01JAQ4TTG4HVCPEA1DS3AB6JCR\",\"tax_rate\":17.5,\"categories\":[{\"id\":1,\"name\":\"Quam\",\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"}],\"defaultEmail\":{\"id\":1,\"name\":\"Micheal Collins\",\"address\":\"ohoeger@example.org\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},\"defaultPhone\":{\"id\":1,\"type\":\"Home\",\"name\":\"Reed Hilpert V\",\"number\":\"(623) 590-8657\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},\"defaultAddress\":{\"id\":1,\"type\":\"Billing\",\"name\":\"Kohler, Becker and Bins\",\"line1\":\"51066 Reynolds Bridge\",\"line2\":null,\"city\":\"Lake Gussie\",\"state\":\"Mississippi\",\"postal_code\":\"59254-0281\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Keaton Fay\",\"tax_number\":\"01JARHB90KE06D7QBK6BPJZZGN\",\"tax_rate\":17.5,\"categories\":[{\"id\":1,\"name\":\"Rerum\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}],\"defaultEmail\":{\"id\":1,\"name\":\"Shaylee Kuhlman\",\"address\":\"gerson.kihn@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},\"defaultPhone\":{\"id\":1,\"type\":\"Mobile\",\"name\":\"Dr. Frederique Bayer\",\"number\":\"571.976.4749\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},\"defaultAddress\":{\"id\":1,\"type\":\"Billing\",\"name\":\"Predovic and Sons\",\"line1\":\"625 Heather Forest Apt. 345\",\"line2\":null,\"city\":\"Shanahaven\",\"state\":\"Nevada\",\"postal_code\":\"81619\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -261,7 +261,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Daren Gutmann\",\"tax_number\":\"01JAQ4TTG7A7C11SQ5S8XDFPZT\",\"tax_rate\":17.5,\"categories\":[{\"id\":1,\"name\":\"Inventore\",\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"}],\"defaultEmail\":{\"id\":1,\"name\":\"Marcelina Murphy\",\"address\":\"etha66@example.org\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},\"defaultPhone\":{\"id\":1,\"type\":\"Home\",\"name\":\"Edward Rogahn\",\"number\":\"1-341-814-4285\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},\"defaultAddress\":{\"id\":1,\"type\":\"Billing\",\"name\":\"Jenkins Ltd\",\"line1\":\"84169 Jacynthe Causeway Apt. 825\",\"line2\":null,\"city\":\"Port Tatyanachester\",\"state\":\"Oklahoma\",\"postal_code\":\"05588\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Thad Corwin\",\"tax_number\":\"01JARHB90NX6C8SGD5MC74C1RR\",\"tax_rate\":17.5,\"categories\":[{\"id\":1,\"name\":\"Molestiae\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}],\"defaultEmail\":{\"id\":1,\"name\":\"Keegan Windler\",\"address\":\"ycassin@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},\"defaultPhone\":{\"id\":1,\"type\":\"Office\",\"name\":\"Dr. Kira Haag\",\"number\":\"+1.970.309.9978\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},\"defaultAddress\":{\"id\":1,\"type\":\"Shipping\",\"name\":\"Leuschke, Roob and Lemke\",\"line1\":\"921 Kelvin Lights\",\"line2\":null,\"city\":\"North Alia\",\"state\":\"Virginia\",\"postal_code\":\"61626\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -356,7 +356,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"Mikel Labadie\",\"address\":\"ziemann.tressa@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"},{\"id\":1,\"name\":\"Zoie Dickinson\",\"address\":\"dwisoky@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Fernando Hayes\",\"address\":\"qreilly@example.org\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},{\"id\":1,\"name\":\"Tyson Wyman\",\"address\":\"millie.rippin@example.org\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": "OK"
                         },
                         {
@@ -415,7 +415,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"John Doe\",\"address\":\"john.doe@example.com\",\"is_default\":false}"
+                            "raw": "{\"name\":\"John Doe\",\"address\":\"john.doe@example.com\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -423,7 +423,7 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Imani Douglas\",\"address\":\"bert.rowe@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Vada Hamill\",\"address\":\"meaghan.schuster@example.org\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "Created"
                         },
                         {
@@ -499,7 +499,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Lilian Schroeder\",\"address\":\"hweber@example.org\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:21\",\"updated_at\":\"2024-10-21 08:59:21\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Dr. Autumn Kohler II\",\"address\":\"kelsie.anderson@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -564,7 +564,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"John Doe\",\"address\":\"john.doe@example.com\",\"is_default\":false}"
+                            "raw": "{\"name\":\"John Doe\",\"address\":\"john.doe@example.com\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -572,7 +572,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Mr. Valentin Powlowski\",\"address\":\"weston.stiedemann@example.com\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Abbey Sanford\",\"address\":\"trudie80@example.net\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -673,7 +673,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"type\":\"Mobile\",\"name\":\"Antwan Hirthe\",\"number\":\"1-208-402-8295\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"},{\"id\":1,\"type\":\"Home\",\"name\":\"Ms. Izabella D'Amore DVM\",\"number\":\"+1-813-409-0604\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"type\":\"Mobile\",\"name\":\"Aric Bashirian\",\"number\":\"+1 (810) 277-2497\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},{\"id\":1,\"type\":\"Office\",\"name\":\"Antonette Rogahn\",\"number\":\"+16623417767\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": "OK"
                         },
                         {
@@ -740,7 +740,7 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\"data\":{\"id\":1,\"type\":\"Office\",\"name\":\"Estevan Rowe\",\"number\":\"1-848-981-7621\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"type\":\"Mobile\",\"name\":\"Della Prohaska\",\"number\":\"1-352-783-0893\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "Created"
                         },
                         {
@@ -816,7 +816,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"type\":\"Home\",\"name\":\"Genoveva Langworth III\",\"number\":\"1-660-604-4124\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"type\":\"Home\",\"name\":\"Mr. Chadrick Bergstrom\",\"number\":\"+1 (515) 963-3388\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -881,7 +881,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"Home\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":false}"
+                            "raw": "{\"type\":\"Mobile\",\"name\":\"John Doe\",\"number\":\"+1-956-745-2290\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -889,7 +889,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"type\":\"Office\",\"name\":\"Prof. Raheem Hirthe\",\"number\":\"+1 (520) 639-7265\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"type\":\"Home\",\"name\":\"Mrs. Macie Blick\",\"number\":\"678-435-6592\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -939,7 +939,7 @@
                             "query": [
                                 {
                                     "key": "type",
-                                    "value": "Shipping",
+                                    "value": "Billing",
                                     "description": "",
                                     "disabled": false
                                 },
@@ -962,7 +962,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/addresses?type=Shipping&search=25+Brookfield+Road&per_page=25&page=1",
+                            "raw": "{{baseUrl}}\/api\/v1\/customers\/:customer_id\/addresses?type=Billing&search=25+Brookfield+Road&per_page=25&page=1",
                             "variable": [
                                 {
                                     "id": "customer_id",
@@ -990,7 +990,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"type\":\"Shipping\",\"name\":\"Durgan Ltd\",\"line1\":\"330 Rhett Stravenue\",\"line2\":null,\"city\":\"New Ashton\",\"state\":\"North Carolina\",\"postal_code\":\"42652\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"},{\"id\":1,\"type\":\"Shipping\",\"name\":\"Lind-Wyman\",\"line1\":\"56773 Carissa Parks\",\"line2\":null,\"city\":\"Michaelaside\",\"state\":\"New Hampshire\",\"postal_code\":\"24803\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"type\":\"Shipping\",\"name\":\"Maggio, Pfannerstill and Gorczany\",\"line1\":\"36306 Payton Ports\",\"line2\":null,\"city\":\"Schimmelland\",\"state\":\"Arizona\",\"postal_code\":\"81860\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},{\"id\":1,\"type\":\"Shipping\",\"name\":\"West-Spencer\",\"line1\":\"442 Bergnaum Groves Suite 518\",\"line2\":null,\"city\":\"New Jeraldchester\",\"state\":\"Washington\",\"postal_code\":\"99237\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": "OK"
                         },
                         {
@@ -1049,7 +1049,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"Shipping\",\"name\":\"John Doe\",\"line1\":\"2592 Jada Key\",\"line2\":\"Apartment 504\",\"city\":\"South Josh\",\"state\":\"Kentucky\",\"postal_code\":\"62249-8453\",\"country\":\"United States\",\"is_default\":false}"
+                            "raw": "{\"type\":\"Shipping\",\"name\":\"John Doe\",\"line1\":\"2592 Jada Key\",\"line2\":\"Apartment 504\",\"city\":\"South Josh\",\"state\":\"Kentucky\",\"postal_code\":\"62249-8453\",\"country\":\"United States\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -1057,7 +1057,7 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\"data\":{\"id\":1,\"type\":\"Shipping\",\"name\":\"Dooley Inc\",\"line1\":\"57030 Kian Mountain\",\"line2\":null,\"city\":\"Franeckiside\",\"state\":\"Hawaii\",\"postal_code\":\"19909-9535\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"type\":\"Shipping\",\"name\":\"Terry-Gutkowski\",\"line1\":\"687 Genesis Rapids Apt. 608\",\"line2\":null,\"city\":\"Leathaland\",\"state\":\"North Dakota\",\"postal_code\":\"89712\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "Created"
                         },
                         {
@@ -1133,7 +1133,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"type\":\"Billing\",\"name\":\"Jacobi, Brakus and Collier\",\"line1\":\"6997 Rafael Cliffs Suite 633\",\"line2\":null,\"city\":\"Port Viviane\",\"state\":\"Alaska\",\"postal_code\":\"44499-3341\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"type\":\"Shipping\",\"name\":\"Schinner LLC\",\"line1\":\"65852 Kub Way\",\"line2\":null,\"city\":\"Billietown\",\"state\":\"Montana\",\"postal_code\":\"66409\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -1198,7 +1198,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"Shipping\",\"name\":\"John Doe\",\"line1\":\"2592 Jada Key\",\"line2\":\"Apartment 504\",\"city\":\"South Josh\",\"state\":\"Kentucky\",\"postal_code\":\"62249-8453\",\"country\":\"United States\",\"is_default\":false}"
+                            "raw": "{\"type\":\"Shipping\",\"name\":\"John Doe\",\"line1\":\"2592 Jada Key\",\"line2\":\"Apartment 504\",\"city\":\"South Josh\",\"state\":\"Kentucky\",\"postal_code\":\"62249-8453\",\"country\":\"United States\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -1206,7 +1206,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"type\":\"Shipping\",\"name\":\"Quitzon Group\",\"line1\":\"240 Bashirian Wells\",\"line2\":null,\"city\":\"East Milton\",\"state\":\"South Carolina\",\"postal_code\":\"10666\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"type\":\"Billing\",\"name\":\"Christiansen Inc\",\"line1\":\"97155 Beier Inlet Suite 996\",\"line2\":null,\"city\":\"Greenholtstad\",\"state\":\"Alaska\",\"postal_code\":\"30523\",\"country\":\"United States\",\"is_default\":true,\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -1293,7 +1293,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"Incidunt\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"},{\"id\":1,\"name\":\"Eligendi\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Eveniet\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},{\"id\":1,\"name\":\"Totam\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": "OK"
                         },
                         {
@@ -1352,7 +1352,7 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Repudiandae\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Consequatur\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "Created"
                         },
                         {
@@ -1422,7 +1422,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Voluptas\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Asperiores\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -1489,7 +1489,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Ut\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Sint\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -1641,7 +1641,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"Et Rerum Fuga\",\"sku\":\"MOM6UGDWJAKQYOVX\",\"description\":\"Omnis qui voluptate autem. Sit modi ea voluptates id. Libero tempore dolor nesciunt.\",\"unit_type\":\"cm\",\"unit_price\":72.57,\"supplier\":\"Cole-Braun\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"},{\"id\":1,\"name\":\"A Ab Et\",\"sku\":\"JMPM0MFEACATC49E\",\"description\":\"Praesentium et dolores similique vel. Fugit impedit tenetur quo dignissimos. Voluptatem laudantium vero non quaerat fugiat molestiae est.\",\"unit_type\":\"cm\",\"unit_price\":58.27,\"supplier\":\"Fadel PLC\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Facilis Est Possimus\",\"sku\":\"NPPLEGFZGTNRKUVZ\",\"description\":\"In ipsa consequatur rerum officiis consequatur. Exercitationem harum deleniti suscipit aut et voluptatem. Est commodi excepturi in amet tenetur asperiores.\",\"unit_type\":\"kg\",\"unit_price\":78.96,\"supplier\":\"Dare Inc\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},{\"id\":1,\"name\":\"Enim Eum Tempora\",\"sku\":\"ZBBCLFZZCM1SLR0V\",\"description\":\"Officiis facere labore quis. Voluptas velit est ut reiciendis sunt earum hic. Dolores omnis quaerat est eos voluptatem quam quos voluptate.\",\"unit_type\":\"kg\",\"unit_price\":43.12,\"supplier\":\"Franecki, Cremin and Haley\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": "OK"
                         },
                         {
@@ -1700,7 +1700,7 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Dolorem Itaque Magnam\",\"sku\":\"FVJCB9LFBZT8NWZM\",\"description\":\"Ex deserunt quasi nobis placeat aliquid sapiente ducimus. Quae rerum ut nemo. Molestias assumenda rerum beatae quam ducimus repudiandae soluta.\",\"unit_type\":\"kg\",\"unit_price\":16.59,\"supplier\":\"Steuber-Hettinger\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Dignissimos Sint Ad\",\"sku\":\"UTGFDQF80U9SX6KO\",\"description\":\"Occaecati distinctio perspiciatis accusamus non tenetur inventore saepe. In provident aut sit ut et eos. In dignissimos eveniet voluptas sint.\",\"unit_type\":\"cm\",\"unit_price\":27.2,\"supplier\":\"O'Conner, Altenwerth and Lakin\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "Created"
                         },
                         {
@@ -1770,7 +1770,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Natus Sint Minus\",\"sku\":\"3KARC45O2ZSD10CQ\",\"description\":\"Esse optio saepe ut ut placeat perferendis dolores. Ut magnam molestiae ex aut quia. Libero odit nostrum consequatur dolore.\",\"unit_type\":\"ounce\",\"unit_price\":51.81,\"supplier\":\"Little, Beer and Bruen\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Cupiditate Quis Expedita\",\"sku\":\"UN0YZ4BP3Z5TYM2F\",\"description\":\"Voluptatem deleniti animi maiores velit. Sit a blanditiis consequatur blanditiis. Odit voluptas error in dolorum unde alias.\",\"unit_type\":\"cm\",\"unit_price\":81.35,\"supplier\":\"Eichmann-Goldner\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -1837,7 +1837,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Cum Fugiat Ut\",\"sku\":\"1WAMREIOJ80S9N57\",\"description\":\"Explicabo sit nemo rerum molestiae fuga. Deleniti consectetur explicabo adipisci. Enim sunt est sit ullam consequatur laudantium perspiciatis id.\",\"unit_type\":\"each\",\"unit_price\":24.66,\"supplier\":\"Kunde Ltd\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Corporis Repudiandae A\",\"sku\":\"7LNSDNZKEAIMMKN9\",\"description\":\"Repudiandae qui distinctio corporis praesentium. Nesciunt velit sint est. Vel ea recusandae iste provident.\",\"unit_type\":\"each\",\"unit_price\":52.71,\"supplier\":\"Kihn-Langosh\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -1924,7 +1924,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"Quia\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"},{\"id\":1,\"name\":\"Maxime\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Deleniti\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},{\"id\":1,\"name\":\"Dicta\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
                             "name": "OK"
                         },
                         {
@@ -1983,7 +1983,7 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Veniam\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Distinctio\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "Created"
                         },
                         {
@@ -2053,7 +2053,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Sint\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Et\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -2120,7 +2120,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"Neque\",\"created_at\":\"2024-10-21 08:59:22\",\"updated_at\":\"2024-10-21 08:59:22\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Quo\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
                             "name": "OK"
                         },
                         {
@@ -2177,7 +2177,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"product_id\":1,\"category_ids\":[5]}"
+                            "raw": "{\"product_id\":1,\"category_ids\":[8]}"
                         },
                         "description": ""
                     },
@@ -2221,13 +2221,296 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "Services",
+            "description": "Service Management API",
+            "item": [
+                {
+                    "name": "List Services",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/services",
+                            "query": [
+                                {
+                                    "key": "search",
+                                    "value": "Software+Development",
+                                    "description": "Search for services by name",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "25",
+                                    "description": "Number of results per page (Min 25, Max 100)",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "1",
+                                    "description": "Page number",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/services?search=Software+Development&per_page=25&page=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Qui Repellat Perferendis\",\"description\":\"Dignissimos deserunt minus excepturi libero. Praesentium nihil quis enim quo necessitatibus soluta. Magni suscipit et omnis autem.\",\"unit_price\":28.05,\"supplier\":\"Langworth PLC\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"},{\"id\":1,\"name\":\"Voluptatibus Animi Molestiae\",\"description\":\"Architecto accusantium voluptate expedita eius a asperiores mollitia sunt. Similique nihil nostrum quam magnam sint velit ratione. Est necessitatibus voluptate tempora dolor.\",\"unit_price\":57.99,\"supplier\":\"Will, Legros and Upton\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":null,\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"path\":\"\\\/\",\"per_page\":25,\"to\":2}}",
+                            "name": "OK"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create Service",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/services",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/services"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Software Development\",\"description\":\"Rate for software development\",\"unit_price\":40.5,\"supplier\":\"Cardano Mercury Ltd\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Alias Optio Est\",\"description\":\"Mollitia debitis vel asperiores sequi tempore. Facilis quis qui enim tempore qui. Ut non eum ipsa incidunt eveniet corrupti et.\",\"unit_price\":61.73,\"supplier\":\"Goodwin, Heidenreich and Graham\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
+                            "name": "Created"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"field_name\": [\n            \"The field name is required.\"\n        ],\n        \"another_field\": [\n            \"The another field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
+                            "name": "Validation Failed"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Service",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/services\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/services\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the service."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Voluptate Soluta In\",\"description\":\"Harum sit delectus officia pariatur. Praesentium aperiam qui dolore aut perspiciatis ex. Esse numquam eum accusamus enim at corporis ad.\",\"unit_price\":25.62,\"supplier\":\"Oberbrunner-Bayer\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
+                            "name": "OK"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Service",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/services\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/services\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the service."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Software Development\",\"description\":\"Rate for software development\",\"unit_price\":40.5,\"supplier\":\"Cardano Mercury Ltd\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Omnis Labore Soluta\",\"description\":\"Eum commodi autem temporibus voluptates officia. Suscipit velit eos sed numquam. Magni possimus cumque illum quia quasi ab eius.\",\"unit_price\":29.65,\"supplier\":\"Boehm-Lehner\",\"created_at\":\"2024-10-21 21:57:18\",\"updated_at\":\"2024-10-21 21:57:18\"}}",
+                            "name": "OK"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}\n",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"Route or Record Not found\"\n}\n",
+                            "name": "Not Found"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"The POST method is not supported for route api\/v1\/customers\/1\/phones\/16. Supported methods: GET, HEAD, PUT, PATCH\"\n}\n",
+                            "name": "Bad Request"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n    \"message\": \"Validation Failed\",\n    \"fields\": {\n        \"field_name\": [\n            \"The field name is required.\"\n        ],\n        \"another_field\": [\n            \"The another field must not be greater than 64 characters.\"\n        ]\n    }\n}\n",
+                            "name": "Validation Failed"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Internal Server Error\"\n}\n",
+                            "name": "Internal Server Error"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "auth": {
         "type": "bearer",
         "bearer": [
             {
-                "key": "key",
+                "key": "header",
                 "type": "string"
             }
         ]

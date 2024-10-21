@@ -58,7 +58,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Incidunt","created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"},{"id":1,"name":"Eligendi","created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"Eveniet","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"},{"id":1,"name":"Totam","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -102,7 +102,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 3f1g4deEVDZa5a68kvbPhc6'
+      - 'Bearer D8Vba5chEPaeZd616fkg3v4'
     controller: null
     method: null
     route: null
@@ -144,7 +144,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"name":"Repudiandae","created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
+        content: '{"data":{"id":1,"name":"Consequatur","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
         headers: []
         description: Created
         custom: []
@@ -205,7 +205,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer aEDfek3vZb84VP6h1dca6g5'
+      - 'Bearer ca84h61b5kE3DdvgaV6eZPf'
     controller: null
     method: null
     route: null
@@ -247,7 +247,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Voluptas","created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
+        content: '{"data":{"id":1,"name":"Asperiores","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
         headers: []
         description: OK
         custom: []
@@ -291,7 +291,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ad85kb13V6fhvcgDPe64ZEa'
+      - 'Bearer 6V8vhgdfeDka43EcZ61P5ab'
     controller: null
     method: null
     route: null
@@ -344,7 +344,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Ut","created_at":"2024-10-21 08:59:22","updated_at":"2024-10-21 08:59:22"}}'
+        content: '{"data":{"id":1,"name":"Sint","created_at":"2024-10-21 21:57:18","updated_at":"2024-10-21 21:57:18"}}'
         headers: []
         description: OK
         custom: []
@@ -405,7 +405,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer c3Pvba61k485EDgZa6dfheV'
+      - 'Bearer v834Egka1hDe6Pd65bZfcaV'
     controller: null
     method: null
     route: null
@@ -520,7 +520,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer feZ8gvEc6k36PaDa154dhVb'
+      - 'Bearer DgV6v4ec3aZPE1hkdb56af8'
     controller: null
     method: null
     route: null
