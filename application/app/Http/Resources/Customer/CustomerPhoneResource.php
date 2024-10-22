@@ -16,7 +16,7 @@ class CustomerPhoneResource extends JsonResource
     {
         return [
             'id' => ($this->id ?? 1),
-            'type' => $this->type->value,
+            'type' => $this->type,
             'name' => $this->name,
             'number' => $this->number,
             'is_default' => (bool) $this->is_default,

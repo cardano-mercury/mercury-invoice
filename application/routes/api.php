@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\APIInvoicesController;
 use App\Http\Controllers\API\APIServicesController;
 use App\Http\Controllers\API\APIProductsController;
 use App\Http\Controllers\API\APICustomersController;
@@ -31,4 +32,6 @@ Route::prefix('v1')->middleware('auth:sanctum')->group(static function () {
     Route::resource('service-categories', APIServiceCategoriesController::class)->except(['create', 'edit', 'destroy']);
     Route::put('service-categories-sync', [APIServiceCategoriesController::class, 'sync']);
 
+    // Invoices
+    Route::resource('invoices', APIInvoicesController::class)->except(['create', 'edit', 'destroy']);
 });

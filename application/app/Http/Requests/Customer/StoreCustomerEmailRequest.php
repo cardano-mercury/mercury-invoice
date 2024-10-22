@@ -55,6 +55,9 @@ class StoreCustomerEmailRequest extends FormRequest
             'address' => [
                 'example' => 'john.doe@example.com',
             ],
+            'is_default' => [
+                'example' => true,
+            ],
         ];
     }
 }

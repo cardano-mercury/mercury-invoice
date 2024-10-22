@@ -63,6 +63,9 @@ class StoreCustomerPhoneRequest extends FormRequest
             'number' => [
                 'example' => '+1-956-745-2290',
             ],
+            'is_default' => [
+                'example' => true,
+            ],
         ];
     }
 }

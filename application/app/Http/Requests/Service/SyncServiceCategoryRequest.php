@@ -62,6 +62,12 @@ class SyncServiceCategoryRequest extends FormRequest
             'service_id' => [
                 'example' => 1,
             ],
+            'category_ids' => [
+                'example' => [1, 2, 3],
+            ],
+            'category_ids.*' => [
+                'example' => [1, 2, 3],
+            ],
         ];
     }
 }

@@ -37,7 +37,7 @@ endpoints:
         name: type
         description: ''
         required: false
-        example: Shipping
+        example: Billing
         type: string
         enumValues:
           - Billing
@@ -72,7 +72,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      type: Shipping
+      type: Billing
       search: '25 Brookfield Road'
       per_page: 25
       page: 1
@@ -82,7 +82,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"type":"Billing","name":"Balistreri-Beer","line1":"453 Gianni Heights","line2":null,"city":"East Mariannaton","state":"New Hampshire","postal_code":"84944","country":"United States","is_default":true,"created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"},{"id":1,"type":"Billing","name":"Hodkiewicz Inc","line1":"85372 Deanna Causeway Apt. 474","line2":null,"city":"New Pamelaborough","state":"Nebraska","postal_code":"28042","country":"United States","is_default":true,"created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"type":"Billing","name":"Mills Ltd","line1":"433 Ike Walks","line2":null,"city":"Lake Joycechester","state":"Maine","postal_code":"37676-5436","country":"United States","is_default":true,"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"},{"id":1,"type":"Billing","name":"Bayer Group","line1":"371 Nienow Extensions Suite 544","line2":null,"city":"Margretstad","state":"New Hampshire","postal_code":"68158","country":"United States","is_default":true,"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -126,7 +126,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer EZabhg65dcv3k846eVaDfP1'
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
     controller: null
     method: null
     route: null
@@ -167,7 +167,7 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: Shipping
+        example: Billing
         type: string
         enumValues:
           - Billing
@@ -241,13 +241,13 @@ endpoints:
         name: is_default
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      type: Shipping
+      type: Billing
       name: 'John Doe'
       line1: '2592 Jada Key'
       line2: 'Apartment 504'
@@ -255,12 +255,12 @@ endpoints:
       state: Kentucky
       postal_code: 62249-8453
       country: 'United States'
-      is_default: true
+      is_default: false
     fileParameters: []
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"type":"Shipping","name":"Cummerata, Bergstrom and Von","line1":"2187 Metz Spur","line2":null,"city":"North Armandport","state":"Arizona","postal_code":"92767-4942","country":"United States","is_default":true,"created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"Gulgowski, Ritchie and Dibbert","line1":"88930 Treutel Bypass","line2":null,"city":"Ethanborough","state":"Nebraska","postal_code":"44829-5827","country":"United States","is_default":true,"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"}}'
         headers: []
         description: Created
         custom: []
@@ -321,7 +321,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer adkcbEve86h1aDPfg53Z64V'
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
     controller: null
     method: null
     route: null
@@ -373,7 +373,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Shipping","name":"Homenick, Gaylord and Kuvalis","line1":"12004 Bartoletti Valley Apt. 270","line2":null,"city":"New Alexandremouth","state":"Virginia","postal_code":"24235-0445","country":"United States","is_default":true,"created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"Mills Ltd","line1":"433 Ike Walks","line2":null,"city":"Lake Joycechester","state":"Maine","postal_code":"37676-5436","country":"United States","is_default":true,"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"}}'
         headers: []
         description: OK
         custom: []
@@ -417,7 +417,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P816D4c5feZ3kEvhVgaabd6'
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
     controller: null
     method: null
     route: null
@@ -469,7 +469,7 @@ endpoints:
         name: type
         description: ''
         required: true
-        example: Shipping
+        example: Billing
         type: string
         enumValues:
           - Billing
@@ -543,13 +543,13 @@ endpoints:
         name: is_default
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      type: Shipping
+      type: Billing
       name: 'John Doe'
       line1: '2592 Jada Key'
       line2: 'Apartment 504'
@@ -557,12 +557,12 @@ endpoints:
       state: Kentucky
       postal_code: 62249-8453
       country: 'United States'
-      is_default: true
+      is_default: false
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Shipping","name":"Shields, Feeney and Mayer","line1":"26115 Oswald Keys Apt. 333","line2":null,"city":"West Arnetown","state":"New Jersey","postal_code":"58503-9009","country":"United States","is_default":true,"created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"Gulgowski, Ritchie and Dibbert","line1":"88930 Treutel Bypass","line2":null,"city":"Ethanborough","state":"Nebraska","postal_code":"44829-5827","country":"United States","is_default":true,"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"}}'
         headers: []
         description: OK
         custom: []
@@ -623,7 +623,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VED5h14f6acvg3ZdeaP6k8b'
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
     controller: null
     method: null
     route: null

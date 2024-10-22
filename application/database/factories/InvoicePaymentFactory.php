@@ -30,6 +30,8 @@ class InvoicePaymentFactory extends Factory
             'crypto_asset_ada_price' => null,
             'crypto_asset_quantity' => null,
             'status' => Status::PENDING,
+            'created_at' => now()->toDateTimeString(),
+            'updated_at' => now()->toDateTimeString(),
         ];
     }
 }

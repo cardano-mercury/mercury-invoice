@@ -108,6 +108,9 @@ class StoreCustomerAddressRequest extends FormRequest
             'country' => [
                 'example' => 'United States',
             ],
+            'is_default' => [
+                'example' => true,
+            ],
         ];
     }
 }

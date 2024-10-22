@@ -60,7 +60,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Maiores Sed Architecto","description":"Facilis voluptatum doloribus similique. Vero dolorem consequuntur ut qui molestias sint. Nihil porro quos explicabo enim incidunt cupiditate consequuntur.","unit_price":66.78,"supplier":"Smitham Inc","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"},{"id":1,"name":"Veniam Dolores Eum","description":"Quaerat odit eius aliquam perferendis rerum reprehenderit. Asperiores fuga voluptatem delectus officia quas at quibusdam autem. Doloremque incidunt deserunt dolorem similique unde consequatur ut ad.","unit_price":5.67,"supplier":"Bailey-Lakin","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"At Aperiam Repellat","description":"Ea in et ducimus reiciendis tempora. Libero quos id autem id autem explicabo amet. Culpa maxime dolor quo.","unit_price":24.72,"supplier":"Nienow, Donnelly and Langworth","created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"},{"id":1,"name":"Perspiciatis Porro Fuga","description":"Dolorum sunt quis soluta quod fuga voluptas. Iste eligendi rerum porro nihil voluptate non. Possimus totam quam nesciunt omnis a qui maxime recusandae.","unit_price":34.97,"supplier":"Stehr-Smitham","created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -104,7 +104,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6DkV3fPdah645Zav8egEb1c'
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
     controller: null
     method: null
     route: null
@@ -176,7 +176,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"name":"Doloremque Quaerat Veniam","description":"Quaerat dolor laborum eos at est sequi. Officia incidunt velit est eum magni. Architecto voluptatem dolores explicabo dolorum quam.","unit_price":43.65,"supplier":"Abernathy, Collier and Haley","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
+        content: '{"data":{"id":1,"name":"Ipsa Saepe Autem","description":"Eveniet eaque qui quia voluptas suscipit provident minus ducimus. Reiciendis magni facere beatae. At aperiam repellat sit ea in et.","unit_price":34.79,"supplier":"Fadel, Satterfield and Ortiz","created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"}}'
         headers: []
         description: Created
         custom: []
@@ -237,7 +237,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer E1kg63hZeVafD58c6dabv4P'
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
     controller: null
     method: null
     route: null
@@ -279,7 +279,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Vitae Tempora Perspiciatis","description":"Nihil repellendus et blanditiis ratione praesentium non eligendi. Aut officiis quidem nostrum ducimus. Laborum deserunt enim voluptas.","unit_price":23.07,"supplier":"Schinner PLC","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
+        content: '{"data":{"id":1,"name":"Sit Ea In","description":"Ducimus reiciendis tempora omnis libero. Id autem id autem explicabo amet. Culpa maxime dolor quo.","unit_price":16.38,"supplier":"Nienow, Donnelly and Langworth","created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"}}'
         headers: []
         description: OK
         custom: []
@@ -323,7 +323,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kgEeZv6P634c8fVb1dahD5a'
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
     controller: null
     method: null
     route: null
@@ -406,7 +406,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Sequi Odio Delectus","description":"Quis ut culpa repudiandae odit expedita praesentium ipsam. Facere cum sunt blanditiis ea eum labore recusandae. Suscipit architecto omnis nesciunt tempora a enim.","unit_price":56.56,"supplier":"Crist Ltd","created_at":"2024-10-21 23:46:48","updated_at":"2024-10-21 23:46:48"}}'
+        content: '{"data":{"id":1,"name":"Maiores Eveniet Eaque","description":"Quia voluptas suscipit provident minus ducimus aperiam reiciendis. Facere beatae id at aperiam. Sit ea in et ducimus reiciendis tempora omnis libero.","unit_price":32.59,"supplier":"Hirthe, Rippin and Hirthe","created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"}}'
         headers: []
         description: OK
         custom: []
@@ -467,7 +467,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d66hEe15kVZD3Pga4afcbv8'
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
     controller: null
     method: null
     route: null

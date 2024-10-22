@@ -20,6 +20,8 @@ class InvoiceActivityFactory extends Factory
         return [
             'invoice_id' => 0,
             'activity' => 'Viewed Invoice',
+            'created_at' => now()->toDateTimeString(),
+            'updated_at' => now()->toDateTimeString(),
         ];
     }
 }
