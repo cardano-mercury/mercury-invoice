@@ -45,7 +45,7 @@ db-refresh:
 
 .PHONY: api-docs
 api-docs:
-	docker exec -it cardanomercury-web bash -c "php artisan scribe:generate"
+	docker exec -it cardanomercury-web bash -c "php artisan scribe:generate --force"
 
 .PHONY: tinker
 tinker:

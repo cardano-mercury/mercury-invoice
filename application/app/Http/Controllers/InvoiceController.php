@@ -228,6 +228,11 @@ class InvoiceController extends Controller
      */
     public function update(StoreInvoiceRequest $request, Invoice $invoice): RedirectResponse
     {
+        if ($invoice->status !== Status::DRAFT) {
+            session()->flash('error', 'Only draft invoices can be edited.');
+            return to_route('invoices.show', $this->encodeId($invoice->id));
+        }
+
         if ($request->validated('save_mode') === 'Draft') {
             $status = Status::DRAFT;
         } else {

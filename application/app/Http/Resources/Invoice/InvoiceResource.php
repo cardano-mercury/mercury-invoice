@@ -29,10 +29,10 @@ class InvoiceResource extends JsonResource
          */
         if ($request->server('SERVER_NAME') === 'localhost' &&
             $request->server('HTTP_USER_AGENT') === 'Symfony' &&
-            $request->routeIs('invoices.index', 'invoices.show')
+            $request->routeIs('invoices.*')
         ) {
             $items = InvoiceItemResource::collection(InvoiceItem::factory(2)->make());
-            if ($request->routeIs('invoices.show')) {
+            if ($request->routeIs('invoices.show', 'invoices.store')) {
                 $customer = new CustomerResource(Customer::factory()->make());
                 $billingAddress = new CustomerAddressResource(Address::factory()->make());
                 $shippingAddress = new CustomerAddressResource(Address::factory()->make());

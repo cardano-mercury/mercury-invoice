@@ -34,4 +34,8 @@ Route::prefix('v1')->middleware('auth:sanctum')->group(static function () {
 
     // Invoices
     Route::resource('invoices', APIInvoicesController::class)->except(['create', 'edit', 'destroy']);
+    Route::put('invoice-void/{invoice}', [APIInvoicesController::class, 'void']);
+    Route::put('invoice-restore/{invoice}', [APIInvoicesController::class, 'restore']);
+    Route::put('invoice-send-reminder-notifications/{invoice}', [APIInvoicesController::class, 'sendReminderNotifications']);
+    Route::put('invoice-manually-mark-as-paid/{invoice}', [APIInvoicesController::class, 'manuallyMarkAsPaid']);
 });

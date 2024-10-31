@@ -60,7 +60,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-77733849","currency":"USD","total":0,"issue_date":"2024-10-22","due_date":"2024-11-21","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51","items":[{"product_id":null,"service_id":null,"sku":"ZZQTLY4UBKNAIFCJ","description":"At aperiam repellat sit ea in et.","quantity":4,"unit_price":90.94,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"VOPA0GKFTEKZLUKK","description":"Omnis libero quos id autem.","quantity":5,"unit_price":36.91,"tax_rate":20}]},{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-17111332","currency":"USD","total":0,"issue_date":"2024-10-22","due_date":"2024-11-21","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51","items":[{"product_id":null,"service_id":null,"sku":"ACNFWWYUBYSRLIQZ","description":"Amet quae culpa maxime dolor.","quantity":5,"unit_price":15.64,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"L9FWDCFOXBEVOIEN","description":"Quidem velit sint perspiciatis porro fuga tempore dolorum.","quantity":4,"unit_price":29.01,"tax_rate":20}]}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-65947156","currency":"USD","total":0,"issue_date":"2024-10-31","due_date":"2024-11-30","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59","items":[{"product_id":null,"service_id":null,"sku":"NEGAM5YEFQSHQXHQ","description":"Minima et quasi veritatis pariatur sit nihil.","quantity":3,"unit_price":57.59,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"SQBH9GMC7YJHG6BT","description":"Quas mollitia velit eligendi molestiae expedita eaque.","quantity":6,"unit_price":47.65,"tax_rate":20}]},{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-77617949","currency":"USD","total":0,"issue_date":"2024-10-31","due_date":"2024-11-30","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59","items":[{"product_id":null,"service_id":null,"sku":"WGU9FQS9ZZRRH5DY","description":"Possimus aperiam dolores quos sint.","quantity":2,"unit_price":54,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"LODVSZTHFMC2UQQC","description":"Qui odit unde totam quaerat.","quantity":2,"unit_price":14.19,"tax_rate":20}]}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -119,7 +119,10 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Create Invoice'
-      description: ''
+      description: |-
+        When invoices are created in <strong>Published</strong> status,
+        the invoice will go live and no further changes can be made and
+        email notifications will be sent to the specified <code>customer_email_ids</code> in the request body.
       authenticated: true
       custom: []
     headers:
@@ -130,10 +133,237 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      customer_id:
+        name: customer_id
+        description: 'ID of the customer, whom the invoice is being generated for.'
+        required: true
+        example: 1
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      customer_email_ids:
+        name: customer_email_ids
+        description: 'Array of email IDs associated with the customer (who will receive email notifications).'
+        required: true
+        example:
+          - 1
+        type: 'integer[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      billing_address_id:
+        name: billing_address_id
+        description: 'ID of the customer address, to be used as billing address.'
+        required: false
+        example: 4
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      shipping_address_id:
+        name: shipping_address_id
+        description: 'ID of the customer address, to be used as shipping address.'
+        required: false
+        example: 7
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      customer_reference:
+        name: customer_reference
+        description: 'Must not be greater than 64 characters.'
+        required: false
+        example: INV-1234
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      issue_date:
+        name: issue_date
+        description: 'Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: true
+        example: '2024-01-31'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      due_date:
+        name: due_date
+        description: 'Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: true
+        example: '2024-02-14'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      items:
+        name: items
+        description: ''
+        required: false
+        example:
+          -
+            product_id: 3
+            service_id: null
+            sku: ABC123
+            description: 'My product name'
+            quantity: 1
+            unit_price: 4.99
+            tax_rate: 20
+          -
+            product_id: null
+            service_id: 4
+            sku: null
+            description: 'My service name'
+            quantity: 3
+            unit_price: 10.5
+            tax_rate: 20
+          -
+            product_id: null
+            service_id: null
+            sku: null
+            description: 'My free text line (e.g. misc charges)'
+            quantity: 1
+            unit_price: 9.99
+            tax_rate: 20
+          -
+            product_id: null
+            service_id: null
+            sku: null
+            description: Discount
+            quantity: 1
+            unit_price: -5.99
+            tax_rate: 0
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      save_mode:
+        name: save_mode
+        description: ''
+        required: true
+        example: Draft
+        type: string
+        enumValues:
+          - Draft
+          - Publish
+        exampleWasSpecified: false
+        custom: []
+      'items[].product_id':
+        name: 'items[].product_id'
+        description: 'Optional: ID of the product you are selling.'
+        required: false
+        example: 7
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'items[].service_id':
+        name: 'items[].service_id'
+        description: 'Optional: ID of the service you are selling.'
+        required: false
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'items[].sku':
+        name: 'items[].sku'
+        description: 'Optional: Stock Keeping Unit of the product you are selling (related to product_id). Must not be greater than 32 characters.'
+        required: false
+        example: XYZ-1234
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'items[].description':
+        name: 'items[].description'
+        description: 'Must be at least 3 characters. Must not be greater than 1024 characters.'
+        required: true
+        example: 'My free text line (e.g. misc charges)'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'items[].quantity':
+        name: 'items[].quantity'
+        description: 'Must be at least 0.000001.'
+        required: true
+        example: 10.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'items[].unit_price':
+        name: 'items[].unit_price'
+        description: 'Price of single unit, can be negative value (for giving discount).'
+        required: true
+        example: 4.99
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'items[].tax_rate':
+        name: 'items[].tax_rate'
+        description: 'Must be at least 0. Must not be greater than 100.'
+        required: true
+        example: 22.5
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      customer_id: 1
+      customer_email_ids:
+        - 1
+      billing_address_id: 4
+      shipping_address_id: 7
+      customer_reference: INV-1234
+      issue_date: '2024-01-31'
+      due_date: '2024-02-14'
+      items:
+        -
+          product_id: 3
+          service_id: null
+          sku: ABC123
+          description: 'My product name'
+          quantity: 1
+          unit_price: 4.99
+          tax_rate: 20
+        -
+          product_id: null
+          service_id: 4
+          sku: null
+          description: 'My service name'
+          quantity: 3
+          unit_price: 10.5
+          tax_rate: 20
+        -
+          product_id: null
+          service_id: null
+          sku: null
+          description: 'My free text line (e.g. misc charges)'
+          quantity: 1
+          unit_price: 9.99
+          tax_rate: 20
+        -
+          product_id: null
+          service_id: null
+          sku: null
+          description: Discount
+          quantity: 1
+          unit_price: -5.99
+          tax_rate: 0
+      save_mode: Draft
     fileParameters: []
     responses:
+      -
+        status: 201
+        content: '{"data":{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-46606383","currency":"USD","total":0,"issue_date":"2024-10-31","due_date":"2024-11-30","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59","items":[{"product_id":null,"service_id":null,"sku":"Y9BAJKVUM0FZTPUK","description":"Ullam id amet in ipsa saepe autem maiores.","quantity":6,"unit_price":7.8,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"V7KIPUTQEDBLZZSH","description":"Quia voluptas suscipit provident minus ducimus aperiam reiciendis.","quantity":2,"unit_price":70.73,"tax_rate":20}],"customer":{"id":1,"name":"Korbin Stark","tax_number":"01JBG2MH3C1EH5CQ2DE067M44R","tax_rate":17.5,"categories":[],"defaultEmail":null,"defaultPhone":null,"defaultAddress":null,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"billingAddress":{"id":1,"type":"Shipping","name":"Harber, Jacobs and Hyatt","line1":"3977 Ortiz Meadows","line2":null,"city":"Nathenbury","state":"California","postal_code":"04458","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"shippingAddress":{"id":1,"type":"Shipping","name":"Sawayn, Ratke and Fritsch","line1":"5198 Raynor Plaza Suite 621","line2":null,"city":"Martinmouth","state":"New Mexico","postal_code":"67144-0265","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"notificationRecipients":[{"id":1,"name":"Marta Tillman","address":"haven21@example.net","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},{"id":1,"name":"Jazmyn Johns","address":"poberbrunner@example.net","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"payments":[{"payment_date":"31-10-2024","payment_method":"Stripe","payment_currency":"USD","payment_amount":6407067.16,"payment_reference":"1FgEukBwviuGNyLt","crypto_asset_name":null,"crypto_asset_ada_price":null,"crypto_asset_quantity":0,"crypto_wallet_name":null,"crypto_payment_ttl":null,"crypto_payment_recipient_address":null,"crypto_payment_last_checked":null,"crypto_payment_process_attempts":null,"crypto_payment_last_error":null,"status":"Pending"}],"activities":[{"activity":"Created new invoice","when":"2024-10-31 01:21:59","diff":"0 seconds ago"}]}}'
+        headers: []
+        description: Created
+        custom: []
       -
         status: 401
         content: |
@@ -160,6 +390,23 @@ endpoints:
           }
         headers: []
         description: 'Bad Request'
+        custom: []
+      -
+        status: 422
+        content: |
+          {
+              "message": "Validation Failed",
+              "fields": {
+                  "field_name": [
+                      "The field name is required."
+                  ],
+                  "another_field": [
+                      "The another field must not be greater than 64 characters."
+                  ]
+              }
+          }
+        headers: []
+        description: 'Validation Failed'
         custom: []
       -
         status: 500
@@ -216,7 +463,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-64220369","currency":"USD","total":0,"issue_date":"2024-10-22","due_date":"2024-11-21","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51","items":[{"product_id":null,"service_id":null,"sku":"ITFP22OPUYWFOJJY","description":"Aperiam repellat sit ea in et ducimus reiciendis.","quantity":3,"unit_price":41.17,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"OIALHG52RZFSGNKV","description":"Quos id autem id autem explicabo amet.","quantity":2,"unit_price":44.65,"tax_rate":20}],"customer":{"id":1,"name":"Olga Ratke","tax_number":"01JASKTJDMXPFMD81V8F1AR3Y2","tax_rate":17.5,"categories":[{"id":1,"name":"Veritatis","created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"}],"defaultEmail":{"id":1,"name":"Prof. Bailee Christiansen DDS","address":"atorphy@example.net","is_default":true,"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"},"defaultPhone":{"id":1,"type":"Office","name":"Martin Haag","number":"+1 (920) 975-1481","is_default":true,"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"},"defaultAddress":{"id":1,"type":"Billing","name":"Senger, Howe and Hagenes","line1":"2693 Quitzon Port Apt. 323","line2":null,"city":"North Holly","state":"Hawaii","postal_code":"44575-4408","country":"United States","is_default":true,"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"},"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"},"billingAddress":{"id":1,"type":"Billing","name":"Nienow, Donnelly and Langworth","line1":"762 Marquardt Glen Suite 740","line2":null,"city":"Margemouth","state":"Ohio","postal_code":"71850-9639","country":"United States","is_default":true,"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"},"shippingAddress":{"id":1,"type":"Shipping","name":"Effertz-Williamson","line1":"2417 Will Passage Suite 933","line2":null,"city":"Roxanefort","state":"New Mexico","postal_code":"04401","country":"United States","is_default":true,"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"},"notificationRecipients":[{"id":1,"name":"Mrs. Kaci Block","address":"steuber.aliza@example.net","is_default":true,"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"},{"id":1,"name":"Willow Sporer","address":"jamey42@example.net","is_default":true,"created_at":"2024-10-22 07:59:51","updated_at":"2024-10-22 07:59:51"}],"payments":[{"payment_date":"22-10-2024","payment_method":"Stripe","payment_currency":"USD","payment_amount":10,"payment_reference":"aHL1KEUg8AdP3qPG","crypto_asset_name":null,"crypto_asset_ada_price":null,"crypto_asset_quantity":0,"crypto_wallet_name":null,"crypto_payment_ttl":null,"crypto_payment_recipient_address":null,"crypto_payment_last_checked":null,"crypto_payment_process_attempts":null,"crypto_payment_last_error":null,"status":"Pending"}],"activities":[{"activity":"Viewed Invoice","when":"2024-10-22 07:59:51","diff":"0 seconds ago"}]}}'
+        content: '{"data":{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-77733849","currency":"USD","total":0,"issue_date":"2024-10-31","due_date":"2024-11-30","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59","items":[{"product_id":null,"service_id":null,"sku":"JOFV5CHKCGM5QEUA","description":"Id at aperiam repellat.","quantity":3,"unit_price":25.53,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"DM8RXQTQ0XI3TQJV","description":"Et ducimus reiciendis tempora omnis libero.","quantity":4,"unit_price":46.88,"tax_rate":20}],"customer":{"id":1,"name":"Nathen Hirthe Sr.","tax_number":"01JBG2MH3GQMB52S3102KHTRTJ","tax_rate":17.5,"categories":[{"id":1,"name":"Omnis","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"defaultEmail":{"id":1,"name":"Jamey Johnston","address":"tbins@example.net","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"defaultPhone":{"id":1,"type":"Home","name":"Prof. Bailee Christiansen DDS","number":"(951) 731-9262","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"defaultAddress":{"id":1,"type":"Shipping","name":"Hane, Bernhard and Wiegand","line1":"3148 Senger Junctions Apt. 970","line2":null,"city":"New Johann","state":"Oklahoma","postal_code":"32715-4045","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"billingAddress":{"id":1,"type":"Shipping","name":"Mayert PLC","line1":"725 Donnelly Motorway Suite 716","line2":null,"city":"Lorinemouth","state":"Indiana","postal_code":"74026-8152","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"shippingAddress":{"id":1,"type":"Billing","name":"Osinski, Luettgen and Powlowski","line1":"470 Nella Loop Apt. 157","line2":null,"city":"Willstad","state":"Oregon","postal_code":"64654-0112","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"notificationRecipients":[{"id":1,"name":"Roxane Smitham","address":"andrew80@example.com","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},{"id":1,"name":"Anika Brekke","address":"brogahn@example.net","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"payments":[{"payment_date":"31-10-2024","payment_method":"Stripe","payment_currency":"USD","payment_amount":8264848.28,"payment_reference":"TKix85jENTwPpajx","crypto_asset_name":null,"crypto_asset_ada_price":null,"crypto_asset_quantity":0,"crypto_wallet_name":null,"crypto_payment_ttl":null,"crypto_payment_recipient_address":null,"crypto_payment_last_checked":null,"crypto_payment_process_attempts":null,"crypto_payment_last_error":null,"status":"Pending"}],"activities":[{"activity":"Created new invoice","when":"2024-10-31 01:21:59","diff":"0 seconds ago"}]}}'
         headers: []
         description: OK
         custom: []
@@ -276,7 +523,10 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Update Invoice'
-      description: ''
+      description: |-
+        When invoices are updated to <strong>Published</strong> status,
+        the invoice will go live and no further changes can be made and
+        email notifications will be sent to the specified <code>customer_email_ids</code> in the request body.
       authenticated: true
       custom: []
     headers:
@@ -297,10 +547,598 @@ endpoints:
       id: 1
     queryParameters: []
     cleanQueryParameters: []
+    bodyParameters:
+      customer_id:
+        name: customer_id
+        description: 'ID of the customer, whom the invoice is being generated for.'
+        required: true
+        example: 1
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      customer_email_ids:
+        name: customer_email_ids
+        description: 'Array of email IDs associated with the customer (who will receive email notifications).'
+        required: true
+        example:
+          - 1
+        type: 'integer[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      billing_address_id:
+        name: billing_address_id
+        description: 'ID of the customer address, to be used as billing address.'
+        required: false
+        example: 4
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      shipping_address_id:
+        name: shipping_address_id
+        description: 'ID of the customer address, to be used as shipping address.'
+        required: false
+        example: 7
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      customer_reference:
+        name: customer_reference
+        description: 'Must not be greater than 64 characters.'
+        required: false
+        example: INV-1234
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      issue_date:
+        name: issue_date
+        description: 'Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: true
+        example: '2024-01-31'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      due_date:
+        name: due_date
+        description: 'Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: true
+        example: '2024-02-14'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      items:
+        name: items
+        description: ''
+        required: false
+        example:
+          -
+            product_id: 3
+            service_id: null
+            sku: ABC123
+            description: 'My product name'
+            quantity: 1
+            unit_price: 4.99
+            tax_rate: 20
+          -
+            product_id: null
+            service_id: 4
+            sku: null
+            description: 'My service name'
+            quantity: 3
+            unit_price: 10.5
+            tax_rate: 20
+          -
+            product_id: null
+            service_id: null
+            sku: null
+            description: 'My free text line (e.g. misc charges)'
+            quantity: 1
+            unit_price: 9.99
+            tax_rate: 20
+          -
+            product_id: null
+            service_id: null
+            sku: null
+            description: Discount
+            quantity: 1
+            unit_price: -5.99
+            tax_rate: 0
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      save_mode:
+        name: save_mode
+        description: ''
+        required: true
+        example: Draft
+        type: string
+        enumValues:
+          - Draft
+          - Publish
+        exampleWasSpecified: false
+        custom: []
+      'items[].product_id':
+        name: 'items[].product_id'
+        description: 'Optional: ID of the product you are selling.'
+        required: false
+        example: 7
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'items[].service_id':
+        name: 'items[].service_id'
+        description: 'Optional: ID of the service you are selling.'
+        required: false
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'items[].sku':
+        name: 'items[].sku'
+        description: 'Optional: Stock Keeping Unit of the product you are selling (related to product_id). Must not be greater than 32 characters.'
+        required: false
+        example: XYZ-1234
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'items[].description':
+        name: 'items[].description'
+        description: 'Must be at least 3 characters. Must not be greater than 1024 characters.'
+        required: true
+        example: 'My free text line (e.g. misc charges)'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'items[].quantity':
+        name: 'items[].quantity'
+        description: 'Must be at least 0.000001.'
+        required: true
+        example: 10.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'items[].unit_price':
+        name: 'items[].unit_price'
+        description: 'Price of single unit, can be negative value (for giving discount).'
+        required: true
+        example: 4.99
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'items[].tax_rate':
+        name: 'items[].tax_rate'
+        description: 'Must be at least 0. Must not be greater than 100.'
+        required: true
+        example: 22.5
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      customer_id: 1
+      customer_email_ids:
+        - 1
+      billing_address_id: 4
+      shipping_address_id: 7
+      customer_reference: INV-1234
+      issue_date: '2024-01-31'
+      due_date: '2024-02-14'
+      items:
+        -
+          product_id: 3
+          service_id: null
+          sku: ABC123
+          description: 'My product name'
+          quantity: 1
+          unit_price: 4.99
+          tax_rate: 20
+        -
+          product_id: null
+          service_id: 4
+          sku: null
+          description: 'My service name'
+          quantity: 3
+          unit_price: 10.5
+          tax_rate: 20
+        -
+          product_id: null
+          service_id: null
+          sku: null
+          description: 'My free text line (e.g. misc charges)'
+          quantity: 1
+          unit_price: 9.99
+          tax_rate: 20
+        -
+          product_id: null
+          service_id: null
+          sku: null
+          description: Discount
+          quantity: 1
+          unit_price: -5.99
+          tax_rate: 0
+      save_mode: Draft
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-78143805","currency":"USD","total":0,"issue_date":"2024-10-31","due_date":"2024-11-30","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59","items":[{"product_id":null,"service_id":null,"sku":"IZN9NCQBZU0DO3RX","description":"Id amet in ipsa saepe autem.","quantity":6,"unit_price":45.38,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"FS1RPTQRSXWTRMJA","description":"Qui quia voluptas suscipit.","quantity":4,"unit_price":71.8,"tax_rate":20}]}}'
+        headers: []
+        description: OK
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 422
+        content: |
+          {
+              "message": "Validation Failed",
+              "fields": {
+                  "field_name": [
+                      "The field name is required."
+                  ],
+                  "another_field": [
+                      "The another field must not be greater than 64 characters."
+                  ]
+              }
+          }
+        headers: []
+        description: 'Validation Failed'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/invoice-void/{invoice_id}'
+    metadata:
+      groupName: Invoices
+      groupDescription: 'Invoice Management API'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Void Invoice'
+      description: 'Marks the invoice as <strong>Voided</strong> status, so the customer will not be expected to pay the invoice.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      invoice_id:
+        name: invoice_id
+        description: 'The ID of the invoice.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      invoice_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
+      -
+        status: 204
+        content: 'null'
+        headers: []
+        description: 'Invoice Voided'
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/invoice-restore/{invoice_id}'
+    metadata:
+      groupName: Invoices
+      groupDescription: 'Invoice Management API'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Restore Invoice'
+      description: 'Restores <strong>Voided</strong> invoice back into <strong>Draft</strong> status, so that it can be further updated.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      invoice_id:
+        name: invoice_id
+        description: 'The ID of the invoice.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      invoice_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: 'null'
+        headers: []
+        description: 'Invoice Restored'
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/invoice-send-reminder-notifications/{invoice_id}'
+    metadata:
+      groupName: Invoices
+      groupDescription: 'Invoice Management API'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Send Invoice Reminder Notifications'
+      description: 'Sends invoice reminders to all recipients attached to the invoice, can only be used once a day on published invoices.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      invoice_id:
+        name: invoice_id
+        description: 'The ID of the invoice.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      invoice_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: 'null'
+        headers: []
+        description: 'Invoice Reminder Notifications Sent'
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/invoice-manually-mark-as-paid/{invoice_id}'
+    metadata:
+      groupName: Invoices
+      groupDescription: 'Invoice Management API'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Manually Mark Invoice As Paid'
+      description: 'Updates the invoice status to <strong>Paid</strong> manually, without processing any form of payments.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      invoice_id:
+        name: invoice_id
+        description: 'The ID of the invoice.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      invoice_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: 'null'
+        headers: []
+        description: 'Invoice Reminder Notifications Sent'
+        custom: []
       -
         status: 401
         content: |
