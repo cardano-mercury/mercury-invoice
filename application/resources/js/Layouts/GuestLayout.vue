@@ -1,5 +1,5 @@
 <script setup>
-import {Head} from "@inertiajs/vue3";
+import {Head, Link} from "@inertiajs/vue3";
 import applicationLogo from "@/media/mercury-logo-full.png";
 
 defineProps({
@@ -40,8 +40,17 @@ defineProps({
             <slot/>
         </v-main>
         <v-footer app>
-            <v-container class="text-center">
+            <v-container class="text-center text-sm-body-2">
                 Cardano Mercury: Invoice v{{ $page.props.appVersion }}
+                <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="d-inline">
+                    <a target="_blank" :href="route('terms.show')">
+                        Terms of Service
+                    </a>
+                    &nbsp;
+                    <a target="_blank" :href="route('policy.show')">
+                        Privacy Policy
+                    </a>
+                </div>
             </v-container>
         </v-footer>
     </v-app>

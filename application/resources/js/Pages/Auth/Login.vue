@@ -47,16 +47,19 @@ const submit = () => {
                                       type="email" required autofocus
                                       autocomplete="username"
                                       label="Type your email..."
-                                      prepend-icon="mdi-email-outline"/>
+                                      prepend-icon="mdi-email-outline"
+                                      :error-messages="form.errors.email"/>
                         <v-text-field id="password" v-model="form.password"
                                       type="password" required
                                       autocomplete="current-password"
                                       prepend-icon="mdi-lock-outline"
-                                      label="Type your password..."/>
-                        <v-row align="start">
+                                      label="Type your password..."
+                                      :error-messages="form.errors.password"/>
+                        <v-row align="center" justify="center">
                             <v-col cols="12" md="6">
                                 <v-checkbox v-model="form.remember"
                                             name="remember"
+                                            hide-details
                                             label="Remember me"/>
                             </v-col>
                             <v-col cols="12" md="6">

@@ -41,7 +41,8 @@ const submit = () => {
                                       type="email" required autofocus
                                       autocomplete="username"
                                       label="Email..."
-                                      prepend-icon="mdi-email-outline"/>
+                                      prepend-icon="mdi-email-outline"
+                                      :error-messages="form.errors.email"/>
                         <v-btn type="submit" color="black" variant="flat"
                                size="large" block :disabled="form.processing"
                                :loading="form.processing">

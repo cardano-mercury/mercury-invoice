@@ -41,7 +41,8 @@ const submit = () => {
                                       type="password" required
                                       autocomplete="current-password"
                                       prepend-icon="mdi-lock-outline"
-                                      label="Type your password..."/>
+                                      label="Type your password..."
+                                      :error-messages="form.errors.password"/>
                         <v-btn type="submit" color="black" variant="flat"
                                size="large" block>
                             Confirm

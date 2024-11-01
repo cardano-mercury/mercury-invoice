@@ -34,29 +34,38 @@ const submit = () => {
                         <v-text-field id="name" v-model="form.name" type="text"
                                       required autofocus autocomplete="name"
                                       label="Name..."
-                                      prepend-icon="mdi-account"/>
+                                      prepend-icon="mdi-account"
+                                      :error-messages="form.errors.name"/>
                         <v-text-field id="email" v-model="form.email"
                                       type="email" required autofocus
                                       autocomplete="username"
                                       label="Email..."
-                                      prepend-icon="mdi-email-outline"/>
+                                      prepend-icon="mdi-email-outline"
+                                      :error-messages="form.errors.email"/>
                         <v-text-field id="password" v-model="form.password"
                                       type="password" required
                                       autocomplete="new-password"
                                       prepend-icon="mdi-lock-outline"
-                                      label="Password..."/>
+                                      label="Password..."
+                                      :error-messages="form.errors.password"/>
                         <v-text-field id="password_confirmation"
                                       v-model="form.password_confirmation"
                                       type="password" required
                                       autocomplete="new-password"
                                       prepend-icon="mdi-lock-outline"
-                                      label="Confirm password..."/>
-                        <v-checkbox v-model="form.terms"
-                                    name="remember" required>
+                                      label="Confirm password..."
+                                      :error-messages="form.errors.password_confirmation"/>
+                        <v-checkbox v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" v-model="form.terms"
+                                    name="terms"
+                                    required
+                                    :error-messages="form.errors.terms">
                             <template v-slot:label>
-                                I have read and agree to the &nbsp;
-                                <Link>
-                                    Terms and Conditions
+                                I agree to the&nbsp;
+                                <Link target="_blank" :href="route('terms.show')">
+                                    Terms of Service
+                                </Link>&nbsp;and&nbsp;
+                                <Link target="_blank" :href="route('policy.show')">
+                                    Privacy Policy
                                 </Link>
                             </template>
                         </v-checkbox>

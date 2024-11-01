@@ -62,7 +62,7 @@ const submit = () => {
                                           inputmode="numeric" autofocus
                                           autocomplete="one-time-code"
                                           label="Code"
-                            />
+                                          :error-messages="form.errors.code"/>
                         </template>
                         <template v-else>
                             <v-text-field id="recovery_code"
@@ -72,7 +72,7 @@ const submit = () => {
                                           inputmode="numeric" autofocus
                                           autocomplete="one-time-code"
                                           label="Recovery Code"
-                            />
+                                          :error-messages="form.errors.recovery_code"/>
                         </template>
                         <v-btn type="button" color="primary" block class="mb-4"
                                @click.prevent="toggleRecovery">

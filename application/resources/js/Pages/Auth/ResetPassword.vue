@@ -41,18 +41,21 @@ const submit = () => {
                                       type="email" required autofocus
                                       autocomplete="username"
                                       label="Email..."
-                                      prepend-icon="mdi-email-outline"/>
+                                      prepend-icon="mdi-email-outline"
+                                      :error-messages="form.errors.email"/>
                         <v-text-field id="password" v-model="form.password"
                                       type="password" required
                                       autocomplete="new-password"
                                       prepend-icon="mdi-lock-outline"
-                                      label="Password..."/>
+                                      label="Password..."
+                                      :error-messages="form.errors.password"/>
                         <v-text-field id="password_confirmation"
                                       v-model="form.password_confirmation"
                                       type="password" required
                                       autocomplete="new-password"
                                       prepend-icon="mdi-lock-outline"
-                                      label="Confirm password..."/>
+                                      label="Confirm password..."
+                                      :error-messages="form.errors.password_confirmation"/>
                         <v-btn type="submit" color="black" variant="flat"
                                size="large" block :disabled="form.processing"
                                :loading="form.processing">
