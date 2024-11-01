@@ -1,8 +1,131 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import { Link, router } from "@inertiajs/vue3";
+import {Link, router} from "@inertiajs/vue3";
+import {computed} from "vue";
 
-const props = defineProps({errors: Object, invoice: Object})
+const props = defineProps({errors: Object, invoice: Object});
+
+const item_headers = [
+    {
+        title: 'SKU',
+        align: 'start',
+        sortable: true,
+        key: 'sku'
+    },
+    {
+        title: 'Description',
+        align: 'start',
+        sortable: false,
+        key: 'description'
+    },
+    {
+        title: 'Quantity',
+        align: 'start',
+        sortable: true,
+        key: 'quantity'
+    },
+    {
+        title: `Unit Price (${props.invoice.currency})`,
+        align: 'start',
+        sortable: true,
+        key: 'unit_price'
+    },
+    {
+        title: 'Tax Rate',
+        align: 'start',
+        sortable: true,
+        key: 'tax_rate'
+    }
+];
+
+const payment_headers = [
+    {
+        title: 'Date',
+        align: 'start',
+        sortable: true,
+        key: 'payment_date'
+    },
+    {
+        title: 'Method',
+        align: 'start',
+        sortable: true,
+        key: 'payment_method'
+    },
+    {
+        title: 'Currency',
+        align: 'start',
+        sortable: true,
+        key: 'payment_currency'
+    },
+    {
+        title: 'Amount',
+        align: 'start',
+        sortable: true,
+        key: 'payment_amount'
+    },
+    {
+        title: 'Reference',
+        align: 'start',
+        sortable: true,
+        key: 'payment_reference'
+    },
+    {
+        title: 'Status',
+        align: 'start',
+        sortable: true,
+        key: 'status'
+    },
+];
+
+const activity_headers = [
+    {
+        title: 'Date & Time',
+        align: 'start',
+        sortable: true,
+        key: 'formatted_datetime.datetime'
+    },
+    {
+        title: 'Activity',
+        align: 'start',
+        sortable: true,
+        key: 'activity'
+    }
+];
+
+const billing_address = computed(() => {
+    return makeFormattedAddress(props.invoice.billing_address);
+});
+
+const shipping_address = computed(() => {
+    return makeFormattedAddress(props.invoice.shipping_address);
+});
+
+const getAddressLines = (address) => {
+    let response = ``;
+    if (address === null || address === undefined) {
+        return response;
+    }
+    if (address.line1) {
+        response += `${address.line1}\r`;
+    }
+    if (address.line2) {
+        response += `${address.line2}\r`;
+    }
+    if (address.line3) {
+        response += `${address.line3}\r`;
+    }
+    return response;
+}
+
+const makeFormattedAddress = (address) => {
+    if (address === null || address === undefined) {
+        return ``;
+    }
+    const lines = getAddressLines(address);
+    return `${lines}
+${address.city}, ${address.state} ${address.postal_code}
+${address.country}`;
+}
 
 const calculateSubTotal = () => {
     let result = 0.00;
@@ -34,7 +157,7 @@ const calculateGrandTotal = () => {
 function voidInvoice(invoice) {
     const response = confirm(`Are you sure you want to void this invoice: ${invoice.invoice_reference}?`);
     if (response) {
-        router.visit(route('invoices.void', invoice.invoice_reference), { method: 'get' });
+        router.visit(route('invoices.void', invoice.invoice_reference), {method: 'get'});
     }
 }
 
@@ -43,301 +166,153 @@ function voidInvoice(invoice) {
 <template>
     <app-layout title="View Invoice">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight flex justify-between">
-                <span>View Invoice {{ invoice.invoice_reference }}</span>
-                <span :class="`font-medium status-${invoice.status.replace(' ', '_')}`">{{ invoice.status }}</span>
-            </h2>
+            <h1>
+                View Invoice:
+                {{ invoice.invoice_reference }}
+                <v-chip label>{{ invoice.status }}</v-chip>
+            </h1>
+            <!--            <h2 class="font-semibold text-xl text-gray-800 leading-tight flex justify-between">
+                            <span>View Invoice {{ invoice.invoice_reference }}</span>
+                            <span :class="`font-medium status-${invoice.status.replace(' ', '_')}`">{{ invoice.status }}</span>
+                        </h2>-->
         </template>
-        <div class="py-12">
-
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-6">
-                <h1 class="font-semibold text-xl text-gray-800 leading-tight">Details</h1>
-            </div>
-
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-6">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="p-6 lg:p-8 bg-white border-b border-gray-200">
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">
-                                Customer
-                            </label>
-                            <input
-                                :value="invoice.customer.name"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                disabled
-                                readonly />
-                            <span class="sm-badge">Tax Rate {{ parseFloat(invoice.customer.tax_rate ?? 0) }}%</span>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">
-                                Notification Recipients
-                            </label>
-                            <span v-for="(recipient, index) in invoice.recipients" :key="recipient.id" class="badge">
-                                #{{ index + 1 }} {{ recipient.name }} ({{ recipient.address }})
-                            </span>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">
-                                Billing Address
-                            </label>
-                            <input
-                                v-if="invoice.billing_address"
-                                :value="[invoice.billing_address.line1, invoice.billing_address.line2, invoice.billing_address.city, invoice.billing_address.state, invoice.billing_address.postal_code, invoice.billing_address.country].filter(n => n).join(', ')"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                disabled
-                                readonly />
-                            <input
-                                v-else
-                                value="None Specified"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                disabled
-                                readonly />
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">
-                                Billing Address
-                            </label>
-                            <input
-                                v-if="invoice.shipping_address"
-                                :value="[invoice.shipping_address.line1, invoice.shipping_address.line2, invoice.shipping_address.city, invoice.shipping_address.state, invoice.shipping_address.postal_code, invoice.shipping_address.country].filter(n => n).join(', ')"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                disabled
-                                readonly />
-                            <input
-                                v-else
-                                value="None Specified"
-                                class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                disabled
-                                readonly />
-                        </div>
-
-                        <table>
-                            <tr>
-                                <td>
-                                    <div class="mb-4">
-                                        <label class="block text-gray-700 text-sm font-bold mb-2">
-                                            Customer Reference
-                                        </label>
-                                        <input
-                                            placeholder="None Specified"
-                                            :value="invoice.customer_reference"
-                                            class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                            disabled
-                                            readonly />
-                                    </div>
-                                </td>
-                                <td>&nbsp;</td>
-                                <td>
-                                    <div class="mb-4">
-                                        <label class="block text-gray-700 text-sm font-bold mb-2">
-                                            Issue Date
-                                        </label>
-                                        <input
-                                            :value="invoice.issue_date"
-                                            class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                            disabled
-                                            readonly />
-                                    </div>
-                                </td>
-                                <td>&nbsp;</td>
-                                <td>
-                                    <div class="mb-4">
-                                        <label class="block text-gray-700 text-sm font-bold mb-2">
-                                            Due Date <span v-if="invoice.is_overdue" class="sm-badge-red">Late</span>
-                                        </label>
-                                        <input
-                                            :value="invoice.due_date"
-                                            class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                            disabled
-                                            readonly />
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-6">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="p-6 lg:p-8 bg-white border-b border-gray-200">
-
-                        <table class="border-separate border-spacing-2">
-                            <thead>
-                                <tr>
-                                    <th class="text-left" style="width: 25px;"></th>
-                                    <th class="text-left" style="width: 125px;">SKU</th>
-                                    <th class="text-left">Description</th>
-                                    <th class="text-left" style="width: 125px;">Quantity</th>
-                                    <th class="text-left" style="width: 125px;">Unit Price ({{ invoice.currency }})</th>
-                                    <th class="text-left" style="width: 125px;">Tax Rate (%)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="(item, index) in invoice.items" :key="index">
-                                    <td>
-                                        #{{ index + 1 }}
-                                    </td>
-                                    <td>
-                                        <input
-                                            :value="item.sku"
-                                            class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                            disabled
-                                            readonly />
-                                    </td>
-                                    <td>
-                                        <input
-                                            :value="item.description"
-                                            class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                            disabled
-                                            readonly />
-                                    </td>
-                                    <td>
-                                        <input
-                                            :value="parseFloat(item.quantity)"
-                                            class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                            disabled
-                                            readonly />
-                                    </td>
-                                    <td>
-                                        <input
-                                            :value="parseFloat(item.unit_price)"
-                                            class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                            disabled
-                                            readonly />
-                                    </td>
-                                    <td>
-                                        <input
-                                            :value="parseInt(item.tax_rate)"
-                                            class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                            disabled
-                                            readonly />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-10">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="p-6 lg:p-8 bg-white border-b border-gray-200">
-                        <table>
-                            <tr>
-                                <td>
-                                    <div v-if="invoice.status === 'Draft'" class="flex gap-2">
-                                        <Link :href="route('invoices.edit', invoice.invoice_reference)">
-                                            <button type="button" class="btn btn-blue">Edit Invoice</button>
-                                        </Link>
-
-                                        <button type="button" class="btn btn-red" @click="voidInvoice(props.invoice)">
-                                            Void Invoice
-                                        </button>
-                                    </div>
-
-                                    <div v-if="invoice.status === 'Published'" class="flex gap-2">
-                                        <Link :href="route('invoices.sendReminderNotifications', invoice.invoice_reference)">
-                                            <button type="button" class="btn btn-blue">Send Reminder Notifications</button>
-                                        </Link>
-
-                                        <Link :href="route('invoices.manuallyMarkAsPaid', invoice.invoice_reference)">
-                                            <button type="button" class="btn btn-orange">Manually Mark as Paid</button>
-                                        </Link>
-                                    </div>
-
-                                    <div v-if="invoice.status === 'Voided'" class="flex gap-2">
-                                        <Link :href="route('invoices.restore', invoice.invoice_reference)">
-                                            <button type="button" class="btn btn-blue">Restore Invoice</button>
-                                        </Link>
-                                    </div>
-                                </td>
-                                <td class="text-right">
-                                    <p>Subtotal <strong>{{  calculateSubTotal().toFixed(2) }} {{ invoice.currency }}</strong></p>
-                                    <p>Total Tax <strong>{{ calculateTotalTax().toFixed(2) }} {{ invoice.currency }}</strong></p>
-                                    <p>Total Due <strong>{{ calculateGrandTotal().toFixed(2) }} {{ invoice.currency }}</strong></p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-6">
-                <h1 class="font-semibold text-xl text-gray-800 leading-tight">Payments</h1>
-            </div>
-
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-10">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="p-6 lg:p-8 bg-white border-b border-gray-200">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="p-1 bg-gray-100 text-left rounded-l">Date</th>
-                                    <th class="p-1 bg-gray-100 text-left">Method</th>
-                                    <th class="p-1 bg-gray-100 text-left">Currency</th>
-                                    <th class="p-1 bg-gray-100 text-left">Amount</th>
-                                    <th class="p-1 bg-gray-100 text-left">Reference</th>
-                                    <th class="p-1 bg-gray-100 text-left rounded-r">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-if="invoice.payments.length === 0">
-                                    <td colspan="6" class="text-gray-600 text-center pt-1">
-                                        There are no payment records against this invoice
-                                    </td>
-                                </tr>
-                                <tr v-for="payment in invoice.payments" :key="payment.id">
-                                    <td class="p-1 border-b">{{ payment.payment_date }}</td>
-                                    <td class="p-1 border-b">{{ payment.payment_method }}</td>
-                                    <td class="p-1 border-b">{{ payment.payment_currency }}</td>
-                                    <td class="p-1 border-b">
-                                        {{ payment.payment_method === 'Crypto' ? payment.crypto_asset_quantity : payment.payment_amount }}
-                                        <span v-if="payment.payment_method === 'Crypto'" class="text-gray-600"> <br>(1 {{ invoice.currency }} = {{ payment.crypto_asset_ada_price }} ₳DA)</span>
-                                    </td>
-                                    <td class="p-1 border-b">{{ payment.payment_reference }}</td>
-                                    <td class="p-1 border-b">{{ payment.status }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-6">
-                <h1 class="font-semibold text-xl text-gray-800 leading-tight">Activities</h1>
-            </div>
-
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="p-6 lg:p-8 bg-white border-b border-gray-200">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th class="p-1 bg-gray-100 text-left rounded-l w-1/4">Date & Time</th>
-                                <th class="p-1 bg-gray-100 text-left rounded-r">Activity</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="activity in invoice.activities" :key="activity.id">
-                                    <td class="p-1 border-b">
-                                        {{ activity.formatted_datetime.datetime }}
-                                        <span class="sm-badge">{{ activity.formatted_datetime.diff }}</span>
-                                    </td>
-                                    <td class="p-1 border-b">{{ activity.activity }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        <v-sheet class="bg-white px-4 py-12">
+            <h2>Details</h2>
+            <v-text-field v-model="invoice.customer.name" disabled readonly
+                          label="Customer">
+                <template v-slot:append-inner>
+                    <v-chip label>Tax Rate
+                        {{ parseFloat(invoice.customer.tax_rate ?? 0) }}%
+                    </v-chip>
+                </template>
+            </v-text-field>
+            <v-list v-if="invoice.recipients.length > 0">
+                <v-list-subheader>Notification Recipients</v-list-subheader>
+                <v-list-item v-for="(recipient, index) in invoice.recipients"
+                             :key="recipient.id">
+                    #{{ index + 1 }} {{ recipient.name }}
+                    ({{ recipient.address }})
+                </v-list-item>
+            </v-list>
+            <v-row>
+                <v-col cols="12" md="6">
+                    <v-textarea label="Billing Address"
+                                v-model="billing_address" readonly disabled/>
+                </v-col>
+                <v-col cols="12" md="6">
+                    <v-textarea label="Shipping Address"
+                                v-model="shipping_address" readonly disabled/>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col cols="12" md="4">
+                    <v-text-field label="Customer Reference"
+                                  v-model="invoice.customer_reference"
+                                  readonly disabled/>
+                </v-col>
+                <v-col cols="12" md="4">
+                    <v-text-field label="Issue Date"
+                                  v-model="invoice.issue_date" readonly
+                                  disabled/>
+                </v-col>
+                <v-col cols="12" md="4">
+                    <v-text-field label="Due Date" v-model="invoice.due_date"
+                                  readonly disabled/>
+                </v-col>
+            </v-row>
+            <h2 class="mt-4">Items</h2>
+            <v-data-table :items="invoice.items" :headers="item_headers"
+                          disable-pagination hide-default-footer/>
+            <v-row justify="end" align="end">
+                <v-col>
+                    <v-row>
+                        <template v-if="invoice.status === 'Draft'">
+                            <v-col>
+                                <v-btn
+                                    :href="route('invoices.edit', invoice.invoice_reference)">
+                                    Edit Invoice
+                                </v-btn>
+                            </v-col>
+                            <v-col>
+                                <v-btn color="danger"
+                                       @click="voidInvoice(invoice)">
+                                    Void Invoice
+                                </v-btn>
+                            </v-col>
+                        </template>
+                        <template v-if="invoice.status === 'Published'">
+                            <v-col>
+                                <v-btn
+                                    :href="route('invoices.sendReminderNotifications', invoice.id)">
+                                    Send Reminder Notification
+                                </v-btn>
+                            </v-col>
+                            <v-col>
+                                <v-btn
+                                    :href="route('invoices.manuallyMarkAsPaid', invoice.invoice_reference)">
+                                    Manually Mark Paid
+                                </v-btn>
+                            </v-col>
+                        </template>
+                        <template v-if="invoice.status === 'Voided'">
+                            <v-btn
+                                :href="route('invoices.restore', invoice.invoice_reference)">
+                                Restore Invoice
+                            </v-btn>
+                        </template>
+                    </v-row>
+                </v-col>
+                <v-col cols="auto">
+                    <v-table density="comfortable">
+                        <tbody>
+                        <tr>
+                            <td>Subtotal</td>
+                            <td class="text-end font-weight-black">
+                                {{ calculateSubTotal().toFixed(2) }}
+                                {{ invoice.currency }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Total Tax</td>
+                            <td class="text-end font-weight-black">
+                                {{ calculateTotalTax().toFixed(2) }}
+                                {{ invoice.currency }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Total Due</td>
+                            <td class="text-end font-weight-black">
+                                {{ calculateGrandTotal().toFixed(2) }}
+                                {{ invoice.currency }}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </v-table>
+                </v-col>
+            </v-row>
+            <h2 class="mt-4">Payments</h2>
+            <v-data-table :items="invoice.payments" :headers="payment_headers"
+                          disable-pagination hide-default-footer
+                          density="comfortable">
+                <template v-slot:item.payment_amount="{ item }">
+                    <template v-if="item.payment_method === 'Crypto'">
+                        {{ item.crypto_asset_quantity }}<br/>
+                        (1 {{ invoice.currency }} =
+                        {{ item.crypto_asset_ada_price }} ₳DA)
+                    </template>
+                    <template v-else>
+                        {{ item.payment_amount }}
+                    </template>
+                </template>
+            </v-data-table>
+            <h2 class="mt-4">Activity Log</h2>
+            <v-data-table :items="invoice.activities"
+                          :headers="activity_headers" density="compact">
+                <template v-slot:item.formatted_datetime.datetime="{ item }">
+                    {{ item.formatted_datetime.datetime }}
+                    ({{ item.formatted_datetime.diff }})
+                </template>
+            </v-data-table>
+        </v-sheet>
     </app-layout>
 </template>

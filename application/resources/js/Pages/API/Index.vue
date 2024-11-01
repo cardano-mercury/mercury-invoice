@@ -12,19 +12,14 @@ defineProps({
 <template>
     <AppLayout title="API Tokens">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                API Tokens
-            </h2>
+            <h1>API Tokens</h1>
         </template>
-
-        <div>
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                <ApiTokenManager
-                    :tokens="tokens"
-                    :available-permissions="availablePermissions"
-                    :default-permissions="defaultPermissions"
-                />
-            </div>
-        </div>
+        <v-sheet class="bg-white px-4 py-12">
+            <ApiTokenManager
+                :tokens="tokens"
+                :available-permissions="availablePermissions"
+                :default-permissions="defaultPermissions"
+            />
+        </v-sheet>
     </AppLayout>
 </template>

@@ -9,38 +9,37 @@ const form = useForm(props.product);
 <template>
     <app-layout :title="'Product: ' + product.name">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Product: {{ product.name }}
-            </h2>
-            <div>
-                <span v-if="product.sku" class="badge">
-                    SKU: {{ product.sku }}
-                </span>
-                <span class="badge">
+            <h1>Product: {{ product.name }}</h1>
+            <div class="mb-2">
+                <v-chip label v-if="product.sku" class="me-2">SKU: {{ product.sku }}</v-chip>
+                <v-chip label v-if="product.unit_price" class="me-2">
                     Unit Price: {{ parseFloat(product.unit_price).toFixed(2) }}
-                    <span v-if="product.unit_type">({{ product.unit_type }})</span>
-                </span>
-                <span v-if="product.supplier" class="badge">
+                    <span v-if="product.unit_type">/{{ product.unit_type }}</span>
+                </v-chip>
+                <v-chip label v-if="product.supplier" class="me-2">
                     Supplier: {{ product.supplier }}
-                </span>
+                </v-chip>
             </div>
-            <div v-if="product.description">
+            <p v-if="product.description" class="text-body-2">
                 {{ product.description }}
-            </div>
+            </p>
         </template>
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="p-6 lg:p-8 bg-white border-b border-gray-200">
-                        <Link :href="route('products.edit', product.id)">
-                            <button type="button" class="btn mx-4">Edit</button>
-                        </Link>
-                        <button type="button" class="btn mx-4" @click="form.delete(route('products.destroy', product.id))">
-                            Delete
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <v-sheet class="bg-white px-4 py-12">
+            <v-row justify="end">
+                <v-col cols="auto">
+                    <v-btn :href="route('products.edit', product.id)"
+                           variant="flat" prepend-icon="mdi-pencil">
+                        Edit
+                    </v-btn>
+                </v-col>
+                <v-col cols="auto">
+                    <v-btn variant="flat" color="error"
+                           prepend-icon="mdi-trash-can"
+                           @click="form.delete(route('products.destroy', product.id))">
+                        Delete
+                    </v-btn>
+                </v-col>
+            </v-row>
+        </v-sheet>
     </app-layout>
 </template>
