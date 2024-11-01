@@ -29,6 +29,8 @@ class InvoiceItemFactory extends Factory
             'quantity' => fake()->numberBetween(2, 6),
             'unit_price' => fake()->randomFloat(2, random_int(2, 5), random_int(50, 100)),
             'tax_rate' => 20.00,
+            'created_at' => now()->toDateTimeString(),
+            'updated_at' => now()->toDateTimeString(),
         ];
     }
 }

@@ -1,0 +1,527 @@
+name: 'Customer Categories'
+description: 'Customer Category Management API'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/customer-categories
+    metadata:
+      groupName: 'Customer Categories'
+      groupDescription: 'Customer Category Management API'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'List Customer Categories'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      search:
+        name: search
+        description: 'Search for customer categories by name'
+        required: false
+        example: Freelance
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      per_page:
+        name: per_page
+        description: 'Number of results per page (Min 25, Max 100)'
+        required: false
+        example: 25
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      page:
+        name: page
+        description: 'Page number'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      search: Freelance
+      per_page: 25
+      page: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"name":"Facere","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},{"id":1,"name":"Beatae","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        headers: []
+        description: OK
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/customer-categories
+    metadata:
+      groupName: 'Customer Categories'
+      groupDescription: 'Customer Category Management API'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create Customer Category'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+        required: true
+        example: Freelance
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: Freelance
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: '{"data":{"id":1,"name":"Voluptate","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        headers: []
+        description: Created
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 422
+        content: |
+          {
+              "message": "Validation Failed",
+              "fields": {
+                  "field_name": [
+                      "The field name is required."
+                  ],
+                  "another_field": [
+                      "The another field must not be greater than 64 characters."
+                  ]
+              }
+          }
+        headers: []
+        description: 'Validation Failed'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/customer-categories/{id}'
+    metadata:
+      groupName: 'Customer Categories'
+      groupDescription: 'Customer Category Management API'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Customer Category'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the customer category.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":1,"name":"Id","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        headers: []
+        description: OK
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/customer-categories/{id}'
+    metadata:
+      groupName: 'Customer Categories'
+      groupDescription: 'Customer Category Management API'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Customer Category'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the customer category.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must be at least 3 characters. Must not be greater than 64 characters.'
+        required: true
+        example: Freelance
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: Freelance
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":1,"name":"Possimus","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        headers: []
+        description: OK
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 422
+        content: |
+          {
+              "message": "Validation Failed",
+              "fields": {
+                  "field_name": [
+                      "The field name is required."
+                  ],
+                  "another_field": [
+                      "The another field must not be greater than 64 characters."
+                  ]
+              }
+          }
+        headers: []
+        description: 'Validation Failed'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/v1/customer-categories-sync
+    metadata:
+      groupName: 'Customer Categories'
+      groupDescription: 'Customer Category Management API'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Sync Customer Categories'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      customer_id:
+        name: customer_id
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      category_ids:
+        name: category_ids
+        description: ''
+        required: false
+        example:
+          - 1
+        type: 'integer[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      customer_id: 1
+      category_ids:
+        - 1
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: 'null'
+        headers: []
+        description: 'Customer Categories Synced'
+        custom: []
+      -
+        status: 401
+        content: |
+          {
+              "message": "Unauthorized"
+          }
+        headers: []
+        description: Unauthorized
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "Route or Record Not found"
+          }
+        headers: []
+        description: 'Not Found'
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "message": "The POST method is not supported for route api/v1/customers/1/phones/16. Supported methods: GET, HEAD, PUT, PATCH"
+          }
+        headers: []
+        description: 'Bad Request'
+        custom: []
+      -
+        status: 422
+        content: |
+          {
+              "message": "Validation Failed",
+              "fields": {
+                  "field_name": [
+                      "The field name is required."
+                  ],
+                  "another_field": [
+                      "The another field must not be greater than 64 characters."
+                  ]
+              }
+          }
+        headers: []
+        description: 'Validation Failed'
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "message": "Internal Server Error"
+          }
+        headers: []
+        description: 'Internal Server Error'
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5fg3a1cv48Dah6edEbZkV6P'
+    controller: null
+    method: null
+    route: null
+    custom: []

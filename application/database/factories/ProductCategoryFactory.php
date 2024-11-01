@@ -19,6 +19,8 @@ class ProductCategoryFactory extends Factory
     {
         return [
             'name' => ucwords(fake()->unique()->word()),
+            'created_at' => now()->toDateTimeString(),
+            'updated_at' => now()->toDateTimeString(),
         ];
     }
 }

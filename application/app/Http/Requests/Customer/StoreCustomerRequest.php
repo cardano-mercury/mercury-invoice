@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Customer;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreCustomerRequest extends FormRequest
@@ -15,7 +16,7 @@ class StoreCustomerRequest extends FormRequest
             // Anyone can create new record
             'POST' => true,
             // Updating must match record owner
-            'PUT' => $this->customer->user_id === auth()->id(),
+            'PUT', 'PATCH' => $this->customer->user_id === auth()->id(),
             // Unauthorized for everything else
             default => false,
         };
@@ -29,17 +30,40 @@ class StoreCustomerRequest extends FormRequest
         return [
             'name' => [
                 'required',
+                'string',
                 'min:3',
                 'max:64',
+                Rule::unique('customers', 'name')->where(function($query) {
+                    return $query
+                        ->where('user_id', auth()->id())
+                        ->where('name', $this->name);
+                })->ignore($this?->customer?->id),
             ],
             'tax_number' => [
                 'nullable',
+                'string',
+                'min:3',
                 'max:64',
             ],
             'tax_rate' => [
                 'nullable',
-                'min:0',
-                'max:100.00',
+                'numeric',
+                'between:0,100',
+            ],
+        ];
+    }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'example' => 'John Doe',
+            ],
+            'tax_number' => [
+                'example' => 'ABCD-1234',
+            ],
+            'tax_rate' => [
+                'example' => 12.5,
             ],
         ];
     }

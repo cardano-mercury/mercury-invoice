@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
+use Laravel\Jetstream\Jetstream;
 use App\Actions\Jetstream\DeleteUser;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Jetstream\Jetstream;
 
 class JetstreamServiceProvider extends ServiceProvider
 {
@@ -31,13 +31,60 @@ class JetstreamServiceProvider extends ServiceProvider
      */
     protected function configurePermissions(): void
     {
-        Jetstream::defaultApiTokenPermissions(['read']);
+        Jetstream::defaultApiTokenPermissions([
+            'Customers:Read',
+            'CustomersEmails:Read',
+            'CustomersPhones:Read',
+            'CustomersAddresses:Read',
+            'CustomersCategories:Read',
+            'Products:Read',
+            'ProductsCategories:Read',
+            'Services:Read',
+            'ServicesCategories:Read',
+            'Invoices:Read',
+        ]);
 
         Jetstream::permissions([
-            'create',
-            'read',
-            'update',
-            'delete',
+            // Customers
+            'Customers:Read',
+            'Customers:Create',
+            'Customers:Update',
+            // Customer Emails
+            'CustomerEmails:Read',
+            'CustomerEmails:Create',
+            'CustomerEmails:Update',
+            // Customer Phones
+            'CustomerPhones:Read',
+            'CustomerPhones:Create',
+            'CustomerPhones:Update',
+            // Customer Addresses
+            'CustomerAddresses:Read',
+            'CustomerAddresses:Create',
+            'CustomerAddresses:Update',
+            // Customer Categories
+            'CustomerCategories:Read',
+            'CustomerCategories:Create',
+            'CustomerCategories:Update',
+            // Products
+            'Products:Read',
+            'Products:Create',
+            'Products:Update',
+            // Product Categories
+            'ProductCategories:Read',
+            'ProductCategories:Create',
+            'ProductCategories:Update',
+            // Services
+            'Services:Read',
+            'Services:Create',
+            'Services:Update',
+            // Service Categories
+            'ServiceCategories:Read',
+            'ServiceCategories:Create',
+            'ServiceCategories:Update',
+            // Invoices
+            'Invoices:Read',
+            'Invoices:Create',
+            'Invoices:Update',
         ]);
     }
 }

@@ -25,6 +25,8 @@ class ServiceFactory extends Factory
             'description' => fake()->sentences(3, true),
             'unit_price' => fake()->randomFloat(2, random_int(2, 5), random_int(50, 100)),
             'supplier' => fake()->company(),
+            'created_at' => now()->toDateTimeString(),
+            'updated_at' => now()->toDateTimeString(),
         ];
     }
 }

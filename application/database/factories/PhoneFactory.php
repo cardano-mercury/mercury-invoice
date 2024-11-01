@@ -24,6 +24,8 @@ class PhoneFactory extends Factory
             'name' => fake()->name(),
             'number' => fake()->unique()->phoneNumber(),
             'is_default' => true,
+            'created_at' => now()->toDateTimeString(),
+            'updated_at' => now()->toDateTimeString(),
         ];
     }
 }

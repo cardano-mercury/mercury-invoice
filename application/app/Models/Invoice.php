@@ -87,7 +87,7 @@ class Invoice extends Model
 
     public function getInvoiceReferenceAttribute(): string
     {
-        return $this->encodeId($this->id);
+        return $this->encodeId($this->id ?? 1);
     }
 
     public function getTotalAttribute(): float

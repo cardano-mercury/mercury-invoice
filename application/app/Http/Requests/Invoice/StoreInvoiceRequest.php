@@ -16,7 +16,7 @@ class StoreInvoiceRequest extends FormRequest
             // Anyone can create new record
             'POST' => true,
             // Updating must match record owner
-            'PUT' => $this->invoice->user_id === auth()->id(),
+            'PUT', 'PATCH' => $this->invoice->user_id === auth()->id(),
             // Unauthorized for everything else
             default => false,
         };
@@ -31,22 +31,24 @@ class StoreInvoiceRequest extends FormRequest
             'customer_id' => ['required', Rule::exists('customers', 'id')->where(static function ($query) {
                 return $query->where('user_id', auth()->id());
             })],
-            'customer_email_ids.*' => ['required', 'min:1', Rule::exists('emails', 'id')->where(function ($query) {
+            'customer_email_ids' => ['present', 'array'],
+            'customer_email_ids.*' => ['required', 'integer', Rule::exists('emails', 'id')->where(function ($query) {
                 return $query->where('customer_id', $this->input('customer_id'));
             })],
-            'billing_address_id' => ['nullable', Rule::exists('addresses', 'id')->where(function ($query) {
+            'billing_address_id' => ['nullable', 'integer', Rule::exists('addresses', 'id')->where(function ($query) {
                 return $query->where('customer_id', $this->input('customer_id'));
             })],
-            'shipping_address_id' => ['nullable', Rule::exists('addresses', 'id')->where(function ($query) {
+            'shipping_address_id' => ['nullable', 'integer', Rule::exists('addresses', 'id')->where(function ($query) {
                 return $query->where('customer_id', $this->input('customer_id'));
             })],
             'customer_reference' => ['nullable', 'string', 'max:64'],
             'issue_date' => ['required', 'date', 'date_format:Y-m-d'],
             'due_date' => ['required', 'date', 'date_format:Y-m-d'],
-            'items.*.product_id' => ['nullable', Rule::exists('products', 'id')->where(static function ($query) {
+            'items' => ['present', 'array'],
+            'items.*.product_id' => ['nullable', 'integer', Rule::exists('products', 'id')->where(static function ($query) {
                 return $query->where('user_id', auth()->id());
             })],
-            'items.*.service_id' => ['nullable', Rule::exists('services', 'id')->where(static function ($query) {
+            'items.*.service_id' => ['nullable', 'integer', Rule::exists('services', 'id')->where(static function ($query) {
                 return $query->where('user_id', auth()->id());
             })],
             'items.*.sku' => ['nullable', 'string', 'max:32'],
@@ -81,6 +83,105 @@ class StoreInvoiceRequest extends FormRequest
             'items.*.tax_rate.numeric' => 'The item #:position tax rate must be a number.',
             'items.*.tax_rate.min' => 'The item #:position tax rate cannot be less than :min.',
             'items.*.tax_rate.max' => 'The item #:position tax rate cannot be greater than :max.',
+        ];
+    }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'customer_id' => [
+                'description' => 'ID of the customer, whom the invoice is being generated for',
+                'example' => 1,
+            ],
+            'customer_email_ids.*' => [
+                'description' => 'Array of email IDs associated with the customer (who will receive email notifications)',
+                'example' => [1, 2, 3],
+            ],
+            'billing_address_id' => [
+                'description' => 'ID of the customer address, to be used as billing address',
+                'example' => 4,
+            ],
+            'shipping_address_id' => [
+                'description' => 'ID of the customer address, to be used as shipping address',
+                'example' => 7,
+            ],
+            'customer_reference' => [
+                'example' => 'INV-1234',
+            ],
+            'issue_date' => [
+                'example' => '2024-01-31',
+            ],
+            'due_date' => [
+                'example' => '2024-02-14',
+            ],
+            'items' => [
+                'example' => [
+                    [
+                        'product_id' => 3,
+                        'service_id' => null,
+                        'sku' => 'ABC123',
+                        'description' => 'My product name',
+                        'quantity' => 1,
+                        'unit_price' => 4.99,
+                        'tax_rate' => 20,
+                    ],
+                    [
+                        'product_id' => null,
+                        'service_id' => 4,
+                        'sku' => null,
+                        'description' => 'My service name',
+                        'quantity' => 3,
+                        'unit_price' => 10.50,
+                        'tax_rate' => 20,
+                    ],
+                    [
+                        'product_id' => null,
+                        'service_id' => null,
+                        'sku' => null,
+                        'description' => 'My free text line (e.g. misc charges)',
+                        'quantity' => 1,
+                        'unit_price' => 9.99,
+                        'tax_rate' => 20,
+                    ],
+                    [
+                        'product_id' => null,
+                        'service_id' => null,
+                        'sku' => null,
+                        'description' => 'Discount',
+                        'quantity' => 1,
+                        'unit_price' => -5.99,
+                        'tax_rate' => 0,
+                    ],
+                ],
+            ],
+            'items.*.product_id' => [
+                'description' => 'Optional: ID of the product you are selling',
+                'example' => 7,
+            ],
+            'items.*.service_id' => [
+                'description' => 'Optional: ID of the service you are selling',
+                'example' => 3,
+            ],
+            'items.*.sku' => [
+                'description' => 'Optional: Stock Keeping Unit of the product you are selling (related to product_id)',
+                'example' => 'XYZ-1234',
+            ],
+            'items.*.description' => [
+                'example' => 'My free text line (e.g. misc charges)',
+            ],
+            'items.*.quantity' => [
+                'example' => 10,
+            ],
+            'items.*.unit_price' => [
+                'description' => 'Price of single unit, can be negative value (for giving discount)',
+                'example' => 4.99,
+            ],
+            'items.*.tax_rate' => [
+                'example' => 22.5,
+            ],
+            'save_mode' => [
+                'example' => 'Draft',
+            ],
         ];
     }
 }

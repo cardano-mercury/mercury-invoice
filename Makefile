@@ -31,6 +31,10 @@ frontend-build:
 frontend-watch:
 	docker exec -it cardanomercury-web bash -c "npm install && npm run dev"
 
+.PHONY: frontend-upgrade
+frontend-upgrade:
+	docker exec -it cardanomercury-web bash -c "npm update"
+
 .PHONY: composer-install
 composer-install:
 	docker exec -it cardanomercury-web bash -c "composer install"
@@ -42,6 +46,10 @@ db-migrate:
 .PHONY: db-refresh
 db-refresh:
 	docker exec -it cardanomercury-web bash -c "php artisan migrate:fresh --seed"
+
+.PHONY: api-docs
+api-docs:
+	docker exec -it cardanomercury-web bash -c "php artisan scribe:generate --force"
 
 .PHONY: tinker
 tinker:
