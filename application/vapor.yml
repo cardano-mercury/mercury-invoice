@@ -3,8 +3,8 @@ name: cardanomercury
 environments:
 
     production:
-        # domain: 'todo'
-        storage: production-cardanomercury-storage
+        domain: 'mercury-invoice.com'
+        storage: production-mercuryinvoice-storage
         timeout: 60
         memory: 1024
         cli-memory: 512
@@ -25,8 +25,8 @@ environments:
           - 'php artisan migrate --force'
 
     staging:
-        domain: 'staging.cardano-mercury.io'
-        storage: staging-cardanomercury-storage
+        domain: 'staging.mercury-invoice.com'
+        storage: staging-mercuryinvoice-storage
         timeout: 60
         memory: 1024
         cli-memory: 512
