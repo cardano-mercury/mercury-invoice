@@ -13,19 +13,14 @@ defineProps({
 <template>
     <app-layout title="Webhooks">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Webhooks
-            </h2>
+            <h1>Webhooks</h1>
         </template>
-
-        <div>
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                <WebhookManager
-                    :webhooks="webhooks"
-                    :event-target-names="eventTargetNames"
-                    :hmac-algorithms="hmacAlgorithms"
-                />
-            </div>
-        </div>
+        <v-sheet class="bg-white px-4 py-12">
+            <WebhookManager
+                :webhooks="webhooks"
+                :event-target-names="eventTargetNames"
+                :hmac-algorithms="hmacAlgorithms"
+            />
+        </v-sheet>
     </app-layout>
 </template>
