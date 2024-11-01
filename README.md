@@ -17,6 +17,7 @@
 ### Available Make Commands (Local Development)
 * `frontend-build` Rebuild frontend
 * `frontend-watch` Runs `npm run dev` (vite watch/hot-reload mode) inside _cardanomercury-web_ container
+* `frontend-upgrade` Upgrades npm packages inside _cardanomercury-web_ container
 * `up` Restart all docker containers
 * `down` Shutdown all docker containers
 * `build` Rebuilds all docker containers

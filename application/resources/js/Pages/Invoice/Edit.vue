@@ -141,6 +141,33 @@ function voidInvoice(invoice) {
     }
 }
 
+const getAddressLines = (address) => {
+    let response = ``;
+    if (address === null || address === undefined) {
+        return response;
+    }
+    if (address.line1) {
+        response += `${address.line1}\r`;
+    }
+    if (address.line2) {
+        response += `${address.line2}\r`;
+    }
+    if (address.line3) {
+        response += `${address.line3}\r`;
+    }
+    return response;
+}
+
+const makeFormattedAddress = (address) => {
+    if (address === null || address === undefined) {
+        return ``;
+    }
+    const lines = getAddressLines(address);
+    return `${lines}
+${address.city}, ${address.state} ${address.postal_code}
+${address.country}`;
+}
+
 </script>
 
 <template>

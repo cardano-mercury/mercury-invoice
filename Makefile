@@ -31,6 +31,10 @@ frontend-build:
 frontend-watch:
 	docker exec -it cardanomercury-web bash -c "npm install && npm run dev"
 
+.PHONY: frontend-upgrade
+frontend-upgrade:
+	docker exec -it cardanomercury-web bash -c "npm update"
+
 .PHONY: composer-install
 composer-install:
 	docker exec -it cardanomercury-web bash -c "composer install"
