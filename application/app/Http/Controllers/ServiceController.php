@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Service\ServiceResource;
+use Illuminate\Http\Request;
 use Throwable;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -97,31 +99,14 @@ class ServiceController extends Controller
     /**
      * @throws BindingResolutionException
      */
-    public function export(): \Illuminate\Http\Response
+    public function export(Request $request): \Illuminate\Http\Response
     {
         $services = Service::query()
             ->where('user_id', auth()->id())
-            ->with(['categories'])
-            ->get()
-            ->map(function ($service) {
-                return [
-                    'id' => $this->encodeId($service->id),
-                    'name' => $service->name,
-                    'description' => $service->description,
-                    'unit_price' => $service->unit_price,
-                    'supplier' => $service->supplier,
-                    'categories' => $service->categories->map(function($category) {
-                        return [
-                            'id' => $this->encodeId($category->id),
-                            'name' => $category->name,
-                        ];
-                    }),
-                ];
-            })
-            ->toArray();
+            ->get();
 
         return $this->downloadJson(
-            $services,
+            ServiceResource::collection($services)->toResponse($request)->getData(true)['data'],
             'services-export',
         );
     }

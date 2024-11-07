@@ -143,7 +143,7 @@ const invoices_headers = [
             <v-card elevation="1">
                 <v-card-text class="text-center">
                     <p class="text-h2">XXX</p>
-                    <p class="text-h4">Label</p>
+                    <p class="text-h4">Customers</p>
                 </v-card-text>
             </v-card>
         </v-col>
@@ -151,7 +151,7 @@ const invoices_headers = [
             <v-card elevation="1">
                 <v-card-text class="text-center">
                     <p class="text-h2">XXX</p>
-                    <p class="text-h4">Label</p>
+                    <p class="text-h4">Products</p>
                 </v-card-text>
             </v-card>
         </v-col>
@@ -159,7 +159,7 @@ const invoices_headers = [
             <v-card elevation="1">
                 <v-card-text class="text-center">
                     <p class="text-h2">XXX</p>
-                    <p class="text-h4">Label</p>
+                    <p class="text-h4">Services</p>
                 </v-card-text>
             </v-card>
         </v-col>
@@ -167,7 +167,7 @@ const invoices_headers = [
             <v-card elevation="1">
                 <v-card-text class="text-center">
                     <p class="text-h2">XXX</p>
-                    <p class="text-h4">Label</p>
+                    <p class="text-h4">Invoices</p>
                 </v-card-text>
             </v-card>
         </v-col>
@@ -177,7 +177,7 @@ const invoices_headers = [
                     <v-col>
                         <v-card-text class="text-center">
                             <p class="text-h2">XXX</p>
-                            <p class="text-h4">Label</p>
+                            <p class="text-h6">Customer Categories</p>
                         </v-card-text>
                     </v-col>
                     <v-col cols="auto" style="width: 1px"
@@ -185,7 +185,15 @@ const invoices_headers = [
                     <v-col>
                         <v-card-text class="text-center">
                             <p class="text-h2">XXX</p>
-                            <p class="text-h4">Label</p>
+                            <p class="text-h6">Product Categories</p>
+                        </v-card-text>
+                    </v-col>
+                    <v-col cols="auto" style="width: 1px"
+                           class="bg-grey-lighten-3 pa-0 my-1"></v-col>
+                    <v-col>
+                        <v-card-text class="text-center">
+                            <p class="text-h2">XXX</p>
+                            <p class="text-h6">Service Categories</p>
                         </v-card-text>
                     </v-col>
                 </v-row>

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Invoice;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Models\Invoice;
 
 class DashboardController extends Controller
 {

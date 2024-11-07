@@ -64,7 +64,7 @@ function doDelete(customer) {
                 <v-spacer/>
                 <v-btn :href="route('customers.export')" variant="flat"
                        class="me-2">
-                    Export Customers
+                    Export
                 </v-btn>
                 <v-btn :href="route('customers.create')" variant="flat"
                        color="primary">Create New

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('customer_reference', 64)->nullable();
             $table->date('issue_date');
             $table->date('due_date');
+            $table->decimal('total', 18, 6)->default(0);
             $table->dateTime('last_notified')->nullable();
             $table->string('status', 32);
             $table->timestamps();

@@ -7,8 +7,10 @@ use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\Product;
 use App\Traits\HashIdTrait;
+use Illuminate\Http\Request;
 use App\Traits\JsonDownloadTrait;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Resources\Product\ProductResource;
 use App\Http\Requests\Product\StoreProductRequest;
 use Illuminate\Contracts\Container\BindingResolutionException;
 
@@ -97,33 +99,14 @@ class ProductController extends Controller
     /**
      * @throws BindingResolutionException
      */
-    public function export(): \Illuminate\Http\Response
+    public function export(Request $request): \Illuminate\Http\Response
     {
         $products = Product::query()
             ->where('user_id', auth()->id())
-            ->with(['categories'])
-            ->get()
-            ->map(function ($product) {
-                return [
-                    'id' => $this->encodeId($product->id),
-                    'name' => $product->name,
-                    'sku' => $product->sku,
-                    'description' => $product->description,
-                    'unit_type' => $product->unit_type,
-                    'unit_price' => $product->unit_price,
-                    'supplier' => $product->supplier,
-                    'categories' => $product->categories->map(function($category) {
-                        return [
-                            'id' => $this->encodeId($category->id),
-                            'name' => $category->name,
-                        ];
-                    }),
-                ];
-            })
-            ->toArray();
+            ->get();
 
         return $this->downloadJson(
-            $products,
+            ProductResource::collection($products)->response($request)->getData(true)['data'],
             'products-export',
         );
     }

@@ -45,6 +45,7 @@ class APIInvoicesController extends Controller
 
         $invoices = Invoice::query()
             ->where('user_id', $request->user()->id)
+            ->with(['items'])
             ->when($request->customer_id,
                 static fn ($query, $customerId) => $query
                     ->where('customer_id', '=', $customerId)
@@ -98,11 +99,17 @@ class APIInvoicesController extends Controller
 
             $invoice->recipients()->sync($request->validated('customer_email_ids'));
 
+            $invoiceTotal = 0;
             $invoiceItemData = $request->validated('items');
             foreach ($invoiceItemData as $index => $item) {
                 $invoiceItemData[$index]['invoice_id'] = $invoice->id;
+                $subtotal = (float) $item['quantity'] * (float) $item['unit_price'];
+                $tax = $subtotal * ((float) $item['tax_rate'] / 100);
+                $invoiceTotal += ($subtotal + $tax);
             }
             InvoiceItem::insert($invoiceItemData);
+
+            $invoice->update(['total' => $invoiceTotal]);
 
             InvoiceActivity::create([
                 'invoice_id' => $invoice->id,
@@ -120,6 +127,7 @@ class APIInvoicesController extends Controller
 
         $invoice->load([
             'customer',
+            'items',
             'billingAddress',
             'shippingAddress',
             'recipients',
@@ -142,6 +150,7 @@ class APIInvoicesController extends Controller
 
         $invoice->load([
             'customer',
+            'items',
             'billingAddress',
             'shippingAddress',
             'recipients',
@@ -197,11 +206,17 @@ class APIInvoicesController extends Controller
 
             InvoiceItem::query()->where('invoice_id', $invoice->id)->delete();
 
+            $invoiceTotal = 0;
             $invoiceItemData = $request->validated('items');
             foreach ($invoiceItemData as $index => $item) {
                 $invoiceItemData[$index]['invoice_id'] = $invoice->id;
+                $subtotal = (float) $item['quantity'] * (float) $item['unit_price'];
+                $tax = $subtotal * ((float) $item['tax_rate'] / 100);
+                $invoiceTotal += ($subtotal + $tax);
             }
             InvoiceItem::insert($invoiceItemData);
+
+            $invoice->update(['total' => $invoiceTotal]);
 
             InvoiceActivity::create([
                 'invoice_id' => $invoice->id,
@@ -219,6 +234,7 @@ class APIInvoicesController extends Controller
 
         $invoice->load([
             'customer',
+            'items',
             'billingAddress',
             'shippingAddress',
             'recipients',

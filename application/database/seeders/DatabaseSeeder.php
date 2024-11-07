@@ -155,6 +155,16 @@ class DatabaseSeeder extends Seeder
                 'tax_rate' => 0.00,
             ]);
 
+            // Update invoice total
+            $invoice1->load('items');
+            $invoice1Total = 0;
+            foreach ($invoice1->items as $item) {
+                $subtotal = $item->quantity * $item->unit_price;
+                $tax = $subtotal * ($item->tax_rate / 100);
+                $invoice1Total += ($subtotal + $tax);
+            }
+            $invoice1->update(['total' => $invoice1Total]);
+
             // Seed invoice #1 activities
             InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Saved Invoice' ]);
             InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Updated Invoice' ]);
