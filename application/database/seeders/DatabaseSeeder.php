@@ -3,9 +3,6 @@
 namespace Database\Seeders;
 
 use App\Enums\Status;
-use App\Models\InvoiceActivity;
-use App\Models\InvoiceItem;
-use App\Models\InvoicePayment;
 use App\Models\User;
 use App\Models\Phone;
 use App\Models\Email;
@@ -17,10 +14,14 @@ use App\Models\Customer;
 use App\Models\Webhook;
 use App\Models\WebhookLog;
 use Random\RandomException;
+use App\Models\InvoiceItem;
+use App\Models\InvoicePayment;
+use App\Models\InvoiceActivity;
 use Illuminate\Database\Seeder;
 use App\Models\ProductCategory;
 use App\Models\ServiceCategory;
 use App\Models\CustomerCategory;
+use Illuminate\Support\Facades\DB;
 use App\Models\WebhookEventTarget;
 use Illuminate\Support\Collection;
 
@@ -39,6 +40,20 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Test User',
                 'email' => 'test@local.dev',
             ]);
+
+            // Seed predictable personal access token (useful for local api testing)
+            DB::table('personal_access_tokens')->insert([[
+                "id" => 1,
+                "tokenable_type" => "App\\Models\\User",
+                "tokenable_id" => 1,
+                "name" => "Dev Test",
+                "token" => "97e7a181f6a6383eb5256fa40736af56113331bc85025986dcb7e6787ef6c4e4",
+                "abilities" => "[\"Customers:Read\",\"Products:Read\",\"Services:Read\",\"Invoices:Read\",\"CustomerEmails:Create\",\"CustomerPhones:Update\",\"CustomerCategories:Read\",\"Products:Create\",\"ProductCategories:Update\",\"ServiceCategories:Read\",\"Invoices:Create\",\"Invoices:Update\",\"ServiceCategories:Create\",\"Products:Update\",\"CustomerCategories:Create\",\"CustomerAddresses:Read\",\"CustomerEmails:Update\",\"Customers:Create\",\"Customers:Update\",\"CustomerPhones:Read\",\"CustomerAddresses:Create\",\"CustomerCategories:Update\",\"ProductCategories:Read\",\"Services:Create\",\"ServiceCategories:Update\",\"Services:Update\",\"ProductCategories:Create\",\"CustomerAddresses:Update\",\"CustomerPhones:Create\",\"CustomerEmails:Read\"]",
+                "last_used_at" => "2024-11-07 18:09:58",
+                "expires_at" => null,
+                "created_at" => "2024-11-07 18:07:44",
+                "updated_at" => "2024-11-07 18:09:58",
+            ]]);
 
             // Seed customer
             $customer = Customer::factory()->create([
@@ -107,80 +122,170 @@ class DatabaseSeeder extends Seeder
                 'webhook_id' => $webhook->id,
             ]);
 
-            /**
-             * Fake Paid Invoice #1
-             */
+            echo "Seeding fake invoices, this might take a while ... Please Wait!\n";
 
-            // Seed invoice #1
-            $invoice1 = Invoice::factory()->create([
+            /**
+             * Fake Paid Invoices
+             */
+            Invoice::factory(200)->create([
                 'user_id' => $user->id,
                 'customer_id' => $customer->id,
                 'billing_address_id' => $customerAddresses[0]->id,
                 'shipping_address_id' => $customerAddresses[1]->id,
                 'status' => Status::PAID,
-            ]);
+            ])->each(static function (Invoice $invoice) use($emails) {
 
-            // Seed invoice #1 Email Recipients
-            $invoice1->recipients()->sync([
-                $emails->first()->id,
-            ]);
+                $invoice->recipients()->sync([ $emails->first()->id ]);
 
-            // Seed invoice #1 item #1
-            InvoiceItem::factory()->create([
-                'invoice_id' => $invoice1->id,
-                'sku' => $products->first()->sku,
-                'description' => $products->first()->description,
-                'quantity' => 2,
-                'unit_price' => $products->first()->unit_price,
-                'tax_rate' => 0.00,
-            ]);
+                $invoiceDateTime = $invoice->created_at->toDateTimeString();
 
-            // Seed invoice #1 item #2
-            InvoiceItem::factory()->create([
-                'invoice_id' => $invoice1->id,
-                'sku' => null,
-                'description' => $services->first()->description,
-                'quantity' => 1,
-                'unit_price' => $services->first()->unit_price,
-                'tax_rate' => 15.00,
-            ]);
+                $invoiceItems = InvoiceItem::factory(mt_rand(1, 5))->create([
+                    'invoice_id' => $invoice->id,
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
 
-            // Seed invoice #1 item #3
-            InvoiceItem::factory()->create([
-                'invoice_id' => $invoice1->id,
-                'sku' => null,
-                'description' => 'Discount for being awesome',
-                'quantity' => 1,
-                'unit_price' => -5,
-                'tax_rate' => 0.00,
-            ]);
+                $invoiceTotal = 0;
+                foreach ($invoiceItems as $item) {
+                    $subtotal = $item->quantity * $item->unit_price;
+                    $tax = $subtotal * ($item->tax_rate / 100);
+                    $invoiceTotal += ($subtotal + $tax);
+                }
+                $invoice->update(['total' => $invoiceTotal]);
 
-            // Update invoice total
-            $invoice1->load('items');
-            $invoice1Total = 0;
-            foreach ($invoice1->items as $item) {
-                $subtotal = $item->quantity * $item->unit_price;
-                $tax = $subtotal * ($item->tax_rate / 100);
-                $invoice1Total += ($subtotal + $tax);
-            }
-            $invoice1->update(['total' => $invoice1Total]);
+                InvoiceActivity::factory()->create([
+                    'invoice_id' => $invoice->id,
+                    'activity' => 'Dummy invoice created via database seeder',
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
 
-            // Seed invoice #1 activities
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Saved Invoice' ]);
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Updated Invoice' ]);
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Published Invoice' ]);
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Customer Viewed Invoice' ]);
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Late Reminder Sent' ]);
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Customer Viewed Invoice' ]);
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Customer Paid Invoice' ]);
+                InvoicePayment::factory()->create([
+                    'invoice_id' => $invoice->id,
+                    'payment_amount' => $invoice->total,
+                    'status' => Status::PAID,
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
 
-            # Seed invoice #1 payment
-            $invoice1->fresh(['items']);
-            InvoicePayment::factory()->create([
-                'invoice_id' => $invoice1->id,
-                'payment_amount' => $invoice1->total,
-                'status' => Status::PAID,
-            ]);
+            });
+
+            /**
+             * Fake Unpaid & Not Late Invoices
+             */
+            $dateInFuture = now()->addYears(2)->toDateString();
+            Invoice::factory(50)->create([
+                'user_id' => $user->id,
+                'customer_id' => $customer->id,
+                'billing_address_id' => $customerAddresses[0]->id,
+                'shipping_address_id' => $customerAddresses[1]->id,
+                'due_date' => $dateInFuture,
+                'status' => Status::PUBLISHED,
+            ])->each(static function (Invoice $invoice) use($emails) {
+
+                $invoice->recipients()->sync([ $emails->first()->id ]);
+
+                $invoiceDateTime = $invoice->created_at->toDateTimeString();
+
+                $invoiceItems = InvoiceItem::factory(mt_rand(1, 5))->create([
+                    'invoice_id' => $invoice->id,
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
+
+                $invoiceTotal = 0;
+                foreach ($invoiceItems as $item) {
+                    $subtotal = $item->quantity * $item->unit_price;
+                    $tax = $subtotal * ($item->tax_rate / 100);
+                    $invoiceTotal += ($subtotal + $tax);
+                }
+                $invoice->update(['total' => $invoiceTotal]);
+
+                InvoiceActivity::factory()->create([
+                    'invoice_id' => $invoice->id,
+                    'activity' => 'Dummy invoice created via database seeder',
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
+
+            });
+
+            /**
+             * Fake Unpaid & Late Invoices
+             */
+            $dateInPast = now()->subYears(2)->toDateString();
+            Invoice::factory(50)->create([
+                'user_id' => $user->id,
+                'customer_id' => $customer->id,
+                'billing_address_id' => $customerAddresses[0]->id,
+                'shipping_address_id' => $customerAddresses[1]->id,
+                'due_date' => $dateInPast,
+                'status' => Status::PUBLISHED,
+            ])->each(static function (Invoice $invoice) use($emails) {
+
+                $invoice->recipients()->sync([ $emails->first()->id ]);
+
+                $invoiceDateTime = $invoice->created_at->toDateTimeString();
+
+                $invoiceItems = InvoiceItem::factory(mt_rand(1, 5))->create([
+                    'invoice_id' => $invoice->id,
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
+
+                $invoiceTotal = 0;
+                foreach ($invoiceItems as $item) {
+                    $subtotal = $item->quantity * $item->unit_price;
+                    $tax = $subtotal * ($item->tax_rate / 100);
+                    $invoiceTotal += ($subtotal + $tax);
+                }
+                $invoice->update(['total' => $invoiceTotal]);
+
+                InvoiceActivity::factory()->create([
+                    'invoice_id' => $invoice->id,
+                    'activity' => 'Dummy invoice created via database seeder',
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
+
+            });
+
+            /**
+             * Fake Invoices In Random Statuses
+             */
+            Invoice::factory(50)->create([
+                'user_id' => $user->id,
+                'customer_id' => $customer->id,
+                'billing_address_id' => $customerAddresses[0]->id,
+                'shipping_address_id' => $customerAddresses[1]->id,
+            ])->each(static function (Invoice $invoice) use($emails) {
+
+                $invoice->recipients()->sync([ $emails->first()->id ]);
+
+                $invoiceDateTime = $invoice->created_at->toDateTimeString();
+
+                $invoiceItems = InvoiceItem::factory(mt_rand(1, 5))->create([
+                    'invoice_id' => $invoice->id,
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
+
+                $invoiceTotal = 0;
+                foreach ($invoiceItems as $item) {
+                    $subtotal = $item->quantity * $item->unit_price;
+                    $tax = $subtotal * ($item->tax_rate / 100);
+                    $invoiceTotal += ($subtotal + $tax);
+                }
+                $invoice->update(['total' => $invoiceTotal]);
+
+                InvoiceActivity::factory()->create([
+                    'invoice_id' => $invoice->id,
+                    'activity' => 'Dummy invoice created via database seeder',
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
+
+            });
 
         }
     }

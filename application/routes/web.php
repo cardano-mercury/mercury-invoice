@@ -40,6 +40,7 @@ Route::middleware([
 
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard/stats', [DashboardController::class, 'stats'])->name('dashboard.stats');
 
     // Customers
     Route::get('customers/export', [CustomerController::class, 'export'])->name('customers.export');

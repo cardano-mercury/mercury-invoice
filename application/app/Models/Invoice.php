@@ -91,25 +91,10 @@ class Invoice extends Model
         return $this->encodeId($this->id ?? 1);
     }
 
-// TODO: Remove me
-//
-//    public function getTotalAttribute(): float
-//    {
-//        $total = 0;
-//        if (!isset($this->items)) {
-//            $this->load('items');
-//        }
-//        foreach ($this->items as $item) {
-//            $subtotal = $item->quantity * $item->unit_price;
-//            $tax = $subtotal * ($item->tax_rate / 100);
-//            $total += ($subtotal + $tax);
-//        }
-//        return $total;
-//    }
-
     public function getIsOverdueAttribute(): bool
     {
-        return $this->status === Status::PUBLISHED &&
-            $this->due_date->lte(now());
+        return
+            $this->status === Status::PUBLISHED &&
+            now()->gte($this->due_date);
     }
 }
