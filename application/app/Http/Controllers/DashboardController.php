@@ -82,7 +82,7 @@ class DashboardController extends Controller
             ->where('user_id', auth()->id())
             ->where('created_at', '>=', now()->subDays($timeframe)->setTime(0, 0))
             ->with(['customer'])
-            ->orderBy('id', 'desc')
+            ->orderBy('issue_date', 'asc')
             ->get()
             ->map(static function (Invoice $invoice) {
                 return [

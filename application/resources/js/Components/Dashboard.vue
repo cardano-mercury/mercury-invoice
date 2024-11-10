@@ -26,54 +26,63 @@ const dashboardStats = ref(props.stats);
 
 const loading = ref(false);
 
-const salesByTimeOptions = {
-    datasets: {
-        line: {
-            tension: 0.4,
-        }
-    },
-    responsive: true,
-    legend: {
-        display: false,
-    },
-    scales: {
-        x: {
-            type: 'time',
-            time: {
-                unit: 'day'
+const salesByTimeOptions = computed(() => {
+    let timeUnit = 'day';
+    switch (timeframe.value) {
+        case 1: timeUnit = 'hour'; break;
+        case 7: timeUnit = 'day'; break;
+        case 30: timeUnit = 'week'; break;
+        case 365: timeUnit = 'quarter'; break;
+    }
+    return {
+        datasets: {
+            line: {
+                tension: 0.4,
             }
         },
-        y: {
-            ticks: {
-                callback: function (value, index, ticks) {
-                    return new Intl.NumberFormat('en-US', {
-                        style: 'currency',
-                        currency: 'USD'
-                    }).format(value);
+        responsive: true,
+        legend: {
+            display: false,
+        },
+        scales: {
+            x: {
+                type: 'time',
+                time: {
+                    unit: timeUnit,
+                },
+            },
+            y: {
+                ticks: {
+                    // callback: function (value, index, ticks) {
+                    //     return new Intl.NumberFormat('en-US', {
+                    //         style: 'currency',
+                    //         currency: 'USD'
+                    //     }).format(value);
+                    // }
                 }
             }
-        }
-    },
-    plugins: {
-        tooltip: {
-            callbacks: {
-                label: (context) => {
-                    let label = context.dataset.label || '';
-                    if (label) {
-                        label += ': ';
-                    }
-                    if (context.parsed.y !== null) {
-                        label += new Intl.NumberFormat('en-US', {
-                            style: 'currency',
-                            currency: 'USD'
-                        }).format(context.parsed.y);
-                    }
-                    return label;
+        },
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    // label: (context) => {
+                    //     let label = context.dataset.label || '';
+                    //     if (label) {
+                    //         label += ': ';
+                    //     }
+                    //     if (context.parsed.y !== null) {
+                    //         label += new Intl.NumberFormat('en-US', {
+                    //             style: 'currency',
+                    //             currency: 'USD'
+                    //         }).format(context.parsed.y);
+                    //     }
+                    //     return label;
+                    // }
                 }
             }
         }
     }
-}
+});
 
 const salesByTimeData = computed(() => {
     const parsedDataset = {};
@@ -81,9 +90,9 @@ const salesByTimeData = computed(() => {
         .filter(invoice => invoice.status === 'Paid')
         .forEach(invoice => {
             if (parsedDataset[invoice.issue_date]) {
-                parsedDataset[invoice.issue_date] += parseFloat(invoice.total);
+                parsedDataset[invoice.issue_date] += parseFloat(invoice.total).toFixed(2);
             } else {
-                parsedDataset[invoice.issue_date] = parseFloat(invoice.total);
+                parsedDataset[invoice.issue_date] = parseFloat(invoice.total).toFixed(2);
             }
         });
     return {
@@ -108,19 +117,20 @@ const invoicesHeaders = [
         title: 'Status',
         align: 'start',
         sortable: true,
-        key: 'status'
+        key: 'status',
     },
     {
         title: 'Customer',
         align: 'start',
         sortable: true,
-        key: 'customer.name'
+        key: 'customer.name',
     },
     {
         title: 'Due',
         align: 'start',
         sortable: true,
-        key: 'due_date'
+        key: 'due_date',
+        value: item => `${new Date(item.due_date).toLocaleDateString()}`,
     },
     {
         title: 'Total',
@@ -158,9 +168,11 @@ watch(timeframe, (newTimeframe) => {
         <v-btn :value="30">1M</v-btn>
         <v-btn :value="365">12M</v-btn>
     </v-btn-toggle>
+
     <v-skeleton-loader
         :loading="loading"
         type="table"
+        class="bg-transparent"
     >
         <v-row align="stretch">
             <v-col cols="4" xl="2">
@@ -216,7 +228,8 @@ watch(timeframe, (newTimeframe) => {
                 </v-card>
             </v-col>
         </v-row>
-        <v-row>
+
+        <v-row class="mb-8">
             <v-col cols="12" lg="6">
                 <v-card elevation="1">
                     <v-card-title>
