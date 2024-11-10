@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use App\Enums\Status;
 use App\Models\Invoice;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

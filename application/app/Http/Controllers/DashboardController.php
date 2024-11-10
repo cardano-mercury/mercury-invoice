@@ -91,10 +91,11 @@ class DashboardController extends Controller
                         'id' => $invoice->customer->id,
                         'name' => $invoice->customer->name,
                     ],
+                    'issue_date' => $invoice->issue_date->toDateString(),
                     'due_date' => $invoice->due_date->toDateString(),
                     'total' => $invoice->total,
                     'currency' => $invoice->currency,
-                    'is_overdue' => $invoice->is_overdue
+                    'is_overdue' => $invoice->is_overdue,
                 ];
             })
             ->toArray();

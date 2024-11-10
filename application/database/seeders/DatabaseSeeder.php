@@ -127,13 +127,15 @@ class DatabaseSeeder extends Seeder
             /**
              * Fake Paid Invoices
              */
-            Invoice::factory(200)->create([
-                'user_id' => $user->id,
-                'customer_id' => $customer->id,
-                'billing_address_id' => $customerAddresses[0]->id,
-                'shipping_address_id' => $customerAddresses[1]->id,
-                'status' => Status::PAID,
-            ])->each(static function (Invoice $invoice) use($emails) {
+            for ($i = 1; $i <= 200; $i++) {
+
+                $invoice = Invoice::factory()->create([
+                    'user_id' => $user->id,
+                    'customer_id' => $customer->id,
+                    'billing_address_id' => $customerAddresses[0]->id,
+                    'shipping_address_id' => $customerAddresses[1]->id,
+                    'status' => Status::PAID,
+                ]);
 
                 $invoice->recipients()->sync([ $emails->first()->id ]);
 
@@ -168,20 +170,22 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => $invoiceDateTime,
                 ]);
 
-            });
+            }
 
             /**
              * Fake Unpaid & Not Late Invoices
              */
             $dateInFuture = now()->addYears(2)->toDateString();
-            Invoice::factory(50)->create([
-                'user_id' => $user->id,
-                'customer_id' => $customer->id,
-                'billing_address_id' => $customerAddresses[0]->id,
-                'shipping_address_id' => $customerAddresses[1]->id,
-                'due_date' => $dateInFuture,
-                'status' => Status::PUBLISHED,
-            ])->each(static function (Invoice $invoice) use($emails) {
+            for ($i = 1; $i <= 50; $i++) {
+
+                $invoice = Invoice::factory()->create([
+                    'user_id' => $user->id,
+                    'customer_id' => $customer->id,
+                    'billing_address_id' => $customerAddresses[0]->id,
+                    'shipping_address_id' => $customerAddresses[1]->id,
+                    'due_date' => $dateInFuture,
+                    'status' => Status::PUBLISHED,
+                ]);
 
                 $invoice->recipients()->sync([ $emails->first()->id ]);
 
@@ -208,20 +212,22 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => $invoiceDateTime,
                 ]);
 
-            });
+            }
 
             /**
              * Fake Unpaid & Late Invoices
              */
             $dateInPast = now()->subYears(2)->toDateString();
-            Invoice::factory(50)->create([
-                'user_id' => $user->id,
-                'customer_id' => $customer->id,
-                'billing_address_id' => $customerAddresses[0]->id,
-                'shipping_address_id' => $customerAddresses[1]->id,
-                'due_date' => $dateInPast,
-                'status' => Status::PUBLISHED,
-            ])->each(static function (Invoice $invoice) use($emails) {
+            for ($i = 1; $i <= 50; $i++) {
+
+                $invoice = Invoice::factory()->create([
+                    'user_id' => $user->id,
+                    'customer_id' => $customer->id,
+                    'billing_address_id' => $customerAddresses[0]->id,
+                    'shipping_address_id' => $customerAddresses[1]->id,
+                    'due_date' => $dateInPast,
+                    'status' => Status::PUBLISHED,
+                ]);
 
                 $invoice->recipients()->sync([ $emails->first()->id ]);
 
@@ -248,17 +254,19 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => $invoiceDateTime,
                 ]);
 
-            });
+            }
 
             /**
              * Fake Invoices In Random Statuses
              */
-            Invoice::factory(50)->create([
-                'user_id' => $user->id,
-                'customer_id' => $customer->id,
-                'billing_address_id' => $customerAddresses[0]->id,
-                'shipping_address_id' => $customerAddresses[1]->id,
-            ])->each(static function (Invoice $invoice) use($emails) {
+            for ($i = 1; $i <= 50; $i++) {
+
+                $invoice = Invoice::factory()->create([
+                    'user_id' => $user->id,
+                    'customer_id' => $customer->id,
+                    'billing_address_id' => $customerAddresses[0]->id,
+                    'shipping_address_id' => $customerAddresses[1]->id,
+                ]);
 
                 $invoice->recipients()->sync([ $emails->first()->id ]);
 
@@ -285,7 +293,7 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => $invoiceDateTime,
                 ]);
 
-            });
+            }
 
         }
     }

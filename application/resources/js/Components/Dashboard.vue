@@ -75,33 +75,29 @@ const salesByTimeOptions = {
     }
 }
 
-const salesByTimeData = {
-    labels: [
-        '2024-09-30',
-        '2024-10-01',
-        '2024-10-02',
-        '2024-10-03',
-        '2024-10-04',
-        '2024-10-05',
-        '2024-10-06'
-    ],
-    datasets: [
-        {
-            borderColor: '#1ED980',
-            backgroundColor: '#1ED980',
-            label: 'Revenue',
-            data: [
-                123.45,
-                56.78,
-                901.23,
-                456.78,
-                90.1,
-                234.56,
-                789.01
-            ]
-        }
-    ]
-}
+const salesByTimeData = computed(() => {
+    const parsedDataset = {};
+    dashboardStats.value.invoices
+        .filter(invoice => invoice.status === 'Paid')
+        .forEach(invoice => {
+            if (parsedDataset[invoice.issue_date]) {
+                parsedDataset[invoice.issue_date] += parseFloat(invoice.total);
+            } else {
+                parsedDataset[invoice.issue_date] = parseFloat(invoice.total);
+            }
+        });
+    return {
+        labels: Object.keys(parsedDataset),
+        datasets: [
+            {
+                borderColor: '#1ED980',
+                backgroundColor: '#1ED980',
+                label: 'Revenue',
+                data: Object.values(parsedDataset),
+            }
+        ],
+    }
+});
 
 const timeframe = ref(7);
 
