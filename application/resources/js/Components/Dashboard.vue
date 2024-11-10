@@ -32,7 +32,7 @@ const salesByTimeOptions = computed(() => {
         case 1: timeUnit = 'hour'; break;
         case 7: timeUnit = 'day'; break;
         case 30: timeUnit = 'week'; break;
-        case 365: timeUnit = 'quarter'; break;
+        case 365: timeUnit = 'month'; break;
     }
     return {
         datasets: {
