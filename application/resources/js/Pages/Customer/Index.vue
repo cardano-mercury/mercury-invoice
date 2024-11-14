@@ -52,7 +52,7 @@ function doDelete(customer) {
         </template>
 
         <v-sheet class="bg-white px-4 py-12">
-            <v-row class="mb-4 px-4">
+            <v-row class="mb-4 px-4" align="center">
                 <v-text-field
                     v-model="search"
                     label="Search"
@@ -71,22 +71,36 @@ function doDelete(customer) {
                 </v-btn>
             </v-row>
 
-            <v-data-table :items="customers" :headers="headers" :search="search"
-                          multi-sort :items-per-page="itemsPerPage">
+            <v-data-table
+                :items="customers"
+                :headers="headers"
+                :search="search"
+                :items-per-page="itemsPerPage"
+                multi-sort
+            >
                 <template v-slot:item.actions="{ item }">
-                    <v-btn :href="route('customers.show', item.id)"
-                           color="primary" class="me-2"
-                           prepend-icon="mdi-magnify">
-                        View
-                    </v-btn>
-                    <v-btn :href="route('customers.edit', item.id)"
-                           class="me-2" prepend-icon="mdi-pencil">
-                        Edit
-                    </v-btn>
-                    <v-btn @click="doDelete(item)" color="error"
-                           prepend-icon="mdi-trash-can">
-                        Delete
-                    </v-btn>
+                    <v-btn
+                        :href="route('customers.show', item.id)"
+                        color="primary"
+                        class="me-2"
+                        prepend-icon="mdi-magnify"
+                        size="small"
+                        text="View"
+                    />
+                    <v-btn
+                        :href="route('customers.edit', item.id)"
+                        class="me-2"
+                        prepend-icon="mdi-pencil"
+                        size="small"
+                        text="Edit"
+                    />
+                    <v-btn
+                        @click="doDelete(item)"
+                        color="error"
+                        prepend-icon="mdi-trash-can"
+                        size="small"
+                        text="Delete"
+                    />
                 </template>
             </v-data-table>
         </v-sheet>

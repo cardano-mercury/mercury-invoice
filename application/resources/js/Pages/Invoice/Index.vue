@@ -79,17 +79,26 @@ defineProps({
                 </v-btn>
             </v-row>
 
-            <v-data-table :items="invoices" :headers="headers" :search="search"
-                          multi-sort :items-per-page="itemsPerPage">
+            <v-data-table
+                :items="invoices"
+                :headers="headers"
+                :search="search"
+                :items-per-page="itemsPerPage"
+                multi-sort
+            >
                 <template v-slot:item.due_date="{ item }">
                     {{ item.due_date }}
                     <v-chip color="error" v-if="item.is_overdue" class="ms-2">LATE</v-chip>
                 </template>
                 <template v-slot:item.actions="{ item }">
-                    <v-btn :href="route('invoices.show', item.id)"
-                           class="me-2" size="small"
-                           variant="flat" icon="mdi-magnify" rounded="0">
-                    </v-btn>
+                    <v-btn
+                        :href="route('invoices.show', item.id)"
+                        color="primary"
+                        class="me-2"
+                        prepend-icon="mdi-magnify"
+                        size="small"
+                        text="View"
+                    />
                 </template>
             </v-data-table>
         </v-sheet>

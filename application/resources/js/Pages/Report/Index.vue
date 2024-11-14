@@ -85,7 +85,7 @@ const generateReport = () => {
         </template>
 
         <v-sheet class="bg-white px-4 py-12">
-            <v-row class="mb-4 px-4">
+            <v-row class="mb-4 px-4" align="center">
                 <v-text-field
                     v-model="search"
                     label="Search"
@@ -272,13 +272,18 @@ const generateReport = () => {
                     <div v-if="item.status === 'Success'">
                         <v-btn
                             :href="route('reports.download', item.id)"
+                            color="primary"
                             class="me-2"
-                            variant="flat" icon="mdi-download" rounded="0"
+                            prepend-icon="mdi-download"
+                            size="small"
+                            text="Download"
                         />
                         <v-btn
                             :href="route('reports.delete', item.id)"
-                            class="me-2"
-                            variant="flat" icon="mdi-delete" rounded="0"
+                            color="error"
+                            prepend-icon="mdi-trash-can"
+                            size="small"
+                            text="Delete"
                         />
                     </div>
                     <div v-else-if="item.status === 'Pending'">

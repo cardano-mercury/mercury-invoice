@@ -195,15 +195,14 @@ const logout = () => {
         </v-main>
         <v-footer app>
             <v-container class="text-center text-sm-body-2">
-                Cardano Mercury: Invoice v{{ $page.props.appVersion }}
+                Mercury: Invoice v{{ $page.props.appVersion }}
                 <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="d-inline">
-                    <a target="_blank" :href="route('terms.show')">
+                    <v-btn variant="text" size="small" target="_blank" :href="route('terms.show')">
                         Terms of Service
-                    </a>
-                    &nbsp;
-                    <a target="_blank" :href="route('policy.show')">
+                    </v-btn>
+                    <v-btn variant="text" size="small" target="_blank" :href="route('policy.show')">
                         Privacy Policy
-                    </a>
+                    </v-btn>
                 </div>
             </v-container>
         </v-footer>
