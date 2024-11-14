@@ -60,7 +60,7 @@ defineProps({
             <h1>Invoices</h1>
         </template>
         <v-sheet class="bg-white px-4 py-12">
-            <v-row class="mb-4 px-4">
+            <v-row class="mb-4 px-4" align="center">
                 <v-text-field
                     v-model="search"
                     label="Search"

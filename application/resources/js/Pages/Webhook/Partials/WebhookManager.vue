@@ -141,8 +141,9 @@ const deleteWebhook = () => {
                 <h3 class="mt-4">Event Targets</h3>
                 <v-row>
                     <v-col v-for="eventTargetName in eventTargetNames"
-                           :key="eventTargetName" cols="12" md="6">
+                           :key="eventTargetName" cols="6" md="4" lg="4">
                         <v-checkbox v-model="createWebhookForm.target_events"
+                                    hide-details
                                     :value="eventTargetName"
                                     :label="eventTargetName"/>
                     </v-col>
@@ -315,8 +316,9 @@ const deleteWebhook = () => {
                     <h3 class="mt-4">Event Targets</h3>
                     <v-row>
                         <v-col v-for="eventTargetName in eventTargetNames"
-                               :key="eventTargetName" cols="12" md="6">
+                               :key="eventTargetName" cols="6" md="4" lg="4">
                             <v-checkbox
+                                hide-details
                                 v-model="updateWebhookForm.target_events"
                                 :value="eventTargetName"
                                 :label="eventTargetName"/>

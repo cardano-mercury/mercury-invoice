@@ -1,63 +1,119 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import {Link} from "@inertiajs/vue3";
+import {ref} from "vue";
 
 defineProps({
     webhook: Object
 });
+
+const itemsPerPage = ref(10);
+const search = ref('');
+const headers = [
+    {
+        title: 'UTC Date & Time',
+        align: 'start',
+        sortable: true,
+        key: 'formatted_datetime',
+    },
+    {
+        title: 'Status',
+        align: 'start',
+        sortable: true,
+        key: 'status',
+    },
+    {
+        title: 'Event Name',
+        align: 'start',
+        sortable: true,
+        key: 'event_name',
+    },
+    {
+        title: 'Attempts',
+        align: 'start',
+        sortable: true,
+        key: 'attempts',
+    },
+    {
+        title: 'Payload',
+        align: 'start',
+        sortable: true,
+        key: 'payload',
+    },
+];
 
 </script>
 
 <template>
     <app-layout title="Customers">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <h1>
                 Webhook Logs
-            </h2>
-            <div class="flex justify-between">
-                <span class="badge">
-                    {{ webhook.url }}
-                </span>
-                <Link
-                    :href="route('webhooks.index')"
-                    class="text-blue-600"
-                >
-                    Go Back
-                </Link>
-            </div>
+            </h1>
         </template>
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">UTC Date & Time</th>
-                                <th scope="col" class="px-6 py-3">Status</th>
-                                <th scope="col" class="px-6 py-3">Event</th>
-                                <th scope="col" class="px-6 py-3">Attempts</th>
-                                <th scope="col" class="px-6 py-3">Payload</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="webhookLog in webhook.logs" :key="webhookLog.id" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ webhookLog.formatted_datetime.datetime }}
-                                    <span class="ml-2 sm-badge">{{ webhookLog.formatted_datetime.diff }}</span>
-                                </th>
-                                <td class="px-6 py-4">{{ webhookLog.status }}</td>
-                                <td class="px-6 py-4">{{ webhookLog.event_name }}</td>
-                                <td class="px-6 py-4">{{ webhookLog.attempts }}</td>
-                                <td class="px-6 py-4">
-                                    <textarea
-                                        class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full text-sm"
-                                    >{{ webhookLog.payload }}</textarea>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <v-sheet class="bg-white px-4 py-12">
+
+            <v-row class="mb-4 px-4">
+                {{ webhook.url }}
+            </v-row>
+
+            <v-row class="mb-4 px-4" align="center">
+                <v-text-field
+                    v-model="search"
+                    label="Search"
+                    prepend-inner-icon="mdi-magnify"
+                    variant="outlined"
+                    hide-details
+                    single-line
+                ></v-text-field>
+                <v-spacer/>
+                <v-btn :href="route('webhooks.index')" variant="flat" color="primary">
+                    Go Back
+                </v-btn>
+            </v-row>
+
+            <v-data-table
+                :items="webhook.logs"
+                :headers="headers"
+                :search="search"
+                :items-per-page="itemsPerPage"
+                multi-sort
+            >
+                <template v-slot:item.formatted_datetime="{ item }">
+                    {{ item.formatted_datetime.datetime }}
+                    <br>
+                    <span class="text-disabled">{{ item.formatted_datetime.diff }}</span>
+                </template>
+                <template v-slot:item.payload="{ item }">
+                    <v-dialog>
+                        <template v-slot:activator="{ props: activatorProps }">
+                            <v-btn
+                                v-bind="activatorProps"
+                                color="primary"
+                                text="View Payload"
+                                variant="flat"
+                                size="small"
+                                prepend-icon="mdi-magnify"
+                            />
+                        </template>
+                        <template v-slot:default="{ isActive }">
+                            <v-card title="Webhook Payload">
+                                <v-card-text>
+                                    <pre style="overflow: auto; font-size: 0.9rem;">{{ JSON.stringify(JSON.parse(item.payload), null, 2) }}</pre>
+                                </v-card-text>
+                                <v-card-actions>
+                                    <v-spacer></v-spacer>
+                                    <v-btn
+                                        text="Close"
+                                        @click="isActive.value = false"
+                                    ></v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </template>
+                    </v-dialog>
+                </template>
+            </v-data-table>
+
+        </v-sheet>
     </app-layout>
 </template>
