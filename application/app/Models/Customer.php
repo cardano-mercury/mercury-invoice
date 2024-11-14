@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Services\WebhookService;
+use App\Enums\WebhookEventTargetName;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\ScopedRouteModelBindingTrait;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -24,6 +26,17 @@ class Customer extends Model
         'tax_number',
         'tax_rate',
     ];
+
+    public static function boot(): void
+    {
+        parent::boot();
+        self::created(function ($model) {
+            WebhookService::handle($model, WebhookEventTargetName::CUSTOMER_CREATED);
+        });
+        self::updated(function ($model) {
+            WebhookService::handle($model, WebhookEventTargetName::CUSTOMER_UPDATED);
+        });
+    }
 
     public function user(): BelongsTo
     {

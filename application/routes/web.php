@@ -84,4 +84,3 @@ Route::middleware([
     Route::get('user/webhooks/{webhook}/test', [WebhookController::class, 'test'])->name('webhooks.test');
 
 });
-

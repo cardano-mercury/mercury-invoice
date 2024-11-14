@@ -13,8 +13,10 @@ use App\Traits\HashIdTrait;
 use App\Models\InvoiceItem;
 use Illuminate\Http\Request;
 use App\Models\InvoiceActivity;
+use App\Services\WebhookService;
 use App\Traits\JsonDownloadTrait;
 use Illuminate\Support\Facades\DB;
+use App\Enums\WebhookEventTargetName;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Resources\Invoice\InvoiceResource;
 use App\Jobs\SendNewInvoiceNotificationMailJob;
@@ -142,7 +144,10 @@ class InvoiceController extends Controller
         });
 
         if ($status === Status::PUBLISHED) {
+            WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_PUBLISHED);
             dispatch(new SendNewInvoiceNotificationMailJob($invoice));
+        } else {
+            WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_CREATED);
         }
 
         session()->flash('success', sprintf('Invoice record created in %s mode', $status->value));
@@ -292,7 +297,10 @@ class InvoiceController extends Controller
         });
 
         if ($status === Status::PUBLISHED) {
+            WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_PUBLISHED);
             dispatch(new SendNewInvoiceNotificationMailJob($invoice));
+        } else {
+            WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_UPDATED);
         }
 
         session()->flash('success', sprintf('Invoice record updated in %s mode', $status->value));
@@ -310,6 +318,8 @@ class InvoiceController extends Controller
         } else {
 
             $invoice->update(['status' => Status::VOIDED]);
+
+            WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_VOIDED);
 
             InvoiceActivity::create([
                 'invoice_id' => $invoice->id,
@@ -331,6 +341,8 @@ class InvoiceController extends Controller
         if ($invoice->status === Status::VOIDED) {
 
             $invoice->update(['status' => Status::DRAFT]);
+
+            WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_RESTORED);
 
             InvoiceActivity::create([
                 'invoice_id' => $invoice->id,
@@ -375,6 +387,8 @@ class InvoiceController extends Controller
         if ($invoice->status === Status::PUBLISHED) {
 
             $invoice->update(['status' => Status::PAID]);
+
+            WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_MANUALLY_MARKED_AS_PAID);
 
             InvoiceActivity::create([
                 'invoice_id' => $invoice->id,

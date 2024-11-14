@@ -2,12 +2,13 @@
 
 namespace App\Jobs;
 
-use App\Enums\PaymentMethod;
 use Throwable;
 use App\Enums\Status;
+use App\Enums\PaymentMethod;
 use App\Enums\CardanoNetwork;
 use App\Models\InvoicePayment;
 use App\Models\InvoiceActivity;
+use App\Services\WebhookService;
 use Illuminate\Support\Facades\Mail;
 use App\ThirdParty\BlockfrostClient;
 use App\Enums\WebhookEventTargetName;
@@ -33,11 +34,6 @@ class ProcessCryptoPaymentJob implements ShouldQueue
         $this->invoicePayment->load([
             'invoice',
             'invoice.user',
-            'invoice.user.webhooks' => static function ($query) {
-                $query->whereHas('eventTargets', static function ($query) {
-                    $query->where('event_name', WebhookEventTargetName::INVOICE_PAID);
-                });
-            },
             'invoice.customer',
             'invoice.recipients',
         ]);
@@ -117,15 +113,7 @@ class ProcessCryptoPaymentJob implements ShouldQueue
                     }
 
                     // Notify webhooks (if applicable)
-                    if ($this->invoicePayment->invoice->user->webhooks->count()) {
-                        foreach ($this->invoicePayment->invoice->user->webhooks as $webhook) {
-                            dispatch(new InvoicePaidWebhookNotificationJob(
-                                $this->invoicePayment->invoice,
-                                $this->invoicePayment,
-                                $webhook,
-                            ));
-                        }
-                    }
+                    WebhookService::handle($this->invoicePayment->invoice, WebhookEventTargetName::INVOICE_PAID);
 
                     // Log activity
                     InvoiceActivity::create([

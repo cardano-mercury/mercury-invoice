@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * @method static insert(array $webhookEventTargets)
+ * @method static create(array $validated)
  */
 class WebhookEventTarget extends Model
 {

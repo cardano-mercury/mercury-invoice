@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Public;
 
-use App\Jobs\InvoicePaidWebhookNotificationJob;
+use App\Enums\WebhookEventTargetName;
+use App\Services\WebhookService;
 use Exception;
 use Throwable;
 use Stripe\Stripe;
@@ -21,7 +22,6 @@ use App\Traits\LogExceptionTrait;
 use Stripe\Webhook as StripeWebhook;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
-use App\Enums\WebhookEventTargetName;
 use App\Mail\InvoicePaidNotificationMail;
 use Stripe\Exception\SignatureVerificationException;
 use Stripe\Checkout\Session as StripeCheckoutSession;
@@ -113,11 +113,6 @@ class PublicWebhookHandler extends Controller
             ->whereIn('status', [Status::PUBLISHED, Status::PAYMENT_PROCESSING])
             ->with([
                 'user',
-                'user.webhooks' => static function ($query) {
-                    $query->whereHas('eventTargets', static function ($query) {
-                        $query->where('event_name', WebhookEventTargetName::INVOICE_PAID);
-                    });
-                },
                 'customer',
                 'recipients',
             ])
@@ -185,15 +180,7 @@ class PublicWebhookHandler extends Controller
                 }
 
                 // Notify webhooks (if applicable)
-                if ($invoice->user->webhooks->count()) {
-                    foreach ($invoice->user->webhooks as $webhook) {
-                        dispatch(new InvoicePaidWebhookNotificationJob(
-                            $invoice,
-                            $invoicePayment,
-                            $webhook,
-                        ));
-                    }
-                }
+                WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_PAID);
 
                 // Log activity
                 InvoiceActivity::create([

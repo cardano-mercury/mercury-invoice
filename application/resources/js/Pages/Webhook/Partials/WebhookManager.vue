@@ -1,21 +1,9 @@
 <script setup>
 import {ref} from 'vue';
-import {Link, useForm} from "@inertiajs/vue3";
-import ActionMessage from "@/Components/ActionMessage.vue";
-import TextInput from "@/Components/TextInput.vue";
-import InputLabel from "@/Components/InputLabel.vue";
-import Checkbox from "@/Components/Checkbox.vue";
-import InputError from "@/Components/InputError.vue";
-import PrimaryButton from "@/Components/PrimaryButton.vue";
+import {useForm} from "@inertiajs/vue3";
 import FormSection from "@/Components/FormSection.vue";
-import DialogModal from "@/Components/DialogModal.vue";
-import SecondaryButton from "@/Components/SecondaryButton.vue";
 import SectionBorder from "@/Components/SectionBorder.vue";
 import ActionSection from "@/Components/ActionSection.vue";
-import DangerButton from "@/Components/DangerButton.vue";
-import ConfirmationModal from "@/Components/ConfirmationModal.vue";
-import Dropdown from "@/Components/Dropdown.vue";
-import DropdownLink from "@/Components/DropdownLink.vue";
 
 const props = defineProps({
     webhooks: Array,
@@ -163,8 +151,13 @@ const deleteWebhook = () => {
         </template>
 
         <template #actions>
-            <v-btn color="primary" :disabled="createWebhookForm.processing"
-                   variant="flat">Create
+            <v-btn
+                color="primary"
+                :disabled="createWebhookForm.processing"
+                variant="flat"
+                @click="createWebhook"
+            >
+                Create
             </v-btn>
         </template>
 
@@ -334,8 +327,12 @@ const deleteWebhook = () => {
             </v-card-text>
             <v-card-actions>
                 <v-btn @click="webhookBeingUpdated = null">Cancel</v-btn>
-                <v-btn color="primary" :disabled="updateWebhookForm.processing"
-                       @click="updateWebhook">
+                <v-btn
+                    color="primary"
+                    :disabled="updateWebhookForm.processing"
+                    variant="flat"
+                    @click="updateWebhook"
+                >
                     Save
                 </v-btn>
             </v-card-actions>

@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Services\WebhookService;
+use App\Enums\WebhookEventTargetName;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\ScopedRouteModelBindingTrait;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -25,6 +27,17 @@ class Product extends Model
         'unit_price',
         'supplier',
     ];
+
+    public static function boot(): void
+    {
+        parent::boot();
+        self::created(function ($model) {
+            WebhookService::handle($model, WebhookEventTargetName::PRODUCT_CREATED);
+        });
+        self::updated(function ($model) {
+            WebhookService::handle($model, WebhookEventTargetName::PRODUCT_UPDATED);
+        });
+    }
 
     public function user(): BelongsTo
     {

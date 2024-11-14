@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Enums\Status;
+use App\Enums\WebhookEventTargetName;
 use App\Models\Invoice;
 use App\Models\InvoiceItem;
+use App\Services\WebhookService;
 use App\Traits\HelperTrait;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -122,7 +124,10 @@ class APIInvoicesController extends Controller
         });
 
         if ($status === Status::PUBLISHED) {
+            WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_PUBLISHED);
             dispatch(new SendNewInvoiceNotificationMailJob($invoice));
+        } else {
+            WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_CREATED);
         }
 
         $invoice->load([
@@ -229,7 +234,10 @@ class APIInvoicesController extends Controller
         });
 
         if ($status === Status::PUBLISHED) {
+            WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_PUBLISHED);
             dispatch(new SendNewInvoiceNotificationMailJob($invoice));
+        } else {
+            WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_UPDATED);
         }
 
         $invoice->load([
@@ -267,6 +275,8 @@ class APIInvoicesController extends Controller
 
         $invoice->update(['status' => Status::VOIDED]);
 
+        WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_VOIDED);
+
         InvoiceActivity::create([
             'invoice_id' => $invoice->id,
             'activity' => 'Invoice was voided via API.',
@@ -292,6 +302,8 @@ class APIInvoicesController extends Controller
         }
 
         $invoice->update(['status' => Status::DRAFT]);
+
+        WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_RESTORED);
 
         InvoiceActivity::create([
             'invoice_id' => $invoice->id,
@@ -348,6 +360,8 @@ class APIInvoicesController extends Controller
         }
 
         $invoice->update(['status' => Status::PAID]);
+
+        WebhookService::handle($invoice, WebhookEventTargetName::INVOICE_MANUALLY_MARKED_AS_PAID);
 
         InvoiceActivity::create([
             'invoice_id' => $invoice->id,

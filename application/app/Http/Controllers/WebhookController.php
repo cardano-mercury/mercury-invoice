@@ -52,13 +52,12 @@ class WebhookController extends Controller
         $validTargetEvents = array_values(array_intersect($request->input('target_events'), WebhookEventTargetName::values()));
 
         if (count($validTargetEvents)) {
-            $webhookEventTargets = [];
             foreach ($validTargetEvents as $validTargetEvent) {
-                $webhookEventTargets[] = [
+                $webhookEventTarget = [
                     'webhook_id' => $webhook->id,
                     'event_name' => $validTargetEvent,
                 ];
-                WebhookEventTarget::insert($webhookEventTargets);
+                WebhookEventTarget::create($webhookEventTarget);
             }
         }
 
@@ -79,13 +78,12 @@ class WebhookController extends Controller
         $validTargetEvents = array_values(array_intersect($request->input('target_events'), WebhookEventTargetName::values()));
 
         if (count($validTargetEvents)) {
-            $webhookEventTargets = [];
             foreach ($validTargetEvents as $validTargetEvent) {
-                $webhookEventTargets[] = [
+                $webhookEventTarget = [
                     'webhook_id' => $webhook->id,
                     'event_name' => $validTargetEvent,
                 ];
-                WebhookEventTarget::insert($webhookEventTargets);
+                WebhookEventTarget::create($webhookEventTarget);
             }
         }
 
