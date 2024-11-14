@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.9",
         "laravel/vapor-core": "^2.37",
         "league/csv": "^9.18",
+        "league/flysystem-aws-s3-v3": "^3.29",
         "resend/resend-laravel": "^0.14.0",
         "stripe/stripe-php": "^15.0",
         "tightenco/ziggy": "^2.0",
