@@ -181,34 +181,34 @@ const deleteWebhook = () => {
                 <!-- Webhook List -->
                 <template #content>
                     <v-list>
-                        <v-list-item v-for="webhook in webhooks"
-                                     :key="webhook.id">
-                            <v-list-item-title>{{ webhook.url }}
+                        <v-list-item v-for="webhook in webhooks" :key="webhook.id" variant="tonal" class="mb-2 rounded">
+                            <v-list-item-title class="pt-2">
+                                <div>{{ webhook.url }}</div>
+                                <div class="pt-2">
+                                    <v-chip label size="small" class="me-2">
+                                        {{ webhook.hmac_algorithm }} HMAC Algo
+                                    </v-chip>
+                                    <v-chip label size="small" class="me-2">
+                                        {{ webhook.max_attempts }} Max Attempts
+                                    </v-chip>
+                                    <v-chip label size="small" class="me-2">
+                                        {{ webhook.timeout_seconds }}s Timeout
+                                    </v-chip>
+                                    <v-chip label size="small" class="me-2">
+                                        {{ webhook.retry_seconds }}s Retry
+                                    </v-chip>
+                                </div>
                             </v-list-item-title>
                             <v-divider class="my-2"/>
-                            <v-list-item-subtitle>
-                                Configuration:
-                                <v-chip label class="me-2">
-                                    {{ webhook.hmac_algorithm }} HMAC Algo
-                                </v-chip>
-                                <v-chip label class="me-2">
-                                    {{ webhook.max_attempts }} Max Attempts
-                                </v-chip>
-                                <v-chip label class="me-2">
-                                    {{ webhook.timeout_seconds }}s Timeout
-                                </v-chip>
-                                <v-chip label class="me-2">
-                                    {{ webhook.retry_seconds }}s Retry
-                                </v-chip>
-                            </v-list-item-subtitle>
-                            <v-divider class="my-2"/>
-                            <v-list-item-subtitle>
-                                Event Targets:
-                                <template
-                                    v-if="webhook.event_targets.length > 0">
-                                    <v-chip label class="me-2"
-                                            v-for="event_target in webhook.event_targets"
-                                            :key="event_target.event_name">
+                            <div>
+                                <template v-if="webhook.event_targets.length > 0">
+                                    <v-chip
+                                        label
+                                        class="me-2 my-1"
+                                        size="small"
+                                        v-for="event_target in webhook.event_targets"
+                                        :key="event_target.event_name"
+                                    >
                                         {{ event_target.event_name }}
                                     </v-chip>
                                 </template>
@@ -217,7 +217,7 @@ const deleteWebhook = () => {
                                         None Selected
                                     </v-chip>
                                 </template>
-                            </v-list-item-subtitle>
+                            </div>
                             <v-menu>
                                 <template v-slot:activator="{ props }">
                                     <v-btn color="secondary" v-bind="props"

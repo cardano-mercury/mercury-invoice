@@ -125,22 +125,30 @@ const deleteApiToken = () => {
             <!-- API Token List -->
             <template #content class="my-6">
                 <v-list>
-                    <v-list-item v-for="token in tokens" :key="token.id">
+                    <v-list-item v-for="token in tokens" :key="token.id" variant="tonal" class="mb-2 rounded">
                         <v-list-item-title>{{
                                 token.name
                             }}
                         </v-list-item-title>
-                        <v-list-item-subtitle v-if="token.last_used_ago">
-                            Last used {{ token.last_used_ago }}
+                        <v-list-item-subtitle>
+                            Last used {{ token.last_used_ago ?? 'Never' }}
                         </v-list-item-subtitle>
-                        <v-list-item-action>
-                            <v-btn v-if="availablePermissions.length"
-                                   variant="flat"
-                                   @click="manageApiTokenPermissions(token)">
+                        <v-list-item-action class="my-2">
+                            <v-btn
+                                v-if="availablePermissions.length"
+                                size="small"
+                                variant="flat"
+                                @click="manageApiTokenPermissions(token)"
+                            >
                                 Permissions
                             </v-btn>
-                            <v-btn color="error" size="small" variant="flat"
-                                   @click="confirmApiTokenDeletion(token)">
+                            <v-btn
+                                color="error"
+                                size="small"
+                                variant="flat"
+                                class="ml-2"
+                                @click="confirmApiTokenDeletion(token)"
+                            >
                                 Delete
                             </v-btn>
                         </v-list-item-action>
