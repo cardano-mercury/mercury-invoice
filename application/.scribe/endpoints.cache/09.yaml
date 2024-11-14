@@ -31,6 +31,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       per_page:
         name: per_page
@@ -40,6 +41,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       page:
         name: page
@@ -49,6 +51,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanQueryParameters:
       customer_id: 1234
@@ -60,7 +63,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-65947156","currency":"USD","total":0,"issue_date":"2024-10-31","due_date":"2024-11-30","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59","items":[{"product_id":null,"service_id":null,"sku":"NEGAM5YEFQSHQXHQ","description":"Minima et quasi veritatis pariatur sit nihil.","quantity":3,"unit_price":57.59,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"SQBH9GMC7YJHG6BT","description":"Quas mollitia velit eligendi molestiae expedita eaque.","quantity":6,"unit_price":47.65,"tax_rate":20}]},{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-77617949","currency":"USD","total":0,"issue_date":"2024-10-31","due_date":"2024-11-30","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59","items":[{"product_id":null,"service_id":null,"sku":"WGU9FQS9ZZRRH5DY","description":"Possimus aperiam dolores quos sint.","quantity":2,"unit_price":54,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"LODVSZTHFMC2UQQC","description":"Qui odit unde totam quaerat.","quantity":2,"unit_price":14.19,"tax_rate":20}]}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-47047037","currency":"USD","total":0,"issue_date":"2024-01-03","due_date":"2024-02-02","last_notified":null,"is_overdue":false,"status":"Payment Processing","created_at":"2024-01-03 13:56:27","updated_at":"2024-01-03 13:56:27","items":[{"product_id":null,"service_id":null,"sku":"SSAR9B60CMJF3SOX","description":"Sed autem deserunt voluptate qui.","quantity":2,"unit_price":8.9,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"YBCIPEKYVNTEZED9","description":"Aut amet quod fugit quia sit et quia dicta.","quantity":2,"unit_price":44.96,"tax_rate":20}]},{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-76064829","currency":"USD","total":0,"issue_date":"2024-09-13","due_date":"2024-10-13","last_notified":null,"is_overdue":true,"status":"Published","created_at":"2024-09-13 15:16:31","updated_at":"2024-09-13 15:16:31","items":[{"product_id":null,"service_id":null,"sku":"HIOIN3C3KSNO3CHR","description":"Sunt est sit dolorem veniam sapiente in et quibusdam.","quantity":3,"unit_price":29.14,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"YPEZ41G4SPVIH5XN","description":"Et consequatur libero laboriosam perspiciatis.","quantity":6,"unit_price":44.27,"tax_rate":20}]}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -142,6 +145,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       customer_email_ids:
         name: customer_email_ids
@@ -152,6 +156,7 @@ endpoints:
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       billing_address_id:
         name: billing_address_id
@@ -161,6 +166,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       shipping_address_id:
         name: shipping_address_id
@@ -170,6 +176,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       customer_reference:
         name: customer_reference
@@ -179,6 +186,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       issue_date:
         name: issue_date
@@ -188,6 +196,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       due_date:
         name: due_date
@@ -197,6 +206,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       items:
         name: items
@@ -238,6 +248,7 @@ endpoints:
         type: 'object[]'
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       save_mode:
         name: save_mode
@@ -249,6 +260,7 @@ endpoints:
           - Draft
           - Publish
         exampleWasSpecified: false
+        nullable: false
         custom: []
       'items[].product_id':
         name: 'items[].product_id'
@@ -258,6 +270,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       'items[].service_id':
         name: 'items[].service_id'
@@ -267,6 +280,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       'items[].sku':
         name: 'items[].sku'
@@ -276,6 +290,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       'items[].description':
         name: 'items[].description'
@@ -285,6 +300,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       'items[].quantity':
         name: 'items[].quantity'
@@ -294,6 +310,7 @@ endpoints:
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       'items[].unit_price':
         name: 'items[].unit_price'
@@ -303,6 +320,7 @@ endpoints:
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       'items[].tax_rate':
         name: 'items[].tax_rate'
@@ -312,6 +330,7 @@ endpoints:
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanBodyParameters:
       customer_id: 1
@@ -360,7 +379,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-46606383","currency":"USD","total":0,"issue_date":"2024-10-31","due_date":"2024-11-30","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59","items":[{"product_id":null,"service_id":null,"sku":"Y9BAJKVUM0FZTPUK","description":"Ullam id amet in ipsa saepe autem maiores.","quantity":6,"unit_price":7.8,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"V7KIPUTQEDBLZZSH","description":"Quia voluptas suscipit provident minus ducimus aperiam reiciendis.","quantity":2,"unit_price":70.73,"tax_rate":20}],"customer":{"id":1,"name":"Korbin Stark","tax_number":"01JBG2MH3C1EH5CQ2DE067M44R","tax_rate":17.5,"categories":[],"defaultEmail":null,"defaultPhone":null,"defaultAddress":null,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"billingAddress":{"id":1,"type":"Shipping","name":"Harber, Jacobs and Hyatt","line1":"3977 Ortiz Meadows","line2":null,"city":"Nathenbury","state":"California","postal_code":"04458","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"shippingAddress":{"id":1,"type":"Shipping","name":"Sawayn, Ratke and Fritsch","line1":"5198 Raynor Plaza Suite 621","line2":null,"city":"Martinmouth","state":"New Mexico","postal_code":"67144-0265","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"notificationRecipients":[{"id":1,"name":"Marta Tillman","address":"haven21@example.net","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},{"id":1,"name":"Jazmyn Johns","address":"poberbrunner@example.net","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"payments":[{"payment_date":"31-10-2024","payment_method":"Stripe","payment_currency":"USD","payment_amount":6407067.16,"payment_reference":"1FgEukBwviuGNyLt","crypto_asset_name":null,"crypto_asset_ada_price":null,"crypto_asset_quantity":0,"crypto_wallet_name":null,"crypto_payment_ttl":null,"crypto_payment_recipient_address":null,"crypto_payment_last_checked":null,"crypto_payment_process_attempts":null,"crypto_payment_last_error":null,"status":"Pending"}],"activities":[{"activity":"Created new invoice","when":"2024-10-31 01:21:59","diff":"0 seconds ago"}]}}'
+        content: '{"data":{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-78143805","currency":"USD","total":0,"issue_date":"2024-04-12","due_date":"2024-05-12","last_notified":null,"is_overdue":false,"status":"Voided","created_at":"2024-04-12 07:58:26","updated_at":"2024-04-12 07:58:26","items":[{"product_id":null,"service_id":null,"sku":"QEEJBWVMIL3ZYCH5","description":"Eveniet eaque qui quia voluptas suscipit provident minus ducimus.","quantity":2,"unit_price":94.94,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"PRXEIFSZL5BQZQLT","description":"Facere beatae id at aperiam.","quantity":6,"unit_price":21.49,"tax_rate":20}],"customer":{"id":1,"name":"Grant Fisher III","tax_number":"01JCP7ED0Z5YBHMK4X6RCZPB2X","tax_rate":17.5,"categories":[],"default_email":null,"default_phone":null,"default_address":null,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"billing_address":{"id":1,"type":"Shipping","name":"Satterfield PLC","line1":"737 Corbin Canyon","line2":null,"city":"Olgachester","state":"Idaho","postal_code":"63749-9471","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"shipping_address":{"id":1,"type":"Billing","name":"Littel-Raynor","line1":"662 Mossie Plaza Suite 671","line2":null,"city":"Shannachester","state":"Ohio","postal_code":"21195","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"notification_recipients":[{"id":1,"name":"Dr. Jazmyn Johns Sr.","address":"pwill@example.net","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},{"id":1,"name":"Dr. Lia Stehr PhD","address":"andrew80@example.com","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}],"payments":[{"payment_date":"14-11-2024","payment_method":"Stripe","payment_currency":"USD","payment_amount":874.51,"payment_reference":"wQ7YQmR42xhW9W8f","crypto_asset_name":null,"crypto_asset_ada_price":null,"crypto_asset_quantity":0,"crypto_wallet_name":null,"crypto_payment_ttl":null,"crypto_payment_recipient_address":null,"crypto_payment_last_checked":null,"crypto_payment_process_attempts":null,"crypto_payment_last_error":null,"status":"Pending"}],"activities":[{"activity":"Created new invoice","when":"2024-11-14 20:57:09","diff":"0 seconds ago"}]}}'
         headers: []
         description: Created
         custom: []
@@ -452,6 +471,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -463,7 +483,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-77733849","currency":"USD","total":0,"issue_date":"2024-10-31","due_date":"2024-11-30","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59","items":[{"product_id":null,"service_id":null,"sku":"JOFV5CHKCGM5QEUA","description":"Id at aperiam repellat.","quantity":3,"unit_price":25.53,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"DM8RXQTQ0XI3TQJV","description":"Et ducimus reiciendis tempora omnis libero.","quantity":4,"unit_price":46.88,"tax_rate":20}],"customer":{"id":1,"name":"Nathen Hirthe Sr.","tax_number":"01JBG2MH3GQMB52S3102KHTRTJ","tax_rate":17.5,"categories":[{"id":1,"name":"Omnis","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"defaultEmail":{"id":1,"name":"Jamey Johnston","address":"tbins@example.net","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"defaultPhone":{"id":1,"type":"Home","name":"Prof. Bailee Christiansen DDS","number":"(951) 731-9262","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"defaultAddress":{"id":1,"type":"Shipping","name":"Hane, Bernhard and Wiegand","line1":"3148 Senger Junctions Apt. 970","line2":null,"city":"New Johann","state":"Oklahoma","postal_code":"32715-4045","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"billingAddress":{"id":1,"type":"Shipping","name":"Mayert PLC","line1":"725 Donnelly Motorway Suite 716","line2":null,"city":"Lorinemouth","state":"Indiana","postal_code":"74026-8152","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"shippingAddress":{"id":1,"type":"Billing","name":"Osinski, Luettgen and Powlowski","line1":"470 Nella Loop Apt. 157","line2":null,"city":"Willstad","state":"Oregon","postal_code":"64654-0112","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"notificationRecipients":[{"id":1,"name":"Roxane Smitham","address":"andrew80@example.com","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},{"id":1,"name":"Anika Brekke","address":"brogahn@example.net","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"payments":[{"payment_date":"31-10-2024","payment_method":"Stripe","payment_currency":"USD","payment_amount":8264848.28,"payment_reference":"TKix85jENTwPpajx","crypto_asset_name":null,"crypto_asset_ada_price":null,"crypto_asset_quantity":0,"crypto_wallet_name":null,"crypto_payment_ttl":null,"crypto_payment_recipient_address":null,"crypto_payment_last_checked":null,"crypto_payment_process_attempts":null,"crypto_payment_last_error":null,"status":"Pending"}],"activities":[{"activity":"Created new invoice","when":"2024-10-31 01:21:59","diff":"0 seconds ago"}]}}'
+        content: '{"data":{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-17111332","currency":"USD","total":0,"issue_date":"2024-08-16","due_date":"2024-09-15","last_notified":null,"is_overdue":false,"status":"Voided","created_at":"2024-08-16 13:42:50","updated_at":"2024-08-16 13:42:50","items":[{"product_id":null,"service_id":null,"sku":"T0KY60WAXWVSYJQL","description":"Aperiam repellat sit ea in et ducimus reiciendis.","quantity":3,"unit_price":60.09,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"BMOUBWSI0KHYOUHM","description":"Quos id autem id autem explicabo amet.","quantity":2,"unit_price":46.65,"tax_rate":20}],"customer":{"id":1,"name":"Olga Ratke","tax_number":"01JCP7ED1205KJDNDJTYYNGWWD","tax_rate":17.5,"categories":[{"id":1,"name":"Veritatis","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}],"default_email":{"id":1,"name":"Prof. Bailee Christiansen DDS","address":"atorphy@example.net","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"default_phone":{"id":1,"type":"Office","name":"Martin Haag","number":"+1 (920) 975-1481","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"default_address":{"id":1,"type":"Billing","name":"Senger, Howe and Hagenes","line1":"2693 Quitzon Port Apt. 323","line2":null,"city":"North Holly","state":"Hawaii","postal_code":"44575-4408","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"billing_address":{"id":1,"type":"Billing","name":"Nienow, Donnelly and Langworth","line1":"762 Marquardt Glen Suite 740","line2":null,"city":"Margemouth","state":"Ohio","postal_code":"71850-9639","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"shipping_address":{"id":1,"type":"Shipping","name":"Effertz-Williamson","line1":"2417 Will Passage Suite 933","line2":null,"city":"Roxanefort","state":"New Mexico","postal_code":"04401","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"notification_recipients":[{"id":1,"name":"Mrs. Kaci Block","address":"steuber.aliza@example.net","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},{"id":1,"name":"Willow Sporer","address":"jamey42@example.net","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}],"payments":[{"payment_date":"14-11-2024","payment_method":"Stripe","payment_currency":"USD","payment_amount":10,"payment_reference":"ikfsmPe3niN6FkTC","crypto_asset_name":null,"crypto_asset_ada_price":null,"crypto_asset_quantity":0,"crypto_wallet_name":null,"crypto_payment_ttl":null,"crypto_payment_recipient_address":null,"crypto_payment_last_checked":null,"crypto_payment_process_attempts":null,"crypto_payment_last_error":null,"status":"Pending"}],"activities":[{"activity":"Created new invoice","when":"2024-11-14 20:57:09","diff":"0 seconds ago"}]}}'
         headers: []
         description: OK
         custom: []
@@ -542,6 +562,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -556,6 +577,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       customer_email_ids:
         name: customer_email_ids
@@ -566,6 +588,7 @@ endpoints:
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       billing_address_id:
         name: billing_address_id
@@ -575,6 +598,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       shipping_address_id:
         name: shipping_address_id
@@ -584,6 +608,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       customer_reference:
         name: customer_reference
@@ -593,6 +618,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       issue_date:
         name: issue_date
@@ -602,6 +628,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       due_date:
         name: due_date
@@ -611,6 +638,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       items:
         name: items
@@ -652,6 +680,7 @@ endpoints:
         type: 'object[]'
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       save_mode:
         name: save_mode
@@ -663,6 +692,7 @@ endpoints:
           - Draft
           - Publish
         exampleWasSpecified: false
+        nullable: false
         custom: []
       'items[].product_id':
         name: 'items[].product_id'
@@ -672,6 +702,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       'items[].service_id':
         name: 'items[].service_id'
@@ -681,6 +712,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       'items[].sku':
         name: 'items[].sku'
@@ -690,6 +722,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       'items[].description':
         name: 'items[].description'
@@ -699,6 +732,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       'items[].quantity':
         name: 'items[].quantity'
@@ -708,6 +742,7 @@ endpoints:
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       'items[].unit_price':
         name: 'items[].unit_price'
@@ -717,6 +752,7 @@ endpoints:
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       'items[].tax_rate':
         name: 'items[].tax_rate'
@@ -726,6 +762,7 @@ endpoints:
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanBodyParameters:
       customer_id: 1
@@ -774,7 +811,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-78143805","currency":"USD","total":0,"issue_date":"2024-10-31","due_date":"2024-11-30","last_notified":null,"is_overdue":false,"status":"Paid","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59","items":[{"product_id":null,"service_id":null,"sku":"IZN9NCQBZU0DO3RX","description":"Id amet in ipsa saepe autem.","quantity":6,"unit_price":45.38,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"FS1RPTQRSXWTRMJA","description":"Qui quia voluptas suscipit.","quantity":4,"unit_price":71.8,"tax_rate":20}]}}'
+        content: '{"data":{"id":1,"customer_id":0,"billing_address_id":0,"shipping_address_id":0,"invoice_reference":"QLqBOqWxPA","customer_reference":"INV-36871359","currency":"USD","total":0,"issue_date":"2024-04-12","due_date":"2024-05-12","last_notified":null,"is_overdue":false,"status":"Voided","created_at":"2024-04-12 07:58:26","updated_at":"2024-04-12 07:58:26","items":[{"product_id":null,"service_id":null,"sku":"ST1P29DJTIQXXY80","description":"Eveniet eaque qui quia voluptas suscipit provident minus ducimus.","quantity":2,"unit_price":61.74,"tax_rate":20},{"product_id":null,"service_id":null,"sku":"ARA2BQULYDQRUTRW","description":"Facere beatae id at aperiam.","quantity":6,"unit_price":20.17,"tax_rate":20}]}}'
         headers: []
         description: OK
         custom: []
@@ -866,6 +903,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       invoice_id: 1
@@ -952,6 +990,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       invoice_id: 1
@@ -1038,6 +1077,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       invoice_id: 1
@@ -1124,6 +1164,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       invoice_id: 1

@@ -40,9 +40,9 @@ class CustomerResource extends JsonResource
             'tax_number' => $this->tax_number,
             'tax_rate' => $this->tax_rate,
             'categories' => CustomerCategoryResource::collection($categories),
-            'defaultEmail' => new CustomerEmailResource($defaultEmail),
-            'defaultPhone' => new CustomerPhoneResource($defaultPhone),
-            'defaultAddress' => new CustomerAddressResource($defaultAddress),
+            'default_email' => new CustomerEmailResource($defaultEmail),
+            'default_phone' => new CustomerPhoneResource($defaultPhone),
+            'default_address' => new CustomerAddressResource($defaultAddress),
             'created_at' => $this->created_at->toDateTimeString(),
             'updated_at' => $this->updated_at->toDateTimeString(),
         ];

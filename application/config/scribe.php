@@ -4,7 +4,7 @@ use Knuckles\Scribe\Extracting\Strategies;
 
 return [
     // The HTML <title> for the generated documentation. If this is empty, Scribe will infer it from config('app.name').
-    'title' => null,
+    'title' => 'Mercury: Invoice API Documentation',
 
     // A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
     'description' => '',
@@ -52,7 +52,7 @@ return [
     'static' => [
         // HTML documentation, assets and Postman collection will be generated to this folder.
         // Source Markdown will still be in resources/docs.
-        'output_path' => 'public/docs',
+        'output_path' => 'public/docs/api',
     ],
 
     'laravel' => [
@@ -62,7 +62,7 @@ return [
 
         // URL path to use for the docs endpoint (if `add_routes` is true).
         // By default, `/docs` opens the HTML page, `/docs.postman` opens the Postman collection, and `/docs.openapi` the OpenAPI spec.
-        'docs_url' => '/docs',
+        'docs_url' => '/docs/api',
 
         // Directory within `public` in which to store CSS and JS assets.
         // By default, assets are stored in `public/vendor/scribe`.

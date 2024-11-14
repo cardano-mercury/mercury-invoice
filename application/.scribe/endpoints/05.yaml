@@ -29,6 +29,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       per_page:
         name: per_page
@@ -38,6 +39,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       page:
         name: page
@@ -47,6 +49,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanQueryParameters:
       search: 'Website Hosting'
@@ -58,7 +61,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Facere Beatae Id","sku":"LEHGVWDIL5UEKXDW","description":"Aperiam repellat sit ea in et ducimus reiciendis. Omnis libero quos id autem. Autem explicabo amet quae culpa maxime dolor quo.","unit_type":"cm","unit_price":44.72,"supplier":"Donnelly-Langworth","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},{"id":1,"name":"Perspiciatis Porro Fuga","sku":"N7SHSHRK1AIIGROW","description":"Dolorum sunt quis soluta quod fuga voluptas. Iste eligendi rerum porro nihil voluptate non. Possimus totam quam nesciunt omnis a qui maxime recusandae.","unit_type":"gram","unit_price":58.68,"supplier":"Smitham, Monahan and Braun","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"Facere Beatae Id","sku":"J2W2PWM9UBMVSQHR","description":"Aperiam repellat sit ea in et ducimus reiciendis. Omnis libero quos id autem. Autem explicabo amet quae culpa maxime dolor quo.","unit_type":"cm","unit_price":43.49,"supplier":"Donnelly-Langworth","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},{"id":1,"name":"Perspiciatis Porro Fuga","sku":"WXGCU7VHLUERZ40M","description":"Dolorum sunt quis soluta quod fuga voluptas. Iste eligendi rerum porro nihil voluptate non. Possimus totam quam nesciunt omnis a qui maxime recusandae.","unit_type":"gram","unit_price":56.28,"supplier":"Smitham, Monahan and Braun","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -137,6 +140,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       sku:
         name: sku
@@ -146,6 +150,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       description:
         name: description
@@ -155,6 +160,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       unit_type:
         name: unit_type
@@ -164,6 +170,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       unit_price:
         name: unit_price
@@ -173,6 +180,7 @@ endpoints:
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       supplier:
         name: supplier
@@ -182,6 +190,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
     cleanBodyParameters:
       name: 'Website Hosting'
@@ -194,7 +203,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"name":"Voluptate Possimus Ullam","sku":"HMTVKKLGNFGGPBRO","description":"Amet in ipsa saepe autem maiores eveniet eaque. Quia voluptas suscipit provident minus ducimus aperiam reiciendis. Facere beatae id at aperiam.","unit_type":"each","unit_price":19.19,"supplier":"Hyatt-Fisher","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"name":"Voluptate Possimus Ullam","sku":"ODPBJROF7SKRRWNE","description":"Amet in ipsa saepe autem maiores eveniet eaque. Quia voluptas suscipit provident minus ducimus aperiam reiciendis. Facere beatae id at aperiam.","unit_type":"each","unit_price":24.79,"supplier":"Hyatt-Fisher","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: Created
         custom: []
@@ -286,6 +295,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -297,7 +307,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"At Aperiam Repellat","sku":"1622DIVHYGP4KRFF","description":"Ea in et ducimus reiciendis tempora. Libero quos id autem id autem explicabo amet. Culpa maxime dolor quo.","unit_type":"cm","unit_price":61.92,"supplier":"Donnelly-Langworth","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"name":"At Aperiam Repellat","sku":"LPSVDPG9KDZNKYDJ","description":"Ea in et ducimus reiciendis tempora. Libero quos id autem id autem explicabo amet. Culpa maxime dolor quo.","unit_type":"cm","unit_price":71.84,"supplier":"Donnelly-Langworth","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: OK
         custom: []
@@ -373,6 +383,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -387,6 +398,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       sku:
         name: sku
@@ -396,6 +408,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       description:
         name: description
@@ -405,6 +418,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       unit_type:
         name: unit_type
@@ -414,6 +428,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       unit_price:
         name: unit_price
@@ -423,6 +438,7 @@ endpoints:
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       supplier:
         name: supplier
@@ -432,6 +448,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
     cleanBodyParameters:
       name: 'Website Hosting'
@@ -444,7 +461,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Id Amet In","sku":"AH31GAIGVXRSE7LF","description":"Saepe autem maiores eveniet. Qui quia voluptas suscipit. Minus ducimus aperiam reiciendis magni facere beatae.","unit_type":"each","unit_price":80.38,"supplier":"Zulauf and Sons","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"name":"Culpa Aut Harum","sku":"TCEJ9ZA5W55S0FUP","description":"Quasi rerum minus aut voluptas ut autem deserunt. Voluptatibus omnis autem illum cupiditate incidunt mollitia eius voluptatem. Dolorem qui voluptas aut nisi non recusandae voluptas.","unit_type":"gram","unit_price":55.41,"supplier":"Steuber, Halvorson and Boyer","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: OK
         custom: []

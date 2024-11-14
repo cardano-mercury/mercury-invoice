@@ -29,6 +29,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       customer_id: 1
@@ -37,13 +38,14 @@ endpoints:
         name: type
         description: ''
         required: false
-        example: Office
+        example: Mobile
         type: string
         enumValues:
           - Home
           - Office
           - Mobile
         exampleWasSpecified: false
+        nullable: false
         custom: []
       search:
         name: search
@@ -53,6 +55,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       per_page:
         name: per_page
@@ -62,6 +65,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       page:
         name: page
@@ -71,9 +75,10 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanQueryParameters:
-      type: Office
+      type: Mobile
       search: '0123456789'
       per_page: 25
       page: 1
@@ -83,7 +88,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"type":"Mobile","name":"Jay Jast","number":"+1-779-441-7365","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},{"id":1,"type":"Mobile","name":"Prof. Carlos Carroll","number":"+1-301-463-8573","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"type":"Home","name":"Mr. Brant Lowe PhD","number":"1-317-613-3980","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},{"id":1,"type":"Office","name":"Brian Abshire III","number":"+1-832-273-0707","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -158,6 +163,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       customer_id: 1
@@ -175,6 +181,7 @@ endpoints:
           - Office
           - Mobile
         exampleWasSpecified: false
+        nullable: false
         custom: []
       name:
         name: name
@@ -184,6 +191,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       number:
         name: number
@@ -193,6 +201,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       is_default:
         name: is_default
@@ -202,6 +211,7 @@ endpoints:
         type: boolean
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
     cleanBodyParameters:
       type: Home
@@ -212,7 +222,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"type":"Mobile","name":"Elena Ritchie","number":"+1-575-907-2075","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"type":"Mobile","name":"Elena Ritchie","number":"+1-575-907-2075","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: Created
         custom: []
@@ -304,6 +314,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       id:
         name: id
@@ -313,6 +324,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       customer_id: 1
@@ -325,7 +337,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Home","name":"Korbin Stark","number":"+1-931-592-7790","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"type":"Home","name":"Korbin Stark","number":"+1-931-592-7790","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: OK
         custom: []
@@ -401,6 +413,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       id:
         name: id
@@ -410,6 +423,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       customer_id: 1
@@ -428,6 +442,7 @@ endpoints:
           - Office
           - Mobile
         exampleWasSpecified: false
+        nullable: false
         custom: []
       name:
         name: name
@@ -437,6 +452,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       number:
         name: number
@@ -446,6 +462,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       is_default:
         name: is_default
@@ -455,6 +472,7 @@ endpoints:
         type: boolean
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
     cleanBodyParameters:
       type: Home
@@ -465,7 +483,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Mobile","name":"Elena Ritchie","number":"+14409170790","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"type":"Mobile","name":"Elena Ritchie","number":"+14409170790","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: OK
         custom: []

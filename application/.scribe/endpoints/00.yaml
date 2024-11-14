@@ -29,6 +29,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       per_page:
         name: per_page
@@ -38,6 +39,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       page:
         name: page
@@ -47,6 +49,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanQueryParameters:
       search: 'John Doe'
@@ -58,7 +61,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Angelita Mills","tax_number":"01JBG2MH0J62K0QNKQPP27GZAE","tax_rate":17.5,"categories":[{"id":1,"name":"Ea","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"defaultEmail":{"id":1,"name":"Dereck King DVM","address":"satterfield.joyce@example.net","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"defaultPhone":{"id":1,"type":"Home","name":"Frida Boyer","number":"+1-276-476-1985","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"defaultAddress":{"id":1,"type":"Billing","name":"Raynor-Mueller","line1":"3571 Robel Plaza Suite 671","line2":null,"city":"Shannachester","state":"Ohio","postal_code":"21195","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},{"id":1,"name":"Mrs. Zora Harber","tax_number":"01JBG2MH0J62K0QNKQPP27GZAF","tax_rate":17.5,"categories":[{"id":1,"name":"A","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"defaultEmail":{"id":1,"name":"Jazmyn Johns","address":"satterfield.lelah@example.net","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"defaultPhone":{"id":1,"type":"Mobile","name":"Lia Stehr","number":"(678) 250-1079","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"defaultAddress":{"id":1,"type":"Shipping","name":"Beahan, Stroman and Reichert","line1":"155 Titus Circles Suite 707","line2":null,"city":"Port Baileeland","state":"South Dakota","postal_code":"88592-1714","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"Angelita Mills","tax_number":"01JCP7ECXYV9BP69N706HQM9YY","tax_rate":17.5,"categories":[{"id":1,"name":"Ea","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}],"default_email":{"id":1,"name":"Dereck King DVM","address":"satterfield.joyce@example.net","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"default_phone":{"id":1,"type":"Home","name":"Frida Boyer","number":"+1-276-476-1985","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"default_address":{"id":1,"type":"Billing","name":"Raynor-Mueller","line1":"3571 Robel Plaza Suite 671","line2":null,"city":"Shannachester","state":"Ohio","postal_code":"21195","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},{"id":1,"name":"Mrs. Zora Harber","tax_number":"01JCP7ECXZ75JT229W01WQP6R9","tax_rate":17.5,"categories":[{"id":1,"name":"A","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}],"default_email":{"id":1,"name":"Jazmyn Johns","address":"satterfield.lelah@example.net","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"default_phone":{"id":1,"type":"Mobile","name":"Lia Stehr","number":"(678) 250-1079","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"default_address":{"id":1,"type":"Shipping","name":"Beahan, Stroman and Reichert","line1":"155 Titus Circles Suite 707","line2":null,"city":"Port Baileeland","state":"South Dakota","postal_code":"88592-1714","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -137,6 +140,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       tax_number:
         name: tax_number
@@ -146,6 +150,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       tax_rate:
         name: tax_rate
@@ -155,6 +160,7 @@ endpoints:
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
     cleanBodyParameters:
       name: 'John Doe'
@@ -164,7 +170,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"name":"Obie Gulgowski DDS","tax_number":"01JBG2MH0TP5BV0RYJ5ZT4KVQ9","tax_rate":17.5,"categories":[],"defaultEmail":null,"defaultPhone":null,"defaultAddress":null,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"name":"Obie Gulgowski DDS","tax_number":"01JCP7ECY7E24MRM3VTXQ8Y8QQ","tax_rate":17.5,"categories":[],"default_email":null,"default_phone":null,"default_address":null,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: Created
         custom: []
@@ -256,6 +262,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -267,7 +274,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Angelita Mills","tax_number":"01JBG2MH10E7WTZGHBDWM9EKP8","tax_rate":17.5,"categories":[{"id":1,"name":"At","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"defaultEmail":{"id":1,"name":"Zechariah Harber","address":"dereck.king@example.net","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"defaultPhone":{"id":1,"type":"Mobile","name":"Margarette Kulas","number":"502-257-7829","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"defaultAddress":{"id":1,"type":"Billing","name":"Runte Group","line1":"7544 Pacocha Plains","line2":null,"city":"Martinmouth","state":"New Mexico","postal_code":"67144-0265","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"name":"Angelita Mills","tax_number":"01JCP7ECYE8VMK532DVP62XZ1F","tax_rate":17.5,"categories":[{"id":1,"name":"At","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}],"default_email":{"id":1,"name":"Zechariah Harber","address":"dereck.king@example.net","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"default_phone":{"id":1,"type":"Mobile","name":"Margarette Kulas","number":"502-257-7829","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"default_address":{"id":1,"type":"Billing","name":"Runte Group","line1":"7544 Pacocha Plains","line2":null,"city":"Martinmouth","state":"New Mexico","postal_code":"67144-0265","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: OK
         custom: []
@@ -343,6 +350,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -357,6 +365,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       tax_number:
         name: tax_number
@@ -366,6 +375,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       tax_rate:
         name: tax_rate
@@ -375,6 +385,7 @@ endpoints:
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
     cleanBodyParameters:
       name: 'John Doe'
@@ -384,7 +395,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Obie Gulgowski DDS","tax_number":"01JBG2MH122SWJS31MVRMJ42NQ","tax_rate":17.5,"categories":[{"id":1,"name":"Amet","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"defaultEmail":{"id":1,"name":"Andrew Trantow DDS","address":"atreutel@example.net","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"defaultPhone":{"id":1,"type":"Mobile","name":"Dr. John Rice","number":"260-680-9992","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"defaultAddress":{"id":1,"type":"Shipping","name":"Hyatt-Fisher","line1":"822 Kulas Rue","line2":null,"city":"Lake Bobbie","state":"Florida","postal_code":"57843","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"name":"Obie Gulgowski DDS","tax_number":"01JCP7ECYGRB7CNVT7D7SFT6SR","tax_rate":17.5,"categories":[{"id":1,"name":"Amet","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}],"default_email":{"id":1,"name":"Andrew Trantow DDS","address":"atreutel@example.net","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"default_phone":{"id":1,"type":"Mobile","name":"Dr. John Rice","number":"260-680-9992","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"default_address":{"id":1,"type":"Shipping","name":"Hyatt-Fisher","line1":"822 Kulas Rue","line2":null,"city":"Lake Bobbie","state":"Florida","postal_code":"57843","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: OK
         custom: []

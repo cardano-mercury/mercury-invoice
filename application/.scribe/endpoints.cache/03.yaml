@@ -29,6 +29,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       customer_id: 1
@@ -37,12 +38,13 @@ endpoints:
         name: type
         description: ''
         required: false
-        example: Billing
+        example: Shipping
         type: string
         enumValues:
           - Billing
           - Shipping
         exampleWasSpecified: false
+        nullable: false
         custom: []
       search:
         name: search
@@ -52,6 +54,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       per_page:
         name: per_page
@@ -61,6 +64,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       page:
         name: page
@@ -70,9 +74,10 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanQueryParameters:
-      type: Billing
+      type: Shipping
       search: '25 Brookfield Road'
       per_page: 25
       page: 1
@@ -82,7 +87,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"type":"Billing","name":"Mills Ltd","line1":"433 Ike Walks","line2":null,"city":"Lake Joycechester","state":"Maine","postal_code":"37676-5436","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},{"id":1,"type":"Billing","name":"Bayer Group","line1":"371 Nienow Extensions Suite 544","line2":null,"city":"Margretstad","state":"New Hampshire","postal_code":"68158","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"type":"Billing","name":"Mills Ltd","line1":"433 Ike Walks","line2":null,"city":"Lake Joycechester","state":"Maine","postal_code":"37676-5436","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},{"id":1,"type":"Billing","name":"Bayer Group","line1":"371 Nienow Extensions Suite 544","line2":null,"city":"Margretstad","state":"New Hampshire","postal_code":"68158","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -157,6 +162,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       customer_id: 1
@@ -173,6 +179,7 @@ endpoints:
           - Billing
           - Shipping
         exampleWasSpecified: false
+        nullable: false
         custom: []
       name:
         name: name
@@ -182,6 +189,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       line1:
         name: line1
@@ -191,6 +199,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       line2:
         name: line2
@@ -200,6 +209,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       city:
         name: city
@@ -209,6 +219,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       state:
         name: state
@@ -218,6 +229,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       postal_code:
         name: postal_code
@@ -227,6 +239,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       country:
         name: country
@@ -236,6 +249,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       is_default:
         name: is_default
@@ -245,6 +259,7 @@ endpoints:
         type: boolean
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
     cleanBodyParameters:
       type: Billing
@@ -260,7 +275,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"type":"Billing","name":"Gulgowski, Ritchie and Dibbert","line1":"88930 Treutel Bypass","line2":null,"city":"Ethanborough","state":"Nebraska","postal_code":"44829-5827","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"Gulgowski, Ritchie and Dibbert","line1":"88930 Treutel Bypass","line2":null,"city":"Ethanborough","state":"Nebraska","postal_code":"44829-5827","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: Created
         custom: []
@@ -352,6 +367,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       id:
         name: id
@@ -361,6 +377,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       customer_id: 1
@@ -373,7 +390,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Billing","name":"Mills Ltd","line1":"433 Ike Walks","line2":null,"city":"Lake Joycechester","state":"Maine","postal_code":"37676-5436","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"Mills Ltd","line1":"433 Ike Walks","line2":null,"city":"Lake Joycechester","state":"Maine","postal_code":"37676-5436","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: OK
         custom: []
@@ -449,6 +466,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       id:
         name: id
@@ -458,6 +476,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       customer_id: 1
@@ -475,6 +494,7 @@ endpoints:
           - Billing
           - Shipping
         exampleWasSpecified: false
+        nullable: false
         custom: []
       name:
         name: name
@@ -484,6 +504,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       line1:
         name: line1
@@ -493,6 +514,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       line2:
         name: line2
@@ -502,6 +524,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       city:
         name: city
@@ -511,6 +534,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       state:
         name: state
@@ -520,6 +544,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       postal_code:
         name: postal_code
@@ -529,6 +554,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       country:
         name: country
@@ -538,6 +564,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       is_default:
         name: is_default
@@ -547,6 +574,7 @@ endpoints:
         type: boolean
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
     cleanBodyParameters:
       type: Billing
@@ -562,7 +590,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"type":"Billing","name":"Gulgowski, Ritchie and Dibbert","line1":"88930 Treutel Bypass","line2":null,"city":"Ethanborough","state":"Nebraska","postal_code":"44829-5827","country":"United States","is_default":true,"created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"type":"Billing","name":"Gulgowski, Ritchie and Dibbert","line1":"88930 Treutel Bypass","line2":null,"city":"Ethanborough","state":"Nebraska","postal_code":"44829-5827","country":"United States","is_default":true,"created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: OK
         custom: []

@@ -29,6 +29,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       per_page:
         name: per_page
@@ -38,6 +39,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       page:
         name: page
@@ -47,6 +49,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanQueryParameters:
       search: 'Software Development'
@@ -58,7 +61,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Sit Ea In","description":"Ducimus reiciendis tempora omnis libero. Id autem id autem explicabo amet. Culpa maxime dolor quo.","unit_price":19.9,"supplier":"Nienow, Donnelly and Langworth","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"},{"id":1,"name":"Tempore Dolorum Sunt","description":"Soluta quod fuga voluptas tempore. Eligendi rerum porro nihil voluptate non a. Totam quam nesciunt omnis a qui maxime recusandae.","unit_price":42.15,"supplier":"Stehr-Smitham","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
+        content: '{"data":[{"id":1,"name":"Sit Ea In","description":"Ducimus reiciendis tempora omnis libero. Id autem id autem explicabo amet. Culpa maxime dolor quo.","unit_price":17.63,"supplier":"Nienow, Donnelly and Langworth","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"},{"id":1,"name":"Tempore Dolorum Sunt","description":"Soluta quod fuga voluptas tempore. Eligendi rerum porro nihil voluptate non a. Totam quam nesciunt omnis a qui maxime recusandae.","unit_price":40.56,"supplier":"Stehr-Smitham","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}],"links":{"first":"\/?page=1","last":null,"prev":null,"next":null},"meta":{"current_page":1,"from":1,"path":"\/","per_page":25,"to":2}}'
         headers: []
         description: OK
         custom: []
@@ -137,6 +140,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       description:
         name: description
@@ -146,6 +150,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       unit_price:
         name: unit_price
@@ -155,6 +160,7 @@ endpoints:
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       supplier:
         name: supplier
@@ -164,6 +170,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
     cleanBodyParameters:
       name: 'Software Development'
@@ -174,7 +181,7 @@ endpoints:
     responses:
       -
         status: 201
-        content: '{"data":{"id":1,"name":"Ipsa Saepe Autem","description":"Eveniet eaque qui quia voluptas suscipit provident minus ducimus. Reiciendis magni facere beatae. At aperiam repellat sit ea in et.","unit_price":35.99,"supplier":"Fadel, Satterfield and Ortiz","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"name":"Id Amet In","description":"Saepe autem maiores eveniet. Qui quia voluptas suscipit. Minus ducimus aperiam reiciendis magni facere beatae.","unit_price":48.79,"supplier":"Bartoletti, Zulauf and Harber","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: Created
         custom: []
@@ -266,6 +273,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -277,7 +285,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Et Ducimus Reiciendis","description":"Omnis libero quos id autem. Autem explicabo amet quae culpa maxime dolor quo. Assumenda quidem velit sint perspiciatis.","unit_price":60.19,"supplier":"Pacocha-Mueller","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"name":"Et Ducimus Reiciendis","description":"Omnis libero quos id autem. Autem explicabo amet quae culpa maxime dolor quo. Assumenda quidem velit sint perspiciatis.","unit_price":52.89,"supplier":"Pacocha-Mueller","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: OK
         custom: []
@@ -353,6 +361,7 @@ endpoints:
         type: integer
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
     cleanUrlParameters:
       id: 1
@@ -367,6 +376,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       description:
         name: description
@@ -376,6 +386,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
       unit_price:
         name: unit_price
@@ -385,6 +396,7 @@ endpoints:
         type: number
         enumValues: []
         exampleWasSpecified: false
+        nullable: false
         custom: []
       supplier:
         name: supplier
@@ -394,6 +406,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
+        nullable: true
         custom: []
     cleanBodyParameters:
       name: 'Software Development'
@@ -404,7 +417,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Maiores Eveniet Eaque","description":"Quia voluptas suscipit provident minus ducimus aperiam reiciendis. Facere beatae id at aperiam. Sit ea in et ducimus reiciendis tempora omnis libero.","unit_price":36.04,"supplier":"Hirthe, Rippin and Hirthe","created_at":"2024-10-31 01:21:59","updated_at":"2024-10-31 01:21:59"}}'
+        content: '{"data":{"id":1,"name":"Ipsa Saepe Autem","description":"Eveniet eaque qui quia voluptas suscipit provident minus ducimus. Reiciendis magni facere beatae. At aperiam repellat sit ea in et.","unit_price":42.73,"supplier":"Fadel, Satterfield and Ortiz","created_at":"2024-11-14 20:57:09","updated_at":"2024-11-14 20:57:09"}}'
         headers: []
         description: OK
         custom: []
