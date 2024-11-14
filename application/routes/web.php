@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
@@ -61,6 +62,13 @@ Route::middleware([
     Route::get('invoices/{invoice}/restore', [InvoiceController::class, 'restore'])->name('invoices.restore');
     Route::get('invoices/{invoice}/sendReminderNotifications', [InvoiceController::class, 'sendReminderNotifications'])->name('invoices.sendReminderNotifications');
     Route::get('invoices/{invoice}/manuallyMarkAsPaid', [InvoiceController::class, 'manuallyMarkAsPaid'])->name('invoices.manuallyMarkAsPaid');
+
+    Route::prefix('reports')->group(static function () {
+        Route::get('/', [ReportController::class, 'index'])->name('reports.index');
+        Route::post('/', [ReportController::class, 'generate'])->name('reports.generate');
+        Route::get('{report}/download', [ReportController::class, 'download'])->name('reports.download');
+        Route::get('{report}/delete', [ReportController::class, 'delete'])->name('reports.delete');
+    });
 
     // User Settings
     Route::prefix('user/settings')->group(function () {

@@ -38,6 +38,7 @@ const salesByTimeOptions = computed(() => {
         datasets: {
             line: {
                 tension: 0.4,
+                spanGaps: true,
             }
         },
         responsive: true,

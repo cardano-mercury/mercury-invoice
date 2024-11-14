@@ -2,13 +2,7 @@
 import {ref} from 'vue';
 import {Head, Link, router} from '@inertiajs/vue3';
 import ApplicationLogo from '@/media/mercury-logo-full.png';
-
-import ApplicationMark from '@/Components/ApplicationMark.vue';
 import Banner from '@/Components/Banner.vue';
-import Dropdown from '@/Components/Dropdown.vue';
-import DropdownLink from '@/Components/DropdownLink.vue';
-import NavLink from '@/Components/NavLink.vue';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 
 defineProps({
     title: String,
@@ -125,19 +119,40 @@ const logout = () => {
                          :active="route().current('dashboard')"/>
             <v-list-item prepend-icon="mdi-account-group" title="Customers"
                          :href="route('customers.index')"
-                         :active="route().current('customers.*')"/>
+                         :active="route().current('customers.*')">
+                <template v-if="$page.props.count.customers" v-slot:append>
+                    <v-btn variant="tonal" size="x-small">{{ $page.props.count.customers }}</v-btn>
+                </template>
+            </v-list-item>
             <v-list-item prepend-icon="mdi-clipboard" title="Products"
                          :href="route('products.index')"
-                         :active="route().current('products.*')"/>
+                         :active="route().current('products.*')">
+                <template v-if="$page.props.count.products" v-slot:append>
+                    <v-btn variant="tonal" size="x-small">{{ $page.props.count.products }}</v-btn>
+                </template>
+            </v-list-item>
             <v-list-item prepend-icon="mdi-hammer" title="Services"
                          :href="route('services.index')"
-                         :active="route().current('services.*')"/>
+                         :active="route().current('services.*')">
+                <template v-if="$page.props.count.services" v-slot:append>
+                    <v-btn variant="tonal" size="x-small">{{ $page.props.count.services }}</v-btn>
+                </template>
+            </v-list-item>
             <v-list-item prepend-icon="mdi-invoice-list" title="Invoices"
                          :href="route('invoices.index')"
-                         :active="route().current('invoices.*')"/>
-            <v-list-item prepend-icon="mdi-list-box" title="Reports"/>
-<!--            <v-divider/>
-            <v-list-item prepend-icon="mdi-cog" title="Settings"/>-->
+                         :active="route().current('invoices.*')">
+                <template v-if="$page.props.count.invoices" v-slot:append>
+                    <v-btn variant="tonal" size="x-small">{{ $page.props.count.invoices }}</v-btn>
+                </template>
+            </v-list-item>
+            <v-list-item prepend-icon="mdi-list-box" title="Reports"
+                         :href="route('reports.index')"
+                         :active="route().current('reports.*')"
+            >
+                <template v-if="$page.props.count.reports" v-slot:append>
+                    <v-btn variant="tonal" size="x-small">{{ $page.props.count.reports }}</v-btn>
+                </template>
+            </v-list-item>
 
             <template v-slot:append v-if="!rail">
                 <div class="pa-2">
