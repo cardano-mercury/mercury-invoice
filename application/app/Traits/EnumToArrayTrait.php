@@ -22,9 +22,21 @@ trait EnumToArrayTrait
         return $values;
     }
 
-    public static function random(): mixed
+    public static function random(array $only = []): mixed
     {
-        return self::values()[array_rand(self::values())];
+        $result = null;
+        $maxAttempts = 1000;
+
+        while (--$maxAttempts >= 0) {
+            $result = self::values()[array_rand(self::values())];
+            if (count($only) && !in_array($result, $only)) {
+                continue;
+            } else {
+                break;
+            }
+        }
+
+        return $result;
     }
 
     public static function array(): array

@@ -180,7 +180,7 @@ ${address.country}`;
         </template>
         <v-sheet class="bg-white px-4 py-12">
             <v-form
-                @submit.prevent="form.post(route('invoices.update', invoice))">
+                @submit.prevent="form.put(route('invoices.update', invoice))">
                 <h2>Customer Details</h2>
                 <v-select v-model="form.customer_id" required :items="customers"
                           item-title="name" item-value="id"

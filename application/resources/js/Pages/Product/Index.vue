@@ -58,7 +58,7 @@ function doDelete(product) {
         </template>
 
         <v-sheet class="bg-white px-4 py-12">
-            <v-row class="mb-4 px-4">
+            <v-row class="mb-4 px-4" align="center">
                 <v-text-field
                     v-model="search"
                     label="Search"
@@ -77,25 +77,39 @@ function doDelete(product) {
                 </v-btn>
             </v-row>
 
-            <v-data-table :items="products" :headers="headers" :search="search"
-                          multi-sort :items-per-page="itemsPerPage">
+            <v-data-table
+                :items="products"
+                :headers="headers"
+                :search="search"
+                :items-per-page="itemsPerPage"
+                multi-sort
+            >
                 <template v-slot:item.unit_price="{ item }">
                     {{ parseFloat(item.unit_price).toFixed(2) }}
                 </template>
                 <template v-slot:item.actions="{ item }">
-                    <v-btn :href="route('products.show', item.id)"
-                           color="primary" class="me-2" size="small"
-                           variant="flat"
-                           icon="mdi-magnify" rounded="0">
-                    </v-btn>
-                    <v-btn :href="route('products.edit', item.id)"
-                           variant="flat"
-                           class="me-2" icon="mdi-pencil" size="small"
-                           rounded="0">
-                    </v-btn>
-                    <v-btn @click="doDelete(item)" color="error" variant="flat"
-                           icon="mdi-trash-can" size="small" rounded="0">
-                    </v-btn>
+                    <v-btn
+                        :href="route('products.show', item.id)"
+                        color="primary"
+                        class="me-2"
+                        prepend-icon="mdi-magnify"
+                        size="small"
+                        text="View"
+                    />
+                    <v-btn
+                        :href="route('products.edit', item.id)"
+                        class="me-2"
+                        prepend-icon="mdi-pencil"
+                        size="small"
+                        text="Edit"
+                    />
+                    <v-btn
+                        @click="doDelete(item)"
+                        color="error"
+                        prepend-icon="mdi-trash-can"
+                        size="small"
+                        text="Delete"
+                    />
                 </template>
             </v-data-table>
         </v-sheet>

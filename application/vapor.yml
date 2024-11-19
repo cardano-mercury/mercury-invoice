@@ -14,7 +14,8 @@ environments:
         runtime: docker
         database: production-mysql
         cache: production-redis
-        # TODO: AWS Managed Firewall (WAF)
+        firewall:
+          rate-limit: 2000
         build:
           - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
           - 'php artisan optimize'
@@ -36,7 +37,8 @@ environments:
         runtime: docker
         database: staging-mysql
         cache: staging-redis
-        # TODO: AWS Managed Firewall (WAF)
+        firewall:
+          rate-limit: 2000
         build:
             - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
             - 'php artisan optimize'

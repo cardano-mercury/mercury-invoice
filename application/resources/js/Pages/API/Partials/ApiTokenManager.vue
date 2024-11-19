@@ -80,11 +80,13 @@ const deleteApiToken = () => {
                           type="text" autofocus label="Name"/>
             <template v-if="availablePermissions.length">
                 <h3>Permissions</h3>
-                <v-row no-gutters>
+                <v-row no-gutters dense>
                     <v-col cols="6" md="4" lg="3"
+                           class="pa-0"
                            v-for="permission in availablePermissions"
                            :key="permission">
                         <v-checkbox v-model="createApiTokenForm.permissions"
+                                    hide-details
                                     :value="permission"
                                     :label="permission"/>
                     </v-col>
@@ -123,22 +125,30 @@ const deleteApiToken = () => {
             <!-- API Token List -->
             <template #content class="my-6">
                 <v-list>
-                    <v-list-item v-for="token in tokens" :key="token.id">
+                    <v-list-item v-for="token in tokens" :key="token.id" variant="tonal" class="mb-2 rounded">
                         <v-list-item-title>{{
                                 token.name
                             }}
                         </v-list-item-title>
-                        <v-list-item-subtitle v-if="token.last_used_ago">
-                            Last used {{ token.last_used_ago }}
+                        <v-list-item-subtitle>
+                            Last used {{ token.last_used_ago ?? 'Never' }}
                         </v-list-item-subtitle>
-                        <v-list-item-action>
-                            <v-btn v-if="availablePermissions.length"
-                                   variant="flat"
-                                   @click="manageApiTokenPermissions(token)">
+                        <v-list-item-action class="my-2">
+                            <v-btn
+                                v-if="availablePermissions.length"
+                                size="small"
+                                variant="flat"
+                                @click="manageApiTokenPermissions(token)"
+                            >
                                 Permissions
                             </v-btn>
-                            <v-btn color="error" variant="flat"
-                                   @click="confirmApiTokenDeletion(token)">
+                            <v-btn
+                                color="error"
+                                size="small"
+                                variant="flat"
+                                class="ml-2"
+                                @click="confirmApiTokenDeletion(token)"
+                            >
                                 Delete
                             </v-btn>
                         </v-list-item-action>
@@ -175,19 +185,22 @@ const deleteApiToken = () => {
             <v-card-text>
                 <v-row>
                     <v-col cols="6" md="4" lg="3"
+                           class="pa-0"
                            v-for="permission in availablePermissions"
                            :key="permission">
                         <v-checkbox v-model="updateApiTokenForm.permissions"
+                                    hide-details
                                     :value="permission"
                                     :label="permission"/>
                     </v-col>
                 </v-row>
             </v-card-text>
             <v-card-actions>
-                <v-btn @click="managingPermissionsFor = null" color="error">
+                <v-btn @click="managingPermissionsFor = null">
                     Cancel
                 </v-btn>
                 <v-btn color="primary" @click="updateApiToken"
+                       variant="flat"
                        :disabled="updateApiTokenForm.processing">
                     Save
                 </v-btn>
@@ -202,10 +215,10 @@ const deleteApiToken = () => {
                 Are you sure you would like to delete this API token?
             </v-card-text>
             <v-card-actions>
-                <v-btn color="error" @click="apiTokenBeingDeleted = null">
+                <v-btn @click="apiTokenBeingDeleted = null">
                     Cancel
                 </v-btn>
-                <v-btn color="primary" :disabled="deleteApiTokenForm.processing"
+                <v-btn color="primary" variant="flat" :disabled="deleteApiTokenForm.processing"
                        @click="deleteApiToken">
                     Delete
                 </v-btn>

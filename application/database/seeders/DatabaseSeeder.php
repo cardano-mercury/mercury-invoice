@@ -3,9 +3,6 @@
 namespace Database\Seeders;
 
 use App\Enums\Status;
-use App\Models\InvoiceActivity;
-use App\Models\InvoiceItem;
-use App\Models\InvoicePayment;
 use App\Models\User;
 use App\Models\Phone;
 use App\Models\Email;
@@ -13,14 +10,19 @@ use App\Models\Invoice;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\Address;
-use App\Models\Customer;
 use App\Models\Webhook;
+use App\Models\Customer;
 use App\Models\WebhookLog;
+use Illuminate\Support\Arr;
 use Random\RandomException;
+use App\Models\InvoiceItem;
+use App\Models\InvoicePayment;
+use App\Models\InvoiceActivity;
 use Illuminate\Database\Seeder;
 use App\Models\ProductCategory;
 use App\Models\ServiceCategory;
 use App\Models\CustomerCategory;
+use Illuminate\Support\Facades\DB;
 use App\Models\WebhookEventTarget;
 use Illuminate\Support\Collection;
 
@@ -40,35 +42,31 @@ class DatabaseSeeder extends Seeder
                 'email' => 'test@local.dev',
             ]);
 
-            // Seed customer
-            $customer = Customer::factory()->create([
-                'user_id' => $user->id,
-            ]);
-
-            // Seed emails
-            $emails = Email::factory(random_int(random_int(2, 3), random_int(5, 10)))->create([
-                'customer_id' => $customer->id,
-            ]);
-
-            // Seed phones
-            Phone::factory(random_int(random_int(2, 3), random_int(5, 10)))->create([
-                'customer_id' => $customer->id,
-            ]);
-
-            // Seed addresses
-            $customerAddresses = Address::factory(random_int(random_int(2, 3), random_int(5, 10)))->create([
-                'customer_id' => $customer->id,
-            ]);
+            // Seed predictable personal access token (useful for local api testing)
+            DB::table('personal_access_tokens')->insert([[
+                "id" => 1,
+                "tokenable_type" => "App\\Models\\User",
+                "tokenable_id" => 1,
+                "name" => "Dev Test",
+                "token" => "97e7a181f6a6383eb5256fa40736af56113331bc85025986dcb7e6787ef6c4e4",
+                "abilities" => "[\"Customers:Read\",\"Products:Read\",\"Services:Read\",\"Invoices:Read\",\"CustomerEmails:Create\",\"CustomerPhones:Update\",\"CustomerCategories:Read\",\"Products:Create\",\"ProductCategories:Update\",\"ServiceCategories:Read\",\"Invoices:Create\",\"Invoices:Update\",\"ServiceCategories:Create\",\"Products:Update\",\"CustomerCategories:Create\",\"CustomerAddresses:Read\",\"CustomerEmails:Update\",\"Customers:Create\",\"Customers:Update\",\"CustomerPhones:Read\",\"CustomerAddresses:Create\",\"CustomerCategories:Update\",\"ProductCategories:Read\",\"Services:Create\",\"ServiceCategories:Update\",\"Services:Update\",\"ProductCategories:Create\",\"CustomerAddresses:Update\",\"CustomerPhones:Create\",\"CustomerEmails:Read\"]",
+                "last_used_at" => "2024-11-07 18:09:58",
+                "expires_at" => null,
+                "created_at" => "2024-11-07 18:07:44",
+                "updated_at" => "2024-11-07 18:09:58",
+            ]]);
 
             // Seed products
             $products = Product::factory(random_int(random_int(2, 3), random_int(5, 10)))->create([
                 'user_id' => $user->id,
             ]);
+            $allProductIds = $products->pluck('id')->toArray();
 
             // Seed services
             $services = Service::factory(random_int(random_int(2, 3), random_int(5, 10)))->create([
                 'user_id' => $user->id,
             ]);
+            $allServicesIds = $services->pluck('id')->toArray();
 
             // Seed categories
             $customerCategories = CustomerCategory::factory(random_int(4, random_int(5, 10)))->create([
@@ -81,8 +79,36 @@ class DatabaseSeeder extends Seeder
                 'user_id' => $user->id,
             ]);
 
-            // Associate random categories with customer
-            $this->attachRandomCategoriesToEntity($customerCategories, $customer);
+            // Seed customers
+            $allCustomerIds = [];
+            for ($i = 1; $i <= mt_rand(5, 10); $i++)
+            {
+                // Seed customer
+                $customer = Customer::factory()->create([
+                    'user_id' => $user->id,
+                ]);
+
+                // Seed emails
+                Email::factory(random_int(random_int(2, 3), random_int(5, 10)))->create([
+                    'customer_id' => $customer->id,
+                ]);
+
+                // Seed phones
+                Phone::factory(random_int(random_int(2, 3), random_int(5, 10)))->create([
+                    'customer_id' => $customer->id,
+                ]);
+
+                // Seed addresses
+                Address::factory(random_int(random_int(2, 3), random_int(5, 10)))->create([
+                    'customer_id' => $customer->id,
+                ]);
+
+                // Associate random categories with customer
+                $this->attachRandomCategoriesToEntity($customerCategories, $customer);
+
+                // Remember customer id
+                $allCustomerIds[] = $customer->id;
+            }
 
             // Associate random categories with products
             /** @var Product $product */
@@ -108,71 +134,343 @@ class DatabaseSeeder extends Seeder
             ]);
 
             /**
-             * Fake Paid Invoice #1
+             * Controlled fake invoice seeding :: START
              */
 
-            // Seed invoice #1
-            $invoice1 = Invoice::factory()->create([
-                'user_id' => $user->id,
-                'customer_id' => $customer->id,
-                'billing_address_id' => $customerAddresses[0]->id,
-                'shipping_address_id' => $customerAddresses[1]->id,
-                'status' => Status::PAID,
-            ]);
+            $start = microtime(true);
+            echo "Seeding fake invoices, this might take a while ... Please Wait!\n";
 
-            // Seed invoice #1 Email Recipients
-            $invoice1->recipients()->sync([
-                $emails->first()->id,
-            ]);
+            /**
+             * Fake Paid Invoices
+             */
+            for ($i = 1; $i <= 200; $i++) {
 
-            // Seed invoice #1 item #1
-            InvoiceItem::factory()->create([
-                'invoice_id' => $invoice1->id,
-                'sku' => $products->first()->sku,
-                'description' => $products->first()->description,
-                'quantity' => 2,
-                'unit_price' => $products->first()->unit_price,
-                'tax_rate' => 0.00,
-            ]);
+                $randomCustomer = Customer::query()
+                    ->where('id', Arr::random($allCustomerIds))
+                    ->with([
+                        'emails' => static function ($query) {
+                            $query->select(['id', 'customer_id']);
+                        },
+                        'addresses' => static function ($query) {
+                            $query->select(['id', 'customer_id']);
+                        },
+                    ])
+                    ->first();
+                $allCustomerEmailIds = $randomCustomer->emails->pluck('id')->toArray();
+                $allCustomerAddressIds = $randomCustomer->addresses->pluck('id')->toArray();
 
-            // Seed invoice #1 item #2
-            InvoiceItem::factory()->create([
-                'invoice_id' => $invoice1->id,
-                'sku' => null,
-                'description' => $services->first()->description,
-                'quantity' => 1,
-                'unit_price' => $services->first()->unit_price,
-                'tax_rate' => 15.00,
-            ]);
+                $invoice = Invoice::factory()->create([
+                    'user_id' => $user->id,
+                    'customer_id' => $randomCustomer->id,
+                    'billing_address_id' => Arr::random($allCustomerAddressIds),
+                    'shipping_address_id' => Arr::random($allCustomerAddressIds),
+                    'status' => Status::PAID,
+                ]);
 
-            // Seed invoice #1 item #3
-            InvoiceItem::factory()->create([
-                'invoice_id' => $invoice1->id,
-                'sku' => null,
-                'description' => 'Discount for being awesome',
-                'quantity' => 1,
-                'unit_price' => -5,
-                'tax_rate' => 0.00,
-            ]);
+                $invoice->recipients()->sync(Arr::random($allCustomerEmailIds, mt_rand(1, 3)));
 
-            // Seed invoice #1 activities
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Saved Invoice' ]);
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Updated Invoice' ]);
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Published Invoice' ]);
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Customer Viewed Invoice' ]);
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Late Reminder Sent' ]);
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Customer Viewed Invoice' ]);
-            InvoiceActivity::factory()->create([ 'invoice_id' => $invoice1->id, 'activity' => 'Customer Paid Invoice' ]);
+                $invoiceDateTime = $invoice->created_at->toDateTimeString();
 
-            # Seed invoice #1 payment
-            $invoice1->fresh(['items']);
-            InvoicePayment::factory()->create([
-                'invoice_id' => $invoice1->id,
-                'payment_amount' => $invoice1->total,
-                'status' => Status::PAID,
-            ]);
+                $invoiceItems = [];
+                for ($j = 1; $j <= mt_rand(1, 5); $j++) {
+                    if ($this->randomChance(70)) {
+                        if ($this->randomChance(50)) {
+                            $extraInvoiceItemData = [
+                                'product_id' => Arr::random($allProductIds),
+                                'service_id' => null,
+                            ];
+                        } else {
+                            $extraInvoiceItemData = [
+                                'product_id' => null,
+                                'service_id' => Arr::random($allServicesIds),
+                            ];
+                        }
+                    } else {
+                        $extraInvoiceItemData = [
+                            'product_id' => null,
+                            'service_id' => null,
+                        ];
+                    }
+                    $invoiceItems[] = InvoiceItem::factory()->create([
+                        ...$extraInvoiceItemData,
+                        'invoice_id' => $invoice->id,
+                        'created_at' => $invoiceDateTime,
+                        'updated_at' => $invoiceDateTime,
+                    ]);
+                }
+
+                $invoiceTotal = 0;
+                foreach ($invoiceItems as $item) {
+                    $subtotal = $item->quantity * $item->unit_price;
+                    $tax = $subtotal * ($item->tax_rate / 100);
+                    $invoiceTotal += ($subtotal + $tax);
+                }
+                $invoice->update(['total' => $invoiceTotal]);
+
+                InvoiceActivity::factory()->create([
+                    'invoice_id' => $invoice->id,
+                    'activity' => 'Dummy invoice created via database seeder',
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
+
+                InvoicePayment::factory()->create([
+                    'invoice_id' => $invoice->id,
+                    'payment_amount' => $invoice->total,
+                    'status' => Status::PAID,
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
+
+            }
+
+            /**
+             * Fake Unpaid & Not Late Invoices
+             */
+            $dateInFuture = now()->addYears(2)->toDateString();
+            for ($i = 1; $i <= 50; $i++) {
+
+                $randomCustomer = Customer::query()
+                    ->where('id', Arr::random($allCustomerIds))
+                    ->with([
+                        'emails' => static function ($query) {
+                            $query->select(['id', 'customer_id']);
+                        },
+                        'addresses' => static function ($query) {
+                            $query->select(['id', 'customer_id']);
+                        },
+                    ])
+                    ->first();
+                $allCustomerEmailIds = $randomCustomer->emails->pluck('id')->toArray();
+                $allCustomerAddressIds = $randomCustomer->addresses->pluck('id')->toArray();
+
+                $invoice = Invoice::factory()->create([
+                    'user_id' => $user->id,
+                    'customer_id' => $randomCustomer->id,
+                    'billing_address_id' => Arr::random($allCustomerAddressIds),
+                    'shipping_address_id' => Arr::random($allCustomerAddressIds),
+                    'due_date' => $dateInFuture,
+                    'status' => Status::PUBLISHED,
+                ]);
+
+                $invoice->recipients()->sync(Arr::random($allCustomerEmailIds, mt_rand(1, 3)));
+
+                $invoiceDateTime = $invoice->created_at->toDateTimeString();
+
+                $invoiceItems = [];
+                for ($j = 1; $j <= mt_rand(1, 5); $j++) {
+                    if ($this->randomChance(70)) {
+                        if ($this->randomChance(50)) {
+                            $extraInvoiceItemData = [
+                                'product_id' => Arr::random($allProductIds),
+                                'service_id' => null,
+                            ];
+                        } else {
+                            $extraInvoiceItemData = [
+                                'product_id' => null,
+                                'service_id' => Arr::random($allServicesIds),
+                            ];
+                        }
+                    } else {
+                        $extraInvoiceItemData = [
+                            'product_id' => null,
+                            'service_id' => null,
+                        ];
+                    }
+                    $invoiceItems[] = InvoiceItem::factory()->create([
+                        ...$extraInvoiceItemData,
+                        'invoice_id' => $invoice->id,
+                        'created_at' => $invoiceDateTime,
+                        'updated_at' => $invoiceDateTime,
+                    ]);
+                }
+
+                $invoiceTotal = 0;
+                foreach ($invoiceItems as $item) {
+                    $subtotal = $item->quantity * $item->unit_price;
+                    $tax = $subtotal * ($item->tax_rate / 100);
+                    $invoiceTotal += ($subtotal + $tax);
+                }
+                $invoice->update(['total' => $invoiceTotal]);
+
+                InvoiceActivity::factory()->create([
+                    'invoice_id' => $invoice->id,
+                    'activity' => 'Dummy invoice created via database seeder',
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
+
+            }
+
+            /**
+             * Fake Unpaid & Late Invoices
+             */
+            $dateInPast = now()->subYears(2)->toDateString();
+            for ($i = 1; $i <= 50; $i++) {
+
+                $randomCustomer = Customer::query()
+                    ->where('id', Arr::random($allCustomerIds))
+                    ->with([
+                        'emails' => static function ($query) {
+                            $query->select(['id', 'customer_id']);
+                        },
+                        'addresses' => static function ($query) {
+                            $query->select(['id', 'customer_id']);
+                        },
+                    ])
+                    ->first();
+                $allCustomerEmailIds = $randomCustomer->emails->pluck('id')->toArray();
+                $allCustomerAddressIds = $randomCustomer->addresses->pluck('id')->toArray();
+
+                $invoice = Invoice::factory()->create([
+                    'user_id' => $user->id,
+                    'customer_id' => $randomCustomer->id,
+                    'billing_address_id' => Arr::random($allCustomerAddressIds),
+                    'shipping_address_id' => Arr::random($allCustomerAddressIds),
+                    'due_date' => $dateInPast,
+                    'status' => Status::PUBLISHED,
+                ]);
+
+                $invoice->recipients()->sync(Arr::random($allCustomerEmailIds, mt_rand(1, 3)));
+
+                $invoiceDateTime = $invoice->created_at->toDateTimeString();
+
+                $invoiceItems = [];
+                for ($j = 1; $j <= mt_rand(1, 5); $j++) {
+                    if ($this->randomChance(70)) {
+                        if ($this->randomChance(50)) {
+                            $extraInvoiceItemData = [
+                                'product_id' => Arr::random($allProductIds),
+                                'service_id' => null,
+                            ];
+                        } else {
+                            $extraInvoiceItemData = [
+                                'product_id' => null,
+                                'service_id' => Arr::random($allServicesIds),
+                            ];
+                        }
+                    } else {
+                        $extraInvoiceItemData = [
+                            'product_id' => null,
+                            'service_id' => null,
+                        ];
+                    }
+                    $invoiceItems[] = InvoiceItem::factory()->create([
+                        ...$extraInvoiceItemData,
+                        'invoice_id' => $invoice->id,
+                        'created_at' => $invoiceDateTime,
+                        'updated_at' => $invoiceDateTime,
+                    ]);
+                }
+
+                $invoiceTotal = 0;
+                foreach ($invoiceItems as $item) {
+                    $subtotal = $item->quantity * $item->unit_price;
+                    $tax = $subtotal * ($item->tax_rate / 100);
+                    $invoiceTotal += ($subtotal + $tax);
+                }
+                $invoice->update(['total' => $invoiceTotal]);
+
+                InvoiceActivity::factory()->create([
+                    'invoice_id' => $invoice->id,
+                    'activity' => 'Dummy invoice created via database seeder',
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
+
+            }
+
+            /**
+             * Fake Invoices In Random Statuses
+             */
+            for ($i = 1; $i <= 50; $i++) {
+
+                $randomCustomer = Customer::query()
+                    ->where('id', Arr::random($allCustomerIds))
+                    ->with([
+                        'emails' => static function ($query) {
+                            $query->select(['id', 'customer_id']);
+                        },
+                        'addresses' => static function ($query) {
+                            $query->select(['id', 'customer_id']);
+                        },
+                    ])
+                    ->first();
+                $allCustomerEmailIds = $randomCustomer->emails->pluck('id')->toArray();
+                $allCustomerAddressIds = $randomCustomer->addresses->pluck('id')->toArray();
+
+                $invoice = Invoice::factory()->create([
+                    'user_id' => $user->id,
+                    'customer_id' => $randomCustomer->id,
+                    'billing_address_id' => Arr::random($allCustomerAddressIds),
+                    'shipping_address_id' => Arr::random($allCustomerAddressIds),
+                ]);
+
+                $invoice->recipients()->sync(Arr::random($allCustomerEmailIds, mt_rand(1, 3)));
+
+                $invoiceDateTime = $invoice->created_at->toDateTimeString();
+
+                $invoiceItems = [];
+                for ($j = 1; $j <= mt_rand(1, 5); $j++) {
+                    if ($this->randomChance(70)) {
+                        if ($this->randomChance(50)) {
+                            $extraInvoiceItemData = [
+                                'product_id' => Arr::random($allProductIds),
+                                'service_id' => null,
+                            ];
+                        } else {
+                            $extraInvoiceItemData = [
+                                'product_id' => null,
+                                'service_id' => Arr::random($allServicesIds),
+                            ];
+                        }
+                    } else {
+                        $extraInvoiceItemData = [
+                            'product_id' => null,
+                            'service_id' => null,
+                        ];
+                    }
+                    $invoiceItems[] = InvoiceItem::factory()->create([
+                        ...$extraInvoiceItemData,
+                        'invoice_id' => $invoice->id,
+                        'created_at' => $invoiceDateTime,
+                        'updated_at' => $invoiceDateTime,
+                    ]);
+                }
+
+                $invoiceTotal = 0;
+                foreach ($invoiceItems as $item) {
+                    $subtotal = $item->quantity * $item->unit_price;
+                    $tax = $subtotal * ($item->tax_rate / 100);
+                    $invoiceTotal += ($subtotal + $tax);
+                }
+                $invoice->update(['total' => $invoiceTotal]);
+
+                InvoiceActivity::factory()->create([
+                    'invoice_id' => $invoice->id,
+                    'activity' => 'Dummy invoice created via database seeder',
+                    'created_at' => $invoiceDateTime,
+                    'updated_at' => $invoiceDateTime,
+                ]);
+
+            }
+
+            /**
+             * Controlled fake invoice seeding :: END
+             */
+
+            $end = microtime(true);
+            echo sprintf(
+                "Finished seeding fake invoices in %.02f seconds\n",
+                ($end - $start) * 1000
+            );
 
         }
+    }
+
+    private function randomChance(int $chance): bool
+    {
+        return mt_rand(0, 99) < $chance;
     }
 
     /**

@@ -1,21 +1,9 @@
 <script setup>
 import {ref} from 'vue';
-import {Link, useForm} from "@inertiajs/vue3";
-import ActionMessage from "@/Components/ActionMessage.vue";
-import TextInput from "@/Components/TextInput.vue";
-import InputLabel from "@/Components/InputLabel.vue";
-import Checkbox from "@/Components/Checkbox.vue";
-import InputError from "@/Components/InputError.vue";
-import PrimaryButton from "@/Components/PrimaryButton.vue";
+import {useForm} from "@inertiajs/vue3";
 import FormSection from "@/Components/FormSection.vue";
-import DialogModal from "@/Components/DialogModal.vue";
-import SecondaryButton from "@/Components/SecondaryButton.vue";
 import SectionBorder from "@/Components/SectionBorder.vue";
 import ActionSection from "@/Components/ActionSection.vue";
-import DangerButton from "@/Components/DangerButton.vue";
-import ConfirmationModal from "@/Components/ConfirmationModal.vue";
-import Dropdown from "@/Components/Dropdown.vue";
-import DropdownLink from "@/Components/DropdownLink.vue";
 
 const props = defineProps({
     webhooks: Array,
@@ -153,8 +141,9 @@ const deleteWebhook = () => {
                 <h3 class="mt-4">Event Targets</h3>
                 <v-row>
                     <v-col v-for="eventTargetName in eventTargetNames"
-                           :key="eventTargetName" cols="12" md="6">
+                           :key="eventTargetName" cols="6" md="4" lg="4">
                         <v-checkbox v-model="createWebhookForm.target_events"
+                                    hide-details
                                     :value="eventTargetName"
                                     :label="eventTargetName"/>
                     </v-col>
@@ -163,8 +152,13 @@ const deleteWebhook = () => {
         </template>
 
         <template #actions>
-            <v-btn color="primary" :disabled="createWebhookForm.processing"
-                   variant="flat">Create
+            <v-btn
+                color="primary"
+                :disabled="createWebhookForm.processing"
+                variant="flat"
+                @click="createWebhook"
+            >
+                Create
             </v-btn>
         </template>
 
@@ -187,34 +181,34 @@ const deleteWebhook = () => {
                 <!-- Webhook List -->
                 <template #content>
                     <v-list>
-                        <v-list-item v-for="webhook in webhooks"
-                                     :key="webhook.id">
-                            <v-list-item-title>{{ webhook.url }}
+                        <v-list-item v-for="webhook in webhooks" :key="webhook.id" variant="tonal" class="mb-2 rounded">
+                            <v-list-item-title class="pt-2">
+                                <div>{{ webhook.url }}</div>
+                                <div class="pt-2">
+                                    <v-chip label size="small" class="me-2">
+                                        {{ webhook.hmac_algorithm }} HMAC Algo
+                                    </v-chip>
+                                    <v-chip label size="small" class="me-2">
+                                        {{ webhook.max_attempts }} Max Attempts
+                                    </v-chip>
+                                    <v-chip label size="small" class="me-2">
+                                        {{ webhook.timeout_seconds }}s Timeout
+                                    </v-chip>
+                                    <v-chip label size="small" class="me-2">
+                                        {{ webhook.retry_seconds }}s Retry
+                                    </v-chip>
+                                </div>
                             </v-list-item-title>
                             <v-divider class="my-2"/>
-                            <v-list-item-subtitle>
-                                Configuration:
-                                <v-chip label class="me-2">
-                                    {{ webhook.hmac_algorithm }} HMAC Algo
-                                </v-chip>
-                                <v-chip label class="me-2">
-                                    {{ webhook.max_attempts }} Max Attempts
-                                </v-chip>
-                                <v-chip label class="me-2">
-                                    {{ webhook.timeout_seconds }}s Timeout
-                                </v-chip>
-                                <v-chip label class="me-2">
-                                    {{ webhook.retry_seconds }}s Retry
-                                </v-chip>
-                            </v-list-item-subtitle>
-                            <v-divider class="my-2"/>
-                            <v-list-item-subtitle>
-                                Event Targets:
-                                <template
-                                    v-if="webhook.event_targets.length > 0">
-                                    <v-chip label class="me-2"
-                                            v-for="event_target in webhook.event_targets"
-                                            :key="event_target.event_name">
+                            <div>
+                                <template v-if="webhook.event_targets.length > 0">
+                                    <v-chip
+                                        label
+                                        class="me-2 my-1"
+                                        size="small"
+                                        v-for="event_target in webhook.event_targets"
+                                        :key="event_target.event_name"
+                                    >
                                         {{ event_target.event_name }}
                                     </v-chip>
                                 </template>
@@ -223,7 +217,7 @@ const deleteWebhook = () => {
                                         None Selected
                                     </v-chip>
                                 </template>
-                            </v-list-item-subtitle>
+                            </div>
                             <v-menu>
                                 <template v-slot:activator="{ props }">
                                     <v-btn color="secondary" v-bind="props"
@@ -322,8 +316,9 @@ const deleteWebhook = () => {
                     <h3 class="mt-4">Event Targets</h3>
                     <v-row>
                         <v-col v-for="eventTargetName in eventTargetNames"
-                               :key="eventTargetName" cols="12" md="6">
+                               :key="eventTargetName" cols="6" md="4" lg="4">
                             <v-checkbox
+                                hide-details
                                 v-model="updateWebhookForm.target_events"
                                 :value="eventTargetName"
                                 :label="eventTargetName"/>
@@ -334,8 +329,12 @@ const deleteWebhook = () => {
             </v-card-text>
             <v-card-actions>
                 <v-btn @click="webhookBeingUpdated = null">Cancel</v-btn>
-                <v-btn color="primary" :disabled="updateWebhookForm.processing"
-                       @click="updateWebhook">
+                <v-btn
+                    color="primary"
+                    :disabled="updateWebhookForm.processing"
+                    variant="flat"
+                    @click="updateWebhook"
+                >
                     Save
                 </v-btn>
             </v-card-actions>

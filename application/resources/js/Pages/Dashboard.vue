@@ -1,9 +1,9 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import Welcome from '@/Components/Welcome.vue';
+import Dashboard from '@/Components/Dashboard.vue';
 
 defineProps({
-    invoices: Array
+    stats: Object
 });
 </script>
 
@@ -13,6 +13,6 @@ defineProps({
             <h1>{{ $page.props.auth.user.business_name }}</h1>
             <p class="text-body-2 text-grey">Review your stats</p>
         </template>
-        <Welcome :invoices="invoices" />
+        <Dashboard :stats="stats" />
     </AppLayout>
 </template>
