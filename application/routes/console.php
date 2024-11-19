@@ -11,5 +11,5 @@ Schedule::command(SendInvoiceRemindersCommand::class)->dailyAt('08:00');
 // Process crypto payments every five minutes
 Schedule::command(ProcessCryptoPayments::class)->everyFiveMinutes();
 
-// Process generate reports every minutes
-Schedule::command(GenerateReports::class)->everyMinute();
+// Process generate reports every five minutes
+Schedule::command(GenerateReports::class)->everyFiveMinutes();
