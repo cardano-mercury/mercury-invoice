@@ -42,7 +42,7 @@ jobs:
 
       - name: Build API Documentation
         working-directory: ./application
-        run: php artisan scribe:generate --force
+        run: touch database/database.sqlite && php artisan scribe:generate --force
 
       - name: Deploy Environment
         working-directory: ./application
