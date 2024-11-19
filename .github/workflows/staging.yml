@@ -42,7 +42,7 @@ jobs:
 
       - name: Build API Documentation
         working-directory: ./application
-        run: touch database/database.sqlite && php artisan scribe:generate --force
+        run: touch database/database.sqlite && APP_URL='https://staging.mercury-invoice.com' php artisan scribe:generate --force && rm -f database/database.sqlite
 
       - name: Deploy Environment
         working-directory: ./application
