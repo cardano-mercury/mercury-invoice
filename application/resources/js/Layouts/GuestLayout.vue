@@ -49,6 +49,9 @@ defineProps({
                     <v-btn variant="text" size="small" target="_blank" :href="route('policy.show')">
                         Privacy Policy
                     </v-btn>
+                    <v-btn variant="text" size="small" target="_blank" href="/docs/api">
+                        API Documentation
+                    </v-btn>
                 </div>
             </v-container>
         </v-footer>
