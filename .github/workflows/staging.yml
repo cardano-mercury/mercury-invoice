@@ -40,6 +40,10 @@ jobs:
         working-directory: ./application
         run: composer install --no-interaction --prefer-dist --optimize-autoloader
 
+      - name: Build API Documentation
+        working-directory: ./application
+        run: php artisan scribe:generate --force
+
       - name: Deploy Environment
         working-directory: ./application
         run: vapor deploy staging

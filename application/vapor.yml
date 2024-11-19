@@ -44,7 +44,6 @@ environments:
             - 'php artisan optimize'
             - 'php artisan event:cache'
             - 'php artisan config:cache'
-            - 'php artisan scribe:generate --force'
             - 'npm install && npm run build && rm -rf node_modules'
         deploy:
           - 'php artisan migrate'
