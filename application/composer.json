@@ -20,11 +20,11 @@
         "resend/resend-laravel": "^0.14.0",
         "stripe/stripe-php": "^15.0",
         "tightenco/ziggy": "^2.0",
-        "vinkla/hashids": "^12.0"
+        "vinkla/hashids": "^12.0",
+        "knuckleswtf/scribe": "^4.37"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
-        "knuckleswtf/scribe": "^4.37",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
