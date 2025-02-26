@@ -18,6 +18,7 @@ down:
 build:
 	docker compose build
 	$(MAKE) up
+	$(MAKE) frontend-build
 
 #
 # Helper functions

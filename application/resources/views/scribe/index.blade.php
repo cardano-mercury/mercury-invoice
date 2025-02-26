@@ -1056,7 +1056,7 @@
 
         </div>
         <div class="sl-flex sl-items-center sl-px-4 sl-py-3 sl-border-t">
-            Last updated: November 19, 2024
+            Last updated: November 20, 2024
         </div>
 
         <div class="sl-flex sl-items-center sl-px-4 sl-py-3 sl-border-t">
@@ -1655,14 +1655,14 @@ response.json()</code></pre>                                        </div>
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Angelita Mills&quot;,
-            &quot;tax_number&quot;: &quot;01JD2ZNPKD1GK1N784855M5J1S&quot;,
+            &quot;tax_number&quot;: &quot;01JD3ND9J13FHK0RCF8GTJ52HK&quot;,
             &quot;tax_rate&quot;: 17.5,
             &quot;categories&quot;: [
                 {
                     &quot;id&quot;: 1,
                     &quot;name&quot;: &quot;Ea&quot;,
-                    &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                    &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                    &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                    &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
                 }
             ],
             &quot;default_email&quot;: {
@@ -1670,8 +1670,8 @@ response.json()</code></pre>                                        </div>
                 &quot;name&quot;: &quot;Dereck King DVM&quot;,
                 &quot;address&quot;: &quot;satterfield.joyce@example.net&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             },
             &quot;default_phone&quot;: {
                 &quot;id&quot;: 1,
@@ -1679,8 +1679,8 @@ response.json()</code></pre>                                        </div>
                 &quot;name&quot;: &quot;Frida Boyer&quot;,
                 &quot;number&quot;: &quot;+1-276-476-1985&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             },
             &quot;default_address&quot;: {
                 &quot;id&quot;: 1,
@@ -1693,23 +1693,23 @@ response.json()</code></pre>                                        </div>
                 &quot;postal_code&quot;: &quot;21195&quot;,
                 &quot;country&quot;: &quot;United States&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             },
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Mrs. Zora Harber&quot;,
-            &quot;tax_number&quot;: &quot;01JD2ZNPKD1GK1N784855M5J1T&quot;,
+            &quot;tax_number&quot;: &quot;01JD3ND9J24A04MWS6RHF0E4BM&quot;,
             &quot;tax_rate&quot;: 17.5,
             &quot;categories&quot;: [
                 {
                     &quot;id&quot;: 1,
                     &quot;name&quot;: &quot;A&quot;,
-                    &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                    &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                    &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                    &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
                 }
             ],
             &quot;default_email&quot;: {
@@ -1717,8 +1717,8 @@ response.json()</code></pre>                                        </div>
                 &quot;name&quot;: &quot;Jazmyn Johns&quot;,
                 &quot;address&quot;: &quot;satterfield.lelah@example.net&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             },
             &quot;default_phone&quot;: {
                 &quot;id&quot;: 1,
@@ -1726,8 +1726,8 @@ response.json()</code></pre>                                        </div>
                 &quot;name&quot;: &quot;Lia Stehr&quot;,
                 &quot;number&quot;: &quot;(678) 250-1079&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             },
             &quot;default_address&quot;: {
                 &quot;id&quot;: 1,
@@ -1740,11 +1740,11 @@ response.json()</code></pre>                                        </div>
                 &quot;postal_code&quot;: &quot;88592-1714&quot;,
                 &quot;country&quot;: &quot;United States&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             },
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         }
     ],
     &quot;links&quot;: {
@@ -2342,14 +2342,14 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Obie Gulgowski DDS&quot;,
-        &quot;tax_number&quot;: &quot;01JD2ZNPKNYE9PKKT6XNF06JCX&quot;,
+        &quot;tax_number&quot;: &quot;01JD3ND9JARJAX2JE7YZN9EWBT&quot;,
         &quot;tax_rate&quot;: 17.5,
         &quot;categories&quot;: [],
         &quot;default_email&quot;: null,
         &quot;default_phone&quot;: null,
         &quot;default_address&quot;: null,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -2878,14 +2878,14 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Angelita Mills&quot;,
-        &quot;tax_number&quot;: &quot;01JD2ZNPM1Y5S61QFY7XD3XWTZ&quot;,
+        &quot;tax_number&quot;: &quot;01JD3ND9JHMFYX3H52ETP0Q5KS&quot;,
         &quot;tax_rate&quot;: 17.5,
         &quot;categories&quot;: [
             {
                 &quot;id&quot;: 1,
                 &quot;name&quot;: &quot;At&quot;,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             }
         ],
         &quot;default_email&quot;: {
@@ -2893,8 +2893,8 @@ response.json()</code></pre>                                        </div>
             &quot;name&quot;: &quot;Zechariah Harber&quot;,
             &quot;address&quot;: &quot;dereck.king@example.net&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         &quot;default_phone&quot;: {
             &quot;id&quot;: 1,
@@ -2902,8 +2902,8 @@ response.json()</code></pre>                                        </div>
             &quot;name&quot;: &quot;Margarette Kulas&quot;,
             &quot;number&quot;: &quot;502-257-7829&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         &quot;default_address&quot;: {
             &quot;id&quot;: 1,
@@ -2916,11 +2916,11 @@ response.json()</code></pre>                                        </div>
             &quot;postal_code&quot;: &quot;67144-0265&quot;,
             &quot;country&quot;: &quot;United States&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -3572,14 +3572,14 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Obie Gulgowski DDS&quot;,
-        &quot;tax_number&quot;: &quot;01JD2ZNPM3X756KQREZ1KHDPE8&quot;,
+        &quot;tax_number&quot;: &quot;01JD3ND9JKB0NDSKW3H8NNN3BN&quot;,
         &quot;tax_rate&quot;: 17.5,
         &quot;categories&quot;: [
             {
                 &quot;id&quot;: 1,
                 &quot;name&quot;: &quot;Amet&quot;,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             }
         ],
         &quot;default_email&quot;: {
@@ -3587,8 +3587,8 @@ response.json()</code></pre>                                        </div>
             &quot;name&quot;: &quot;Andrew Trantow DDS&quot;,
             &quot;address&quot;: &quot;atreutel@example.net&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         &quot;default_phone&quot;: {
             &quot;id&quot;: 1,
@@ -3596,8 +3596,8 @@ response.json()</code></pre>                                        </div>
             &quot;name&quot;: &quot;Dr. John Rice&quot;,
             &quot;number&quot;: &quot;260-680-9992&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         &quot;default_address&quot;: {
             &quot;id&quot;: 1,
@@ -3610,11 +3610,11 @@ response.json()</code></pre>                                        </div>
             &quot;postal_code&quot;: &quot;57843&quot;,
             &quot;country&quot;: &quot;United States&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -4304,16 +4304,16 @@ response.json()</code></pre>                                        </div>
             &quot;name&quot;: &quot;Angelita Mills&quot;,
             &quot;address&quot;: &quot;zbartoletti@example.com&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Grant Fisher III&quot;,
             &quot;address&quot;: &quot;ufadel@example.net&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         }
     ],
     &quot;links&quot;: {
@@ -4975,8 +4975,8 @@ response.json()</code></pre>                                        </div>
         &quot;name&quot;: &quot;Obie Gulgowski DDS&quot;,
         &quot;address&quot;: &quot;jacobi.spencer@example.net&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -5543,8 +5543,8 @@ response.json()</code></pre>                                        </div>
         &quot;name&quot;: &quot;Angelita Mills&quot;,
         &quot;address&quot;: &quot;frida.boyer@example.com&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -6233,8 +6233,8 @@ response.json()</code></pre>                                        </div>
         &quot;name&quot;: &quot;Obie Gulgowski DDS&quot;,
         &quot;address&quot;: &quot;hane.john@example.net&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -6462,7 +6462,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        Office
+                        Mobile
                     </div>
                 </div>
             </div>
@@ -6693,7 +6693,7 @@ response.json()</code></pre>                                        </div>
                                                                                     <input aria-label="type" name="type"
                                                    id="queryparam-GETapi-v1-customers--customer_id--phones-type"
                                                    placeholder=""
-                                                   value="Office" data-component="query"
+                                                   value="Mobile" data-component="query"
                                                    class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                             >
                                                                             </div>
@@ -6830,7 +6830,7 @@ You can check the Dev Tools console for debugging information.</p>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8100/api/v1/customers/1/phones?type=Office&amp;search=0123456789&amp;per_page=25&amp;page=1" \
+    --get "http://localhost:8100/api/v1/customers/1/phones?type=Mobile&amp;search=0123456789&amp;per_page=25&amp;page=1" \
     --header "Authorization: Bearer {YOUR_ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>                                        </div>
@@ -6845,7 +6845,7 @@ You can check the Dev Tools console for debugging information.</p>
 );
 
 const params = {
-    "type": "Office",
+    "type": "Mobile",
     "search": "0123456789",
     "per_page": "25",
     "page": "1",
@@ -6880,7 +6880,7 @@ $response = $client-&gt;get(
             'Accept' =&gt; 'application/json',
         ],
         'query' =&gt; [
-            'type' =&gt; 'Office',
+            'type' =&gt; 'Mobile',
             'search' =&gt; '0123456789',
             'per_page' =&gt; '25',
             'page' =&gt; '1',
@@ -6900,7 +6900,7 @@ import json
 
 url = 'http://localhost:8100/api/v1/customers/1/phones'
 params = {
-  'type': 'Office',
+  'type': 'Mobile',
   'search': '0123456789',
   'per_page': '25',
   'page': '1',
@@ -6958,21 +6958,21 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;type&quot;: &quot;Mobile&quot;,
-            &quot;name&quot;: &quot;Reanna Osinski Jr.&quot;,
-            &quot;number&quot;: &quot;1-260-929-4118&quot;,
+            &quot;type&quot;: &quot;Home&quot;,
+            &quot;name&quot;: &quot;Mr. Kennedy Glover&quot;,
+            &quot;number&quot;: &quot;1-830-646-6678&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         {
             &quot;id&quot;: 1,
             &quot;type&quot;: &quot;Office&quot;,
-            &quot;name&quot;: &quot;Ada Thiel&quot;,
-            &quot;number&quot;: &quot;1-702-254-8980&quot;,
+            &quot;name&quot;: &quot;Jodie Schuppe&quot;,
+            &quot;number&quot;: &quot;707.918.4604&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         }
     ],
     &quot;links&quot;: {
@@ -7666,8 +7666,8 @@ response.json()</code></pre>                                        </div>
         &quot;name&quot;: &quot;Elena Ritchie&quot;,
         &quot;number&quot;: &quot;+1-575-907-2075&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -8235,8 +8235,8 @@ response.json()</code></pre>                                        </div>
         &quot;name&quot;: &quot;Korbin Stark&quot;,
         &quot;number&quot;: &quot;+1-931-592-7790&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -8957,8 +8957,8 @@ response.json()</code></pre>                                        </div>
         &quot;name&quot;: &quot;Elena Ritchie&quot;,
         &quot;number&quot;: &quot;+14409170790&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -9186,7 +9186,7 @@ response.json()</code></pre>                                        </div>
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        Shipping
+                        Billing
                     </div>
                 </div>
             </div>
@@ -9417,7 +9417,7 @@ response.json()</code></pre>                                        </div>
                                                                                     <input aria-label="type" name="type"
                                                    id="queryparam-GETapi-v1-customers--customer_id--addresses-type"
                                                    placeholder=""
-                                                   value="Shipping" data-component="query"
+                                                   value="Billing" data-component="query"
                                                    class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                             >
                                                                             </div>
@@ -9554,7 +9554,7 @@ You can check the Dev Tools console for debugging information.</p>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8100/api/v1/customers/1/addresses?type=Shipping&amp;search=25+Brookfield+Road&amp;per_page=25&amp;page=1" \
+    --get "http://localhost:8100/api/v1/customers/1/addresses?type=Billing&amp;search=25+Brookfield+Road&amp;per_page=25&amp;page=1" \
     --header "Authorization: Bearer {YOUR_ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>                                        </div>
@@ -9569,7 +9569,7 @@ You can check the Dev Tools console for debugging information.</p>
 );
 
 const params = {
-    "type": "Shipping",
+    "type": "Billing",
     "search": "25 Brookfield Road",
     "per_page": "25",
     "page": "1",
@@ -9604,7 +9604,7 @@ $response = $client-&gt;get(
             'Accept' =&gt; 'application/json',
         ],
         'query' =&gt; [
-            'type' =&gt; 'Shipping',
+            'type' =&gt; 'Billing',
             'search' =&gt; '25 Brookfield Road',
             'per_page' =&gt; '25',
             'page' =&gt; '1',
@@ -9624,7 +9624,7 @@ import json
 
 url = 'http://localhost:8100/api/v1/customers/1/addresses'
 params = {
-  'type': 'Shipping',
+  'type': 'Billing',
   'search': '25 Brookfield Road',
   'per_page': '25',
   'page': '1',
@@ -9691,8 +9691,8 @@ response.json()</code></pre>                                        </div>
             &quot;postal_code&quot;: &quot;37676-5436&quot;,
             &quot;country&quot;: &quot;United States&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         {
             &quot;id&quot;: 1,
@@ -9705,8 +9705,8 @@ response.json()</code></pre>                                        </div>
             &quot;postal_code&quot;: &quot;68158&quot;,
             &quot;country&quot;: &quot;United States&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         }
     ],
     &quot;links&quot;: {
@@ -10561,8 +10561,8 @@ response.json()</code></pre>                                        </div>
         &quot;postal_code&quot;: &quot;44829-5827&quot;,
         &quot;country&quot;: &quot;United States&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -11135,8 +11135,8 @@ response.json()</code></pre>                                        </div>
         &quot;postal_code&quot;: &quot;37676-5436&quot;,
         &quot;country&quot;: &quot;United States&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -12018,8 +12018,8 @@ response.json()</code></pre>                                        </div>
         &quot;postal_code&quot;: &quot;44829-5827&quot;,
         &quot;country&quot;: &quot;United States&quot;,
         &quot;is_default&quot;: true,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -12644,14 +12644,14 @@ response.json()</code></pre>                                        </div>
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Facere&quot;,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Beatae&quot;,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         }
     ],
     &quot;links&quot;: {
@@ -13189,8 +13189,8 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Voluptate&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -13719,8 +13719,8 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Id&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -14312,8 +14312,8 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Possimus&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -15506,24 +15506,24 @@ response.json()</code></pre>                                        </div>
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Facere Beatae Id&quot;,
-            &quot;sku&quot;: &quot;XX8TTQYJOOY3LNKM&quot;,
+            &quot;sku&quot;: &quot;MMUXCJWKYOPZ5WKC&quot;,
             &quot;description&quot;: &quot;Aperiam repellat sit ea in et ducimus reiciendis. Omnis libero quos id autem. Autem explicabo amet quae culpa maxime dolor quo.&quot;,
             &quot;unit_type&quot;: &quot;cm&quot;,
-            &quot;unit_price&quot;: 69.61,
+            &quot;unit_price&quot;: 62.69,
             &quot;supplier&quot;: &quot;Donnelly-Langworth&quot;,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Perspiciatis Porro Fuga&quot;,
-            &quot;sku&quot;: &quot;0LFCFM3BV0Z3Y7SQ&quot;,
+            &quot;sku&quot;: &quot;Z2SOLXXV5WB36VYH&quot;,
             &quot;description&quot;: &quot;Dolorum sunt quis soluta quod fuga voluptas. Iste eligendi rerum porro nihil voluptate non. Possimus totam quam nesciunt omnis a qui maxime recusandae.&quot;,
             &quot;unit_type&quot;: &quot;gram&quot;,
-            &quot;unit_price&quot;: 52.5,
+            &quot;unit_price&quot;: 39.79,
             &quot;supplier&quot;: &quot;Smitham, Monahan and Braun&quot;,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         }
     ],
     &quot;links&quot;: {
@@ -16210,13 +16210,13 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Voluptate Possimus Ullam&quot;,
-        &quot;sku&quot;: &quot;WZ1XJY3T7VLO8WDZ&quot;,
+        &quot;sku&quot;: &quot;LFVYEY8GUPBPAEGA&quot;,
         &quot;description&quot;: &quot;Amet in ipsa saepe autem maiores eveniet eaque. Quia voluptas suscipit provident minus ducimus aperiam reiciendis. Facere beatae id at aperiam.&quot;,
         &quot;unit_type&quot;: &quot;each&quot;,
-        &quot;unit_price&quot;: 28.42,
+        &quot;unit_price&quot;: 22.8,
         &quot;supplier&quot;: &quot;Hyatt-Fisher&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -16745,13 +16745,13 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;At Aperiam Repellat&quot;,
-        &quot;sku&quot;: &quot;MIMIZMZUDJYOKJSR&quot;,
+        &quot;sku&quot;: &quot;R6ET1V0BB43U3RUQ&quot;,
         &quot;description&quot;: &quot;Ea in et ducimus reiciendis tempora. Libero quos id autem id autem explicabo amet. Culpa maxime dolor quo.&quot;,
         &quot;unit_type&quot;: &quot;cm&quot;,
-        &quot;unit_price&quot;: 39.57,
+        &quot;unit_price&quot;: 63.16,
         &quot;supplier&quot;: &quot;Donnelly-Langworth&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -17492,13 +17492,13 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Id Amet In&quot;,
-        &quot;sku&quot;: &quot;Z9CBGP6RIVE8BTU3&quot;,
+        &quot;sku&quot;: &quot;AN0BFTSITBIKPMSN&quot;,
         &quot;description&quot;: &quot;Saepe autem maiores eveniet. Qui quia voluptas suscipit. Minus ducimus aperiam reiciendis magni facere beatae.&quot;,
         &quot;unit_type&quot;: &quot;each&quot;,
-        &quot;unit_price&quot;: 63.49,
+        &quot;unit_price&quot;: 77.26,
         &quot;supplier&quot;: &quot;Zulauf and Sons&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -18123,14 +18123,14 @@ response.json()</code></pre>                                        </div>
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Aperiam&quot;,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Repellat&quot;,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         }
     ],
     &quot;links&quot;: {
@@ -18668,8 +18668,8 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Ullam&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -19198,8 +19198,8 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Sit&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -19791,8 +19791,8 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;In&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -20986,19 +20986,19 @@ response.json()</code></pre>                                        </div>
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Sit Ea In&quot;,
             &quot;description&quot;: &quot;Ducimus reiciendis tempora omnis libero. Id autem id autem explicabo amet. Culpa maxime dolor quo.&quot;,
-            &quot;unit_price&quot;: 19.14,
+            &quot;unit_price&quot;: 16.87,
             &quot;supplier&quot;: &quot;Nienow, Donnelly and Langworth&quot;,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Tempore Dolorum Sunt&quot;,
             &quot;description&quot;: &quot;Soluta quod fuga voluptas tempore. Eligendi rerum porro nihil voluptate non a. Totam quam nesciunt omnis a qui maxime recusandae.&quot;,
-            &quot;unit_price&quot;: 47.03,
+            &quot;unit_price&quot;: 51.78,
             &quot;supplier&quot;: &quot;Stehr-Smitham&quot;,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         }
     ],
     &quot;links&quot;: {
@@ -21626,10 +21626,10 @@ response.json()</code></pre>                                        </div>
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Ipsa Saepe Autem&quot;,
         &quot;description&quot;: &quot;Eveniet eaque qui quia voluptas suscipit provident minus ducimus. Reiciendis magni facere beatae. At aperiam repellat sit ea in et.&quot;,
-        &quot;unit_price&quot;: 36.58,
+        &quot;unit_price&quot;: 32.54,
         &quot;supplier&quot;: &quot;Fadel, Satterfield and Ortiz&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -22159,10 +22159,10 @@ response.json()</code></pre>                                        </div>
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Et Ducimus Reiciendis&quot;,
         &quot;description&quot;: &quot;Omnis libero quos id autem. Autem explicabo amet quae culpa maxime dolor quo. Assumenda quidem velit sint perspiciatis.&quot;,
-        &quot;unit_price&quot;: 67.23,
+        &quot;unit_price&quot;: 55.89,
         &quot;supplier&quot;: &quot;Pacocha-Mueller&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -22844,10 +22844,10 @@ response.json()</code></pre>                                        </div>
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Maiores Eveniet Eaque&quot;,
         &quot;description&quot;: &quot;Quia voluptas suscipit provident minus ducimus aperiam reiciendis. Facere beatae id at aperiam. Sit ea in et ducimus reiciendis tempora omnis libero.&quot;,
-        &quot;unit_price&quot;: 36.04,
+        &quot;unit_price&quot;: 43.43,
         &quot;supplier&quot;: &quot;Hirthe, Rippin and Hirthe&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -23472,14 +23472,14 @@ response.json()</code></pre>                                        </div>
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Et&quot;,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Ducimus&quot;,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         }
     ],
     &quot;links&quot;: {
@@ -24017,8 +24017,8 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Ipsa&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -24547,8 +24547,8 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Reiciendis&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -25140,8 +25140,8 @@ response.json()</code></pre>                                        </div>
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;Saepe&quot;,
-        &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-        &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+        &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+        &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
     }
 }</code></pre>
                                                                             </div>
@@ -26337,33 +26337,33 @@ response.json()</code></pre>                                        </div>
             &quot;billing_address_id&quot;: 0,
             &quot;shipping_address_id&quot;: 0,
             &quot;invoice_reference&quot;: &quot;QLqBOqWxPA&quot;,
-            &quot;customer_reference&quot;: &quot;INV-21628265&quot;,
+            &quot;customer_reference&quot;: &quot;INV-91670740&quot;,
             &quot;currency&quot;: &quot;USD&quot;,
             &quot;total&quot;: 0,
-            &quot;issue_date&quot;: &quot;2024-01-07&quot;,
-            &quot;due_date&quot;: &quot;2024-02-06&quot;,
+            &quot;issue_date&quot;: &quot;2024-01-05&quot;,
+            &quot;due_date&quot;: &quot;2024-02-04&quot;,
             &quot;last_notified&quot;: null,
             &quot;is_overdue&quot;: true,
             &quot;status&quot;: &quot;Published&quot;,
-            &quot;created_at&quot;: &quot;2024-01-07 23:31:40&quot;,
-            &quot;updated_at&quot;: &quot;2024-01-07 23:31:40&quot;,
+            &quot;created_at&quot;: &quot;2024-01-05 10:17:27&quot;,
+            &quot;updated_at&quot;: &quot;2024-01-05 10:17:27&quot;,
             &quot;items&quot;: [
                 {
                     &quot;product_id&quot;: null,
                     &quot;service_id&quot;: null,
-                    &quot;sku&quot;: &quot;AFM0OBBUUNYJPNFO&quot;,
-                    &quot;description&quot;: &quot;Rerum et inventore ratione dolores nemo et delectus.&quot;,
-                    &quot;quantity&quot;: 4,
-                    &quot;unit_price&quot;: 24.24,
+                    &quot;sku&quot;: &quot;HQPLAD3C5TJOCAJF&quot;,
+                    &quot;description&quot;: &quot;Odio cupiditate dolor dicta ad sed et.&quot;,
+                    &quot;quantity&quot;: 3,
+                    &quot;unit_price&quot;: 4.83,
                     &quot;tax_rate&quot;: 20
                 },
                 {
                     &quot;product_id&quot;: null,
                     &quot;service_id&quot;: null,
-                    &quot;sku&quot;: &quot;0QQHCHKBIECDVLYL&quot;,
-                    &quot;description&quot;: &quot;Quae est optio earum sapiente expedita voluptatem blanditiis necessitatibus.&quot;,
+                    &quot;sku&quot;: &quot;7ERJCTDXPIDLMV5P&quot;,
+                    &quot;description&quot;: &quot;Eum veniam nisi et sapiente officia quisquam mollitia perferendis.&quot;,
                     &quot;quantity&quot;: 5,
-                    &quot;unit_price&quot;: 76.39,
+                    &quot;unit_price&quot;: 28.5,
                     &quot;tax_rate&quot;: 20
                 }
             ]
@@ -26374,33 +26374,33 @@ response.json()</code></pre>                                        </div>
             &quot;billing_address_id&quot;: 0,
             &quot;shipping_address_id&quot;: 0,
             &quot;invoice_reference&quot;: &quot;QLqBOqWxPA&quot;,
-            &quot;customer_reference&quot;: &quot;INV-14751984&quot;,
+            &quot;customer_reference&quot;: &quot;INV-42496991&quot;,
             &quot;currency&quot;: &quot;USD&quot;,
             &quot;total&quot;: 0,
-            &quot;issue_date&quot;: &quot;2024-04-29&quot;,
-            &quot;due_date&quot;: &quot;2024-05-29&quot;,
+            &quot;issue_date&quot;: &quot;2024-11-09&quot;,
+            &quot;due_date&quot;: &quot;2024-12-09&quot;,
             &quot;last_notified&quot;: null,
-            &quot;is_overdue&quot;: true,
-            &quot;status&quot;: &quot;Published&quot;,
-            &quot;created_at&quot;: &quot;2024-04-29 20:12:18&quot;,
-            &quot;updated_at&quot;: &quot;2024-04-29 20:12:18&quot;,
+            &quot;is_overdue&quot;: false,
+            &quot;status&quot;: &quot;Voided&quot;,
+            &quot;created_at&quot;: &quot;2024-11-09 07:12:24&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-09 07:12:24&quot;,
             &quot;items&quot;: [
                 {
                     &quot;product_id&quot;: null,
                     &quot;service_id&quot;: null,
-                    &quot;sku&quot;: &quot;ZTXHZSLRJYP1MDWX&quot;,
-                    &quot;description&quot;: &quot;Vero at recusandae ab facilis qui natus.&quot;,
-                    &quot;quantity&quot;: 6,
-                    &quot;unit_price&quot;: 34.58,
+                    &quot;sku&quot;: &quot;4MXXQBSZES3HY8IU&quot;,
+                    &quot;description&quot;: &quot;Ut libero id voluptatem sint et.&quot;,
+                    &quot;quantity&quot;: 5,
+                    &quot;unit_price&quot;: 4.69,
                     &quot;tax_rate&quot;: 20
                 },
                 {
                     &quot;product_id&quot;: null,
                     &quot;service_id&quot;: null,
-                    &quot;sku&quot;: &quot;0WXOQC2O4SWQVNFG&quot;,
-                    &quot;description&quot;: &quot;Sed ipsam eum ducimus mollitia est repudiandae.&quot;,
-                    &quot;quantity&quot;: 3,
-                    &quot;unit_price&quot;: 19.25,
+                    &quot;sku&quot;: &quot;YKBEZZ6E7G2JQWPW&quot;,
+                    &quot;description&quot;: &quot;Qui tenetur ut in consequatur dicta exercitationem.&quot;,
+                    &quot;quantity&quot;: 4,
+                    &quot;unit_price&quot;: 39.58,
                     &quot;tax_rate&quot;: 20
                 }
             ]
@@ -27551,39 +27551,39 @@ response.json()</code></pre>                                        </div>
         &quot;last_notified&quot;: null,
         &quot;is_overdue&quot;: false,
         &quot;status&quot;: &quot;Voided&quot;,
-        &quot;created_at&quot;: &quot;2024-04-17 06:52:45&quot;,
-        &quot;updated_at&quot;: &quot;2024-04-17 06:52:45&quot;,
+        &quot;created_at&quot;: &quot;2024-04-17 13:12:38&quot;,
+        &quot;updated_at&quot;: &quot;2024-04-17 13:12:38&quot;,
         &quot;items&quot;: [
             {
                 &quot;product_id&quot;: null,
                 &quot;service_id&quot;: null,
-                &quot;sku&quot;: &quot;A9WMNWSZQZJIG0JD&quot;,
+                &quot;sku&quot;: &quot;EC3V9KIGJJ9N03ES&quot;,
                 &quot;description&quot;: &quot;Eveniet eaque qui quia voluptas suscipit provident minus ducimus.&quot;,
                 &quot;quantity&quot;: 2,
-                &quot;unit_price&quot;: 86.14,
+                &quot;unit_price&quot;: 67.55,
                 &quot;tax_rate&quot;: 20
             },
             {
                 &quot;product_id&quot;: null,
                 &quot;service_id&quot;: null,
-                &quot;sku&quot;: &quot;BCXX5BI20OAEKSEL&quot;,
+                &quot;sku&quot;: &quot;XPKMMUYBUZNNR49D&quot;,
                 &quot;description&quot;: &quot;Facere beatae id at aperiam.&quot;,
                 &quot;quantity&quot;: 6,
-                &quot;unit_price&quot;: 28.1,
+                &quot;unit_price&quot;: 18.51,
                 &quot;tax_rate&quot;: 20
             }
         ],
         &quot;customer&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Grant Fisher III&quot;,
-            &quot;tax_number&quot;: &quot;01JD2ZNPPR8M06PD7N3A5HW2TT&quot;,
+            &quot;tax_number&quot;: &quot;01JD3ND9N2EW6TYEKVHSXZE82E&quot;,
             &quot;tax_rate&quot;: 17.5,
             &quot;categories&quot;: [],
             &quot;default_email&quot;: null,
             &quot;default_phone&quot;: null,
             &quot;default_address&quot;: null,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         &quot;billing_address&quot;: {
             &quot;id&quot;: 1,
@@ -27596,8 +27596,8 @@ response.json()</code></pre>                                        </div>
             &quot;postal_code&quot;: &quot;63749-9471&quot;,
             &quot;country&quot;: &quot;United States&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         &quot;shipping_address&quot;: {
             &quot;id&quot;: 1,
@@ -27610,8 +27610,8 @@ response.json()</code></pre>                                        </div>
             &quot;postal_code&quot;: &quot;21195&quot;,
             &quot;country&quot;: &quot;United States&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         &quot;notification_recipients&quot;: [
             {
@@ -27619,25 +27619,25 @@ response.json()</code></pre>                                        </div>
                 &quot;name&quot;: &quot;Dr. Jazmyn Johns Sr.&quot;,
                 &quot;address&quot;: &quot;pwill@example.net&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             },
             {
                 &quot;id&quot;: 1,
                 &quot;name&quot;: &quot;Dr. Lia Stehr PhD&quot;,
                 &quot;address&quot;: &quot;andrew80@example.com&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             }
         ],
         &quot;payments&quot;: [
             {
-                &quot;payment_date&quot;: &quot;19-11-2024&quot;,
+                &quot;payment_date&quot;: &quot;20-11-2024&quot;,
                 &quot;payment_method&quot;: &quot;Stripe&quot;,
                 &quot;payment_currency&quot;: &quot;USD&quot;,
                 &quot;payment_amount&quot;: 874.51,
-                &quot;payment_reference&quot;: &quot;B1pUs0liENzm47Jp&quot;,
+                &quot;payment_reference&quot;: &quot;Km8AcHg8J3yXnuWk&quot;,
                 &quot;crypto_asset_name&quot;: null,
                 &quot;crypto_asset_ada_price&quot;: null,
                 &quot;crypto_asset_quantity&quot;: 0,
@@ -27653,7 +27653,7 @@ response.json()</code></pre>                                        </div>
         &quot;activities&quot;: [
             {
                 &quot;activity&quot;: &quot;Created new invoice&quot;,
-                &quot;when&quot;: &quot;2024-11-19 19:51:28&quot;,
+                &quot;when&quot;: &quot;2024-11-20 02:11:21&quot;,
                 &quot;diff&quot;: &quot;0 seconds ago&quot;
             }
         ]
@@ -28196,39 +28196,39 @@ response.json()</code></pre>                                        </div>
         &quot;last_notified&quot;: null,
         &quot;is_overdue&quot;: false,
         &quot;status&quot;: &quot;Voided&quot;,
-        &quot;created_at&quot;: &quot;2024-08-21 12:37:09&quot;,
-        &quot;updated_at&quot;: &quot;2024-08-21 12:37:09&quot;,
+        &quot;created_at&quot;: &quot;2024-08-21 18:57:02&quot;,
+        &quot;updated_at&quot;: &quot;2024-08-21 18:57:02&quot;,
         &quot;items&quot;: [
             {
                 &quot;product_id&quot;: null,
                 &quot;service_id&quot;: null,
-                &quot;sku&quot;: &quot;PDI5CP574KHTQPOE&quot;,
+                &quot;sku&quot;: &quot;GXQLCLFTJL443UNH&quot;,
                 &quot;description&quot;: &quot;Aperiam repellat sit ea in et ducimus reiciendis.&quot;,
                 &quot;quantity&quot;: 3,
-                &quot;unit_price&quot;: 64.55,
+                &quot;unit_price&quot;: 58.87,
                 &quot;tax_rate&quot;: 20
             },
             {
                 &quot;product_id&quot;: null,
                 &quot;service_id&quot;: null,
-                &quot;sku&quot;: &quot;UMZOGMCZP2X8SGYP&quot;,
+                &quot;sku&quot;: &quot;X17LPTBNW24AF2MR&quot;,
                 &quot;description&quot;: &quot;Quos id autem id autem explicabo amet.&quot;,
                 &quot;quantity&quot;: 2,
-                &quot;unit_price&quot;: 34.24,
+                &quot;unit_price&quot;: 52.59,
                 &quot;tax_rate&quot;: 20
             }
         ],
         &quot;customer&quot;: {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;Olga Ratke&quot;,
-            &quot;tax_number&quot;: &quot;01JD2ZNPPX9RE17ZR8BGZMVGGB&quot;,
+            &quot;tax_number&quot;: &quot;01JD3ND9N6M52XS51KDSH856T0&quot;,
             &quot;tax_rate&quot;: 17.5,
             &quot;categories&quot;: [
                 {
                     &quot;id&quot;: 1,
                     &quot;name&quot;: &quot;Veritatis&quot;,
-                    &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                    &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                    &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                    &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
                 }
             ],
             &quot;default_email&quot;: {
@@ -28236,8 +28236,8 @@ response.json()</code></pre>                                        </div>
                 &quot;name&quot;: &quot;Prof. Bailee Christiansen DDS&quot;,
                 &quot;address&quot;: &quot;atorphy@example.net&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             },
             &quot;default_phone&quot;: {
                 &quot;id&quot;: 1,
@@ -28245,8 +28245,8 @@ response.json()</code></pre>                                        </div>
                 &quot;name&quot;: &quot;Martin Haag&quot;,
                 &quot;number&quot;: &quot;+1 (920) 975-1481&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             },
             &quot;default_address&quot;: {
                 &quot;id&quot;: 1,
@@ -28259,11 +28259,11 @@ response.json()</code></pre>                                        </div>
                 &quot;postal_code&quot;: &quot;44575-4408&quot;,
                 &quot;country&quot;: &quot;United States&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             },
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         &quot;billing_address&quot;: {
             &quot;id&quot;: 1,
@@ -28276,8 +28276,8 @@ response.json()</code></pre>                                        </div>
             &quot;postal_code&quot;: &quot;71850-9639&quot;,
             &quot;country&quot;: &quot;United States&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         &quot;shipping_address&quot;: {
             &quot;id&quot;: 1,
@@ -28290,8 +28290,8 @@ response.json()</code></pre>                                        </div>
             &quot;postal_code&quot;: &quot;04401&quot;,
             &quot;country&quot;: &quot;United States&quot;,
             &quot;is_default&quot;: true,
-            &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-            &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+            &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+            &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
         },
         &quot;notification_recipients&quot;: [
             {
@@ -28299,25 +28299,25 @@ response.json()</code></pre>                                        </div>
                 &quot;name&quot;: &quot;Mrs. Kaci Block&quot;,
                 &quot;address&quot;: &quot;steuber.aliza@example.net&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             },
             {
                 &quot;id&quot;: 1,
                 &quot;name&quot;: &quot;Willow Sporer&quot;,
                 &quot;address&quot;: &quot;jamey42@example.net&quot;,
                 &quot;is_default&quot;: true,
-                &quot;created_at&quot;: &quot;2024-11-19 19:51:28&quot;,
-                &quot;updated_at&quot;: &quot;2024-11-19 19:51:28&quot;
+                &quot;created_at&quot;: &quot;2024-11-20 02:11:21&quot;,
+                &quot;updated_at&quot;: &quot;2024-11-20 02:11:21&quot;
             }
         ],
         &quot;payments&quot;: [
             {
-                &quot;payment_date&quot;: &quot;19-11-2024&quot;,
+                &quot;payment_date&quot;: &quot;20-11-2024&quot;,
                 &quot;payment_method&quot;: &quot;Stripe&quot;,
                 &quot;payment_currency&quot;: &quot;USD&quot;,
                 &quot;payment_amount&quot;: 10,
-                &quot;payment_reference&quot;: &quot;VRPq2UQvwBNDJI1m&quot;,
+                &quot;payment_reference&quot;: &quot;lvzxt6GvPTpgQFzN&quot;,
                 &quot;crypto_asset_name&quot;: null,
                 &quot;crypto_asset_ada_price&quot;: null,
                 &quot;crypto_asset_quantity&quot;: 0,
@@ -28333,7 +28333,7 @@ response.json()</code></pre>                                        </div>
         &quot;activities&quot;: [
             {
                 &quot;activity&quot;: &quot;Created new invoice&quot;,
-                &quot;when&quot;: &quot;2024-11-19 19:51:28&quot;,
+                &quot;when&quot;: &quot;2024-11-20 02:11:21&quot;,
                 &quot;diff&quot;: &quot;0 seconds ago&quot;
             }
         ]
@@ -29538,25 +29538,25 @@ response.json()</code></pre>                                        </div>
         &quot;last_notified&quot;: null,
         &quot;is_overdue&quot;: false,
         &quot;status&quot;: &quot;Voided&quot;,
-        &quot;created_at&quot;: &quot;2024-04-17 06:52:45&quot;,
-        &quot;updated_at&quot;: &quot;2024-04-17 06:52:45&quot;,
+        &quot;created_at&quot;: &quot;2024-04-17 13:12:38&quot;,
+        &quot;updated_at&quot;: &quot;2024-04-17 13:12:38&quot;,
         &quot;items&quot;: [
             {
                 &quot;product_id&quot;: null,
                 &quot;service_id&quot;: null,
-                &quot;sku&quot;: &quot;N0GYOVCDE2PGU2VZ&quot;,
+                &quot;sku&quot;: &quot;NGRCXUHDW6V1ZCH3&quot;,
                 &quot;description&quot;: &quot;Eveniet eaque qui quia voluptas suscipit provident minus ducimus.&quot;,
                 &quot;quantity&quot;: 2,
-                &quot;unit_price&quot;: 96.96,
+                &quot;unit_price&quot;: 75.44,
                 &quot;tax_rate&quot;: 20
             },
             {
                 &quot;product_id&quot;: null,
                 &quot;service_id&quot;: null,
-                &quot;sku&quot;: &quot;9EXA4ZSUDWHZIXWC&quot;,
+                &quot;sku&quot;: &quot;8ZBTLCGGSW4UBBYJ&quot;,
                 &quot;description&quot;: &quot;Facere beatae id at aperiam.&quot;,
                 &quot;quantity&quot;: 6,
-                &quot;unit_price&quot;: 34.38,
+                &quot;unit_price&quot;: 24.46,
                 &quot;tax_rate&quot;: 20
             }
         ]

@@ -59,7 +59,7 @@ class StoreCustomerAddressRequest extends FormRequest
             'state' => [
                 'nullable',
                 'string',
-                'min:3',
+                'min:2',
                 'max:64',
             ],
             'postal_code' => [
