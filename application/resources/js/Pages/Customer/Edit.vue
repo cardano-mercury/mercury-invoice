@@ -198,6 +198,52 @@ function updateCategories() {
     preserveScroll: true
   });
 }
+
+// Category CRUD
+const categoryForm = useForm({
+  name: '',
+});
+
+const editingCategory = ref(null);
+
+function addCategory() {
+  categoryForm.post(route('customer-categories.store'), {
+    preserveScroll: true,
+    onSuccess: () => {
+      categoryForm.reset();
+    }
+  });
+}
+
+function editCategory(category) {
+  editingCategory.value = category;
+  categoryForm.name = category.name;
+}
+
+function updateCategory() {
+  if (!editingCategory.value) return;
+
+  categoryForm.put(route('customer-categories.update', editingCategory.value.id), {
+    preserveScroll: true,
+    onSuccess: () => {
+      categoryForm.reset();
+      editingCategory.value = null;
+    }
+  });
+}
+
+function cancelCategoryEdit() {
+  editingCategory.value = null;
+  categoryForm.reset();
+}
+
+function deleteCategory(category) {
+  if (confirm('Are you sure you want to delete this category? It will be removed from all customers.')) {
+    Inertia.delete(route('customer-categories.destroy', category.id), {
+      preserveScroll: true
+    });
+  }
+}
 </script>
 <template>
     <app-layout title="Update Customer">
@@ -746,9 +792,9 @@ function updateCategories() {
 
                     <!-- Categories Tab -->
                     <v-window-item value="categories">
-                        <v-card>
+                        <v-card variant="text">
                             <v-card-title class="text-h6">
-                                Categories
+                                Assign Categories
                             </v-card-title>
 
                             <!-- Categories Form -->
@@ -768,7 +814,7 @@ function updateCategories() {
                                             ></v-select>
                                         </v-col>
                                         <v-col cols="12">
-                                            <v-btn color="primary" type="submit">Update Categories</v-btn>
+                                            <v-btn color="primary" type="submit">Assign Categories</v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-form>
@@ -784,6 +830,90 @@ function updateCategories() {
                                 </v-chip-group>
                                 <div v-else class="text-center pa-4">
                                     No categories assigned yet.
+                                </div>
+                            </v-card-text>
+                        </v-card>
+
+                        <!-- Manage Categories -->
+                        <v-card variant="text" class="mt-6">
+                            <v-card-title class="text-h6">
+                                Manage Customer Categories
+                                <v-spacer></v-spacer>
+                                <v-btn color="primary" @click="editingCategory = null; categoryForm.reset()">
+                                    Add New Customer Category
+                                </v-btn>
+                            </v-card-title>
+
+                            <!-- Category Form -->
+                            <v-card-text v-if="!editingCategory">
+                                <v-form @submit.prevent="addCategory">
+                                    <v-row>
+                                        <v-col cols="12" sm="8">
+                                            <v-text-field
+                                                v-model="categoryForm.name"
+                                                label="Customer Category Name"
+                                                placeholder="e.g. VIP Client"
+                                                :error-messages="categoryForm.errors.name"
+                                                required
+                                            ></v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" sm="4">
+                                            <v-btn color="primary" type="submit">Create</v-btn>
+                                        </v-col>
+                                    </v-row>
+                                </v-form>
+                            </v-card-text>
+
+                            <!-- Edit Category Form -->
+                            <v-card-text v-else>
+                                <v-form @submit.prevent="updateCategory">
+                                    <v-row>
+                                        <v-col cols="12" sm="8">
+                                            <v-text-field
+                                                v-model="categoryForm.name"
+                                                label="Customer Category Name"
+                                                placeholder="e.g. VIP Client"
+                                                :error-messages="categoryForm.errors.name"
+                                                required
+                                            ></v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" sm="4">
+                                            <v-btn color="primary" type="submit" class="mr-2">Update</v-btn>
+                                            <v-btn @click="cancelCategoryEdit">Cancel</v-btn>
+                                        </v-col>
+                                    </v-row>
+                                </v-form>
+                            </v-card-text>
+
+                            <v-card-title class="text-h6">
+                                All Customer Categories
+                            </v-card-title>
+
+                            <!-- All Categories Table -->
+                            <v-card-text>
+                                <v-table v-if="customerCategories && customerCategories.length > 0">
+                                    <thead>
+                                        <tr>
+                                            <th>Customer Category Name</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="category in customerCategories" :key="category.id">
+                                            <td>{{ category.name }}</td>
+                                            <td>
+                                                <v-btn variant="flat" size="small" prepend-icon="mdi-pencil" @click="editCategory(category)" color="primary me-2">
+                                                    Edit
+                                                </v-btn>
+                                                <v-btn variant="flat" size="small" prepend-icon="mdi-delete" @click="deleteCategory(category)" color="error">
+                                                    Delete
+                                                </v-btn>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </v-table>
+                                <div v-else class="text-center pa-4">
+                                    No customer categories created yet.
                                 </div>
                             </v-card-text>
                         </v-card>

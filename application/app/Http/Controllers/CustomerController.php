@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\AddressType;
-use App\Enums\PhoneType;
 use Throwable;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\Email;
 use App\Models\Phone;
 use App\Models\Address;
+use App\Enums\PhoneType;
 use App\Models\Customer;
+use App\Enums\AddressType;
 use App\Traits\HashIdTrait;
-use App\Models\CustomerCategory;
 use Illuminate\Http\Request;
+use App\Models\CustomerCategory;
 use App\Traits\JsonDownloadTrait;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Resources\Customer\CustomerResource;
@@ -22,6 +22,7 @@ use App\Http\Requests\Customer\StoreCustomerEmailRequest;
 use App\Http\Requests\Customer\StoreCustomerPhoneRequest;
 use App\Http\Requests\Customer\SyncCustomerCategoryRequest;
 use App\Http\Requests\Customer\StoreCustomerAddressRequest;
+use App\Http\Requests\Customer\StoreCustomerCategoryRequest;
 use Illuminate\Contracts\Container\BindingResolutionException;
 
 class CustomerController extends Controller
@@ -76,7 +77,7 @@ class CustomerController extends Controller
             'categories'
         ]);
 
-        $customerCategories = $customer->categories;
+        $customerCategories = CustomerCategory::query()->where('user_id', auth()->id())->get();
         $phoneTypes = PhoneType::array();
         $addressTypes = AddressType::array();
 
@@ -100,7 +101,7 @@ class CustomerController extends Controller
             'categories'
         ]);
 
-        $customerCategories = $customer->categories;
+        $customerCategories = CustomerCategory::query()->where('user_id', auth()->id())->get();
         $phoneTypes = PhoneType::array();
         $addressTypes = AddressType::array();
 
@@ -290,7 +291,48 @@ class CustomerController extends Controller
     {
         $customer->categories()->sync($request->category_ids);
 
-        session()->flash('info', 'Customer categories updated');
+        session()->flash('info', 'Customer successfully assigned to selected categories');
+
+        return back();
+    }
+
+    /**
+     * Store a new customer category
+     */
+    public function storeCategory(StoreCustomerCategoryRequest $request): RedirectResponse
+    {
+        $validated = $request->validated();
+        $validated['user_id'] = auth()->id();
+
+        CustomerCategory::create($validated);
+
+        session()->flash('success', 'Category created successfully');
+
+        return back();
+    }
+
+    /**
+     * Update an existing customer category
+     */
+    public function updateCategory(StoreCustomerCategoryRequest $request, CustomerCategory $customerCategory): RedirectResponse
+    {
+        $customerCategory->update($request->validated());
+
+        session()->flash('info', 'Category updated successfully');
+
+        return back();
+    }
+
+    /**
+     * Delete a customer category and detach from all customers
+     */
+    public function destroyCategory(CustomerCategory $customerCategory): RedirectResponse
+    {
+        $customerCategory->customers()->detach();
+
+        $customerCategory->delete();
+
+        session()->flash('info', 'Category deleted successfully');
 
         return back();
     }

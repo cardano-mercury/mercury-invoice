@@ -16,7 +16,7 @@ class StoreCustomerCategoryRequest extends FormRequest
             // Anyone can create new record
             'POST' => true,
             // Updating must match record owner
-            'PUT', 'PATCH' => $this->customer_category->user_id === auth()->id(),
+            'PUT', 'PATCH' => $this->customerCategory->user_id === auth()->id(),
             // Unauthorized for everything else
             default => false,
         };
@@ -37,7 +37,7 @@ class StoreCustomerCategoryRequest extends FormRequest
                     return $query
                         ->where('user_id', auth()->id())
                         ->where('name', $this->name);
-                })->ignore($this?->customer_category?->id),
+                })->ignore($this?->customerCategory?->id),
             ],
         ];
     }

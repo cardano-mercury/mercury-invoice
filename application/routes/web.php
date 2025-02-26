@@ -64,6 +64,9 @@ Route::middleware([
     
     // Customer Categories
     Route::put('customers/{customer}/categories', [CustomerController::class, 'updateCategories'])->name('customers.categories.update');
+    Route::post('customer-categories', [CustomerController::class, 'storeCategory'])->name('customer-categories.store');
+    Route::put('customer-categories/{customerCategory}', [CustomerController::class, 'updateCategory'])->name('customer-categories.update');
+    Route::delete('customer-categories/{customerCategory}', [CustomerController::class, 'destroyCategory'])->name('customer-categories.destroy');
 
     // Products
     Route::get('products/export', [ProductController::class, 'export'])->name('products.export');
