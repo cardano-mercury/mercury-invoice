@@ -1,0 +1,59 @@
+{
+  "rules": [
+    {
+      "name": "Vue Component Structure",
+      "description": "Maintain consistent Vue component structure with template first, then script",
+      "pattern": "Vue component structure should follow template-first pattern with <template> before <script>"
+    },
+    {
+      "name": "Vuetify Card Layout",
+      "description": "Use v-card with v-card-title, v-card-subtitle, and v-card-text for section layouts",
+      "pattern": "Sections should use v-card with proper title, subtitle, and content structure"
+    },
+    {
+      "name": "Form Submission",
+      "description": "Use v-form with @submit.prevent for form submissions",
+      "pattern": "<v-form @submit.prevent=\"methodName\">"
+    },
+    {
+      "name": "Success Feedback",
+      "description": "Use v-snackbar for success messages after form submissions",
+      "pattern": "Include v-snackbar with success message and 3000ms timeout"
+    },
+    {
+      "name": "Form Error Handling",
+      "description": "Display form errors using :error-messages with form.errors",
+      "pattern": ":error-messages=\"form.errors.fieldName\""
+    },
+    {
+      "name": "Button Styling",
+      "description": "Use consistent button styling with color and loading state",
+      "pattern": "<v-btn color=\"success|primary|error\" :loading=\"form.processing\" type=\"submit\">"
+    },
+    {
+      "name": "Modal Dialogs",
+      "description": "Use v-dialog for confirmation modals with consistent structure",
+      "pattern": "<v-dialog v-model=\"confirmingAction\" max-width=\"500px\">"
+    },
+    {
+      "name": "Form State Management",
+      "description": "Use useForm from Inertia.js for form state management",
+      "pattern": "const form = useForm({ ... });"
+    },
+    {
+      "name": "Responsive Layout",
+      "description": "Use v-container with v-row and v-col for responsive layouts",
+      "pattern": "Wrap content in v-container > v-row > v-col structure"
+    },
+    {
+      "name": "Form Field Spacing",
+      "description": "Maintain consistent spacing between form fields",
+      "pattern": "Form fields should have consistent vertical spacing"
+    },
+    {
+      "name": "Icon Usage",
+      "description": "Use mdi icons with consistent sizing and spacing",
+      "pattern": "<v-icon icon=\"mdi-iconname\" class=\"mr-2\"></v-icon>"
+    }
+  ]
+}

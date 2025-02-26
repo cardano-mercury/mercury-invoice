@@ -45,8 +45,6 @@ class SettingController extends Controller
             ]
         );
 
-        session()->flash('success', 'Business Info successfully updated.');
-
         auth()->user()->update($validated);
 
         return redirect()->back();
@@ -115,11 +113,7 @@ class SettingController extends Controller
                 'endpoint_secret' => encrypt($webhookEndpointSecret),
             ]);
 
-            session()->flash('success', 'Stripe Payment Gateway successfully enabled.');
-
         } else {
-
-            session()->flash('success', 'Stripe Payment Gateway successfully disabled.');
 
             $stripeConfig = null;
 
@@ -183,11 +177,7 @@ class SettingController extends Controller
                 'cardano_network' => $targetCardanoNetwork->value,
             ]);
 
-            session()->flash('success', 'Crypto Payment Gateway successfully enabled.');
-
         } else {
-
-            session()->flash('success', 'Crypto Payment Gateway successfully disabled.');
 
             $cryptoConfig = null;
 
