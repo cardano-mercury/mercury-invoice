@@ -12,7 +12,7 @@ use App\Traits\JsonDownloadTrait;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Resources\Product\ProductResource;
 use App\Http\Requests\Product\StoreProductRequest;
-use Illuminate\Contracts\Container\BindingResolutionException;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ProductController extends Controller
 {
@@ -96,16 +96,13 @@ class ProductController extends Controller
         return to_route('products.index');
     }
 
-    /**
-     * @throws BindingResolutionException
-     */
-    public function export(Request $request): \Illuminate\Http\Response
+    public function export(Request $request): StreamedResponse
     {
         $products = Product::query()
             ->where('user_id', auth()->id())
             ->get();
 
-        return $this->downloadJson(
+        return $this->downloadZipCompressedJson(
             ProductResource::collection($products)->response($request)->getData(true)['data'],
             'products-export',
         );

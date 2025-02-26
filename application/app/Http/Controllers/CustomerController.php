@@ -18,6 +18,7 @@ use App\Traits\JsonDownloadTrait;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Resources\Customer\CustomerResource;
 use App\Http\Requests\Customer\StoreCustomerRequest;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use App\Http\Requests\Customer\StoreCustomerEmailRequest;
 use App\Http\Requests\Customer\StoreCustomerPhoneRequest;
 use App\Http\Requests\Customer\SyncCustomerCategoryRequest;
@@ -120,7 +121,7 @@ class CustomerController extends Controller
     {
         $customer->update($request->validated());
 
-        session()->flash('info', 'Customer info updated');
+        session()->flash('success', 'Customer info updated');
 
         return back();
     }
@@ -132,7 +133,6 @@ class CustomerController extends Controller
     {
         $validated = $request->validated();
 
-        // If this is set as default, unset all other defaults
         if (!empty($validated['is_default'])) {
             $customer->emails()->update(['is_default' => false]);
         }
@@ -158,7 +158,7 @@ class CustomerController extends Controller
 
         $email->update($validated);
 
-        session()->flash('info', 'Email updated');
+        session()->flash('success', 'Email updated');
 
         return back();
     }
@@ -173,7 +173,7 @@ class CustomerController extends Controller
             ->where('id', $email->id)
             ->delete();
 
-        session()->flash('info', 'Email removed');
+        session()->flash('success', 'Email removed');
 
         return back();
     }
@@ -211,7 +211,7 @@ class CustomerController extends Controller
 
         $phone->update($validated);
 
-        session()->flash('info', 'Phone updated');
+        session()->flash('success', 'Phone updated');
 
         return back();
     }
@@ -226,7 +226,7 @@ class CustomerController extends Controller
             ->where('id', $phone->id)
             ->delete();
 
-        session()->flash('info', 'Phone removed');
+        session()->flash('success', 'Phone removed');
 
         return back();
     }
@@ -264,7 +264,7 @@ class CustomerController extends Controller
 
         $address->update($validated);
 
-        session()->flash('info', 'Address updated');
+        session()->flash('success', 'Address updated');
 
         return back();
     }
@@ -279,7 +279,7 @@ class CustomerController extends Controller
             ->where('id', $address->id)
             ->delete();
 
-        session()->flash('info', 'Address removed');
+        session()->flash('success', 'Address removed');
 
         return back();
     }
@@ -291,7 +291,7 @@ class CustomerController extends Controller
     {
         $customer->categories()->sync($request->category_ids);
 
-        session()->flash('info', 'Customer successfully assigned to selected categories');
+        session()->flash('success', 'Customer successfully assigned to selected categories');
 
         return back();
     }
@@ -318,7 +318,7 @@ class CustomerController extends Controller
     {
         $customerCategory->update($request->validated());
 
-        session()->flash('info', 'Category updated successfully');
+        session()->flash('success', 'Category updated successfully');
 
         return back();
     }
@@ -332,7 +332,7 @@ class CustomerController extends Controller
 
         $customerCategory->delete();
 
-        session()->flash('info', 'Category deleted successfully');
+        session()->flash('success', 'Category deleted successfully');
 
         return back();
     }
@@ -354,10 +354,7 @@ class CustomerController extends Controller
         return to_route('customers.index');
     }
 
-    /**
-     * @throws BindingResolutionException
-     */
-    public function export(Request $request): \Illuminate\Http\Response
+    public function export(Request $request): StreamedResponse
     {
         $customers = Customer::query()
             ->where('user_id', auth()->id())
@@ -369,7 +366,7 @@ class CustomerController extends Controller
             ])
             ->get();
 
-        return $this->downloadJson(
+        return $this->downloadZipCompressedJson(
             CustomerResource::collection($customers)->toResponse($request)->getData(true)['data'],
             'customers-export',
         );

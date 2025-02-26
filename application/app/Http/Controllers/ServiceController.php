@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\Service\ServiceResource;
-use Illuminate\Http\Request;
 use Throwable;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\Service;
 use App\Traits\HashIdTrait;
+use Illuminate\Http\Request;
 use App\Traits\JsonDownloadTrait;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Resources\Service\ServiceResource;
 use App\Http\Requests\Service\StoreServiceRequest;
-use Illuminate\Contracts\Container\BindingResolutionException;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ServiceController extends Controller
 {
@@ -96,16 +96,13 @@ class ServiceController extends Controller
         return to_route('services.index');
     }
 
-    /**
-     * @throws BindingResolutionException
-     */
-    public function export(Request $request): \Illuminate\Http\Response
+    public function export(Request $request): StreamedResponse
     {
         $services = Service::query()
             ->where('user_id', auth()->id())
             ->get();
 
-        return $this->downloadJson(
+        return $this->downloadZipCompressedJson(
             ServiceResource::collection($services)->toResponse($request)->getData(true)['data'],
             'services-export',
         );
