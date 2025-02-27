@@ -87,11 +87,6 @@ class WebhookController extends Controller
             }
         }
 
-        session()->flash('success', sprintf(
-            'Webhook integration to (%s) has been updated.',
-            $webhook->url,
-        ));
-
         return back(303);
     }
 
@@ -103,11 +98,6 @@ class WebhookController extends Controller
         $webhook->eventTargets()->delete();
         $webhook->logs()->delete();
         $webhook->delete();
-
-        session()->flash('success', sprintf(
-            'Webhook integration to (%s) has been deleted.',
-            $webhook->url,
-        ));
 
         return back(303);
     }

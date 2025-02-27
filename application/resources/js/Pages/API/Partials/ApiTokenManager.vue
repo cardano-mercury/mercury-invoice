@@ -121,7 +121,7 @@ const deleteApiToken = () => {
                 <!-- Token Name -->
                 <v-text-field
                     v-model="createApiTokenForm.name"
-                    label="Name"
+                    label="API TokenName"
                     :error-messages="createApiTokenForm.errors.name"
                 ></v-text-field>
 
@@ -255,7 +255,7 @@ const deleteApiToken = () => {
     <!-- Token Permissions Modal -->
     <v-dialog v-model="managingPermissionsFor" max-width="500px">
         <v-card>
-            <v-card-title>Token Permissions</v-card-title>
+            <v-card-title>API Token Permissions</v-card-title>
             <v-card-text>
                 <v-expansion-panels variant="accordion" class="mt-2">
                     <v-expansion-panel
