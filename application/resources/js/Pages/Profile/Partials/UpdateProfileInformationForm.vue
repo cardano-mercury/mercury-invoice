@@ -108,6 +108,8 @@
                         color="success"
                         :loading="form.processing"
                         type="submit"
+                        variant="flat"
+                        prepend-icon="mdi-content-save"
                     >
                         Save
                     </v-btn>

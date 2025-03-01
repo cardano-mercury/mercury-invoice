@@ -175,6 +175,9 @@ const deleteApiToken = () => {
                         color="primary"
                         :loading="createApiTokenForm.processing"
                         type="submit"
+                        variant="flat"
+                        prepend-icon="mdi-plus"
+                        class="ml-2"
                     >
                         Create
                     </v-btn>
@@ -200,7 +203,19 @@ const deleteApiToken = () => {
                 <v-spacer></v-spacer>
                 <v-btn
                     color="primary"
+                    :loading="createApiTokenForm.processing"
+                    type="submit"
+                    variant="flat"
+                    prepend-icon="mdi-plus"
+                    class="ml-2"
+                >
+                    Create
+                </v-btn>
+                <v-btn
+                    color="secondary"
                     @click="displayingToken = false"
+                    variant="flat"
+                    prepend-icon="mdi-close"
                 >
                     Close
                 </v-btn>
@@ -229,10 +244,11 @@ const deleteApiToken = () => {
                         </div>
 
                         <v-btn
-                            color="secondary"
-                            variant="outlined"
+                            color="info"
+                            variant="flat"
                             size="small"
                             class="mr-2"
+                            prepend-icon="mdi-shield-key"
                             @click="manageApiTokenPermissions(token)"
                         >
                             Permissions
@@ -240,8 +256,9 @@ const deleteApiToken = () => {
 
                         <v-btn
                             color="error"
-                            variant="outlined"
+                            variant="flat"
                             size="small"
+                            prepend-icon="mdi-delete"
                             @click="confirmApiTokenDeletion(token)"
                         >
                             Delete
@@ -294,6 +311,9 @@ const deleteApiToken = () => {
                 <v-btn
                     color="secondary"
                     @click="managingPermissionsFor = null"
+                    variant="flat"
+                    prepend-icon="mdi-cancel"
+                    class="mr-2"
                 >
                     Cancel
                 </v-btn>
@@ -301,6 +321,8 @@ const deleteApiToken = () => {
                     color="primary"
                     :loading="updateApiTokenForm.processing"
                     @click="updateApiToken"
+                    variant="flat"
+                    prepend-icon="mdi-content-save"
                 >
                     Save
                 </v-btn>
@@ -320,6 +342,9 @@ const deleteApiToken = () => {
                 <v-btn
                     color="secondary"
                     @click="apiTokenBeingDeleted = null"
+                    variant="flat"
+                    prepend-icon="mdi-cancel"
+                    class="mr-2"
                 >
                     Cancel
                 </v-btn>
@@ -327,6 +352,8 @@ const deleteApiToken = () => {
                     color="error"
                     :loading="deleteApiTokenForm.processing"
                     @click="deleteApiToken"
+                    variant="flat"
+                    prepend-icon="mdi-delete"
                 >
                     Delete
                 </v-btn>

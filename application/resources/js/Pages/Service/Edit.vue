@@ -33,16 +33,16 @@ const form = useForm(props.service);
                               v-model="form.supplier"/>
                 <v-row>
                     <v-col cols="auto">
-                        <v-btn color="primary" type="submit" variant="flat">
+                        <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-content-save" class="mr-2">
                             Save
                         </v-btn>
                     </v-col>
                     <v-col cols="auto">
-                        <v-btn type="reset" variant="flat">Reset</v-btn>
+                        <v-btn type="reset" variant="flat" prepend-icon="mdi-refresh" class="mr-2">Reset</v-btn>
                     </v-col>
                     <v-col cols="auto">
-                        <v-btn :href="route('services.index')" color="error"
-                               variant="flat">Cancel
+                        <v-btn :href="route('services.index')" color="error" variant="flat" prepend-icon="mdi-close">
+                            Cancel
                         </v-btn>
                     </v-col>
                 </v-row>

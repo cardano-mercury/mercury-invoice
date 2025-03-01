@@ -164,10 +164,10 @@ watch(timeframe, (newTimeframe) => {
 <template>
     <v-btn-toggle variant="outlined" v-model="timeframe" mandatory class="mb-8"
                   density="compact" divided rounded="xl">
-        <v-btn :value="1">24H</v-btn>
-        <v-btn :value="7">7D</v-btn>
-        <v-btn :value="30">1M</v-btn>
-        <v-btn :value="365">12M</v-btn>
+        <v-btn :value="1" prepend-icon="mdi-clock-time-one">24H</v-btn>
+        <v-btn :value="7" prepend-icon="mdi-calendar-week">7D</v-btn>
+        <v-btn :value="30" prepend-icon="mdi-calendar-month">1M</v-btn>
+        <v-btn :value="365" prepend-icon="mdi-calendar-star">12M</v-btn>
     </v-btn-toggle>
 
     <v-skeleton-loader
@@ -253,19 +253,19 @@ watch(timeframe, (newTimeframe) => {
                     <v-divider/>
                     <v-card-text>
                         <v-btn-toggle v-model="invoiceStatusFilter" variant="outlined" block rounded="xl" mandatory divided>
-                            <v-btn value="all">
+                            <v-btn value="all" prepend-icon="mdi-view-list">
                                 All
                                 <v-badge color="primary" content="X" inline />
                             </v-btn>
-                            <v-btn value="paid">
+                            <v-btn value="paid" prepend-icon="mdi-check-circle">
                                 Paid
                                 <v-badge color="primary" content="X" inline />
                             </v-btn>
-                            <v-btn value="unpaid">
+                            <v-btn value="unpaid" prepend-icon="mdi-clock-outline">
                                 Unpaid
                                 <v-badge color="primary" content="X" inline />
                             </v-btn>
-                            <v-btn value="late">
+                            <v-btn value="late" prepend-icon="mdi-alert-circle">
                                 Late
                                 <v-badge color="primary" content="X" inline />
                             </v-btn>
@@ -276,8 +276,9 @@ watch(timeframe, (newTimeframe) => {
                         </v-data-table>
                     </v-card-text>
                     <v-card-actions class="justify-end">
-                        <v-btn :href="route('invoices.index')" append-icon="mdi-chevron-right">
-                            See All
+                        <v-btn :href="route('invoices.index')" variant="flat" color="primary"
+                               prepend-icon="mdi-invoice" append-icon="mdi-chevron-right">
+                            See All Invoices
                         </v-btn>
                     </v-card-actions>
                 </v-card>

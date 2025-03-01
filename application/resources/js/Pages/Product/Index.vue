@@ -69,11 +69,11 @@ function doDelete(product) {
                 ></v-text-field>
                 <v-spacer/>
                 <v-btn :href="route('products.export')" variant="flat"
-                       class="me-2">
+                       class="me-2" prepend-icon="mdi-file-export">
                     Export
                 </v-btn>
                 <v-btn :href="route('products.create')" variant="flat"
-                       color="primary">Create New
+                       color="primary" prepend-icon="mdi-plus">Create New
                 </v-btn>
             </v-row>
 
@@ -102,6 +102,8 @@ function doDelete(product) {
                         prepend-icon="mdi-pencil"
                         size="small"
                         text="Edit"
+                        variant="flat"
+                        color="primary"
                     />
                     <v-btn
                         @click="doDelete(item)"
@@ -109,6 +111,7 @@ function doDelete(product) {
                         prepend-icon="mdi-trash-can"
                         size="small"
                         text="Delete"
+                        variant="flat"
                     />
                 </template>
             </v-data-table>

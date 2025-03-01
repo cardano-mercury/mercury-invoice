@@ -85,6 +85,8 @@ const updateStripeConfig = () => {
                     
                     <v-btn
                         color="primary"
+                        variant="flat"
+                        prepend-icon="mdi-content-save"
                         :loading="form.processing"
                         type="submit"
                     >

@@ -29,7 +29,7 @@ const form = useForm(props.service);
             <v-row justify="end">
                 <v-col cols="auto">
                     <v-btn :href="route('services.edit', service.id)"
-                           variant="flat" prepend-icon="mdi-pencil">
+                           variant="flat" prepend-icon="mdi-pencil" color="primary" class="mr-2">
                         Edit
                     </v-btn>
                 </v-col>

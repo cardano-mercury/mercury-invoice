@@ -297,7 +297,7 @@ function deleteCategory(category) {
                             />
                             <v-row>
                                 <v-col class="d-flex ga-2">
-                                    <v-btn color="primary" type="submit" variant="flat">Update Basic Info</v-btn>
+                                    <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-content-save">Update Basic Info</v-btn>
                                 </v-col>
                             </v-row>
                         </v-form>
@@ -309,7 +309,7 @@ function deleteCategory(category) {
                             <v-card-title class="text-h6">
                                 Email Addresses
                                 <v-spacer></v-spacer>
-                                <v-btn color="primary" @click="editingEmail = null; emailForm.reset()">
+                                <v-btn color="primary" variant="flat" prepend-icon="mdi-plus" @click="editingEmail = null; emailForm.reset()">
                                     Add New Email
                                 </v-btn>
                             </v-card-title>
@@ -343,7 +343,7 @@ function deleteCategory(category) {
                                             ></v-checkbox>
                                         </v-col>
                                         <v-col cols="12">
-                                            <v-btn color="primary" type="submit">Add Email</v-btn>
+                                            <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-plus">Add Email</v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-form>
@@ -378,8 +378,8 @@ function deleteCategory(category) {
                                             ></v-checkbox>
                                         </v-col>
                                         <v-col cols="12">
-                                            <v-btn color="primary" type="submit" class="mr-2">Update Email</v-btn>
-                                            <v-btn @click="cancelEmailEdit">Cancel</v-btn>
+                                            <v-btn color="primary" type="submit" class="mr-2" variant="flat" prepend-icon="mdi-content-save">Update Email</v-btn>
+                                            <v-btn @click="cancelEmailEdit" variant="flat" color="secondary" prepend-icon="mdi-close">Cancel</v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-form>
@@ -427,7 +427,7 @@ function deleteCategory(category) {
                             <v-card-title class="text-h6">
                                 Phone Numbers
                                 <v-spacer></v-spacer>
-                                <v-btn color="primary" @click="editingPhone = null; phoneForm.reset()">
+                                <v-btn color="primary" variant="flat" prepend-icon="mdi-plus" @click="editingPhone = null; phoneForm.reset()">
                                     Add New Phone
                                 </v-btn>
                             </v-card-title>
@@ -470,7 +470,7 @@ function deleteCategory(category) {
                                             ></v-checkbox>
                                         </v-col>
                                         <v-col cols="12">
-                                            <v-btn color="primary" type="submit">Add Phone</v-btn>
+                                            <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-plus">Add Phone</v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-form>
@@ -514,8 +514,8 @@ function deleteCategory(category) {
                                             ></v-checkbox>
                                         </v-col>
                                         <v-col cols="12">
-                                            <v-btn color="primary" type="submit" class="mr-2">Update Phone</v-btn>
-                                            <v-btn @click="cancelPhoneEdit">Cancel</v-btn>
+                                            <v-btn color="primary" type="submit" class="mr-2" variant="flat" prepend-icon="mdi-content-save">Update Phone</v-btn>
+                                            <v-btn @click="cancelPhoneEdit" variant="flat" color="secondary" prepend-icon="mdi-close">Cancel</v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-form>
@@ -565,7 +565,7 @@ function deleteCategory(category) {
                             <v-card-title class="text-h6">
                                 Addresses
                                 <v-spacer></v-spacer>
-                                <v-btn color="primary" @click="editingAddress = null; addressForm.reset()">
+                                <v-btn color="primary" variant="flat" prepend-icon="mdi-plus" @click="editingAddress = null; addressForm.reset()">
                                     Add New Address
                                 </v-btn>
                             </v-card-title>
@@ -652,7 +652,7 @@ function deleteCategory(category) {
                                             ></v-text-field>
                                         </v-col>
                                         <v-col cols="12">
-                                            <v-btn color="primary" type="submit">Add Address</v-btn>
+                                            <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-plus">Add Address</v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-form>
@@ -740,8 +740,8 @@ function deleteCategory(category) {
                                             ></v-text-field>
                                         </v-col>
                                         <v-col cols="12">
-                                            <v-btn color="primary" type="submit" class="mr-2">Update Address</v-btn>
-                                            <v-btn @click="cancelAddressEdit">Cancel</v-btn>
+                                            <v-btn color="primary" type="submit" class="mr-2" variant="flat" prepend-icon="mdi-content-save">Update Address</v-btn>
+                                            <v-btn @click="cancelAddressEdit" variant="flat" color="secondary" prepend-icon="mdi-close">Cancel</v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-form>
@@ -814,7 +814,7 @@ function deleteCategory(category) {
                                             ></v-select>
                                         </v-col>
                                         <v-col cols="12">
-                                            <v-btn color="primary" type="submit">Assign Categories</v-btn>
+                                            <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-tag-multiple">Assign Categories</v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-form>
@@ -839,7 +839,7 @@ function deleteCategory(category) {
                             <v-card-title class="text-h6">
                                 Manage Customer Categories
                                 <v-spacer></v-spacer>
-                                <v-btn color="primary" @click="editingCategory = null; categoryForm.reset()">
+                                <v-btn color="primary" variant="flat" prepend-icon="mdi-plus" @click="editingCategory = null; categoryForm.reset()">
                                     Add New Customer Category
                                 </v-btn>
                             </v-card-title>
@@ -858,7 +858,7 @@ function deleteCategory(category) {
                                             ></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="4">
-                                            <v-btn color="primary" type="submit">Create</v-btn>
+                                            <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-plus">Create</v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-form>
@@ -878,8 +878,8 @@ function deleteCategory(category) {
                                             ></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="4">
-                                            <v-btn color="primary" type="submit" class="mr-2">Update</v-btn>
-                                            <v-btn @click="cancelCategoryEdit">Cancel</v-btn>
+                                            <v-btn color="primary" type="submit" class="mr-2" variant="flat" prepend-icon="mdi-content-save">Update</v-btn>
+                                            <v-btn @click="cancelCategoryEdit" variant="flat" color="secondary" prepend-icon="mdi-close">Cancel</v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-form>

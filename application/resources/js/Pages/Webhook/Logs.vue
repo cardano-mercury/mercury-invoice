@@ -67,7 +67,8 @@ const headers = [
                     single-line
                 ></v-text-field>
                 <v-spacer/>
-                <v-btn :href="route('webhooks.index')" variant="flat" color="primary">
+                <v-btn :href="route('webhooks.index')" variant="flat" color="primary"
+                       prepend-icon="mdi-arrow-left">
                     Go Back
                 </v-btn>
             </v-row>
@@ -105,6 +106,10 @@ const headers = [
                                     <v-spacer></v-spacer>
                                     <v-btn
                                         text="Close"
+                                        variant="flat"
+                                        color="secondary"
+                                        prepend-icon="mdi-close"
+                                        size="small"
                                         @click="isActive.value = false"
                                     ></v-btn>
                                 </v-card-actions>

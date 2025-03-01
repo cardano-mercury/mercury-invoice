@@ -69,16 +69,22 @@ const submit = () => {
                                 </Link>
                             </template>
                         </v-checkbox>
-                        <v-btn type="submit" color="black" variant="flat"
-                               size="large" block>Sign Up
+                        <v-btn type="submit" color="primary" variant="flat"
+                               size="large" block class="mt-4"
+                               prepend-icon="mdi-account-plus"
+                               :loading="form.processing">Sign Up
                         </v-btn>
                     </v-form>
                 </v-card-text>
                 <v-card-text class="my-8">
                     Already registered?
-                    <Link :href="route('login')" class="font-weight-black">
+                    <v-btn :href="route('login')" 
+                          color="secondary" 
+                          variant="text"
+                          prepend-icon="mdi-login"
+                          class="font-weight-black">
                         Sign In!
-                    </Link>
+                    </v-btn>
                 </v-card-text>
             </v-card>
         </v-container>

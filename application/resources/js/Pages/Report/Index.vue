@@ -232,6 +232,8 @@ const generateReport = () => {
                                 <v-btn
                                     text="Cancel"
                                     variant="flat"
+                                    color="secondary"
+                                    prepend-icon="mdi-close"
                                     @click="dialog = false"
                                 ></v-btn>
 
@@ -273,6 +275,7 @@ const generateReport = () => {
                         <v-btn
                             :href="route('reports.download', item.id)"
                             color="primary"
+                            variant="flat"
                             class="me-2"
                             prepend-icon="mdi-download"
                             size="small"
@@ -281,23 +284,24 @@ const generateReport = () => {
                         <v-btn
                             :href="route('reports.delete', item.id)"
                             color="error"
+                            variant="flat"
                             prepend-icon="mdi-trash-can"
                             size="small"
                             text="Delete"
                         />
                     </div>
                     <div v-else-if="item.status === 'Pending'">
-                        <v-btn type="flat" prepend-icon="mdi-play" size="small" class="text-none font-weight-regular" color="primary">
+                        <v-btn variant="flat" prepend-icon="mdi-play" size="small" class="text-none font-weight-regular" color="primary">
                             {{ item.status }}
                         </v-btn>
                     </div>
                     <div v-else-if="item.status === 'Generating'">
-                        <v-btn type="flat" prepend-icon="mdi-pause" size="small" class="text-none font-weight-regular" color="warning">
+                        <v-btn variant="flat" prepend-icon="mdi-pause" size="small" class="text-none font-weight-regular" color="warning">
                             {{ item.status }}
                         </v-btn>
                     </div>
                     <div v-else-if="item.status === 'Error'">
-                        <v-btn type="flat" prepend-icon="mdi-alert-circle-outline" size="small" class="text-none font-weight-regular" color="error">
+                        <v-btn variant="flat" prepend-icon="mdi-alert-circle-outline" size="small" class="text-none font-weight-regular" color="error">
                             {{ item.status }}
                         </v-btn>
                     </div>

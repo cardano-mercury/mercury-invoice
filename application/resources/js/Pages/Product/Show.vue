@@ -28,7 +28,7 @@ const form = useForm(props.product);
             <v-row justify="end">
                 <v-col cols="auto">
                     <v-btn :href="route('products.edit', product.id)"
-                           variant="flat" prepend-icon="mdi-pencil">
+                           variant="flat" prepend-icon="mdi-pencil" color="primary" class="mr-2">
                         Edit
                     </v-btn>
                 </v-col>

@@ -71,11 +71,11 @@ defineProps({
                 ></v-text-field>
                 <v-spacer/>
                 <v-btn :href="route('invoices.export')" variant="flat"
-                       class="me-2">
+                       class="me-2" prepend-icon="mdi-file-export">
                     Export
                 </v-btn>
                 <v-btn :href="route('invoices.create')" variant="flat"
-                       color="primary">Create New
+                       color="primary" prepend-icon="mdi-plus">Create New
                 </v-btn>
             </v-row>
 
@@ -98,6 +98,7 @@ defineProps({
                         prepend-icon="mdi-magnify"
                         size="small"
                         text="View"
+                        variant="flat"
                     />
                 </template>
             </v-data-table>

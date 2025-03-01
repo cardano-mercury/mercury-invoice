@@ -190,6 +190,8 @@ const deleteWebhook = () => {
                     
                     <v-btn
                         color="primary"
+                        variant="flat"
+                        prepend-icon="mdi-plus"
                         :disabled="createWebhookForm.processing"
                         :loading="createWebhookForm.processing"
                         type="submit"
@@ -249,7 +251,7 @@ const deleteWebhook = () => {
                     </div>
                     <v-menu>
                         <template v-slot:activator="{ props }">
-                            <v-btn color="secondary" v-bind="props" class="my-4">
+                            <v-btn color="secondary" variant="flat" prepend-icon="mdi-menu" v-bind="props" class="my-4">
                                 Actions
                                 <v-icon icon="mdi-chevron-down"/>
                             </v-btn>
@@ -307,7 +309,7 @@ const deleteWebhook = () => {
             </v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="secondary" @click="displayingSecret = false">
+                <v-btn color="secondary" variant="flat" prepend-icon="mdi-close" @click="displayingSecret = false">
                     Close
                 </v-btn>
             </v-card-actions>
@@ -392,11 +394,13 @@ const deleteWebhook = () => {
             </v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="secondary" @click="webhookBeingUpdated = null">
+                <v-btn color="secondary" variant="flat" prepend-icon="mdi-close" class="mr-2" @click="webhookBeingUpdated = null">
                     Cancel
                 </v-btn>
                 <v-btn
                     color="primary"
+                    variant="flat"
+                    prepend-icon="mdi-content-save"
                     :disabled="updateWebhookForm.processing"
                     :loading="updateWebhookForm.processing"
                     @click="updateWebhook"
@@ -416,11 +420,13 @@ const deleteWebhook = () => {
             </v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="secondary" @click="webhookBeingDeleted = null">
+                <v-btn color="secondary" variant="flat" prepend-icon="mdi-close" class="mr-2" @click="webhookBeingDeleted = null">
                     Cancel
                 </v-btn>
                 <v-btn 
                     color="error" 
+                    variant="flat"
+                    prepend-icon="mdi-delete"
                     :disabled="deleteWebhookForm.processing"
                     :loading="deleteWebhookForm.processing"
                     @click="deleteWebhook"

@@ -43,8 +43,10 @@ const submit = () => {
                                       prepend-icon="mdi-lock-outline"
                                       label="Type your password..."
                                       :error-messages="form.errors.password"/>
-                        <v-btn type="submit" color="black" variant="flat"
-                               size="large" block>
+                        <v-btn type="submit" color="primary" variant="flat"
+                               size="large" block class="mt-4"
+                               prepend-icon="mdi-lock-check"
+                               :loading="form.processing">
                             Confirm
                         </v-btn>
                     </v-form>

@@ -63,11 +63,11 @@ function doDelete(service) {
                 ></v-text-field>
                 <v-spacer/>
                 <v-btn :href="route('services.export')" variant="flat"
-                       class="me-2">
+                       class="me-2" prepend-icon="mdi-file-export">
                     Export
                 </v-btn>
                 <v-btn :href="route('services.create')" variant="flat"
-                       color="primary">Create New
+                       color="primary" prepend-icon="mdi-plus">Create New
                 </v-btn>
             </v-row>
 
@@ -89,6 +89,7 @@ function doDelete(service) {
                         prepend-icon="mdi-magnify"
                         size="small"
                         text="View"
+                        variant="flat"
                     />
                     <v-btn
                         :href="route('services.edit', item.id)"
@@ -96,6 +97,8 @@ function doDelete(service) {
                         prepend-icon="mdi-pencil"
                         size="small"
                         text="Edit"
+                        variant="flat"
+                        color="primary"
                     />
                     <v-btn
                         @click="doDelete(item)"
@@ -103,6 +106,7 @@ function doDelete(service) {
                         prepend-icon="mdi-trash-can"
                         size="small"
                         text="Delete"
+                        variant="flat"
                     />
                 </template>
             </v-data-table>

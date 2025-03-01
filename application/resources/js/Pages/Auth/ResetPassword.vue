@@ -56,8 +56,10 @@ const submit = () => {
                                       prepend-icon="mdi-lock-outline"
                                       label="Confirm password..."
                                       :error-messages="form.errors.password_confirmation"/>
-                        <v-btn type="submit" color="black" variant="flat"
-                               size="large" block :disabled="form.processing"
+                        <v-btn type="submit" color="primary" variant="flat"
+                               size="large" block class="mt-4"
+                               prepend-icon="mdi-lock-reset"
+                               :disabled="form.processing"
                                :loading="form.processing">
                             Reset Password
                         </v-btn>

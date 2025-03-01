@@ -46,6 +46,8 @@
                 
                 <v-btn
                     color="error"
+                    variant="flat"
+                    prepend-icon="mdi-logout-variant"
                     @click="confirmLogout"
                 >
                     Log Out Other Browser Sessions
@@ -72,12 +74,17 @@
                         <v-spacer></v-spacer>
                         <v-btn
                             color="secondary"
+                            variant="flat"
+                            prepend-icon="mdi-close"
+                            class="mr-2"
                             @click="closeModal"
                         >
                             Cancel
                         </v-btn>
                         <v-btn
                             color="error"
+                            variant="flat"
+                            prepend-icon="mdi-logout-variant"
                             :loading="form.processing"
                             @click="logoutOtherBrowserSessions"
                         >

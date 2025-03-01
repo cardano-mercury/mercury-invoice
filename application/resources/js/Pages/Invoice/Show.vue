@@ -228,13 +228,15 @@ function voidInvoice(invoice) {
                     <v-row>
                         <template v-if="invoice.status === 'Draft'">
                             <v-col>
-                                <v-btn
+                                <v-btn variant="flat" color="primary" class="mr-2"
+                                    prepend-icon="mdi-pencil"
                                     :href="route('invoices.edit', invoice.invoice_reference)">
                                     Edit Invoice
                                 </v-btn>
                             </v-col>
                             <v-col>
-                                <v-btn color="danger"
+                                <v-btn variant="flat" color="error" class="mr-2"
+                                       prepend-icon="mdi-cancel"
                                        @click="voidInvoice(invoice)">
                                     Void Invoice
                                 </v-btn>
@@ -242,20 +244,23 @@ function voidInvoice(invoice) {
                         </template>
                         <template v-if="invoice.status === 'Published'">
                             <v-col>
-                                <v-btn
+                                <v-btn variant="flat" color="info" class="mr-2"
+                                    prepend-icon="mdi-email-send"
                                     :href="route('invoices.sendReminderNotifications', invoice.id)">
                                     Send Reminder Notification
                                 </v-btn>
                             </v-col>
                             <v-col>
-                                <v-btn
+                                <v-btn variant="flat" color="success" class="mr-2"
+                                    prepend-icon="mdi-cash-check"
                                     :href="route('invoices.manuallyMarkAsPaid', invoice.invoice_reference)">
                                     Manually Mark Paid
                                 </v-btn>
                             </v-col>
                         </template>
                         <template v-if="invoice.status === 'Voided'">
-                            <v-btn
+                            <v-btn variant="flat" color="warning" class="mr-2"
+                                prepend-icon="mdi-restore"
                                 :href="route('invoices.restore', invoice.invoice_reference)">
                                 Restore Invoice
                             </v-btn>

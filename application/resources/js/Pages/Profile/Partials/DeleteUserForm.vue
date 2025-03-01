@@ -54,6 +54,8 @@ export default defineComponent({
             <div class="mt-5">
                 <v-btn
                     color="error"
+                    variant="flat"
+                    prepend-icon="mdi-delete"
                     @click="confirmUserDeletion"
                 >
                     Delete Account
@@ -80,12 +82,17 @@ export default defineComponent({
                         <v-spacer></v-spacer>
                         <v-btn
                             color="secondary"
+                            variant="flat"
+                            prepend-icon="mdi-close"
+                            class="mr-2"
                             @click="closeModal"
                         >
                             Cancel
                         </v-btn>
                         <v-btn
                             color="error"
+                            variant="flat"
+                            prepend-icon="mdi-delete-forever"
                             :loading="form.processing"
                             @click="deleteUser"
                         >

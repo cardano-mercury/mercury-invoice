@@ -58,6 +58,8 @@
                 <div v-if="!twoFactorEnabled">
                     <v-btn
                         color="primary"
+                        variant="flat"
+                        prepend-icon="mdi-shield-check"
                         @click="confirmEnableTwoFactorAuthentication"
                     >
                         Enable
@@ -67,6 +69,8 @@
                     <v-btn
                         v-if="recoveryCodes.length > 0"
                         color="secondary"
+                        variant="flat"
+                        prepend-icon="mdi-refresh"
                         class="mr-3"
                         @click="confirmRegenerateRecoveryCodes"
                     >
@@ -76,6 +80,8 @@
                     <v-btn
                         v-if="recoveryCodes.length === 0"
                         color="secondary"
+                        variant="flat"
+                        prepend-icon="mdi-eye"
                         class="mr-3"
                         @click="showRecoveryCodes"
                     >
@@ -84,6 +90,8 @@
 
                     <v-btn
                         color="error"
+                        variant="flat"
+                        prepend-icon="mdi-shield-off"
                         @click="confirmDisableTwoFactorAuthentication"
                     >
                         Disable
@@ -111,12 +119,17 @@
                         <v-spacer></v-spacer>
                         <v-btn
                             color="secondary"
+                            variant="flat"
+                            prepend-icon="mdi-close"
+                            class="mr-2"
                             @click="closeConfirmationModal"
                         >
                             Cancel
                         </v-btn>
                         <v-btn
                             color="primary"
+                            variant="flat"
+                            prepend-icon="mdi-check"
                             :loading="form.processing"
                             @click="confirmPassword"
                         >
