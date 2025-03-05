@@ -81,6 +81,12 @@ Route::middleware([
     // Services
     Route::get('services/export', [ServiceController::class, 'export'])->name('services.export');
     Route::resource('services', ServiceController::class);
+    
+    // Service Categories
+    Route::put('services/{service}/categories', [ServiceController::class, 'updateCategories'])->name('services.categories.update');
+    Route::post('service-categories', [ServiceController::class, 'storeCategory'])->name('service-categories.store');
+    Route::put('service-categories/{serviceCategory}', [ServiceController::class, 'updateCategory'])->name('service-categories.update');
+    Route::delete('service-categories/{serviceCategory}', [ServiceController::class, 'destroyCategory'])->name('service-categories.destroy');
 
     // Invoices
     Route::get('invoices/export', [InvoiceController::class, 'export'])->name('invoices.export');
