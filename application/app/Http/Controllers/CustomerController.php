@@ -24,7 +24,6 @@ use App\Http\Requests\Customer\StoreCustomerPhoneRequest;
 use App\Http\Requests\Customer\SyncCustomerCategoryRequest;
 use App\Http\Requests\Customer\StoreCustomerAddressRequest;
 use App\Http\Requests\Customer\StoreCustomerCategoryRequest;
-use Illuminate\Contracts\Container\BindingResolutionException;
 
 class CustomerController extends Controller
 {

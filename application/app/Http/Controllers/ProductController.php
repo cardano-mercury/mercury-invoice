@@ -8,10 +8,13 @@ use Inertia\Response;
 use App\Models\Product;
 use App\Traits\HashIdTrait;
 use Illuminate\Http\Request;
+use App\Models\ProductCategory;
 use App\Traits\JsonDownloadTrait;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Resources\Product\ProductResource;
 use App\Http\Requests\Product\StoreProductRequest;
+use App\Http\Requests\Product\SyncProductCategoryRequest;
+use App\Http\Requests\Product\StoreProductCategoryRequest;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ProductController extends Controller
@@ -59,7 +62,10 @@ class ProductController extends Controller
      */
     public function show(Product $product): Response
     {
-        return Inertia::render('Product/Show', compact('product'));
+        $product->load(['categories']);
+        $productCategories = ProductCategory::query()->where('user_id', auth()->id())->get();
+
+        return Inertia::render('Product/Show', compact('product', 'productCategories'));
     }
 
     /**
@@ -67,7 +73,10 @@ class ProductController extends Controller
      */
     public function edit(Product $product): Response
     {
-        return Inertia::render('Product/Edit', compact('product'));
+        $product->load(['categories']);
+        $productCategories = ProductCategory::query()->where('user_id', auth()->id())->get();
+
+        return Inertia::render('Product/Edit', compact('product', 'productCategories'));
     }
 
     /**
@@ -77,9 +86,62 @@ class ProductController extends Controller
     {
         $product->update($request->validated());
 
-        session()->flash('success', 'Product record updated');
+        session()->flash('success', 'Product info updated');
 
-        return to_route('products.show', $product->id);
+        return back();
+    }
+
+    /**
+     * Update product categories
+     */
+    public function updateCategories(SyncProductCategoryRequest $request, Product $product): RedirectResponse
+    {
+        $product->categories()->sync($request->category_ids);
+
+        session()->flash('success', 'Product successfully assigned to selected categories');
+
+        return back();
+    }
+
+    /**
+     * Store a new product category
+     */
+    public function storeCategory(StoreProductCategoryRequest $request): RedirectResponse
+    {
+        $validated = $request->validated();
+        $validated['user_id'] = auth()->id();
+
+        ProductCategory::create($validated);
+
+        session()->flash('success', 'Category created successfully');
+
+        return back();
+    }
+
+    /**
+     * Update an existing product category
+     */
+    public function updateCategory(StoreProductCategoryRequest $request, ProductCategory $productCategory): RedirectResponse
+    {
+        $productCategory->update($request->validated());
+
+        session()->flash('success', 'Category updated successfully');
+
+        return back();
+    }
+
+    /**
+     * Delete a product category and detach from all products
+     */
+    public function destroyCategory(ProductCategory $productCategory): RedirectResponse
+    {
+        $productCategory->products()->detach();
+
+        $productCategory->delete();
+
+        session()->flash('success', 'Category deleted successfully');
+
+        return back();
     }
 
     /**
@@ -100,10 +162,11 @@ class ProductController extends Controller
     {
         $products = Product::query()
             ->where('user_id', auth()->id())
+            ->with(['categories'])
             ->get();
 
         return $this->downloadZipCompressedJson(
-            ProductResource::collection($products)->response($request)->getData(true)['data'],
+            ProductResource::collection($products)->toResponse($request)->getData(true)['data'],
             'products-export',
         );
     }

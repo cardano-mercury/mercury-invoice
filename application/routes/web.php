@@ -71,6 +71,12 @@ Route::middleware([
     // Products
     Route::get('products/export', [ProductController::class, 'export'])->name('products.export');
     Route::resource('products', ProductController::class);
+    
+    // Product Categories
+    Route::put('products/{product}/categories', [ProductController::class, 'updateCategories'])->name('products.categories.update');
+    Route::post('product-categories', [ProductController::class, 'storeCategory'])->name('product-categories.store');
+    Route::put('product-categories/{productCategory}', [ProductController::class, 'updateCategory'])->name('product-categories.update');
+    Route::delete('product-categories/{productCategory}', [ProductController::class, 'destroyCategory'])->name('product-categories.destroy');
 
     // Services
     Route::get('services/export', [ServiceController::class, 'export'])->name('services.export');
