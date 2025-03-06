@@ -1,6 +1,7 @@
 ---
 description: Follow these rules for every requests.
 globs: 
+alwaysApply: true
 ---
 # Laravel + InertiaJS + Vue3 + Vuetify Project Rules
 
