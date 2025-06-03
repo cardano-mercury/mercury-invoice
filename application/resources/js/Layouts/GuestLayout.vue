@@ -10,10 +10,12 @@ defineProps({
     <v-app>
         <Head :title="title"/>
         <v-app-bar color="white" elevation="0" class="px-8">
-            <img :src="applicationLogo" alt="Mercury: Invoice" height="48"
-                 width="151"/>
+            <v-btn variant="plain" href="/">
+                <img :src="applicationLogo" alt="Mercury: Invoice" height="48" width="151"/>
+            </v-btn>
+
             <v-spacer/>
-            <div v-if="$page.url === '/'">
+            <div v-if="$page.url === '/' || $page.url.startsWith('/#')">
                 <v-btn size="large" variant="text" href="#features">Features
                 </v-btn>
                 <v-btn size="large" variant="text" href="#reviews">Reviews

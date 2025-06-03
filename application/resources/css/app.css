@@ -1,4 +1,29 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap);
 
 [x-cloak] {
     display: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 1.0;
+    text-align: center;
+    margin: 0.5em auto;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 1.0;
+
+}
+
+#hero {
+    background: linear-gradient(to bottom, #f7f8fa 0%, #eaeffe 100%);
+    padding-bottom: 0 !important
 }

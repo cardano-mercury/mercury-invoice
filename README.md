@@ -10,8 +10,8 @@
 - Open terminal and type `cd $HOME/Desktop`
 - Clone repo `git clone git@github.com:cardano-mercury/CardanoMercury.git`
 - Switch to repo dir `cd $HOME/Desktop/CardanoMercury`
-- Copy `.env.example` as `.env` (then make necessary changes to `.env` file)
-- Run `make buid` to build & start the containers
+- Copy `application/.env.example` as `application/.env` (then make necessary changes to `.env` file)
+- Run `make build` to build & start the containers
 - Application should be running locally at `http://localhost:8100`
 
 ### Available Make Commands (Local Development)
