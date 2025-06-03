@@ -1,6 +1,7 @@
 <script setup>
 import GuestLayout from "@/Layouts/GuestLayout.vue";
-import heroBg from "@/media/hero-bg.jpg";
+//import heroBg from "@/media/hero-bg.jpg";
+import dashboard from "@/media/dashboard.png";
 import featuresBg from "@/media/features-2-bg.png";
 import txSuccess from "@/media/txn-success.png";
 import featuresColumn from "@/media/features-column.png";
@@ -25,8 +26,8 @@ const isYearly = ref(true);
 </script>
 <template>
     <GuestLayout title="Welcome">
-        <v-parallax :src="heroBg" scale="0.6">
-            <v-container class="d-flex flex-column fill-height align-center py-16 mt-16">
+<!--        <v-parallax :src="heroBg" scale="0.6">-->
+            <v-container id="hero" class="d-flex flex-column align-center py-16 mt-16">
                 <v-chip variant="outlined" class="mb-8">
                     <span class="text-red">X+&nbsp;</span>
                     merchants sell with Mercury!
@@ -39,27 +40,28 @@ const isYearly = ref(true);
                     <v-btn elevation="0" class="me-2">Learn More</v-btn>
                     <v-btn color="black" dark>Get Started</v-btn>
                 </div>
+                <img :src="dashboard" width="80%" />
             </v-container>
-        </v-parallax>
+<!--        </v-parallax>-->
         <v-parallax :src="featuresBg" id="features">
             <v-container class="py-16" max-width="1280">
                 <v-row align="center" class="mb-8">
                     <v-col>
-                        <h1>Experience the Future of Payment Processing</h1>
+                        <h2>Experience the Future of Payment Processing</h2>
                         <p>
                             Our SaaS platform provides secure, easy-to-use, and low transaction fee solutions for
                             accepting cryptocurrency payments.
                         </p>
                         <v-row class="my-6">
                             <v-col>
-                                <h2>Security</h2>
+                                <h3>Security</h3>
                                 <p>
                                     Protect your transactions with our advanced security measures and encryption
                                     technology.
                                 </p>
                             </v-col>
                             <v-col>
-                                <h2>Ease of Use</h2>
+                                <h3>Ease of Use</h3>
                                 <p>
                                     Our user-friendly interface makes it simple to integrate and manage cryptocurrency
                                     payments.
@@ -178,7 +180,7 @@ const isYearly = ref(true);
                 <v-col>
                     <v-card class="text-center fill-height d-flex flex-column flex-nowrap align-center justify-start" elevation="0">
                         <v-card-title class="text-body-1">Free Plan</v-card-title>
-                        <v-card-text class="text-h1 flex-0-0">$0/mo</v-card-text>
+                        <v-card-text class="text-h2 flex-0-0">$0/mo</v-card-text>
                         <v-card-text class="text-start">
                             <v-list>
                                 <v-list-item prepend-icon="mdi-check">Secure Payment Processing</v-list-item>
@@ -193,7 +195,7 @@ const isYearly = ref(true);
                 <v-col>
                     <v-card class="text-center fill-height d-flex flex-column flex-nowrap align-center justify-start" elevation="0">
                         <v-card-title class="text-body-1">Enterprise Plan</v-card-title>
-                        <v-card-text class="text-h1 flex-0-0">$49/mo</v-card-text>
+                        <v-card-text class="text-h2 flex-0-0">$49/mo</v-card-text>
                         <v-card-text class="text-start">
                             <v-list>
                                 <v-list-item>
@@ -237,12 +239,6 @@ const isYearly = ref(true);
         </v-container>
     </GuestLayout>
 </template>
-<style scoped>
-.v-sheet {
-    text-align: center;
-}
+<style>
 
-h1 {
-    font-family: "SF Pro Display", sans-serif;
-}
 </style>
