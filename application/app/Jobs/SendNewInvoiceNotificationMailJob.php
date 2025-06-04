@@ -32,9 +32,6 @@ class SendNewInvoiceNotificationMailJob implements ShouldQueue
      */
     public function handle(): void
     {
-        // Load all the invoice recipients
-        $this->invoice->load(['recipients']);
-
         // Send email to every recipient
         foreach ($this->invoice->recipients as $recipient) {
             Mail::to($recipient->address, $recipient->name)

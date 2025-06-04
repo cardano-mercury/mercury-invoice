@@ -45,6 +45,7 @@ class SendInvoiceRemindersCommand extends Command
             $invoices = Invoice::query()
                 ->where('status', Status::PUBLISHED)
                 ->whereBetween('due_date', [$tomorrow, $futureDate])
+                ->with('recipients')
                 ->get();
 
             // Proceed if there is anyone to send invoice reminds
@@ -53,7 +54,19 @@ class SendInvoiceRemindersCommand extends Command
                 /** @var Invoice $invoice */
                 foreach ($invoices as $invoice) {
 
-                    // Dispatch job to notify invoice recipients
+                    // Skip if the invoice is fake seeded invoice
+                    $isFakeInvoice = false;
+                    foreach ($invoice->recipients as $recipient) {
+                        if (!$isFakeInvoice && str_contains($recipient->address, '@example')) {
+                            $isFakeInvoice = true;
+                            break;
+                        }
+                    }
+                    if ($isFakeInvoice) {
+                        continue;
+                    }
+
+                    // Dispatch a job to notify invoice recipients
                     dispatch(new SendNewInvoiceNotificationMailJob($invoice, true));
 
                     // Record invoice activity
