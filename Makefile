@@ -1,7 +1,7 @@
 export COMPOSE_PROJECT_NAME=cardanomercury
 export COMPOSE_FILE=docker/docker-compose.yml
 
-.PHONY: up
+.SILENT: up
 up:
 	$(MAKE) down
 	docker compose up -d
@@ -10,80 +10,85 @@ up:
 	$(MAKE) db-migrate
 	$(MAKE) frontend-build
 
-.PHONY: down
+.SILENT: down
 down:
 	docker compose down --remove-orphans
 
-.PHONY: build
+.SILENT: build
 build:
 	docker compose build
 	$(MAKE) up
 	$(MAKE) frontend-build
 
+.SILENT: rebuild
+rebuild:
+	docker compose build --pull --no-cache
+	$(MAKE) up
+
 #
 # Helper functions
 #
 
-.PHONY: frontend-build
+.SILENT: frontend-build
 frontend-build:
 	docker exec -it cardanomercury-web bash -c "npm install && npm run build"
 
-.PHONY: frontend-watch
+.SILENT: frontend-watch
 frontend-watch:
 	docker exec -it cardanomercury-web bash -c "npm install && npm run dev"
 
-.PHONY: frontend-upgrade
+.SILENT: frontend-upgrade
 frontend-upgrade:
 	docker exec -it cardanomercury-web bash -c "npm update"
 
-.PHONY: composer-install
+.SILENT: composer-install
 composer-install:
 	docker exec -it cardanomercury-web bash -c "composer install"
 
-.PHONY: db-migrate
+.SILENT: db-migrate
 db-migrate:
 	docker exec -it cardanomercury-web bash -c "php artisan migrate"
 
-.PHONY: db-refresh
+.SILENT: db-refresh
 db-refresh:
 	docker exec -it cardanomercury-web bash -c "php artisan migrate:fresh --seed"
 
-.PHONY: api-docs
+.SILENT: api-docs
 api-docs:
 	docker exec -it cardanomercury-web bash -c "php artisan scribe:generate --force"
 
-.PHONY: tinker
+.SILENT: tinker
 tinker:
 	docker exec -it cardanomercury-web bash -c "php artisan tinker"
 
-.PHONY: status
+.SILENT: status
 status:
 	docker compose ps
 
-.PHONY: logs
+.SILENT: logs
 logs:
 	docker compose logs -f --tail=100
 
-.PHONY: logs-web
+.SILENT: logs-web
 logs-web:
 	docker compose logs -f --tail=100 cardanomercury-web
 
-.PHONY: logs-horizon
+.SILENT: logs-horizon
 logs-horizon:
 	docker compose logs -f --tail=100 cardanomercury-horizon
 
-.PHONY: logs-cron
+.SILENT: logs-cron
 logs-cron:
 	docker compose logs -f --tail=100 cardanomercury-cron
 
-.PHONY: shell
+.SILENT: shell
 shell:
 	docker exec -it cardanomercury-web bash
 
-.PHONY: stats
+.SILENT: stats
 stats:
 	docker stats cardanomercury-web cardanomercury-mysql cardanomercury-redis cardanomercury-horizon cardanomercury-cron
 
-.PHONY: artisan
+.SILENT: artisan
 artisan:
 	docker exec -it cardanomercury-web bash -c "php artisan $(COMMAND)"

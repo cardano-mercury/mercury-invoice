@@ -6,14 +6,14 @@
         "build": "vite build"
     },
     "devDependencies": {
-        "@inertiajs/vue3": "^1.0.14",
-        "@vitejs/plugin-vue": "^5.0.0",
+        "@inertiajs/vue3": "^2.0.0",
+        "@vitejs/plugin-vue": "^5.2.1",
         "autoprefixer": "^10.4.16",
         "axios": "^1.6.4",
         "laravel-vite-plugin": "^1.0",
         "postcss": "^8.4.32",
-        "vite": "^5.0",
-        "vue": "^3.3.13"
+        "vite": "^6.2.0",
+        "vue": "^3.5.13"
     },
     "dependencies": {
         "@emurgo/cardano-serialization-lib-asmjs": "^11.5.0",
@@ -24,6 +24,6 @@
         "moment": "^2.30.1",
         "vue-chartjs": "^5.3.1",
         "vue-toast-notification": "^3.1.2",
-        "vuetify": "^3.7.2"
+        "vuetify": "^3.8.7"
     }
 }

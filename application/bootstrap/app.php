@@ -8,8 +8,8 @@ use Illuminate\Validation\ValidationException;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -21,15 +21,24 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware
+            ->trustProxies(headers: \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_FOR |
+                \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_HOST |
+                \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_PORT |
+                \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_PROTO |
+                \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_AWS_ELB
+            );
+        $middleware
             ->web(append: [
                 \App\Http\Middleware\HandleInertiaRequests::class,
                 \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
             ])
+            ->append([
+                \App\Http\Middleware\ApiDefaultRequestHeaders::class,
+                \App\Http\Middleware\ResponseFormatter::class,
+            ])
             ->validateCsrfTokens(except: [
                 'incoming-webhooks/*',
             ]);
-
-        //
     })
     ->withExceptions(static function (Exceptions $exceptions) {
 

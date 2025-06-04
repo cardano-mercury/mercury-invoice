@@ -47,7 +47,7 @@ return [
     'type' => 'laravel',
 
     // See https://scribe.knuckles.wtf/laravel/reference/config#theme for supported options
-    'theme' => 'elements',
+    'theme' => 'default',
 
     'static' => [
         // HTML documentation, assets and Postman collection will be generated to this folder.
@@ -233,7 +233,7 @@ INTRO
             Strategies\Headers\GetFromHeaderAttribute::class,
             Strategies\Headers\GetFromHeaderTag::class,
             [
-                'override',
+                'static_data',
                 [
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json',
