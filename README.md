@@ -20,7 +20,8 @@
 * `frontend-upgrade` Upgrades npm packages inside _cardanomercury-web_ container
 * `up` Restart all docker containers
 * `down` Shutdown all docker containers
-* `build` Rebuilds all docker containers
+* `build` Rebuilds all docker containers (using cache)
+* `rebuild` Rebuilds all docker containers (without cache)
 * `composer-install` Run composer install
 * `db-migrate` Run database migration(s)
 * `db-refresh` Drop all database tables, re-run the migration(s) with seeds

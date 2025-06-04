@@ -1,5 +1,5 @@
-FROM php:8.2-apache-buster
-MAINTAINER Latheesan Kanesamoorthy <latheesan87@gmail.com>
+FROM php:8.4-apache-bookworm
+LABEL io.dripdropz.image.authors="support@dripdropz.io"
 
 # Update base system
 ARG DEBIAN_FRONTEND=noninteractive
