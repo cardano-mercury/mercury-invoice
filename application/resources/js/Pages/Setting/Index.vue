@@ -1,12 +1,8 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import SectionBorder from '@/Components/SectionBorder.vue';
-import UpdateBusinessInfoForm
-    from '@/Pages/Setting/Partials/UpdateBusinessInfoForm.vue';
-import UpdateStripeConfigForm
-    from "@/Pages/Setting/Partials/UpdateStripeConfigForm.vue";
-import UpdateCryptoConfigForm
-    from "@/Pages/Setting/Partials/UpdateCryptoConfigForm.vue";
+import UpdateBusinessInfoForm from '@/Pages/Setting/Partials/UpdateBusinessInfoForm.vue';
+import UpdateStripeConfigForm from "@/Pages/Setting/Partials/UpdateStripeConfigForm.vue";
+import UpdateCryptoConfigForm from "@/Pages/Setting/Partials/UpdateCryptoConfigForm.vue";
 
 defineProps({
     supportedCurrencies: Array,
@@ -20,19 +16,28 @@ defineProps({
 <template>
     <AppLayout title="Settings">
         <template #header>
-            <h1>Settings</h1>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Settings
+            </h2>
         </template>
 
-        <v-sheet class="bg-white px-4 py-12">
-            <UpdateBusinessInfoForm :supportedCurrencies="supportedCurrencies"/>
-            <SectionBorder/>
-            <UpdateStripeConfigForm
-                :stripePaymentGatewayEnabled="stripePaymentGatewayEnabled"/>
-            <SectionBorder/>
-            <UpdateCryptoConfigForm
-                :cryptoPaymentGatewayEnabled="cryptoPaymentGatewayEnabled"
-                :cryptoPaymentAddress="cryptoPaymentAddress"
-                :targetCardanoNetwork="targetCardanoNetwork"/>
-        </v-sheet>
+        <v-container>
+            <v-row>
+                <v-col cols="12" md="8">
+                    <!-- Business Information Settings -->
+                    <UpdateBusinessInfoForm :supportedCurrencies="supportedCurrencies" />
+
+                    <!-- Stripe Configuration Settings -->
+                    <UpdateStripeConfigForm :stripePaymentGatewayEnabled="stripePaymentGatewayEnabled" />
+
+                    <!-- Crypto Configuration Settings -->
+                    <UpdateCryptoConfigForm
+                        :cryptoPaymentGatewayEnabled="cryptoPaymentGatewayEnabled"
+                        :cryptoPaymentAddress="cryptoPaymentAddress"
+                        :targetCardanoNetwork="targetCardanoNetwork"
+                    />
+                </v-col>
+            </v-row>
+        </v-container>
     </AppLayout>
 </template>

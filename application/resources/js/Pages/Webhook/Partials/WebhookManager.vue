@@ -1,15 +1,16 @@
 <script setup>
 import {ref} from 'vue';
 import {useForm} from "@inertiajs/vue3";
-import FormSection from "@/Components/FormSection.vue";
-import SectionBorder from "@/Components/SectionBorder.vue";
-import ActionSection from "@/Components/ActionSection.vue";
 
 const props = defineProps({
     webhooks: Array,
     hmacAlgorithms: Array,
     eventTargetNames: Array,
 });
+
+const showCreateSuccessMessage = ref(false);
+const showUpdateSuccessMessage = ref(false);
+const showDeleteSuccessMessage = ref(false);
 
 const createWebhookForm = useForm({
     url: '',
@@ -41,6 +42,7 @@ const createWebhook = () => {
         onSuccess: () => {
             displayingSecret.value = true;
             createWebhookForm.reset();
+            showCreateSuccessMessage.value = true;
         },
         onError: (e) => {
             alert(`There was an error while creating webhook: ${JSON.stringify(e)}`);
@@ -69,6 +71,7 @@ const updateWebhook = () => {
         onSuccess: () => {
             webhookBeingUpdated.value = null;
             updateWebhookForm.reset();
+            showUpdateSuccessMessage.value = true;
         },
         onError: (e) => {
             alert(`There was an error while updating webhook: ${JSON.stringify(e)}`);
@@ -84,7 +87,10 @@ const deleteWebhook = () => {
     deleteWebhookForm.delete(route('webhooks.destroy', webhookBeingDeleted.value), {
         preserveScroll: true,
         preserveState: true,
-        onSuccess: () => (webhookBeingDeleted.value = null),
+        onSuccess: () => {
+            webhookBeingDeleted.value = null;
+            showDeleteSuccessMessage.value = true;
+        },
         onError: (e) => {
             alert(`There was an error while deleting webhook: ${JSON.stringify(e)}`);
         }
@@ -94,183 +100,216 @@ const deleteWebhook = () => {
 </script>
 
 <template>
-
     <!-- Register New Webhook -->
-    <FormSection @submitted="createWebhook">
+    <v-card class="mb-6">
+        <v-card-title>Register New Webhook</v-card-title>
+        <v-card-subtitle>
+            Register your own webhook urls to get notified, when interested events occurs in your account.
+        </v-card-subtitle>
 
-        <template #title>
-            <h2>Register New Webhook</h2>
-        </template>
+        <v-card-text>
+            <v-form @submit.prevent="createWebhook">
+                <!-- Webhook URL -->
+                <v-text-field 
+                    type="url" 
+                    label="Webhook URL"
+                    v-model="createWebhookForm.url" 
+                    autofocus 
+                    required
+                />
 
-        <template #description>
-            Register your own webhook urls to get notified, when interested
-            events occurs in your account.
-        </template>
+                <!-- HMAC  Signature Algorithm -->
+                <v-select 
+                    v-model="createWebhookForm.hmac_algorithm"
+                    :items="hmacAlgorithms" 
+                    label="HMAC Signature Algorithm"
+                />
 
-        <template #form>
+                <!-- Max Attempts -->
+                <v-text-field 
+                    label="Max Attempts" 
+                    type="number"
+                    v-model="createWebhookForm.max_attempts" 
+                    required
+                    min="1" 
+                    step="1" 
+                    max="60"
+                />
 
-            <!-- Webhook URL -->
-            <v-text-field type="url" label="Webhook URL"
-                          v-model="createWebhookForm.url" autofocus required/>
+                <!-- Timeout Seconds -->
+                <v-text-field 
+                    type="number" 
+                    min="1" 
+                    step="1" 
+                    max="60"
+                    label="Timeout (Seconds)"
+                    v-model="createWebhookForm.timeout_seconds"
+                    hint="How long should we wait for the request (to your webhook URL) to succeed?"
+                    persistent-hint 
+                    class="mb-2"
+                    required
+                />
 
-            <!-- HMAC  Signature Algorithm -->
-            <v-select v-model="createWebhookForm.hmac_algorithm"
-                      :items="hmacAlgorithms" label="HMAC Signature Algorithm"/>
+                <!-- Retry Delay Seconds -->
+                <v-text-field 
+                    type="number" 
+                    min="1" 
+                    step="1" 
+                    max="900"
+                    label="Retry Delay (Seconds)"
+                    v-model="createWebhookForm.retry_seconds"
+                    hint="Delay between retry attempts" 
+                    persistent-hint
+                    required
+                />
 
-            <!-- Max Attempts -->
-            <v-text-field label="Max Attempts" type="number"
-                          v-model="createWebhookForm.max_attempts" required
-                          min="1" step="1" max="60"/>
+                <!-- Event Targets -->
+                <template v-if="eventTargetNames.length">
+                    <h3 class="text-h6 mt-4 mb-2">Event Targets</h3>
+                    <v-row>
+                        <v-col v-for="eventTargetName in eventTargetNames"
+                               :key="eventTargetName" cols="6" md="4" lg="4">
+                            <v-checkbox 
+                                v-model="createWebhookForm.target_events"
+                                hide-details
+                                :value="eventTargetName"
+                                :label="eventTargetName"
+                            />
+                        </v-col>
+                    </v-row>
+                </template>
 
-            <!-- Timeout Seconds -->
-            <v-text-field type="number" min="1" step="1" max="60"
-                          label="Timeout (Seconds)"
-                          v-model="createWebhookForm.timeout_seconds"
-                          hint="How long should we wait for the request (to your webhook URL) to succeed?"
-                          persistent-hint required/>
-
-            <!-- Retry Delay Seconds -->
-            <v-text-field type="number" min="1" step="1" max="900"
-                          label="Retry Delay (Seconds)"
-                          v-model="createWebhookForm.retry_seconds"
-                          hint="Delay between retry attempts" persistent-hint
-                          required/>
-
-            <!-- Event Targets -->
-            <template v-if="eventTargetNames.length">
-                <h3 class="mt-4">Event Targets</h3>
-                <v-row>
-                    <v-col v-for="eventTargetName in eventTargetNames"
-                           :key="eventTargetName" cols="6" md="4" lg="4">
-                        <v-checkbox v-model="createWebhookForm.target_events"
-                                    hide-details
-                                    :value="eventTargetName"
-                                    :label="eventTargetName"/>
-                    </v-col>
-                </v-row>
-            </template>
-        </template>
-
-        <template #actions>
-            <v-btn
-                color="primary"
-                :disabled="createWebhookForm.processing"
-                variant="flat"
-                @click="createWebhook"
-            >
-                Create
-            </v-btn>
-        </template>
-
-    </FormSection>
+                <div class="d-flex justify-end mt-4">
+                    <v-snackbar
+                        v-model="showCreateSuccessMessage"
+                        color="success"
+                        timeout="3000"
+                    >
+                        Webhook created successfully!
+                    </v-snackbar>
+                    
+                    <v-btn
+                        color="primary"
+                        variant="flat"
+                        prepend-icon="mdi-plus"
+                        :disabled="createWebhookForm.processing"
+                        :loading="createWebhookForm.processing"
+                        type="submit"
+                    >
+                        Create
+                    </v-btn>
+                </div>
+            </v-form>
+        </v-card-text>
+    </v-card>
 
     <!-- Manage Webhooks -->
-    <div v-if="webhooks.length > 0">
-        <SectionBorder/>
-        <div class="mt-10 sm:mt-0">
-            <ActionSection>
-                <template #title>
-                    <h2>Manage Webhooks</h2>
-                </template>
+    <v-card v-if="webhooks.length > 0" class="mb-6">
+        <v-card-title>Manage Webhooks</v-card-title>
+        <v-card-subtitle>
+            You may delete any of your existing webhooks if they are no longer needed.
+        </v-card-subtitle>
 
-                <template #description>
-                    You may delete any of your existing webhooks if they are no
-                    longer needed.
-                </template>
-
-                <!-- Webhook List -->
-                <template #content>
-                    <v-list>
-                        <v-list-item v-for="webhook in webhooks" :key="webhook.id" variant="tonal" class="mb-2 rounded">
-                            <v-list-item-title class="pt-2">
-                                <div>{{ webhook.url }}</div>
-                                <div class="pt-2">
-                                    <v-chip label size="small" class="me-2">
-                                        {{ webhook.hmac_algorithm }} HMAC Algo
-                                    </v-chip>
-                                    <v-chip label size="small" class="me-2">
-                                        {{ webhook.max_attempts }} Max Attempts
-                                    </v-chip>
-                                    <v-chip label size="small" class="me-2">
-                                        {{ webhook.timeout_seconds }}s Timeout
-                                    </v-chip>
-                                    <v-chip label size="small" class="me-2">
-                                        {{ webhook.retry_seconds }}s Retry
-                                    </v-chip>
-                                </div>
-                            </v-list-item-title>
-                            <v-divider class="my-2"/>
-                            <div>
-                                <template v-if="webhook.event_targets.length > 0">
-                                    <v-chip
-                                        label
-                                        class="me-2 my-1"
-                                        size="small"
-                                        v-for="event_target in webhook.event_targets"
-                                        :key="event_target.event_name"
-                                    >
-                                        {{ event_target.event_name }}
-                                    </v-chip>
-                                </template>
-                                <template v-else>
-                                    <v-chip label>
-                                        None Selected
-                                    </v-chip>
-                                </template>
-                            </div>
-                            <v-menu>
-                                <template v-slot:activator="{ props }">
-                                    <v-btn color="secondary" v-bind="props"
-                                           class="my-4">
-                                        Actions
-                                        <v-icon icon="mdi-chevron-down"/>
-                                    </v-btn>
-                                </template>
-                                <v-list>
-                                    <v-list-item
-                                        :href="route('webhooks.logs', webhook)">
-                                        View Logs
-                                    </v-list-item>
-                                    <v-list-item
-                                        :href="route('webhooks.test', webhook)">
-                                        Test Webhook
-                                    </v-list-item>
-                                    <v-list-item v-if="eventTargetNames.length"
-                                                 @click="manageWebhookEventTargets(webhook)">
-                                        Update Webhook
-                                    </v-list-item>
-                                    <v-list-item
-                                        @click="confirmWebhookDeletion(webhook)"
-                                        class="text-error">
-                                        Delete Webhook
-                                    </v-list-item>
-                                </v-list>
-                            </v-menu>
-                        </v-list-item>
-                    </v-list>
-                </template>
-            </ActionSection>
-        </div>
-    </div>
+        <v-card-text>
+            <v-list>
+                <v-list-item v-for="webhook in webhooks" :key="webhook.id" variant="tonal" class="mb-2 rounded">
+                    <v-list-item-title class="pt-2">
+                        <div>{{ webhook.url }}</div>
+                        <div class="pt-2">
+                            <v-chip label size="small" class="me-2">
+                                {{ webhook.hmac_algorithm }} HMAC Algo
+                            </v-chip>
+                            <v-chip label size="small" class="me-2">
+                                {{ webhook.max_attempts }} Max Attempts
+                            </v-chip>
+                            <v-chip label size="small" class="me-2">
+                                {{ webhook.timeout_seconds }}s Timeout
+                            </v-chip>
+                            <v-chip label size="small" class="me-2">
+                                {{ webhook.retry_seconds }}s Retry
+                            </v-chip>
+                        </div>
+                    </v-list-item-title>
+                    <v-divider class="my-2"/>
+                    <div>
+                        <template v-if="webhook.event_targets.length > 0">
+                            <v-chip
+                                label
+                                class="me-2 my-1"
+                                size="small"
+                                v-for="event_target in webhook.event_targets"
+                                :key="event_target.event_name"
+                            >
+                                {{ event_target.event_name }}
+                            </v-chip>
+                        </template>
+                        <template v-else>
+                            <v-chip label>
+                                None Selected
+                            </v-chip>
+                        </template>
+                    </div>
+                    <v-menu>
+                        <template v-slot:activator="{ props }">
+                            <v-btn color="secondary" variant="flat" prepend-icon="mdi-menu" v-bind="props" class="my-4">
+                                Actions
+                                <v-icon icon="mdi-chevron-down"/>
+                            </v-btn>
+                        </template>
+                        <v-list>
+                            <v-list-item :href="route('webhooks.logs', webhook)">
+                                View Logs
+                            </v-list-item>
+                            <v-list-item :href="route('webhooks.test', webhook)">
+                                Test Webhook
+                            </v-list-item>
+                            <v-list-item v-if="eventTargetNames.length"
+                                         @click="manageWebhookEventTargets(webhook)">
+                                Update Webhook
+                            </v-list-item>
+                            <v-list-item @click="confirmWebhookDeletion(webhook)"
+                                         class="text-error">
+                                Delete Webhook
+                            </v-list-item>
+                        </v-list>
+                    </v-menu>
+                </v-list-item>
+            </v-list>
+            <v-snackbar
+                v-model="showUpdateSuccessMessage"
+                color="success"
+                timeout="3000"
+            >
+                Webhook updated successfully!
+            </v-snackbar>
+            <v-snackbar
+                v-model="showDeleteSuccessMessage"
+                color="success"
+                timeout="3000"
+            >
+                Webhook deleted successfully!
+            </v-snackbar>
+        </v-card-text>
+    </v-card>
 
     <!-- Secret Value Modal -->
     <v-dialog persistent v-model="displayingSecret" width="auto">
         <v-card>
             <v-card-title>Webhook HMAC Verification Secret</v-card-title>
             <v-card-text>
-                <div>
-                    Please copy your webhook HMAC verification secret, it is
-                    used to
+                <div class="mb-4">
+                    Please copy your webhook HMAC verification secret, it is used to
                     implement HMAC signature verification on your end. For your
                     security, it won't be shown again.
                 </div>
 
-                <v-alert v-if="$page.props.jetstream.flash.secret" type="info">
+                <v-alert v-if="$page.props.jetstream.flash.secret" type="info" class="mb-0">
                     <code>{{ $page.props.jetstream.flash.secret }}</code>
                 </v-alert>
             </v-card-text>
             <v-card-actions>
-                <v-btn @click="displayingSecret = false">
+                <v-spacer></v-spacer>
+                <v-btn color="secondary" variant="flat" prepend-icon="mdi-close" @click="displayingSecret = false">
                     Close
                 </v-btn>
             </v-card-actions>
@@ -282,57 +321,88 @@ const deleteWebhook = () => {
         <v-card>
             <v-card-title>Update Webhook</v-card-title>
             <v-card-text>
-                <!-- Webhook URL -->
-                <v-text-field type="url" label="Webhook URL"
-                              v-model="updateWebhookForm.url" autofocus
-                              required/>
+                <v-form @submit.prevent="updateWebhook">
+                    <!-- Webhook URL -->
+                    <v-text-field 
+                        type="url" 
+                        label="Webhook URL"
+                        v-model="updateWebhookForm.url" 
+                        autofocus
+                        required
+                    />
 
-                <!-- HMAC  Signature Algorithm -->
-                <v-select v-model="updateWebhookForm.hmac_algorithm"
-                          :items="hmacAlgorithms"
-                          label="HMAC Signature Algorithm"/>
+                    <!-- HMAC  Signature Algorithm -->
+                    <v-select 
+                        v-model="updateWebhookForm.hmac_algorithm"
+                        :items="hmacAlgorithms"
+                        label="HMAC Signature Algorithm"
+                    />
 
-                <!-- Max Attempts -->
-                <v-text-field label="Max Attempts" type="number"
-                              v-model="updateWebhookForm.max_attempts" required
-                              min="1" step="1" max="60"/>
+                    <!-- Max Attempts -->
+                    <v-text-field 
+                        label="Max Attempts" 
+                        type="number"
+                        v-model="updateWebhookForm.max_attempts" 
+                        required
+                        min="1" 
+                        step="1" 
+                        max="60"
+                    />
 
-                <!-- Timeout Seconds -->
-                <v-text-field type="number" min="1" step="1" max="60"
-                              label="Timeout (Seconds)"
-                              v-model="updateWebhookForm.timeout_seconds"
-                              hint="How long should we wait for the request (to your webhook URL) to succeed?"
-                              persistent-hint required/>
+                    <!-- Timeout Seconds -->
+                    <v-text-field 
+                        type="number" 
+                        min="1" 
+                        step="1" 
+                        max="60"
+                        label="Timeout (Seconds)"
+                        v-model="updateWebhookForm.timeout_seconds"
+                        hint="How long should we wait for the request (to your webhook URL) to succeed?"
+                        class="mb-2"
+                        persistent-hint 
+                        required
+                    />
 
-                <!-- Retry Delay Seconds -->
-                <v-text-field type="number" min="1" step="1" max="900"
-                              label="Retry Delay (Seconds)"
-                              v-model="updateWebhookForm.retry_seconds"
-                              hint="Delay between retry attempts"
-                              persistent-hint
-                              required/>
+                    <!-- Retry Delay Seconds -->
+                    <v-text-field 
+                        type="number" 
+                        min="1" 
+                        step="1" 
+                        max="900"
+                        label="Retry Delay (Seconds)"
+                        v-model="updateWebhookForm.retry_seconds"
+                        hint="Delay between retry attempts"
+                        persistent-hint
+                        required
+                    />
 
-                <template v-if="eventTargetNames.length">
-                    <h3 class="mt-4">Event Targets</h3>
-                    <v-row>
-                        <v-col v-for="eventTargetName in eventTargetNames"
-                               :key="eventTargetName" cols="6" md="4" lg="4">
-                            <v-checkbox
-                                hide-details
-                                v-model="updateWebhookForm.target_events"
-                                :value="eventTargetName"
-                                :label="eventTargetName"/>
-                        </v-col>
-                    </v-row>
-                </template>
-
+                    <template v-if="eventTargetNames.length">
+                        <h3 class="text-h6 mt-4 mb-2">Event Targets</h3>
+                        <v-row>
+                            <v-col v-for="eventTargetName in eventTargetNames"
+                                   :key="eventTargetName" cols="6" md="4" lg="4">
+                                <v-checkbox
+                                    v-model="updateWebhookForm.target_events"
+                                    hide-details
+                                    :value="eventTargetName"
+                                    :label="eventTargetName"
+                                />
+                            </v-col>
+                        </v-row>
+                    </template>
+                </v-form>
             </v-card-text>
             <v-card-actions>
-                <v-btn @click="webhookBeingUpdated = null">Cancel</v-btn>
+                <v-spacer></v-spacer>
+                <v-btn color="secondary" variant="flat" prepend-icon="mdi-close" class="mr-2" @click="webhookBeingUpdated = null">
+                    Cancel
+                </v-btn>
                 <v-btn
                     color="primary"
-                    :disabled="updateWebhookForm.processing"
                     variant="flat"
+                    prepend-icon="mdi-content-save"
+                    :disabled="updateWebhookForm.processing"
+                    :loading="updateWebhookForm.processing"
                     @click="updateWebhook"
                 >
                     Save
@@ -349,11 +419,18 @@ const deleteWebhook = () => {
                 Are you sure you would like to delete this webhook?
             </v-card-text>
             <v-card-actions>
-                <v-btn @click="webhookBeingDeleted = null">
+                <v-spacer></v-spacer>
+                <v-btn color="secondary" variant="flat" prepend-icon="mdi-close" class="mr-2" @click="webhookBeingDeleted = null">
                     Cancel
                 </v-btn>
-                <v-btn color="error" :disabled="deleteWebhookForm.processing"
-                       @click="deleteWebhook">
+                <v-btn 
+                    color="error" 
+                    variant="flat"
+                    prepend-icon="mdi-delete"
+                    :disabled="deleteWebhookForm.processing"
+                    :loading="deleteWebhookForm.processing"
+                    @click="deleteWebhook"
+                >
                     Delete
                 </v-btn>
             </v-card-actions>

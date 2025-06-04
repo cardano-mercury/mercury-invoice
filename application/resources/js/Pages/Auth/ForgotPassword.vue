@@ -43,8 +43,9 @@ const submit = () => {
                                       label="Email..."
                                       prepend-icon="mdi-email-outline"
                                       :error-messages="form.errors.email"/>
-                        <v-btn type="submit" color="black" variant="flat"
-                               size="large" block :disabled="form.processing"
+                        <v-btn type="submit" color="primary" variant="flat"
+                               size="large" block class="mt-4"
+                               prepend-icon="mdi-email-send"
                                :loading="form.processing">
                             Email Password Reset Link
                         </v-btn>
@@ -52,9 +53,13 @@ const submit = () => {
                 </v-card-text>
                 <v-card-text class="my-8">
                     Did you remember it?
-                    <Link :href="route('login')" class="font-weight-black">
+                    <v-btn :href="route('login')" 
+                          color="secondary" 
+                          variant="text"
+                          prepend-icon="mdi-login"
+                          class="font-weight-black">
                         Sign In!
-                    </Link>
+                    </v-btn>
                 </v-card-text>
             </v-card>
         </v-container>

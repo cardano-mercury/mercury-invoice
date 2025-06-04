@@ -165,8 +165,8 @@ const logout = () => {
                             Feel free to reach out using the button below.
                         </v-card-text>
                         <v-card-actions>
-                            <v-btn color="black" variant="flat" block>Contact
-                                Us
+                            <v-btn href="https://github.com/cardano-mercury/mercury-invoice/issues" target="_blank" color="black" variant="flat" block>
+                                Contact Us
                             </v-btn>
                         </v-card-actions>
                     </v-card>

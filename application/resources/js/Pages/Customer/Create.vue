@@ -33,13 +33,13 @@ const form = useForm({
                               v-model="form.tax_rate" />
                 <v-row>
                     <v-col cols="auto">
-                        <v-btn color="primary" type="submit" variant="flat">Save</v-btn>
+                        <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-content-save">Save</v-btn>
                     </v-col>
                     <v-col cols="auto">
-                        <v-btn type="button" variant="flat">Reset</v-btn>
+                        <v-btn type="button" variant="flat" prepend-icon="mdi-refresh">Reset</v-btn>
                     </v-col>
                     <v-col cols="auto">
-                        <v-btn :href="route('customers.index')" color="error" variant="flat">Cancel</v-btn>
+                        <v-btn :href="route('customers.index')" color="error" variant="flat" prepend-icon="mdi-close">Cancel</v-btn>
                     </v-col>
                 </v-row>
             </v-form>

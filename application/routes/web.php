@@ -46,14 +46,47 @@ Route::middleware([
     // Customers
     Route::get('customers/export', [CustomerController::class, 'export'])->name('customers.export');
     Route::resource('customers', CustomerController::class);
+    
+    // Customer Emails
+    Route::post('customers/{customer}/emails', [CustomerController::class, 'storeEmail'])->name('customers.emails.store');
+    Route::put('customers/{customer}/emails/{email}', [CustomerController::class, 'updateEmail'])->name('customers.emails.update');
+    Route::delete('customers/{customer}/emails/{email}', [CustomerController::class, 'destroyEmail'])->name('customers.emails.destroy');
+    
+    // Customer Phones
+    Route::post('customers/{customer}/phones', [CustomerController::class, 'storePhone'])->name('customers.phones.store');
+    Route::put('customers/{customer}/phones/{phone}', [CustomerController::class, 'updatePhone'])->name('customers.phones.update');
+    Route::delete('customers/{customer}/phones/{phone}', [CustomerController::class, 'destroyPhone'])->name('customers.phones.destroy');
+    
+    // Customer Addresses
+    Route::post('customers/{customer}/addresses', [CustomerController::class, 'storeAddress'])->name('customers.addresses.store');
+    Route::put('customers/{customer}/addresses/{address}', [CustomerController::class, 'updateAddress'])->name('customers.addresses.update');
+    Route::delete('customers/{customer}/addresses/{address}', [CustomerController::class, 'destroyAddress'])->name('customers.addresses.destroy');
+    
+    // Customer Categories
+    Route::put('customers/{customer}/categories', [CustomerController::class, 'updateCategories'])->name('customers.categories.update');
+    Route::post('customer-categories', [CustomerController::class, 'storeCategory'])->name('customer-categories.store');
+    Route::put('customer-categories/{customerCategory}', [CustomerController::class, 'updateCategory'])->name('customer-categories.update');
+    Route::delete('customer-categories/{customerCategory}', [CustomerController::class, 'destroyCategory'])->name('customer-categories.destroy');
 
     // Products
     Route::get('products/export', [ProductController::class, 'export'])->name('products.export');
     Route::resource('products', ProductController::class);
+    
+    // Product Categories
+    Route::put('products/{product}/categories', [ProductController::class, 'updateCategories'])->name('products.categories.update');
+    Route::post('product-categories', [ProductController::class, 'storeCategory'])->name('product-categories.store');
+    Route::put('product-categories/{productCategory}', [ProductController::class, 'updateCategory'])->name('product-categories.update');
+    Route::delete('product-categories/{productCategory}', [ProductController::class, 'destroyCategory'])->name('product-categories.destroy');
 
     // Services
     Route::get('services/export', [ServiceController::class, 'export'])->name('services.export');
     Route::resource('services', ServiceController::class);
+    
+    // Service Categories
+    Route::put('services/{service}/categories', [ServiceController::class, 'updateCategories'])->name('services.categories.update');
+    Route::post('service-categories', [ServiceController::class, 'storeCategory'])->name('service-categories.store');
+    Route::put('service-categories/{serviceCategory}', [ServiceController::class, 'updateCategory'])->name('service-categories.update');
+    Route::delete('service-categories/{serviceCategory}', [ServiceController::class, 'destroyCategory'])->name('service-categories.destroy');
 
     // Invoices
     Route::get('invoices/export', [InvoiceController::class, 'export'])->name('invoices.export');

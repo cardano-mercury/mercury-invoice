@@ -262,6 +262,8 @@ ${address.country}`;
                                     <v-btn
                                         :disabled="!selectedProduct"
                                         variant="flat" size="large"
+                                        color="primary"
+                                        prepend-icon="mdi-plus"
                                         rounded="0" @click="addSelectedProduct">
                                         Add
                                     </v-btn>
@@ -276,6 +278,8 @@ ${address.country}`;
                                     <v-btn
                                         :disabled="!selectedService"
                                         variant="flat" size="large"
+                                        color="primary"
+                                        prepend-icon="mdi-plus"
                                         rounded="0" @click="addSelectedService">
                                         Add
                                     </v-btn>
@@ -284,7 +288,7 @@ ${address.country}`;
                         </v-col>
                         <v-col cols="auto">
                             <v-btn @click="addNewItem()" variant="flat"
-                                   size="large" rounded="0">Add Item
+                                   size="large" rounded="0" prepend-icon="mdi-plus">Add Item
                             </v-btn>
                         </v-col>
                     </v-row>
@@ -339,7 +343,7 @@ ${address.country}`;
                             </td>
                             <td class="text-end">
                                 <v-btn variant="flat" icon="mdi-trash-can"
-                                       size="small"
+                                       size="small" color="error"
                                        @click="removeLine(index)"/>
                             </td>
                         </tr>
@@ -350,6 +354,8 @@ ${address.country}`;
                             <v-row justify="start">
                                 <v-col cols="auto">
                                     <v-btn type="button" variant="flat"
+                                           color="primary"
+                                           prepend-icon="mdi-eye"
                                            :href="route('invoices.show', props.invoice.invoice_reference)">
                                         View Invoice
                                     </v-btn>
@@ -362,16 +368,32 @@ ${address.country}`;
                                     </v-btn>
                                 </v-col>
                                 <v-col cols="auto">
-                                    <v-btn type="submit" variant="flat"
+                                    <v-btn type="button" variant="flat" class="mr-2"
+                                           prepend-icon="mdi-printer"
+                                           @click="printInvoice">
+                                        Print
+                                    </v-btn>
+                                </v-col>
+                                <v-col cols="auto">
+                                    <v-btn type="button" variant="flat" class="mr-2"
+                                           prepend-icon="mdi-email-outline"
+                                           color="info"
+                                           @click="sendInvoice">
+                                        Send
+                                    </v-btn>
+                                </v-col>
+                                <v-col cols="auto">
+                                    <v-btn type="submit" variant="flat" class="mr-2"
+                                           prepend-icon="mdi-content-save-outline"
                                            @click="form.save_mode='Draft'">
-                                        Update as Draft
+                                        Save as Draft
                                     </v-btn>
                                 </v-col>
                                 <v-col cols="auto">
                                     <v-btn type="submit" variant="flat"
+                                           prepend-icon="mdi-content-save"
                                            @click="form.save_mode='Publish'"
-                                           color="primary">
-                                        Update &amp; Publish
+                                           color="primary">Save and Publish
                                     </v-btn>
                                 </v-col>
                             </v-row>

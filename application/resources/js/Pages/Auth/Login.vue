@@ -55,29 +55,30 @@ const submit = () => {
                                       prepend-icon="mdi-lock-outline"
                                       label="Type your password..."
                                       :error-messages="form.errors.password"/>
-                        <v-row align="center" justify="center">
-                            <v-col cols="12" md="6">
-                                <v-checkbox v-model="form.remember"
-                                            name="remember"
-                                            hide-details
-                                            label="Remember me"/>
-                            </v-col>
-                            <v-col cols="12" md="6">
-                                <v-btn color="primary" variant="text"
-                                       v-if="canResetPassword"
-                                       :href="route('password.request')">Forgot
-                                    password?
-                                </v-btn>
-                            </v-col>
-                        </v-row>
-                        <v-btn type="submit" color="black" variant="flat"
-                               size="large" block>Sign In
+                        <div class="d-flex align-center justify-space-between">
+                            <v-checkbox v-model="form.remember" label="Remember me"></v-checkbox>
+                            <v-btn color="secondary" variant="text" class="mr-2"
+                                   prepend-icon="mdi-lock-reset"
+                                   :href="route('password.request')">
+                                Forgot your password?
+                            </v-btn>
+                        </div>
+                        <v-btn type="submit" color="primary" variant="flat" block
+                               size="large" class="mt-4"
+                               prepend-icon="mdi-login"
+                               :loading="form.processing">Log in
                         </v-btn>
                     </v-form>
                 </v-card-text>
                 <v-card-text class="my-8">
                     Don't have an account?
-                    <Link :href="route('register')" class="font-weight-black">Sign Up!</Link>
+                    <v-btn :href="route('register')" 
+                          color="secondary" 
+                          variant="text"
+                          prepend-icon="mdi-account-plus"
+                          class="font-weight-black">
+                        Sign Up!
+                    </v-btn>
                 </v-card-text>
             </v-card>
         </v-container>

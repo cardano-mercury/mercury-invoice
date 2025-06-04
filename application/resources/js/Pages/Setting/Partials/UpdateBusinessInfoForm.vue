@@ -1,13 +1,13 @@
 <script setup>
 import {useForm, usePage} from '@inertiajs/vue3';
-import FormSection from "@/Components/FormSection.vue";
-import {computed} from "vue";
+import {computed, ref} from "vue";
 
 const props = defineProps({
     supportedCurrencies: Object,
 });
 
 const page = usePage();
+const showSuccessMessage = ref(false);
 
 const currencies = computed(() => {
     const val = [];
@@ -30,36 +30,65 @@ const updateBusinessInfo = () => {
     form.post(route('user.settings.save-business-info'), {
         errorBag: 'updateBusinessInfo',
         preserveScroll: true,
+        onSuccess: () => {
+            showSuccessMessage.value = true;
+        }
     });
 };
 </script>
 
 <template>
-    <FormSection @submitted="updateBusinessInfo">
-        <template #title>
-            <h2>Update Business Info</h2>
-        </template>
-
-        <template #description>
+    <v-card class="mb-6">
+        <v-card-title>Business Information</v-card-title>
+        <v-card-subtitle>
             Tell us about your business, such as what currency you want to
             charge your customers in, your business name and terms and
             conditions.
-        </template>
+        </v-card-subtitle>
 
-        <template #form>
-            <v-select label="Account Currency"
-                      v-model="form.account_currency"
-                      :items="currencies"></v-select>
-            <v-text-field v-model="form.business_name" type="text"
-                          autocomplete="business-name" label="Business Name"/>
-            <v-textarea v-model="form.business_terms"
-                        label="Business Terms & Conditions"/>
-        </template>
+        <v-card-text>
+            <v-form @submit.prevent="updateBusinessInfo">
+                <v-select 
+                    label="Account Currency"
+                    v-model="form.account_currency"
+                    :items="currencies"
+                    :error-messages="form.errors.account_currency"
+                ></v-select>
+                
+                <v-text-field 
+                    v-model="form.business_name" 
+                    type="text"
+                    autocomplete="business-name" 
+                    label="Business Name"
+                    :error-messages="form.errors.business_name"
+                ></v-text-field>
+                
+                <v-textarea 
+                    v-model="form.business_terms"
+                    label="Business Terms & Conditions"
+                    :error-messages="form.errors.business_terms"
+                ></v-textarea>
 
-        <template #actions>
-            <v-btn color="primary" :disabled="form.processing" type="submit">
-                Save
-            </v-btn>
-        </template>
-    </FormSection>
+                <div class="d-flex justify-end mt-4">
+                    <v-snackbar
+                        v-model="showSuccessMessage"
+                        color="success"
+                        timeout="3000"
+                    >
+                        Business information updated successfully!
+                    </v-snackbar>
+                    
+                    <v-btn
+                        color="primary"
+                        variant="flat"
+                        prepend-icon="mdi-content-save"
+                        :loading="form.processing"
+                        type="submit"
+                    >
+                        Save
+                    </v-btn>
+                </div>
+            </v-form>
+        </v-card-text>
+    </v-card>
 </template>

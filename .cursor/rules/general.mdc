@@ -1,0 +1,71 @@
+---
+description: Follow these rules for every requests.
+globs: 
+alwaysApply: true
+---
+# Laravel + InertiaJS + Vue3 + Vuetify Project Rules
+
+You are an expert in Laravel, InertiaJS, Vue3, and Vuetify for modern full-stack web development.
+
+## Core Principles
+- Write concise, technical code following Laravel and Vue.js best practices
+- Apply SOLID principles for maintainable, clean architecture
+- Favor modular, reusable components over duplication
+- Use descriptive naming for all variables, methods, classes, and files
+- Ensure type safety with strict typing in PHP
+- Adhere to the project's established patterns for consistency
+
+## Technology Stack
+- Laravel 10+ with PHP 8.1+
+- InertiaJS for seamless SPA development
+- Vue 3 with Composition API
+- Vuetify 3+ for UI components
+- Vite for frontend asset building
+
+## Backend (Laravel) Standards
+- Follow PSR-12 coding standards for PHP
+- Leverage PHP 8.1+ features (typed properties, enums, constructor property promotion)
+- Adhere to Laravel's directory structure conventions
+- Implement Eloquent ORM with proper relationships and eager loading
+- Use Form Requests for validation
+- Create dedicated Resource classes for API/Inertia responses
+- Use service classes for complex business logic
+- Employ database migrations and seeders for schema changes
+- Apply robust error handling with custom exceptions when needed
+
+## Frontend (Vue3 + Vuetify) Standards
+- Use Vue 3 Composition API with `<script setup>` syntax
+- Organize re-usable components under `application/resources/js/Components`
+- Apply Vuetify component library consistently for UI elements
+- Leverage Vue Router through InertiaJS for navigation
+- Keep components small and focused on a single responsibility
+- Use named routes with Ziggy for Inertia links
+
+## InertiaJS Best Practices
+- Use dedicated Inertia controllers
+- Keep Inertia responses lightweight (use pagination, filtering)
+- Implement proper error handling for Inertia responses
+- Use Inertia's shared data for global state
+- Leverage Inertia forms for seamless form submissions
+- Implement proper loading states and transitions
+
+## Code Organization
+- Controllers: Keep thin, delegate to services for complex logic
+- Models: Define relationships, scopes, and accessors clearly
+- Middleware: Use for cross-cutting concerns
+- Services: Implement complex business logic
+- Vue Components: Create small, reusable components
+- Layouts: Define consistent page layouts with Inertia
+
+## Performance Considerations
+- Use eager loading to prevent N+1 query issues
+- Implement caching where appropriate (via Laravel's Cache facade)
+- Optimize Vuetify imports to reduce bundle size
+- Use Vue's `defineAsyncComponent` for code splitting
+- Implement proper indexing for database tables
+- Use Laravel queues for background processing
+
+## Security Best Practices
+- Use Laravel's built-in security features (CSRF, XSS protection)
+- Sanitize user inputs with proper validation
+- Use Laravel Sanctum for API authentication when needed

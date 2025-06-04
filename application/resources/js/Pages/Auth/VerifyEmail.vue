@@ -45,19 +45,33 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
                 </v-card-text>
                 <v-card-text>
                     <v-form @submit.prevent="submit">
-                        <v-btn type="submit" color="black" variant="flat"
-                               size="large" block :disabled="form.processing" :loading="form.processing">
+                        <v-btn type="submit" color="primary" variant="flat"
+                               size="large" block 
+                               prepend-icon="mdi-email-send"
+                               :disabled="form.processing" 
+                               :loading="form.processing">
                             Resend Verification Email
                         </v-btn>
                     </v-form>
                 </v-card-text>
                 <v-card-text>
-                    <v-row>
-                        <v-col cols="12" md="6">
-                            <v-btn :href="route('profile.show')" variant="text">Edit Profile</v-btn>
+                    <v-row class="mt-2">
+                        <v-col cols="12" md="6" class="d-flex justify-md-end justify-center">
+                            <v-btn :href="route('profile.show')" 
+                                  color="secondary" 
+                                  variant="text"
+                                  prepend-icon="mdi-account-edit">
+                                Edit Profile
+                            </v-btn>
                         </v-col>
-                        <v-col cols="12" md="6">
-                            <v-btn :href="route('logout')" method="post" variant="text">Log Out</v-btn>
+                        <v-col cols="12" md="6" class="d-flex justify-md-start justify-center">
+                            <v-btn :href="route('logout')" 
+                                  method="post" 
+                                  color="error" 
+                                  variant="text"
+                                  prepend-icon="mdi-logout">
+                                Log Out
+                            </v-btn>
                         </v-col>
                     </v-row>
                 </v-card-text>

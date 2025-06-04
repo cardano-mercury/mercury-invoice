@@ -74,17 +74,18 @@ const submit = () => {
                                           label="Recovery Code"
                                           :error-messages="form.errors.recovery_code"/>
                         </template>
-                        <v-btn type="button" color="primary" block class="mb-4"
-                               @click.prevent="toggleRecovery">
-                            <template v-if="! recover">
-                                Use a recovery code
-                            </template>
-                            <template v-else>
-                                Use an authentication code
-                            </template>
+                        <v-btn type="button" color="secondary" block class="mb-4"
+                               prepend-icon="mdi-qrcode"
+                               @click="toggleRecovery"
+                               variant="flat"
+                               size="large">
+                            {{ recovery ? 'Use an authentication code' : 'Use a recovery code' }}
                         </v-btn>
-                        <v-btn type="submit" color="black" variant="flat"
-                               size="large" block :disabled="form.processing" :loading="form.processing">
+                        <v-btn type="submit" color="primary" variant="flat"
+                               size="large" block class="mt-4"
+                               prepend-icon="mdi-login"
+                               :disabled="form.processing" 
+                               :loading="form.processing">
                             Log In
                         </v-btn>
                     </v-form>

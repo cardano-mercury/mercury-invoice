@@ -16,7 +16,7 @@ class StoreServiceCategoryRequest extends FormRequest
             // Anyone can create new record
             'POST' => true,
             // Updating must match record owner
-            'PUT', 'PATCH' => $this->service_category->user_id === auth()->id(),
+            'PUT', 'PATCH' => $this->serviceCategory->user_id === auth()->id(),
             // Unauthorized for everything else
             default => false,
         };
@@ -37,7 +37,7 @@ class StoreServiceCategoryRequest extends FormRequest
                     return $query
                         ->where('user_id', auth()->id())
                         ->where('name', $this->name);
-                })->ignore($this?->service_category?->id),
+                })->ignore($this?->serviceCategory?->id),
             ],
         ];
     }

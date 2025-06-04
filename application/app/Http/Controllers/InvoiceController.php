@@ -21,7 +21,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Http\Resources\Invoice\InvoiceResource;
 use App\Jobs\SendNewInvoiceNotificationMailJob;
 use App\Http\Requests\Invoice\StoreInvoiceRequest;
-use Illuminate\Contracts\Container\BindingResolutionException;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class InvoiceController extends Controller
 {
@@ -408,10 +408,7 @@ class InvoiceController extends Controller
         return to_route('invoices.show', $this->encodeId($invoice->id));
     }
 
-    /**
-     * @throws BindingResolutionException
-     */
-    public function export(Request $request): \Illuminate\Http\Response
+    public function export(Request $request): StreamedResponse
     {
         $invoices = Invoice::query()
             ->where('user_id', auth()->id())
@@ -426,7 +423,7 @@ class InvoiceController extends Controller
             ])
             ->get();
 
-        return $this->downloadJson(
+        return $this->downloadZipCompressedJson(
             InvoiceResource::collection($invoices)->toResponse($request)->getData(true)['data'],
             'invoices-export',
         );

@@ -1,100 +1,87 @@
-<script setup>
-import { ref } from 'vue';
-import { useForm } from '@inertiajs/vue3';
-import ActionMessage from '@/Components/ActionMessage.vue';
-import FormSection from '@/Components/FormSection.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-
-const passwordInput = ref(null);
-const currentPasswordInput = ref(null);
-
-const form = useForm({
-    current_password: '',
-    password: '',
-    password_confirmation: '',
-});
-
-const updatePassword = () => {
-    form.put(route('user-password.update'), {
-        errorBag: 'updatePassword',
-        preserveScroll: true,
-        onSuccess: () => form.reset(),
-        onError: () => {
-            if (form.errors.password) {
-                form.reset('password', 'password_confirmation');
-                passwordInput.value.focus();
-            }
-
-            if (form.errors.current_password) {
-                form.reset('current_password');
-                currentPasswordInput.value.focus();
-            }
-        },
-    });
-};
-</script>
-
 <template>
-    <FormSection @submitted="updatePassword">
-        <template #title>
-            Update Password
-        </template>
-
-        <template #description>
+    <v-card class="mb-6">
+        <v-card-title>Update Password</v-card-title>
+        <v-card-subtitle>
             Ensure your account is using a long, random password to stay secure.
-        </template>
+        </v-card-subtitle>
 
-        <template #form>
-            <div class="col-span-6 sm:col-span-4">
-                <InputLabel for="current_password" value="Current Password" />
-                <TextInput
-                    id="current_password"
-                    ref="currentPasswordInput"
+        <v-card-text>
+            <v-form @submit.prevent="updatePassword">
+                <v-text-field
                     v-model="form.current_password"
+                    label="Current Password"
                     type="password"
-                    class="mt-1 block w-full"
                     autocomplete="current-password"
-                />
-                <InputError :message="form.errors.current_password" class="mt-2" />
-            </div>
+                    :error-messages="form.errors.current_password"
+                ></v-text-field>
 
-            <div class="col-span-6 sm:col-span-4">
-                <InputLabel for="password" value="New Password" />
-                <TextInput
-                    id="password"
-                    ref="passwordInput"
+                <v-text-field
                     v-model="form.password"
+                    label="New Password"
                     type="password"
-                    class="mt-1 block w-full"
                     autocomplete="new-password"
-                />
-                <InputError :message="form.errors.password" class="mt-2" />
-            </div>
+                    :error-messages="form.errors.password"
+                ></v-text-field>
 
-            <div class="col-span-6 sm:col-span-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
-                <TextInput
-                    id="password_confirmation"
+                <v-text-field
                     v-model="form.password_confirmation"
+                    label="Confirm Password"
                     type="password"
-                    class="mt-1 block w-full"
                     autocomplete="new-password"
-                />
-                <InputError :message="form.errors.password_confirmation" class="mt-2" />
-            </div>
-        </template>
+                    :error-messages="form.errors.password_confirmation"
+                ></v-text-field>
 
-        <template #actions>
-            <ActionMessage :on="form.recentlySuccessful" class="me-3">
-                Saved.
-            </ActionMessage>
-
-            <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Save
-            </PrimaryButton>
-        </template>
-    </FormSection>
+                <div class="d-flex justify-end mt-4">
+                    <v-snackbar
+                        v-model="showSuccessMessage"
+                        color="success"
+                        timeout="3000"
+                    >
+                        Password updated successfully!
+                    </v-snackbar>
+                    
+                    <v-btn
+                        color="success"
+                        :loading="form.processing"
+                        type="submit"
+                        variant="flat"
+                        prepend-icon="mdi-content-save"
+                    >
+                        Save
+                    </v-btn>
+                </div>
+            </v-form>
+        </v-card-text>
+    </v-card>
 </template>
+
+<script>
+import { defineComponent } from 'vue';
+import { useForm } from '@inertiajs/vue3';
+
+export default defineComponent({
+    data() {
+        return {
+            form: useForm({
+                current_password: '',
+                password: '',
+                password_confirmation: '',
+            }),
+            showSuccessMessage: false,
+        };
+    },
+
+    methods: {
+        updatePassword() {
+            this.form.put(route('user-password.update'), {
+                errorBag: 'updatePassword',
+                preserveScroll: true,
+                onSuccess: () => {
+                    this.form.reset();
+                    this.showSuccessMessage = true;
+                },
+            });
+        },
+    },
+});
+</script>

@@ -515,6 +515,8 @@ const payWithCrypto = async (walletName, walletDisplayName) => {
                                     <v-btn
                                         v-if="paymentMethod === 'Stripe'"
                                         @click="payWithStripe" type="button"
+                                        variant="flat"
+                                        prepend-icon="mdi-credit-card"
                                         color="primary">Pay Now
                                     </v-btn>
                                     <template v-if="paymentMethod === 'Crypto'">

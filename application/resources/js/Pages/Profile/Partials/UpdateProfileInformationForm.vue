@@ -1,190 +1,201 @@
-<script setup>
-import { ref } from 'vue';
-import { Link, router, useForm } from '@inertiajs/vue3';
-import ActionMessage from '@/Components/ActionMessage.vue';
-import FormSection from '@/Components/FormSection.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import SecondaryButton from '@/Components/SecondaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-
-const props = defineProps({
-    user: Object,
-});
-
-const form = useForm({
-    _method: 'PUT',
-    name: props.user.name,
-    email: props.user.email,
-    photo: null,
-});
-
-const verificationLinkSent = ref(null);
-const photoPreview = ref(null);
-const photoInput = ref(null);
-
-const updateProfileInformation = () => {
-    if (photoInput.value) {
-        form.photo = photoInput.value.files[0];
-    }
-
-    form.post(route('user-profile-information.update'), {
-        errorBag: 'updateProfileInformation',
-        preserveScroll: true,
-        onSuccess: () => clearPhotoFileInput(),
-    });
-};
-
-const sendEmailVerification = () => {
-    verificationLinkSent.value = true;
-};
-
-const selectNewPhoto = () => {
-    photoInput.value.click();
-};
-
-const updatePhotoPreview = () => {
-    const photo = photoInput.value.files[0];
-
-    if (! photo) return;
-
-    const reader = new FileReader();
-
-    reader.onload = (e) => {
-        photoPreview.value = e.target.result;
-    };
-
-    reader.readAsDataURL(photo);
-};
-
-const deletePhoto = () => {
-    router.delete(route('current-user-photo.destroy'), {
-        preserveScroll: true,
-        onSuccess: () => {
-            photoPreview.value = null;
-            clearPhotoFileInput();
-        },
-    });
-};
-
-const clearPhotoFileInput = () => {
-    if (photoInput.value?.value) {
-        photoInput.value.value = null;
-    }
-};
-</script>
-
 <template>
-    <FormSection @submitted="updateProfileInformation">
-        <template #title>
-            Profile Information
-        </template>
-
-        <template #description>
+    <v-card class="mb-6">
+        <v-card-title>Profile Information</v-card-title>
+        <v-card-subtitle>
             Update your account's profile information and email address.
-        </template>
+        </v-card-subtitle>
 
-        <template #form>
-            <!-- Profile Photo -->
-            <div v-if="$page.props.jetstream.managesProfilePhotos" class="col-span-6 sm:col-span-4">
-                <!-- Profile Photo File Input -->
-                <input
-                    id="photo"
-                    ref="photoInput"
-                    type="file"
-                    class="hidden"
-                    @change="updatePhotoPreview"
-                >
+        <v-card-text>
+            <v-form @submit.prevent="updateProfileInformation">
+                <div v-if="$page.props.jetstream.managesProfilePhotos">
+                    <!-- Photo -->
+                    <div class="mb-4">
+                        <v-label>Photo</v-label>
 
-                <InputLabel for="photo" value="Photo" />
+                        <!-- Current Profile Photo -->
+                        <div v-show="!photoPreview" class="mt-2">
+                            <v-img
+                                :src="user.profile_photo_url"
+                                :alt="user.name"
+                                height="80"
+                                width="80"
+                                class="rounded"
+                            ></v-img>
+                        </div>
 
-                <!-- Current Profile Photo -->
-                <div v-show="! photoPreview" class="mt-2">
-                    <img :src="user.profile_photo_url" :alt="user.name" class="rounded-full h-20 w-20 object-cover">
+                        <!-- New Profile Photo Preview -->
+                        <div v-show="photoPreview" class="mt-2">
+                            <v-img
+                                :src="photoPreview"
+                                height="80"
+                                width="80"
+                                class="rounded"
+                            ></v-img>
+                        </div>
+
+                        <v-btn
+                            class="mt-2 mr-2"
+                            size="small"
+                            @click="selectNewPhoto"
+                        >
+                            Select A New Photo
+                        </v-btn>
+
+                        <v-btn
+                            v-if="user.profile_photo_path"
+                            color="error"
+                            size="small"
+                            class="mt-2"
+                            @click="deletePhoto"
+                        >
+                            Remove Photo
+                        </v-btn>
+
+                        <v-file-input
+                            ref="photo"
+                            v-model="form.photo"
+                            style="display: none"
+                            @update:model-value="updatePhotoPreview"
+                        ></v-file-input>
+                    </div>
                 </div>
 
-                <!-- New Profile Photo Preview -->
-                <div v-show="photoPreview" class="mt-2">
-                    <span
-                        class="block rounded-full w-20 h-20 bg-cover bg-no-repeat bg-center"
-                        :style="'background-image: url(\'' + photoPreview + '\');'"
-                    />
-                </div>
-
-                <SecondaryButton class="mt-2 me-2" type="button" @click.prevent="selectNewPhoto">
-                    Select A New Photo
-                </SecondaryButton>
-
-                <SecondaryButton
-                    v-if="user.profile_photo_path"
-                    type="button"
-                    class="mt-2"
-                    @click.prevent="deletePhoto"
-                >
-                    Remove Photo
-                </SecondaryButton>
-
-                <InputError :message="form.errors.photo" class="mt-2" />
-            </div>
-
-            <!-- Name -->
-            <div class="col-span-6 sm:col-span-4">
-                <InputLabel for="name" value="Name" />
-                <TextInput
-                    id="name"
+                <!-- Name -->
+                <v-text-field
                     v-model="form.name"
-                    type="text"
-                    class="mt-1 block w-full"
+                    label="Name"
+                    :error-messages="form.errors.name"
                     required
-                    autocomplete="name"
-                />
-                <InputError :message="form.errors.name" class="mt-2" />
-            </div>
+                ></v-text-field>
 
-            <!-- Email -->
-            <div class="col-span-6 sm:col-span-4">
-                <InputLabel for="email" value="Email" />
-                <TextInput
-                    id="email"
+                <!-- Email -->
+                <v-text-field
                     v-model="form.email"
-                    type="email"
-                    class="mt-1 block w-full"
+                    label="Email"
+                    :error-messages="form.errors.email"
                     required
-                    autocomplete="username"
-                />
-                <InputError :message="form.errors.email" class="mt-2" />
+                ></v-text-field>
 
                 <div v-if="$page.props.jetstream.hasEmailVerification && user.email_verified_at === null">
                     <p class="text-sm mt-2">
                         Your email address is unverified.
-
-                        <Link
-                            :href="route('verification.send')"
-                            method="post"
-                            as="button"
-                            class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        <v-btn
+                            variant="text"
+                            color="primary"
+                            class="text-decoration-underline"
+                            :loading="verificationLinkSent"
                             @click.prevent="sendEmailVerification"
                         >
                             Click here to re-send the verification email.
-                        </Link>
+                        </v-btn>
                     </p>
 
-                    <div v-show="verificationLinkSent" class="mt-2 font-medium text-sm text-green-600">
+                    <div v-show="verificationLinkSent" class="mt-2 text-success">
                         A new verification link has been sent to your email address.
                     </div>
                 </div>
-            </div>
-        </template>
 
-        <template #actions>
-            <ActionMessage :on="form.recentlySuccessful" class="me-3">
-                Saved.
-            </ActionMessage>
-
-            <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Save
-            </PrimaryButton>
-        </template>
-    </FormSection>
+                <div class="d-flex justify-end mt-4">
+                    <v-snackbar
+                        v-model="showSuccessMessage"
+                        color="success"
+                        timeout="3000"
+                    >
+                        Profile information updated successfully!
+                    </v-snackbar>
+                    
+                    <v-btn
+                        color="success"
+                        :loading="form.processing"
+                        type="submit"
+                        variant="flat"
+                        prepend-icon="mdi-content-save"
+                    >
+                        Save
+                    </v-btn>
+                </div>
+            </v-form>
+        </v-card-text>
+    </v-card>
 </template>
+
+<script>
+import { defineComponent } from 'vue';
+import { useForm } from '@inertiajs/vue3';
+
+export default defineComponent({
+    props: ['user'],
+
+    data() {
+        return {
+            form: useForm({
+                _method: 'PUT',
+                name: this.user.name,
+                email: this.user.email,
+                photo: null,
+            }),
+
+            photoPreview: null,
+            verificationLinkSent: false,
+            showSuccessMessage: false,
+        };
+    },
+
+    methods: {
+        updateProfileInformation() {
+            if (this.$refs.photo) {
+                this.form.photo = this.$refs.photo.files[0];
+            }
+
+            this.form.post(route('user-profile-information.update'), {
+                errorBag: 'updateProfileInformation',
+                preserveScroll: true,
+                onSuccess: () => {
+                    this.clearPhotoFileInput();
+                    this.showSuccessMessage = true;
+                },
+            });
+        },
+
+        selectNewPhoto() {
+            this.$refs.photo.$el.querySelector('input').click();
+        },
+
+        updatePhotoPreview() {
+            const photo = this.$refs.photo.files[0];
+
+            if (!photo) return;
+
+            const reader = new FileReader();
+
+            reader.onload = (e) => {
+                this.photoPreview = e.target.result;
+            };
+
+            reader.readAsDataURL(photo);
+        },
+
+        deletePhoto() {
+            this.$inertia.delete(route('current-user-photo.destroy'), {
+                preserveScroll: true,
+                onSuccess: () => {
+                    this.photoPreview = null;
+                    this.clearPhotoFileInput();
+                },
+            });
+        },
+
+        clearPhotoFileInput() {
+            if (this.$refs.photo?.$el.querySelector('input')) {
+                this.$refs.photo.$el.querySelector('input').value = null;
+            }
+        },
+
+        sendEmailVerification() {
+            this.verificationLinkSent = true;
+
+            this.$inertia.post(route('verification.send'));
+        },
+    },
+});
+</script>
