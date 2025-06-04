@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * @method static create(array $data)
+ * @method static insert(mixed[] $data)
  */
 class InvoiceActivity extends Model
 {
