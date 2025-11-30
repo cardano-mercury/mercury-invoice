@@ -106,27 +106,27 @@ const testimonials = [
             <v-container class="py-16">
                 <v-row justify="center">
                     <v-col cols="12" class="text-center">
-                        <v-chip 
-                            variant="flat" 
-                            color="primary" 
+                        <v-chip
+                            variant="flat"
+                            color="primary"
                             class="hero-badge mb-6"
                             size="small"
                         >
                             <span class="font-weight-medium">{{ merchantCount }}+ merchants sell with Mercury!</span>
                         </v-chip>
-                        
+
                         <h1 class="hero-title mb-4">
                             Empower Your Business<br>
                             with Crypto Payments
                         </h1>
-                        
+
                         <p class="hero-subtitle mb-8">
                             Start accepting cryptocurrency and reach a global audience
                         </p>
-                        
+
                         <div class="d-flex justify-center ga-3 mb-12">
-                            <v-btn 
-                                variant="outlined" 
+                            <v-btn
+                                variant="outlined"
                                 color="dark"
                                 size="large"
                                 rounded="pill"
@@ -134,8 +134,8 @@ const testimonials = [
                             >
                                 Learn more
                             </v-btn>
-                            <v-btn 
-                                color="primary" 
+                            <v-btn
+                                color="primary"
                                 variant="flat"
                                 size="large"
                                 rounded="pill"
@@ -144,7 +144,7 @@ const testimonials = [
                                 Get started
                             </v-btn>
                         </div>
-                        
+
                         <!-- Dashboard Preview -->
                         <div class="dashboard-wrapper">
                             <img :src="dashboard" alt="Dashboard Preview" class="dashboard-image" />
@@ -165,36 +165,36 @@ const testimonials = [
                                 <v-icon start icon="mdi-star" size="small" />
                                 Features
                             </v-chip>
-                            
+
                             <h2 class="section-title mb-4">
                                 Experience the Future of<br>
                                 Payment Processing
                             </h2>
-                            
+
                             <p class="section-subtitle mb-8">
-                                Our SaaS platform provides secure, easy-to-use, and low transaction fee 
+                                Our SaaS platform provides secure, easy-to-use, and low transaction fee
                                 solutions for accepting cryptocurrency payments.
                             </p>
-                            
+
                             <v-row class="mb-8">
                                 <v-col cols="12" sm="6">
                                     <h4 class="feature-title mb-2">Security</h4>
                                     <p class="feature-text">
-                                        Protect your transactions with our advanced security measures and 
+                                        Protect your transactions with our advanced security measures and
                                         encryption technology.
                                     </p>
                                 </v-col>
                                 <v-col cols="12" sm="6">
                                     <h4 class="feature-title mb-2">Ease of Use</h4>
                                     <p class="feature-text">
-                                        Our user-friendly interface makes it simple to integrate and manage 
+                                        Our user-friendly interface makes it simple to integrate and manage
                                         cryptocurrency payments.
                                     </p>
                                 </v-col>
                             </v-row>
-                            
-                            <v-btn 
-                                color="dark" 
+
+                            <v-btn
+                                color="dark"
                                 variant="flat"
                                 size="large"
                                 rounded="pill"
@@ -203,7 +203,7 @@ const testimonials = [
                                 Get started
                             </v-btn>
                         </v-col>
-                        
+
                         <v-col cols="12" md="6" lg="7" class="d-none d-md-flex justify-end">
                             <img :src="txSuccess" alt="Transaction Success" class="feature-image" />
                         </v-col>
@@ -220,15 +220,15 @@ const testimonials = [
                                     <div>
                                         <h4 class="feature-list-title">Seamless Integration</h4>
                                         <p class="feature-list-text">
-                                            Designed with simplicity in mind, Mercury boasts an intuitive interface 
-                                            that requires no prior blockchain knowledge, making it accessible for 
+                                            Designed with simplicity in mind, Mercury boasts an intuitive interface
+                                            that requires no prior blockchain knowledge, making it accessible for
                                             all team members.
                                         </p>
                                     </div>
                                 </div>
-                                
+
                                 <v-divider class="my-4" />
-                                
+
                                 <div class="feature-list-item">
                                     <div class="feature-icon-wrapper">
                                         <v-icon icon="mdi-chart-line" size="24" />
@@ -236,14 +236,14 @@ const testimonials = [
                                     <div>
                                         <h4 class="feature-list-title">Detailed statistics</h4>
                                         <p class="feature-list-text">
-                                            Get access to real-time analytics and get to know your customer with 
+                                            Get access to real-time analytics and get to know your customer with
                                             our streamlined workflows.
                                         </p>
                                     </div>
                                 </div>
-                                
+
                                 <v-divider class="my-4" />
-                                
+
                                 <div class="feature-list-item">
                                     <div class="feature-icon-wrapper">
                                         <v-icon icon="mdi-headset" size="24" />
@@ -251,14 +251,14 @@ const testimonials = [
                                     <div>
                                         <h4 class="feature-list-title">Customer Support and Service</h4>
                                         <p class="feature-list-text">
-                                            We are committed to supporting users with a dedicated team that ensures 
+                                            We are committed to supporting users with a dedicated team that ensures
                                             businesses can maximize the platform's capabilities.
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </v-col>
-                        
+
                         <v-col cols="12" md="6" lg="7" class="d-none d-md-flex justify-end">
                             <img :src="featuresColumn" alt="Features" class="feature-column-image" />
                         </v-col>
@@ -295,7 +295,7 @@ const testimonials = [
             <v-container class="py-16">
                 <v-row justify="center">
                     <v-col cols="12" md="10" lg="8">
-                        <v-carousel 
+                        <v-carousel
                             v-model="currentTestimonial"
                             show-arrows
                             hide-delimiter-background
@@ -331,18 +331,18 @@ const testimonials = [
                             </template>
                             <v-carousel-item v-for="(testimonial, index) in testimonials" :key="index">
                                 <div class="testimonial-content">
-                                    <v-rating 
-                                        :model-value="5" 
-                                        color="primary" 
-                                        readonly 
+                                    <v-rating
+                                        :model-value="5"
+                                        color="primary"
+                                        readonly
                                         density="compact"
                                         class="mb-6 justify-center"
                                     />
-                                    
+
                                     <p class="testimonial-text mb-8">
                                         {{ testimonial.text }}
                                     </p>
-                                    
+
                                     <div class="testimonial-author">
                                         <v-avatar size="56" class="mr-4">
                                             <v-img :src="testimonial.avatar" :alt="testimonial.author" />
@@ -369,16 +369,14 @@ const testimonials = [
                     <v-chip variant="flat" color="grey-lighten-3" size="small" class="mb-4">
                         Simple
                     </v-chip>
-                    
+
                     <h2 class="section-title mb-3">Pricing Options</h2>
-                    
-                    <p class="section-subtitle mb-8">
-                        Choose the plan that best fits your needs
-                    </p>
-                    
-                    <v-btn-toggle 
-                        v-model="billingPeriod" 
-                        mandatory 
+
+                    <p class="pricing-description">Choose the plan that best fits your needs</p>
+
+                    <v-btn-toggle
+                        v-model="billingPeriod"
+                        mandatory
                         class="billing-toggle"
                         rounded="pill"
                     >
@@ -390,7 +388,7 @@ const testimonials = [
                         </v-btn>
                     </v-btn-toggle>
                 </div>
-                
+
                 <v-row justify="center">
                     <!-- Free Plan -->
                     <v-col cols="12" sm="6" md="5" lg="4">
@@ -403,32 +401,32 @@ const testimonials = [
                                         <span class="price-period">/mo</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="features-list mb-4">
-                                    <div 
-                                        v-for="feature in freeFeatures" 
-                                        :key="feature" 
+                                    <div
+                                        v-for="feature in freeFeatures"
+                                        :key="feature"
                                         class="feature-item"
                                     >
                                         <v-icon icon="mdi-check" color="primary" size="18" class="mr-2" />
                                         <span>{{ feature }}</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="features-list mb-6">
-                                    <div 
-                                        v-for="limitation in freeLimitations" 
-                                        :key="limitation" 
+                                    <div
+                                        v-for="limitation in freeLimitations"
+                                        :key="limitation"
                                         class="feature-item limitation"
                                     >
                                         <v-icon icon="mdi-close" color="grey" size="18" class="mr-2" />
                                         <span>{{ limitation }}</span>
                                     </div>
                                 </div>
-                                
-                                <v-btn 
-                                    block 
-                                    variant="outlined" 
+
+                                <v-btn
+                                    block
+                                    variant="outlined"
                                     color="dark"
                                     size="large"
                                     rounded="pill"
@@ -439,7 +437,7 @@ const testimonials = [
                             </v-card-text>
                         </v-card>
                     </v-col>
-                    
+
                     <!-- Pro Plan -->
                     <v-col cols="12" sm="6" md="5" lg="4">
                         <v-card class="pricing-card pricing-card-featured h-100" variant="flat" rounded="xl">
@@ -454,21 +452,21 @@ const testimonials = [
                                         Save $48/year
                                     </div>
                                 </div>
-                                
+
                                 <div class="features-list mb-6">
-                                    <div 
-                                        v-for="feature in proFeatures" 
-                                        :key="feature" 
+                                    <div
+                                        v-for="feature in proFeatures"
+                                        :key="feature"
                                         class="feature-item"
                                     >
                                         <v-icon icon="mdi-check" color="white" size="18" class="mr-2" />
                                         <span>{{ feature }}</span>
                                     </div>
                                 </div>
-                                
-                                <v-btn 
-                                    block 
-                                    variant="flat" 
+
+                                <v-btn
+                                    block
+                                    variant="flat"
                                     color="white"
                                     size="large"
                                     rounded="pill"
@@ -548,6 +546,16 @@ const testimonials = [
     color: #666;
     max-width: 500px;
 }
+
+.pricing-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
 
 .feature-title {
     font-weight: 600;
@@ -661,13 +669,27 @@ const testimonials = [
     font-size: 8px;
 }
 
+.testimonial-carousel :deep(.v-window__container) {
+    padding: 0 80px;
+}
+
 .carousel-arrow {
     background: #fff !important;
     border: 1px solid #e0e0e0 !important;
+    position: absolute !important;
+    z-index: 1;
 }
 
 .carousel-arrow:hover {
     background: #f5f5f5 !important;
+}
+
+.carousel-arrow-prev {
+    left: 0 !important;
+}
+
+.carousel-arrow-next {
+    right: 0 !important;
 }
 
 .testimonial-content {
@@ -809,11 +831,11 @@ const testimonials = [
     .hero-title {
         font-size: 2.25rem;
     }
-    
+
     .section-title {
         font-size: 1.75rem;
     }
-    
+
     .feature-image,
     .feature-column-image {
         max-height: 300px;
@@ -825,19 +847,23 @@ const testimonials = [
     .hero-title {
         font-size: 1.75rem;
     }
-    
+
     .section-title {
         font-size: 1.5rem;
     }
-    
+
+    .testimonial-carousel :deep(.v-window__container) {
+        padding: 0 50px;
+    }
+
     .testimonial-content {
         padding: 1rem;
     }
-    
+
     .testimonial-author {
         flex-wrap: wrap;
     }
-    
+
     .company-logo {
         display: none;
     }

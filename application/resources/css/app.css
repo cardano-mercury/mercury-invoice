@@ -725,3 +725,8 @@ table {
         border: 1px solid #ddd;
     }
 }
+
+/* Pricing section description */
+.pricing-description {
+    text-align: center !important;
+}
