@@ -22,23 +22,25 @@ defineProps({
             />
         </template>
 
-        <v-container>
-            <v-row>
-                <v-col cols="12" lg="8">
-                    <UpdateProfileInformationForm :user="$page.props.auth.user" />
+        <div class="profile-content">
+            <UpdateProfileInformationForm :user="$page.props.auth.user" />
 
-                    <UpdatePasswordForm class="mt-6" />
+            <UpdatePasswordForm class="mt-6" />
 
-                    <TwoFactorAuthenticationForm class="mt-6" />
+            <TwoFactorAuthenticationForm class="mt-6" />
 
-                    <LogoutOtherBrowserSessionsForm :sessions="sessions" class="mt-6" />
+            <LogoutOtherBrowserSessionsForm :sessions="sessions" class="mt-6" />
 
-                    <DeleteUserForm
-                        v-if="$page.props.jetstream.hasAccountDeletionFeatures"
-                        class="mt-6"
-                    />
-                </v-col>
-            </v-row>
-        </v-container>
+            <DeleteUserForm
+                v-if="$page.props.jetstream.hasAccountDeletionFeatures"
+                class="mt-6"
+            />
+        </div>
     </AppLayout>
 </template>
+
+<style scoped>
+.profile-content {
+    max-width: 800px;
+}
+</style>

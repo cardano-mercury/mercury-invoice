@@ -17,16 +17,10 @@ defineProps({
             </h2>
         </template>
 
-        <v-container>
-            <v-row>
-                <v-col cols="12" md="8">
-                    <ApiTokenManager
-                        :tokens="tokens"
-                        :available-permissions="availablePermissions"
-                        :default-permissions="defaultPermissions"
-                    />
-                </v-col>
-            </v-row>
-        </v-container>
+        <ApiTokenManager
+            :tokens="tokens"
+            :available-permissions="availablePermissions"
+            :default-permissions="defaultPermissions"
+        />
     </AppLayout>
 </template>

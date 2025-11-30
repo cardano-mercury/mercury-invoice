@@ -111,7 +111,7 @@ const getStatusIcon = (status) => {
                         color="primary"
                         prepend-icon="mdi-plus"
                     >
-                        Create Invoice
+                        Create
                     </v-btn>
                 </template>
             </PageHeader>
@@ -119,7 +119,7 @@ const getStatusIcon = (status) => {
 
         <v-card>
             <!-- Search Bar -->
-            <v-card-text class="pb-0">
+            <v-card-text>
                 <v-row align="center">
                     <v-col cols="12" md="6" lg="4">
                         <v-text-field
@@ -128,6 +128,8 @@ const getStatusIcon = (status) => {
                             prepend-inner-icon="mdi-magnify"
                             clearable
                             single-line
+                            hide-details
+                            density="comfortable"
                         />
                     </v-col>
                     <v-col cols="12" md="6" lg="8" class="d-flex justify-end">
@@ -241,7 +243,7 @@ const getStatusIcon = (status) => {
                             variant="flat"
                             prepend-icon="mdi-plus"
                         >
-                            Create Invoice
+                            Create
                         </v-btn>
                     </div>
                 </template>

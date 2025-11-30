@@ -209,9 +209,7 @@ const hasValidItems = computed(() => {
                 </v-row>
 
                 <template v-if="form.customer_id">
-                    <v-divider class="my-4" />
-
-                    <v-row>
+                    <v-row class="mt-2">
                         <v-col cols="12">
                             <v-select
                                 v-model="form.customer_email_ids"
@@ -338,66 +336,65 @@ const hasValidItems = computed(() => {
                 subtitle="Add products, services, or custom line items"
             >
                 <!-- Quick Add Section -->
-                <v-row class="mb-4">
-                    <v-col cols="12" md="5">
-                        <v-select
-                            v-model="selectedProduct"
-                            :items="products"
-                            item-value="id"
-                            item-title="name"
-                            label="Quick add product"
-                            prepend-inner-icon="mdi-package-variant"
-                            clearable
-                        >
-                            <template #append>
-                                <v-btn
-                                    :disabled="!selectedProduct"
-                                    variant="flat"
-                                    color="primary"
-                                    icon="mdi-plus"
-                                    size="small"
-                                    @click="addSelectedProduct"
-                                />
-                            </template>
-                        </v-select>
+                <v-row align="center" class="mb-4">
+                    <v-col cols="12" sm="6" md="4">
+                        <div class="d-flex align-center ga-2">
+                            <v-select
+                                v-model="selectedProduct"
+                                :items="products"
+                                item-value="id"
+                                item-title="name"
+                                label="Quick add product"
+                                prepend-inner-icon="mdi-package-variant"
+                                clearable
+                                hide-details
+                                density="comfortable"
+                                class="flex-grow-1"
+                            />
+                            <v-btn
+                                :disabled="!selectedProduct"
+                                variant="flat"
+                                color="primary"
+                                icon="mdi-plus"
+                                @click="addSelectedProduct"
+                            />
+                        </div>
                     </v-col>
-                    <v-col cols="12" md="5">
-                        <v-select
-                            v-model="selectedService"
-                            :items="services"
-                            item-value="id"
-                            item-title="name"
-                            label="Quick add service"
-                            prepend-inner-icon="mdi-briefcase"
-                            clearable
-                        >
-                            <template #append>
-                                <v-btn
-                                    :disabled="!selectedService"
-                                    variant="flat"
-                                    color="primary"
-                                    icon="mdi-plus"
-                                    size="small"
-                                    @click="addSelectedService"
-                                />
-                            </template>
-                        </v-select>
+                    <v-col cols="12" sm="6" md="4">
+                        <div class="d-flex align-center ga-2">
+                            <v-select
+                                v-model="selectedService"
+                                :items="services"
+                                item-value="id"
+                                item-title="name"
+                                label="Quick add service"
+                                prepend-inner-icon="mdi-briefcase"
+                                clearable
+                                hide-details
+                                density="comfortable"
+                                class="flex-grow-1"
+                            />
+                            <v-btn
+                                :disabled="!selectedService"
+                                variant="flat"
+                                color="primary"
+                                icon="mdi-plus"
+                                @click="addSelectedService"
+                            />
+                        </div>
                     </v-col>
-                    <v-col cols="12" md="2">
+                    <v-col cols="12" md="4">
                         <v-btn
                             @click="addNewItem()"
                             variant="tonal"
                             color="primary"
                             prepend-icon="mdi-plus"
                             block
-                            class="h-100"
                         >
                             Custom Item
                         </v-btn>
                     </v-col>
                 </v-row>
-
-                <v-divider class="mb-4" />
 
                 <!-- Items Table -->
                 <v-card variant="outlined">
@@ -491,28 +488,28 @@ const hasValidItems = computed(() => {
                 </v-card>
 
                 <!-- Totals -->
-                <v-row justify="end" class="mt-6">
-                    <v-col cols="12" md="5" lg="4">
-                        <v-card variant="tonal" color="primary">
-                            <v-card-text>
+                <v-row justify="end" class="mt-4">
+                    <v-col cols="12" sm="8" md="6" lg="4">
+                        <v-card variant="tonal" color="primary" rounded="lg">
+                            <v-card-text class="pa-4">
                                 <div class="d-flex justify-space-between mb-2">
                                     <span class="text-body-2">Subtotal</span>
-                                    <span class="text-body-2 font-weight-bold">
+                                    <span class="text-body-2 font-weight-bold font-mono">
                                         {{ calculateSubTotal().toFixed(2) }}
                                         {{ $page.props.auth.user.account_currency }}
                                     </span>
                                 </div>
-                                <div class="d-flex justify-space-between mb-2">
+                                <div class="d-flex justify-space-between mb-3">
                                     <span class="text-body-2">Tax</span>
-                                    <span class="text-body-2 font-weight-bold">
+                                    <span class="text-body-2 font-weight-bold font-mono">
                                         {{ calculateTotalTax().toFixed(2) }}
                                         {{ $page.props.auth.user.account_currency }}
                                     </span>
                                 </div>
-                                <v-divider class="my-2" />
+                                <v-divider class="mb-3" />
                                 <div class="d-flex justify-space-between">
                                     <span class="text-body-1 font-weight-bold">Total Due</span>
-                                    <span class="text-h6 font-weight-black">
+                                    <span class="text-h6 font-weight-black font-mono">
                                         {{ calculateGrandTotal().toFixed(2) }}
                                         {{ $page.props.auth.user.account_currency }}
                                     </span>
@@ -576,6 +573,10 @@ const hasValidItems = computed(() => {
 </template>
 
 <style scoped>
+.font-mono {
+    font-family: 'Source Code Pro', monospace;
+}
+
 .invoice-items-table th {
     background: rgb(var(--v-theme-surface-variant)) !important;
     font-weight: 600 !important;

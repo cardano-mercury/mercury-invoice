@@ -267,7 +267,7 @@ function deleteCategory(category) {
                         color="primary"
                         prepend-icon="mdi-eye"
                     >
-                        View Customer
+                        View
                     </v-btn>
                 </template>
             </PageHeader>

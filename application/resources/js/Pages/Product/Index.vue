@@ -74,7 +74,7 @@ function doDelete(product) {
                         color="primary"
                         prepend-icon="mdi-plus"
                     >
-                        Add Product
+                        Create
                     </v-btn>
                 </template>
             </PageHeader>
@@ -82,7 +82,7 @@ function doDelete(product) {
 
         <v-card>
             <!-- Search Bar -->
-            <v-card-text class="pb-0">
+            <v-card-text>
                 <v-row align="center">
                     <v-col cols="12" md="6" lg="4">
                         <v-text-field
@@ -91,6 +91,8 @@ function doDelete(product) {
                             prepend-inner-icon="mdi-magnify"
                             clearable
                             single-line
+                            hide-details
+                            density="comfortable"
                         />
                     </v-col>
                     <v-col cols="12" md="6" lg="8" class="d-flex justify-end">
@@ -195,7 +197,7 @@ function doDelete(product) {
                             variant="flat"
                             prepend-icon="mdi-plus"
                         >
-                            Add Product
+                            Create
                         </v-btn>
                     </div>
                 </template>

@@ -374,22 +374,94 @@ p {
     box-shadow: var(--shadow-lg) !important;
 }
 
-/* Text fields */
-.v-text-field .v-field {
+/* Text fields - default to outlined variant styling */
+.v-text-field .v-field,
+.v-select .v-field,
+.v-textarea .v-field {
     border-radius: var(--radius-lg) !important;
 }
 
-.v-text-field .v-field--focused {
+.v-text-field .v-field--focused,
+.v-select .v-field--focused,
+.v-textarea .v-field--focused {
     box-shadow: var(--shadow-sm), 0 0 0 3px rgba(var(--color-primary-rgb), 0.15) !important;
 }
 
-.v-text-field .v-field__outline {
+.v-text-field .v-field__outline,
+.v-select .v-field__outline,
+.v-textarea .v-field__outline {
     --v-field-border-opacity: 0.25;
 }
 
-/* Select fields */
-.v-select .v-field {
-    border-radius: var(--radius-lg) !important;
+/* Reduce default input spacing - Vuetify adds too much margin */
+.v-input {
+    --v-input-control-height: 48px;
+}
+
+.v-input--density-comfortable {
+    --v-input-control-height: 44px;
+}
+
+.v-input--density-compact {
+    --v-input-control-height: 36px;
+}
+
+/* Hide input details when not needed */
+.v-input:not(.v-input--error):not(.v-input--has-hint) .v-input__details {
+    display: none;
+}
+
+/* Show details for hints */
+.v-input--has-hint .v-input__details {
+    min-height: auto;
+    padding-top: var(--space-1);
+}
+
+/* Consistent form field spacing */
+.v-form .v-input:not(.v-checkbox):not(.v-switch):not(.v-radio-group),
+.v-form .v-select,
+.v-form .v-textarea {
+    margin-bottom: var(--space-4);
+}
+
+.v-form .v-input:last-child,
+.v-form .v-select:last-child,
+.v-form .v-textarea:last-child {
+    margin-bottom: 0;
+}
+
+/* Checkbox and radio button compact styling */
+.v-checkbox,
+.v-switch,
+.v-radio {
+    margin-bottom: 0 !important;
+}
+
+.v-checkbox .v-selection-control,
+.v-switch .v-selection-control,
+.v-radio .v-selection-control {
+    min-height: 32px !important;
+}
+
+.v-checkbox .v-label,
+.v-switch .v-label,
+.v-radio .v-label {
+    font-size: var(--text-sm);
+}
+
+/* Checkbox/radio in grid - reduce column padding */
+.v-row > .v-col .v-checkbox,
+.v-row > .v-col .v-switch,
+.v-row > .v-col .v-radio {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Reduce row gap for checkbox grids */
+.v-row:has(.v-checkbox),
+.v-row:has(.v-switch),
+.v-row:has(.v-radio) {
+    --v-row-gap: 0;
 }
 
 /* Buttons */
@@ -448,6 +520,11 @@ p {
 .v-data-table tbody td {
     border-bottom: 1px solid var(--color-surface-border) !important;
     font-size: var(--text-sm) !important;
+}
+
+/* Search field above table - needs more spacing */
+.v-card > .v-card-text:first-child .v-text-field {
+    margin-bottom: var(--space-4);
 }
 
 /* Tabs */
@@ -539,16 +616,61 @@ table {
 }
 
 /* ============================================
-   Hero Section (Welcome Page)
+   Welcome Page - Parallax Fix
    ============================================ */
-#hero {
-    background: linear-gradient(to bottom, var(--color-surface-secondary) 0%, #eaeffe 100%);
-    padding-bottom: 0 !important;
+.v-parallax {
+    min-height: auto !important;
+}
+
+.v-parallax .v-parallax__image-container {
+    opacity: 0.15;
 }
 
 /* ============================================
    Responsive Adjustments
    ============================================ */
+
+/* Content container - constrain on very large screens */
+.v-main > .v-container {
+    max-width: 100%;
+}
+
+@media (min-width: 1920px) {
+    .v-main > .v-container {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 2560px) {
+    .v-main > .v-container {
+        max-width: 1920px;
+    }
+}
+
+/* Form cards should have reasonable max-width on large screens */
+.v-card:has(.v-form),
+.v-card:has(form) {
+    max-width: 800px;
+}
+
+/* Data tables can be full width */
+.v-card:has(.v-data-table) {
+    max-width: none;
+}
+
+/* Cards with tabs can be full width */
+.v-card:has(.v-tabs) {
+    max-width: none;
+}
+
+/* Allow full width for dashboard cards */
+.v-card.dashboard-card {
+    max-width: none;
+}
+
+/* Small screens */
 @media (max-width: 600px) {
     :root {
         --text-3xl: 1.75rem;

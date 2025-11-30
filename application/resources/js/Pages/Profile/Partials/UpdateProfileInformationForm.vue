@@ -67,7 +67,6 @@
                     variant="outlined"
                     density="comfortable"
                     required
-                    class="mb-2"
                 />
 
                 <!-- Email -->

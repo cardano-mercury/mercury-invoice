@@ -19,7 +19,6 @@
                     :error-messages="form.errors.current_password"
                     variant="outlined"
                     density="comfortable"
-                    class="mb-2"
                 />
 
                 <v-text-field
@@ -31,7 +30,6 @@
                     :error-messages="form.errors.password"
                     variant="outlined"
                     density="comfortable"
-                    class="mb-2"
                 />
 
                 <v-text-field

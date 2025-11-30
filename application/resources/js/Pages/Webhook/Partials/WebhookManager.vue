@@ -100,6 +100,7 @@ const deleteWebhook = () => {
 </script>
 
 <template>
+    <div class="webhook-manager-content">
     <!-- Register New Webhook -->
     <v-card class="mb-6">
         <v-card-title>Register New Webhook</v-card-title>
@@ -114,15 +115,19 @@ const deleteWebhook = () => {
                     type="url" 
                     label="Webhook URL"
                     v-model="createWebhookForm.url" 
+                    variant="outlined"
+                    density="comfortable"
                     autofocus 
                     required
                 />
 
-                <!-- HMAC  Signature Algorithm -->
+                <!-- HMAC Signature Algorithm -->
                 <v-select 
                     v-model="createWebhookForm.hmac_algorithm"
                     :items="hmacAlgorithms" 
                     label="HMAC Signature Algorithm"
+                    variant="outlined"
+                    density="comfortable"
                 />
 
                 <!-- Max Attempts -->
@@ -130,6 +135,8 @@ const deleteWebhook = () => {
                     label="Max Attempts" 
                     type="number"
                     v-model="createWebhookForm.max_attempts" 
+                    variant="outlined"
+                    density="comfortable"
                     required
                     min="1" 
                     step="1" 
@@ -144,9 +151,10 @@ const deleteWebhook = () => {
                     max="60"
                     label="Timeout (Seconds)"
                     v-model="createWebhookForm.timeout_seconds"
+                    variant="outlined"
+                    density="comfortable"
                     hint="How long should we wait for the request (to your webhook URL) to succeed?"
                     persistent-hint 
-                    class="mb-2"
                     required
                 />
 
@@ -158,6 +166,8 @@ const deleteWebhook = () => {
                     max="900"
                     label="Retry Delay (Seconds)"
                     v-model="createWebhookForm.retry_seconds"
+                    variant="outlined"
+                    density="comfortable"
                     hint="Delay between retry attempts" 
                     persistent-hint
                     required
@@ -165,13 +175,14 @@ const deleteWebhook = () => {
 
                 <!-- Event Targets -->
                 <template v-if="eventTargetNames.length">
-                    <h3 class="text-h6 mt-4 mb-2">Event Targets</h3>
-                    <v-row>
+                    <h3 class="text-subtitle-1 font-weight-bold mt-6 mb-3">Event Targets</h3>
+                    <v-row dense>
                         <v-col v-for="eventTargetName in eventTargetNames"
-                               :key="eventTargetName" cols="6" md="4" lg="4">
+                               :key="eventTargetName" cols="12" sm="6" md="4">
                             <v-checkbox 
                                 v-model="createWebhookForm.target_events"
                                 hide-details
+                                density="compact"
                                 :value="eventTargetName"
                                 :label="eventTargetName"
                             />
@@ -179,7 +190,7 @@ const deleteWebhook = () => {
                     </v-row>
                 </template>
 
-                <div class="d-flex justify-end mt-4">
+                <div class="d-flex justify-end mt-6">
                     <v-snackbar
                         v-model="showCreateSuccessMessage"
                         color="success"
@@ -327,15 +338,19 @@ const deleteWebhook = () => {
                         type="url" 
                         label="Webhook URL"
                         v-model="updateWebhookForm.url" 
+                        variant="outlined"
+                        density="comfortable"
                         autofocus
                         required
                     />
 
-                    <!-- HMAC  Signature Algorithm -->
+                    <!-- HMAC Signature Algorithm -->
                     <v-select 
                         v-model="updateWebhookForm.hmac_algorithm"
                         :items="hmacAlgorithms"
                         label="HMAC Signature Algorithm"
+                        variant="outlined"
+                        density="comfortable"
                     />
 
                     <!-- Max Attempts -->
@@ -343,6 +358,8 @@ const deleteWebhook = () => {
                         label="Max Attempts" 
                         type="number"
                         v-model="updateWebhookForm.max_attempts" 
+                        variant="outlined"
+                        density="comfortable"
                         required
                         min="1" 
                         step="1" 
@@ -357,8 +374,9 @@ const deleteWebhook = () => {
                         max="60"
                         label="Timeout (Seconds)"
                         v-model="updateWebhookForm.timeout_seconds"
+                        variant="outlined"
+                        density="comfortable"
                         hint="How long should we wait for the request (to your webhook URL) to succeed?"
-                        class="mb-2"
                         persistent-hint 
                         required
                     />
@@ -371,19 +389,22 @@ const deleteWebhook = () => {
                         max="900"
                         label="Retry Delay (Seconds)"
                         v-model="updateWebhookForm.retry_seconds"
+                        variant="outlined"
+                        density="comfortable"
                         hint="Delay between retry attempts"
                         persistent-hint
                         required
                     />
 
                     <template v-if="eventTargetNames.length">
-                        <h3 class="text-h6 mt-4 mb-2">Event Targets</h3>
-                        <v-row>
+                        <h3 class="text-subtitle-1 font-weight-bold mt-6 mb-3">Event Targets</h3>
+                        <v-row dense>
                             <v-col v-for="eventTargetName in eventTargetNames"
-                                   :key="eventTargetName" cols="6" md="4" lg="4">
+                                   :key="eventTargetName" cols="12" sm="6" md="4">
                                 <v-checkbox
                                     v-model="updateWebhookForm.target_events"
                                     hide-details
+                                    density="compact"
                                     :value="eventTargetName"
                                     :label="eventTargetName"
                                 />
@@ -436,4 +457,11 @@ const deleteWebhook = () => {
             </v-card-actions>
         </v-card>
     </v-dialog>
+    </div>
 </template>
+
+<style scoped>
+.webhook-manager-content {
+    max-width: 800px;
+}
+</style>

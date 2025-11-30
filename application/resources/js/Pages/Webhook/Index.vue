@@ -18,16 +18,10 @@ defineProps({
             </h2>
             <p class="text-body-2 text-grey">Manage your webhook integrations</p>
         </template>
-        <v-container>
-            <v-row>
-                <v-col cols="12" md="8">
-                    <WebhookManager
-                        :webhooks="webhooks"
-                        :event-target-names="eventTargetNames"
-                        :hmac-algorithms="hmacAlgorithms"
-                    />
-                </v-col>
-            </v-row>
-        </v-container>
+        <WebhookManager
+            :webhooks="webhooks"
+            :event-target-names="eventTargetNames"
+            :hmac-algorithms="hmacAlgorithms"
+        />
     </app-layout>
 </template>
