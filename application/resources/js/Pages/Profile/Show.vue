@@ -1,55 +1,44 @@
-<script>
+<script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
+import PageHeader from '@/Components/PageHeader.vue';
 import DeleteUserForm from '@/Pages/Profile/Partials/DeleteUserForm.vue';
 import LogoutOtherBrowserSessionsForm from '@/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.vue';
 import TwoFactorAuthenticationForm from '@/Pages/Profile/Partials/TwoFactorAuthenticationForm.vue';
 import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm.vue';
 
-export default {
-    props: ['sessions'],
-    
-    components: {
-        AppLayout,
-        DeleteUserForm,
-        LogoutOtherBrowserSessionsForm,
-        TwoFactorAuthenticationForm,
-        UpdatePasswordForm,
-        UpdateProfileInformationForm,
-    },
-};
+defineProps({
+    sessions: Array,
+});
 </script>
 
 <template>
-    <app-layout title="Profile">
+    <AppLayout title="Profile">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Profile
-            </h2>
+            <PageHeader 
+                title="Profile Settings" 
+                subtitle="Manage your account settings, security, and preferences"
+                icon="mdi-account-cog"
+            />
         </template>
 
         <v-container>
             <v-row>
-                <v-col cols="12" md="8">
-                    <update-profile-information-form
-                        :user="$page.props.auth.user"
-                    />
+                <v-col cols="12" lg="8">
+                    <UpdateProfileInformationForm :user="$page.props.auth.user" />
 
-                    <update-password-form class="mt-10 sm:mt-0" />
+                    <UpdatePasswordForm class="mt-6" />
 
-                    <two-factor-authentication-form class="mt-10 sm:mt-0" />
+                    <TwoFactorAuthenticationForm class="mt-6" />
 
-                    <logout-other-browser-sessions-form
-                        :sessions="sessions"
-                        class="mt-10 sm:mt-0"
-                    />
+                    <LogoutOtherBrowserSessionsForm :sessions="sessions" class="mt-6" />
 
-                    <delete-user-form
+                    <DeleteUserForm
                         v-if="$page.props.jetstream.hasAccountDeletionFeatures"
-                        class="mt-10 sm:mt-0"
+                        class="mt-6"
                     />
                 </v-col>
             </v-row>
         </v-container>
-    </app-layout>
+    </AppLayout>
 </template>

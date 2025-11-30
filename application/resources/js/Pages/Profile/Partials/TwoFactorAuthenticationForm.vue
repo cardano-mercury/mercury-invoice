@@ -1,52 +1,73 @@
 <template>
-    <v-card class="mb-6">
-        <v-card-title>Two Factor Authentication</v-card-title>
+    <v-card rounded="lg">
+        <v-card-title class="d-flex align-center">
+            <v-icon icon="mdi-two-factor-authentication" color="primary" class="mr-2" />
+            Two Factor Authentication
+        </v-card-title>
         <v-card-subtitle>
             Add additional security to your account using two factor authentication.
         </v-card-subtitle>
 
         <v-card-text>
-            <h3 v-if="twoFactorEnabled" class="text-lg font-medium text-gray-900">
-                You have enabled two factor authentication.
-            </h3>
+            <v-alert
+                v-if="twoFactorEnabled"
+                type="success"
+                variant="tonal"
+                density="compact"
+                class="mb-4"
+            >
+                <v-icon start icon="mdi-shield-check" />
+                Two factor authentication is enabled
+            </v-alert>
 
-            <h3 v-else class="text-lg font-medium text-gray-900">
-                You have not enabled two factor authentication.
-            </h3>
+            <v-alert
+                v-else
+                type="warning"
+                variant="tonal"
+                density="compact"
+                class="mb-4"
+            >
+                <v-icon start icon="mdi-shield-off" />
+                Two factor authentication is not enabled
+            </v-alert>
 
-            <div class="mt-3 max-w-xl text-sm text-gray-600">
-                <p>
-                    When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone's Google Authenticator application.
-                </p>
-            </div>
+            <p class="text-body-2 text-medium-emphasis mb-4">
+                When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone's Google Authenticator application.
+            </p>
 
             <div v-if="twoFactorEnabled">
                 <div v-if="qrCode">
-                    <div class="mt-4 max-w-xl text-sm text-gray-600">
-                        <p class="font-semibold">
-                            Two factor authentication is now enabled. Scan the following QR code using your phone's authenticator application.
-                        </p>
-                    </div>
+                    <v-alert type="info" variant="tonal" density="compact" class="mb-4">
+                        <strong>Scan this QR code</strong> using your phone's authenticator application.
+                    </v-alert>
 
-                    <div class="mt-4" v-html="qrCode"></div>
+                    <v-card variant="outlined" class="pa-4 mb-4 d-inline-block">
+                        <div v-html="qrCode"></div>
+                    </v-card>
                 </div>
 
                 <div v-if="recoveryCodes.length > 0">
-                    <div class="mt-4 max-w-xl text-sm text-gray-600">
-                        <p class="font-semibold">
-                            Store these recovery codes in a secure password manager. They can be used to recover access to your account if your two factor authentication device is lost.
-                        </p>
-                    </div>
+                    <v-alert type="warning" variant="tonal" density="compact" class="mb-4">
+                        <strong>Save these recovery codes</strong> in a secure password manager. They can be used to recover access if your device is lost.
+                    </v-alert>
 
-                    <div class="grid gap-1 max-w-xl mt-4 px-4 py-4 font-mono text-sm bg-gray-100 rounded-lg">
-                        <div v-for="code in recoveryCodes" :key="code">
-                            {{ code }}
+                    <v-card variant="outlined" class="pa-4 mb-4">
+                        <div class="d-flex flex-wrap ga-2">
+                            <v-chip
+                                v-for="code in recoveryCodes"
+                                :key="code"
+                                variant="tonal"
+                                color="primary"
+                                class="font-mono"
+                            >
+                                {{ code }}
+                            </v-chip>
                         </div>
-                    </div>
+                    </v-card>
                 </div>
             </div>
 
-            <div class="mt-5">
+            <div class="d-flex flex-wrap ga-2 mt-4">
                 <v-snackbar
                     v-model="showSuccessMessage"
                     color="success"
@@ -55,34 +76,32 @@
                     {{ successMessage }}
                 </v-snackbar>
                 
-                <div v-if="!twoFactorEnabled">
+                <template v-if="!twoFactorEnabled">
                     <v-btn
                         color="primary"
                         variant="flat"
                         prepend-icon="mdi-shield-check"
                         @click="confirmEnableTwoFactorAuthentication"
                     >
-                        Enable
+                        Enable 2FA
                     </v-btn>
-                </div>
-                <div v-else>
+                </template>
+                <template v-else>
                     <v-btn
                         v-if="recoveryCodes.length > 0"
                         color="secondary"
-                        variant="flat"
+                        variant="tonal"
                         prepend-icon="mdi-refresh"
-                        class="mr-3"
                         @click="confirmRegenerateRecoveryCodes"
                     >
-                        Regenerate Recovery Codes
+                        Regenerate Codes
                     </v-btn>
 
                     <v-btn
                         v-if="recoveryCodes.length === 0"
                         color="secondary"
-                        variant="flat"
+                        variant="tonal"
                         prepend-icon="mdi-eye"
-                        class="mr-3"
                         @click="showRecoveryCodes"
                     >
                         Show Recovery Codes
@@ -90,38 +109,44 @@
 
                     <v-btn
                         color="error"
-                        variant="flat"
+                        variant="tonal"
                         prepend-icon="mdi-shield-off"
                         @click="confirmDisableTwoFactorAuthentication"
                     >
-                        Disable
+                        Disable 2FA
                     </v-btn>
-                </div>
+                </template>
             </div>
 
             <!-- Password Confirmation Modal -->
-            <v-dialog v-model="confirmingPassword" max-width="500px">
-                <v-card>
-                    <v-card-title>{{ confirmPasswordTitle }}</v-card-title>
+            <v-dialog v-model="confirmingPassword" max-width="440" persistent>
+                <v-card rounded="lg">
+                    <v-card-title class="d-flex align-center">
+                        <v-icon icon="mdi-lock" color="primary" class="mr-2" />
+                        {{ confirmPasswordTitle }}
+                    </v-card-title>
                     <v-card-text>
-                        <p>For your security, please confirm your password to continue.</p>
+                        <p class="text-body-2 text-medium-emphasis mb-4">
+                            For your security, please confirm your password to continue.
+                        </p>
                         
                         <v-text-field
                             v-model="form.password"
                             label="Password"
                             type="password"
-                            class="mt-4"
+                            prepend-inner-icon="mdi-lock"
                             :error-messages="form.errors.password"
+                            variant="outlined"
+                            density="comfortable"
+                            autofocus
                             @keyup.enter="confirmPassword"
-                        ></v-text-field>
+                        />
                     </v-card-text>
-                    <v-card-actions>
-                        <v-spacer></v-spacer>
+                    <v-card-actions class="pa-4">
+                        <v-spacer />
                         <v-btn
-                            color="secondary"
-                            variant="flat"
+                            variant="text"
                             prepend-icon="mdi-close"
-                            class="mr-2"
                             @click="closeConfirmationModal"
                         >
                             Cancel
@@ -270,3 +295,9 @@ export default defineComponent({
     },
 });
 </script>
+
+<style scoped>
+.font-mono {
+    font-family: 'Source Code Pro', monospace;
+}
+</style>

@@ -1,6 +1,6 @@
 <script setup>
 import {computed} from 'vue';
-import {useForm} from '@inertiajs/vue3';
+import {Link, useForm} from '@inertiajs/vue3';
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 
 const props = defineProps({
@@ -18,60 +18,75 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
 
 <template>
     <GuestLayout title="Email Verification">
-        <v-container
-            class="fill-height d-flex flex-column justify-center text-center align-center">
-            <v-card width="512" elevation="1" class="px-8">
-                <v-card-text>
-                    <div class="text-h4 text-primary font-weight-black">
-                        Verify Email
-                    </div>
-                    <div class="text-center text-left text-body-2 mb-4">
-                        Before continuing, could you verify your email address
-                        by clicking on the link we just emailed to you? If you
-                        didn't receive the email, we will gladly send you
-                        another.
-                    </div>
+        <v-container class="fill-height d-flex flex-column justify-center align-center py-12">
+            <v-card width="100%" max-width="480" class="pa-6" rounded="xl" elevation="4">
+                <v-card-text class="pb-0 text-center">
+                    <v-avatar color="info" size="64" class="mb-4">
+                        <v-icon icon="mdi-email-check" size="32" />
+                    </v-avatar>
+                    <h1 class="text-h5 font-weight-bold mb-1">Verify Your Email</h1>
+                    <p class="text-body-2 text-medium-emphasis mb-4">
+                        Before continuing, please verify your email address by clicking the link we sent you. 
+                        If you didn't receive the email, we can send another.
+                    </p>
                 </v-card-text>
-                <v-card-text v-if="status">
-                    <v-alert icon="$success" border color="primary">
-                        {{status}}
+
+                <v-card-text v-if="verificationLinkSent" class="pb-0">
+                    <v-alert 
+                        type="success" 
+                        variant="tonal" 
+                        density="compact"
+                        class="mb-4"
+                    >
+                        <v-icon start icon="mdi-check-circle" />
+                        A new verification link has been sent to your email address.
                     </v-alert>
                 </v-card-text>
-                <v-card-text v-if="verificationLinkSent">
-                    <v-alert type="info" border>
-                        A new verification link has been sent to the email address
-                        you provided in your profile settings.
-                    </v-alert>
-                </v-card-text>
+
                 <v-card-text>
                     <v-form @submit.prevent="submit">
-                        <v-btn type="submit" color="primary" variant="flat"
-                               size="large" block 
-                               prepend-icon="mdi-email-send"
-                               :disabled="form.processing" 
-                               :loading="form.processing">
+                        <v-btn 
+                            type="submit" 
+                            color="primary" 
+                            variant="flat"
+                            size="large" 
+                            block 
+                            rounded="lg"
+                            prepend-icon="mdi-email-send"
+                            :disabled="form.processing" 
+                            :loading="form.processing"
+                        >
                             Resend Verification Email
                         </v-btn>
                     </v-form>
                 </v-card-text>
-                <v-card-text>
-                    <v-row class="mt-2">
-                        <v-col cols="12" md="6" class="d-flex justify-md-end justify-center">
-                            <v-btn :href="route('profile.show')" 
-                                  color="secondary" 
-                                  variant="text"
-                                  prepend-icon="mdi-account-edit">
+
+                <v-divider class="my-4" />
+
+                <v-card-text class="pt-0">
+                    <v-row dense>
+                        <v-col cols="12" sm="6">
+                            <v-btn 
+                                :href="route('profile.show')" 
+                                color="secondary" 
+                                variant="text"
+                                prepend-icon="mdi-account-edit"
+                                block
+                            >
                                 Edit Profile
                             </v-btn>
                         </v-col>
-                        <v-col cols="12" md="6" class="d-flex justify-md-start justify-center">
-                            <v-btn :href="route('logout')" 
-                                  method="post" 
-                                  color="error" 
-                                  variant="text"
-                                  prepend-icon="mdi-logout">
-                                Log Out
-                            </v-btn>
+                        <v-col cols="12" sm="6">
+                            <Link :href="route('logout')" method="post" class="d-block">
+                                <v-btn 
+                                    color="error" 
+                                    variant="text"
+                                    prepend-icon="mdi-logout"
+                                    block
+                                >
+                                    Log Out
+                                </v-btn>
+                            </Link>
                         </v-col>
                     </v-row>
                 </v-card-text>

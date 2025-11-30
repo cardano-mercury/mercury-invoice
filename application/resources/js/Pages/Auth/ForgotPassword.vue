@@ -17,48 +17,72 @@ const submit = () => {
 
 <template>
     <GuestLayout title="Forgot Password">
-        <v-container
-            class="fill-height d-flex flex-column justify-center align-center text-center">
-            <v-card width="512" elevation="1" class="px-8">
-                <v-card-text>
-                    <div class="text-h4 text-primary font-weight-black">
-                        Forgot your password?
-                    </div>
-                    <div class="text-left text-body-2 mb-4">
-                        No problem. Just let us know your email address and we
-                        will email you a password reset link that will allow you
-                        to choose a new one.
-                    </div>
+        <v-container class="fill-height d-flex flex-column justify-center align-center py-12">
+            <v-card width="100%" max-width="440" class="pa-6" rounded="xl" elevation="4">
+                <v-card-text class="pb-0 text-center">
+                    <v-avatar color="primary" size="64" class="mb-4">
+                        <v-icon icon="mdi-lock-reset" size="32" />
+                    </v-avatar>
+                    <h1 class="text-h5 font-weight-bold mb-1">Forgot Password?</h1>
+                    <p class="text-body-2 text-medium-emphasis mb-4">
+                        No problem. Enter your email address and we'll send you a password reset link.
+                    </p>
                 </v-card-text>
-                <v-card-text v-if="status">
-                    <v-alert icon="$success" border color="primary">
-                        {{status}}
+
+                <v-card-text v-if="status" class="pb-0">
+                    <v-alert 
+                        type="success" 
+                        variant="tonal" 
+                        density="compact"
+                        class="mb-4"
+                    >
+                        {{ status }}
                     </v-alert>
                 </v-card-text>
+
                 <v-card-text>
                     <v-form @submit.prevent="submit">
-                        <v-text-field id="email" v-model="form.email"
-                                      type="email" required autofocus
-                                      autocomplete="username"
-                                      label="Email..."
-                                      prepend-icon="mdi-email-outline"
-                                      :error-messages="form.errors.email"/>
-                        <v-btn type="submit" color="primary" variant="flat"
-                               size="large" block class="mt-4"
-                               prepend-icon="mdi-email-send"
-                               :loading="form.processing">
-                            Email Password Reset Link
+                        <v-text-field 
+                            id="email" 
+                            v-model="form.email"
+                            type="email" 
+                            required 
+                            autofocus
+                            autocomplete="username"
+                            label="Email Address"
+                            placeholder="you@example.com"
+                            prepend-inner-icon="mdi-email-outline"
+                            :error-messages="form.errors.email"
+                            variant="outlined"
+                            density="comfortable"
+                        />
+                        <v-btn 
+                            type="submit" 
+                            color="primary" 
+                            variant="flat"
+                            size="large" 
+                            block 
+                            rounded="lg"
+                            prepend-icon="mdi-email-send"
+                            :loading="form.processing"
+                            class="mt-2"
+                        >
+                            Send Reset Link
                         </v-btn>
                     </v-form>
                 </v-card-text>
-                <v-card-text class="my-8">
-                    Did you remember it?
-                    <v-btn :href="route('login')" 
-                          color="secondary" 
-                          variant="text"
-                          prepend-icon="mdi-login"
-                          class="font-weight-black">
-                        Sign In!
+
+                <v-divider class="my-4" />
+
+                <v-card-text class="pt-0 text-center">
+                    <span class="text-medium-emphasis">Remember your password?</span>
+                    <v-btn 
+                        :href="route('login')" 
+                        color="primary" 
+                        variant="text"
+                        class="font-weight-bold ml-1"
+                    >
+                        Sign In
                     </v-btn>
                 </v-card-text>
             </v-card>

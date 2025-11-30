@@ -1,8 +1,9 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import {ref} from "vue";
-import {useForm} from "@inertiajs/vue3";
-import {useToast} from "vue-toast-notification";
+import PageHeader from '@/Components/PageHeader.vue';
+import { ref } from 'vue';
+import { useForm } from '@inertiajs/vue3';
+import { useToast } from 'vue-toast-notification';
 
 defineProps({
     reports: Array,
@@ -18,35 +19,41 @@ const itemsPerPage = ref(10);
 const search = ref('');
 const headers = [
     {
-        title: 'Name',
+        title: 'Report Name',
         align: 'start',
         sortable: true,
-        key: 'name'
+        key: 'name',
     },
     {
-        title: 'Type',
+        title: 'Type & Filters',
         align: 'start',
         sortable: true,
-        key: 'type'
+        key: 'type',
     },
     {
-        title: 'Date Generated',
+        title: 'Generated',
         align: 'start',
         sortable: true,
-        key: 'generated_at'
+        key: 'generated_at',
     },
     {
-        title: '',
+        title: 'Status',
+        align: 'center',
+        sortable: true,
+        key: 'status',
+    },
+    {
+        title: 'Actions',
         align: 'end',
         sortable: false,
-        key: 'actions'
+        key: 'actions',
     },
 ];
 
 const dialog = ref(false);
 const loading = ref(false);
 
-const setReportType = (reportType) => form.reportType = reportType;
+const setReportType = (reportType) => (form.reportType = reportType);
 
 const form = useForm({
     reportType: null,
@@ -60,8 +67,8 @@ const form = useForm({
 
 const generateReport = () => {
     form.post(route('reports.generate'), {
-        onStart: () => loading.value = true,
-        onFinish: () => loading.value = false,
+        onStart: () => (loading.value = true),
+        onFinish: () => (loading.value = false),
         onSuccess: () => {
             form.reportType = null;
             form.reportName = null;
@@ -72,241 +79,330 @@ const generateReport = () => {
             form.customerId = null;
             dialog.value = false;
             $toast.success('Report successfully queued to be generated.');
-        }
+        },
     });
 };
 
+const getStatusColor = (status) => {
+    switch (status) {
+        case 'Success':
+            return 'success';
+        case 'Pending':
+            return 'info';
+        case 'Generating':
+            return 'warning';
+        case 'Error':
+            return 'error';
+        default:
+            return 'secondary';
+    }
+};
+
+const getStatusIcon = (status) => {
+    switch (status) {
+        case 'Success':
+            return 'mdi-check-circle';
+        case 'Pending':
+            return 'mdi-clock-outline';
+        case 'Generating':
+            return 'mdi-loading mdi-spin';
+        case 'Error':
+            return 'mdi-alert-circle';
+        default:
+            return 'mdi-help-circle';
+    }
+};
 </script>
 
 <template>
     <AppLayout title="Reports">
         <template #header>
-            <h1>Reports</h1>
-        </template>
+            <PageHeader 
+                title="Reports" 
+                subtitle="Generate and download business reports"
+                icon="mdi-chart-bar"
+            >
+                <template #actions>
+                    <v-dialog v-model="dialog" max-width="600" persistent>
+                        <template #activator="{ props: activatorProps }">
+                            <v-btn
+                                v-bind="activatorProps"
+                                prepend-icon="mdi-file-chart"
+                                variant="flat"
+                                color="primary"
+                            >
+                                Generate Report
+                            </v-btn>
+                        </template>
 
-        <v-sheet class="bg-white px-4 py-12">
-            <v-row class="mb-4 px-4" align="center">
-                <v-text-field
-                    v-model="search"
-                    label="Search"
-                    prepend-inner-icon="mdi-magnify"
-                    variant="outlined"
-                    hide-details
-                    single-line
-                ></v-text-field>
-                <v-spacer/>
+                        <v-card>
+                            <v-card-title class="d-flex align-center pa-4">
+                                <v-icon icon="mdi-file-chart" color="primary" class="mr-2" />
+                                Generate Report
+                            </v-card-title>
+                            <v-divider />
 
-                <v-dialog
-                    v-model="dialog"
-                    max-width="600"
-                    persistent
-                >
-                    <template v-slot:activator="{ props: activatorProps }">
-                        <v-btn
-                            class="text-none font-weight-regular"
-                            prepend-icon="mdi-list-box"
-                            text="Generate Report"
-                            variant="flat"
-                            color="primary"
-                            v-bind="activatorProps"
-                        ></v-btn>
-                    </template>
-
-                    <v-card prepend-icon="">
-                        <v-form @submit.prevent="generateReport">
-                            <v-card-text>
-
-                                <v-row class="mt-6 mb-3" dense>
-                                    <v-col cols="12" class="text-center">
-                                        <v-icon
-                                            icon="mdi-content-paste"
-                                            size="64"
-                                        />
-                                    </v-col>
-                                </v-row>
-
-                                <v-row class="mb-3" dense>
-                                    <v-col cols="12" class="text-center">
-                                        <div><h3>Generate Report</h3></div>
-                                        <div class="text-disabled">Choose report type to create</div>
-                                    </v-col>
-                                </v-row>
-
-                                <v-row class="mb-6" dense>
-                                    <v-col cols="12">
-                                        <div class="d-flex ga-4 flex-wrap justify-center">
+                            <v-form @submit.prevent="generateReport">
+                                <v-card-text class="pa-6">
+                                    <!-- Report Type Selection -->
+                                    <div class="mb-6">
+                                        <div class="text-subtitle-2 font-weight-bold mb-3">Select Report Type</div>
+                                        <div class="d-flex ga-2 flex-wrap">
                                             <v-btn
                                                 v-for="reportType in reportTypes"
-                                                key="reportType"
-                                                variant="flat"
-                                                color="primary"
-                                                size="large"
-                                                :value="reportType"
+                                                :key="reportType"
+                                                :variant="form.reportType === reportType ? 'flat' : 'outlined'"
+                                                :color="form.reportType === reportType ? 'primary' : 'secondary'"
+                                                size="small"
                                                 @click="setReportType(reportType)"
-                                                :active="form.reportType === reportType"
-                                                :disabled="form.reportType === reportType"
                                             >
                                                 {{ reportType }}
                                             </v-btn>
                                         </div>
-                                        <div v-if="form.errors.reportType" class="mt-6 text-red">
+                                        <div v-if="form.errors.reportType" class="text-error text-caption mt-2">
                                             {{ form.errors.reportType }}
                                         </div>
-                                    </v-col>
-                                </v-row>
+                                    </div>
 
-                                <v-row v-if="form.reportType" dense>
-                                    <v-col cols="12">
-                                        <v-text-field
-                                            type="text"
-                                            label="Report Name"
-                                            clearable
-                                            v-model="form.reportName"
-                                            :error-messages="form.errors.reportName"
-                                        />
-                                    </v-col>
-                                    <v-col cols="6">
-                                        <v-text-field
-                                            type="date"
-                                            label="From Date"
-                                            v-model="form.fromDate"
-                                            :error-messages="form.errors.fromDate"
-                                        />
-                                    </v-col>
-                                    <v-col cols="6">
-                                        <v-text-field
-                                            type="date"
-                                            label="To Date"
-                                            v-model="form.toDate"
-                                            :error-messages="form.errors.toDate"
-                                        />
-                                    </v-col>
-                                </v-row>
+                                    <!-- Report Details -->
+                                    <template v-if="form.reportType">
+                                        <v-row>
+                                            <v-col cols="12">
+                                                <v-text-field
+                                                    v-model="form.reportName"
+                                                    label="Report Name"
+                                                    placeholder="e.g. Q4 Revenue Report"
+                                                    prepend-inner-icon="mdi-file-document"
+                                                    :error-messages="form.errors.reportName"
+                                                    clearable
+                                                />
+                                            </v-col>
+                                        </v-row>
 
-                                <v-row v-if="form.reportType === 'Revenue by Product'" dense>
-                                    <v-col cols="12">
-                                        <v-select
-                                            :items="products"
-                                            item-value="id"
-                                            item-title="name"
-                                            label="Product"
-                                            v-model="form.productId"
-                                            :error-messages="form.errors.productId"
-                                        />
-                                    </v-col>
-                                </v-row>
+                                        <v-row>
+                                            <v-col cols="6">
+                                                <v-text-field
+                                                    v-model="form.fromDate"
+                                                    type="date"
+                                                    label="From Date"
+                                                    prepend-inner-icon="mdi-calendar"
+                                                    :error-messages="form.errors.fromDate"
+                                                />
+                                            </v-col>
+                                            <v-col cols="6">
+                                                <v-text-field
+                                                    v-model="form.toDate"
+                                                    type="date"
+                                                    label="To Date"
+                                                    prepend-inner-icon="mdi-calendar"
+                                                    :error-messages="form.errors.toDate"
+                                                />
+                                            </v-col>
+                                        </v-row>
 
-                                <v-row v-if="form.reportType === 'Revenue by Service'" dense>
-                                    <v-col cols="12">
-                                        <v-select
-                                            :items="services"
-                                            item-value="id"
-                                            item-title="name"
-                                            label="Service"
-                                            v-model="form.serviceId"
-                                            :error-messages="form.errors.serviceId"
-                                        />
-                                    </v-col>
-                                </v-row>
+                                        <!-- Conditional Filters -->
+                                        <v-row v-if="form.reportType === 'Revenue by Product'">
+                                            <v-col cols="12">
+                                                <v-select
+                                                    v-model="form.productId"
+                                                    :items="products"
+                                                    item-value="id"
+                                                    item-title="name"
+                                                    label="Select Product"
+                                                    prepend-inner-icon="mdi-package-variant"
+                                                    :error-messages="form.errors.productId"
+                                                />
+                                            </v-col>
+                                        </v-row>
 
-                                <v-row v-if="form.reportType === 'Revenue by Customer'" dense>
-                                    <v-col cols="12">
-                                        <v-select
-                                            :items="customers"
-                                            item-value="id"
-                                            item-title="name"
-                                            label="Customer"
-                                            v-model="form.customerId"
-                                            :error-messages="form.errors.customerId"
-                                        />
-                                    </v-col>
-                                </v-row>
+                                        <v-row v-if="form.reportType === 'Revenue by Service'">
+                                            <v-col cols="12">
+                                                <v-select
+                                                    v-model="form.serviceId"
+                                                    :items="services"
+                                                    item-value="id"
+                                                    item-title="name"
+                                                    label="Select Service"
+                                                    prepend-inner-icon="mdi-briefcase"
+                                                    :error-messages="form.errors.serviceId"
+                                                />
+                                            </v-col>
+                                        </v-row>
 
-                            </v-card-text>
+                                        <v-row v-if="form.reportType === 'Revenue by Customer'">
+                                            <v-col cols="12">
+                                                <v-select
+                                                    v-model="form.customerId"
+                                                    :items="customers"
+                                                    item-value="id"
+                                                    item-title="name"
+                                                    label="Select Customer"
+                                                    prepend-inner-icon="mdi-account"
+                                                    :error-messages="form.errors.customerId"
+                                                />
+                                            </v-col>
+                                        </v-row>
+                                    </template>
+                                </v-card-text>
 
-                            <v-divider></v-divider>
+                                <v-divider />
 
-                            <v-card-actions>
-                                <v-spacer></v-spacer>
+                                <v-card-actions class="pa-4">
+                                    <v-spacer />
+                                    <v-btn
+                                        variant="text"
+                                        color="secondary"
+                                        prepend-icon="mdi-close"
+                                        @click="dialog = false"
+                                    >
+                                        Cancel
+                                    </v-btn>
+                                    <v-btn
+                                        type="submit"
+                                        variant="flat"
+                                        color="primary"
+                                        prepend-icon="mdi-file-chart"
+                                        :disabled="!form.reportType"
+                                        :loading="loading"
+                                    >
+                                        Generate Report
+                                    </v-btn>
+                                </v-card-actions>
+                            </v-form>
+                        </v-card>
+                    </v-dialog>
+                </template>
+            </PageHeader>
+        </template>
 
-                                <v-btn
-                                    text="Cancel"
-                                    variant="flat"
-                                    color="secondary"
-                                    prepend-icon="mdi-close"
-                                    @click="dialog = false"
-                                ></v-btn>
+        <v-card>
+            <!-- Search Bar -->
+            <v-card-text class="pb-0">
+                <v-row align="center">
+                    <v-col cols="12" md="6" lg="4">
+                        <v-text-field
+                            v-model="search"
+                            placeholder="Search reports..."
+                            prepend-inner-icon="mdi-magnify"
+                            clearable
+                            single-line
+                        />
+                    </v-col>
+                    <v-col cols="12" md="6" lg="8" class="d-flex justify-end">
+                        <v-chip variant="tonal" color="primary">
+                            <v-icon start icon="mdi-chart-bar" />
+                            {{ reports.length }} reports
+                        </v-chip>
+                    </v-col>
+                </v-row>
+            </v-card-text>
 
-                                <v-btn
-                                    type="submit"
-                                    variant="flat"
-                                    color="primary"
-                                    text="Generate Report"
-                                    :disabled="!form.reportType"
-                                    :loading="loading"
-                                ></v-btn>
-                            </v-card-actions>
-                        </v-form>
-                    </v-card>
-                </v-dialog>
-            </v-row>
-
+            <!-- Data Table -->
             <v-data-table
-                multi-sort
                 :items="reports"
                 :headers="headers"
                 :search="search"
                 :items-per-page="itemsPerPage"
+                multi-sort
+                class="report-table"
             >
-                <template v-slot:item.type="{ item }">
-                    <strong>{{item.type }}</strong>
-                    <br>
-                    <span class="text-disabled">From: <strong>{{ item.from_date }} to {{ item.to_date }}</strong></span>
-                    <div v-if="item.product" class="text-disabled">Product: <strong>{{ item.product.name }}</strong></div>
-                    <div v-if="item.service" class="text-disabled">Service: <strong>{{ item.service.name }}</strong></div>
-                    <div v-if="item.customer" class="text-disabled">Customer: <strong>{{ item.customer.name }}</strong></div>
+                <template #item.name="{ item }">
+                    <div class="d-flex align-center py-2">
+                        <v-avatar color="primary" variant="tonal" size="36" class="mr-3">
+                            <v-icon icon="mdi-file-chart" size="small" />
+                        </v-avatar>
+                        <div class="font-weight-medium">{{ item.name }}</div>
+                    </div>
                 </template>
-                <template v-slot:item.generated_at="{ item }">
-                    <span v-if="item.generated_at">{{ new Date(item.generated_at).toDateString() }}</span>
-                    <span v-else>-</span>
+
+                <template #item.type="{ item }">
+                    <div>
+                        <div class="font-weight-medium">{{ item.type }}</div>
+                        <div class="text-caption text-medium-emphasis">
+                            {{ item.from_date }} to {{ item.to_date }}
+                        </div>
+                        <div v-if="item.product" class="text-caption text-medium-emphasis">
+                            <v-icon icon="mdi-package-variant" size="x-small" /> {{ item.product.name }}
+                        </div>
+                        <div v-if="item.service" class="text-caption text-medium-emphasis">
+                            <v-icon icon="mdi-briefcase" size="x-small" /> {{ item.service.name }}
+                        </div>
+                        <div v-if="item.customer" class="text-caption text-medium-emphasis">
+                            <v-icon icon="mdi-account" size="x-small" /> {{ item.customer.name }}
+                        </div>
+                    </div>
                 </template>
-                <template v-slot:item.actions="{ item }">
-                    <div v-if="item.status === 'Success'">
+
+                <template #item.generated_at="{ item }">
+                    <span v-if="item.generated_at">
+                        {{ new Date(item.generated_at).toLocaleDateString() }}
+                    </span>
+                    <span v-else class="text-medium-emphasis">—</span>
+                </template>
+
+                <template #item.status="{ item }">
+                    <v-chip
+                        :color="getStatusColor(item.status)"
+                        size="small"
+                        variant="tonal"
+                    >
+                        <v-icon start :icon="getStatusIcon(item.status)" size="x-small" />
+                        {{ item.status }}
+                    </v-chip>
+                </template>
+
+                <template #item.actions="{ item }">
+                    <div class="d-flex justify-end ga-1">
+                        <template v-if="item.status === 'Success'">
+                            <v-btn
+                                :href="route('reports.download', item.id)"
+                                icon="mdi-download"
+                                size="small"
+                                variant="text"
+                                color="primary"
+                            >
+                                <v-icon icon="mdi-download" />
+                                <v-tooltip activator="parent" location="top">Download</v-tooltip>
+                            </v-btn>
+                            <v-btn
+                                :href="route('reports.delete', item.id)"
+                                icon="mdi-trash-can"
+                                size="small"
+                                variant="text"
+                                color="error"
+                            >
+                                <v-icon icon="mdi-trash-can" />
+                                <v-tooltip activator="parent" location="top">Delete</v-tooltip>
+                            </v-btn>
+                        </template>
+                    </div>
+                </template>
+
+                <!-- Empty State -->
+                <template #no-data>
+                    <div class="text-center py-12">
+                        <v-icon icon="mdi-chart-bar" size="64" color="primary" class="mb-4" />
+                        <h3 class="text-h6 mb-2">No reports yet</h3>
+                        <p class="text-body-2 text-medium-emphasis mb-4">
+                            Generate your first report to get insights
+                        </p>
                         <v-btn
-                            :href="route('reports.download', item.id)"
                             color="primary"
                             variant="flat"
-                            class="me-2"
-                            prepend-icon="mdi-download"
-                            size="small"
-                            text="Download"
-                        />
-                        <v-btn
-                            :href="route('reports.delete', item.id)"
-                            color="error"
-                            variant="flat"
-                            prepend-icon="mdi-trash-can"
-                            size="small"
-                            text="Delete"
-                        />
-                    </div>
-                    <div v-else-if="item.status === 'Pending'">
-                        <v-btn variant="flat" prepend-icon="mdi-play" size="small" class="text-none font-weight-regular" color="primary">
-                            {{ item.status }}
-                        </v-btn>
-                    </div>
-                    <div v-else-if="item.status === 'Generating'">
-                        <v-btn variant="flat" prepend-icon="mdi-pause" size="small" class="text-none font-weight-regular" color="warning">
-                            {{ item.status }}
-                        </v-btn>
-                    </div>
-                    <div v-else-if="item.status === 'Error'">
-                        <v-btn variant="flat" prepend-icon="mdi-alert-circle-outline" size="small" class="text-none font-weight-regular" color="error">
-                            {{ item.status }}
+                            prepend-icon="mdi-file-chart"
+                            @click="dialog = true"
+                        >
+                            Generate Report
                         </v-btn>
                     </div>
                 </template>
             </v-data-table>
-        </v-sheet>
+        </v-card>
     </AppLayout>
 </template>
+
+<style scoped>
+.report-table :deep(th) {
+    white-space: nowrap;
+}
+</style>

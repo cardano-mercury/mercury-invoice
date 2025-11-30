@@ -1,8 +1,13 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import {Link, useForm} from '@inertiajs/vue3';
+import PageHeader from '@/Components/PageHeader.vue';
+import FormCard from '@/Components/FormCard.vue';
+import FormActions from '@/Components/FormActions.vue';
+import { useForm } from '@inertiajs/vue3';
 
-defineProps({errors: Object})
+defineProps({
+    errors: Object,
+});
 
 const form = useForm({
     name: null,
@@ -12,45 +17,124 @@ const form = useForm({
     unit_price: null,
     supplier: null,
 });
+
+const handleReset = () => {
+    form.reset();
+};
 </script>
 
 <template>
-    <app-layout title="Create Product">
+    <AppLayout title="Create Product">
         <template #header>
-            <h1>Create New Product</h1>
+            <PageHeader 
+                title="Create New Product" 
+                subtitle="Add a new product to your inventory"
+                icon="mdi-package-variant-plus"
+            />
         </template>
-        <v-sheet class="bg-white px-4 py-12">
-            <v-form @submit.prevent="form.post(route('products.store'))">
-                <v-text-field name="name" id="product_name" type="text"
-                              label="Product Name" placeholder="e.g. ACME Product"
-                              required v-model="form.name" />
-                <v-text-field name="sku" id="product_sku" type="text"
-                              label="Product SKU" placeholder="e.g. ABCD-1234"
-                              required v-model="form.sku" />
-                <v-textarea name="description" id="product_description"
-                            label="Description" placeholder=".e.g. ACME Product is our latest product..."
-                            v-model="form.description" />
-                <v-text-field name="unit_type" id="product_unit_type" type="text"
-                              label="Unit Type" placeholder="e.g. ounce"
-                              v-model="form.unit_type" />
-                <v-text-field name="unit_price" id="product_unit_price" type="number"
-                              label="Unit Price" placeholder="e.g. 5.99"
-                              v-model="form.unit_price" required step="any" min="0" />
-                <v-text-field name="supplier" id="product_supplier" type="text"
-                              label="Product Supplier" placeholder="e.g. ACME Limited"
-                              v-model="form.supplier" />
+
+        <v-form @submit.prevent="form.post(route('products.store'))">
+            <FormCard 
+                title="Product Information" 
+                icon="mdi-package-variant"
+                subtitle="Enter the details for this product"
+            >
                 <v-row>
-                    <v-col cols="auto">
-                        <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-content-save" class="mr-2">Save</v-btn>
+                    <v-col cols="12" md="8">
+                        <v-text-field
+                            v-model="form.name"
+                            label="Product Name"
+                            placeholder="e.g. ACME Widget Pro"
+                            prepend-inner-icon="mdi-package-variant"
+                            :error-messages="form.errors.name"
+                            required
+                            autofocus
+                        />
                     </v-col>
-                    <v-col cols="auto">
-                        <v-btn type="reset" variant="flat" prepend-icon="mdi-refresh" class="mr-2">Reset</v-btn>
-                    </v-col>
-                    <v-col cols="auto">
-                        <v-btn :href="route('products.index')" color="error" variant="flat" prepend-icon="mdi-close">Cancel</v-btn>
+                    <v-col cols="12" md="4">
+                        <v-text-field
+                            v-model="form.sku"
+                            label="SKU"
+                            placeholder="e.g. ACME-001"
+                            prepend-inner-icon="mdi-barcode"
+                            :error-messages="form.errors.sku"
+                            required
+                        />
                     </v-col>
                 </v-row>
-            </v-form>
-        </v-sheet>
-    </app-layout>
+
+                <v-row>
+                    <v-col cols="12">
+                        <v-textarea
+                            v-model="form.description"
+                            label="Description"
+                            placeholder="e.g. High-quality widget for professional use..."
+                            prepend-inner-icon="mdi-text"
+                            :error-messages="form.errors.description"
+                            rows="3"
+                            auto-grow
+                        />
+                    </v-col>
+                </v-row>
+
+                <v-row>
+                    <v-col cols="12" md="4">
+                        <v-text-field
+                            v-model="form.unit_type"
+                            label="Unit Type"
+                            placeholder="e.g. piece, kg, liter"
+                            prepend-inner-icon="mdi-scale"
+                            :error-messages="form.errors.unit_type"
+                            hint="Optional - How this product is measured"
+                            persistent-hint
+                        />
+                    </v-col>
+                    <v-col cols="12" md="4">
+                        <v-text-field
+                            v-model="form.unit_price"
+                            label="Unit Price"
+                            placeholder="e.g. 29.99"
+                            prepend-inner-icon="mdi-currency-usd"
+                            type="number"
+                            step="0.01"
+                            min="0"
+                            :error-messages="form.errors.unit_price"
+                            required
+                        />
+                    </v-col>
+                    <v-col cols="12" md="4">
+                        <v-text-field
+                            v-model="form.supplier"
+                            label="Supplier"
+                            placeholder="e.g. ACME Corp"
+                            prepend-inner-icon="mdi-truck-delivery"
+                            :error-messages="form.errors.supplier"
+                            hint="Optional - Product supplier name"
+                            persistent-hint
+                        />
+                    </v-col>
+                </v-row>
+
+                <template #footer>
+                    <FormActions
+                        :loading="form.processing"
+                        :cancel-route="route('products.index')"
+                        save-text="Create Product"
+                        save-icon="mdi-package-variant-plus"
+                        @reset="handleReset"
+                    />
+                </template>
+            </FormCard>
+        </v-form>
+
+        <!-- Help Card -->
+        <v-card variant="tonal" class="mt-6">
+            <v-card-text class="d-flex align-center">
+                <v-icon icon="mdi-information" color="info" class="mr-3" />
+                <div>
+                    <strong>Tip:</strong> After creating the product, you can assign categories from the edit page.
+                </div>
+            </v-card-text>
+        </v-card>
+    </AppLayout>
 </template>
