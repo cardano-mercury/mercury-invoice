@@ -1,41 +1,57 @@
 <template>
-    <v-card class="mb-6">
-        <v-card-title>Browser Sessions</v-card-title>
+    <v-card rounded="lg">
+        <v-card-title class="d-flex align-center">
+            <v-icon icon="mdi-devices" color="primary" class="mr-2" />
+            Browser Sessions
+        </v-card-title>
         <v-card-subtitle>
             Manage and log out your active sessions on other browsers and devices.
         </v-card-subtitle>
 
         <v-card-text>
-            <div class="max-w-xl text-sm text-gray-600">
+            <p class="text-body-2 text-medium-emphasis mb-4">
                 If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.
-            </div>
+            </p>
 
             <!-- Other Browser Sessions -->
-            <div v-if="sessions.length > 0" class="mt-5 space-y-6">
-                <div v-for="(session, i) in sessions" :key="i" class="d-flex items-center">
-                    <div>
-                        <v-icon v-if="session.agent.is_desktop" icon="mdi-desktop-mac" class="mr-2"></v-icon>
-                        <v-icon v-else icon="mdi-cellphone" class="mr-2"></v-icon>
-                    </div>
+            <div v-if="sessions.length > 0" class="mb-4">
+                <v-list density="compact" class="bg-transparent">
+                    <v-list-item
+                        v-for="(session, i) in sessions"
+                        :key="i"
+                        class="px-0"
+                    >
+                        <template #prepend>
+                            <v-avatar color="primary" variant="tonal" size="40" class="mr-3">
+                                <v-icon 
+                                    :icon="session.agent.is_desktop ? 'mdi-desktop-mac' : 'mdi-cellphone'" 
+                                    size="small"
+                                />
+                            </v-avatar>
+                        </template>
 
-                    <div class="ml-3">
-                        <div class="text-sm text-gray-600">
+                        <v-list-item-title class="font-weight-medium">
                             {{ session.agent.platform ? session.agent.platform : 'Unknown' }} - {{ session.agent.browser ? session.agent.browser : 'Unknown' }}
-                        </div>
+                        </v-list-item-title>
 
-                        <div>
-                            <div class="text-xs text-gray-500">
-                                {{ session.ip_address }},
-
-                                <span v-if="session.is_current_device" class="text-green-500 font-semibold">This device</span>
-                                <span v-else>Last active {{ session.last_active }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        <v-list-item-subtitle>
+                            <span class="font-mono">{{ session.ip_address }}</span>
+                            <span class="mx-1">•</span>
+                            <v-chip
+                                v-if="session.is_current_device"
+                                color="success"
+                                size="x-small"
+                                variant="tonal"
+                            >
+                                This device
+                            </v-chip>
+                            <span v-else class="text-medium-emphasis">Last active {{ session.last_active }}</span>
+                        </v-list-item-subtitle>
+                    </v-list-item>
+                </v-list>
             </div>
 
-            <div class="d-flex justify-end mt-5">
+            <div class="d-flex justify-end">
                 <v-snackbar
                     v-model="showSuccessMessage"
                     color="success"
@@ -46,37 +62,43 @@
                 
                 <v-btn
                     color="error"
-                    variant="flat"
+                    variant="tonal"
                     prepend-icon="mdi-logout-variant"
                     @click="confirmLogout"
                 >
-                    Log Out Other Browser Sessions
+                    Log Out Other Sessions
                 </v-btn>
             </div>
 
             <!-- Logout Other Devices Confirmation Modal -->
-            <v-dialog v-model="confirmingLogout" max-width="500px">
-                <v-card>
-                    <v-card-title>Log Out Other Browser Sessions</v-card-title>
+            <v-dialog v-model="confirmingLogout" max-width="440" persistent>
+                <v-card rounded="lg">
+                    <v-card-title class="d-flex align-center">
+                        <v-icon icon="mdi-logout-variant" color="error" class="mr-2" />
+                        Log Out Other Sessions
+                    </v-card-title>
                     <v-card-text>
-                        <p>Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.</p>
+                        <p class="text-body-2 text-medium-emphasis mb-4">
+                            Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.
+                        </p>
                         
                         <v-text-field
                             v-model="form.password"
                             label="Password"
                             type="password"
-                            class="mt-4"
+                            prepend-inner-icon="mdi-lock"
                             :error-messages="form.errors.password"
+                            variant="outlined"
+                            density="comfortable"
+                            autofocus
                             @keyup.enter="logoutOtherBrowserSessions"
-                        ></v-text-field>
+                        />
                     </v-card-text>
-                    <v-card-actions>
-                        <v-spacer></v-spacer>
+                    <v-card-actions class="pa-4">
+                        <v-spacer />
                         <v-btn
-                            color="secondary"
-                            variant="flat"
+                            variant="text"
                             prepend-icon="mdi-close"
-                            class="mr-2"
                             @click="closeModal"
                         >
                             Cancel
@@ -88,7 +110,7 @@
                             :loading="form.processing"
                             @click="logoutOtherBrowserSessions"
                         >
-                            Log Out Other Browser Sessions
+                            Log Out Sessions
                         </v-btn>
                     </v-card-actions>
                 </v-card>
@@ -137,3 +159,9 @@ export default defineComponent({
     },
 });
 </script>
+
+<style scoped>
+.font-mono {
+    font-family: 'Source Code Pro', monospace;
+}
+</style>

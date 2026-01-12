@@ -1,14 +1,16 @@
 <script setup>
 import { ref } from 'vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
-import { Link, router as Inertia, useForm } from '@inertiajs/vue3';
+import PageHeader from '@/Components/PageHeader.vue';
+import FormCard from '@/Components/FormCard.vue';
+import { router as Inertia, useForm } from '@inertiajs/vue3';
 
 const props = defineProps({
-  errors: Object,
-  customer: Object,
-  customerCategories: Array,
-  phoneTypes: Object,
-  addressTypes: Object
+    errors: Object,
+    customer: Object,
+    customerCategories: Array,
+    phoneTypes: Object,
+    addressTypes: Object,
 });
 
 // Basic customer info form
@@ -19,907 +21,897 @@ const activeTab = ref('basic');
 
 // Email management
 const emailForm = useForm({
-  name: '',
-  address: '',
-  is_default: false
+    name: '',
+    address: '',
+    is_default: false,
 });
 
 const editingEmail = ref(null);
 
 function addEmail() {
-  emailForm.post(route('customers.emails.store', props.customer.id), {
-    preserveScroll: true,
-    onSuccess: () => {
-      emailForm.reset();
-    }
-  });
+    emailForm.post(route('customers.emails.store', props.customer.id), {
+        preserveScroll: true,
+        onSuccess: () => {
+            emailForm.reset();
+        },
+    });
 }
 
 function editEmail(email) {
-  editingEmail.value = email;
-  emailForm.name = email.name;
-  emailForm.address = email.address;
-  emailForm.is_default = email.is_default;
+    editingEmail.value = email;
+    emailForm.name = email.name;
+    emailForm.address = email.address;
+    emailForm.is_default = email.is_default;
 }
 
 function updateEmail() {
-  if (!editingEmail.value) return;
+    if (!editingEmail.value) return;
 
-  emailForm.put(route('customers.emails.update', [props.customer.id, editingEmail.value.id]), {
-    preserveScroll: true,
-    onSuccess: () => {
-      emailForm.reset();
-      editingEmail.value = null;
-    }
-  });
+    emailForm.put(route('customers.emails.update', [props.customer.id, editingEmail.value.id]), {
+        preserveScroll: true,
+        onSuccess: () => {
+            emailForm.reset();
+            editingEmail.value = null;
+        },
+    });
 }
 
 function cancelEmailEdit() {
-  editingEmail.value = null;
-  emailForm.reset();
+    editingEmail.value = null;
+    emailForm.reset();
 }
 
 function deleteEmail(email) {
-  if (confirm('Are you sure you want to delete this email?')) {
-    Inertia.delete(route('customers.emails.destroy', [props.customer.id, email.id]), {
-      preserveScroll: true
-    });
-  }
+    if (confirm('Are you sure you want to delete this email?')) {
+        Inertia.delete(route('customers.emails.destroy', [props.customer.id, email.id]), {
+            preserveScroll: true,
+        });
+    }
 }
 
 // Phone management
 const phoneForm = useForm({
-  name: '',
-  type: Object.keys(props.phoneTypes)[0] || 'Home',
-  number: '',
-  is_default: false
+    name: '',
+    type: Object.keys(props.phoneTypes)[0] || 'Home',
+    number: '',
+    is_default: false,
 });
 
 const editingPhone = ref(null);
 
 function addPhone() {
-  phoneForm.post(route('customers.phones.store', props.customer.id), {
-    preserveScroll: true,
-    onSuccess: () => {
-      phoneForm.reset();
-      phoneForm.type = Object.keys(props.phoneTypes)[0] || 'Home';
-    }
-  });
+    phoneForm.post(route('customers.phones.store', props.customer.id), {
+        preserveScroll: true,
+        onSuccess: () => {
+            phoneForm.reset();
+            phoneForm.type = Object.keys(props.phoneTypes)[0] || 'Home';
+        },
+    });
 }
 
 function editPhone(phone) {
-  editingPhone.value = phone;
-  phoneForm.name = phone.name;
-  phoneForm.type = phone.type;
-  phoneForm.number = phone.number;
-  phoneForm.is_default = phone.is_default;
+    editingPhone.value = phone;
+    phoneForm.name = phone.name;
+    phoneForm.type = phone.type;
+    phoneForm.number = phone.number;
+    phoneForm.is_default = phone.is_default;
 }
 
 function updatePhone() {
-  if (!editingPhone.value) return;
+    if (!editingPhone.value) return;
 
-  phoneForm.put(route('customers.phones.update', [props.customer.id, editingPhone.value.id]), {
-    preserveScroll: true,
-    onSuccess: () => {
-      phoneForm.reset();
-      phoneForm.type = Object.keys(props.phoneTypes)[0] || 'Home';
-      editingPhone.value = null;
-    }
-  });
+    phoneForm.put(route('customers.phones.update', [props.customer.id, editingPhone.value.id]), {
+        preserveScroll: true,
+        onSuccess: () => {
+            phoneForm.reset();
+            phoneForm.type = Object.keys(props.phoneTypes)[0] || 'Home';
+            editingPhone.value = null;
+        },
+    });
 }
 
 function cancelPhoneEdit() {
-  editingPhone.value = null;
-  phoneForm.reset();
-  phoneForm.type = Object.keys(props.phoneTypes)[0] || 'Home';
+    editingPhone.value = null;
+    phoneForm.reset();
+    phoneForm.type = Object.keys(props.phoneTypes)[0] || 'Home';
 }
 
 function deletePhone(phone) {
-  if (confirm('Are you sure you want to delete this phone?')) {
-    Inertia.delete(route('customers.phones.destroy', [props.customer.id, phone.id]), {
-      preserveScroll: true
-    });
-  }
+    if (confirm('Are you sure you want to delete this phone?')) {
+        Inertia.delete(route('customers.phones.destroy', [props.customer.id, phone.id]), {
+            preserveScroll: true,
+        });
+    }
 }
 
 // Address management
 const addressForm = useForm({
-  name: '',
-  type: Object.keys(props.addressTypes)[0] || 'Billing',
-  line1: '',
-  line2: '',
-  city: '',
-  state: '',
-  postal_code: '',
-  country: '',
-  is_default: false
+    name: '',
+    type: Object.keys(props.addressTypes)[0] || 'Billing',
+    line1: '',
+    line2: '',
+    city: '',
+    state: '',
+    postal_code: '',
+    country: '',
+    is_default: false,
 });
 
 const editingAddress = ref(null);
 
 function addAddress() {
-  addressForm.post(route('customers.addresses.store', props.customer.id), {
-    preserveScroll: true,
-    onSuccess: () => {
-      addressForm.reset();
-      addressForm.type = Object.keys(props.addressTypes)[0] || 'Billing';
-    }
-  });
+    addressForm.post(route('customers.addresses.store', props.customer.id), {
+        preserveScroll: true,
+        onSuccess: () => {
+            addressForm.reset();
+            addressForm.type = Object.keys(props.addressTypes)[0] || 'Billing';
+        },
+    });
 }
 
 function editAddress(address) {
-  editingAddress.value = address;
-  addressForm.name = address.name;
-  addressForm.type = address.type;
-  addressForm.line1 = address.line1;
-  addressForm.line2 = address.line2;
-  addressForm.city = address.city;
-  addressForm.state = address.state;
-  addressForm.postal_code = address.postal_code;
-  addressForm.country = address.country;
-  addressForm.is_default = address.is_default;
+    editingAddress.value = address;
+    addressForm.name = address.name;
+    addressForm.type = address.type;
+    addressForm.line1 = address.line1;
+    addressForm.line2 = address.line2;
+    addressForm.city = address.city;
+    addressForm.state = address.state;
+    addressForm.postal_code = address.postal_code;
+    addressForm.country = address.country;
+    addressForm.is_default = address.is_default;
 }
 
 function updateAddress() {
-  if (!editingAddress.value) return;
+    if (!editingAddress.value) return;
 
-  addressForm.put(route('customers.addresses.update', [props.customer.id, editingAddress.value.id]), {
-    preserveScroll: true,
-    onSuccess: () => {
-      addressForm.reset();
-      addressForm.type = Object.keys(props.addressTypes)[0] || 'Billing';
-      editingAddress.value = null;
-    }
-  });
+    addressForm.put(route('customers.addresses.update', [props.customer.id, editingAddress.value.id]), {
+        preserveScroll: true,
+        onSuccess: () => {
+            addressForm.reset();
+            addressForm.type = Object.keys(props.addressTypes)[0] || 'Billing';
+            editingAddress.value = null;
+        },
+    });
 }
 
 function cancelAddressEdit() {
-  editingAddress.value = null;
-  addressForm.reset();
-  addressForm.type = Object.keys(props.addressTypes)[0] || 'Billing';
+    editingAddress.value = null;
+    addressForm.reset();
+    addressForm.type = Object.keys(props.addressTypes)[0] || 'Billing';
 }
 
 function deleteAddress(address) {
-  if (confirm('Are you sure you want to delete this address?')) {
-    Inertia.delete(route('customers.addresses.destroy', [props.customer.id, address.id]), {
-      preserveScroll: true
-    });
-  }
+    if (confirm('Are you sure you want to delete this address?')) {
+        Inertia.delete(route('customers.addresses.destroy', [props.customer.id, address.id]), {
+            preserveScroll: true,
+        });
+    }
 }
 
 // Category management
-const selectedCategories = ref(props.customer.categories?.map(cat => cat.id) || []);
+const selectedCategories = ref(props.customer.categories?.map((cat) => cat.id) || []);
 
 function updateCategories() {
-  Inertia.put(route('customers.categories.update', props.customer.id), {
-    customer_id: props.customer.id,
-    category_ids: selectedCategories.value
-  }, {
-    preserveScroll: true
-  });
+    Inertia.put(
+        route('customers.categories.update', props.customer.id),
+        {
+            customer_id: props.customer.id,
+            category_ids: selectedCategories.value,
+        },
+        {
+            preserveScroll: true,
+        }
+    );
 }
 
 // Category CRUD
 const categoryForm = useForm({
-  name: '',
+    name: '',
 });
 
 const editingCategory = ref(null);
 
 function addCategory() {
-  categoryForm.post(route('customer-categories.store'), {
-    preserveScroll: true,
-    onSuccess: () => {
-      categoryForm.reset();
-    }
-  });
+    categoryForm.post(route('customer-categories.store'), {
+        preserveScroll: true,
+        onSuccess: () => {
+            categoryForm.reset();
+        },
+    });
 }
 
 function editCategory(category) {
-  editingCategory.value = category;
-  categoryForm.name = category.name;
+    editingCategory.value = category;
+    categoryForm.name = category.name;
 }
 
 function updateCategory() {
-  if (!editingCategory.value) return;
+    if (!editingCategory.value) return;
 
-  categoryForm.put(route('customer-categories.update', editingCategory.value.id), {
-    preserveScroll: true,
-    onSuccess: () => {
-      categoryForm.reset();
-      editingCategory.value = null;
-    }
-  });
+    categoryForm.put(route('customer-categories.update', editingCategory.value.id), {
+        preserveScroll: true,
+        onSuccess: () => {
+            categoryForm.reset();
+            editingCategory.value = null;
+        },
+    });
 }
 
 function cancelCategoryEdit() {
-  editingCategory.value = null;
-  categoryForm.reset();
+    editingCategory.value = null;
+    categoryForm.reset();
 }
 
 function deleteCategory(category) {
-  if (confirm('Are you sure you want to delete this category? It will be removed from all customers.')) {
-    Inertia.delete(route('customer-categories.destroy', category.id), {
-      preserveScroll: true
-    });
-  }
+    if (confirm('Are you sure you want to delete this category? It will be removed from all customers.')) {
+        Inertia.delete(route('customer-categories.destroy', category.id), {
+            preserveScroll: true,
+        });
+    }
 }
 </script>
+
 <template>
-    <app-layout title="Update Customer">
+    <AppLayout title="Update Customer">
         <template #header>
-            <h1>Update Customer</h1>
+            <PageHeader 
+                title="Update Customer" 
+                :subtitle="customer.name"
+                icon="mdi-account-edit"
+            >
+                <template #actions>
+                    <v-btn
+                        :href="route('customers.show', customer.id)"
+                        variant="tonal"
+                        color="primary"
+                        prepend-icon="mdi-eye"
+                    >
+                        View
+                    </v-btn>
+                </template>
+            </PageHeader>
         </template>
 
-        <v-card class="mb-4">
-            <v-tabs v-model="activeTab">
-                <v-tab value="basic">Basic Info</v-tab>
-                <v-tab value="emails">Emails</v-tab>
-                <v-tab value="phones">Phones</v-tab>
-                <v-tab value="addresses">Addresses</v-tab>
-                <v-tab value="categories">Categories</v-tab>
+        <v-card>
+            <v-tabs v-model="activeTab" color="primary" grow>
+                <v-tab value="basic" prepend-icon="mdi-account">
+                    Basic Info
+                </v-tab>
+                <v-tab value="emails" prepend-icon="mdi-email">
+                    Emails
+                    <v-badge 
+                        v-if="customer.emails?.length" 
+                        :content="customer.emails.length" 
+                        color="primary"
+                        inline
+                        class="ml-2"
+                    />
+                </v-tab>
+                <v-tab value="phones" prepend-icon="mdi-phone">
+                    Phones
+                    <v-badge 
+                        v-if="customer.phones?.length" 
+                        :content="customer.phones.length" 
+                        color="primary"
+                        inline
+                        class="ml-2"
+                    />
+                </v-tab>
+                <v-tab value="addresses" prepend-icon="mdi-map-marker">
+                    Addresses
+                    <v-badge 
+                        v-if="customer.addresses?.length" 
+                        :content="customer.addresses.length" 
+                        color="primary"
+                        inline
+                        class="ml-2"
+                    />
+                </v-tab>
+                <v-tab value="categories" prepend-icon="mdi-tag-multiple">
+                    Categories
+                </v-tab>
             </v-tabs>
 
-            <v-card-text class="bg-white px-4 py-12">
-                <!-- Basic Info Tab -->
+            <v-divider />
+
+            <v-card-text class="pa-6">
                 <v-window v-model="activeTab">
+                    <!-- Basic Info Tab -->
                     <v-window-item value="basic">
                         <v-form @submit.prevent="basicInfoForm.put(route('customers.update', customer.id))">
-                            <v-text-field
-                                label="Customer Name"
-                                name="name"
-                                autocomplete="customer_name"
-                                v-model="basicInfoForm.name"
-                                placeholder="e.g. ACME Holding, Co."
-                                :error-messages="basicInfoForm.errors.name"
-                                required
-                                autofocus
-                            />
-                            <v-text-field
-                                label="Tax Number"
-                                name="tax_number"
-                                autocomplete="customer_tax_number"
-                                placeholder="e.g. 12-3456789"
-                                :error-messages="basicInfoForm.errors.tax_number"
-                                v-model="basicInfoForm.tax_number"
-                            />
-                            <v-text-field
-                                label="Tax Rate"
-                                name="tax_rate"
-                                autocomplete="customer_tax_rate"
-                                placeholder="e.g. 8.75"
-                                type="number"
-                                step="0.01"
-                                min="0"
-                                max="100.00"
-                                :error-messages="basicInfoForm.errors.tax_rate"
-                                v-model="basicInfoForm.tax_rate"
-                            />
                             <v-row>
-                                <v-col class="d-flex ga-2">
-                                    <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-content-save">Update Basic Info</v-btn>
+                                <v-col cols="12">
+                                    <v-text-field
+                                        v-model="basicInfoForm.name"
+                                        label="Customer Name"
+                                        placeholder="e.g. ACME Holding, Co."
+                                        prepend-inner-icon="mdi-domain"
+                                        :error-messages="basicInfoForm.errors.name"
+                                        required
+                                        autofocus
+                                    />
                                 </v-col>
                             </v-row>
+
+                            <v-row>
+                                <v-col cols="12" md="6">
+                                    <v-text-field
+                                        v-model="basicInfoForm.tax_number"
+                                        label="Tax Number"
+                                        placeholder="e.g. 12-3456789"
+                                        prepend-inner-icon="mdi-file-document"
+                                        :error-messages="basicInfoForm.errors.tax_number"
+                                    />
+                                </v-col>
+                                <v-col cols="12" md="6">
+                                    <v-text-field
+                                        v-model="basicInfoForm.tax_rate"
+                                        label="Tax Rate (%)"
+                                        placeholder="e.g. 8.75"
+                                        prepend-inner-icon="mdi-percent"
+                                        type="number"
+                                        step="0.01"
+                                        min="0"
+                                        max="100"
+                                        :error-messages="basicInfoForm.errors.tax_rate"
+                                    />
+                                </v-col>
+                            </v-row>
+
+                            <div class="d-flex justify-end mt-6">
+                                <v-btn
+                                    type="submit"
+                                    color="primary"
+                                    variant="flat"
+                                    prepend-icon="mdi-content-save"
+                                    :loading="basicInfoForm.processing"
+                                >
+                                    Update Basic Info
+                                </v-btn>
+                            </div>
                         </v-form>
                     </v-window-item>
 
                     <!-- Emails Tab -->
                     <v-window-item value="emails">
-                        <v-card>
-                            <v-card-title class="text-h6">
-                                Email Addresses
-                                <v-spacer></v-spacer>
-                                <v-btn color="primary" variant="flat" prepend-icon="mdi-plus" @click="editingEmail = null; emailForm.reset()">
-                                    Add New Email
-                                </v-btn>
-                            </v-card-title>
+                        <FormCard 
+                            :title="editingEmail ? 'Edit Email' : 'Add New Email'" 
+                            icon="mdi-email-plus"
+                            flat
+                        >
+                            <v-form @submit.prevent="editingEmail ? updateEmail() : addEmail()">
+                                <v-row>
+                                    <v-col cols="12" sm="4">
+                                        <v-text-field
+                                            v-model="emailForm.name"
+                                            label="Label"
+                                            placeholder="e.g. Work Email"
+                                            prepend-inner-icon="mdi-label"
+                                            :error-messages="emailForm.errors.name"
+                                            required
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="5">
+                                        <v-text-field
+                                            v-model="emailForm.address"
+                                            label="Email Address"
+                                            placeholder="e.g. contact@example.com"
+                                            prepend-inner-icon="mdi-email"
+                                            type="email"
+                                            :error-messages="emailForm.errors.address"
+                                            required
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="3">
+                                        <v-switch
+                                            v-model="emailForm.is_default"
+                                            label="Default"
+                                            color="primary"
+                                        />
+                                    </v-col>
+                                </v-row>
 
-                            <!-- Email Form -->
-                            <v-card-text v-if="!editingEmail">
-                                <v-form @submit.prevent="addEmail">
-                                    <v-row>
-                                        <v-col cols="12" sm="4">
-                                            <v-text-field
-                                                v-model="emailForm.name"
-                                                label="Label"
-                                                placeholder="e.g. Work Email"
-                                                :error-messages="emailForm.errors.name"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6">
-                                            <v-text-field
-                                                v-model="emailForm.address"
-                                                label="Email Address"
-                                                placeholder="e.g. contact@example.com"
-                                                :error-messages="emailForm.errors.address"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="2">
-                                            <v-checkbox
-                                                v-model="emailForm.is_default"
-                                                label="Default"
-                                            ></v-checkbox>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-plus">Add Email</v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-card-text>
-
-                            <!-- Edit Email Form -->
-                            <v-card-text v-else>
-                                <v-form @submit.prevent="updateEmail">
-                                    <v-row>
-                                        <v-col cols="12" sm="4">
-                                            <v-text-field
-                                                v-model="emailForm.name"
-                                                label="Label"
-                                                placeholder="e.g. Work Email"
-                                                :error-messages="emailForm.errors.name"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6">
-                                            <v-text-field
-                                                v-model="emailForm.address"
-                                                label="Email Address"
-                                                placeholder="e.g. contact@example.com"
-                                                :error-messages="emailForm.errors.address"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="2">
-                                            <v-checkbox
-                                                v-model="emailForm.is_default"
-                                                label="Default"
-                                            ></v-checkbox>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-btn color="primary" type="submit" class="mr-2" variant="flat" prepend-icon="mdi-content-save">Update Email</v-btn>
-                                            <v-btn @click="cancelEmailEdit" variant="flat" color="secondary" prepend-icon="mdi-close">Cancel</v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-card-text>
-
-                            <!-- Emails Table -->
-                            <v-card-text>
-                                <v-table v-if="customer.emails && customer.emails.length > 0">
-                                    <thead>
-                                        <tr>
-                                            <th>Default</th>
-                                            <th>Label</th>
-                                            <th>Email Address</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr v-for="email in customer.emails" :key="email.id">
-                                            <td>
-                                                <v-icon v-if="email.is_default" color="success">mdi-check</v-icon>
-                                            </td>
-                                            <td>{{ email.name }}</td>
-                                            <td>{{ email.address }}</td>
-                                            <td>
-                                                <v-btn variant="flat" size="small" prepend-icon="mdi-pencil" @click="editEmail(email)" color="primary me-2">
-                                                    Edit
-                                                </v-btn>
-                                                <v-btn variant="flat" size="small" prepend-icon="mdi-delete" @click="deleteEmail(email)" color="error">
-                                                    Delete
-                                                </v-btn>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </v-table>
-                                <div v-else class="text-center pa-4">
-                                    No email addresses added yet.
+                                <div class="d-flex ga-2">
+                                    <v-btn
+                                        type="submit"
+                                        color="primary"
+                                        variant="flat"
+                                        :prepend-icon="editingEmail ? 'mdi-content-save' : 'mdi-plus'"
+                                        :loading="emailForm.processing"
+                                    >
+                                        {{ editingEmail ? 'Update Email' : 'Add Email' }}
+                                    </v-btn>
+                                    <v-btn
+                                        v-if="editingEmail"
+                                        variant="tonal"
+                                        color="secondary"
+                                        prepend-icon="mdi-close"
+                                        @click="cancelEmailEdit"
+                                    >
+                                        Cancel
+                                    </v-btn>
                                 </div>
+                            </v-form>
+                        </FormCard>
+
+                        <!-- Emails Table -->
+                        <v-card variant="outlined" class="mt-4">
+                            <v-card-title class="d-flex align-center">
+                                <v-icon icon="mdi-email-multiple" class="mr-2" />
+                                Email Addresses
+                            </v-card-title>
+                            <v-divider />
+                            <v-data-table
+                                v-if="customer.emails && customer.emails.length > 0"
+                                :items="customer.emails"
+                                :headers="[
+                                    { title: 'Default', key: 'is_default', width: '80px' },
+                                    { title: 'Label', key: 'name' },
+                                    { title: 'Email Address', key: 'address' },
+                                    { title: 'Actions', key: 'actions', sortable: false, align: 'end' },
+                                ]"
+                                density="comfortable"
+                                hide-default-footer
+                            >
+                                <template #item.is_default="{ item }">
+                                    <v-icon v-if="item.is_default" color="success" icon="mdi-check-circle" />
+                                </template>
+                                <template #item.actions="{ item }">
+                                    <v-btn
+                                        variant="text"
+                                        size="small"
+                                        icon="mdi-pencil"
+                                        color="primary"
+                                        @click="editEmail(item)"
+                                    />
+                                    <v-btn
+                                        variant="text"
+                                        size="small"
+                                        icon="mdi-delete"
+                                        color="error"
+                                        @click="deleteEmail(item)"
+                                    />
+                                </template>
+                            </v-data-table>
+                            <v-card-text v-else class="text-center text-medium-emphasis py-8">
+                                <v-icon icon="mdi-email-off" size="48" class="mb-2" />
+                                <p>No email addresses added yet.</p>
                             </v-card-text>
                         </v-card>
                     </v-window-item>
 
                     <!-- Phones Tab -->
                     <v-window-item value="phones">
-                        <v-card>
-                            <v-card-title class="text-h6">
-                                Phone Numbers
-                                <v-spacer></v-spacer>
-                                <v-btn color="primary" variant="flat" prepend-icon="mdi-plus" @click="editingPhone = null; phoneForm.reset()">
-                                    Add New Phone
-                                </v-btn>
-                            </v-card-title>
+                        <FormCard 
+                            :title="editingPhone ? 'Edit Phone' : 'Add New Phone'" 
+                            icon="mdi-phone-plus"
+                            flat
+                        >
+                            <v-form @submit.prevent="editingPhone ? updatePhone() : addPhone()">
+                                <v-row>
+                                    <v-col cols="12" sm="3">
+                                        <v-text-field
+                                            v-model="phoneForm.name"
+                                            label="Label"
+                                            placeholder="e.g. Office Phone"
+                                            prepend-inner-icon="mdi-label"
+                                            :error-messages="phoneForm.errors.name"
+                                            required
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="3">
+                                        <v-select
+                                            v-model="phoneForm.type"
+                                            :items="Object.keys(phoneTypes)"
+                                            label="Type"
+                                            prepend-inner-icon="mdi-phone"
+                                            :error-messages="phoneForm.errors.type"
+                                            required
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="4">
+                                        <v-text-field
+                                            v-model="phoneForm.number"
+                                            label="Phone Number"
+                                            placeholder="e.g. +1 (555) 123-4567"
+                                            prepend-inner-icon="mdi-dialpad"
+                                            :error-messages="phoneForm.errors.number"
+                                            required
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="2">
+                                        <v-switch
+                                            v-model="phoneForm.is_default"
+                                            label="Default"
+                                            color="primary"
+                                        />
+                                    </v-col>
+                                </v-row>
 
-                            <!-- Phone Form -->
-                            <v-card-text v-if="!editingPhone">
-                                <v-form @submit.prevent="addPhone">
-                                    <v-row>
-                                        <v-col cols="12" sm="3">
-                                            <v-text-field
-                                                v-model="phoneForm.name"
-                                                label="Label"
-                                                placeholder="e.g. Office Phone"
-                                                :error-messages="phoneForm.errors.name"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="3">
-                                            <v-select
-                                                v-model="phoneForm.type"
-                                                :items="Object.keys(phoneTypes)"
-                                                label="Type"
-                                                :error-messages="phoneForm.errors.type"
-                                                required
-                                            ></v-select>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-text-field
-                                                v-model="phoneForm.number"
-                                                label="Phone Number"
-                                                placeholder="e.g. +1 (555) 123-4567"
-                                                :error-messages="phoneForm.errors.number"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="2">
-                                            <v-checkbox
-                                                v-model="phoneForm.is_default"
-                                                label="Default"
-                                            ></v-checkbox>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-plus">Add Phone</v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-card-text>
-
-                            <!-- Edit Phone Form -->
-                            <v-card-text v-else>
-                                <v-form @submit.prevent="updatePhone">
-                                    <v-row>
-                                        <v-col cols="12" sm="3">
-                                            <v-text-field
-                                                v-model="phoneForm.name"
-                                                label="Label"
-                                                placeholder="e.g. Office Phone"
-                                                :error-messages="phoneForm.errors.name"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="3">
-                                            <v-select
-                                                v-model="phoneForm.type"
-                                                :items="Object.keys(phoneTypes)"
-                                                label="Type"
-                                                :error-messages="phoneForm.errors.type"
-                                                required
-                                            ></v-select>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-text-field
-                                                v-model="phoneForm.number"
-                                                label="Phone Number"
-                                                placeholder="e.g. +1 (555) 123-4567"
-                                                :error-messages="phoneForm.errors.number"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="2">
-                                            <v-checkbox
-                                                v-model="phoneForm.is_default"
-                                                label="Default"
-                                            ></v-checkbox>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-btn color="primary" type="submit" class="mr-2" variant="flat" prepend-icon="mdi-content-save">Update Phone</v-btn>
-                                            <v-btn @click="cancelPhoneEdit" variant="flat" color="secondary" prepend-icon="mdi-close">Cancel</v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-card-text>
-
-                            <!-- Phones Table -->
-                            <v-card-text>
-                                <v-table v-if="customer.phones && customer.phones.length > 0">
-                                    <thead>
-                                        <tr>
-                                            <th>Default</th>
-                                            <th>Label</th>
-                                            <th>Type</th>
-                                            <th>Number</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr v-for="phone in customer.phones" :key="phone.id">
-                                            <td>
-                                                <v-icon v-if="phone.is_default" color="success">mdi-check</v-icon>
-                                            </td>
-                                            <td>{{ phone.name }}</td>
-                                            <td>{{ phone.type }}</td>
-                                            <td>{{ phone.number }}</td>
-                                            <td>
-                                                <v-btn variant="flat" size="small" prepend-icon="mdi-pencil" @click="editPhone(phone)" color="primary me-2">
-                                                    Edit
-                                                </v-btn>
-                                                <v-btn variant="flat" size="small" prepend-icon="mdi-delete" @click="deletePhone(phone)" color="error">
-                                                    Delete
-                                                </v-btn>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </v-table>
-                                <div v-else class="text-center pa-4">
-                                    No phone numbers added yet.
+                                <div class="d-flex ga-2">
+                                    <v-btn
+                                        type="submit"
+                                        color="primary"
+                                        variant="flat"
+                                        :prepend-icon="editingPhone ? 'mdi-content-save' : 'mdi-plus'"
+                                        :loading="phoneForm.processing"
+                                    >
+                                        {{ editingPhone ? 'Update Phone' : 'Add Phone' }}
+                                    </v-btn>
+                                    <v-btn
+                                        v-if="editingPhone"
+                                        variant="tonal"
+                                        color="secondary"
+                                        prepend-icon="mdi-close"
+                                        @click="cancelPhoneEdit"
+                                    >
+                                        Cancel
+                                    </v-btn>
                                 </div>
+                            </v-form>
+                        </FormCard>
+
+                        <!-- Phones Table -->
+                        <v-card variant="outlined" class="mt-4">
+                            <v-card-title class="d-flex align-center">
+                                <v-icon icon="mdi-phone-classic" class="mr-2" />
+                                Phone Numbers
+                            </v-card-title>
+                            <v-divider />
+                            <v-data-table
+                                v-if="customer.phones && customer.phones.length > 0"
+                                :items="customer.phones"
+                                :headers="[
+                                    { title: 'Default', key: 'is_default', width: '80px' },
+                                    { title: 'Label', key: 'name' },
+                                    { title: 'Type', key: 'type' },
+                                    { title: 'Number', key: 'number' },
+                                    { title: 'Actions', key: 'actions', sortable: false, align: 'end' },
+                                ]"
+                                density="comfortable"
+                                hide-default-footer
+                            >
+                                <template #item.is_default="{ item }">
+                                    <v-icon v-if="item.is_default" color="success" icon="mdi-check-circle" />
+                                </template>
+                                <template #item.type="{ item }">
+                                    <v-chip size="small" variant="tonal">{{ item.type }}</v-chip>
+                                </template>
+                                <template #item.actions="{ item }">
+                                    <v-btn
+                                        variant="text"
+                                        size="small"
+                                        icon="mdi-pencil"
+                                        color="primary"
+                                        @click="editPhone(item)"
+                                    />
+                                    <v-btn
+                                        variant="text"
+                                        size="small"
+                                        icon="mdi-delete"
+                                        color="error"
+                                        @click="deletePhone(item)"
+                                    />
+                                </template>
+                            </v-data-table>
+                            <v-card-text v-else class="text-center text-medium-emphasis py-8">
+                                <v-icon icon="mdi-phone-off" size="48" class="mb-2" />
+                                <p>No phone numbers added yet.</p>
                             </v-card-text>
                         </v-card>
                     </v-window-item>
 
                     <!-- Addresses Tab -->
                     <v-window-item value="addresses">
-                        <v-card>
-                            <v-card-title class="text-h6">
-                                Addresses
-                                <v-spacer></v-spacer>
-                                <v-btn color="primary" variant="flat" prepend-icon="mdi-plus" @click="editingAddress = null; addressForm.reset()">
-                                    Add New Address
-                                </v-btn>
-                            </v-card-title>
+                        <FormCard 
+                            :title="editingAddress ? 'Edit Address' : 'Add New Address'" 
+                            icon="mdi-map-marker-plus"
+                            flat
+                        >
+                            <v-form @submit.prevent="editingAddress ? updateAddress() : addAddress()">
+                                <v-row>
+                                    <v-col cols="12" sm="4">
+                                        <v-text-field
+                                            v-model="addressForm.name"
+                                            label="Label"
+                                            placeholder="e.g. Main Office"
+                                            prepend-inner-icon="mdi-label"
+                                            :error-messages="addressForm.errors.name"
+                                            required
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="4">
+                                        <v-select
+                                            v-model="addressForm.type"
+                                            :items="Object.keys(addressTypes)"
+                                            label="Type"
+                                            prepend-inner-icon="mdi-home"
+                                            :error-messages="addressForm.errors.type"
+                                            required
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="4">
+                                        <v-switch
+                                            v-model="addressForm.is_default"
+                                            label="Default Address"
+                                            color="primary"
+                                        />
+                                    </v-col>
+                                </v-row>
 
-                            <!-- Address Form -->
-                            <v-card-text v-if="!editingAddress">
-                                <v-form @submit.prevent="addAddress">
-                                    <v-row>
-                                        <v-col cols="12" sm="4">
-                                            <v-text-field
-                                                v-model="addressForm.name"
-                                                label="Label"
-                                                placeholder="e.g. Main Office"
-                                                :error-messages="addressForm.errors.name"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-select
-                                                v-model="addressForm.type"
-                                                :items="Object.keys(addressTypes)"
-                                                label="Type"
-                                                :error-messages="addressForm.errors.type"
-                                                required
-                                            ></v-select>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-checkbox
-                                                v-model="addressForm.is_default"
-                                                label="Default"
-                                                :error-messages="addressForm.errors.is_default"
-                                            ></v-checkbox>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-text-field
-                                                v-model="addressForm.line1"
-                                                label="Address Line 1"
-                                                placeholder="e.g. 123 Main St"
-                                                :error-messages="addressForm.errors.line1"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-text-field
-                                                v-model="addressForm.line2"
-                                                label="Address Line 2"
-                                                placeholder="e.g. Suite 100"
-                                                :error-messages="addressForm.errors.line2"
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-text-field
-                                                v-model="addressForm.city"
-                                                label="City"
-                                                placeholder="e.g. New York"
-                                                :error-messages="addressForm.errors.city"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="2">
-                                            <v-text-field
-                                                v-model="addressForm.state"
-                                                label="State/Province"
-                                                placeholder="e.g. NY"
-                                                :error-messages="addressForm.errors.state"
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="2">
-                                            <v-text-field
-                                                v-model="addressForm.postal_code"
-                                                label="Postal Code"
-                                                placeholder="e.g. 10001"
-                                                :error-messages="addressForm.errors.postal_code"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-text-field
-                                                v-model="addressForm.country"
-                                                label="Country"
-                                                placeholder="e.g. United States"
-                                                :error-messages="addressForm.errors.country"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-plus">Add Address</v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-card-text>
+                                <v-row>
+                                    <v-col cols="12">
+                                        <v-text-field
+                                            v-model="addressForm.line1"
+                                            label="Address Line 1"
+                                            placeholder="e.g. 123 Main St"
+                                            prepend-inner-icon="mdi-map-marker"
+                                            :error-messages="addressForm.errors.line1"
+                                            required
+                                        />
+                                    </v-col>
+                                    <v-col cols="12">
+                                        <v-text-field
+                                            v-model="addressForm.line2"
+                                            label="Address Line 2"
+                                            placeholder="e.g. Suite 100"
+                                            prepend-inner-icon="mdi-office-building"
+                                            :error-messages="addressForm.errors.line2"
+                                        />
+                                    </v-col>
+                                </v-row>
 
-                            <!-- Edit Address Form -->
-                            <v-card-text v-else>
-                                <v-form @submit.prevent="updateAddress">
-                                    <v-row>
-                                        <v-col cols="12" sm="4">
-                                            <v-text-field
-                                                v-model="addressForm.name"
-                                                label="Label"
-                                                placeholder="e.g. Main Office"
-                                                :error-messages="addressForm.errors.name"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-select
-                                                v-model="addressForm.type"
-                                                :items="Object.keys(addressTypes)"
-                                                label="Type"
-                                                :error-messages="addressForm.errors.type"
-                                                required
-                                            ></v-select>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-checkbox
-                                                v-model="addressForm.is_default"
-                                                label="Default"
-                                                :error-messages="addressForm.errors.is_default"
-                                            ></v-checkbox>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-text-field
-                                                v-model="addressForm.line1"
-                                                label="Address Line 1"
-                                                placeholder="e.g. 123 Main St"
-                                                :error-messages="addressForm.errors.line1"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-text-field
-                                                v-model="addressForm.line2"
-                                                label="Address Line 2"
-                                                placeholder="e.g. Suite 100"
-                                                :error-messages="addressForm.errors.line2"
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-text-field
-                                                v-model="addressForm.city"
-                                                label="City"
-                                                placeholder="e.g. New York"
-                                                :error-messages="addressForm.errors.city"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="2">
-                                            <v-text-field
-                                                v-model="addressForm.state"
-                                                label="State/Province"
-                                                placeholder="e.g. NY"
-                                                :error-messages="addressForm.errors.state"
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="2">
-                                            <v-text-field
-                                                v-model="addressForm.postal_code"
-                                                label="Postal Code"
-                                                placeholder="e.g. 10001"
-                                                :error-messages="addressForm.errors.postal_code"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-text-field
-                                                v-model="addressForm.country"
-                                                label="Country"
-                                                placeholder="e.g. United States"
-                                                :error-messages="addressForm.errors.country"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-btn color="primary" type="submit" class="mr-2" variant="flat" prepend-icon="mdi-content-save">Update Address</v-btn>
-                                            <v-btn @click="cancelAddressEdit" variant="flat" color="secondary" prepend-icon="mdi-close">Cancel</v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-card-text>
+                                <v-row>
+                                    <v-col cols="12" sm="4">
+                                        <v-text-field
+                                            v-model="addressForm.city"
+                                            label="City"
+                                            placeholder="e.g. New York"
+                                            prepend-inner-icon="mdi-city"
+                                            :error-messages="addressForm.errors.city"
+                                            required
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="2">
+                                        <v-text-field
+                                            v-model="addressForm.state"
+                                            label="State/Province"
+                                            placeholder="e.g. NY"
+                                            :error-messages="addressForm.errors.state"
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="2">
+                                        <v-text-field
+                                            v-model="addressForm.postal_code"
+                                            label="Postal Code"
+                                            placeholder="e.g. 10001"
+                                            :error-messages="addressForm.errors.postal_code"
+                                            required
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="4">
+                                        <v-text-field
+                                            v-model="addressForm.country"
+                                            label="Country"
+                                            placeholder="e.g. United States"
+                                            prepend-inner-icon="mdi-earth"
+                                            :error-messages="addressForm.errors.country"
+                                            required
+                                        />
+                                    </v-col>
+                                </v-row>
 
-                            <!-- Addresses Table -->
-                            <v-card-text>
-                                <v-table v-if="customer.addresses && customer.addresses.length > 0">
-                                    <thead>
-                                        <tr>
-                                            <th>Default</th>
-                                            <th>Label</th>
-                                            <th>Type</th>
-                                            <th>Address</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr v-for="address in customer.addresses" :key="address.id">
-                                            <td>
-                                                <v-icon v-if="address.is_default" color="success">mdi-check</v-icon>
-                                            </td>
-                                            <td>{{ address.name }}</td>
-                                            <td>{{ address.type }}</td>
-                                            <td>
-                                                {{ address.line1 }}<br>
-                                                <span v-if="address.line2">{{ address.line2 }}<br></span>
-                                                {{ address.city }}, {{ address.state }} {{ address.postal_code }}<br>
-                                                {{ address.country }}
-                                            </td>
-                                            <td>
-                                                <v-btn variant="flat" size="small" prepend-icon="mdi-pencil" @click="editAddress(address)" color="primary me-2">
-                                                    Edit
-                                                </v-btn>
-                                                <v-btn variant="flat" size="small" prepend-icon="mdi-delete" @click="deleteAddress(address)" color="error">
-                                                    Delete
-                                                </v-btn>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </v-table>
-                                <div v-else class="text-center pa-4">
-                                    No addresses added yet.
+                                <div class="d-flex ga-2">
+                                    <v-btn
+                                        type="submit"
+                                        color="primary"
+                                        variant="flat"
+                                        :prepend-icon="editingAddress ? 'mdi-content-save' : 'mdi-plus'"
+                                        :loading="addressForm.processing"
+                                    >
+                                        {{ editingAddress ? 'Update Address' : 'Add Address' }}
+                                    </v-btn>
+                                    <v-btn
+                                        v-if="editingAddress"
+                                        variant="tonal"
+                                        color="secondary"
+                                        prepend-icon="mdi-close"
+                                        @click="cancelAddressEdit"
+                                    >
+                                        Cancel
+                                    </v-btn>
                                 </div>
+                            </v-form>
+                        </FormCard>
+
+                        <!-- Addresses Table -->
+                        <v-card variant="outlined" class="mt-4">
+                            <v-card-title class="d-flex align-center">
+                                <v-icon icon="mdi-map-marker-multiple" class="mr-2" />
+                                Addresses
+                            </v-card-title>
+                            <v-divider />
+                            <v-data-table
+                                v-if="customer.addresses && customer.addresses.length > 0"
+                                :items="customer.addresses"
+                                :headers="[
+                                    { title: 'Default', key: 'is_default', width: '80px' },
+                                    { title: 'Label', key: 'name' },
+                                    { title: 'Type', key: 'type' },
+                                    { title: 'Address', key: 'address' },
+                                    { title: 'Actions', key: 'actions', sortable: false, align: 'end' },
+                                ]"
+                                density="comfortable"
+                                hide-default-footer
+                            >
+                                <template #item.is_default="{ item }">
+                                    <v-icon v-if="item.is_default" color="success" icon="mdi-check-circle" />
+                                </template>
+                                <template #item.type="{ item }">
+                                    <v-chip size="small" variant="tonal">{{ item.type }}</v-chip>
+                                </template>
+                                <template #item.address="{ item }">
+                                    <div class="text-body-2">
+                                        {{ item.line1 }}<br />
+                                        <span v-if="item.line2">{{ item.line2 }}<br /></span>
+                                        {{ item.city }}, {{ item.state }} {{ item.postal_code }}<br />
+                                        {{ item.country }}
+                                    </div>
+                                </template>
+                                <template #item.actions="{ item }">
+                                    <v-btn
+                                        variant="text"
+                                        size="small"
+                                        icon="mdi-pencil"
+                                        color="primary"
+                                        @click="editAddress(item)"
+                                    />
+                                    <v-btn
+                                        variant="text"
+                                        size="small"
+                                        icon="mdi-delete"
+                                        color="error"
+                                        @click="deleteAddress(item)"
+                                    />
+                                </template>
+                            </v-data-table>
+                            <v-card-text v-else class="text-center text-medium-emphasis py-8">
+                                <v-icon icon="mdi-map-marker-off" size="48" class="mb-2" />
+                                <p>No addresses added yet.</p>
                             </v-card-text>
                         </v-card>
                     </v-window-item>
 
                     <!-- Categories Tab -->
                     <v-window-item value="categories">
-                        <v-card variant="text">
-                            <v-card-title class="text-h6">
-                                Assign Categories
-                            </v-card-title>
+                        <!-- Assign Categories -->
+                        <FormCard 
+                            title="Assign Categories" 
+                            icon="mdi-tag-check"
+                            subtitle="Select categories to assign to this customer"
+                            flat
+                        >
+                            <v-form @submit.prevent="updateCategories">
+                                <v-select
+                                    v-model="selectedCategories"
+                                    :items="customerCategories"
+                                    item-title="name"
+                                    item-value="id"
+                                    label="Select Categories"
+                                    prepend-inner-icon="mdi-tag-multiple"
+                                    multiple
+                                    chips
+                                    closable-chips
+                                    :error-messages="errors.category_ids"
+                                />
 
-                            <!-- Categories Form -->
-                            <v-card-text>
-                                <v-form @submit.prevent="updateCategories">
-                                    <v-row>
-                                        <v-col cols="12">
-                                            <v-select
-                                                v-model="selectedCategories"
-                                                :items="customerCategories"
-                                                item-title="name"
-                                                item-value="id"
-                                                label="Select Categories"
-                                                multiple
-                                                chips
-                                                :error-messages="errors.category_ids"
-                                            ></v-select>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-tag-multiple">Assign Categories</v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-card-text>
-
-                            <!-- Current Categories -->
-                            <v-card-text>
-                                <div class="text-h6 mb-4">Current Categories</div>
-                                <v-chip-group v-if="customer.categories && customer.categories.length > 0">
-                                    <v-chip v-for="category in customer.categories" :key="category.id">
-                                        {{ category.name }}
-                                    </v-chip>
-                                </v-chip-group>
-                                <div v-else class="text-center pa-4">
-                                    No categories assigned yet.
+                                <div class="d-flex justify-end mt-4">
+                                    <v-btn
+                                        type="submit"
+                                        color="primary"
+                                        variant="flat"
+                                        prepend-icon="mdi-tag-check"
+                                    >
+                                        Update Categories
+                                    </v-btn>
                                 </div>
-                            </v-card-text>
-                        </v-card>
+                            </v-form>
+                        </FormCard>
 
                         <!-- Manage Categories -->
-                        <v-card variant="text" class="mt-6">
-                            <v-card-title class="text-h6">
-                                Manage Customer Categories
-                                <v-spacer></v-spacer>
-                                <v-btn color="primary" variant="flat" prepend-icon="mdi-plus" @click="editingCategory = null; categoryForm.reset()">
-                                    Add New Customer Category
-                                </v-btn>
-                            </v-card-title>
+                        <FormCard 
+                            :title="editingCategory ? 'Edit Category' : 'Create New Category'" 
+                            icon="mdi-tag-plus"
+                            class="mt-4"
+                            flat
+                        >
+                            <v-form @submit.prevent="editingCategory ? updateCategory() : addCategory()">
+                                <v-row align="center">
+                                    <v-col cols="12" sm="8">
+                                        <v-text-field
+                                            v-model="categoryForm.name"
+                                            label="Category Name"
+                                            placeholder="e.g. VIP Client"
+                                            prepend-inner-icon="mdi-tag"
+                                            :error-messages="categoryForm.errors.name"
+                                            required
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="4">
+                                        <div class="d-flex ga-2">
+                                            <v-btn
+                                                type="submit"
+                                                color="primary"
+                                                variant="flat"
+                                                :prepend-icon="editingCategory ? 'mdi-content-save' : 'mdi-plus'"
+                                                :loading="categoryForm.processing"
+                                            >
+                                                {{ editingCategory ? 'Update' : 'Create' }}
+                                            </v-btn>
+                                            <v-btn
+                                                v-if="editingCategory"
+                                                variant="tonal"
+                                                color="secondary"
+                                                prepend-icon="mdi-close"
+                                                @click="cancelCategoryEdit"
+                                            >
+                                                Cancel
+                                            </v-btn>
+                                        </div>
+                                    </v-col>
+                                </v-row>
+                            </v-form>
+                        </FormCard>
 
-                            <!-- Category Form -->
-                            <v-card-text v-if="!editingCategory">
-                                <v-form @submit.prevent="addCategory">
-                                    <v-row>
-                                        <v-col cols="12" sm="8">
-                                            <v-text-field
-                                                v-model="categoryForm.name"
-                                                label="Customer Category Name"
-                                                placeholder="e.g. VIP Client"
-                                                :error-messages="categoryForm.errors.name"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-plus">Create</v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-card-text>
-
-                            <!-- Edit Category Form -->
-                            <v-card-text v-else>
-                                <v-form @submit.prevent="updateCategory">
-                                    <v-row>
-                                        <v-col cols="12" sm="8">
-                                            <v-text-field
-                                                v-model="categoryForm.name"
-                                                label="Customer Category Name"
-                                                placeholder="e.g. VIP Client"
-                                                :error-messages="categoryForm.errors.name"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-btn color="primary" type="submit" class="mr-2" variant="flat" prepend-icon="mdi-content-save">Update</v-btn>
-                                            <v-btn @click="cancelCategoryEdit" variant="flat" color="secondary" prepend-icon="mdi-close">Cancel</v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-card-text>
-
-                            <v-card-title class="text-h6">
+                        <!-- All Categories Table -->
+                        <v-card variant="outlined" class="mt-4">
+                            <v-card-title class="d-flex align-center">
+                                <v-icon icon="mdi-tag-multiple" class="mr-2" />
                                 All Customer Categories
                             </v-card-title>
-
-                            <!-- All Categories Table -->
-                            <v-card-text>
-                                <v-table v-if="customerCategories && customerCategories.length > 0">
-                                    <thead>
-                                        <tr>
-                                            <th>Customer Category Name</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr v-for="category in customerCategories" :key="category.id">
-                                            <td>{{ category.name }}</td>
-                                            <td>
-                                                <v-btn variant="flat" size="small" prepend-icon="mdi-pencil" @click="editCategory(category)" color="primary me-2">
-                                                    Edit
-                                                </v-btn>
-                                                <v-btn variant="flat" size="small" prepend-icon="mdi-delete" @click="deleteCategory(category)" color="error">
-                                                    Delete
-                                                </v-btn>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </v-table>
-                                <div v-else class="text-center pa-4">
-                                    No customer categories created yet.
-                                </div>
+                            <v-divider />
+                            <v-data-table
+                                v-if="customerCategories && customerCategories.length > 0"
+                                :items="customerCategories"
+                                :headers="[
+                                    { title: 'Category Name', key: 'name' },
+                                    { title: 'Actions', key: 'actions', sortable: false, align: 'end' },
+                                ]"
+                                density="comfortable"
+                                hide-default-footer
+                            >
+                                <template #item.name="{ item }">
+                                    <v-chip variant="tonal" color="primary">
+                                        <v-icon start icon="mdi-tag" />
+                                        {{ item.name }}
+                                    </v-chip>
+                                </template>
+                                <template #item.actions="{ item }">
+                                    <v-btn
+                                        variant="text"
+                                        size="small"
+                                        icon="mdi-pencil"
+                                        color="primary"
+                                        @click="editCategory(item)"
+                                    />
+                                    <v-btn
+                                        variant="text"
+                                        size="small"
+                                        icon="mdi-delete"
+                                        color="error"
+                                        @click="deleteCategory(item)"
+                                    />
+                                </template>
+                            </v-data-table>
+                            <v-card-text v-else class="text-center text-medium-emphasis py-8">
+                                <v-icon icon="mdi-tag-off" size="48" class="mb-2" />
+                                <p>No customer categories created yet.</p>
                             </v-card-text>
                         </v-card>
                     </v-window-item>
                 </v-window>
             </v-card-text>
         </v-card>
-    </app-layout>
+    </AppLayout>
 </template>

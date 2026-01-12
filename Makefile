@@ -31,35 +31,35 @@ rebuild:
 
 .SILENT: frontend-build
 frontend-build:
-	docker exec -it cardanomercury-web bash -c "npm install && npm run build"
+	docker exec cardanomercury-web bash -c "npm install && npm run build"
 
 .SILENT: frontend-watch
 frontend-watch:
-	docker exec -it cardanomercury-web bash -c "npm install && npm run dev"
+	docker exec cardanomercury-web bash -c "npm install && npm run dev"
 
 .SILENT: frontend-upgrade
 frontend-upgrade:
-	docker exec -it cardanomercury-web bash -c "npm update"
+	docker exec cardanomercury-web bash -c "npm update"
 
 .SILENT: composer-install
 composer-install:
-	docker exec -it cardanomercury-web bash -c "composer install"
+	docker exec cardanomercury-web bash -c "composer install"
 
 .SILENT: db-migrate
 db-migrate:
-	docker exec -it cardanomercury-web bash -c "php artisan migrate"
+	docker exec cardanomercury-web bash -c "php artisan migrate"
 
 .SILENT: db-refresh
 db-refresh:
-	docker exec -it cardanomercury-web bash -c "php artisan migrate:fresh --seed"
+	docker exec cardanomercury-web bash -c "php artisan migrate:fresh --seed"
 
 .SILENT: api-docs
 api-docs:
-	docker exec -it cardanomercury-web bash -c "php artisan scribe:generate --force"
+	docker exec cardanomercury-web bash -c "php artisan scribe:generate --force"
 
 .SILENT: tinker
 tinker:
-	docker exec -it cardanomercury-web bash -c "php artisan tinker"
+	docker exec cardanomercury-web bash -c "php artisan tinker"
 
 .SILENT: status
 status:
@@ -91,4 +91,4 @@ stats:
 
 .SILENT: artisan
 artisan:
-	docker exec -it cardanomercury-web bash -c "php artisan $(COMMAND)"
+	docker exec cardanomercury-web bash -c "php artisan $(COMMAND)"

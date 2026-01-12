@@ -34,59 +34,85 @@ const submit = () => {
 
 <template>
     <GuestLayout title="Two-factor Confirmation">
-        <v-container
-            class="fill-height d-flex flex-column justify-center text-center align-center">
-            <v-card width="512" elevation="1" class="px-8">
-                <v-card-text>
-                    <div class="text-h4 text-primary font-weight-black">
-                        Two-Factor Confirmation
-                    </div>
-                    <div class="text-center text-body-2 mb-4">
-                        <template v-if="! recovery">
-                            Please confirm access to your account by entering
-                            the authentication code provided by your
-                            authenticator application.
+        <v-container class="fill-height d-flex flex-column justify-center align-center py-12">
+            <v-card width="100%" max-width="440" class="pa-6" rounded="xl" elevation="4">
+                <v-card-text class="pb-0 text-center">
+                    <v-avatar color="primary" size="64" class="mb-4">
+                        <v-icon icon="mdi-two-factor-authentication" size="32" />
+                    </v-avatar>
+                    <h1 class="text-h5 font-weight-bold mb-1">Two-Factor Authentication</h1>
+                    <p class="text-body-2 text-medium-emphasis mb-4">
+                        <template v-if="!recovery">
+                            Enter the authentication code from your authenticator app.
                         </template>
-
                         <template v-else>
-                            Please confirm access to your account by entering
-                            one of your emergency recovery codes.
+                            Enter one of your emergency recovery codes.
                         </template>
-                    </div>
+                    </p>
                 </v-card-text>
+
                 <v-card-text>
                     <v-form @submit.prevent="submit">
-                        <template v-if="! recovery">
-                            <v-text-field id="code" ref="codeInput"
-                                          v-model="form.code" type="text"
-                                          inputmode="numeric" autofocus
-                                          autocomplete="one-time-code"
-                                          label="Code"
-                                          :error-messages="form.errors.code"/>
+                        <template v-if="!recovery">
+                            <v-text-field 
+                                id="code" 
+                                ref="codeInput"
+                                v-model="form.code" 
+                                type="text"
+                                inputmode="numeric" 
+                                autofocus
+                                autocomplete="one-time-code"
+                                label="Authentication Code"
+                                placeholder="000000"
+                                prepend-inner-icon="mdi-cellphone-key"
+                                :error-messages="form.errors.code"
+                                variant="outlined"
+                                density="comfortable"
+                            />
                         </template>
                         <template v-else>
-                            <v-text-field id="recovery_code"
-                                          ref="recoveryCodeInput"
-                                          v-model="form.recovery_code"
-                                          type="text"
-                                          inputmode="numeric" autofocus
-                                          autocomplete="one-time-code"
-                                          label="Recovery Code"
-                                          :error-messages="form.errors.recovery_code"/>
+                            <v-text-field 
+                                id="recovery_code"
+                                ref="recoveryCodeInput"
+                                v-model="form.recovery_code"
+                                type="text"
+                                autofocus
+                                autocomplete="one-time-code"
+                                label="Recovery Code"
+                                placeholder="xxxxxxxx-xxxxxxxx"
+                                prepend-inner-icon="mdi-key"
+                                :error-messages="form.errors.recovery_code"
+                                variant="outlined"
+                                density="comfortable"
+                            />
                         </template>
-                        <v-btn type="button" color="secondary" block class="mb-4"
-                               prepend-icon="mdi-qrcode"
-                               @click="toggleRecovery"
-                               variant="flat"
-                               size="large">
-                            {{ recovery ? 'Use an authentication code' : 'Use a recovery code' }}
+
+                        <v-btn 
+                            type="button" 
+                            color="secondary" 
+                            block 
+                            rounded="lg"
+                            variant="outlined"
+                            size="large"
+                            @click="toggleRecovery"
+                            class="mb-4"
+                        >
+                            <v-icon start :icon="recovery ? 'mdi-cellphone-key' : 'mdi-key'" />
+                            {{ recovery ? 'Use authentication code' : 'Use recovery code' }}
                         </v-btn>
-                        <v-btn type="submit" color="primary" variant="flat"
-                               size="large" block class="mt-4"
-                               prepend-icon="mdi-login"
-                               :disabled="form.processing" 
-                               :loading="form.processing">
-                            Log In
+
+                        <v-btn 
+                            type="submit" 
+                            color="primary" 
+                            variant="flat"
+                            size="large" 
+                            block 
+                            rounded="lg"
+                            prepend-icon="mdi-login"
+                            :disabled="form.processing" 
+                            :loading="form.processing"
+                        >
+                            Verify & Login
                         </v-btn>
                     </v-form>
                 </v-card-text>

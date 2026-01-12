@@ -1,0 +1,16 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "docker",
+            "args": [
+                "exec",
+                "-i",
+                "cardanomercury-web",
+                "php",
+                "artisan",
+                "boost:mcp"
+            ],
+            "cwd": "/home/latheesan/Sites/CardanoMercuryInvoice"
+        }
+    }
+}

@@ -110,6 +110,7 @@ const deleteApiToken = () => {
 </script>
 
 <template>
+    <div class="api-token-manager-content">
     <v-card class="mb-6">
         <v-card-title>Create API Token</v-card-title>
         <v-card-subtitle>
@@ -360,4 +361,11 @@ const deleteApiToken = () => {
             </v-card-actions>
         </v-card>
     </v-dialog>
+    </div>
 </template>
+
+<style scoped>
+.api-token-manager-content {
+    max-width: 800px;
+}
+</style>

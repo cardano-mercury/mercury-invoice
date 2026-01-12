@@ -1,12 +1,14 @@
 <script setup>
 import { ref } from 'vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
-import { Link, router as Inertia, useForm } from '@inertiajs/vue3';
+import PageHeader from '@/Components/PageHeader.vue';
+import FormCard from '@/Components/FormCard.vue';
+import { router as Inertia, useForm } from '@inertiajs/vue3';
 
 const props = defineProps({
-    errors: Object, 
+    errors: Object,
     service: Object,
-    serviceCategories: Array
+    serviceCategories: Array,
 });
 
 // Basic service info form
@@ -16,15 +18,19 @@ const basicInfoForm = useForm(props.service);
 const activeTab = ref('basic');
 
 // Category management
-const selectedCategories = ref(props.service.categories?.map(cat => cat.id) || []);
+const selectedCategories = ref(props.service.categories?.map((cat) => cat.id) || []);
 
 function updateCategories() {
-    Inertia.put(route('services.categories.update', props.service.id), {
-        service_id: props.service.id,
-        category_ids: selectedCategories.value
-    }, {
-        preserveScroll: true
-    });
+    Inertia.put(
+        route('services.categories.update', props.service.id),
+        {
+            service_id: props.service.id,
+            category_ids: selectedCategories.value,
+        },
+        {
+            preserveScroll: true,
+        }
+    );
 }
 
 // Category CRUD
@@ -39,7 +45,7 @@ function addCategory() {
         preserveScroll: true,
         onSuccess: () => {
             categoryForm.reset();
-        }
+        },
     });
 }
 
@@ -56,7 +62,7 @@ function updateCategory() {
         onSuccess: () => {
             categoryForm.reset();
             editingCategory.value = null;
-        }
+        },
     });
 }
 
@@ -68,201 +74,253 @@ function cancelCategoryEdit() {
 function deleteCategory(category) {
     if (confirm('Are you sure you want to delete this category? It will be removed from all services.')) {
         Inertia.delete(route('service-categories.destroy', category.id), {
-            preserveScroll: true
+            preserveScroll: true,
         });
     }
 }
 </script>
 
 <template>
-    <app-layout title="Update Service">
+    <AppLayout title="Update Service">
         <template #header>
-            <h1>Update Service</h1>
+            <PageHeader 
+                title="Update Service" 
+                :subtitle="service.name"
+                icon="mdi-briefcase-edit"
+            >
+                <template #actions>
+                    <v-btn
+                        :href="route('services.show', service.id)"
+                        variant="tonal"
+                        color="primary"
+                        prepend-icon="mdi-eye"
+                    >
+                        View
+                    </v-btn>
+                </template>
+            </PageHeader>
         </template>
 
-        <v-card class="mb-4">
-            <v-tabs v-model="activeTab">
-                <v-tab value="basic">Basic Info</v-tab>
-                <v-tab value="categories">Categories</v-tab>
+        <v-card>
+            <v-tabs v-model="activeTab" color="primary" grow>
+                <v-tab value="basic" prepend-icon="mdi-briefcase">
+                    Basic Info
+                </v-tab>
+                <v-tab value="categories" prepend-icon="mdi-tag-multiple">
+                    Categories
+                    <v-badge 
+                        v-if="service.categories?.length" 
+                        :content="service.categories.length" 
+                        color="primary"
+                        inline
+                        class="ml-2"
+                    />
+                </v-tab>
             </v-tabs>
 
-            <v-card-text class="bg-white px-4 py-12">
-                <!-- Basic Info Tab -->
+            <v-divider />
+
+            <v-card-text class="pa-6">
                 <v-window v-model="activeTab">
+                    <!-- Basic Info Tab -->
                     <v-window-item value="basic">
                         <v-form @submit.prevent="basicInfoForm.put(route('services.update', service.id))">
-                            <v-text-field 
-                                name="name" 
-                                label="Service Name" 
-                                placeholder="e.g. Software Development"
-                                v-model="basicInfoForm.name"
-                                :error-messages="basicInfoForm.errors.name"
-                                required 
-                                autofocus
-                            />
-                            <v-textarea 
-                                name="description"
-                                label="Description" 
-                                placeholder=".e.g. My hourly rate for software development..."
-                                v-model="basicInfoForm.description"
-                                :error-messages="basicInfoForm.errors.description"
-                            />
-                            <v-text-field 
-                                name="unit_price" 
-                                type="number"
-                                label="Unit Price" 
-                                placeholder="e.g. 5.99"
-                                v-model="basicInfoForm.unit_price" 
-                                :error-messages="basicInfoForm.errors.unit_price"
-                                required 
-                                step="any" 
-                                min="0" 
-                            />
-                            <v-text-field 
-                                name="supplier" 
-                                label="Service Supplier" 
-                                placeholder="e.g. ACME Limited"
-                                v-model="basicInfoForm.supplier"
-                                :error-messages="basicInfoForm.errors.supplier"
-                            />
                             <v-row>
-                                <v-col class="d-flex ga-2">
-                                    <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-content-save">Update Basic Info</v-btn>
+                                <v-col cols="12">
+                                    <v-text-field
+                                        v-model="basicInfoForm.name"
+                                        label="Service Name"
+                                        placeholder="e.g. Software Development"
+                                        prepend-inner-icon="mdi-briefcase"
+                                        :error-messages="basicInfoForm.errors.name"
+                                        required
+                                        autofocus
+                                    />
                                 </v-col>
                             </v-row>
+
+                            <v-row>
+                                <v-col cols="12">
+                                    <v-textarea
+                                        v-model="basicInfoForm.description"
+                                        label="Description"
+                                        placeholder="e.g. Professional software development services including..."
+                                        prepend-inner-icon="mdi-text"
+                                        :error-messages="basicInfoForm.errors.description"
+                                        rows="3"
+                                        auto-grow
+                                    />
+                                </v-col>
+                            </v-row>
+
+                            <v-row>
+                                <v-col cols="12" md="6">
+                                    <v-text-field
+                                        v-model="basicInfoForm.unit_price"
+                                        label="Unit Price (Hourly Rate)"
+                                        placeholder="e.g. 150.00"
+                                        prepend-inner-icon="mdi-currency-usd"
+                                        type="number"
+                                        step="0.01"
+                                        min="0"
+                                        :error-messages="basicInfoForm.errors.unit_price"
+                                        required
+                                    />
+                                </v-col>
+                                <v-col cols="12" md="6">
+                                    <v-text-field
+                                        v-model="basicInfoForm.supplier"
+                                        label="Service Provider"
+                                        placeholder="e.g. Your Company Name"
+                                        prepend-inner-icon="mdi-domain"
+                                        :error-messages="basicInfoForm.errors.supplier"
+                                    />
+                                </v-col>
+                            </v-row>
+
+                            <div class="d-flex justify-end mt-6">
+                                <v-btn
+                                    type="submit"
+                                    color="primary"
+                                    variant="flat"
+                                    prepend-icon="mdi-content-save"
+                                    :loading="basicInfoForm.processing"
+                                >
+                                    Update Service
+                                </v-btn>
+                            </div>
                         </v-form>
                     </v-window-item>
 
                     <!-- Categories Tab -->
                     <v-window-item value="categories">
-                        <v-card variant="text">
-                            <v-card-title class="text-h6">
-                                Assign Categories
-                            </v-card-title>
+                        <!-- Assign Categories -->
+                        <FormCard 
+                            title="Assign Categories" 
+                            icon="mdi-tag-check"
+                            subtitle="Select categories to assign to this service"
+                            flat
+                        >
+                            <v-form @submit.prevent="updateCategories">
+                                <v-select
+                                    v-model="selectedCategories"
+                                    :items="serviceCategories"
+                                    item-title="name"
+                                    item-value="id"
+                                    label="Select Categories"
+                                    prepend-inner-icon="mdi-tag-multiple"
+                                    multiple
+                                    chips
+                                    closable-chips
+                                    :error-messages="errors.category_ids"
+                                />
 
-                            <!-- Categories Form -->
-                            <v-card-text>
-                                <v-form @submit.prevent="updateCategories">
-                                    <v-row>
-                                        <v-col cols="12">
-                                            <v-select
-                                                v-model="selectedCategories"
-                                                :items="serviceCategories"
-                                                item-title="name"
-                                                item-value="id"
-                                                label="Select Categories"
-                                                multiple
-                                                chips
-                                                :error-messages="errors.category_ids"
-                                            ></v-select>
-                                        </v-col>
-                                        <v-col cols="12">
-                                            <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-tag-multiple">Assign Categories</v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-card-text>
-
-                            <!-- Current Categories -->
-                            <v-card-text>
-                                <div class="text-h6 mb-4">Current Categories</div>
-                                <v-chip-group v-if="service.categories && service.categories.length > 0">
-                                    <v-chip v-for="category in service.categories" :key="category.id">
-                                        {{ category.name }}
-                                    </v-chip>
-                                </v-chip-group>
-                                <div v-else class="text-center pa-4">
-                                    No categories assigned yet.
+                                <div class="d-flex justify-end mt-4">
+                                    <v-btn
+                                        type="submit"
+                                        color="primary"
+                                        variant="flat"
+                                        prepend-icon="mdi-tag-check"
+                                    >
+                                        Update Categories
+                                    </v-btn>
                                 </div>
-                            </v-card-text>
-                        </v-card>
+                            </v-form>
+                        </FormCard>
 
                         <!-- Manage Categories -->
-                        <v-card variant="text" class="mt-6">
-                            <v-card-title class="text-h6">
-                                Manage Service Categories
-                                <v-spacer></v-spacer>
-                                <v-btn color="primary" variant="flat" prepend-icon="mdi-plus" @click="editingCategory = null; categoryForm.reset()">
-                                    Add New Service Category
-                                </v-btn>
-                            </v-card-title>
+                        <FormCard 
+                            :title="editingCategory ? 'Edit Category' : 'Create New Category'" 
+                            icon="mdi-tag-plus"
+                            class="mt-4"
+                            flat
+                        >
+                            <v-form @submit.prevent="editingCategory ? updateCategory() : addCategory()">
+                                <v-row align="center">
+                                    <v-col cols="12" sm="8">
+                                        <v-text-field
+                                            v-model="categoryForm.name"
+                                            label="Category Name"
+                                            placeholder="e.g. Web Development"
+                                            prepend-inner-icon="mdi-tag"
+                                            :error-messages="categoryForm.errors.name"
+                                            required
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" sm="4">
+                                        <div class="d-flex ga-2">
+                                            <v-btn
+                                                type="submit"
+                                                color="primary"
+                                                variant="flat"
+                                                :prepend-icon="editingCategory ? 'mdi-content-save' : 'mdi-plus'"
+                                                :loading="categoryForm.processing"
+                                            >
+                                                {{ editingCategory ? 'Update' : 'Create' }}
+                                            </v-btn>
+                                            <v-btn
+                                                v-if="editingCategory"
+                                                variant="tonal"
+                                                color="secondary"
+                                                prepend-icon="mdi-close"
+                                                @click="cancelCategoryEdit"
+                                            >
+                                                Cancel
+                                            </v-btn>
+                                        </div>
+                                    </v-col>
+                                </v-row>
+                            </v-form>
+                        </FormCard>
 
-                            <!-- Category Form -->
-                            <v-card-text v-if="!editingCategory">
-                                <v-form @submit.prevent="addCategory">
-                                    <v-row>
-                                        <v-col cols="12" sm="8">
-                                            <v-text-field
-                                                v-model="categoryForm.name"
-                                                label="Service Category Name"
-                                                placeholder="e.g. Web Development"
-                                                :error-messages="categoryForm.errors.name"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-btn color="primary" type="submit" variant="flat" prepend-icon="mdi-plus">Create</v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-card-text>
-
-                            <!-- Edit Category Form -->
-                            <v-card-text v-else>
-                                <v-form @submit.prevent="updateCategory">
-                                    <v-row>
-                                        <v-col cols="12" sm="8">
-                                            <v-text-field
-                                                v-model="categoryForm.name"
-                                                label="Service Category Name"
-                                                placeholder="e.g. Web Development"
-                                                :error-messages="categoryForm.errors.name"
-                                                required
-                                            ></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="4">
-                                            <v-btn color="primary" type="submit" class="mr-2" variant="flat" prepend-icon="mdi-content-save">Update</v-btn>
-                                            <v-btn @click="cancelCategoryEdit" variant="flat" color="secondary" prepend-icon="mdi-close">Cancel</v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-card-text>
-
-                            <v-card-title class="text-h6">
+                        <!-- All Categories Table -->
+                        <v-card variant="outlined" class="mt-4">
+                            <v-card-title class="d-flex align-center">
+                                <v-icon icon="mdi-tag-multiple" class="mr-2" />
                                 All Service Categories
                             </v-card-title>
-
-                            <!-- All Categories Table -->
-                            <v-card-text>
-                                <v-table v-if="serviceCategories && serviceCategories.length > 0">
-                                    <thead>
-                                        <tr>
-                                            <th>Service Category Name</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr v-for="category in serviceCategories" :key="category.id">
-                                            <td>{{ category.name }}</td>
-                                            <td>
-                                                <v-btn variant="flat" size="small" prepend-icon="mdi-pencil" @click="editCategory(category)" color="primary me-2">
-                                                    Edit
-                                                </v-btn>
-                                                <v-btn variant="flat" size="small" prepend-icon="mdi-delete" @click="deleteCategory(category)" color="error">
-                                                    Delete
-                                                </v-btn>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </v-table>
-                                <div v-else class="text-center pa-4">
-                                    No service categories created yet.
-                                </div>
+                            <v-divider />
+                            <v-data-table
+                                v-if="serviceCategories && serviceCategories.length > 0"
+                                :items="serviceCategories"
+                                :headers="[
+                                    { title: 'Category Name', key: 'name' },
+                                    { title: 'Actions', key: 'actions', sortable: false, align: 'end' },
+                                ]"
+                                density="comfortable"
+                                hide-default-footer
+                            >
+                                <template #item.name="{ item }">
+                                    <v-chip variant="tonal" color="primary">
+                                        <v-icon start icon="mdi-tag" />
+                                        {{ item.name }}
+                                    </v-chip>
+                                </template>
+                                <template #item.actions="{ item }">
+                                    <v-btn
+                                        variant="text"
+                                        size="small"
+                                        icon="mdi-pencil"
+                                        color="primary"
+                                        @click="editCategory(item)"
+                                    />
+                                    <v-btn
+                                        variant="text"
+                                        size="small"
+                                        icon="mdi-delete"
+                                        color="error"
+                                        @click="deleteCategory(item)"
+                                    />
+                                </template>
+                            </v-data-table>
+                            <v-card-text v-else class="text-center text-medium-emphasis py-8">
+                                <v-icon icon="mdi-tag-off" size="48" class="mb-2" />
+                                <p>No service categories created yet.</p>
                             </v-card-text>
                         </v-card>
                     </v-window-item>
                 </v-window>
             </v-card-text>
         </v-card>
-    </app-layout>
+    </AppLayout>
 </template>

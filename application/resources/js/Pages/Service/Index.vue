@@ -1,10 +1,11 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import {useForm} from '@inertiajs/vue3';
-import {ref} from "vue";
+import PageHeader from '@/Components/PageHeader.vue';
+import { useForm } from '@inertiajs/vue3';
+import { ref } from 'vue';
 
 defineProps({
-    services: Array
+    services: Array,
 });
 
 const itemsPerPage = ref(10);
@@ -14,26 +15,26 @@ const headers = [
         title: 'Service Name',
         align: 'start',
         sortable: true,
-        key: 'name'
+        key: 'name',
     },
     {
         title: 'Price',
         align: 'start',
         sortable: true,
-        key: 'unit_price'
+        key: 'unit_price',
     },
     {
-        title: 'Supplier',
+        title: 'Provider',
         align: 'start',
         sortable: true,
-        key: 'supplier'
+        key: 'supplier',
     },
     {
-        title: '',
+        title: 'Actions',
         align: 'end',
         sortable: false,
-        key: 'actions'
-    }
+        key: 'actions',
+    },
 ];
 
 function doDelete(service) {
@@ -46,70 +47,152 @@ function doDelete(service) {
 </script>
 
 <template>
-    <app-layout title="Services">
+    <AppLayout title="Services">
         <template #header>
-            <h1>Services</h1>
+            <PageHeader 
+                title="Services" 
+                subtitle="Manage your service offerings"
+                icon="mdi-briefcase"
+            >
+                <template #actions>
+                    <v-btn
+                        :href="route('services.export')"
+                        variant="tonal"
+                        prepend-icon="mdi-download"
+                    >
+                        Export
+                    </v-btn>
+                    <v-btn
+                        :href="route('services.create')"
+                        variant="flat"
+                        color="primary"
+                        prepend-icon="mdi-plus"
+                    >
+                        Create
+                    </v-btn>
+                </template>
+            </PageHeader>
         </template>
 
-        <v-sheet class="bg-white px-4 py-12">
-            <v-row class="mb-4 px-4" align="center">
-                <v-text-field
-                    v-model="search"
-                    label="Search"
-                    prepend-inner-icon="mdi-magnify"
-                    variant="outlined"
-                    hide-details
-                    single-line
-                ></v-text-field>
-                <v-spacer/>
-                <v-btn :href="route('services.export')" variant="flat"
-                       class="me-2" prepend-icon="mdi-file-export">
-                    Export
-                </v-btn>
-                <v-btn :href="route('services.create')" variant="flat"
-                       color="primary" prepend-icon="mdi-plus">Create New
-                </v-btn>
-            </v-row>
+        <v-card>
+            <!-- Search Bar -->
+            <v-card-text>
+                <v-row align="center">
+                    <v-col cols="12" md="6" lg="4">
+                        <v-text-field
+                            v-model="search"
+                            placeholder="Search services..."
+                            prepend-inner-icon="mdi-magnify"
+                            clearable
+                            single-line
+                            hide-details
+                            density="comfortable"
+                        />
+                    </v-col>
+                    <v-col cols="12" md="6" lg="8" class="d-flex justify-end">
+                        <v-chip variant="tonal" color="primary">
+                            <v-icon start icon="mdi-briefcase" />
+                            {{ services.length }} services
+                        </v-chip>
+                    </v-col>
+                </v-row>
+            </v-card-text>
 
+            <!-- Data Table -->
             <v-data-table
                 :items="services"
                 :headers="headers"
                 :search="search"
                 :items-per-page="itemsPerPage"
                 multi-sort
+                class="service-table"
             >
-                <template v-slot:item.unit_price="{ item }">
-                    {{ parseFloat(item.unit_price).toFixed(2) }}
+                <template #item.name="{ item }">
+                    <div class="d-flex align-center py-2">
+                        <v-avatar color="primary" variant="tonal" size="36" class="mr-3">
+                            <v-icon icon="mdi-briefcase" size="small" />
+                        </v-avatar>
+                        <div>
+                            <div class="font-weight-medium">{{ item.name }}</div>
+                            <div v-if="item.description" class="text-caption text-medium-emphasis text-truncate" style="max-width: 250px;">
+                                {{ item.description }}
+                            </div>
+                        </div>
+                    </div>
                 </template>
-                <template v-slot:item.actions="{ item }">
-                    <v-btn
-                        :href="route('services.show', item.id)"
-                        color="primary"
-                        class="me-2"
-                        prepend-icon="mdi-magnify"
-                        size="small"
-                        text="View"
-                        variant="flat"
-                    />
-                    <v-btn
-                        :href="route('services.edit', item.id)"
-                        class="me-2"
-                        prepend-icon="mdi-pencil"
-                        size="small"
-                        text="Edit"
-                        variant="flat"
-                        color="primary"
-                    />
-                    <v-btn
-                        @click="doDelete(item)"
-                        color="error"
-                        prepend-icon="mdi-trash-can"
-                        size="small"
-                        text="Delete"
-                        variant="flat"
-                    />
+
+                <template #item.unit_price="{ item }">
+                    <span class="font-weight-medium">
+                        {{ parseFloat(item.unit_price).toFixed(2) }}
+                    </span>
+                    <span class="text-caption text-medium-emphasis"> / hour</span>
+                </template>
+
+                <template #item.supplier="{ item }">
+                    <span v-if="item.supplier">{{ item.supplier }}</span>
+                    <span v-else class="text-medium-emphasis">—</span>
+                </template>
+
+                <template #item.actions="{ item }">
+                    <div class="d-flex justify-end ga-1">
+                        <v-btn
+                            :href="route('services.show', item.id)"
+                            icon="mdi-eye"
+                            size="small"
+                            variant="text"
+                            color="primary"
+                        >
+                            <v-icon icon="mdi-eye" />
+                            <v-tooltip activator="parent" location="top">View</v-tooltip>
+                        </v-btn>
+                        <v-btn
+                            :href="route('services.edit', item.id)"
+                            icon="mdi-pencil"
+                            size="small"
+                            variant="text"
+                            color="primary"
+                        >
+                            <v-icon icon="mdi-pencil" />
+                            <v-tooltip activator="parent" location="top">Edit</v-tooltip>
+                        </v-btn>
+                        <v-btn
+                            @click="doDelete(item)"
+                            icon="mdi-trash-can"
+                            size="small"
+                            variant="text"
+                            color="error"
+                        >
+                            <v-icon icon="mdi-trash-can" />
+                            <v-tooltip activator="parent" location="top">Delete</v-tooltip>
+                        </v-btn>
+                    </div>
+                </template>
+
+                <!-- Empty State -->
+                <template #no-data>
+                    <div class="text-center py-12">
+                        <v-icon icon="mdi-briefcase-off" size="64" color="primary" class="mb-4" />
+                        <h3 class="text-h6 mb-2">No services yet</h3>
+                        <p class="text-body-2 text-medium-emphasis mb-4">
+                            Get started by adding your first service
+                        </p>
+                        <v-btn
+                            :href="route('services.create')"
+                            color="primary"
+                            variant="flat"
+                            prepend-icon="mdi-plus"
+                        >
+                            Create
+                        </v-btn>
+                    </div>
                 </template>
             </v-data-table>
-        </v-sheet>
-    </app-layout>
+        </v-card>
+    </AppLayout>
 </template>
+
+<style scoped>
+.service-table :deep(th) {
+    white-space: nowrap;
+}
+</style>

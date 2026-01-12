@@ -1,6 +1,9 @@
 <template>
-    <v-card class="mb-6">
-        <v-card-title>Update Password</v-card-title>
+    <v-card rounded="lg">
+        <v-card-title class="d-flex align-center">
+            <v-icon icon="mdi-lock" color="primary" class="mr-2" />
+            Update Password
+        </v-card-title>
         <v-card-subtitle>
             Ensure your account is using a long, random password to stay secure.
         </v-card-subtitle>
@@ -12,26 +15,35 @@
                     label="Current Password"
                     type="password"
                     autocomplete="current-password"
+                    prepend-inner-icon="mdi-lock-outline"
                     :error-messages="form.errors.current_password"
-                ></v-text-field>
+                    variant="outlined"
+                    density="comfortable"
+                />
 
                 <v-text-field
                     v-model="form.password"
                     label="New Password"
                     type="password"
                     autocomplete="new-password"
+                    prepend-inner-icon="mdi-lock-plus"
                     :error-messages="form.errors.password"
-                ></v-text-field>
+                    variant="outlined"
+                    density="comfortable"
+                />
 
                 <v-text-field
                     v-model="form.password_confirmation"
-                    label="Confirm Password"
+                    label="Confirm New Password"
                     type="password"
                     autocomplete="new-password"
+                    prepend-inner-icon="mdi-lock-check"
                     :error-messages="form.errors.password_confirmation"
-                ></v-text-field>
+                    variant="outlined"
+                    density="comfortable"
+                />
 
-                <div class="d-flex justify-end mt-4">
+                <div class="d-flex justify-end mt-6">
                     <v-snackbar
                         v-model="showSuccessMessage"
                         color="success"
@@ -41,13 +53,13 @@
                     </v-snackbar>
                     
                     <v-btn
-                        color="success"
+                        color="primary"
                         :loading="form.processing"
                         type="submit"
                         variant="flat"
                         prepend-icon="mdi-content-save"
                     >
-                        Save
+                        Update Password
                     </v-btn>
                 </div>
             </v-form>

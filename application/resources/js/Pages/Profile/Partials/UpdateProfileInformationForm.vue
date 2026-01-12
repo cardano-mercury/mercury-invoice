@@ -1,101 +1,119 @@
 <template>
-    <v-card class="mb-6">
-        <v-card-title>Profile Information</v-card-title>
+    <v-card rounded="lg">
+        <v-card-title class="d-flex align-center">
+            <v-icon icon="mdi-account-circle" color="primary" class="mr-2" />
+            Profile Information
+        </v-card-title>
         <v-card-subtitle>
             Update your account's profile information and email address.
         </v-card-subtitle>
 
         <v-card-text>
             <v-form @submit.prevent="updateProfileInformation">
-                <div v-if="$page.props.jetstream.managesProfilePhotos">
-                    <!-- Photo -->
-                    <div class="mb-4">
-                        <v-label>Photo</v-label>
-
+                <div v-if="$page.props.jetstream.managesProfilePhotos" class="mb-6">
+                    <div class="text-subtitle-2 font-weight-medium mb-2">Profile Photo</div>
+                    
+                    <div class="d-flex align-center ga-4">
                         <!-- Current Profile Photo -->
-                        <div v-show="!photoPreview" class="mt-2">
-                            <v-img
-                                :src="user.profile_photo_url"
-                                :alt="user.name"
-                                height="80"
-                                width="80"
-                                class="rounded"
-                            ></v-img>
-                        </div>
+                        <v-avatar v-show="!photoPreview" size="80" rounded="lg">
+                            <v-img :src="user.profile_photo_url" :alt="user.name" />
+                        </v-avatar>
 
                         <!-- New Profile Photo Preview -->
-                        <div v-show="photoPreview" class="mt-2">
-                            <v-img
-                                :src="photoPreview"
-                                height="80"
-                                width="80"
-                                class="rounded"
-                            ></v-img>
+                        <v-avatar v-show="photoPreview" size="80" rounded="lg">
+                            <v-img :src="photoPreview" />
+                        </v-avatar>
+
+                        <div>
+                            <v-btn
+                                variant="tonal"
+                                color="primary"
+                                size="small"
+                                prepend-icon="mdi-camera"
+                                @click="selectNewPhoto"
+                                class="mr-2"
+                            >
+                                Change Photo
+                            </v-btn>
+
+                            <v-btn
+                                v-if="user.profile_photo_path"
+                                color="error"
+                                variant="text"
+                                size="small"
+                                prepend-icon="mdi-trash-can"
+                                @click="deletePhoto"
+                            >
+                                Remove
+                            </v-btn>
                         </div>
-
-                        <v-btn
-                            class="mt-2 mr-2"
-                            size="small"
-                            @click="selectNewPhoto"
-                        >
-                            Select A New Photo
-                        </v-btn>
-
-                        <v-btn
-                            v-if="user.profile_photo_path"
-                            color="error"
-                            size="small"
-                            class="mt-2"
-                            @click="deletePhoto"
-                        >
-                            Remove Photo
-                        </v-btn>
-
-                        <v-file-input
-                            ref="photo"
-                            v-model="form.photo"
-                            style="display: none"
-                            @update:model-value="updatePhotoPreview"
-                        ></v-file-input>
                     </div>
+
+                    <v-file-input
+                        ref="photo"
+                        v-model="form.photo"
+                        style="display: none"
+                        @update:model-value="updatePhotoPreview"
+                    />
                 </div>
 
                 <!-- Name -->
                 <v-text-field
                     v-model="form.name"
-                    label="Name"
+                    label="Full Name"
+                    placeholder="John Doe"
+                    prepend-inner-icon="mdi-account"
                     :error-messages="form.errors.name"
+                    variant="outlined"
+                    density="comfortable"
                     required
-                ></v-text-field>
+                />
 
                 <!-- Email -->
                 <v-text-field
                     v-model="form.email"
-                    label="Email"
+                    label="Email Address"
+                    placeholder="you@example.com"
+                    prepend-inner-icon="mdi-email"
                     :error-messages="form.errors.email"
+                    variant="outlined"
+                    density="comfortable"
                     required
-                ></v-text-field>
+                />
 
-                <div v-if="$page.props.jetstream.hasEmailVerification && user.email_verified_at === null">
-                    <p class="text-sm mt-2">
-                        Your email address is unverified.
+                <v-alert
+                    v-if="$page.props.jetstream.hasEmailVerification && user.email_verified_at === null"
+                    type="warning"
+                    variant="tonal"
+                    density="compact"
+                    class="mt-4"
+                >
+                    <div class="d-flex align-center flex-wrap">
+                        <span>Your email address is unverified.</span>
                         <v-btn
                             variant="text"
-                            color="primary"
-                            class="text-decoration-underline"
+                            color="warning"
+                            size="small"
                             :loading="verificationLinkSent"
                             @click.prevent="sendEmailVerification"
+                            class="ml-2"
                         >
-                            Click here to re-send the verification email.
+                            Resend verification email
                         </v-btn>
-                    </p>
-
-                    <div v-show="verificationLinkSent" class="mt-2 text-success">
-                        A new verification link has been sent to your email address.
                     </div>
-                </div>
+                </v-alert>
 
-                <div class="d-flex justify-end mt-4">
+                <v-alert
+                    v-if="verificationLinkSent"
+                    type="success"
+                    variant="tonal"
+                    density="compact"
+                    class="mt-2"
+                >
+                    A new verification link has been sent to your email address.
+                </v-alert>
+
+                <div class="d-flex justify-end mt-6">
                     <v-snackbar
                         v-model="showSuccessMessage"
                         color="success"
@@ -105,13 +123,13 @@
                     </v-snackbar>
                     
                     <v-btn
-                        color="success"
+                        color="primary"
                         :loading="form.processing"
                         type="submit"
                         variant="flat"
                         prepend-icon="mdi-content-save"
                     >
-                        Save
+                        Save Changes
                     </v-btn>
                 </div>
             </v-form>
