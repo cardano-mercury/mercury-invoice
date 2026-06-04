@@ -1,16 +1,18 @@
 {
-    "mcpServers": {
+    "$schema": "https://opencode.ai/config.json",
+    "mcp": {
         "laravel-boost": {
-            "command": "docker",
-            "args": [
+            "type": "local",
+            "enabled": true,
+            "command": [
+                "docker",
                 "exec",
                 "-i",
                 "cardanomercury-web",
                 "php",
                 "artisan",
                 "boost:mcp"
-            ],
-            "cwd": "/home/latheesan/Sites/CardanoMercuryInvoice"
+            ]
         }
     }
 }
