@@ -377,7 +377,7 @@ const selectPaymentMethod = (method) => {
                     <div class="invoice-header-right">
                         <div class="invoice-header-ref">
                             <span class="invoice-header-ref-label">Invoice</span>
-                            <span class="invoice-header-ref-value">#{{ invoice.invoice_reference }}</span>
+                            <span class="invoice-header-ref-value">{{ invoice.invoice_reference }}</span>
                         </div>
                         <v-chip
                             :color="statusMeta.color"
@@ -719,7 +719,7 @@ const selectPaymentMethod = (method) => {
                                         @click="selectPaymentMethod('Crypto')"
                                     >
                                         <div class="payment-method-tile-icon payment-method-tile-icon-crypto">
-                                            <v-icon icon="mdi-currency-btc" size="22" />
+                                            ₳
                                         </div>
                                         <div class="payment-method-tile-body">
                                             <span class="payment-method-tile-title">Crypto (ADA)</span>
@@ -814,8 +814,8 @@ const selectPaymentMethod = (method) => {
                                                 </button>
                                             </div>
                                             <p class="payment-action-hint">
-                                                <v-icon icon="mdi-information-outline" size="14" />
                                                 <span class="payment-action-hint-text">
+                                                    <v-icon icon="mdi-information-outline" size="14" />
                                                     Make sure your wallet is set to the
                                                     <strong>{{ props.targetCardanoNetwork.name }}</strong> network.
                                                 </span>
