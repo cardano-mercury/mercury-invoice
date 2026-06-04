@@ -1,214 +1,134 @@
-<laravel-boost-guidelines>
-=== foundation rules ===
+# Cardano Mercury: Invoice — Agent Guide
 
-# Laravel Boost Guidelines
+Laravel 12 + Inertia 2 + Vue 3 + Vuetify 3 invoicing app with Cardano (ADA) and Stripe (fiat) payment processing. Deployed via Laravel Vapor.
 
-The Laravel Boost guidelines are specifically curated by Laravel maintainers for this application. These guidelines should be followed closely to ensure the best experience when building Laravel applications.
+## Layout (the one thing easy to get wrong)
 
-## Foundational Context
+The Laravel project lives in **`application/`**, not at the repo root. All `php`, `composer`, `npm`, and `artisan` commands run from there.
 
-This application is a Laravel application and its main Laravel ecosystems package & versions are below. You are an expert with them all. Ensure you abide by these specific packages & versions.
+```
+.
+├── application/        # Laravel app (composer.json, package.json, .env*, etc.)
+├── docker/             # docker-compose.yml, Dockerfile, apache vhost, php.ini
+├── docs/               # business PDFs (cost analysis, GTM) — read-only context
+├── .github/workflows/  # only staging.yml (auto-deploy on push to `staging`)
+├── Makefile            # wraps every docker-compose / artisan call
+└── opencode.json       # registers the laravel-boost MCP server
+```
 
-- php - 8.4
-- inertiajs/inertia-laravel (INERTIA_LARAVEL) - v2
-- laravel/fortify (FORTIFY) - v1
-- laravel/framework (LARAVEL) - v12
-- laravel/horizon (HORIZON) - v5
-- laravel/prompts (PROMPTS) - v0
-- laravel/sanctum (SANCTUM) - v4
-- tightenco/ziggy (ZIGGY) - v2
-- laravel/boost (BOOST) - v2
-- laravel/mcp (MCP) - v0
-- laravel/pint (PINT) - v1
-- pestphp/pest (PEST) - v3
-- phpunit/phpunit (PHPUNIT) - v11
-- @inertiajs/vue3 (INERTIA_VUE) - v2
-- vue (VUE) - v3
+## Local dev (Docker-only — no host PHP)
 
-## Skills Activation
+The whole stack runs in Docker. Container names are fixed and **singular**:
 
-This project has domain-specific skills available in `**/skills/**`. You MUST activate the relevant skill whenever you work in that domain—don't wait until you're stuck.
+- `cardanomercury-web` (php 8.4-apache, the app)
+- `cardanomercury-mysql` (mysql 8.0, port **33100** on host)
+- `cardanomercury-redis` (redis 6, internal only)
+- `cardanomercury-horizon` (runs `php artisan horizon`)
+- `cardanomercury-cron` (runs `php artisan schedule:work`)
 
-## Conventions
+Ports: Laravel **8100**, Vite HMR **8101**, MySQL **33100** (host-side), Redis internal.
 
-- You must follow all existing code conventions used in this application. When creating or editing a file, check sibling files for the correct structure, approach, and naming.
-- Use descriptive names for variables and methods. For example, `isRegisteredForDiscounts`, not `discount()`.
-- Check for existing components to reuse before writing a new one.
+Every workflow goes through the root `Makefile`. Common ones:
 
-## Verification Scripts
+| Make target | What it does |
+|---|---|
+| `make build` | First-time: build images, `composer install`, wait for mysql, migrate, `npm run build` |
+| `make up` / `make down` | Restart / stop all containers |
+| `make rebuild` | Rebuild images without cache |
+| `make shell` | Interactive bash in `cardanomercury-web` |
+| `make artisan COMMAND="migrate:fresh --seed"` | Run any artisan command in the web container |
+| `make composer-install` | `composer install` in container |
+| `make db-migrate` / `make db-refresh` | Migrate / fresh+seed |
+| `make frontend-build` | `npm install && npm run build` in container |
+| `make frontend-watch` | `npm run dev` (Vite HMR) in container |
+| `make tinker` | `php artisan tinker` in container |
+| `make api-docs` | Regenerate Scribe API docs (writes to `application/.scribe/`) |
+| `make logs`, `make logs-web`, `make logs-horizon`, `make logs-cron` | Tail container logs |
+| `make stats`, `make status` | Resource usage / container status |
 
-- Do not create verification scripts or tinker when tests cover that functionality and prove they work. Unit and feature tests are more important.
+The Makefile is `.SILENT`, so you won't see echoed commands. Always invoke through `make` — don't run `docker exec` or `docker compose` by hand unless you have to.
 
-## Application Structure & Architecture
+After any PHP change: `vendor/bin/pint --dirty --format agent` (run inside the web container via `make shell` or `make artisan COMMAND="..."` style — for pint specifically just `docker exec cardanomercury-web vendor/bin/pint --dirty`).
 
-- Stick to existing directory structure; don't create new base folders without approval.
-- Do not change the application's dependencies without approval.
+## Architecture & domain notes
 
-## Frontend Bundling
+**Routing** (`application/routes/`):
+- `web.php` — public landing, `/invoice/{encodedId}` public invoice view, `/incoming-webhooks/*` (Stripe), and the authenticated SPA shell (Jetstream: customers, products, services, invoices, reports, settings, webhooks).
+- `api.php` — versioned **`/api/v1`**, gated by `auth:sanctum`. REST resources for the same entities (nested for emails/phones/addresses).
+- `console.php` — schedules `SendInvoiceRemindersCommand` (daily 08:00 UTC), `ProcessCryptoPayments` (every 5 min), `GenerateReports` (every 5 min).
 
-- If the user doesn't see a frontend change reflected in the UI, it could mean they need to run `npm run build`, `npm run dev`, or `composer run dev`. Ask them.
+**Crypto / Cardano domain** — these are easy to miss:
+- `config/cardanomercury.php` — `target_cardano_network` is **Mainnet in production, PreProd otherwise** (so local dev hits Cardano PreProd, not Mainnet). `crypto_payment_deadline_seconds = 3600` (1 hour to send payment).
+- `app/Libraries/CardanoSlotTimer.php` — slot ↔ unix time conversions for Mainnet/Preview/PreProd.
+- `app/ThirdParty/BlockfrostClient.php` — Cardano chain RPC client.
+- `app/Services/AdaPriceService.php` — aggregates ADA/fiat price from CoinGecko + HitBTC + Coinbase (5-min cache).
+- `app/Jobs/ProcessCryptoPaymentJob.php` + `ProcessCryptoPayments` artisan command — sweeps open crypto payments.
 
-## Documentation Files
+**Public invoice IDs are Hashids-encoded**, not numeric. Encode/decode via `App\Traits\HashIdTrait`. Routes use `{encodedId}` (e.g. `/invoice/{encodedId}/pay-via-crypto`).
 
-- You must only create documentation files if explicitly requested by the user.
+**Webhooks** are per-user (model `Webhook` + `WebhookEventTargetName` enum). `App\Services\WebhookService` dispatches `WebhookNotificationJob` for `customer`/`product`/`service`/`invoice` events.
 
-## Replies
+**CSRF is exempted for `incoming-webhooks/*`** (`bootstrap/app.php`) — required for Stripe. Don't add CSRF back there.
 
-- Be concise in your explanations - focus on what's important rather than explaining obvious details.
+**API error responses are JSON** and shaped in `bootstrap/app.php` (NotFound/Auth/AccessDenied/MethodNotAllowed/Validation/unhandled → JSON). Don't add try/catch in API controllers to reformat errors; the global handlers already do it.
 
-=== boost rules ===
+**Auth stack:** Fortify (backend) + Jetstream (frontend scaffolding) + Sanctum (API tokens). `App\Actions\Fortify\*` and `App\Actions\Jetstream\DeleteUser` are the customization points.
 
-# Laravel Boost
+**Queue:** Redis-backed, run by the dedicated `cardanomercury-horizon` container. Horizon UI is at **`/horizon`**. `config/horizon.php` exists; supervisors in `HorizonServiceProvider`.
 
-## Tools
+**API docs:** Scribe (knuckleswtf/scribe). Regenerate with `make api-docs`. Output cache lives in `application/.scribe/` (gitignored); the rendered UI is published to `application/public/vendor/scribe/` (committed).
 
-- Laravel Boost is an MCP server with tools designed specifically for this application. Prefer Boost tools over manual alternatives like shell commands or file reads.
-- Use `database-query` to run read-only queries against the database instead of writing raw SQL in tinker.
-- Use `database-schema` to inspect table structure before writing migrations or models.
-- Use `get-absolute-url` to resolve the correct scheme, domain, and port for project URLs. Always use this before sharing a URL with the user.
-- Use `browser-logs` to read browser logs, errors, and exceptions. Only recent logs are useful, ignore old entries.
+**Scheduled reports:** `app/Jobs/Generate*ReportJob.php` are picked up by the `GenerateReports` console command.
 
-## Searching Documentation (IMPORTANT)
+## Conventions & quirks
 
-- Always use `search-docs` before making code changes. Do not skip this step. It returns version-specific docs based on installed packages automatically.
-- Pass a `packages` array to scope results when you know which packages are relevant.
-- Use multiple broad, topic-based queries: `['rate limiting', 'routing rate limiting', 'routing']`. Expect the most relevant results first.
-- Do not add package names to queries because package info is already shared. Use `test resource table`, not `filament 4 test resource table`.
+- **PHP 8 constructor property promotion**, **explicit return types**, **curly braces on all control structures** — no `if (...) do_thing();` on one line.
+- Casts go in a `casts()` method on the model, not the `$casts` property.
+- Enums in `app/Enums/` use `App\Traits\EnumToArrayTrait` to expose `values()` for Blade/Vue.
+- Reuse these traits: `HashIdTrait`, `LogExceptionTrait`, `UploadCSVTrait`, `JsonDownloadTrait`, `ScopedRouteModelBindingTrait`, `EnumToArrayTrait`. Check sibling files before introducing new ones.
+- Vue pages are Inertia-driven and live in `application/resources/js/Pages/`. Single-root components only.
+- Don't create new top-level directories. Don't change `composer.json` dependencies without approval.
+- `application/.env` is **gitignored** — never commit a real `.env`. The committed `application/.env.example` has `__UPDATE_ME__` placeholders for SMTP and `DEV_STRIPE_WEBHOOK_HANDLER` for a webhook.site URL.
+- `application/.scribe/` is gitignored; `application/public/vendor/scribe/` is committed.
+- `application/phpunit.xml` has the sqlite-in-memory override **commented out** — feature tests run against MySQL by default. The Docker stack must be up.
+- Tailwind config (`tailwind.config.js`) and Vuetify are both present; Vuetify is the primary UI kit in `Pages/`.
 
-### Search Syntax
+## Tests
 
-1. Use words for auto-stemmed AND logic: `rate limit` matches both "rate" AND "limit".
-2. Use `"quoted phrases"` for exact position matching: `"infinite scroll"` requires adjacent words in order.
-3. Combine words and phrases for mixed queries: `middleware "rate limit"`.
-4. Use multiple queries for OR logic: `queries=["authentication", "middleware"]`.
-
-## Artisan
-
-- Run Artisan commands directly via the command line (e.g., `php artisan route:list`). Use `php artisan list` to discover available commands and `php artisan [command] --help` to check parameters.
-- Inspect routes with `php artisan route:list`. Filter with: `--method=GET`, `--name=users`, `--path=api`, `--except-vendor`, `--only-vendor`.
-- Read configuration values using dot notation: `php artisan config:show app.name`, `php artisan config:show database.default`. Or read config files directly from the `config/` directory.
-
-## Tinker
-
-- Execute PHP in app context for debugging and testing code. Do not create models without user approval, prefer tests with factories instead. Prefer existing Artisan commands over custom tinker code.
-- Always use single quotes to prevent shell expansion: `php artisan tinker --execute 'Your::code();'`
-  - Double quotes for PHP strings inside: `php artisan tinker --execute 'User::where("active", true)->count();'`
-
-=== php rules ===
-
-# PHP
-
-- Always use curly braces for control structures, even for single-line bodies.
-- Use PHP 8 constructor property promotion: `public function __construct(public GitHub $github) { }`. Do not leave empty zero-parameter `__construct()` methods unless the constructor is private.
-- Use explicit return type declarations and type hints for all method parameters: `function isAccessible(User $user, ?string $path = null): bool`
-- Follow existing application Enum naming conventions.
-- Prefer PHPDoc blocks over inline comments. Only add inline comments for exceptionally complex logic.
-- Use array shape type definitions in PHPDoc blocks.
-
-=== deployments rules ===
-
-# Deployment
-
-- Laravel can be deployed using [Laravel Cloud](https://cloud.laravel.com/), which is the fastest way to deploy and scale production Laravel applications.
-
-=== tests rules ===
-
-# Test Enforcement
-
-- Every change must be programmatically tested. Write a new test or update an existing test, then run the affected tests to make sure they pass.
-- Run the minimum number of tests needed to ensure code quality and speed. Use `php artisan test --compact` with a specific filename or filter.
-
-=== inertia-laravel/core rules ===
-
-# Inertia
-
-- Inertia creates fully client-side rendered SPAs without modern SPA complexity, leveraging existing server-side patterns.
-- Components live in `resources/js/Pages` (unless specified in `vite.config.js`). Use `Inertia::render()` for server-side routing instead of Blade views.
-- ALWAYS use `search-docs` tool for version-specific Inertia documentation and updated code examples.
-- IMPORTANT: Activate `inertia-vue-development` when working with Inertia Vue client-side patterns.
-
-# Inertia v2
-
-- Use all Inertia features from v1 and v2. Check the documentation before making changes to ensure the correct approach.
-- New features: deferred props, infinite scroll, merging props, polling, prefetching, once props, flash data.
-- When using deferred props, add an empty state with a pulsing or animated skeleton.
-
-=== laravel/core rules ===
-
-# Do Things the Laravel Way
-
-- Use `php artisan make:` commands to create new files (i.e. migrations, controllers, models, etc.). You can list available Artisan commands using `php artisan list` and check their parameters with `php artisan [command] --help`.
-- If you're creating a generic PHP class, use `php artisan make:class`.
-- Pass `--no-interaction` to all Artisan commands to ensure they work without user input. You should also pass the correct `--options` to ensure correct behavior.
-
-### Model Creation
-
-- When creating new models, create useful factories and seeders for them too. Ask the user if they need any other things, using `php artisan make:model --help` to check the available options.
-
-## APIs & Eloquent Resources
-
-- For APIs, default to using Eloquent API Resources and API versioning unless existing API routes do not, then you should follow existing application convention.
-
-## URL Generation
-
-- When generating links to other pages, prefer named routes and the `route()` function.
-
-## Testing
-
-- When creating models for tests, use the factories for the models. Check if the factory has custom states that can be used before manually setting up the model.
-- Faker: Use methods such as `$this->faker->word()` or `fake()->randomDigit()`. Follow existing conventions whether to use `$this->faker` or `fake()`.
-- When creating tests, make use of `php artisan make:test [options] {name}` to create a feature test, and pass `--unit` to create a unit test. Most tests should be feature tests.
-
-## Vite Error
-
-- If you receive an "Illuminate\Foundation\ViteException: Unable to locate file in Vite manifest" error, you can run `npm run build` or ask the user to run `npm run dev` or `composer run dev`.
-
-=== laravel/v12 rules ===
-
-# Laravel 12
-
-- CRITICAL: ALWAYS use `search-docs` tool for version-specific Laravel documentation and updated code examples.
-- Since Laravel 11, Laravel has a new streamlined file structure which this project uses.
-
-## Laravel 12 Structure
-
-- In Laravel 12, middleware are no longer registered in `app/Http/Kernel.php`.
-- Middleware are configured declaratively in `bootstrap/app.php` using `Application::configure()->withMiddleware()`.
-- `bootstrap/app.php` is the file to register middleware, exceptions, and routing files.
-- `bootstrap/providers.php` contains application specific service providers.
-- The `app/Console/Kernel.php` file no longer exists; use `bootstrap/app.php` or `routes/console.php` for console configuration.
-- Console commands in `app/Console/Commands/` are automatically available and do not require manual registration.
-
-## Database
-
-- When modifying a column, the migration must include all of the attributes that were previously defined on the column. Otherwise, they will be dropped and lost.
-- Laravel 12 allows limiting eagerly loaded records natively, without external packages: `$query->latest()->limit(10);`.
-
-### Models
-
-- Casts can and likely should be set in a `casts()` method on a model rather than the `$casts` property. Follow existing conventions from other models.
-
-=== pint/core rules ===
-
-# Laravel Pint Code Formatter
-
-- If you have modified any PHP files, you must run `vendor/bin/pint --dirty --format agent` before finalizing changes to ensure your code matches the project's expected style.
-- Do not run `vendor/bin/pint --test --format agent`, simply run `vendor/bin/pint --format agent` to fix any formatting issues.
-
-=== pest/core rules ===
-
-## Pest
-
-- This project uses Pest for testing. Create tests: `php artisan make:test --pest {name}`.
-- The `{name}` argument should not include the test suite directory. Use `php artisan make:test --pest SomeFeatureTest` instead of `php artisan make:test --pest Feature/SomeFeatureTest`.
-- Run tests: `php artisan test --compact` or filter: `php artisan test --compact --filter=testName`.
-- Do NOT delete tests without approval.
-
-=== inertia-vue/core rules ===
-
-# Inertia + Vue
-
-Vue components must have a single root element.
-- IMPORTANT: Activate `inertia-vue-development` when working with Inertia Vue client-side patterns.
-
-</laravel-boost-guidelines>
+- Pest 3, with `RefreshDatabase` applied to all `Feature/` tests via `tests/Pest.php`.
+- No `composer test` script — use `php artisan test` (inside the web container).
+- Existing `tests/Feature/*` is mostly Jetstream default auth tests. Domain coverage is thin.
+- Run a single test: `php artisan test --compact --filter=testName` or `php artisan test --compact tests/Feature/SomeTest.php`.
+- Factories exist for every model in `application/database/factories/`.
+
+## Deploy
+
+- Production & staging both go through **Laravel Vapor** (`application/vapor.yml`).
+- Staging auto-deploys on push to the `staging` branch via `.github/workflows/staging.yml` (the only CI workflow). Production deploys are manual `vapor deploy production`.
+- Domain: `mercury-invoice.com` (prod) / `staging.mercury-invoice.com`.
+
+## OpenCode / Laravel Boost
+
+- `opencode.json` registers the `laravel-boost` MCP server, which runs `php artisan boost:mcp` inside `cardanomercury-web`. **The container must be running** for Boost MCP tools (`database-query`, `database-schema`, `get-absolute-url`, `browser-logs`, `search-docs`, `last-error`, `read-log-entries`) to work.
+- Domain skills in `.agents/skills/`: `configuring-horizon`, `fortify-development`, `inertia-vue-development`, `laravel-best-practices`, `pest-testing`. Activate the relevant one before working in that domain.
+- Use `database-schema` (with `summary: true` first) before writing migrations; use `database-query` for read-only SQL; use `get-absolute-url` before sharing any URL with the user.
+
+## Quick command reference
+
+```bash
+# from repo root
+make build                       # first-time setup
+make up                          # start stack
+make shell                       # bash in web container
+make artisan COMMAND="make:model InvoiceNote -mfs"
+make db-refresh                  # fresh + seed
+make frontend-watch              # vite HMR
+make api-docs                    # regenerate Scribe
+make logs-web                    # tail web container
+
+# inside the web container
+php artisan test --compact
+php artisan test --compact --filter=AuthenticationTest
+vendor/bin/pint --dirty --format agent
+php artisan route:list --path=api
+```
