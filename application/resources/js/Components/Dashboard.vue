@@ -118,7 +118,7 @@ const salesByTimeOptions = computed(() => {
 
 const salesByTimeData = computed(() => {
     const parsedDataset = {};
-    
+
     if (!dashboardStats.value || !dashboardStats.value.invoices) {
         return {
             labels: [],
@@ -137,7 +137,7 @@ const salesByTimeData = computed(() => {
             }]
         };
     }
-    
+
     dashboardStats.value.invoices
         .filter(invoice => invoice.status === 'Paid')
         .forEach(invoice => {
@@ -178,9 +178,9 @@ const paymentMethodsData = computed(() => {
             }]
         };
     }
-    
+
     const methods = dashboardStats.value.payment_methods;
-    
+
     return {
         labels: methods.map(m => m.method),
         datasets: [{
@@ -198,13 +198,13 @@ const productVsServiceData = computed(() => {
             datasets: []
         };
     }
-    
+
     const { products, services } = dashboardStats.value.product_vs_service_revenue;
     const allDates = [...new Set([
         ...Object.keys(products),
         ...Object.keys(services)
     ])].sort();
-    
+
     return {
         labels: allDates,
         datasets: [
@@ -289,12 +289,12 @@ const invoiceCounts = computed(() => {
     if (!dashboardStats.value || !dashboardStats.value.invoices) {
         return { all: 0, paid: 0, unpaid: 0, late: 0 };
     }
-    
+
     const all = dashboardStats.value.invoices.length;
     const paid = dashboardStats.value.invoices.filter(invoice => invoice.status === 'Paid').length;
     const unpaid = dashboardStats.value.invoices.filter(invoice => invoice.is_overdue === false && invoice.status === 'Published').length;
     const late = dashboardStats.value.invoices.filter(invoice => invoice.is_overdue === true && invoice.status === 'Published').length;
-    
+
     return { all, paid, unpaid, late };
 });
 
@@ -302,7 +302,7 @@ const filteredInvoices = computed(() => {
     if (!dashboardStats.value || !dashboardStats.value.invoices) {
         return [];
     }
-    
+
     switch (invoiceStatusFilter.value) {
         case 'paid': return dashboardStats.value.invoices.filter(invoice => invoice.status === 'Paid');
         case 'unpaid': return dashboardStats.value.invoices.filter(invoice => invoice.is_overdue === false && invoice.status === 'Published');
@@ -337,18 +337,18 @@ const averageInvoiceValue = computed(() => {
 
 const formatCurrency = (value, currency) => {
     if (value === 0) return '0';
-    
+
     // Default formatting options
     const options = {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
     };
-    
+
     // Special formatting for crypto currencies
     if (['ADA', 'BTC', 'ETH'].includes(currency)) {
         options.maximumFractionDigits = 6;
     }
-    
+
     // Try to use Intl.NumberFormat for standard currencies when supported
     try {
         if (['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD', 'CHF'].includes(currency)) {
@@ -361,7 +361,7 @@ const formatCurrency = (value, currency) => {
     } catch (e) {
         console.warn('Currency formatting error:', e);
     }
-    
+
     // Fallback for other currencies or if Intl formatting fails
     const formattedValue = new Intl.NumberFormat('en-US', options).format(value);
     return `${formattedValue} ${currency}`;
@@ -404,13 +404,13 @@ onMounted(() => {
         <v-container fluid class="pa-0">
             <v-row justify="center" class="mb-4">
                 <v-col cols="12" sm="10" md="8" lg="6" xl="4">
-                    <v-btn-toggle 
-                        variant="outlined" 
-                        v-model="timeframe" 
-                        mandatory 
+                    <v-btn-toggle
+                        variant="outlined"
+                        v-model="timeframe"
+                        mandatory
                         class="w-100 time-filter-buttons"
-                        density="comfortable" 
-                        divided 
+                        density="comfortable"
+                        divided
                         rounded="xl">
                         <v-btn :value="1" prepend-icon="mdi-clock-time-one" class="flex-grow-1">24H</v-btn>
                         <v-btn :value="7" prepend-icon="mdi-calendar-week" class="flex-grow-1">7D</v-btn>
@@ -478,7 +478,7 @@ onMounted(() => {
                                             <p class="text-caption text-grey">Unpaid</p>
                                         </div>
                                     </div>
-                                    <p class="text-subtitle-1 text-grey mt-2">Total Invoices: {{ getCount('invoices') }}</p>
+                                    <p class="text-subtitle-1 text-grey mt-2">Total: {{ getCount('invoices') }}</p>
                                 </v-card-text>
                             </v-card>
                         </v-col>
@@ -543,7 +543,7 @@ onMounted(() => {
                                 <v-divider></v-divider>
                                 <v-card-text class="px-4 py-6">
                                     <div class="chart-container">
-                                        <Line 
+                                        <Line
                                             :key="chartKey"
                                             :data="salesByTimeData"
                                             :options="salesByTimeOptions"/>
@@ -559,12 +559,12 @@ onMounted(() => {
                                 </v-card-title>
                                 <v-divider/>
                                 <v-card-text class="px-4 pt-4 pb-2">
-                                    <v-btn-toggle 
-                                        v-model="invoiceStatusFilter" 
-                                        variant="outlined" 
-                                        class="w-100 mb-4 invoice-filter-buttons" 
-                                        rounded="xl" 
-                                        mandatory 
+                                    <v-btn-toggle
+                                        v-model="invoiceStatusFilter"
+                                        variant="outlined"
+                                        class="w-100 mb-4 invoice-filter-buttons"
+                                        rounded="xl"
+                                        mandatory
                                         divided>
                                         <v-btn :value="'all'" :color="getStatusColor('all')" prepend-icon="mdi-view-list" class="flex-grow-1">
                                             All
@@ -585,8 +585,8 @@ onMounted(() => {
                                     </v-btn-toggle>
                                 </v-card-text>
                                 <v-card-text class="px-4 pb-4 pt-0">
-                                    <v-data-table 
-                                        :items="filteredInvoices" 
+                                    <v-data-table
+                                        :items="filteredInvoices"
                                         :headers="invoicesHeaders"
                                         density="comfortable"
                                         class="invoice-table"
@@ -610,11 +610,11 @@ onMounted(() => {
                                     </v-data-table>
                                 </v-card-text>
                                 <v-card-actions class="justify-end px-4 pb-4">
-                                    <v-btn 
-                                        :href="route('invoices.index')" 
-                                        variant="flat" 
+                                    <v-btn
+                                        :href="route('invoices.index')"
+                                        variant="flat"
                                         color="primary"
-                                        prepend-icon="mdi-invoice" 
+                                        prepend-icon="mdi-invoice"
                                         append-icon="mdi-chevron-right"
                                         class="px-6"
                                         rounded="lg">
@@ -636,7 +636,7 @@ onMounted(() => {
                                 <v-divider></v-divider>
                                 <v-card-text class="px-4 py-6">
                                     <div class="chart-container" style="height: 300px;">
-                                        <Pie 
+                                        <Pie
                                             :key="chartKey"
                                             :data="paymentMethodsData"
                                             :options="chartOptions"/>
@@ -656,7 +656,7 @@ onMounted(() => {
                                 <v-divider></v-divider>
                                 <v-card-text class="px-4 py-6">
                                     <div class="chart-container" style="height: 300px;">
-                                        <Bar 
+                                        <Bar
                                             :key="chartKey"
                                             :data="productVsServiceData"
                                             :options="chartOptions"/>
@@ -816,7 +816,7 @@ onMounted(() => {
     .chart-container {
         height: 400px;
     }
-    
+
     .stat-icon-wrapper {
         width: 80px;
         height: 80px;
@@ -827,20 +827,20 @@ onMounted(() => {
     .dashboard-container {
         padding: 8px;
     }
-    
+
     .stat-icon-wrapper {
         width: 48px;
         height: 48px;
     }
-    
+
     .chart-container {
         height: 300px;
     }
-    
+
     .v-btn-toggle {
         flex-wrap: wrap;
     }
-    
+
     .v-btn-toggle .v-btn {
         flex-basis: calc(50% - 4px);
         margin: 2px;

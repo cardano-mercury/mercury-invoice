@@ -5,6 +5,10 @@
             "type": "local",
             "enabled": true,
             "command": [
+                "docker",
+                "exec",
+                "-i",
+                "cardanomercury-web",
                 "php",
                 "artisan",
                 "boost:mcp"
